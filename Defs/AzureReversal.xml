@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>EH_AzureReversal</defName>
+    <driverClass>ElementalHearts.JobDriver_AzureReversal</driverClass>
+    <reportString>Leaping clear and rushing through the enemy.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+</Defs>

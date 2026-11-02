@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <HediffDef ParentName="EH_ElementalHeartHediffBase">
+    <defName>EH_CelestialAscendant</defName>
+    <label>Celestial Ascendant</label>
+    <description>A fully evolved sovereign of sun, solar power and light. Six techniques, Radiance combos, reactive Fake Rainbow, random normal-element Bestow and free manual Light Travel. 650% movement, +75 mood, supreme defense and recovery. No disciple or normal Celestial stage. Manifest helmetless ivory/gold regalia and Dawnbringer; the solar halo and golden sword aura appear while transformed and drafted.</description>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_CelestialAbilities" />
+      <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
+        <sealAfterTicks>60</sealAfterTicks>
+        <healPerSecond>4</healPerSecond>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.2</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.75</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.75</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.75</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>0.75</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>0.75</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.75</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.75</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>0.25</offset>
+          </li>
+        </capMods>
+        <painFactor>0</painFactor>
+        <totalBleedFactor>0.1</totalBleedFactor>
+        <naturalHealingFactor>10</naturalHealingFactor>
+        <hungerRateFactor>0.6</hungerRateFactor>
+        <restFallFactor>0.6</restFallFactor>
+        <statFactors>
+          <CarryingCapacity>15</CarryingCapacity>
+          <MoveSpeed>6.5</MoveSpeed>
+          <MeleeDamageFactor>3.2</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.55</MeleeCooldownFactor>
+          <WorkSpeedGlobal>2</WorkSpeedGlobal>
+          <IncomingDamageFactor>0.04</IncomingDamageFactor>
+          <ImmunityGainSpeed>2</ImmunityGainSpeed>
+          <JoyFallRateFactor>0.6</JoyFallRateFactor>
+        </statFactors>
+        <statOffsets>
+          <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+          <MeleeHitChance>4</MeleeHitChance>
+          <MeleeDodgeChance>12</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThingDef ParentName="EH_ElementalHeartItemBase">
+    <defName>EH_CelestialHeart</defName>
+    <label>Celestial Heart</label>
+    <description>A single-use heart of condensed sunlight. Grants Celestial ascension directly, already evolved. Use on an unascended humanlike pawn; disciples skip their milestones. One lineage per pawn.</description>
+    <graphicData>
+      <texPath>UI/Commands/ElementalHearts/Celestial/HeavenlyZenith</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>.7</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_ElementalSerum">
+        <hediff>EH_CelestialAscendant</hediff>
+      </li>
+    </comps>
+    <statBases>
+      <MarketValue>12000</MarketValue>
+    </statBases>
+  </ThingDef>
+  <RecipeDef ParentName="EH_InstallElementalHeartBase">
+    <defName>EH_InstallCelestialHeart</defName>
+    <label>administer celestial ascension serum</label>
+    <description>Inject one dose of celestial ascension serum, granting whole-body ascension without organ surgery. Only one element per pawn.</description>
+    <jobString>Injecting celestial ascension serum.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EH_CelestialHeart</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EH_CelestialHeart</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>EH_CelestialAscendant</addsHediff>
+  </RecipeDef>
+  <ThoughtDef>
+    <defName>EH_CelestialResolve</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>EH_CelestialAscendant</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>Celestial sovereignty</label>
+        <description>The sun within me burns with unshakable purpose.</description>
+        <baseMoodEffect>75</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <JobDef>
+    <defName>EH_CelestialTechnique</defName>
+    <driverClass>ElementalHearts.JobDriver_CelestialTechnique</driverClass>
+    <reportString>wielding celestial light.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  <JobDef>
+    <defName>EH_CelestialDepart</defName>
+    <driverClass>ElementalHearts.JobDriver_CelestialDepart</driverClass>
+    <reportString>ascending into light.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  <JobDef>
+    <defName>EH_CelestialArrive</defName>
+    <driverClass>ElementalHearts.JobDriver_CelestialArrive</driverClass>
+    <reportString>arriving in a solar beam.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  <HediffDef>
+    <defName>EH_CelestialRadiance</defName>
+    <label>Radiance</label>
+    <description>Short-lived caster-owned solar marks. Up to three marks per caster; Solar Judgment consumes only its caster's Radiance.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_CelestialRadiance" />
+    </comps>
+  </HediffDef>
+  <DamageDef ParentName="CutBase">
+    <defName>EH_SolarDamage</defName>
+    <label>solar cut</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <deathMessage>{0} was consumed by celestial light.</deathMessage>
+    <armorCategory>Sharp</armorCategory>
+    <impactSoundType>Slice</impactSoundType>
+    <buildingDamageFactor>0</buildingDamageFactor>
+  </DamageDef>
+  <WorldObjectDef>
+    <defName>EH_CelestialLightTravel</defName>
+    <label>Light Travel</label>
+    <worldObjectClass>ElementalHearts.WorldObject_CelestialLightTravel</worldObjectClass>
+    <texture>UI/Commands/ElementalHearts/Celestial/LightTravel</texture>
+    <useDynamicDrawer>true</useDynamicDrawer>
+  </WorldObjectDef>
+  <WorldObjectDef>
+    <defName>EH_CelestialLandingSite</defName>
+    <label>solar landing</label>
+    <worldObjectClass>ElementalHearts.CelestialLandingSite</worldObjectClass>
+    <texture>UI/Commands/ElementalHearts/Celestial/LightTravel</texture>
+  </WorldObjectDef>
+  <RecipeDef>
+    <defName>EH_MakeCelestialHeart</defName>
+    <label>condense Celestial Heart</label>
+    <description>Condense gold, advanced components and medicine into a legendary heart of sunlight. The recipient gains the fully evolved Celestial lineage.</description>
+    <jobString>Condensing a Celestial Heart.</jobString>
+    <workAmount>18000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <researchPrerequisites>
+      <li>Fabrication</li>
+    </researchPrerequisites>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Gold</li>
+        <li>ComponentSpacer</li>
+        <li>MedicineIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EH_CelestialHeart>1</EH_CelestialHeart>
+    </products>
+    <skillRequirements>
+      <Crafting>10</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+</Defs>

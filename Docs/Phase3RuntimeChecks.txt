@@ -1,0 +1,52 @@
+Phase 3 runtime verification — 2026-10-23
+Game: local RimWorld 1.6.4871 rev574 runtime (Version.txt rev573), Windows.
+Active mods: Harmony, Core, disposable Phase 3 verification clone. All DLC disabled.
+Production DLL SHA256: F3F468805C188419A83A794F51067E8CAF37E8ED14E1885AA976764FCCFB5830
+
+Method: separate savedata directory, headless quicktest colony, test-only GameComponent;
+real SaveGame followed by a fresh process loading Autostart.rws. Production DLL is
+byte-identical to the delivered DLL. Test-only harness and chance overrides are NOT shipped.
+Native melee damage step was invoked directly for unarmed and sword hits. For the dodge
+branch test only, hit/dodge chance methods were forced to 100%; native TryCastShot then
+executed its successful-dodge branch. Production chances were not changed.
+
+Executed assertions:
+EH3_PASS: Core and Harmony only
+EH3_PASS: Passive comp and four existing abilities loaded
+EH3_PASS: Three production Harmony hooks installed
+EH3_PASS: External lightning reduced by 75 percent
+EH3_PASS: Self lightning absorbed
+EH3_PASS: EMP reduced by 75 percent
+EH3_PASS: Ordinary flame not misidentified as electricity
+EH3_PASS: Charge caps at five with owner
+EH3_PASS: Expired charge becomes removable
+EH3_PASS: Expired charge restarts at one
+EH3_PASS: Passive melee applies charge and damage
+EH3_PASS: Dance consumes charge
+EH3_PASS: Charged kill refunds 90 ticks
+EH3_PASS: Duplicate death notification cannot refund twice
+EH3_PASS: Dodge handler queues counter with 120 tick cooldown
+EH3_PASS: Counter cooldown prevents duplicate queue
+EH3_PASS: Activation aura selected
+EH3_PASS: Bounded chain queued
+EH3_PASS: Charge owner stacks and expiry survive fresh process reload
+EH3_PASS: Ability cooldown survives reload
+EH3_PASS: Counter cooldown survives reload
+EH3_PASS: Pending chain and counter survive reload
+EH3_PASS: Native unarmed damage verb available
+EH3_PASS: Native unarmed hit triggers electrified postfix
+EH3_PASS: Native equipped melee hit triggers electrified postfix
+EH3_PASS: Native successful dodge branch triggers counter hook
+EH3_PASS: Restored combat queues execute and drain without recursion
+EH3_PASS: Restored counter applies charge
+EH3_COMPLETE
+Static Verify.ps1 passed against local Core XML and assemblies; production build passed.
+An initial reload harness used the wrong capitalization for the vanilla LongSword Def.
+Correcting that TEST-ONLY identifier produced the successful final run above.
+
+Limits: headless Unity logs expected unsupported shaders and texture-atlas errors, so
+this is not a clean graphics-log or visual QA claim. Aura/afterimage appearance,
+exact Heaven combo damage, chain target distribution, caravans, upgrade from a real
+Phase 2 user save, other mod compatibility and large-raid performance still require
+manual acceptance. The reported queue test verifies restoration/execution/draining,
+not a benchmark or exhaustive chain-target test. See Phase3.md for the checklist.

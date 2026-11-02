@@ -1,0 +1,47 @@
+RimWorld 1.6.4871 rev574 runtime; Core + Harmony + supplied Search and Destroy 1.6.
+S&D assembly SHA256: BBF6915521E6324921975874832388C163593E83F87554A3C0001C507DEFD689
+Isolated profile; actual native jobs, pawns, damage, dye, hediffs and save/load.
+
+EH41_PASS: Drafted idle aura stays idle
+EH41_PASS: Empty manual Dance consumes no cooldown
+EH41_PASS: Melee hit marks combat without activation aura
+EH41_PASS: Supplied Search and Destroy 1.6 bridge reads enabled state
+EH41_PASS: Successful ability triggers activation aura
+EH41_PASS: Manual Sever preserves moving job and driver
+EH41_PASS: Instant cast preserves both queued orders with S&D enabled
+EH41_PASS: S&D enabled does not authorize casting during manual move
+EH41_PASS: Automatic Flash preserves original non-forced melee job
+EH41_PASS: Actual S&D approach job recognized
+EH41_PASS: Queued player orders suppress automatic casts
+EH41_PASS: Disabled S&D approach is not assisted
+EH41_PASS: S&D approach Flash preserves its job and driver
+EH41_PASS: Same hero accumulates charge
+EH41_PASS: Second hero resets charge to one
+EH41_PASS: Original hero taking ownership back also resets to one
+EH41_PASS: Another hero cannot consume owned charge
+EH41_PASS: Owner can consume its charge
+EH41_PASS: Consumed charge removed
+EH41_PASS: Dyed Lightning Uniform remains original colors
+EH41_PASS: Gold Lightning Sword remains original colors
+EH41_PASS: Vanilla apparel colors remain unaffected
+EH41_PASS: Passive electrical strike does not EMP stun
+EH41_PASS: Active ability retains EMP against mechanoids
+EH41_PASS: Heaven starts telegraph with cooldown
+EH41_PASS: Target death during telegraph refunds Heaven
+EH41_PASS: Downed target during telegraph refunds Heaven
+EH41_PASS: Player interruption keeps Heaven cooldown spent
+EH41_PASS: Automatic Heaven is not a player-forced job
+EH41_PASS: Successful Heaven impact keeps cooldown spent
+EH41_PASS: Hair toggle available while undrafted
+EH41_PASS: Removing implant restores prior hairstyle
+EH41_COMPLETE
+EH41_PASS: Save fixture channels Heaven
+EH41_SAVED
+EH41_PASS: Telegraph job and cooldown survive fresh-process reload
+EH41_PASS: Saved dye and metallic stuff remain color locked after reload
+EH41_PASS: Transferred charge owner and single stack survive reload
+EH41_PASS: Target death refunds reloaded telegraph
+EH41_PASS: Stored prior hairstyle restores after reload and implant removal
+EH41_RELOAD_COMPLETE
+
+Visual check: Core + Harmony + Elemental Hearts only, without Search and Destroy enabled. Native pawn rendering succeeded with reduced hair in south/east/north orientations across five adult body types. Red-dyed uniform retained its original blue/black artwork. Native render preview: ../LightningVFX-Concepts/Phase41-InGame-Preview.png (outside mod folder). No mod-specific errors in the successful graphical runtime runs. Full mod-list/raid performance is not certified.

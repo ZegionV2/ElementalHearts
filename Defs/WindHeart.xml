@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="EH_ElementalHeartItemBase">
+    <defName>EH_WindHeart</defName>
+    <label>Wind Serum</label>
+    <description>A single-use injection that transforms a pawn into a Wind Ascendant, granting permanent whole-body elemental powers. Self-inject or administer through a medical bill. Only one elemental ascension per pawn.</description>
+    <graphicData>
+      <texPath>Things/Item/Health/ElementalHearts/WindSerum</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_ElementalSerum">
+        <hediff>EH_WindHeart</hediff>
+      </li>
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="EH_ElementalHeartHediffBase">
+    <defName>EH_WindHeart</defName>
+    <label>Wind Ascendant</label>
+    <description>Gale Breathing enhances movement, precision and recovery. A melee weapon unlocks Dust-Cutting Draw, Rising Gale, Turning Swallow and Mountain-Scouring Tempest. Chain different techniques within eight seconds to build Flow; repeated techniques reset it. Wind emphasizes footwork and counters rather than elemental explosions. This is a permanent whole-body condition acquired by injection, not an implanted organ. Evolve into a Cyclone Ascendant after 150 unique hostile non-animal kills and ten Ascendant days.</description>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_WindAbilities">
+        <drawRange>10</drawRange>
+        <tempestRange>6</tempestRange>
+        <guardRange>4</guardRange>
+        <drawDamage>2.8</drawDamage>
+        <riseFirstDamage>1.6</riseFirstDamage>
+        <riseSecondDamage>1.8</riseSecondDamage>
+        <counterDamage>3.5</counterDamage>
+        <counterSweepDamage>1.5</counterSweepDamage>
+        <tempestOpeningDamage>2.5</tempestOpeningDamage>
+        <tempestSecondDamage>2.5</tempestSecondDamage>
+        <tempestFinishDamage>5</tempestFinishDamage>
+        <armorPenetrationFloor>0.5</armorPenetrationFloor>
+        <staggerTicks>60</staggerTicks>
+        <drawCooldown>240</drawCooldown>
+        <riseCooldown>300</riseCooldown>
+        <counterCooldown>420</counterCooldown>
+        <tempestCooldown>900</tempestCooldown>
+        <flowDuration>480</flowDuration>
+        <guardDuration>120</guardDuration>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
+        <sealAfterTicks>240</sealAfterTicks>
+        <healPerSecond>1</healPerSecond>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_CycloneMastery" />
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.35</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.3</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>0.5</offset>
+          </li>
+        </capMods>
+        <painFactor>0.25</painFactor>
+        <totalBleedFactor>0.5</totalBleedFactor>
+        <naturalHealingFactor>3</naturalHealingFactor>
+        <statFactors>
+          <CarryingCapacity>5</CarryingCapacity>
+          <MoveSpeed>1.75</MoveSpeed>
+          <MeleeDamageFactor>2</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.8</MeleeCooldownFactor>
+          <IncomingDamageFactor>0.75</IncomingDamageFactor>
+        </statFactors>
+        <statOffsets>
+          <MeleeHitChance>3</MeleeHitChance>
+          <MeleeDodgeChance>14</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <RecipeDef ParentName="EH_InstallElementalHeartBase">
+    <defName>EH_InstallWindHeart</defName>
+    <label>administer wind ascension serum</label>
+    <description>Inject one dose of wind ascension serum, granting whole-body ascension without organ surgery. Only one element per pawn.</description>
+    <jobString>Injecting wind ascension serum.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EH_WindHeart</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EH_WindHeart</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>EH_WindHeart</addsHediff>
+  </RecipeDef>
+  <RecipeDef ParentName="EH_RemoveElementalHeartBase">
+    <defName>EH_RemoveWindHeart</defName>
+    <label>obsolete wind extraction</label>
+    <description>Legacy save compatibility only. Ascension is a whole-body condition and cannot be extracted as an item.</description>
+    <jobString>Cancelling obsolete extraction.</jobString>
+    <removesHediff>EH_WindHeart</removesHediff>
+  </RecipeDef>
+  <HediffDef>
+    <defName>EH_WindFlow</defName>
+    <label>Flow</label>
+    <description>Alternating sword techniques creates a continuous rhythm. Up to three stacks improve melee recovery and shorten the next technique's cooldown. Expires after eight seconds without a new technique.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>3</maxSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>480</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <label>flowing</label>
+        <statFactors>
+          <MeleeCooldownFactor>0.94</MeleeCooldownFactor>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <label>surging</label>
+        <statFactors>
+          <MeleeCooldownFactor>0.88</MeleeCooldownFactor>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <label>unbroken rhythm</label>
+        <statFactors>
+          <MeleeCooldownFactor>0.82</MeleeCooldownFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EH_WindGuard</defName>
+    <label>Gale Guard</label>
+    <description>Balanced footwork briefly improves melee evasion.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1</initialSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>120</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeDodgeChance>8</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <JobDef>
+    <defName>EH_WindTechnique</defName>
+    <driverClass>ElementalHearts.JobDriver_WindTechnique</driverClass>
+    <reportString>performing a Wind technique.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <ThoughtDef>
+    <defName>EH_WindResolve</defName>
+    <workerClass>ElementalHearts.ThoughtWorker_CycloneResolve</workerClass>
+    <hediff>EH_WindHeart</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>Clear Sky Resolve</label>
+        <description>My breath is steady, and my mind is clear.</description>
+        <baseMoodEffect>30</baseMoodEffect>
+      </li>
+      <li>
+        <label>Cyclone ascension</label>
+        <description>I command the sovereign winds.</description>
+        <baseMoodEffect>50</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

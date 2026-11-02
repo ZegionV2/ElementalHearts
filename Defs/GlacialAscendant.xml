@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_GlacialUniform</defName>
+    <label>glacial royal regalia</label>
+    <description>Indestructible bound ivory Glacial royal regalia: short cloak, gold trim, pale cyan crystal inlays, fully closed shoulder/back lining and compact low neckline. Helmetless RimWorld silhouette with no drawn limbs.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/GlacialRegalia/GlacialRegalia</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>3500</WorkToMake>
+      <Mass>1.2</Mass>
+      <ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <Insulation_Cold>60</Insulation_Cold>
+      <Insulation_Heat>3</Insulation_Heat>
+      <EquipDelay>2</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <drawData>
+        <dataSouth>
+          <offset>(0, 0, 0)</offset>
+        </dataSouth>
+        <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+      </drawData>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/GlacialRegalia/GlacialRegalia</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags Inherit="False">
+      </tags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+    <generateCommonality>0</generateCommonality>
+    <equippedStatOffsets>
+      <MoveSpeed>0.4</MoveSpeed>
+    </equippedStatOffsets>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+    <recipeMaker IsNull="True" />
+  </ThingDef>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>EH_GlacialSword</defName>
+    <label>glacial sovereign sword</label>
+    <description>Indestructible bound Glacial sword with a silver-white blade and crystalline ice inlay. Stored safely when downed or reverted.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/GlacialSword</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <costStuffCount>100</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <WorkToMake>18000</WorkToMake>
+      <Mass>2</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <equippedAngleOffset>0</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>23</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>23</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+  </ThingDef>
+  <HediffDef ParentName="EH_ElementalHeartHediffBase">
+    <defName>EH_GlacialAscendant</defName>
+    <label>Glacial Ascendant</label>
+    <description>The evolved Water lineage: five Glacial techniques, Still Water parry and Returning Tide, preserved Pressure ownership, normal recovery, 500% elemental movement, +50 ascension mood and reinforced evolved defense. Helmetless white/cyan regal gear and an ice halo while transformed and drafted. Glacial Explosion automatically knocks back and freezes a crowd of two or more enemies for five seconds with icy blue tint and mild hypothermia. Bestow grants normal Water ascension directly.</description>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_WaterDefense" />
+      <li Class="ElementalHearts.HediffCompProperties_LightningRecovery">
+        <sealAfterTicks>180</sealAfterTicks>
+        <healPerSecond>2</healPerSecond>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_WaterAbilities" />
+      <li Class="ElementalHearts.HediffCompProperties_GlacialMastery" />
+      <li Class="ElementalHearts.HediffCompProperties_GlacialExplosion" />
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.2</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>0.25</offset>
+          </li>
+        </capMods>
+        <painFactor>0</painFactor>
+        <totalBleedFactor>0.25</totalBleedFactor>
+        <naturalHealingFactor>6</naturalHealingFactor>
+        <hungerRateFactor>0.6</hungerRateFactor>
+        <restFallFactor>0.6</restFallFactor>
+        <statFactors>
+          <CarryingCapacity>10</CarryingCapacity>
+          <MoveSpeed>5</MoveSpeed>
+          <MeleeDamageFactor>2.2</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.7142857</MeleeCooldownFactor>
+          <WorkSpeedGlobal>1.75</WorkSpeedGlobal>
+          <IncomingDamageFactor>0.1</IncomingDamageFactor>
+          <ImmunityGainSpeed>2</ImmunityGainSpeed>
+          <JoyFallRateFactor>0.6</JoyFallRateFactor>
+        </statFactors>
+        <statOffsets>
+          <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+          <MeleeHitChance>4</MeleeHitChance>
+          <MeleeDodgeChance>12</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <JobDef>
+    <defName>EH_EvolveGlacial</defName>
+    <driverClass>ElementalHearts.JobDriver_EvolveAzure</driverClass>
+    <reportString>evolving into a Glacial Ascendant.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+  <HediffDef>
+    <defName>EH_GlacialFrozen</defName>
+    <label>glacial freeze</label>
+    <description>Frozen by Glacial Explosion. Movement and attacks stop for five seconds after a short safe push. Icy-blue tint ends on thaw; brief refreeze immunity follows. Hypothermia recovers normally.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_GlacialFrozen" />
+    </comps>
+  </HediffDef>
+</Defs>

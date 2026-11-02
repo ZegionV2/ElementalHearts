@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <HediffDef>
+    <defName>EH_SearingBrand</defName>
+    <label>Searing Brand</label>
+    <description>Flame embers accumulate up to five stacks. Inferno Waltz detonates the owner's marks; Phoenix Descent consumes them for bonus damage. A different applier starts a new one-stack mark. Marks expire after ten seconds without refresh.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_SearingBrand" />
+    </comps>
+    <stages>
+      <li>
+        <becomeVisible>true</becomeVisible>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

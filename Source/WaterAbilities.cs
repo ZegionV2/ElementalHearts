@@ -1,0 +1,56 @@
+using System;using System.Collections.Generic;using RimWorld;using UnityEngine;using Verse;using Verse.AI;
+namespace ElementalHearts {
+ public sealed class HediffCompProperties_WaterAbilities:HediffCompProperties {public float cooldownFactor=1f;public HediffCompProperties_WaterAbilities(){compClass=typeof(HediffComp_WaterAbilities);}}
+ public sealed class HediffComp_WaterAbilities:HediffComp {
+  internal readonly bool[] autoReady=new bool[4];
+  public List<int> readyAt=new List<int>{0,0,0,0};public int nextAutoCheck,comboStep,comboUntil;
+  public static readonly string[] Names={"Torrent Cleave","Flowing Step","Whirlpool Dance","Ocean's Judgement"};
+  static readonly string[] Details={"Send a foaming water crescent along a ten-cell lane. Its moving front strikes each eligible pawn once, stops at walls and applies Pressure on a damaging surviving hit.","Flow up to six cells to an empty melee landing, leaving a water wake and afterimages. Deliver one empowered cut and apply Pressure on a damaging surviving hit. Walls and occupied landings block the route.","Spin a circular water blade through pawns within four clear cells. Eight frames show one full rotation. One impact per eligible victim, with Pressure on damaging surviving hits; the fading whirlpool deals no repeated damage.","Mark a pawn within twelve clear cells for 0.4 seconds, then drop a concentrated water column and a 2.5-cell controlled burst. Consume up to three of your Pressure stacks on a damaging primary hit for bonus damage. Each victim is hit once."};
+  public static HediffComp_WaterAbilities On(Pawn p){if(p==null||p.health==null)return null;foreach(var h in p.health.hediffSet.hediffs){var c=h.TryGetComp<HediffComp_WaterAbilities>();if(c!=null)return c;}return null;}
+  public bool CanAct{get{var defense=HediffComp_WaterDefense.On(Pawn);return defense!=null&&defense.Able&&Pawn.health.hediffSet.hediffs.Contains(parent)&&!ElementalAnimationBridge.Controlled(Pawn)&&(Pawn.CurJob==null||Pawn.CurJob.def.defName!="EH_WaterCounter");}}
+  public override void CompExposeData(){Scribe_Collections.Look(ref readyAt,"EH_waterAbilityReadyAt",LookMode.Value);if(readyAt==null)readyAt=new List<int>();while(readyAt.Count<4)readyAt.Add(0);if(readyAt.Count>4)readyAt.RemoveRange(4,readyAt.Count-4);Scribe_Values.Look(ref nextAutoCheck,"EH_waterAutoCheck");Scribe_Values.Look(ref comboStep,"EH_waterComboStep");Scribe_Values.Look(ref comboUntil,"EH_waterComboUntil");}
+  public int Cooldown(WaterPower p){var props=(HediffCompProperties_WaterAbilities)this.props;return (int)Math.Ceiling(GlacialEvolution.Cooldown(parent==null?null:parent.pawn,p)*Math.Max(1f,props.cooldownFactor));}
+  public override void CompPostPostAdd(DamageInfo? dinfo){if(Pawn.Spawned){Pawn.Map.GetComponent<MapComponent_WaterAura>().Register(Pawn);if(GlacialEvolution.Active(Pawn))Pawn.Map.GetComponent<MapComponent_GlacialVfx>().Register(Pawn);}}
+  public override void Notify_Spawned(){if(!Pawn.Spawned)return;Pawn.Map.GetComponent<MapComponent_WaterAura>().Register(Pawn);if(GlacialEvolution.Active(Pawn))Pawn.Map.GetComponent<MapComponent_GlacialVfx>().Register(Pawn);}
+  public int Remaining(WaterPower p){return Math.Max(0,readyAt[(int)p]-Find.TickManager.TicksGame);}
+  public bool ValidTarget(WaterPower power,LocalTargetInfo target,bool manual,out IntVec3 landing){landing=IntVec3.Invalid;if(!Pawn.Spawned)return false;using(new ElementalManualTarget(Pawn,manual?target.Pawn:null)){
+   if(power==WaterPower.Whirlpool)return WaterCombat.Targets(Pawn,Pawn.Position,GlacialEvolution.Range(Pawn,power),1).Count>0;
+   if(!target.IsValid||!target.Cell.InBounds(Pawn.Map)||target.Cell.Fogged(Pawn.Map)||Pawn.Position.DistanceToSquared(target.Cell)>GlacialEvolution.Range(Pawn,power)*GlacialEvolution.Range(Pawn,power)||!LightningCombat.ClearLine(Pawn.Position,target.Cell,Pawn.Map))return false;
+   if(power==WaterPower.Torrent)return !target.HasThing||WaterCombat.Eligible(Pawn,target.Pawn);
+   if(!WaterCombat.Eligible(Pawn,target.Pawn))return false;if(power==WaterPower.Judgement)return true;
+   return ThunderstormBlitz.ChooseLanding(Pawn.Position,target.Cell,GlacialEvolution.Range(Pawn,WaterPower.Step),c=>c!=Pawn.Position&&ThunderstormBlitz.Landing(Pawn,c),(a,b)=>ThunderstormBlitz.Path(Pawn,a,b),out landing);
+  }}
+  public bool TryCast(WaterPower power,LocalTargetInfo target,bool automatic){
+   if(!CanAct||Remaining(power)>0)return false;IntVec3 landing;if(!ValidTarget(power,target,!automatic,out landing))return false;
+   var job=JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed(WaterTechnique.JobName),target);job.count=(int)power;job.playerForced=!automatic;
+   if(power==WaterPower.Step)job.targetB=landing;else if(power==WaterPower.Torrent){var end=WaterCombat.EndCell(Pawn,target.Cell);if(end==Pawn.Position)return false;job.targetB=end;}
+   Pawn.jobs.StartJob(job,JobCondition.InterruptForced,resumeCurJobAfterwards:true,cancelBusyStances:true);if(Pawn.CurJob!=job)return false;int now=Find.TickManager.TicksGame;readyAt[(int)power]=now+Cooldown(power);nextAutoCheck=now+12;return true;
+  }
+  public void Completed(WaterPower power){int now=Find.TickManager.TicksGame;comboStep=((int)power+1)%4;comboUntil=now+WaterAbilityRules.ComboLifetime;nextAutoCheck=now+6;}
+  public override void CompPostTickInterval(ref float severityAdjustment,int delta){if(Pawn.Spawned&&Find.TickManager.TicksGame>=nextAutoCheck)WaterAutocast.Evaluate(this);}
+  public override IEnumerable<Gizmo> CompGetGizmos(){
+   if(!ElementalCombatPolicy.Controlled(Pawn))yield break;
+   if(ElementalTeaching.IsHeart(parent))yield return ElementalTeaching.Command(Pawn);
+   for(int i=0;i<4;i++){var power=(WaterPower)i;string description=(GlacialEvolution.Active(Pawn)?GlacialEvolution.Details[i]:Details[i])+"\n\nNo resource cost. Cooldown: "+Cooldown(power)/60f+" seconds. Uses the shared Water Auto Combat On / Off / Non-lethal setting. Up to 16 lane/spin victims or eight secondary burst victims; saved hit tracking prevents repeat impacts. A new order or incapacitation interrupts the technique and spends its cooldown.";
+    Command command;if(power==WaterPower.Whirlpool)command=new Command_Action{action=()=>{if(!TryCast(power,Pawn,false))Messages.Message((GlacialEvolution.Active(Pawn)?"Crystal Vortex":"Whirlpool Dance")+": no eligible target, or the technique is not ready.",MessageTypeDefOf.RejectInput,false);}};
+    else command=new Command_Target{targetingParams=new TargetingParameters{canTargetPawns=true,canTargetLocations=power==WaterPower.Torrent,canTargetBuildings=false,canTargetItems=false,canTargetSelf=false,validator=t=>{IntVec3 cell;return CanAct&&ValidTarget(power,t.Thing!=null?new LocalTargetInfo(t.Thing):new LocalTargetInfo(t.Cell),true,out cell);}},action=t=>{if(!TryCast(power,t,false))Messages.Message((GlacialEvolution.Active(Pawn)?GlacialEvolution.Names[(int)power]:Names[(int)power])+": no valid target or clear route, or the technique is not ready.",MessageTypeDefOf.RejectInput,false);},onUpdate=t=>{if(Pawn.Spawned)GenDraw.DrawRadiusRing(Pawn.Position,GlacialEvolution.Range(Pawn,power));}};
+    command.defaultLabel=GlacialEvolution.Active(Pawn)?GlacialEvolution.Names[i]:Names[i];command.defaultDesc=description;command.icon=GlacialEvolution.Active(Pawn)?GlacialVfx.Icon(i):WaterAbilityVfx.Icon(i);command.groupable=false;if(!CanAct)command.Disable("Requires a conscious, drafted melee-armed pawn free of another controlled action.");else if(Remaining(power)>0)command.Disable("Recharging: "+Math.Ceiling(Remaining(power)/60f)+"s");yield return command;
+   }
+  }
+ }
+ public static class WaterAutocast {
+  public static void Evaluate(HediffComp_WaterAbilities c){
+   var p=c.Pawn;int now=Find.TickManager.TicksGame;c.nextAutoCheck=now+60;var defense=HediffComp_WaterDefense.On(p);if(defense==null||!defense.Active)return;var explosion=HediffComp_GlacialExplosion.On(p);if(explosion!=null&&explosion.Auto()){c.nextAutoCheck=now+12;return;}if(WaterTechnique.Busy(p)||p.CurJob!=null&&p.CurJob.def.defName=="EH_WaterCounter"){c.nextAutoCheck=now+3;return;}if(!c.CanAct||p.CurJob==null)return;
+   bool controlled=ElementalCombatPolicy.Controlled(p);if(controlled&&p.jobs.jobQueue.Count>0)return;if(p.stances.FullBodyBusy&&!(p.stances.curStance is Stance_Cooldown))return;var job=p.CurJob;bool approach=SearchAndDestroyBridge.IsApproach(p,job);if(controlled&&job.def!=JobDefOf.AttackMelee&&job.def!=JobDefOf.Wait_Combat&&!approach)return;
+   if(defense.PendingCounter){c.nextAutoCheck=now+6;return;}bool pursuing=ElementalCombatFlow.Pursuing(p,job);Pawn target=job.targetA.Pawn;if(!ElementalCombatFlow.Hostile(p,target)||p.Position.DistanceToSquared(target.Position)>GlacialEvolution.Range(p,WaterPower.Judgement)*GlacialEvolution.Range(p,WaterPower.Judgement)||!LightningCombat.ClearLine(p.Position,target.Position,p.Map))target=ElementalCombatFlow.Nearest(p,GlacialEvolution.Range(p,WaterPower.Judgement));if(target==null)return;
+   c.nextAutoCheck=now+12;ElementalCombatFlow.Maintain(p,pursuing);bool[] valid=c.autoReady;for(int i=0;i<4;i++){IntVec3 landing;valid[i]=c.Remaining((WaterPower)i)==0&&c.ValidTarget((WaterPower)i,target,false,out landing);}int stage=now<c.comboUntil?c.comboStep:0;int choice=WaterAbilityRules.Choose(stage,WaterPressure.Stacks(p,target),ElementalCombatFlow.CountHostiles(p,4,2),valid);if(choice>=0)c.TryCast((WaterPower)choice,target,true);
+  }
+ }
+ public static class WaterCombat {
+  public static bool Eligible(Pawn p,Pawn target){return LightningCombat.Eligible(p,target);}
+  public static List<Pawn> Targets(Pawn p,IntVec3 center,float radius,int limit){var found=new List<Pawn>();var ids=new HashSet<int>();foreach(var cell in GenRadial.RadialCellsAround(center,radius,true)){if(!cell.InBounds(p.Map)||cell.Fogged(p.Map)||!LightningCombat.ClearLine(center,cell,p.Map))continue;foreach(var thing in cell.GetThingList(p.Map)){var target=thing as Pawn;if(!Eligible(p,target)||!ids.Add(target.thingIDNumber))continue;found.Add(target);if(found.Count>=limit)return found;}}return found;}
+  public static IntVec3 EndCell(Pawn p,IntVec3 clicked){var dir=(clicked-p.Position).ToVector3().normalized;if(dir.sqrMagnitude<.1f)return p.Position;float range=GlacialEvolution.Range(p,WaterPower.Torrent);var requested=(p.Position.ToVector3Shifted()+dir*range).ToIntVec3();var end=p.Position;foreach(var cell in LightningGeometry.Trace(p.Position,requested)){if(!cell.InBounds(p.Map)||cell.Fogged(p.Map)||cell.DistanceToSquared(p.Position)>range*range||!LightningCombat.Open(cell,p.Map))break;end=cell;}return end;}
+  // One pressure-damage packet is one impact. It uses ordinary armor and the shared balance multiplier.
+  public static bool Strike(Pawn p,Pawn target,LightningCombat.AttackProfile profile,float multiplier){if(!Eligible(p,target)||WaterDefense.TryParry(p,target))return false;float amount=profile.damage*multiplier*(GlacialEvolution.Active(p)?1.1f:1f)*ElementalTeaching.DamageFactor(p);if(ElementalNonLethal.TryApply(p,target,amount))return false;var result=target.TakeDamage(new DamageInfo(DefDatabase<DamageDef>.GetNamed("EH_WaterDamage"),amount,Math.Max(.25f,profile.penetration),-1,p,null,profile.weapon,DamageInfo.SourceCategory.ThingOrUnknown,target));return result!=null&&result.totalDamageDealt>0;}
+ }
+}

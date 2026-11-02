@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_CelestialUniform</defName>
+    <label>celestial solar regalia</label>
+    <description>Indestructible ivory/gold celestial regalia with an amber sunburst clasp, gold chains, closed lined mantle and a low neckline. No helmet. Seven fitted native body textures with mirrored west.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CelestialRegalia/CelestialRegalia</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>3500</WorkToMake>
+      <Mass>1.2</Mass>
+      <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>.8</ArmorRating_Blunt>
+      <Insulation_Cold>5</Insulation_Cold>
+      <Insulation_Heat>3</Insulation_Heat>
+      <EquipDelay>2</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <drawData>
+        <dataSouth>
+          <offset>(0, 0, 0)</offset>
+        </dataSouth>
+        <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+      </drawData>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/CelestialRegalia/CelestialRegalia</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags Inherit="False">
+      </tags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+    <generateCommonality>0</generateCommonality>
+    <equippedStatOffsets>
+      <MoveSpeed>0.4</MoveSpeed>
+    </equippedStatOffsets>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+    <recipeMaker IsNull="True" />
+  </ThingDef>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>EH_CelestialSword</defName>
+    <label>Dawnbringer</label>
+    <description>Indestructible silver-white Celestial sword with an amber channel and fitted long ivory grip. Includes a native two-hand Melee Animation profile. Manifested by an Celestial Ascendant.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/CelestialSword</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <costStuffCount>100</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <WorkToMake>18000</WorkToMake>
+      <Mass>2</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <equippedAngleOffset>0</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>30</power>
+        <cooldownTime>2.2</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>30</power>
+        <cooldownTime>2.2</cooldownTime>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+  </ThingDef>
+</Defs>

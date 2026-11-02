@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ModMetaData>
+  <name>Elemental Hearts</name>
+  <author>Elemental Hearts</author>
+  <packageId>elementalhearts.lightningheart</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>MemeGoddess.SearchAndDestroy</li>
+  </loadAfter>
+  <description>ASCEND. TEACH. EVOLVE.
+
+Turn colonists into elemental Ascendants with permanent powers, indestructible bound gear and smooth apparel manifestations.
+
+PLAYABLE NOW
+- Lightning, Flame and Wind ascension, plus Water parries/counters, normal recovery and a complete armor/helmet/sword transformation kit. Water now has Torrent Cleave, Flowing Step, Whirlpool Dance and Ocean's Judgement, with Pressure and shared automatic/non-lethal combos. Water disciples, paired teaching, sword calling and promotion are playable. A subtle six-frame Water aura appears while transformed and drafted. Glacial Ascendant is playable with Glacial Crescent, Frostwake Step, Crystal Vortex, Absolute Zero and automatic Glacial Explosion: knockback, a five-second icy-blue freeze and mild hypothermia.
+- Azure Flame, Thunderstorm, Glacial and Cyclone evolutions, each with five skills, white royal regalia, an indestructible bound sword and no helmet.
+- Blue flame, red lightning, fractured-ice and emerald wind head halos, visible only while transformed and drafted.
+- Thunderstorm rush attacks with red regalia afterimages, lightning streaks and safe clear-route movement.
+- Manual skills and On / Off / Non-lethal Auto Combat. Azure Reversal escapes pressure from two or more nearby enemies; Tempest Dragon chains up to five enemies with straight zigzag dashes and animated red lightning trails, with single-target Auto Combat support.
+- Hair and beard follow progressive helmet appearance/removal during Transform and Revert, while respecting personal headwear.
+- New eligible adult humanoid NPCs from other factions have a configurable 20% chance to spawn as Lightning, Flame, Wind or Water disciples. NPCs use Auto Combat and summon their swords/Ascendant gear automatically.
+- Disciples have one saved 5% near-death combat awakening chance: instant ordinary injury repair, normal ascension, a shockwave and three seconds of heavy protection. Ordinary 50-kill/five-day promotion remains available.
+- Downed Ascendants restore normal clothes and store their summoned gear. Player pawns can Transform again after recovery; eligible NPCs do so automatically.
+
+CYCLONE ASCENDANT - NOW PLAYABLE
+Wind Ascendants can evolve into Cyclone: Vacuum Draw, Skyward Gale, Cyclone Reversal, Heaven-Rending Tempest and Sovereign Cyclone. White/emerald helmetless regal armor, an indestructible fitted sword, subtle head halo, full effect sequences and its own sounds are integrated. Sovereign Cyclone automatically lifts up to six surrounding enemies, then releases one impact and safe outward knockback. No hold damage, spawned tornadoes, terrain/roof/weather changes or building damage. Uses the shared Auto Combat/Non-lethal controls.
+
+GROW YOUR LINEAGE
+Lightning, Flame, Wind and Water Ascendants teach disciples face to face. Evolved Ascendants use Bestow: a four-second paired ritual grants normal Flame/Lightning/Water/Wind ascension directly, skipping discipleship. Both participants wait and face each other. Disciples unlock the Ascend button after 50 credited kills and five days, then perform an interruptible 3.5-second elemental ceremony. NPC disciples start it automatically. Teaching has a three-second animated transfer while both pawns stand still and face each other. DEV: Ascend-Ready only appears in God Mode and fulfills the milestones without granting ascension. Flame/Lightning/Water/Wind Ascendants can choose Azure Flame/Thunderstorm/Glacial/Cyclone after 150 additional unique hostile non-animal kills and ten ascendant days. Evolutions use a dramatic interruptible 4.5-second C# ritual. The original smooth apparel-appearing transformation is restored.
+
+Evolved Ascendants receive 500% elemental movement, +50 ascension mood and strengthened defenses. Normal/evolved Ascendants now gain 5x/10x hauling and caravan carrying power and contribute 2x/3x walking caravan speed, averaged in mixed groups. Ascendants resist illness and food poisoning; evolved Ascendants also resist Melee Animation knockouts. New disciples and Ascendants start with Auto Combat on; existing saved choices remain yours. One elemental lineage per pawn. Evolution preserves saved skills/cooldowns.
+
+DEV: Evolution-Ready sets milestones for unevolved Flame/Lightning/Water/Wind Ascendants. The button follows God Mode (the skull toggle), including cached skills-panel drawing; developer mode alone does not show it. Press the ordinary Evolve button afterward. Disciples have six illustrated kill-progress stages and the God Mode Ascend-Ready control.
+
+Abilities now have distinct short elemental sounds for all nine playable forms, randomized variants, matched dash/charge/impact cues and bounded crowd mixing.
+
+Requires RimWorld 1.6, Core and Harmony; no DLC required. Optional Melee Animation and Search and Destroy compatibility.
+
+Celestial Ascendant is playable: a standalone fully evolved sun/solar/light lineage, acquired through a Celestial Heart crafted at a drug lab after Fabrication or through the developer grant action. Six combat techniques combine Radiance, solar sword forms, Heavenly Zenith and reactive Fake Rainbow. Random Bestow grants normal Lightning/Flame/Wind/Water ascension. Manual Light Travel crosses the world for free in huge light beams. Includes ivory/gold helmetless regalia, Dawnbringer with native Melee Animation support, a subtle solar halo and golden light-sword aura while transformed and drafted. Celestial has stronger defense, 650% movement, +75 mood, 15x carrying and 4x individual caravan contribution. Existing Earth plans remain unimplemented.</description>
+</ModMetaData>

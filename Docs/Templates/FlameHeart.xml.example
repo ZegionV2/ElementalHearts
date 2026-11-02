@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- INACTIVE STARTER: outside Defs, never loaded by RimWorld.
+     Replace temporary Lightning artwork and design Flame stats/comps before activation. -->
+<Defs>
+  <ThingDef ParentName="EH_ElementalHeartItemBase">
+    <defName>EH_FlameHeart</defName>
+    <label>Flame Heart</label>
+    <description>An elemental flame implant. Only one Elemental Heart may be implanted in a pawn.</description>
+    <graphicData>
+      <!-- Temporary existing texture makes early development possible; replace before release. -->
+      <texPath>Things/Item/Health/ElementalHearts/LightningHeart</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+  </ThingDef>
+  <HediffDef ParentName="EH_ElementalHeartHediffBase">
+    <defName>EH_FlameHeart</defName>
+    <label>Flame Heart</label>
+    <description>Flame Heart development shell. Powers are not implemented yet.</description>
+    <spawnThingOnRemoved>EH_FlameHeart</spawnThingOnRemoved>
+    <!-- Add Flame-specific comps and stages here. Do not attach Lightning comps. -->
+  </HediffDef>
+  <RecipeDef ParentName="EH_InstallElementalHeartBase">
+    <defName>EH_InstallFlameHeart</defName>
+    <label>install Flame Heart</label>
+    <description>Install a Flame Heart in the torso, leaving the biological heart intact.</description>
+    <jobString>Installing Flame Heart.</jobString>
+    <ingredients><li><filter><thingDefs><li>EH_FlameHeart</li></thingDefs></filter><count>1</count></li></ingredients>
+    <fixedIngredientFilter><thingDefs><li>EH_FlameHeart</li></thingDefs></fixedIngredientFilter>
+    <addsHediff>EH_FlameHeart</addsHediff>
+  </RecipeDef>
+  <RecipeDef ParentName="EH_RemoveElementalHeartBase">
+    <defName>EH_RemoveFlameHeart</defName>
+    <label>remove Flame Heart</label>
+    <description>Remove the Flame Heart, returning the implant on successful surgery.</description>
+    <jobString>Removing Flame Heart.</jobString>
+    <removesHediff>EH_FlameHeart</removesHediff>
+  </RecipeDef>
+</Defs>

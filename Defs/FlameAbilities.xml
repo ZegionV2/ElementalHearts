@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <DamageDef ParentName="Flame">
+    <defName>EH_Flame</defName>
+    <label>flame</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <deathMessage>{0} was consumed by sovereign flame.</deathMessage>
+    <scaleDamageToBuildingsBasedOnFlammability>false</scaleDamageToBuildingsBasedOnFlammability>
+  </DamageDef>
+  <JobDef>
+    <defName>EH_PhoenixDescent</defName>
+    <driverClass>ElementalHearts.JobDriver_PhoenixDescent</driverClass>
+    <reportString>channeling Phoenix Descent.</reportString>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <neverFleeFromEnemies>true</neverFleeFromEnemies>
+  </JobDef>
+</Defs>

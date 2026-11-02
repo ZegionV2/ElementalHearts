@@ -1,0 +1,16 @@
+RimWorld 1.6 native runtime, isolated profile with Harmony, Core and supplied Search and Destroy 1.6.
+Twelve assertions passed. Existing Phase 4.1 runtime report remains historical; these checks cover the changed behavior.
+
+EH42_PASS: Enabling auto combat adds no extra buttons
+EH42_PASS: Exactly one auto-combat toggle
+EH42_PASS: All four manual skills remain available
+EH42_PASS: Auto Flash closes the gap
+EH42_PASS: Auto Sever hits one adjacent enemy despite old disabled preference
+EH42_PASS: Auto Dance follows against one adjacent enemy
+EH42_PASS: Instant melee rotation preserves original AI job
+EH42_PASS: Auto Heaven participates without a separate toggle
+EH42_PASS: Manual movement still protected
+EH42_PASS: Queued orders still suppress auto combat
+EH42_PASS: Holding-position pawn uses Sever against adjacent enemy
+EH42_PASS: Holding position does not pursue distant enemies
+EH42_COMPLETE

@@ -1,0 +1,230 @@
+[
+    {
+        "Texture":  "Textures\\Effects\\ElementalHearts\\Flame\\Dash.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=8,Y=102,Width=236,Height=94}"
+    },
+    {
+        "Texture":  "Textures\\Effects\\ElementalHearts\\Flame\\Pillar.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=53,Y=11,Width=170,Height=221}"
+    },
+    {
+        "Texture":  "Textures\\Effects\\ElementalHearts\\Flame\\Slash.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=26,Y=28,Width=213,Height=214}"
+    },
+    {
+        "Texture":  "Textures\\Effects\\ElementalHearts\\Flame\\Spin.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=30,Y=23,Width=215,Height=211}"
+    },
+    {
+        "Texture":  "Textures\\Effects\\ElementalHearts\\Flame\\Aura\\Activation.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=53,Y=9,Width=175,Height=221}"
+    },
+    {
+        "Texture":  "Textures\\Effects\\ElementalHearts\\Flame\\Aura\\Combat.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=53,Y=16,Width=170,Height=222}"
+    },
+    {
+        "Texture":  "Textures\\Effects\\ElementalHearts\\Flame\\Aura\\Idle.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=75,Y=60,Width=132,Height=164}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Item\\Equipment\\WeaponMelee\\FlameSword.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=94,Y=11,Width=72,Height=235}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Item\\Health\\ElementalHearts\\FlameHeart.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=42,Y=18,Width=176,Height=224}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=57,Y=70,Width=144,Height=155}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Baby_east.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=89,Y=86,Width=77,Height=125}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Baby_north.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=73,Y=86,Width=110,Height=125}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Baby_south.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=73,Y=86,Width=110,Height=125}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Child_east.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=86,Y=78,Width=84,Height=140}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Child_north.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=68,Y=78,Width=120,Height=140}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Child_south.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=68,Y=78,Width=120,Height=140}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Fat_east.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=61,Y=67,Width=133,Height=162}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Fat_north.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=33,Y=67,Width=190,Height=162}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Fat_south.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=33,Y=67,Width=190,Height=162}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Female_east.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=80,Y=71,Width=96,Height=154}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Female_north.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=59,Y=71,Width=138,Height=154}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Female_south.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=59,Y=71,Width=138,Height=154}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Hulk_east.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=62,Y=58,Width=131,Height=180}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Hulk_north.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=34,Y=58,Width=188,Height=180}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Hulk_south.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=34,Y=58,Width=188,Height=180}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Male_east.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=77,Y=68,Width=102,Height=160}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Male_north.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=55,Y=68,Width=146,Height=160}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Male_south.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=55,Y=68,Width=146,Height=160}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Thin_east.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=86,Y=70,Width=84,Height=156}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Thin_north.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=68,Y=70,Width=120,Height=156}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Apparel\\FlameUniform\\FlameUniform_Thin_south.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=68,Y=70,Width=120,Height=156}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Hair\\FlameHair_east.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=64,Y=53,Width=128,Height=111}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Hair\\FlameHair_north.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=72,Y=53,Width=112,Height=119}"
+    },
+    {
+        "Texture":  "Textures\\Things\\Pawn\\Humanlike\\Hair\\FlameHair_south.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=64,Y=53,Width=128,Height=106}"
+    },
+    {
+        "Texture":  "Textures\\UI\\Abilities\\ElementalHearts\\Flame\\CinderStep.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=19,Y=50,Width=226,Height=155}"
+    },
+    {
+        "Texture":  "Textures\\UI\\Abilities\\ElementalHearts\\Flame\\EmberSlash.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=18,Y=26,Width=235,Height=210}"
+    },
+    {
+        "Texture":  "Textures\\UI\\Abilities\\ElementalHearts\\Flame\\InfernoRing.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=17,Y=13,Width=228,Height=220}"
+    },
+    {
+        "Texture":  "Textures\\UI\\Abilities\\ElementalHearts\\Flame\\PhoenixFall.png",
+        "Size":  "256x256",
+        "TransparentCorners":  true,
+        "VisibleBounds":  "{X=41,Y=3,Width=190,Height=232}"
+    }
+]

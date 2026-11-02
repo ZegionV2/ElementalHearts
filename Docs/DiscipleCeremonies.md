@@ -1,0 +1,15 @@
+# Disciple readiness, teaching and ascension
+
+Disciples now have a normal **Ascend** button. It requires 50 credited kills and five in-game disciple days, plus a conscious, awake pawn free of another elemental action. Player-controlled disciples remain disciples until the player presses Ascend. Eligible NPC disciples start the same ceremony automatically. The separate near-death awakening mechanic is unchanged.
+
+**DEV: Ascend-Ready** replaces DEV: Ascend Disciple. It appears only with God Mode enabled (the skull toggle), matching DEV: Evolution-Ready. It raises the existing kill/day counters to their requirements, without granting a heart or starting a ceremony. Turn God Mode off and press the normal Ascend button whenever ready. Readiness is saved through the existing counters. Higher existing counters are retained. Fresh command lists omit the developer button when God Mode is off; cached commands stop drawing and accepting input, and the readiness action checks God Mode again.
+
+Teaching keeps both participants stationary and facing each other for three seconds. Element-colored rings, a flowing ribbon of sparks and orbiting glints animate the transfer. One disciple condition is granted at completion, followed by a small finishing pulse. An interrupted lesson grants nothing and releases the receiving pawn.
+
+Ascension is a 3.5-second held ceremony with gathering rings, rising elemental sparks, a slight lift, converging energy and a finishing pulse. It grants the matching normal Ascendant heart only after the ceremony finishes. New orders, displacement, incapacitation or loss of discipleship cancel an incomplete ceremony. The pawn keeps their milestone progress and can retry. Ascension participates in the shared elemental busy gate, so abilities, transformations, teaching and Bestow cannot overlap it. The gate follows the actual job and clears as soon as that job ends.
+
+Both jobs save their animation start tick, audio stage and commitment state. Existing mid-teaching saves without the new animation fields recover progress from the native toil timer. Visual pools re-register from active jobs after loading. The new effects use cached meshes/materials, fixed 32-actor and 32-burst buffers, camera/fog culling, the shared effect-opacity control and a 42-tick finishing lifetime. They spawn no damage, terrain, structures or persistent visual objects. Gear, ordinary transformation, combat tuning and existing disciple save keys are preserved.
+
+Validation: all 40 verification scripts passed. An isolated native RimWorld session with Melee Animation passed 80 checks covering all four elements, God Mode visibility/input/action guards, readiness without immediate promotion, player choice, paired facing, mid-teaching/mid-ascension saving/loading, Water cooldown/non-lethal preservation, interruption/retry, NPC auto-ascension and completed-save duplicate/lock prevention. The animation drawing path was exercised during native testing; subjective appearance was not rated through a user-game UI capture.
+
+Restart RimWorld to load the rebuilt assembly.

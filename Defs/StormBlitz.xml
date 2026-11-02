@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <JobDef>
+    <defName>EH_ThunderstormBlitz</defName>
+    <driverClass>ElementalHearts.JobDriver_ThunderstormBlitz</driverClass>
+    <reportString>Blitzing through the enemy.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <neverFleeFromEnemies>true</neverFleeFromEnemies>
+  </JobDef>
+</Defs>

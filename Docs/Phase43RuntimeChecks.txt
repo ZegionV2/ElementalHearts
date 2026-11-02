@@ -1,0 +1,49 @@
+RimWorld 1.6 native runtime; isolated profile with Core, Harmony and Search and Destroy 1.6.
+Final build: behavior assertions, then separate reload and legacy-schema migration checks.
+Audio hooks and resolved samples verified; not a human listening test.
+
+Final behavior
+EH43_PASS: All four cooldowns reduced exactly 50 percent
+EH43_PASS: Moving capacity exceeds 100 percent
+EH43_PASS: Manipulation capacity exceeds 100 percent
+EH43_PASS: Sight capacity exceeds 100 percent
+EH43_PASS: Hearing capacity exceeds 100 percent
+EH43_PASS: Consciousness capacity exceeds 100 percent
+EH43_PASS: Breathing capacity exceeds 100 percent
+EH43_PASS: BloodPumping capacity exceeds 100 percent
+EH43_PASS: BloodFiltration capacity exceeds 100 percent
+EH43_PASS: Metabolism capacity exceeds 100 percent
+EH43_PASS: Talking capacity exceeds 100 percent
+EH43_PASS: Eating capacity exceeds 100 percent
+EH43_PASS: Mental break threshold significantly reduced
+EH43_PASS: Heart grants active +20 mood thought
+EH43_PASS: Leg wound does not reduce Moving capacity
+EH43_PASS: Ordinary injury does not reduce part efficiency
+EH43_PASS: Injury pain suppressed
+EH43_PASS: Both native hit-stagger paths suppressed
+EH43_PASS: Fresh wound is not instantly sealed or healed
+EH43_PASS: Wound automatically seals at three seconds
+EH43_PASS: Recovery heals two HP per second
+EH43_PASS: Non-injury disabling part modifiers remain effective
+EH43_PASS: Permanent scars remain impaired and are not regenerated
+EH43_PASS: Sever plays sharp impact and electrical sound
+EH43_PASS: Flash plays electrical dash sound
+EH43_PASS: Dance plays electrical burst sound
+EH43_PASS: Heaven telegraph plays charge sound
+EH43_PASS: Heaven impact plays thunder and heavy burst
+EH43_PASS: MeleeHit_Metal_Sharp resolves native audio samples
+EH43_PASS: EnergyShield_AbsorbDamage resolves native audio samples
+EH43_PASS: EnergyShield_Reset resolves native audio samples
+EH43_PASS: Explosion_EMP resolves native audio samples
+EH43_PASS: Thunder_OnMap resolves native audio samples
+EH43_PASS: Explosion_Stun resolves native audio samples
+EH43_PASS: Save fixture retains new Heaven cooldown
+EH43_COMPLETE
+Normal reload
+EH43_PASS: New cooldown survives reload without being halved again
+EH43_PASS: Sealed wound survives save/reload
+EH43_RELOAD_COMPLETE
+Legacy migration: doubled remaining cooldowns and no EH_cooldowns43 flag
+EH43_PASS: New cooldown survives reload without being halved again
+EH43_PASS: Sealed wound survives save/reload
+EH43_RELOAD_COMPLETE

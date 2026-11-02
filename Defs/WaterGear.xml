@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_WaterUniform</defName>
+    <label>water uniform</label>
+    <description>Manifested charcoal/navy Water Ascendant armor with silver trim and cyan-white wave inlays. Closed plates and lining cover the body below the short neckline, including the upper back and side seams. Compact pawn armor without drawn limbs. Bound, indestructible equipment; restored personal clothing returns on reversion or downing.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/WaterUniform/WaterUniform</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <costList>
+      <Cloth>60</Cloth>
+      <Steel>20</Steel>
+    </costList>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>3500</WorkToMake>
+      <Mass>1.2</Mass>
+      <ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <Insulation_Cold>5</Insulation_Cold>
+      <Insulation_Heat>3</Insulation_Heat>
+      <EquipDelay>2</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
+        <li>Waist</li>
+        <li>Legs</li>
+        <li>Feet</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/WaterUniform/WaterUniform</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags Inherit="False">
+      </tags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+    <recipeMaker>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>3</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <generateCommonality>0</generateCommonality>
+    <equippedStatOffsets>
+      <MoveSpeed>0.4</MoveSpeed>
+    </equippedStatOffsets>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_WaterHelmet</defName>
+    <label>water ascendant helmet</label>
+    <description>A fully enclosed Water Ascendant helmet with a dark faceplate, cyan visor and silver wave crest. Covers the full head and conceals hair and beard. Bound and indestructible. Restores the original uncovered head or personal helmet on reversion.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/WaterHelmet/WaterHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <costList>
+      <Steel>45</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>2500</WorkToMake>
+      <Mass>1.2</Mass>
+      <ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <EquipDelay>1</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/WaterHelmet/WaterHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <renderSkipFlags>
+        <li>Hair</li>
+        <li>Beard</li>
+      </renderSkipFlags>
+      <tags Inherit="False" />
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+    <recipeMaker>
+      <researchPrerequisite>Machining</researchPrerequisite>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <generateCommonality>0</generateCommonality>
+    <equippedStatOffsets>
+      <MeleeHitChance>5</MeleeHitChance>
+      <MeleeDodgeChance>3</MeleeDodgeChance>
+    </equippedStatOffsets>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+  </ThingDef>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>EH_WaterSword</defName>
+    <label>tidal sword</label>
+    <description>The Tidal Sword, a bound Water Ascendant blade with a pearl-white edge, cyan current inlay and a crescent guard. Uses normal sword strikes and Water counters. Indestructible; safely stored on reversion, downing or death.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/WaterSword</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <costStuffCount>100</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <WorkToMake>18000</WorkToMake>
+      <Mass>2</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <equippedAngleOffset>0</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>23</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>23</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>LongBlades</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+  </ThingDef>
+</Defs>

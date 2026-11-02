@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_AzureFlameUniform</defName>
+    <label>azure royal regalia</label>
+    <description>Manifested ivory royal Azure Flame regalia with a short white cloak, tucked shoulders, gold trim and blue flame accents. Compact low neckline; no sleeves or helmet. Bound to its ascendant. Indestructible elemental equipment: cannot be damaged or worn out. Closed opaque lining covers shoulders, upper back and the torso down to the hem in every direction; compact neckline with no drawn neck or limbs.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/AzureFlameRegalia/AzureFlameRegalia</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>3500</WorkToMake>
+      <Mass>1.2</Mass>
+      <ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <Insulation_Cold>5</Insulation_Cold>
+      <Insulation_Heat>3</Insulation_Heat>
+      <EquipDelay>2</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <drawData>
+        <dataSouth>
+          <offset>(0, 0, 0)</offset>
+        </dataSouth>
+        <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+      </drawData>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/AzureFlameRegalia/AzureFlameRegalia</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags Inherit="False">
+      </tags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+    <generateCommonality>0</generateCommonality>
+    <equippedStatOffsets>
+      <MoveSpeed>0.4</MoveSpeed>
+    </equippedStatOffsets>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+  </ThingDef>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>EH_AzureFlameSword</defName>
+    <label>azure sovereign sword</label>
+    <description>A bound royal Azure Flame sword. Vanishes on knockdown or death and returns on recovery or revival. Indestructible elemental equipment: cannot be damaged or worn out.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/AzureFlameSword</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <costStuffCount>100</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <WorkToMake>18000</WorkToMake>
+      <Mass>2</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <equippedAngleOffset>0</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>23</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>23</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+  </ThingDef>
+  <JobDef>
+    <defName>EH_EvolveAzure</defName>
+    <driverClass>ElementalHearts.JobDriver_EvolveAzure</driverClass>
+    <reportString>Evolving into Azure Flame.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+  <DamageDef ParentName="Flame">
+    <defName>EH_AzureFlameDamage</defName>
+    <label>azure flame</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <scaleDamageToBuildingsBasedOnFlammability>false</scaleDamageToBuildingsBasedOnFlammability>
+    <modExtensions>
+      <li Class="ElementalHearts.ThermalDamageExtension" />
+    </modExtensions>
+  </DamageDef>
+  <HediffDef ParentName="EH_ElementalHeartHediffBase">
+    <defName>EH_AzureFlameAscendant</defName>
+    <label>Azure Flame Ascendant</label>
+    <description>The evolved form of Flame ascension. Replaces the Flame Ascendant condition while preserving its powers, recovery, cooldowns and transformation state. Grants 500% elemental movement, +50 ascension mood, strengthened defenses and Azure abilities. Royal white cloaked attire, elemental blue accents, no helmet. The halo appears only while transformed and drafted.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
+        <sealAfterTicks>180</sealAfterTicks>
+        <healPerSecond>2</healPerSecond>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_FlamePassives">
+        <strikeThermal>0.5</strikeThermal>
+        <chainChance>0.25</chainChance>
+        <chainRadius>4</chainRadius>
+        <chainDamageFactor>0.4</chainDamageFactor>
+        <chainTargets>3</chainTargets>
+        <chainInterval>6</chainInterval>
+        <maxCharge>5</maxCharge>
+        <chargeDuration>600</chargeDuration>
+        <killCooldownReduction>90</killCooldownReduction>
+        <dancePerCharge>0.6</dancePerCharge>
+        <heavenPerCharge>1</heavenPerCharge>
+        <counterChance>0.5</counterChance>
+        <counterCooldown>120</counterCooldown>
+        <resistanceFactor>0.25</resistanceFactor>
+        <thermalDamageDefs>
+          <li>EH_Flame</li>
+          <li>Flame</li>
+          <li>Burn</li>
+        </thermalDamageDefs>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_FlameAbilities">
+        <severRange>10</severRange>
+        <flashRange>15</flashRange>
+        <danceRadius>6</danceRadius>
+        <heavenRange>12</heavenRange>
+        <severCooldown>300</severCooldown>
+        <flashCooldown>360</flashCooldown>
+        <danceCooldown>540</danceCooldown>
+        <heavenCooldown>1350</heavenCooldown>
+        <telegraphTicks>12</telegraphTicks>
+        <staggerTicks>60</staggerTicks>
+        <fistFloor>10</fistFloor>
+        <explosionRadius>3</explosionRadius>
+        <severPhysical>1.5</severPhysical>
+        <severThermal>0.8</severThermal>
+        <flashPhysical>2</flashPhysical>
+        <flashThermal>1</flashThermal>
+        <dancePhysical>1.5</dancePhysical>
+        <danceThermal>1</danceThermal>
+        <heavenPhysical>6</heavenPhysical>
+        <heavenThermal>4</heavenThermal>
+        <explosionThermal>1.5</explosionThermal>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_FlameMastery" />
+      <li Class="ElementalHearts.HediffCompProperties_AzureHalo" />
+      <li Class="ElementalHearts.HediffCompProperties_AzureReversal" />
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.2</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.6</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>0.25</offset>
+          </li>
+        </capMods>
+        <painFactor>0</painFactor>
+        <totalBleedFactor>0.25</totalBleedFactor>
+        <naturalHealingFactor>6</naturalHealingFactor>
+        <hungerRateFactor>0.6</hungerRateFactor>
+        <restFallFactor>0.6</restFallFactor>
+        <statFactors>
+          <CarryingCapacity>10</CarryingCapacity>
+          <MoveSpeed>5.0</MoveSpeed>
+          <MeleeDamageFactor>2.2</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.7142857</MeleeCooldownFactor>
+          <WorkSpeedGlobal>1.75</WorkSpeedGlobal>
+          <IncomingDamageFactor>0.1</IncomingDamageFactor>
+          <ImmunityGainSpeed>2</ImmunityGainSpeed>
+          <JoyFallRateFactor>0.6</JoyFallRateFactor>
+        </statFactors>
+        <statOffsets>
+          <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+          <MeleeHitChance>4</MeleeHitChance>
+          <MeleeDodgeChance>12</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+    <tags Inherit="False">
+      <li>EH_ElementalHeart</li>
+    </tags>
+  </HediffDef>
+  <HediffDef>
+    <defName>EH_AzureCometSlow</defName>
+    <label>azure flame stagger</label>
+    <description>Slowed briefly by a Blue Comet strike.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0.7</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

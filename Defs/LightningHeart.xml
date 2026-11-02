@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="EH_ElementalHeartItemBase">
+    <defName>EH_LightningHeart</defName>
+    <label>Lightning Serum</label>
+    <description>A single-use injection that transforms a pawn into a Lightning Ascendant, granting permanent whole-body elemental powers. Self-inject or administer through a medical bill. Only one elemental ascension per pawn.</description>
+    <graphicData>
+      <texPath>Things/Item/Health/ElementalHearts/LightningSerum</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_ElementalSerum">
+        <hediff>EH_LightningHeart</hediff>
+      </li>
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="EH_ElementalHeartHediffBase">
+    <defName>EH_LightningHeart</defName>
+    <label>Lightning Ascendant</label>
+    <description>Thunder God's Aura greatly enhances capacities, combat and recovery. Suppresses pain and injury-related impairment, stabilizes mood, seals wounds after 3 seconds and heals ordinary injuries. Does not regrow missing parts or cure scars and diseases. This is a permanent whole-body condition acquired by injection, not an implanted organ.</description>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_LightningRecovery">
+        <sealAfterTicks>180</sealAfterTicks>
+        <healPerSecond>2</healPerSecond>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_LightningPassives">
+        <strikeElectrical>0.5</strikeElectrical>
+        <chainChance>0.25</chainChance>
+        <chainRadius>4</chainRadius>
+        <chainDamageFactor>0.4</chainDamageFactor>
+        <chainTargets>3</chainTargets>
+        <chainInterval>6</chainInterval>
+        <maxCharge>5</maxCharge>
+        <chargeDuration>600</chargeDuration>
+        <killCooldownReduction>90</killCooldownReduction>
+        <dancePerCharge>0.6</dancePerCharge>
+        <heavenPerCharge>1</heavenPerCharge>
+        <counterChance>0.5</counterChance>
+        <counterCooldown>120</counterCooldown>
+        <resistanceFactor>0.25</resistanceFactor>
+        <electricalDamageDefs>
+          <li>EH_Lightning</li>
+          <li>EMP</li>
+        </electricalDamageDefs>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_LightningAbilities">
+        <severRange>10</severRange>
+        <flashRange>15</flashRange>
+        <danceRadius>4</danceRadius>
+        <heavenRange>12</heavenRange>
+        <severCooldown>300</severCooldown>
+        <flashCooldown>360</flashCooldown>
+        <danceCooldown>540</danceCooldown>
+        <heavenCooldown>1350</heavenCooldown>
+        <telegraphTicks>12</telegraphTicks>
+        <staggerTicks>60</staggerTicks>
+        <fistFloor>10</fistFloor>
+        <explosionRadius>3</explosionRadius>
+        <severPhysical>1.5</severPhysical>
+        <severElectrical>0.8</severElectrical>
+        <flashPhysical>2</flashPhysical>
+        <flashElectrical>1</flashElectrical>
+        <dancePhysical>1.5</dancePhysical>
+        <danceElectrical>1</danceElectrical>
+        <heavenPhysical>6</heavenPhysical>
+        <heavenElectrical>4</heavenElectrical>
+        <explosionElectrical>1.5</explosionElectrical>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_ThunderstormMastery" />
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.2</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>0.25</offset>
+          </li>
+        </capMods>
+        <painFactor>0</painFactor>
+        <totalBleedFactor>0.25</totalBleedFactor>
+        <naturalHealingFactor>6</naturalHealingFactor>
+        <hungerRateFactor>0.6</hungerRateFactor>
+        <restFallFactor>0.6</restFallFactor>
+        <statFactors>
+          <CarryingCapacity>5</CarryingCapacity>
+          <MoveSpeed>1.6</MoveSpeed>
+          <MeleeDamageFactor>2</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.7142857</MeleeCooldownFactor>
+          <WorkSpeedGlobal>1.75</WorkSpeedGlobal>
+          <IncomingDamageFactor>0.5</IncomingDamageFactor>
+          <ImmunityGainSpeed>2</ImmunityGainSpeed>
+          <JoyFallRateFactor>0.6</JoyFallRateFactor>
+        </statFactors>
+        <statOffsets>
+          <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+          <MeleeHitChance>4</MeleeHitChance>
+          <MeleeDodgeChance>12</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <RecipeDef ParentName="EH_InstallElementalHeartBase">
+    <defName>EH_InstallLightningHeart</defName>
+    <label>administer lightning ascension serum</label>
+    <description>Inject one dose of lightning ascension serum, granting whole-body ascension without organ surgery. Only one element per pawn.</description>
+    <jobString>Injecting lightning ascension serum.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EH_LightningHeart</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EH_LightningHeart</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>EH_LightningHeart</addsHediff>
+  </RecipeDef>
+  <RecipeDef ParentName="EH_RemoveElementalHeartBase">
+    <defName>EH_RemoveLightningHeart</defName>
+    <label>obsolete lightning extraction</label>
+    <description>Legacy save compatibility only. Ascension is a whole-body condition and cannot be extracted as an item.</description>
+    <jobString>Cancelling obsolete extraction.</jobString>
+    <removesHediff>EH_LightningHeart</removesHediff>
+  </RecipeDef>
+  <ThoughtDef>
+    <defName>EH_LightningResolve</defName>
+    <workerClass>ElementalHearts.ThoughtWorker_ThunderstormResolve</workerClass>
+    <hediff>EH_LightningHeart</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>heart of thunder</label>
+        <description>The lightning within steadies my mind. I feel powerful and composed.</description>
+        <baseMoodEffect>30</baseMoodEffect>
+      </li>
+      <li>
+        <label>sovereign of thunder</label>
+        <description>Crimson lightning answers my will. I stand beyond ordinary ascension.</description>
+        <baseMoodEffect>50</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

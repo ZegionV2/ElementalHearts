@@ -1,0 +1,5 @@
+PASS: both Def XML files parse; all six Def parents/direct fields exist in local Core/assembly.
+PASS: all selected stage fields, stats, body/category references, implant/recipe links and texture exist.
+PASS: Harmony dependency/load order and compiled assembly present.
+PASS: ability tuning fields, custom lightning DamageDef, ultimate JobDef and effect atlas exist.
+LIMIT: this script performs static validation. See Phase2.md for separate runtime test results.

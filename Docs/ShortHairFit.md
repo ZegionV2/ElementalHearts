@@ -1,0 +1,1 @@
+Short hair fit update: all three directional textures reduced by 15 percent around the existing head anchor. Fixed artwork colors retained. Texture dimensions and alpha verified; not re-tested in game.

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- INACTIVE example: review balance and test in game before moving into Defs. -->
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_FlameUniform</defName>
+    <label>flame uniform</label>
+    <description>A closed elemental uniform covering the body below the neck, including hands and feet. Its design uses RimWorld's compact pawn silhouette.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/FlameUniform/FlameUniform</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <costList><Cloth>60</Cloth><Steel>20</Steel></costList>
+    <thingCategories><li>ApparelMisc</li></thingCategories>
+    <statBases>
+      <MaxHitPoints>160</MaxHitPoints><WorkToMake>3500</WorkToMake><Mass>1.2</Mass>
+      <ArmorRating_Sharp>0.10</ArmorRating_Sharp><ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+      <Insulation_Cold>5</Insulation_Cold><Insulation_Heat>3</Insulation_Heat><EquipDelay>2</EquipDelay>
+    </statBases>
+    <apparel>
+      <bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li><li>Hands</li><li>Waist</li><li>Legs</li><li>Feet</li></bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/FlameUniform/FlameUniform</wornGraphicPath>
+      <layers><li>Middle</li></layers>
+      <tags><li>IndustrialBasic</li></tags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+    <recipeMaker><researchPrerequisite>ComplexClothing</researchPrerequisite><skillRequirements><Crafting>3</Crafting></skillRequirements></recipeMaker>
+  </ThingDef>
+</Defs>

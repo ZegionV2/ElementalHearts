@@ -1,0 +1,75 @@
+Phase 4 runtime verification — 2026-10-23
+Game: installed RimWorld 1.6.4871 rev574; Core and Harmony only, all DLC disabled.
+Final production DLL SHA256: 7D1C062B6286F88564B2692C54E974323D0E4A37B70D75E91B12FC974847F987
+
+The final DLL is byte-identical to the final reload test's production assembly.
+Test harnesses, forced fixtures and disposable saves are not included in the release.
+Normal installed mod/save files were not overwritten.
+
+Initial Phase 4 integration checks:
+EH4_PASS: Core and Harmony only
+EH4_PASS: Automation and ultimate default off
+EH4_PASS: Three targeted abilities remain available
+EH4_PASS: Optional hair applies
+EH4_PASS: Previous hair restored
+EH4_PASS: Optional uniform equips
+EH4_PASS: Optional sword equips
+EH4_PASS: Native crafting recipes generated for both gear items
+EH4_PASS: Disabled auto does not cast
+EH4_PASS: Movement order is respected
+EH4_PASS: Auto Flash closes distance to ordered target
+EH4_PASS: Auto Flash resumes melee order
+EH4_PASS: Auto Dance triggers when surrounded
+EH4_PASS: Out-of-range Sever is not cast
+EH4_PASS: Auto Sever recognizes enemies in line
+EH4_PASS: Ultimate rejects ordinary human target
+EH4_PASS: Global automation switch prevents casts
+EH4_METRIC: 1000 decision evaluations, 40 pawns: 16.4139 ms
+EH4_SAVED
+
+Final build, fresh-process reload and regression checks:
+EH4_PASS: Global settings survive fresh-process reload
+EH4_PASS: Per-pawn automation permissions survive reload
+EH4_PASS: Cooldown survives reload
+EH4_PASS: All optional gear survives reload
+EH4_PASS: Previous hairstyle survives reload
+EH4_PASS: Automatic ultimate requires per-pawn opt-in
+EH4_PASS: Opted-in ultimate starts against substantial threat
+EH4_PASS: Manual movement interrupts automatic ultimate without refund
+EH4_PASS: Auto Dance works during ordinary melee cooldown
+EH4_METRIC: crowded map, 203 pawns, 1000 decision evaluations: 34.5367 ms
+EH4_PASS: Combat queues enforce caps under burst load
+EH4_PASS: Zero visual opacity does not disable ability damage
+EH4_PASS: Implant removal disables active and passive components
+EH4_SETTINGS_WRITTEN
+EH4_COMPLETE
+
+Actual Phase 3 save loaded under Phase 4:
+EH4_UPGRADE_PASS: Phase 3 implant loads with automation safely off
+EH4_UPGRADE_PASS: Phase 3 cooldown preserved
+EH4_UPGRADE_PASS: Phase 3 charge owner stacks expiry preserved
+EH4_UPGRADE_PASS: Phase 3 counter cooldown preserved
+EH4_UPGRADE_PASS: Phase 3 pending combat queues preserved
+EH4_UPGRADE_COMPLETE
+Asset checks: 42 separate RGBA frames, each 256x256, with transparent pixels;
+21 directional apparel textures (seven body sizes), three hair directions and sword.
+Prepared frame contact sheet visually inspected. Native render-to-texture checks display
+four effect peaks plus five adult pawns with uniform, hair and combat aura. This isolated
+render does not certify seamless playback, terrain blending, all hats/body shapes or
+full combat animation. Hidden-window screenshots were initially blank; explicit camera
+rendering produced the checkable preview.
+
+Performance: the final microbenchmark ran 1,000 forced decision evaluations on a map
+with 203 pawns in 34.5367 ms. This is a bounded CPU check, NOT full raid FPS/TPS or a
+cross-machine performance guarantee. It excludes full fight simulation and rendering.
+Queue saturation checks reached exactly the 32-chain / 64-counter caps.
+
+Headless tests produce expected Unity shader/texture messages with graphics disabled.
+The GPU-enabled isolated render is checked separately. Combat Extended and melee/
+animation overhaul mods were not installed, so no compatibility certification is made.
+Caravans, modded races and removal of all content from an existing save need manual tests.
+
+Test fixture corrections: the first Flash follow-up test used a target that could be
+incapacitated by the strike; a thrumbo verified continuation against a surviving target.
+A cooldown test initially inherited the saved Dance threshold of eight; explicitly
+setting its intended threshold of three made that fixture test the correct condition.

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef Name="EH_ElementalHeartItemBase" ParentName="MechSerumBase" Abstract="True">
+    <techLevel>Archotech</techLevel>
+    <stackLimit>10</stackLimit>
+    <description>A single-use ascension serum. Grants permanent whole-body elemental power. One element per pawn.</description>
+    <thingCategories Inherit="False">
+      <li>Drugs</li>
+    </thingCategories>
+    <statBases>
+      <MarketValue>4000</MarketValue>
+      <Mass>0.2</Mass>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Inject {0_label}</useLabel>
+        <useDuration>180</useDuration>
+        <showUseGizmo>true</showUseGizmo>
+      </li>
+    </comps>
+  </ThingDef>
+  <HediffDef Name="EH_ElementalHeartHediffBase" Abstract="True">
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>1</initialSeverity>
+    <tags>
+      <li>EH_ElementalHeart</li>
+    </tags>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_ElementalAscension" />
+      <li Class="ElementalHearts.HediffCompProperties_ElementalTransform" />
+    </comps>
+  </HediffDef>
+  <RecipeDef Name="EH_InstallElementalHeartBase" Abstract="True">
+    <workerClass>ElementalHearts.Recipe_AdministerElementalSerum</workerClass>
+    <humanlikeOnly>true</humanlikeOnly>
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>false</anesthetize>
+    <workAmount>180</workAmount>
+    <workSkill>Medicine</workSkill>
+    <workSpeedStat>MedicalOperationSpeed</workSpeedStat>
+    <recipeUsers>
+      <li>Human</li>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">CreepJoiner</li>
+    </recipeUsers>
+    <dontShowIfAnyIngredientMissing>true</dontShowIfAnyIngredientMissing>
+    <surgeryOutcomeEffect IsNull="True" />
+  </RecipeDef>
+  <RecipeDef Name="EH_RemoveElementalHeartBase" Abstract="True">
+    <workerClass>ElementalHearts.Recipe_ObsoleteElementalExtraction</workerClass>
+    <humanlikeOnly>true</humanlikeOnly>
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>false</anesthetize>
+    <workAmount>1</workAmount>
+    <surgeryOutcomeEffect IsNull="True" />
+  </RecipeDef>
+</Defs>

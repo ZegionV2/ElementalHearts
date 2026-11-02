@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_LightningVisor</defName>
+    <label>lightning visor</label>
+    <description>A cosmetic Lightning visor. Does not grant combat bonuses or ascension powers. Transformation uses a full-face helmet instead. Indestructible elemental equipment: cannot be damaged or worn out.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/LightningVisor/LightningVisor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <costList>
+      <Steel>25</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>2500</WorkToMake>
+      <Mass>0.3</Mass>
+      <ArmorRating_Sharp>0</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0</ArmorRating_Blunt>
+      <ArmorRating_Heat>0</ArmorRating_Heat>
+      <EquipDelay>1</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Eyes</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LightningVisor/LightningVisor</wornGraphicPath>
+      <layers>
+        <li>EyeCover</li>
+      </layers>
+      <drawData>
+        <defaultData>
+          <layer>61</layer>
+          <offset>(0, 0, 0.07)</offset>
+        </defaultData>
+      </drawData>
+      <renderSkipFlags>
+        <li>None</li>
+      </renderSkipFlags>
+      <tags Inherit="False" />
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+    <recipeMaker>
+      <researchPrerequisite>Machining</researchPrerequisite>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <generateCommonality>0</generateCommonality>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_FlameVisor</defName>
+    <label>flame visor</label>
+    <description>A cosmetic Flame visor. Does not grant combat bonuses or ascension powers. Transformation uses a full-face helmet instead. Indestructible elemental equipment: cannot be damaged or worn out.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/FlameVisor/FlameVisor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <costList>
+      <Steel>25</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>2500</WorkToMake>
+      <Mass>0.3</Mass>
+      <ArmorRating_Sharp>0</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0</ArmorRating_Blunt>
+      <ArmorRating_Heat>0</ArmorRating_Heat>
+      <EquipDelay>1</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Eyes</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/FlameVisor/FlameVisor</wornGraphicPath>
+      <layers>
+        <li>EyeCover</li>
+      </layers>
+      <drawData>
+        <defaultData>
+          <layer>61</layer>
+          <offset>(0, 0, 0.07)</offset>
+        </defaultData>
+      </drawData>
+      <renderSkipFlags>
+        <li>None</li>
+      </renderSkipFlags>
+      <tags Inherit="False" />
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+    <recipeMaker>
+      <researchPrerequisite>Machining</researchPrerequisite>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <generateCommonality>0</generateCommonality>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_WindVisor</defName>
+    <label>wind visor</label>
+    <description>A cosmetic Wind visor. Does not grant combat bonuses or ascension powers. Transformation uses a full-face helmet instead. Indestructible elemental equipment: cannot be damaged or worn out.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/WindVisor/WindVisor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <costList>
+      <Steel>25</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>2500</WorkToMake>
+      <Mass>0.3</Mass>
+      <ArmorRating_Sharp>0</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0</ArmorRating_Blunt>
+      <ArmorRating_Heat>0</ArmorRating_Heat>
+      <EquipDelay>1</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Eyes</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/WindVisor/WindVisor</wornGraphicPath>
+      <layers>
+        <li>EyeCover</li>
+      </layers>
+      <drawData>
+        <defaultData>
+          <layer>61</layer>
+          <offset>(0, 0, 0.07)</offset>
+        </defaultData>
+      </drawData>
+      <renderSkipFlags>
+        <li>None</li>
+      </renderSkipFlags>
+      <tags Inherit="False" />
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+    <recipeMaker>
+      <researchPrerequisite>Machining</researchPrerequisite>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <generateCommonality>0</generateCommonality>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+  </ThingDef>
+</Defs>

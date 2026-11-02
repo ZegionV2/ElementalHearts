@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <JobDef>
+    <defName>EH_AscendDisciple</defName>
+    <driverClass>ElementalHearts.JobDriver_AscendDisciple</driverClass>
+    <reportString>Ascending into an elemental Ascendant.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  <JobDef>
+    <defName>EH_TeachElemental</defName>
+    <driverClass>ElementalHearts.JobDriver_ElementalTeach</driverClass>
+    <reportString>Teaching elemental techniques.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  <HediffDef>
+    <defName>EH_LightningTraining</defName>
+    <label>lightning disciple</label>
+    <description>Learned lightning techniques: 40% ability damage and 50% longer base cooldowns. No ascension stat boosts, recovery, mood bonus or teaching power. Call a bound elemental sword. Unlock the Ascend button after 50 credited kills and five in-game days as a disciple. Press it to perform a 3.5-second ascension ceremony; NPC disciples begin automatically when eligible; serum remains an alternative. One saved 5% chance to awaken into a normal Ascendant when critically hurt in hostile combat, bypassing the kill/day milestones. Awakening repairs ordinary injuries and blood loss, manifests Ascendant gear and releases an elemental shockwave. NPC disciples automatically call their swords.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_LightningAbilities">
+        <severCooldown>450</severCooldown>
+        <flashCooldown>540</flashCooldown>
+        <danceCooldown>810</danceCooldown>
+        <heavenCooldown>2025</heavenCooldown>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_ElementalApprentice" />
+    </comps>
+  </HediffDef>
+  <HediffDef>
+    <defName>EH_FlameTraining</defName>
+    <label>flame disciple</label>
+    <description>Learned flame techniques: 40% ability damage and 50% longer base cooldowns. No ascension stat boosts, recovery, mood bonus or teaching power. Call a bound elemental sword. Unlock the Ascend button after 50 credited kills and five in-game days as a disciple. Press it to perform a 3.5-second ascension ceremony; NPC disciples begin automatically when eligible; serum remains an alternative. One saved 5% chance to awaken into a normal Ascendant when critically hurt in hostile combat, bypassing the kill/day milestones. Awakening repairs ordinary injuries and blood loss, manifests Ascendant gear and releases an elemental shockwave. NPC disciples automatically call their swords.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_FlameAbilities">
+        <severCooldown>450</severCooldown>
+        <flashCooldown>540</flashCooldown>
+        <danceCooldown>810</danceCooldown>
+        <heavenCooldown>2025</heavenCooldown>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_ElementalApprentice" />
+    </comps>
+  </HediffDef>
+  <HediffDef>
+    <defName>EH_WindTraining</defName>
+    <label>wind disciple</label>
+    <description>Learned wind techniques: 40% ability damage and 50% longer base cooldowns. No ascension stat boosts, recovery, mood bonus or teaching power. Call a bound elemental sword. Unlock the Ascend button after 50 credited kills and five in-game days as a disciple. Press it to perform a 3.5-second ascension ceremony; NPC disciples begin automatically when eligible; serum remains an alternative. One saved 5% chance to awaken into a normal Ascendant when critically hurt in hostile combat, bypassing the kill/day milestones. Awakening repairs ordinary injuries and blood loss, manifests Ascendant gear and releases an elemental shockwave. NPC disciples automatically call their swords.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_WindAbilities">
+        <drawCooldown>360</drawCooldown>
+        <riseCooldown>450</riseCooldown>
+        <counterCooldown>630</counterCooldown>
+        <tempestCooldown>1350</tempestCooldown>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_ElementalApprentice" />
+    </comps>
+  </HediffDef>
+  <JobDef>
+    <defName>EH_ReceiveElementalTeaching</defName>
+    <driverClass>ElementalHearts.JobDriver_ReceiveElementalTeaching</driverClass>
+    <reportString>Receiving elemental instruction.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  <HediffDef>
+    <defName>EH_WaterTraining</defName>
+    <label>water disciple</label>
+    <description>Learned Water techniques: 40% damage and 50% longer active cooldowns, with shared Auto Combat / Non-lethal, Still Water and Returning Tide. No ascension stat boosts, healing, mood bonus, armor transformation, aura or teaching power. Call a bound Tidal Sword. Unlock the Ascend button after 50 credited kills and five in-game disciple days. Press it to perform a 3.5-second ascension ceremony; NPC disciples begin automatically when eligible; serum remains an alternative. Promotion preserves Water automation and remaining cooldowns. One saved 5% chance to awaken into a normal Ascendant when critically hurt in hostile combat, bypassing the kill/day milestones. Awakening repairs ordinary injuries and blood loss, manifests Ascendant gear and releases an elemental shockwave. NPC disciples automatically call their swords.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_WaterDefense" />
+      <li Class="ElementalHearts.HediffCompProperties_WaterAbilities">
+        <cooldownFactor>1.5</cooldownFactor>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_ElementalApprentice" />
+    </comps>
+  </HediffDef>
+</Defs>

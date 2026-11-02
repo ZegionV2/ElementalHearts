@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="EH_ElementalHeartItemBase">
+    <defName>EH_FlameHeart</defName>
+    <label>Flame Serum</label>
+    <description>A single-use injection that transforms a pawn into a Flame Ascendant, granting permanent whole-body elemental powers. Self-inject or administer through a medical bill. Only one elemental ascension per pawn.</description>
+    <graphicData>
+      <texPath>Things/Item/Health/ElementalHearts/FlameSerum</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_ElementalSerum">
+        <hediff>EH_FlameHeart</hediff>
+      </li>
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="EH_ElementalHeartHediffBase">
+    <defName>EH_FlameHeart</defName>
+    <label>Flame Ascendant</label>
+    <description>Sovereign Flame Aura greatly enhances capacities, combat and recovery. Suppresses pain and injury-related impairment, stabilizes mood, Phoenix Vitality seals wounds after 3 seconds and heals ordinary injuries. Does not regrow missing parts or cure scars and diseases. This is a permanent whole-body condition acquired by injection, not an implanted organ.</description>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
+        <sealAfterTicks>180</sealAfterTicks>
+        <healPerSecond>2</healPerSecond>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_FlamePassives">
+        <strikeThermal>0.5</strikeThermal>
+        <chainChance>0.25</chainChance>
+        <chainRadius>4</chainRadius>
+        <chainDamageFactor>0.4</chainDamageFactor>
+        <chainTargets>3</chainTargets>
+        <chainInterval>6</chainInterval>
+        <maxCharge>5</maxCharge>
+        <chargeDuration>600</chargeDuration>
+        <killCooldownReduction>90</killCooldownReduction>
+        <dancePerCharge>0.6</dancePerCharge>
+        <heavenPerCharge>1</heavenPerCharge>
+        <counterChance>0.5</counterChance>
+        <counterCooldown>120</counterCooldown>
+        <resistanceFactor>0.25</resistanceFactor>
+        <thermalDamageDefs>
+          <li>EH_Flame</li>
+          <li>Flame</li>
+          <li>Burn</li>
+        </thermalDamageDefs>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_FlameAbilities">
+        <severRange>10</severRange>
+        <flashRange>15</flashRange>
+        <danceRadius>4</danceRadius>
+        <heavenRange>12</heavenRange>
+        <severCooldown>300</severCooldown>
+        <flashCooldown>360</flashCooldown>
+        <danceCooldown>540</danceCooldown>
+        <heavenCooldown>1350</heavenCooldown>
+        <telegraphTicks>12</telegraphTicks>
+        <staggerTicks>60</staggerTicks>
+        <fistFloor>10</fistFloor>
+        <explosionRadius>3</explosionRadius>
+        <severPhysical>1.5</severPhysical>
+        <severThermal>0.8</severThermal>
+        <flashPhysical>2</flashPhysical>
+        <flashThermal>1</flashThermal>
+        <dancePhysical>1.5</dancePhysical>
+        <danceThermal>1</danceThermal>
+        <heavenPhysical>6</heavenPhysical>
+        <heavenThermal>4</heavenThermal>
+        <explosionThermal>1.5</explosionThermal>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_FlameMastery" />
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.2</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>0.25</offset>
+          </li>
+        </capMods>
+        <painFactor>0</painFactor>
+        <totalBleedFactor>0.25</totalBleedFactor>
+        <naturalHealingFactor>6</naturalHealingFactor>
+        <hungerRateFactor>0.6</hungerRateFactor>
+        <restFallFactor>0.6</restFallFactor>
+        <statFactors>
+          <CarryingCapacity>5</CarryingCapacity>
+          <MoveSpeed>1.6</MoveSpeed>
+          <MeleeDamageFactor>2</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.7142857</MeleeCooldownFactor>
+          <WorkSpeedGlobal>1.75</WorkSpeedGlobal>
+          <IncomingDamageFactor>0.5</IncomingDamageFactor>
+          <ImmunityGainSpeed>2</ImmunityGainSpeed>
+          <JoyFallRateFactor>0.6</JoyFallRateFactor>
+        </statFactors>
+        <statOffsets>
+          <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+          <MeleeHitChance>4</MeleeHitChance>
+          <MeleeDodgeChance>12</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <RecipeDef ParentName="EH_InstallElementalHeartBase">
+    <defName>EH_InstallFlameHeart</defName>
+    <label>administer flame ascension serum</label>
+    <description>Inject one dose of flame ascension serum, granting whole-body ascension without organ surgery. Only one element per pawn.</description>
+    <jobString>Injecting flame ascension serum.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EH_FlameHeart</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EH_FlameHeart</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>EH_FlameHeart</addsHediff>
+  </RecipeDef>
+  <RecipeDef ParentName="EH_RemoveElementalHeartBase">
+    <defName>EH_RemoveFlameHeart</defName>
+    <label>obsolete flame extraction</label>
+    <description>Legacy save compatibility only. Ascension is a whole-body condition and cannot be extracted as an item.</description>
+    <jobString>Cancelling obsolete extraction.</jobString>
+    <removesHediff>EH_FlameHeart</removesHediff>
+  </RecipeDef>
+  <ThoughtDef>
+    <defName>EH_FlameResolve</defName>
+    <workerClass>ElementalHearts.ThoughtWorker_FlameResolve</workerClass>
+    <hediff>EH_FlameHeart</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>Furnace Resolve</label>
+        <description>The furnace within steadies my mind. I feel powerful and composed.</description>
+        <baseMoodEffect>30</baseMoodEffect>
+      </li>
+      <li>
+        <label>Azure Sovereignty</label>
+        <description>My azure flame burns with sovereign strength and purpose.</description>
+        <baseMoodEffect>50</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

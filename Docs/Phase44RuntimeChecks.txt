@@ -1,0 +1,8 @@
+Native RimWorld 1.6 graphical test, isolated profile with Harmony/Core/Search and Destroy.
+PASS: short -> original -> restore retains the prior HairDef on five generated pawns.
+PASS: choosing Lightning styles leaves stored red HairColor unchanged.
+PASS: native render shows charcoal/blue short hair despite red HairColor, in south/east/north orientations.
+PASS: directional fit inspected across five vanilla adult body types.
+PASS: no mod-specific errors in graphical test log.
+LIMIT: not every hat, head shape, alien race or animation renderer tested.
+Preview outside mod: LightningVFX-Concepts/Phase44-InGame-Preview.png.

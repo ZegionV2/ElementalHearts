@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_LightningHelmet</defName>
+    <label>lightning ascendant helmet</label>
+    <description>A fully enclosed Lightning Ascendant helmet, matched to its elemental suit. Protects the entire head and carries the transformation combat bonuses. Hair and facial features are concealed beneath its armored faceplate. Indestructible elemental equipment: cannot be damaged or worn out.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/LightningHelmet/LightningHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <costList>
+      <Steel>45</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>2500</WorkToMake>
+      <Mass>1.2</Mass>
+      <ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <EquipDelay>1</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LightningHelmet/LightningHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <renderSkipFlags>
+        <li>Hair</li>
+        <li>Beard</li>
+      </renderSkipFlags>
+      <tags Inherit="False" />
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+    <recipeMaker>
+      <researchPrerequisite>Machining</researchPrerequisite>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <generateCommonality>0</generateCommonality>
+    <equippedStatOffsets>
+      <MeleeHitChance>5</MeleeHitChance>
+      <MeleeDodgeChance>3</MeleeDodgeChance>
+    </equippedStatOffsets>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_FlameHelmet</defName>
+    <label>flame ascendant helmet</label>
+    <description>A fully enclosed Flame Ascendant helmet, matched to its elemental suit. Protects the entire head and carries the transformation combat bonuses. Hair and facial features are concealed beneath its armored faceplate. Indestructible elemental equipment: cannot be damaged or worn out.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/FlameHelmet/FlameHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <costList>
+      <Steel>45</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>2500</WorkToMake>
+      <Mass>1.2</Mass>
+      <ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <EquipDelay>1</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/FlameHelmet/FlameHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <renderSkipFlags>
+        <li>Hair</li>
+        <li>Beard</li>
+      </renderSkipFlags>
+      <tags Inherit="False" />
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+    <recipeMaker>
+      <researchPrerequisite>Machining</researchPrerequisite>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <generateCommonality>0</generateCommonality>
+    <equippedStatOffsets>
+      <MeleeHitChance>5</MeleeHitChance>
+      <MeleeDodgeChance>3</MeleeDodgeChance>
+    </equippedStatOffsets>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_WindHelmet</defName>
+    <label>wind ascendant helmet</label>
+    <description>A fully enclosed Wind Ascendant helmet, matched to its elemental suit. Protects the entire head and carries the transformation combat bonuses. Hair and facial features are concealed beneath its armored faceplate. Indestructible elemental equipment: cannot be damaged or worn out.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/WindHelmet/WindHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <costList>
+      <Steel>45</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>2500</WorkToMake>
+      <Mass>1.2</Mass>
+      <ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <EquipDelay>1</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/WindHelmet/WindHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <renderSkipFlags>
+        <li>Hair</li>
+        <li>Beard</li>
+      </renderSkipFlags>
+      <tags Inherit="False" />
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+    <recipeMaker>
+      <researchPrerequisite>Machining</researchPrerequisite>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <generateCommonality>0</generateCommonality>
+    <equippedStatOffsets>
+      <MeleeHitChance>5</MeleeHitChance>
+      <MeleeDodgeChance>3</MeleeDodgeChance>
+    </equippedStatOffsets>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+  </ThingDef>
+</Defs>

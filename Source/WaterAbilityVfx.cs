@@ -1,0 +1,35 @@
+using System;using UnityEngine;using Verse;
+namespace ElementalHearts {
+ [StaticConstructorOnStartup]
+ public static class WaterAbilityVfx {
+  public static readonly string[] Sequences={"Torrent","Flow","Whirlpool","Judgement","Sigil"};
+  static readonly Material[,] frames=new Material[5,8];static readonly Texture2D[] icons=new Texture2D[4];static readonly Material[,] bodies=new Material[7,3];static readonly string[] bodyNames={"Male","Female","Thin","Fat","Hulk","Child","Baby"};static Material silhouette;
+  public static Texture2D Icon(int n){return icons[n]??(icons[n]=ContentFinder<Texture2D>.Get("UI/Commands/ElementalHearts/Water/"+new[]{"TorrentCleave","FlowingStep","WhirlpoolDance","OceansJudgement"}[n]));}
+  public static Material Frame(int sequence,int n){return frames[sequence,n]??(frames[sequence,n]=MaterialPool.MatFrom("Effects/ElementalHearts/Water/Frames/"+Sequences[sequence]+"_"+n.ToString("00"),ShaderDatabase.Transparent));}
+  public static Material Silhouette{get{return silhouette??(silhouette=MaterialPool.MatFrom("Effects/ElementalHearts/Shared/TransformSilhouette",ShaderDatabase.Transparent));}}
+  public static Material Body(Pawn p){int body=Array.IndexOf(bodyNames,p.story==null||p.story.bodyType==null?"Male":p.story.bodyType.defName);if(body<0)body=0;int dir=p.Rotation==Rot4.North?2:p.Rotation==Rot4.South?0:1;return bodies[body,dir]??(bodies[body,dir]=MaterialPool.MatFrom("Things/Pawn/Humanlike/Apparel/WaterUniform/WaterUniform_"+bodyNames[body]+"_"+new[]{"south","east","north"}[dir],ShaderDatabase.Transparent));}
+  public static void Emit(Pawn owner,int sequence,Vector3 start,Vector3 end,int duration,float size,Pawn follow=null,int ageOffset=0){if(GlacialEvolution.Active(owner)){GlacialVfx.Emit(owner,sequence,start,end,duration,size,follow,ageOffset);return;}if(owner==null||!owner.Spawned||!StormBlitzFx.Visible(owner.Map,start,end))return;owner.Map.GetComponent<MapComponent_WaterAbilityVfx>().Add(sequence,start,end,Find.TickManager.TicksGame,duration,size,owner,follow,ageOffset);}
+  public static void Ghost(Pawn p,Vector3 at){if(GlacialEvolution.Active(p)){GlacialVfx.Ghost(p,at);return;}if(!ElementalHeartsMod.Settings.showAfterimages||!StormBlitzFx.Visible(p.Map,at,at))return;p.Map.GetComponent<MapComponent_WaterAbilityVfx>().Ghost(p,at,Find.TickManager.TicksGame);}
+ }
+ public sealed class MapComponent_WaterAbilityVfx:MapComponent {
+  struct Effect{public bool active;public int sequence,tick,duration;public Vector3 start,end;public float size;public Pawn owner,follow;}
+  struct Echo{public bool active,west;public int tick;public Vector3 at;public float life,width,height;public Material body;}
+  readonly Effect[] effects=new Effect[128];readonly Echo[] echoes=new Echo[32];int effectCursor,echoCursor;MaterialPropertyBlock block;
+  public MapComponent_WaterAbilityVfx(Map map):base(map){}
+  public override void MapComponentTick(){int now=Find.TickManager.TicksGame;if(now%15!=0)return;for(int i=0;i<effects.Length;i++)if(effects[i].active&&now-effects[i].tick>=effects[i].duration)effects[i]=new Effect();for(int i=0;i<echoes.Length;i++)if(echoes[i].active&&now-echoes[i].tick>=14)echoes[i]=new Echo();}
+  public void Add(int sequence,Vector3 start,Vector3 end,int now,int duration,float size,Pawn owner=null,Pawn follow=null,int ageOffset=0){effects[effectCursor]=new Effect{active=true,sequence=sequence,start=start,end=end,tick=now-Math.Max(0,ageOffset),duration=Math.Max(1,duration),size=size,owner=owner,follow=follow};effectCursor=(effectCursor+1)%effects.Length;}
+  public void Ghost(Pawn p,Vector3 at,int now){float life=Mathf.Clamp(Mathf.Sqrt(p.ageTracker.CurLifeStage.bodySizeFactor),.55f,1.25f);var scale=p.story==null||p.story.bodyType==null?Vector2.one:p.story.bodyType.bodyGraphicScale;echoes[echoCursor]=new Echo{active=true,at=at,tick=now,west=p.Rotation==Rot4.West,life=life,width=1.5f*life*scale.x,height=1.5f*life*scale.y,body=HediffComp_ElementalTransform.Active(p)?WaterAbilityVfx.Body(p):null};echoCursor=(echoCursor+1)%echoes.Length;}
+  void Draw(Material material,Mesh mesh,Vector3 at,float width,float height,float angle,Color color,bool underPawn=false){if(!at.ToIntVec3().InBounds(map)||at.ToIntVec3().Fogged(map))return;color.a*=ElementalHeartsMod.Settings.effectOpacity;if(color.a<=.001f)return;at.y=(underPawn?AltitudeLayer.MoteLow:AltitudeLayer.MoteOverhead).AltitudeFor();block.SetColor(ShaderPropertyIDs.Color,color);Graphics.DrawMesh(mesh,Matrix4x4.TRS(at,Quaternion.AngleAxis(angle,Vector3.up),new Vector3(width,1,height)),material,0,null,0,block);}
+  public override void MapComponentDraw(){
+   if(map!=Find.CurrentMap||Find.CameraDriver==null||ElementalHeartsMod.Settings.effectOpacity<=0)return;if(block==null)block=new MaterialPropertyBlock();int now=Find.TickManager.TicksGame;var visible=Find.CameraDriver.CurrentViewRect.ExpandedBy(7);
+   for(int i=0;i<effects.Length;i++){var e=effects[i];if(!e.active)continue;int age=now-e.tick;if(age>=e.duration){effects[i]=new Effect();continue;}
+    if(e.sequence==0&&e.owner!=null){var wave=e.owner.jobs==null?null:e.owner.jobs.curDriver as JobDriver_WaterTechnique;if(wave==null||wave.Power!=WaterPower.Torrent){effects[i]=new Effect();continue;}}
+    if(e.sequence==4&&e.follow!=null){var driver=e.owner==null||e.owner.jobs==null?null:e.owner.jobs.curDriver as JobDriver_WaterTechnique;if(!e.follow.Spawned||e.follow.Map!=map||driver==null||driver.Power!=WaterPower.Judgement||driver.Committed){effects[i]=new Effect();continue;}e.start=e.end=e.follow.DrawPos;}
+    else if(e.sequence==1&&e.follow!=null){if(e.follow.Spawned&&e.follow.Map==map)e.end=e.follow.DrawPos;var driver=e.follow.jobs==null?null:e.follow.jobs.curDriver as JobDriver_WaterTechnique;if(driver==null||!driver.Moving)e.follow=null;}
+    effects[i]=e;float t=age/(float)e.duration;var at=e.sequence==0?Vector3.Lerp(e.start,e.end,Mathf.Clamp01(age/(float)Math.Max(1,e.duration-1))):e.sequence==1?(e.start+e.end)*.5f:e.start;if(!visible.Contains(at.ToIntVec3()))continue;float angle=e.sequence<2?(e.end-e.start).AngleFlat()-90:0,width=e.size,height=e.size;if(e.sequence==1){width=Math.Max(1.2f,(e.end-e.start).magnitude+.4f);height=1.8f;}if(e.sequence==3)height=e.size*1.6f;Draw(WaterAbilityVfx.Frame(e.sequence,WaterAbilityRules.Frame(age,e.duration)),e.sequence==3?LightningVfx.FrameMesh(true):MeshPool.plane10,at,width,height,angle,new Color(1,1,1,.9f*Mathf.Min(1,(1-t)*4)),e.sequence==1||e.sequence==4);
+   }
+   for(int i=0;i<echoes.Length;i++){var e=echoes[i];if(!e.active)continue;float t=(now-e.tick)/14f;if(t>=1){echoes[i]=new Echo();continue;}if(!visible.Contains(e.at.ToIntVec3()))continue;float alpha=(1-t)*(1-t);var at=e.at;at.z+=.18f*e.life;Draw(WaterAbilityVfx.Silhouette,MeshPool.plane10,at,1.8f*e.life,1.8f*e.life,0,new Color(.2f,.8f,1,.25f*alpha));if(e.body!=null)Draw(e.body,MeshPool.plane10,e.at,e.west?-e.width:e.width,e.height,0,new Color(.4f,.9f,1,.4f*alpha));}
+  }
+ }
+}
+

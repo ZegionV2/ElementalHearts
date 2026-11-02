@@ -1,0 +1,11 @@
+# Elemental Hearts — manifested transformation update
+
+Transformation armor, helmet and sword now demanifest into saved storage owned by the heart instead of remaining in the pawn's inventory. Previously issued kit already left in inventory migrates automatically on the next hediff update. Only the specifically tracked issued items move; personal inventory is left alone. The same item instances are reused, preserving damage and quality. Original clothes and weapon are restored on reversion. Removing the heart restores original gear even during surgical anesthesia and removes the issued kit.
+
+Transformation uses a smooth body-first, helmet-second textured reveal, followed by the existing weapon swap and sound. Reversion runs the reveal backward. Native apparel graphics provide body type and directional fit; old clothes remain visible on the unrevealed portion. The former strong silhouette pulse is reduced to a gentle elemental glow. The action remains 90 ticks (1.5 seconds at normal speed), with the equipment swap at tick 60. Existing interruption protection, facing, abilities and combat values remain.
+
+No Lantern's Light dependency or copied assets are needed. The saved storage is included in the pawn's ownership tree. Transition previews are excluded from portraits/statues; map drawing bypasses cached pawn textures only during the transition and restores its drawing requests afterward, including on exceptions.
+
+Validation: built against the installed RimWorld/Harmony assemblies; all 13 existing verification scripts passed. Additional headless tests passed for continuous reversible coverage, body/head sequencing, production parking logic, personal inventory preservation, repeated parking, item identity and hidden-kit availability. The inventory harness uses test owners to suppress callbacks that require Unity. Actual rendering, equipped-to-hidden transfer callbacks, surgical removal, and save/reload require live gameplay validation.
+
+Fully restart RimWorld after installing. Existing saves migrate automatically; no save editing required. The previous DLL and complete Source folder are backed up separately. Saves made with hidden kit storage need this update to preserve those stored items.

@@ -1,0 +1,27 @@
+RimWorld 1.6.4871 runtime smoke test; Core + Harmony only; headless disposable colony.
+Production assembly SHA256: 
+4DC68A9DFA312E359F5775BA5C24D4013F95784980748BAB63B0200582FA5392
+Headless mode cannot verify rendering. The test-only assembly is not distributed.
+
+EH_TEST_PASS: Core and Harmony only, all DLC disabled
+EH_TEST_PASS: Four hediff buttons without DLC
+EH_TEST_PASS: Caster eligible
+EH_TEST_PASS: Sever cooldown starts at 600 ticks
+EH_TEST_PASS: Sever causes injuries
+EH_TEST_PASS: Wall blocks diagonal line
+EH_TEST_PASS: Invalid Flash leaves position and cooldown unchanged
+EH_TEST_PASS: Flash lands adjacent
+EH_TEST_PASS: Flash cooldown 720 ticks
+EH_TEST_PASS: Flash empowered strike
+EH_TEST_PASS: Dance cooldown 1080 ticks
+EH_TEST_PASS: Dance hits both sides
+EH_TEST_PASS: Caster excluded from own damage
+EH_TEST_PASS: Friendly fire disabled by default
+EH_TEST_PASS: Friendly fire opt-in works
+EH_TEST_PASS: Heaven cooldown 2700 ticks
+EH_TEST_PASS: Heaven does not damage before telegraph
+EH_TEST_PASS: Heaven impact after telegraph
+EH_TEST_PASS: Save written; loading it now
+EH_TEST_PASS: Implant abilities restored after load
+EH_TEST_PASS: All four cooldowns survive actual save/load exactly
+EH_TEST_COMPLETE: Core-only combat and save/load smoke passed

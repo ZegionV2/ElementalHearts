@@ -1,0 +1,17 @@
+{
+  "TextureModID": "elementalhearts.lightningheart",
+  "ItemDefName": "EH_WindSword",
+  "ItemType": "ThingDef",
+  "ItemTypeNamespace": "Verse",
+  "OffX": 0.3140625,
+  "OffY": 0.0,
+  "Rotation": 90.0,
+  "ScaleX": 1.2,
+  "ScaleY": 1.2,
+  "FlipX": false,
+  "FlipY": false,
+  "HandsMode": 0,
+  "BladeStart": 0.13125,
+  "BladeEnd": 0.8390625,
+  "MeleeWeaponType": 6
+}

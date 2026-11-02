@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <DamageDef ParentName="Flame">
+    <defName>EH_Lightning</defName>
+    <label>lightning</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <deathMessage>{0} was struck down by lightning.</deathMessage>
+    <impactSoundType>Electric</impactSoundType>
+    <scaleDamageToBuildingsBasedOnFlammability>false</scaleDamageToBuildingsBasedOnFlammability>
+  </DamageDef>
+  <JobDef>
+    <defName>EH_HeavenlyThunder</defName>
+    <driverClass>ElementalHearts.JobDriver_HeavenlyThunder</driverClass>
+    <reportString>channeling Heavenly Thunder.</reportString>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <neverFleeFromEnemies>true</neverFleeFromEnemies>
+  </JobDef>
+</Defs>

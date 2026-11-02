@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>EH_Transform</defName>
+    <driverClass>ElementalHearts.JobDriver_ElementalTransform</driverClass>
+    <reportString>Transforming.</reportString>
+    <playerInterruptible>false</playerInterruptible>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+</Defs>

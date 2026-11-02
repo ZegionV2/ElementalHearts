@@ -1,0 +1,16 @@
+# Local development outputs
+.vs/
+.idea/
+**/bin/
+**/obj/
+*.pdb
+*.user
+*.suo
+*.log
+*.tmp
+__pycache__/
+*.pyc
+# Local credentials and environment configuration
+.env
+.env.*
+!.env.example

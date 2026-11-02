@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <HediffDef ParentName="EH_ElementalHeartHediffBase">
+    <defName>EH_CycloneAscendant</defName>
+    <label>Cyclone Ascendant</label>
+    <description>Evolved Wind ascension: Vacuum Draw, Skyward Gale, Cyclone Reversal, Heaven-Rending Tempest and Sovereign Cyclone. Shared Flow, automation and non-lethal controls; helmetless white/emerald regal armor, indestructible sword, subtle halo while transformed and drafted. 500% elemental movement, +50 mood, strong evolved defense and recovery. Bestow grants normal Wind ascension. Sovereign Cyclone lifts at most six surrounding enemies, then releases one impact and a safe outward push; no terrain, roofs, weather or buildings are damaged.</description>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_WindAbilities">
+        <drawRange>12</drawRange>
+        <tempestRange>8</tempestRange>
+        <guardRange>5</guardRange>
+        <drawDamage>3.2</drawDamage>
+        <riseFirstDamage>1.8</riseFirstDamage>
+        <riseSecondDamage>2</riseSecondDamage>
+        <counterDamage>3.8</counterDamage>
+        <counterSweepDamage>1.5</counterSweepDamage>
+        <tempestOpeningDamage>2.4</tempestOpeningDamage>
+        <tempestSecondDamage>2.4</tempestSecondDamage>
+        <tempestFinishDamage>4</tempestFinishDamage>
+        <armorPenetrationFloor>0.5</armorPenetrationFloor>
+        <staggerTicks>60</staggerTicks>
+        <drawCooldown>210</drawCooldown>
+        <riseCooldown>270</riseCooldown>
+        <counterCooldown>360</counterCooldown>
+        <tempestCooldown>840</tempestCooldown>
+        <flowDuration>480</flowDuration>
+        <guardDuration>150</guardDuration>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
+        <sealAfterTicks>180</sealAfterTicks>
+        <healPerSecond>2</healPerSecond>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_CycloneMastery" />
+      <li Class="ElementalHearts.HediffCompProperties_SovereignCyclone" />
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.2</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>0.25</offset>
+          </li>
+        </capMods>
+        <painFactor>0</painFactor>
+        <totalBleedFactor>0.25</totalBleedFactor>
+        <naturalHealingFactor>6</naturalHealingFactor>
+        <hungerRateFactor>0.6</hungerRateFactor>
+        <restFallFactor>0.6</restFallFactor>
+        <statFactors>
+          <CarryingCapacity>10</CarryingCapacity>
+          <MoveSpeed>5</MoveSpeed>
+          <MeleeDamageFactor>2.2</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.7142857</MeleeCooldownFactor>
+          <WorkSpeedGlobal>1.75</WorkSpeedGlobal>
+          <IncomingDamageFactor>0.1</IncomingDamageFactor>
+          <ImmunityGainSpeed>2</ImmunityGainSpeed>
+          <JoyFallRateFactor>0.6</JoyFallRateFactor>
+        </statFactors>
+        <statOffsets>
+          <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+          <MeleeHitChance>4</MeleeHitChance>
+          <MeleeDodgeChance>12</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <JobDef>
+    <defName>EH_EvolveCyclone</defName>
+    <driverClass>ElementalHearts.JobDriver_EvolveAzure</driverClass>
+    <reportString>evolving into a Cyclone Ascendant.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>EH_SovereignCyclone</defName>
+    <driverClass>ElementalHearts.JobDriver_SovereignCyclone</driverClass>
+    <reportString>commanding a sovereign cyclone.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+  <HediffDef>
+    <defName>EH_CycloneAirbound</defName>
+    <label>airbound</label>
+    <description>Briefly held aloft by sovereign wind. Movement and attacks stop during the lift and safe release push. A target-side recovery window prevents immediate repeated capture.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>1</initialSeverity>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_CycloneAirbound" />
+    </comps>
+  </HediffDef>
+</Defs>

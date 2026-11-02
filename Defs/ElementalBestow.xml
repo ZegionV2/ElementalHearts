@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>EH_BestowElemental</defName>
+    <driverClass>ElementalHearts.JobDriver_ElementalBestow</driverClass>
+    <reportString>Bestowing elemental ascension.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>false</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  <JobDef>
+    <defName>EH_ReceiveElementalBestow</defName>
+    <driverClass>ElementalHearts.JobDriver_ReceiveElementalBestow</driverClass>
+    <reportString>Receiving elemental ascension.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>false</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+</Defs>

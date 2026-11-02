@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+ <HediffDef><defName>EH_AwakeningGrace</defName><label>awakening surge</label><description>A brief surge after awakening. Incoming injury damage is reduced by 90% for three seconds, allowing the newly healed Ascendant to fight back.</description><hediffClass>HediffWithComps</hediffClass><isBad>false</isBad><scenarioCanAdd>false</scenarioCanAdd><initialSeverity>1</initialSeverity><comps><li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>180</disappearsAfterTicks></li></comps><stages><li><statFactors><IncomingDamageFactor>0.1</IncomingDamageFactor></statFactors></li></stages></HediffDef>
+ <DamageDef ParentName="BluntBase"><defName>EH_AwakeningShockwave</defName><label>awakening shockwave</label><workerClass>DamageWorker_AddInjury</workerClass><armorCategory>Blunt</armorCategory><impactSoundType>Blunt</impactSoundType><buildingDamageFactor>0</buildingDamageFactor><deathMessage>{0} was caught in an awakening shockwave.</deathMessage></DamageDef>
+</Defs>

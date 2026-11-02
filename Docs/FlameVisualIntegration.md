@@ -1,0 +1,9 @@
+# Flame visual integration
+
+FlameHeart.xml and FlameGear.xml are active. Spawn EH_FlameHeart in developer mode; surgery installs/removes it using the shared one-Heart rule. It grants a cosmetic aura and Flame hair toggle only. No skill mechanics, passive bonuses, damage effects, fire resistance or automatic combat were added. The Flame sword uses the existing Lightning sword's ordinary melee stats and crafting settings. Apparel retains Lightning's stats/layer/crafting but covers Torso, Shoulders, Arms, Hands, Waist, Legs and Feet.
+
+The showAura and effectOpacity saved settings are shared; their labels now say elemental. Flame uses Lightning's 2.2 draw scale, -0.45 z offset, grounded mesh and MoteOverhead layer. Idle is shown normally; Combat while drafted; Activation briefly after implantation. These are static artwork states, not six-frame animation. Dead/fogged/offscreen pawns are excluded; maximum 64 aura draws. Map cache refreshes every 30 ticks. Removal hides the aura immediately on the next draw. Hair can be selected via the implant gizmo and restored on removal; original hair choice is saved.
+
+Flame gear/hair use the same fixed-color patches as Lightning. Worn textures use the corresponding Lightning body-type bounds; hair matches LightningHairShort. Sword, aura and effect bounds were aligned against Lightning references. Skill icons are included individually plus a 2x2 AbilityAtlas using Lightning's quadrant order. Skill/effect assets are staged for future mechanics; no nonfunctional skill buttons are shown.
+
+Build.ps1 and Verify.ps1 passed, with additional Flame texture/component checks. Not tested in a running game. Restart RimWorld to load the new assembly. In a disposable save, test installation/removal, both hearts' mutual exclusion, save/reload hairstyle restoration, aura visibility/opacity, drafting, all body types, and ordinary sword attacks. Flame has no powers yet.

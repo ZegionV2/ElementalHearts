@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="EH_ElementalHeartItemBase">
+    <defName>EH_WaterHeart</defName>
+    <label>Water Serum</label>
+    <description>A single-use injection that transforms a pawn into a Water Ascendant, granting permanent whole-body elemental powers. Self-inject or administer through a medical bill. Only one elemental ascension per pawn.</description>
+    <graphicData>
+      <texPath>Things/Item/Health/ElementalHearts/WaterSerum</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_ElementalSerum">
+        <hediff>EH_WaterHeart</hediff>
+      </li>
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="EH_ElementalHeartHediffBase">
+    <defName>EH_WaterHeart</defName>
+    <label>Water Ascendant</label>
+    <description>Water ascension grants the ordinary Ascendant capacity/combat/recovery package and +30 ascension mood. Still Water retains its 80% frontal parry chance and 0.75-second recovery per attempt, with Returning Tide counters against nearby hostile attackers. Transform manifests indestructible charcoal/navy water armor, an enclosed helmet and the bound Tidal Sword using the smooth apparel reveal. Revert or downing restores personal clothes and stores the kit safely. Wounds seal after three seconds and ordinary injuries heal; missing parts, scars and diseases are not cured. Torrent Cleave, Flowing Step, Whirlpool Dance and Ocean's Judgement can be used manually or combined through the shared Auto Combat and Non-lethal control. Damaging hits build up to three caster-owned Pressure stacks for eight seconds; Ocean's Judgement consumes them for a stronger primary impact. Teach Water holds both pawns face to face for a three-second lesson. Water disciples call a bound Tidal Sword and use 40% damage with 50% longer active cooldowns, then ascend after 50 credited kills and five disciple days. A subtle six-frame Water aura appears only while transformed and drafted. Glacial evolution unlocks after 150 additional unique hostile non-animal kills and ten ascendant days; Evolve performs the ritual. Permanent whole-body ascension; one element per pawn.</description>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_WaterDefense" />
+      <li Class="ElementalHearts.HediffCompProperties_LightningRecovery">
+        <sealAfterTicks>180</sealAfterTicks>
+        <healPerSecond>2</healPerSecond>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_WaterAbilities" />
+      <li Class="ElementalHearts.HediffCompProperties_GlacialMastery" />
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.2</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>0.25</offset>
+          </li>
+        </capMods>
+        <painFactor>0</painFactor>
+        <totalBleedFactor>0.25</totalBleedFactor>
+        <naturalHealingFactor>6</naturalHealingFactor>
+        <hungerRateFactor>0.6</hungerRateFactor>
+        <restFallFactor>0.6</restFallFactor>
+        <statFactors>
+          <CarryingCapacity>5</CarryingCapacity>
+          <MoveSpeed>1.6</MoveSpeed>
+          <MeleeDamageFactor>2</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.7142857</MeleeCooldownFactor>
+          <WorkSpeedGlobal>1.75</WorkSpeedGlobal>
+          <IncomingDamageFactor>0.5</IncomingDamageFactor>
+          <ImmunityGainSpeed>2</ImmunityGainSpeed>
+          <JoyFallRateFactor>0.6</JoyFallRateFactor>
+        </statFactors>
+        <statOffsets>
+          <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+          <MeleeHitChance>4</MeleeHitChance>
+          <MeleeDodgeChance>12</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <RecipeDef ParentName="EH_InstallElementalHeartBase">
+    <defName>EH_InstallWaterHeart</defName>
+    <label>administer water ascension serum</label>
+    <description>Inject one dose of water ascension serum, granting whole-body ascension without organ surgery. Only one element per pawn.</description>
+    <jobString>Injecting water ascension serum.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EH_WaterHeart</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EH_WaterHeart</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>EH_WaterHeart</addsHediff>
+  </RecipeDef>
+  <RecipeDef ParentName="EH_RemoveElementalHeartBase">
+    <defName>EH_RemoveWaterHeart</defName>
+    <label>obsolete water extraction</label>
+    <description>Legacy save compatibility only. Ascension is a whole-body condition and cannot be extracted as an item.</description>
+    <jobString>Cancelling obsolete extraction.</jobString>
+    <removesHediff>EH_WaterHeart</removesHediff>
+  </RecipeDef>
+  <ThoughtDef>
+    <defName>EH_WaterResolve</defName>
+    <workerClass>ElementalHearts.ThoughtWorker_WaterResolve</workerClass>
+    <hediff>EH_WaterHeart</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>still waters</label>
+        <description>My heart is steady as a quiet lake.</description>
+        <baseMoodEffect>30</baseMoodEffect>
+      </li>
+      <li>
+        <label>glacial sovereignty</label>
+        <description>My heart is calm as eternal ice.</description>
+        <baseMoodEffect>50</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <JobDef>
+    <defName>EH_WaterCounter</defName>
+    <driverClass>ElementalHearts.JobDriver_WaterCounter</driverClass>
+    <reportString>performing Returning Tide.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+</Defs>
