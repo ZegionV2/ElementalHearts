@@ -20,13 +20,13 @@ namespace ElementalHearts {
   static readonly ConditionalWeakTable<Pawn,Throttle> limits=new ConditionalWeakTable<Pawn,Throttle>();
   static readonly ConditionalWeakTable<Map,ElementalAudioBudget> budgets=new ConditionalWeakTable<Map,ElementalAudioBudget>();
   static readonly Dictionary<string,SoundDef> sounds=new Dictionary<string,SoundDef>();
-  static readonly string[] profiles={"Lightning","Flame","Wind","Water","AzureFlame","Thunderstorm","Glacial","Cyclone","Celestial"};
+  static readonly string[] profiles={"Lightning","Flame","Wind","Water","AzureFlame","Thunderstorm","Glacial","Cyclone","Celestial","Earth"};
   static readonly string[,] names=BuildNames();
-  static string[,] BuildNames(){var result=new string[9,7];for(int p=0;p<9;p++)for(int c=0;c<7;c++){int use=c==5&&p!=3&&p!=6&&p!=8?0:c==6&&p!=6&&p!=8?4:c;result[p,c]="EH_Sound_"+profiles[p]+"_"+(ElementalSound)use;}return result;}
+  static string[,] BuildNames(){var result=new string[10,7];for(int p=0;p<10;p++)for(int c=0;c<7;c++){int use=c==5&&p!=3&&p!=6&&p!=8?0:c==6&&p!=6&&p!=8?4:c;result[p,c]="EH_Sound_"+profiles[p]+"_"+(ElementalSound)use;}return result;}
   public static int Profile(Pawn p){
    if(CelestialAscendant.Active(p))return 8;if(CycloneEvolution.Active(p))return 7;if(GlacialEvolution.Active(p))return 6;if(ThunderstormEvolution.Active(p))return 5;if(AzureEvolution.Active(p))return 4;
    string element=ElementalTeaching.Element(p);if(element==null&&ElementalTeaching.Trained(p)){foreach(var h in p.health.hediffSet.hediffs){var disciple=h.TryGetComp<HediffComp_ElementalApprentice>();if(disciple!=null){element=disciple.DiscipleElement;break;}}}
-   return element=="Flame"?1:element=="Wind"?2:element=="Water"?3:0;
+   return element=="Earth"?9:element=="Flame"?1:element=="Wind"?2:element=="Water"?3:0;
   }
   public static string SoundName(Pawn p,ElementalSound cue){return names[Profile(p),Math.Max(0,Math.Min(6,(int)cue))];}
   public static SoundDef Resolve(string name){SoundDef sound;if(sounds.TryGetValue(name,out sound))return sound;sound=DefDatabase<SoundDef>.GetNamedSilentFail(name);if(sounds.Count>=128)sounds.Clear();sounds[name]=sound;return sound;}

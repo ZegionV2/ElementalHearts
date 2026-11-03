@@ -19,6 +19,7 @@ namespace ElementalHearts {
    foreach(var h in new List<Hediff>(p.health.hediffSet.hediffs)){var missing=h as Hediff_MissingPart;if(h is Hediff_Injury&&!((Hediff_Injury)h).IsPermanent()||h.def==HediffDefOf.BloodLoss||missing!=null&&!hit.missingBefore.Contains(missing.Part))p.health.RemoveHediff(h);}
    var l=HediffComp_LightningAbilities.On(p);var f=HediffComp_FlameAbilities.On(p);var w=HediffComp_WindAbilities.On(p);var water=HediffComp_WaterDefense.On(p);bool auto=l!=null?l.autoCombat:f!=null?f.autoCombat:w!=null?w.autoCombat:water!=null&&water.autoCombat,nonLethal=ElementalNonLethal.Enabled(p);
    if(!ElementalAscension.Apply(p,def))return false;auto=true;l=HediffComp_LightningAbilities.On(p);f=HediffComp_FlameAbilities.On(p);w=HediffComp_WindAbilities.On(p);water=HediffComp_WaterDefense.On(p);if(l!=null){l.autoCombat=auto;l.nonLethal=nonLethal;}if(f!=null){f.autoCombat=auto;f.nonLethal=nonLethal;}if(w!=null){w.autoCombat=auto;w.nonLethal=nonLethal;}if(water!=null){water.autoCombat=auto;water.nonLethal=nonLethal;}
+   var earth=HediffComp_EarthAbilities.On(p);if(earth!=null)earth.nonLethal=nonLethal;
    p.health.AddHediff(DefDatabase<HediffDef>.GetNamed("EH_AwakeningGrace"));if(p.stances!=null)p.stances.stunner.StopStun();return true;
   }
  }

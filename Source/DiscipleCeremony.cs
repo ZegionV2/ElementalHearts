@@ -10,7 +10,7 @@ namespace ElementalHearts {
   public static float Energy(int elapsed,int duration){float p=Progress(elapsed,duration);return EvolutionTimeline.Smooth(0,.12f,p)*(1-EvolutionTimeline.Smooth(.92f,1,p));}
   public static int Cue(int elapsed,int duration){float p=Progress(elapsed,duration);return p<.3f?0:p<.78f?1:2;}
   public static float Lift(int elapsed){float p=Progress(elapsed,DiscipleAscension.Duration);return .12f*EvolutionTimeline.Smooth(.25f,.6f,p)*(1-EvolutionTimeline.Smooth(.82f,1,p));}
-  public static Color Accent(string element,float alpha){return element=="Flame"?new Color(1,.36f,.08f,alpha):element=="Wind"?new Color(.38f,1,.68f,alpha):element=="Water"?new Color(.16f,.68f,1,alpha):new Color(.58f,.76f,1,alpha);}
+  public static Color Accent(string element,float alpha){return element=="Earth"?new Color(.9f,.6f,.22f,alpha):element=="Flame"?new Color(1,.36f,.08f,alpha):element=="Wind"?new Color(.38f,1,.68f,alpha):element=="Water"?new Color(.16f,.68f,1,alpha):new Color(.58f,.76f,1,alpha);}
  }
  // Fixed local registries; job drivers own saved timing and re-register after loading.
  public sealed class MapComponent_DiscipleCeremony:MapComponent {

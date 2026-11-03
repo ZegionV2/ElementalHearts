@@ -10,7 +10,7 @@ namespace ElementalHearts {
   public static HediffComp_CycloneAirbound On(Pawn p){if(p==null||p.health==null)return null;foreach(var h in p.health.hediffSet.hediffs){var c=h.TryGetComp<HediffComp_CycloneAirbound>();if(c!=null)return c;}return null;}
   public static bool Active(Pawn p){var c=On(p);return c!=null&&c.Controlling;}
   public static bool Apply(Pawn source,Pawn target,int ticks,int cast){
-   if(!WindCombat.AliveTarget(source,target)||GlacialFreeze.Active(target)||ElementalAnimationBridge.ExternallyControlled(target))return false;
+   if(EarthCombat.Anchored(target)||!WindCombat.AliveTarget(source,target)||GlacialFreeze.Active(target)||ElementalAnimationBridge.ExternallyControlled(target))return false;
    int now=Find.TickManager.TicksGame;var c=On(target);if(c!=null&&(c.Controlling||now<c.immunityUntil))return false;
    if(!target.Map.GetComponent<MapComponent_CycloneControl>().Register(target))return false;
    if(c==null)c=target.health.AddHediff(DefDatabase<HediffDef>.GetNamed("EH_CycloneAirbound")).TryGetComp<HediffComp_CycloneAirbound>();
