@@ -23,9 +23,10 @@ The repository also contains the complete playable mod. To install a source down
 | Flame | Azure Flame | Blue fire, regal gear and reactive Azure Reversal |
 | Wind | Cyclone | Emerald wind, sword forms and bounded airbound cyclone attacks |
 | Water | Glacial | Flowing counters, Pressure combos, ice techniques and Glacial Explosion |
+| Earth | — | Resolve, Faultbreaker charges, faultline cuts, protective Bastion and Mountainfall |
 | â€” | Celestial | Standalone fully evolved sun, solar and light lineage |
 
-Earth remains a documented future plan.
+Earth is a normal helmetless Ascendant. Adamant evolution is not included. Craft Earth serum at a drug lab after Fabrication; see [Earth mechanics and controls](Docs/EarthAscendant.md).
 
 ## Progression and controls
 
@@ -46,7 +47,7 @@ Celestial arrives fully evolved, with ivory/gold regalia, the **Dawnbringer** sw
 
 Six combat techniques combine **Dawncleaver**, **Sunstride**, **Corona Dance**, **Solar Judgment**, **Heavenly Zenith** and the reactive **Fake Rainbow** parry/retreat/counter. Radiance supports automatic finishing combos.
 
-**Bestow (Random)** grants normal Lightning, Flame, Wind or Water ascension. **Light Travel** manually selects a world destination and safe landing cell, with no resource cost or cooldown and large departure/arrival beams.
+**Bestow (Random)** grants normal Lightning, Flame, Wind, Water or Earth ascension. **Light Travel** manually selects a world destination and safe landing cell, with no resource cost or cooldown and large departure/arrival beams.
 
 Recent presentation updates add expanding golden shockwaves, ivory impact flashes, directional particles, layered beam cores and prism accents. These use cached materials and bounded effect pools. Milira is not required.
 
@@ -54,6 +55,8 @@ The latest armor fix raises the visible head above the collar, keeps hair/beard/
 
 ## Documentation
 
+- [Earth Ascendant mechanics, acquisition and combat](Docs/EarthAscendant.md)
+- [Earth build and validation](Docs/EarthValidation.md)
 - [Celestial mechanics and save behavior](Docs/CelestialAscendant.md)
 - [Solar effects and performance limits](Docs/CelestialLightPolish.md)
 - [Head/collar and Thin-body armor correction](Docs/CelestialArmorFitFix.md)

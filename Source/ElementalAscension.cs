@@ -10,6 +10,7 @@ namespace ElementalHearts {
   }
   public static bool Apply(Pawn p,HediffDef def){
    if(!CanReceive(p).Accepted||def==null)return false;
+   var oldEarth=HediffComp_EarthAbilities.On(p);
    var oldWater=HediffComp_WaterDefense.On(p);var oldSkills=HediffComp_WaterAbilities.On(p);
    ElementalBoundSwords.BeforeAscension(p);
    // Replace discipleship before adding the full condition; no two sets of abilities coexist.
@@ -17,6 +18,7 @@ namespace ElementalHearts {
    var ascension=HediffMaker.MakeHediff(def,p,null);ascension.Part=null;p.health.AddHediff(ascension);
    if(def.defName==WaterKitUpgrade.DefName){if(oldWater!=null)oldWater.CopyStateTo(ascension.TryGetComp<HediffComp_WaterDefense>());var skills=ascension.TryGetComp<HediffComp_WaterAbilities>();if(oldSkills!=null&&skills!=null){skills.readyAt=new List<int>(oldSkills.readyAt);skills.nextAutoCheck=oldSkills.nextAutoCheck;skills.comboStep=oldSkills.comboStep;skills.comboUntil=oldSkills.comboUntil;}}
    NpcDisciples.EnableAuto(p);
+   if(def.defName=="EH_EarthHeart"&&oldEarth!=null)oldEarth.CopyStateTo(ascension.TryGetComp<HediffComp_EarthAbilities>());
    return true;
   }
   public static bool Normalize(Hediff h){if(h==null||!ElementalTeaching.IsHeart(h)||h.Part==null)return false;h.Part=null;if(h.pawn!=null&&h.pawn.health!=null)h.pawn.health.Notify_HediffChanged(h);return true;}

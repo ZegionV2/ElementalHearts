@@ -9,8 +9,8 @@ $type=$assembly.GetType('AM.Tweaks.ItemTweakData',$true)
 Add-Type -AssemblyName System.Drawing
 $definitions=@{}
 foreach($path in Get-ChildItem "$root/Defs" -Filter *.xml){[xml]$defs=Get-Content -LiteralPath $path.FullName;foreach($def in $defs.SelectNodes("Defs/ThingDef[starts-with(defName,'EH_')]")){if($def.defName -like '*Sword'){$definitions[$def.defName]=$def}}}
-if($definitions.Count -ne 9){throw 'Expected all nine elemental sword definitions'}
-foreach($element in @('Lightning','Flame','Wind','Water','AzureFlame','Thunderstorm','Glacial','Cyclone','Celestial')){
+if($definitions.Count -ne 10){throw 'Expected all ten elemental sword definitions'}
+foreach($element in @('Lightning','Flame','Wind','Water','AzureFlame','Thunderstorm','Glacial','Cyclone','Celestial','Earth')){
  $name="EH_${element}Sword";$path="$root/WeaponTweakData/${name}_elementalhearts.lightningheart.json"
  $json=Get-Content -LiteralPath $path -Raw | ConvertFrom-Json
  foreach($field in $json.PSObject.Properties.Name){if(!$type.GetField($field)){throw "Unknown installed Melee Animation field: $field"}}
@@ -36,4 +36,4 @@ foreach($element in @('Lightning','Flame','Wind','Water','AzureFlame','Thunderst
  }finally{$bitmap.Dispose()}
  Write-Output "PASS: $element native profile, long sharp/stab flags, both-hand mode, grip alignment and blade bounds."
 }
-Write-Output 'PASS: all nine elemental swords deserialize with the installed Melee Animation loader. Native registry/animation selection is checked separately in-game.'
+Write-Output 'PASS: all ten elemental swords deserialize with the installed Melee Animation loader. Native registry/animation selection is checked separately in-game.'

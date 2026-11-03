@@ -72,7 +72,7 @@ namespace ElementalHearts
             listing.Label("Visual settings do not change combat damage.");
 
             listing.Gap();listing.Label("New humanoid NPCs spawning as disciples: "+Mathf.RoundToInt(Settings.npcDiscipleChance*100)+"%");
-            Settings.npcDiscipleChance=Mathf.Round(listing.Slider(Settings.npcDiscipleChance,0f,1f)*100f)/100f;listing.Label("Eligible adult humanlike pawns from other factions can be Lightning, Flame, Wind or Water disciples. Awakening is one 5% roll at a near-death hostile combat hit. NPCs automatically summon their swords and Ascendant gear.");
+            Settings.npcDiscipleChance=Mathf.Round(listing.Slider(Settings.npcDiscipleChance,0f,1f)*100f)/100f;listing.Label("Eligible adult humanlike pawns from other factions can be Lightning, Flame, Wind, Water or Earth disciples. Awakening is one 5% roll at a near-death hostile combat hit. NPCs automatically summon their swords and Ascendant gear.");
             settingsHeight=listing.CurHeight+12;listing.End();Widgets.EndScrollView();
 
         }

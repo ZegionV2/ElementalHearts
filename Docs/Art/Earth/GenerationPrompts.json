@@ -1,0 +1,151 @@
+{
+  "tool": "Built-in image_gen",
+  "scope": "Normal Earth Ascendant; no Adamant or head halo.",
+  "runtime_export": "256x256 RGBA PNG. Armor aligned row-wise to native Wind body/direction alpha silhouettes; artwork colors remain Earth source colors. Effect frames are six cell exports per sequence.",
+  "assets": [
+    {
+      "name": "EarthUniform_Male_south",
+      "prompt": "Use case: stylized-concept. Asset: one transparent PNG RimWorld apparel texture for NORMAL Earth Ascendant, NOT evolved Adamant. Input image is a silhouette/alignment/style reference only. Replace Wind design with Earth armor: dark warm slate/basalt plates, thick black outlines, muted bronze edging, very small amber fracture seams, layered stone breastplate and waist plates. Match reference silhouette and center placement EXACTLY including the neck opening, hem, shoulder extent and body coverage. Top-down slightly angled orthographic RimWorld pawn clothing overlay, headless, limbless, no head, no arms or hands, no legs, no weapon, no scene, no floor, no cast shadow, no lettering. Flat hand-painted game sprite with simple readable cel shading; no photorealism, no shiny crystals, no halo, no gold regalia, no separate shoulder protrusions. Square canvas with genuine alpha transparency and generous empty margins matching reference. This is the SOUTH/front texture for adult male body.",
+      "references": []
+    },
+    {
+      "name": "EarthUniform_Male_east",
+      "prompt": "Use case: stylized-concept. Asset: ONE transparent PNG RimWorld apparel texture, normal Earth Ascendant. Image 1 is the APPROVED Earth armor DESIGN reference: dark basalt layered plates, muted bronze edging, tiny amber cracks, broad stone shoulders, black cloth underlayer, thick black outlines, simple cel shading. Image 2 is the REQUIRED VIEW and footprint reference. Recreate image 1's exact outfit seen from image 2's direction, matching image 2's compact limbless headless pawn silhouette, coverage, neck opening, canvas position and proportions. No head, hands, legs, face, weapon, halo, crystals or background. Actual transparent alpha, square canvas, preserve reference margins. No text or watermarks. VIEW: EAST, right-facing side view, including closed side panel and rear waist coverage.",
+      "references": [
+        "exec-50e11685-a36f-41cd-8dc3-b76d64cbbf30.png",
+        "WindUniform_Male_east.png"
+      ]
+    },
+    {
+      "name": "EarthUniform_Male_north",
+      "prompt": "Use case: stylized-concept. Asset: ONE transparent PNG RimWorld apparel texture, normal Earth Ascendant. Image 1 is the APPROVED Earth armor DESIGN reference: dark basalt layered plates, muted bronze edging, tiny amber cracks, broad stone shoulders, black cloth underlayer, thick black outlines, simple cel shading. Image 2 is the REQUIRED VIEW and footprint reference. Recreate image 1's exact outfit seen from image 2's direction, matching image 2's compact limbless headless pawn silhouette, coverage, neck opening, canvas position and proportions. No head, hands, legs, face, weapon, halo, crystals or background. Actual transparent alpha, square canvas, preserve reference margins. No text or watermarks. VIEW: NORTH, straight rear view, closed backplate, back of collar, rear belt; no front buckle or front breastplate.",
+      "references": [
+        "exec-50e11685-a36f-41cd-8dc3-b76d64cbbf30.png",
+        "WindUniform_Male_north.png"
+      ]
+    },
+    {
+      "name": "Faultbreaker",
+      "prompt": "Use case: stylized-concept. One transparent PNG game weapon sprite: Faultbreaker, the NORMAL Earth Ascendant's broad stone sword for RimWorld. Input is style and item canvas reference only. Upright full-length weapon centered, tip at top, handle at bottom. Wide straight double-edged basalt greatsword, angular beveled stone cutting edges, one subtle amber fault seam down blade, muted bronze crossguard, dark wrapped grip, stone pommel. Compact bold black outline, simple 2D cel shading, readable at 64 pixels, matching RimWorld inventory art. No hand, no character, no floor, no text, no border, no background or cast shadow, no evolved crystals. Generous transparent margins and genuine alpha.",
+      "references": [
+        "WindSword.png"
+      ]
+    },
+    {
+      "name": "FaultlineCleave",
+      "prompt": "Use case: stylized-concept. Asset: ONE square transparent PNG ability command icon for a RimWorld elemental combat mod, normal Earth Ascendant only. Style reference is the supplied game's icon: an isolated graphic without a button border or background. Bold readable silhouette, simple hand-painted 2D cel shading, thick dark outline, slate stone, bronze and warm amber palette. Center graphic at 75% canvas extent, ample transparent padding. Genuine alpha transparency. No text, no letters, no watermarks, no frame, no floor rectangle, no scene. Avoid tiny detail, lava, fire, ice, crystals and ornate evolved regalia. Subject: a forceful sword-cut shaped jagged ground fissure shooting diagonally from bottom left to upper right, with a single amber crack and a few chunky stone chips. This must read as a narrow directional earth slash, not an explosion.",
+      "references": [
+        "VacuumDraw.png"
+      ]
+    },
+    {
+      "name": "StonebreakerAdvance",
+      "prompt": "Use case: stylized-concept. Asset: ONE square transparent PNG ability command icon for a RimWorld elemental combat mod, normal Earth Ascendant only. Style reference is the supplied game's icon: an isolated graphic without a button border or background. Bold readable silhouette, simple hand-painted 2D cel shading, thick dark outline, slate stone, bronze and warm amber palette. Center graphic at 75% canvas extent, ample transparent padding. Genuine alpha transparency. No text, no letters, no watermarks, no frame, no floor rectangle, no scene. Avoid tiny detail, lava, fire, ice, crystals and ornate evolved regalia. Subject: a broad stone sword lunging horizontally to the right in front of three sweeping brown dust speed trails, a compact wedge of rocky force, unmistakable forward charge icon.",
+      "references": [
+        "VacuumDraw.png"
+      ]
+    },
+    {
+      "name": "BastionStance",
+      "prompt": "Use case: stylized-concept. Asset: ONE square transparent PNG ability command icon for a RimWorld elemental combat mod, normal Earth Ascendant only. Style reference is the supplied game's icon: an isolated graphic without a button border or background. Bold readable silhouette, simple hand-painted 2D cel shading, thick dark outline, slate stone, bronze and warm amber palette. Center graphic at 75% canvas extent, ample transparent padding. Genuine alpha transparency. No text, no letters, no watermarks, no frame, no floor rectangle, no scene. Avoid tiny detail, lava, fire, ice, crystals and ornate evolved regalia. Subject: one broad upright stone shield with a bronze rim, subtly glowing amber central seam and two curved protective bronze arcs framing it. Strong stable defensive silhouette.",
+      "references": [
+        "VacuumDraw.png"
+      ]
+    },
+    {
+      "name": "Mountainfall",
+      "prompt": "Use case: stylized-concept. Asset: ONE square transparent PNG ability command icon for a RimWorld elemental combat mod, normal Earth Ascendant only. Style reference is the supplied game's icon: an isolated graphic without a button border or background. Bold readable silhouette, simple hand-painted 2D cel shading, thick dark outline, slate stone, bronze and warm amber palette. Center graphic at 75% canvas extent, ample transparent padding. Genuine alpha transparency. No text, no letters, no watermarks, no frame, no floor rectangle, no scene. Avoid tiny detail, lava, fire, ice, crystals and ornate evolved regalia. Subject: a central eruption of three blunt jagged basalt slabs rising from an expanding elliptical amber shock ring, several small outward rock chips. Ground-impact ultimate icon, bounded compact radial burst, no meteor or volcano.",
+      "references": [
+        "VacuumDraw.png"
+      ]
+    },
+    {
+      "name": "EarthSerum",
+      "prompt": "Use case: stylized-concept. One isolated transparent PNG inventory sprite for Earth Ascendant serum. Use image as exact design, diagonal orientation and silhouette reference. Change green Wind serum to warm amber liquid, bronze collar accents, dark slate housing, and a simple angular mountain-shaped emblem on the vial. Preserve syringe needle, plunger and transparent chamber. Bold black outlines, clean RimWorld hand-painted 2D icon. Whole object fits with padding, needle lower left, plunger upper right. No text, no lettering, no background or shadow. Actual transparent alpha.",
+      "references": [
+        "WindSerum.png"
+      ]
+    },
+    {
+      "name": "FaultlineTrace",
+      "prompt": "Use case: stylized-concept. Asset: ONE standalone transparent PNG visual effect texture for normal Earth Ascendant in RimWorld. Flat 2D game VFX, top-down perspective, bold hand-painted edges, warm brown dust, slate stone chips and restrained amber energy. Actual transparent alpha with softly fading particle edges; no opaque background, no scene, no character, no weapon, no text, no border, no ground tile rectangle. Keep entire effect within canvas with generous padding. Not a sprite sheet. Will be animated through scaling and fading by game code. No crystals, no lava or fire, no evolved Adamant motifs. Subject: a narrow jagged fissure running horizontally left to right through transparent empty space, separated chunky rock chips tracing a single zigzag amber seam, thin dust fringes. Clear directional travel, long tapered strip centered in a square canvas.",
+      "references": []
+    },
+    {
+      "name": "StonebreakerDustWake",
+      "prompt": "Use case: stylized-concept. Asset: ONE standalone transparent PNG visual effect texture for normal Earth Ascendant in RimWorld. Flat 2D game VFX, top-down perspective, bold hand-painted edges, warm brown dust, slate stone chips and restrained amber energy. Actual transparent alpha with softly fading particle edges; no opaque background, no scene, no character, no weapon, no text, no border, no ground tile rectangle. Keep entire effect within canvas with generous padding. Not a sprite sheet. Will be animated through scaling and fading by game code. No crystals, no lava or fire, no evolved Adamant motifs. Subject: a tapered rushing dust wake, wide at left and narrow at right, three curved tan-brown dust streaks and a few stone chips fading to transparency. Rightward directional motion trail; airy sparse texture, not a solid cloud.",
+      "references": []
+    },
+    {
+      "name": "BastionRing",
+      "prompt": "Use case: stylized-concept. Asset: ONE standalone transparent PNG visual effect texture for normal Earth Ascendant in RimWorld. Flat 2D game VFX, top-down perspective, bold hand-painted edges, warm brown dust, slate stone chips and restrained amber energy. Actual transparent alpha with softly fading particle edges; no opaque background, no scene, no character, no weapon, no text, no border, no ground tile rectangle. Keep entire effect within canvas with generous padding. Not a sprite sheet. Will be animated through scaling and fading by game code. No crystals, no lava or fire, no evolved Adamant motifs. Subject: a complete elliptical protective earth ring viewed obliquely from above. Six low blunt stone plates spaced along the perimeter, a thin bronze-amber luminous circular line connecting them. Empty fully transparent center, no central object. Complete intact ellipse with even margins, no spikes or crystal facets.",
+      "references": []
+    },
+    {
+      "name": "MountainfallImpact",
+      "prompt": "Use case: stylized-concept. Asset: ONE standalone transparent PNG visual effect texture for normal Earth Ascendant in RimWorld. Flat 2D game VFX, top-down perspective, bold hand-painted edges, warm brown dust, slate stone chips and restrained amber energy. Actual transparent alpha with softly fading particle edges; no opaque background, no scene, no character, no weapon, no text, no border, no ground tile rectangle. Keep entire effect within canvas with generous padding. Not a sprite sheet. Will be animated through scaling and fading by game code. No crystals, no lava or fire, no evolved Adamant motifs. Subject: a compact circular seismic impact burst seen from above at a slight angle: five blunt basalt slabs rise around a small amber fissure center, expanding low elliptical dust ring, a few outward rock fragments. Broad radial silhouette, full burst contained, empty space between rock pieces, no ground rectangle.",
+      "references": []
+    },
+    {
+      "name": "Idle",
+      "prompt": "Use case: stylized-concept. Create ONE production game VFX SPRITE SHEET, landscape aspect ratio exactly 3:2, ideally 1536 by 1024. EXACTLY SIX consecutive animation frames in a uniform 3-column by 2-row grid, read left to right top row then bottom row. Each invisible cell is square and the same size, consistent registration and fixed camera. Every cell must have at least 12% transparent inset. NO drawn grid, no cell borders, no labels or numbers. Actual transparent PNG alpha, no black/white/checkerboard background. Never overlap or connect adjacent cells. Flat hand-painted RimWorld sprite style, bold readable shapes and tapered semi-transparent particle edges, dark warm basalt, bronze dust and glowing amber energy, pale cream bright cores only at peaks. NO characters, faces, swords, armor, terrain tile rectangles, text, logo, evolved crystal motif or head halo. Normal Earth Ascendant, not Adamant. Preserve empty space between particles and the background. An aura texture behind a normal RimWorld pawn. Input image 1 is a SHAPE, empty-center and sprite STYLE reference from normal Wind ascendant, not its green color. Keep the same open U-shaped silhouette, elliptical base ring and rising left/right energy curls, with the center empty for the pawn. Replace wind ribbons with heavy bronze dust currents, short angular amber energy bands, small orbiting blunt slate chips. Source image 2 is Earth armor PALETTE reference only; do not draw clothing. Fixed foot anchor at 75% of each cell height, symmetrical broad side currents leaving head/torso unobscured. Six-frame SEAMLESS LOOP: subdued low dust currents rise to shoulder height, a few tiny stones gently bob around ankles; amber base ring breathes softly. Frames show small progressive changes, fixed size and anchor, frame 6 transitions smoothly to frame 1. Calm and compact, low brightness.",
+      "references": [
+        "Idle_00.png",
+        "EarthUniform_Male_south.png"
+      ]
+    },
+    {
+      "name": "Combat",
+      "prompt": "Use case: stylized-concept. Create ONE production game VFX SPRITE SHEET, landscape aspect ratio exactly 3:2, ideally 1536 by 1024. EXACTLY SIX consecutive animation frames in a uniform 3-column by 2-row grid, read left to right top row then bottom row. Each invisible cell is square and the same size, consistent registration and fixed camera. Every cell must have at least 12% transparent inset. NO drawn grid, no cell borders, no labels or numbers. Actual transparent PNG alpha, no black/white/checkerboard background. Never overlap or connect adjacent cells. Flat hand-painted RimWorld sprite style, bold readable shapes and tapered semi-transparent particle edges, dark warm basalt, bronze dust and glowing amber energy, pale cream bright cores only at peaks. NO characters, faces, swords, armor, terrain tile rectangles, text, logo, evolved crystal motif or head halo. Normal Earth Ascendant, not Adamant. Preserve empty space between particles and the background. An aura texture behind a normal RimWorld pawn. Input image 1 is a SHAPE, empty-center and sprite STYLE reference from normal Wind ascendant, not its green color. Keep the same open U-shaped silhouette, elliptical base ring and rising left/right energy curls, with the center empty for the pawn. Replace wind ribbons with heavy bronze dust currents, short angular amber energy bands, small orbiting blunt slate chips. Source image 2 is Earth armor PALETTE reference only; do not draw clothing. Fixed foot anchor at 75% of each cell height, symmetrical broad side currents leaving head/torso unobscured. Six-frame SEAMLESS LOOP: stronger broad angular amber-bronze currents rise on both sides, several small slate chunks orbit outside the empty body silhouette, low dust cyclone at the feet. Stronger than idle but NOT a wall of dust; center fully transparent. Progressive curling movement and sparks around the loop, stable silhouette and anchor, frame 6 transitions to frame 1.",
+      "references": [
+        "Combat_00.png",
+        "EarthUniform_Male_south.png"
+      ]
+    },
+    {
+      "name": "Activation",
+      "prompt": "Use case: stylized-concept. Create ONE production game VFX SPRITE SHEET, landscape aspect ratio exactly 3:2, ideally 1536 by 1024. EXACTLY SIX consecutive animation frames in a uniform 3-column by 2-row grid, read left to right top row then bottom row. Each invisible cell is square and the same size, consistent registration and fixed camera. Every cell must have at least 12% transparent inset. NO drawn grid, no cell borders, no labels or numbers. Actual transparent PNG alpha, no black/white/checkerboard background. Never overlap or connect adjacent cells. Flat hand-painted RimWorld sprite style, bold readable shapes and tapered semi-transparent particle edges, dark warm basalt, bronze dust and glowing amber energy, pale cream bright cores only at peaks. NO characters, faces, swords, armor, terrain tile rectangles, text, logo, evolved crystal motif or head halo. Normal Earth Ascendant, not Adamant. Preserve empty space between particles and the background. An aura texture behind a normal RimWorld pawn. Input image 1 is a SHAPE, empty-center and sprite STYLE reference from normal Wind ascendant, not its green color. Keep the same open U-shaped silhouette, elliptical base ring and rising left/right energy curls, with the center empty for the pawn. Replace wind ribbons with heavy bronze dust currents, short angular amber energy bands, small orbiting blunt slate chips. Source image 2 is Earth armor PALETTE reference only; do not draw clothing. Fixed foot anchor at 75% of each cell height, symmetrical broad side currents leaving head/torso unobscured. Six-frame ONE-SHOT transformation surge. Frame1 tiny amber foot sigil and low dust; frame2 ring widens and stones lift; frame3 rising side currents; frame4 full-height Earth energy crest, bright cream-amber highlights; frame5 crest breaks into dust and stone motes; frame6 resolves to a restrained idle-sized open aura. Keep same registration in every cell. No persistent physical rock wall.",
+      "references": [
+        "Activation_00.png",
+        "EarthUniform_Male_south.png"
+      ]
+    },
+    {
+      "name": "FaultlineCleave",
+      "prompt": "Use case: stylized-concept. Create ONE production game VFX SPRITE SHEET, landscape aspect ratio exactly 3:2, ideally 1536 by 1024. EXACTLY SIX consecutive animation frames in a uniform 3-column by 2-row grid, read left to right top row then bottom row. Each invisible cell is square and the same size, consistent registration and fixed camera. Every cell must have at least 12% transparent inset. NO drawn grid, no cell borders, no labels or numbers. Actual transparent PNG alpha, no black/white/checkerboard background. Never overlap or connect adjacent cells. Flat hand-painted RimWorld sprite style, bold readable shapes and tapered semi-transparent particle edges, dark warm basalt, bronze dust and glowing amber energy, pale cream bright cores only at peaks. NO characters, faces, swords, armor, terrain tile rectangles, text, logo, evolved crystal motif or head halo. Normal Earth Ascendant, not Adamant. Preserve empty space between particles and the background. Input image1 is slash STYLE reference only, image2 is Earth ability theme reference. Animate a narrow diagonal-to-horizontal earth-energy sword crescent with a jagged amber fissure and small basalt chips. FIXED center and left-to-right direction. Six frames: small gathering spark; short opening crescent; wide bright cutting arc; peak arc with a few angular rock fragments; arc breaks into amber sparks and dust; almost dissipated wisps. No sword or pawn. Open airy crescent, not a solid patch of ground. No persistent terrain.",
+      "references": [
+        "DustCuttingDraw_02.png",
+        "FaultlineCleave.png"
+      ]
+    },
+    {
+      "name": "StonebreakerAdvance",
+      "prompt": "Use case: stylized-concept. Create ONE production game VFX SPRITE SHEET, landscape aspect ratio exactly 3:2, ideally 1536 by 1024. EXACTLY SIX consecutive animation frames in a uniform 3-column by 2-row grid, read left to right top row then bottom row. Each invisible cell is square and the same size, consistent registration and fixed camera. Every cell must have at least 12% transparent inset. NO drawn grid, no cell borders, no labels or numbers. Actual transparent PNG alpha, no black/white/checkerboard background. Never overlap or connect adjacent cells. Flat hand-painted RimWorld sprite style, bold readable shapes and tapered semi-transparent particle edges, dark warm basalt, bronze dust and glowing amber energy, pale cream bright cores only at peaks. NO characters, faces, swords, armor, terrain tile rectangles, text, logo, evolved crystal motif or head halo. Normal Earth Ascendant, not Adamant. Preserve empty space between particles and the background. Input image is a STYLE and palette reference for Earth dust motion. Animate a compact RIGHTWARD rushing charge wake of curved bronze dust streaks, short amber energy edges and a few chunky stone chips, with an empty leading tip where the pawn would be. Six frames: gathering short trail; initial acceleration; long tapered wake; maximum sweeping wake; separated trailing dust fragments; faint dissipating wisps. All frames in the same local square viewport, no long streak crossing cell boundaries. No sword or pawn. Readable simple game VFX.",
+      "references": [
+        "StonebreakerDustWake.png"
+      ]
+    },
+    {
+      "name": "BastionStance",
+      "prompt": "Use case: stylized-concept. Create ONE production game VFX SPRITE SHEET, landscape aspect ratio exactly 3:2, ideally 1536 by 1024. EXACTLY SIX consecutive animation frames in a uniform 3-column by 2-row grid, read left to right top row then bottom row. Each invisible cell is square and the same size, consistent registration and fixed camera. Every cell must have at least 12% transparent inset. NO drawn grid, no cell borders, no labels or numbers. Actual transparent PNG alpha, no black/white/checkerboard background. Never overlap or connect adjacent cells. Flat hand-painted RimWorld sprite style, bold readable shapes and tapered semi-transparent particle edges, dark warm basalt, bronze dust and glowing amber energy, pale cream bright cores only at peaks. NO characters, faces, swords, armor, terrain tile rectangles, text, logo, evolved crystal motif or head halo. Normal Earth Ascendant, not Adamant. Preserve empty space between particles and the background. Input image is Earth Bastion design reference. Six-frame SEAMLESS LOOP of an elliptical amber protective ring with SIX low blunt slate plates hovering along its perimeter. Center fully empty for a pawn; keep all stones low, no full wall. Gentle clockwise drifting stone positions, tiny amber glints traveling on ring, subtle dust breathing. Constant footprint, fixed center and identical base ellipse across cells. No shield emblem or pawn. Frame6 connects smoothly to frame1.",
+      "references": [
+        "BastionRing.png"
+      ]
+    },
+    {
+      "name": "Mountainfall",
+      "prompt": "Use case: stylized-concept. Create ONE production game VFX SPRITE SHEET, landscape aspect ratio exactly 3:2, ideally 1536 by 1024. EXACTLY SIX consecutive animation frames in a uniform 3-column by 2-row grid, read left to right top row then bottom row. Each invisible cell is square and the same size, consistent registration and fixed camera. Every cell must have at least 12% transparent inset. NO drawn grid, no cell borders, no labels or numbers. Actual transparent PNG alpha, no black/white/checkerboard background. Never overlap or connect adjacent cells. Flat hand-painted RimWorld sprite style, bold readable shapes and tapered semi-transparent particle edges, dark warm basalt, bronze dust and glowing amber energy, pale cream bright cores only at peaks. NO characters, faces, swords, armor, terrain tile rectangles, text, logo, evolved crystal motif or head halo. Normal Earth Ascendant, not Adamant. Preserve empty space between particles and the background. Input image1 is Earth impact design reference. Six-frame ONE-SHOT seismic eruption using the same centered elliptical floor footprint. Frame1 narrow amber ground crack and faint telegraph ring; frame2 crack branches with rising dust; frame3 five short blunt basalt slabs thrust upward; frame4 maximum impact with broad amber shock ring and a few flying chips; frame5 slabs crumble into smaller particles as the shock ring expands; frame6 fading ring and dust, no solid slabs remaining. Keep every stage within its own square cell and preserve 12% inset. No meteor or volcano, no pawn, no lasting terrain tile.",
+      "references": [
+        "MountainfallImpact.png"
+      ]
+    },
+    {
+      "name": "Idle transparency refinement",
+      "prompt": "Use case: background-extraction. Edit this exact 3-column by 2-row six-frame Earth Idle aura sprite sheet. Preserve ALL SIX effects, their shapes, warm brown/amber colors, positions, relative sizes, fine stones and animation differences. REMOVE the pale gray/white haze backdrop completely. All empty space around and inside each aura MUST be fully transparent alpha=0, not translucent gray/white. Preserve only the actual brown dust wisps, amber light ribbons and stones with naturally feathered alpha edges. No gray wash between cells. Do not add a checkerboard, dark background, new objects, grid lines or labels. Keep landscape 1536x1024 dimensions and exact cell layout. This is a production transparent game overlay: the pawn must be visible through the central void."
+    },
+    {
+      "name": "BastionStance transparency refinement",
+      "prompt": "Use case: background-extraction. Edit this exact six-frame Earth Bastion ring sprite sheet. Keep the exact 3 columns by 2 rows, landscape 1536x1024, all six animation stages and ring positions. REMOVE ALL pale white/beige background haze. Empty space MUST have alpha=0, INCLUDING inside each ring and between the six cells. Keep only the amber light rings, six slate stones per ring, tiny rock particles and sparse brown dust immediately along each ring perimeter. Feather the brown dust to alpha=0 within each cell without filling the canvas. Do not replace the background with black, gray or checkerboard. No new objects, text or grid. Preserve game art, colors and frame registration."
+    }
+  ]
+}

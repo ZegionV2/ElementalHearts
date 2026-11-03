@@ -18,7 +18,7 @@ namespace ElementalHearts {
    return .18f*fadeIn*fadeOut;
   }
   public static Color ElementColor(string element){
-   switch(element){case "Celestial":return new Color(1f,.78f,.28f);case "Thunderstorm":return new Color(1f,.08f,.16f);case "AzureFlame":return new Color(.12f,.65f,1f);case "Lightning":return new Color(.12f,.65f,1f);case "Flame":return new Color(1f,.3f,.04f);case "Cyclone":return new Color(.25f,1f,.62f);case "Wind":return new Color(.45f,1f,.65f);default:return new Color(.2f,.85f,1f);}
+   switch(element){case "Earth":return new Color(.85f,.57f,.2f);case "Celestial":return new Color(1f,.78f,.28f);case "Thunderstorm":return new Color(1f,.08f,.16f);case "AzureFlame":return new Color(.12f,.65f,1f);case "Lightning":return new Color(.12f,.65f,1f);case "Flame":return new Color(1f,.3f,.04f);case "Cyclone":return new Color(.25f,1f,.62f);case "Wind":return new Color(.45f,1f,.65f);default:return new Color(.2f,.85f,1f);}
   }
   public override void MapComponentTick(){
    for(int i=pawns.Count-1;i>=0;i--)if(!pawns[i].Spawned||pawns[i].Map!=map||pawns[i].Dead||!HediffComp_ElementalTransform.Transforming(pawns[i]))pawns.RemoveAt(i);

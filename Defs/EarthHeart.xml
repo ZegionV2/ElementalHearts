@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="EH_ElementalHeartItemBase">
+    <defName>EH_EarthHeart</defName>
+    <label>Earth Serum</label>
+    <description>A single-use injection that transforms a pawn into a Earth Ascendant, granting permanent whole-body elemental powers. Self-inject or administer through a medical bill. Only one elemental ascension per pawn.</description>
+    <graphicData>
+      <texPath>Things/Item/Health/ElementalHearts/EarthSerum</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_ElementalSerum">
+        <hediff>EH_EarthHeart</hediff>
+      </li>
+    </comps>
+  </ThingDef>
+  <HediffDef ParentName="EH_ElementalHeartHediffBase">
+    <defName>EH_EarthHeart</defName>
+    <label>Earth Ascendant</label>
+    <description>A normal Earth Ascendant: a durable fortress swordsman wielding Faultbreaker. Transform manifests helmetless basalt armor and a bound sword. Faultline Cleave, Stonebreaker Advance, Bastion Stance and Mountainfall chain through shared Auto Combat and Non-lethal controls. While transformed, hostile impacts and successful faultline cuts build up to three Resolve stacks for eight seconds; each reduces remaining damage by 5%. Mountainfall consumes Resolve for stronger impact damage. Bastion protects nearby allies without stacking. Teach Earth creates disciples. No Adamant evolution or head halo is included.</description>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_EarthAbilities" />
+      <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
+        <sealAfterTicks>180</sealAfterTicks>
+        <healPerSecond>2</healPerSecond>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.2</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>0.25</offset>
+          </li>
+        </capMods>
+        <painFactor>0</painFactor>
+        <totalBleedFactor>0.25</totalBleedFactor>
+        <naturalHealingFactor>6</naturalHealingFactor>
+        <hungerRateFactor>0.6</hungerRateFactor>
+        <restFallFactor>0.6</restFallFactor>
+        <statFactors>
+          <CarryingCapacity>5</CarryingCapacity>
+          <MoveSpeed>1.4</MoveSpeed>
+          <MeleeDamageFactor>2</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.85</MeleeCooldownFactor>
+          <WorkSpeedGlobal>1.75</WorkSpeedGlobal>
+          <IncomingDamageFactor>0.45</IncomingDamageFactor>
+          <ImmunityGainSpeed>2</ImmunityGainSpeed>
+          <JoyFallRateFactor>0.6</JoyFallRateFactor>
+        </statFactors>
+        <statOffsets>
+          <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+          <MeleeHitChance>4</MeleeHitChance>
+          <MeleeDodgeChance>12</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <RecipeDef ParentName="EH_InstallElementalHeartBase">
+    <defName>EH_InstallEarthHeart</defName>
+    <label>administer earth ascension serum</label>
+    <description>Inject one dose of earth ascension serum, granting whole-body ascension without organ surgery. Only one element per pawn.</description>
+    <jobString>Injecting earth ascension serum.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>EH_EarthHeart</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>EH_EarthHeart</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>EH_EarthHeart</addsHediff>
+  </RecipeDef>
+  <RecipeDef ParentName="EH_RemoveElementalHeartBase">
+    <defName>EH_RemoveEarthHeart</defName>
+    <label>obsolete earth extraction</label>
+    <description>Legacy save compatibility only. Ascension is a whole-body condition and cannot be extracted as an item.</description>
+    <jobString>Cancelling obsolete extraction.</jobString>
+    <removesHediff>EH_EarthHeart</removesHediff>
+  </RecipeDef>
+  <JobDef>
+    <defName>EH_EarthTechnique</defName>
+    <driverClass>ElementalHearts.JobDriver_EarthTechnique</driverClass>
+    <reportString>performing an Earth technique.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  <ThoughtDef>
+    <defName>EH_EarthResolve</defName>
+    <workerClass>ElementalHearts.ThoughtWorker_EarthResolve</workerClass>
+    <hediff>EH_EarthHeart</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>Mountain resolve</label>
+        <description>My spirit stands as firm as the earth.</description>
+        <baseMoodEffect>30</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <HediffDef>
+    <defName>EH_EarthBastion</defName>
+    <label>Bastion Stance</label>
+    <description>An Earth defensive technique. Movement is 25% slower; the owning Earth component supplies bounded personal and ally protection.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>240</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0.75</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EH_EarthTraining</defName>
+    <label>earth disciple</label>
+    <description>Four Earth techniques at 40% damage and 50% longer cooldowns. Bastion defense is also scaled to 40%. No Resolve, ascension stat bonuses, recovery, aura, transformation or teaching power. Call Faultbreaker. Ascend after 50 credited kills and five disciple days, or awaken through the shared near-death roll.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_EarthAbilities">
+        <cooldownFactor>1.5</cooldownFactor>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_ElementalApprentice" />
+    </comps>
+  </HediffDef>
+  <RecipeDef>
+    <defName>EH_MakeEarthSerum</defName>
+    <label>condense Earth serum</label>
+    <description>Condense dense metals and medicine into Earth ascension serum.</description>
+    <jobString>Condensing Earth serum.</jobString>
+    <workAmount>12000</workAmount>
+    <workSkill>Crafting</workSkill>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <researchPrerequisites>
+      <li>Fabrication</li>
+    </researchPrerequisites>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Uranium</li>
+        <li>ComponentIndustrial</li>
+        <li>MedicineIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <EH_EarthHeart>1</EH_EarthHeart>
+    </products>
+    <skillRequirements>
+      <Crafting>8</Crafting>
+    </skillRequirements>
+  </RecipeDef>
+</Defs>

@@ -13,6 +13,6 @@ if(($hashes | Sort-Object -Unique).Count -ne 6){throw 'Aura has duplicated frame
 if($heart.Defs.HediffDef.description -match 'teaching is planned|teaching is in development' -or $about.ModMetaData.description -match 'Water teaching is in development'){throw 'Shipped Water teaching described as future work'}
 if($about.ModMetaData.description -notmatch 'Glacial.*Explosion'){throw 'Playable Glacial evolution not described'}
 $projections=0;foreach($path in Get-ChildItem "$root/Defs" -Filter *.xml){[xml]$defs=Get-Content $path.FullName;foreach($thing in $defs.SelectNodes("Defs/ThingDef[modExtensions/li[@Class='ElementalHearts.IndestructibleElementalGear']]")){$projections++;if($thing.statBases.Flammability -ne '0' -or $thing.statBases.DeteriorationRate -ne '0' -or $thing.smeltable -ne 'false'){throw "Invalid indestructible projection fire/deterioration/smelting policy: $($thing.defName)"}}}
-if($projections -ne 25){throw 'Unexpected indestructible gear count'}
+if($projections -ne 27){throw 'Unexpected indestructible gear count (includes Earth stoneplate and Faultbreaker)'}
 Write-Output 'PASS: Water disciple component bindings, no ascension stage/tags, paired job interruption flags, six distinct transparent aura sprites and shipped Glacial descriptions.'
-Write-Output 'PASS: all 25 indestructible projections explicitly disable burning, deterioration and smelting.'
+Write-Output 'PASS: all 27 indestructible projections explicitly disable burning, deterioration and smelting.'

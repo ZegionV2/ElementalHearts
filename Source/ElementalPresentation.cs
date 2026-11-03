@@ -57,7 +57,7 @@ namespace ElementalHearts {
    if(caster==source&&target==victim)return true;
    Job job=source.jobs==null?null:source.CurJob;
    return job!=null&&job.playerForced&&job.targetA.Pawn==victim&&
-    (job.def.defName=="EH_HeavenlyThunder"||job.def.defName=="EH_PhoenixDescent"||job.def.defName=="EH_WindTechnique");
+    (job.def.defName=="EH_HeavenlyThunder"||job.def.defName=="EH_PhoenixDescent"||job.def.defName=="EH_WindTechnique"||job.def.defName=="EH_EarthTechnique");
   }
  }
  public static class ElementalStylePolicy {
