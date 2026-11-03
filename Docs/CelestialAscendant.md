@@ -31,7 +31,9 @@ Fake Rainbow requires a nearby hostile attacker and a clear retreat/return route
 
 ## Random Bestow
 
-**Bestow (Random)** is manual. Both participants stop and face each other for four seconds. The recipient receives normal Lightning, Flame, Wind or Water ascension, each with equal initial chance. Disciples of any element can receive it; existing Ascendants cannot. Celestial is never a Bestow outcome.
+**Bestow (Random)** is manual. Both participants stop and face each other for four seconds. The recipient receives normal Lightning, Flame, Wind, Water or Earth ascension, each with equal chance. Celestial also fulfills the recipient's 150 mastery kills and ten Ascendant days. The recipient remains a normal Ascendant until you choose the ordinary Evolve command. Readiness uses the existing saved mastery and age values, so it survives saving/loading without another hediff or save key. Interrupted ceremonies grant neither ascension nor readiness. Other evolved Ascendants' Bestow keeps the normal evolution milestones. Disciples of any element can receive Celestial's gift; existing Ascendants cannot. Celestial is never a Bestow outcome.
+
+Celestial Regalia's native apparel coverage includes torso, waist, shoulders, arms, hands, legs and feet. It satisfies RimWorld's upper- and lower-body clothing checks, including the groin/legs, and provides its existing armor ratings on those parts. Head coverage is excluded. This is a mechanical coverage correction; the garment textures and fitted head position are unchanged. Existing manifested regalia inherits the corrected definition when the game reloads.
 
 The result is selected once during the held ceremony and saved. Loading does not reroll it. Interrupted ceremonies grant nothing. Completion removes old discipleship before granting exactly one normal heart and uses the shared bound-sword transition.
 

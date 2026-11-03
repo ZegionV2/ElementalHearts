@@ -3,7 +3,7 @@
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_CelestialUniform</defName>
     <label>celestial solar regalia</label>
-    <description>Indestructible ivory/gold celestial regalia with an amber sunburst clasp, gold chains, closed lined mantle and a low neckline. No helmet. Seven fitted native body textures with mirrored west.</description>
+    <description>Indestructible ivory/gold celestial regalia with an amber sunburst clasp, gold chains, closed lined mantle and a low neckline. Covers the torso, shoulders, arms, hands, waist, legs and feet, satisfying both upper- and lower-body clothing coverage. No helmet. Seven fitted native body textures with mirrored west.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/CelestialRegalia/CelestialRegalia</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -35,6 +35,11 @@
       <bodyPartGroups>
         <li>Torso</li>
         <li>Waist</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
+        <li>Legs</li>
+        <li>Feet</li>
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/CelestialRegalia/CelestialRegalia</wornGraphicPath>
       <layers>

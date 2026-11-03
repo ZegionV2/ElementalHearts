@@ -1,0 +1,10 @@
+Lunar Ascendant asset pack
+
+All 78 game textures are transparent 256 x 256 PNGs in the Textures tree.
+
+- LunarUniform: south, east and north for Male, Female, Thin, Fat, Hulk, Child and Baby. Use RimWorld's native east mirroring for west. The uniform and helmet each have an inventory sprite.
+- LunarHelmet: south, east and north. LunarSword: tip up, grip down.
+- CrescentDraw, MoonfallStep, TidalParry, FallingMoon and Moonveil: one button icon and eight effect frames (00 to 07) each. Dash and blade-wave art point along the positive horizontal texture axis.
+- Idle: six looping lunar aura frames (00 to 05).
+
+Export checks covered format, visible alpha, animation borders, and the fitted armor against the native torso masks in 28 body and facing combinations. Live rendering remains to be checked after integration.

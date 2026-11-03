@@ -31,17 +31,30 @@ if($training.comps.li[0].cooldownFactor -ne '1.5'){throw 'Disciple cooldown scal
 if($defs.SelectSingleNode("Defs/ThoughtDef[defName='EH_EarthResolve']/stages/li/baseMoodEffect").InnerText -ne '30'){throw 'Normal Earth mood tier failed'}
 $job=$defs.SelectSingleNode("Defs/JobDef[defName='EH_EarthTechnique']")
 if(!$own.GetType($job.driverClass) -or $job.playerInterruptible -ne 'true' -or $job.suspendable -ne 'false'){throw 'Native cast interruption policy failed'}
-if($gear.Defs.ThingDef.Count -ne 2 -or $gear.SelectNodes("Defs/ThingDef[contains(defName,'Helmet')]").Count -ne 0){throw 'Earth should have exactly stoneplate and sword, no helmet or evolved halo'}
+if($gear.Defs.ThingDef.Count -ne 3 -or $gear.SelectNodes("Defs/ThingDef[defName='EH_EarthHelmet']").Count -ne 1){throw 'Earth requires one stoneplate, enclosed helmet and sword'}
 Add-Type -AssemblyName System.Drawing
-$earthTextures=@(Get-ChildItem "$root\Textures" -Recurse -Filter '*.png' | Where-Object {$_.FullName -match '[\\/]Earth[\\/]|[\\/]EarthUniform[\\/]|[\\/]Earth(Sword|Serum)\.png$'})
-if($earthTextures.Count -ne 70){throw "Expected 70 Earth textures; got $($earthTextures.Count)"}
+$earthTextures=@(Get-ChildItem "$root\Textures" -Recurse -Filter '*.png' | Where-Object {$_.FullName -match '[\\/]Earth[\\/]|[\\/]Earth(Uniform|Helmet)[\\/]|[\\/]Earth(Sword|Serum)\.png$'})
+if($earthTextures.Count -ne 92){throw "Expected 92 Earth textures; got $($earthTextures.Count)"}
 foreach($file in $earthTextures){$b=[Drawing.Bitmap]::new($file.FullName);try{if($b.Width -ne 256 -or $b.Height -ne 256 -or $b.PixelFormat.ToString() -notmatch 'Argb'){throw "Bad Earth RGBA export $file"}}finally{$b.Dispose()}}
 foreach($sequence in @('FaultlineCleave','StonebreakerAdvance','BastionStance','Mountainfall','Idle','Combat','Activation')){
  $frames=@(Get-ChildItem "$root\Textures\Effects\ElementalHearts\Earth\Frames" -Filter ($sequence+'_*.png'))
  if($frames.Count -ne 6 -or @($frames|Get-FileHash|Select-Object -ExpandProperty Hash -Unique).Count -ne 6){throw "Missing or duplicate animation phases: $sequence"}
 }
+foreach($sequence in @('SpireEruption','SeismicQuake')){
+ $frames=@(Get-ChildItem "$root\Textures\Effects\ElementalHearts\Earth\Frames" -Filter ($sequence+'_*.png'))
+ if($frames.Count -ne 8 -or @($frames|Get-FileHash|Select-Object -ExpandProperty Hash -Unique).Count -ne 8){throw "Missing or duplicate seismic animation phases: $sequence"}
+}
+$helmet=$gear.SelectSingleNode("Defs/ThingDef[defName='EH_EarthHelmet']")
+if($helmet.apparel.bodyPartGroups.li -ne 'FullHead' -or $helmet.apparel.layers.li -ne 'Overhead' -or $helmet.useHitPoints -ne 'false' -or @($helmet.apparel.renderSkipFlags.li).Count -ne 2){throw 'Helmet coverage, concealment or indestructibility failed'}
+foreach($direction in @('south','east','north')){if(!(Test-Path "$root\Textures\Things\Pawn\Humanlike\Apparel\EarthHelmet\EarthHelmet_$direction.png")){throw "Missing helmet facing $direction"}}
 foreach($body in @('Male','Female','Thin','Fat','Hulk','Child','Baby')){foreach($direction in @('south','east','north')){if(!(Test-Path (Join-Path "$root\Textures\Things\Pawn\Humanlike\Apparel\EarthUniform" ('EarthUniform_'+$body+'_'+$direction+'.png')))){throw "Missing Earth body/direction: $body $direction"}}}
 [xml]$sounds=Get-Content "$root\Defs\EarthSounds.xml"
-foreach($sound in $sounds.Defs.SoundDef){foreach($grain in $sound.SelectNodes('.//clipPath')){if(!(Test-Path "$root\Sounds\$($grain.InnerText).wav") -and !(Test-Path "$root\Sounds\$($grain.InnerText).ogg")){throw "Missing shared sound $($grain.InnerText)"}}}
-Write-Output 'PASS: native Earth definition/field/component/recipe/job bindings, ordinary tier, disciple scaling, two-piece helmetless kit, 70 RGBA textures, all 21 body/direction exports, 42 distinct animation frames and existing shared sound samples.'
+$corePaths=@{}
+Get-ChildItem (Join-Path $RimWorldDir 'Data\Core\Defs\SoundDefs') -Filter '*.xml' | ForEach-Object {[xml]$d=Get-Content $_.FullName;foreach($n in $d.SelectNodes('//clipPath|//clipFolderPath')){$corePaths[$n.InnerText]=$true}}
+foreach($sound in $sounds.Defs.SoundDef){foreach($grain in $sound.SelectNodes('.//clipPath|.//clipFolderPath')){
+ $p=$grain.InnerText;if($corePaths.ContainsKey($p)){continue}
+ if($grain.Name -eq 'clipFolderPath'){$folder=Join-Path "$root\Sounds" $p;if(!(Test-Path -LiteralPath $folder) -or @(Get-ChildItem -LiteralPath $folder -Filter '*.wav').Count -ne 2){throw "Missing Earth sound variants $p"}}
+ elseif(!(Test-Path "$root\Sounds\$p.wav") -and !(Test-Path "$root\Sounds\$p.ogg")){throw "Missing Earth sound $p"}
+}}
+Write-Output 'PASS: native Earth definition/component/recipe/job bindings, disciple scaling, indestructible three-piece kit, 92 RGBA textures, 21 body exports, 3 helmet facings/native west, 58 distinct effect frames and shared sound samples.'
 

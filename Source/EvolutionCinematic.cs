@@ -69,6 +69,10 @@ namespace ElementalHearts {
    var f=EvolutionTimeline.At(elapsed);if(f.opacity<=0)return;Vector3 center=p.Position.ToVector3Shifted();center.z-=.15f;
    if(p.CurJobDef==DefDatabase<JobDef>.GetNamed("EH_EvolveGlacial")){Draw(MeshPool.plane10,GlacialVfx.Frame(4,Math.Min(7,(int)(f.progress*8))),center,2+f.charge,2+f.charge,f.spin*8,new Color(1,1,1,.6f*f.opacity));for(int i=0;i<6;i++){var at=center+EvolutionTimeline.Spiral(elapsed,i,p.thingIDNumber);Draw(MeshPool.plane10,GlacialVfx.Frame(0,(elapsed/5+i)%8),at,.35f,.65f,f.spin*25+i*60,new Color(1,1,1,.45f*f.opacity));}return;}
    if(p.CurJobDef!=null&&p.CurJobDef.defName=="EH_EvolveCyclone"){Draw(LightningVfx.FrameMesh(true),CycloneVfx.Frame(4,Math.Min(7,(int)(f.progress*8))),center,3+f.charge,3+f.charge,0,new Color(1,1,1,.65f*f.opacity));for(int i=0;i<6;i++){var at=center+EvolutionTimeline.Spiral(elapsed,i,p.thingIDNumber);Draw(MeshPool.plane10,CycloneVfx.Frame(1,(elapsed/5+i)%8),at,.45f,.8f,f.spin*25+i*60,new Color(1,1,1,.4f*f.opacity));}return;}
+   if(p.CurJobDef!=null&&p.CurJobDef.defName=="EH_EvolveAdamant"){
+    Ring(center,f.radius,f.spin*12,new Color(1,.7f,.22f,.35f*f.opacity));Draw(MeshPool.plane10,AdamantVfx.Frame(4,Math.Min(7,elapsed/20)),center,3.4f,3.4f,0,new Color(1,1,1,.55f*f.opacity));
+    for(int i=0;i<8;i++){var at=center+EvolutionTimeline.Spiral(elapsed,i,p.thingIDNumber);Draw(MeshPool.plane10,solid,at,.10f,.16f,45+f.spin*12,new Color(1,.78f,.38f,.65f*f.opacity));}return;
+   }
    bool storm=ThunderstormEvolution.HasLightning(p);Color tint=EvolutionTimeline.Accent(storm,f.progress);float alpha=f.opacity;
    Ring(center,f.radius,f.spin*25,new Color(tint.r,tint.g,tint.b,.27f*alpha));Ring(center,f.radius*.77f,-f.spin*35,new Color(1,.82f,.32f,.18f*alpha));
    Ring(center,.45f+.5f*f.charge,0,new Color(tint.r,tint.g,tint.b,.32f*alpha));
@@ -82,6 +86,7 @@ namespace ElementalHearts {
   }
   void Burst(Ceremony c,int now){
    int elapsed=now-c.finishTick;float fade=EvolutionTimeline.BurstOpacity(elapsed),radius=EvolutionTimeline.BurstRadius(elapsed);Vector3 center=c.center;center.z-=.15f;
+   if(AdamantEvolution.Active(c.pawn)){Ring(center,radius,elapsed,new Color(1,.73f,.25f,.6f*fade));Draw(MeshPool.plane10,AdamantVfx.Frame(2,Math.Min(7,elapsed/6)),center,8+radius,8+radius,0,new Color(1,1,1,.65f*fade));return;}
    if(CycloneEvolution.Active(c.pawn)){Ring(center,radius,elapsed*2,new Color(.25f,1,.62f,.65f*fade));Ring(center,radius*.7f,-elapsed*3,new Color(.85f,1,.92f,.45f*fade));Draw(MeshPool.plane10,CycloneVfx.Frame(6,Math.Min(7,elapsed/5)),center,2+radius,2+radius,0,new Color(1,1,1,.6f*fade));return;}
    if(ThunderstormEvolution.Active(c.pawn)){Ring(center,radius,elapsed*2,new Color(1,.06f,.14f,.65f*fade));var peak=center;peak.z+=1.2f*(1-elapsed/60f);for(int i=0;i<12;i++){float angle=i*(float)Math.PI/6;var end=center+new Vector3((float)Math.Cos(angle)*radius,0,(float)Math.Sin(angle)*radius*.65f);Bolt(peak,end,i+elapsed/4,new Color(1,.18f,.25f),.7f*fade);}return;}
    Ring(center,radius,elapsed*2,new Color(.15f,.75f,1,.65f*fade));Ring(center,radius*.7f,-elapsed*3,new Color(.9f,.97f,1,.45f*fade));

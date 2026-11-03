@@ -1,0 +1,135 @@
+{
+  "description": "Original deterministic layered noise/stone-impact support clips plus runtime references to RimWorld Core stone, mining, rubble and collapse grains. No game audio copied into the mod.",
+  "clips": [
+    {
+      "file": "Sounds/ElementalHearts/Earth/Advance/Advance_01.wav",
+      "duration": 0.52,
+      "rate": 44100,
+      "channels": 1,
+      "peak": 0.759979248046875,
+      "rms": 0.11562402861927298,
+      "sha256": "a6e7b2c376e66339e10f189214fd7f82ada56a6959c9554f4e5118ba4fe997b3"
+    },
+    {
+      "file": "Sounds/ElementalHearts/Earth/Advance/Advance_02.wav",
+      "duration": 0.52,
+      "rate": 44100,
+      "channels": 1,
+      "peak": 0.759979248046875,
+      "rms": 0.12300361728747398,
+      "sha256": "3b02d2da53a963067486b5026cab034dbe6e6149815ad8892acd796b60656eb8"
+    },
+    {
+      "file": "Sounds/ElementalHearts/Earth/Charge/Charge_01.wav",
+      "duration": 0.57,
+      "rate": 44100,
+      "channels": 1,
+      "peak": 0.759979248046875,
+      "rms": 0.14424813415315205,
+      "sha256": "afeb5eda5f99fe159dd6da502d2908c3fb07b5d3b999d390a6878bf4572d5144"
+    },
+    {
+      "file": "Sounds/ElementalHearts/Earth/Charge/Charge_02.wav",
+      "duration": 0.57,
+      "rate": 44100,
+      "channels": 1,
+      "peak": 0.759979248046875,
+      "rms": 0.1458936690028707,
+      "sha256": "09d3e5601551d65abfa36dfaf6fd41fafbe8b05f34d7c10877c2eef64f7dc517"
+    },
+    {
+      "file": "Sounds/ElementalHearts/Earth/Quake/Quake_01.wav",
+      "duration": 1.24,
+      "rate": 44100,
+      "channels": 1,
+      "peak": 0.759979248046875,
+      "rms": 0.06825470215455988,
+      "sha256": "ccedf620996dee3ad77720ff68fdc0628adfdee849ab8ffb8dab60caea41ff30"
+    },
+    {
+      "file": "Sounds/ElementalHearts/Earth/Quake/Quake_02.wav",
+      "duration": 1.24,
+      "rate": 44100,
+      "channels": 1,
+      "peak": 0.759979248046875,
+      "rms": 0.0765455298975971,
+      "sha256": "3f37636fd123e1c052c8741d6ecdb18c33242ab74920758db05c2adcfb28bc21"
+    },
+    {
+      "file": "Sounds/ElementalHearts/Earth/Spire/Spire_01.wav",
+      "duration": 1.02,
+      "rate": 44100,
+      "channels": 1,
+      "peak": 0.759979248046875,
+      "rms": 0.06742553984098709,
+      "sha256": "f9114a729f0ea4d224133f4f0a9a70a487fe4e68cc5fd16b08ced80e4c8188e6"
+    },
+    {
+      "file": "Sounds/ElementalHearts/Earth/Spire/Spire_02.wav",
+      "duration": 1.02,
+      "rate": 44100,
+      "channels": 1,
+      "peak": 0.759979248046875,
+      "rms": 0.07505946314024488,
+      "sha256": "4bb251a109d8cf4975f1a24c7df131ffe60b7936723b62d860efc54ff430ba7e"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "EH_Sound_Earth_Slash",
+      "sources": [
+        "Impact/MeleeHit_Stone",
+        "Interact/Work/Construct/Stone/Stone_Chunk_Light"
+      ]
+    },
+    {
+      "name": "EH_Sound_Earth_Dash",
+      "sources": [
+        "Interact/Work/Construct/Stone/Stone_Chunk_Light",
+        "ElementalHearts/Earth/Advance"
+      ]
+    },
+    {
+      "name": "EH_Sound_Earth_Spin",
+      "sources": [
+        "Interact/Work/Construct/Stone/Stone_Chunk_Light",
+        "ElementalHearts/Earth/Quake"
+      ]
+    },
+    {
+      "name": "EH_Sound_Earth_Charge",
+      "sources": [
+        "Interact/Work/Construct/Stone/Stone_Chunk_Light",
+        "ElementalHearts/Earth/Charge"
+      ]
+    },
+    {
+      "name": "EH_Sound_Earth_Impact",
+      "sources": [
+        "Impact/MeleeHit_Stone",
+        "ElementalHearts/Earth/Spire"
+      ]
+    },
+    {
+      "name": "EH_Sound_Earth_Advance_Impact",
+      "sources": [
+        "Interact/Work/Mine/PickHit",
+        "Impact/MeleeHit_Stone"
+      ]
+    },
+    {
+      "name": "EH_Sound_Earth_Quake_Impact",
+      "sources": [
+        "Misc/RockCollapse",
+        "ElementalHearts/Earth/Quake"
+      ]
+    },
+    {
+      "name": "EH_Sound_Earth_Spire_Impact",
+      "sources": [
+        "Impact/MeleeHit_Stone",
+        "ElementalHearts/Earth/Spire"
+      ]
+    }
+  ]
+}

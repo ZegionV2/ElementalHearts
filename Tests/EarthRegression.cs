@@ -10,6 +10,13 @@ class EarthRegression {
   try{typeof(EarthRegression).GetMethod("Run",BindingFlags.Static|BindingFlags.NonPublic).Invoke(null,null);return 0;}catch(Exception e){Console.WriteLine(e);return 1;}
  }
  static void Run(){
+  Check((int)EarthPower.Bastion==2&&(int)EarthPower.Mountainfall==3&&HediffComp_EarthAbilities.Names.Length==4,"seismic replacements preserve four saved skill slots");
+  Check(EarthSeismicRules.GroundStab(EarthPower.Bastion)&&EarthSeismicRules.GroundStab(EarthPower.Mountainfall)&&!EarthSeismicRules.GroundStab(EarthPower.Cleave)&&!EarthSeismicRules.GroundStab(EarthPower.Advance),"only seismic casts own ground-stab drawing");
+  Check(EarthSeismicRules.Windup(EarthPower.Bastion)==36&&EarthSeismicRules.Windup(EarthPower.Mountainfall)==42&&EarthSeismicRules.Windup(EarthPower.Cleave)==6,"seismic telegraphs preserve intentional windup");
+  Check(EarthSeismicRules.StabProgress(100,100,136)==0&&EarthSeismicRules.StabProgress(118,100,136)==.5f&&EarthSeismicRules.StabProgress(136,100,136)==1,"saved tick deadlines drive exact stab progression");
+  Check(EarthSeismicRules.StabLift(.6f)>EarthSeismicRules.StabLift(0)&&EarthSeismicRules.StabLift(1)<EarthSeismicRules.StabLift(0),"sword raises before plunging below its starting point");
+  Check(EarthSeismicRules.FramePhase(-1,32)==0&&EarthSeismicRules.FramePhase(31,32)==7&&EarthSeismicRules.FramePhase(99,32)==7,"all eight effect frames have bounded endpoints");
+  Check(EarthSeismicRules.QuakeRadius==4&&EarthSeismicRules.SpireRadius==3&&EarthRules.VictimLimit==16,"local seismic searches retain fixed radii and victim bound");
   Check(EarthRules.Stacks(3,101,100)==3&&EarthRules.Stacks(3,100,100)==0,"Resolve exact expiry");
   Check(EarthRules.Stacks(999,101,100)==3&&EarthRules.Stacks(-1,101,100)==0,"Resolve stack bounds");
   Check(Math.Abs(EarthRules.Defense(3,true,1)-.68f)<.00001f,"Resolve and Bastion multiply once");

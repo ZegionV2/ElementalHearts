@@ -36,11 +36,13 @@ if($uniform.generateCommonality -ne '0' -or $uniform.apparel.tags.li){throw 'Uni
 $names=@('DustCuttingDraw','RisingGale','TurningSwallow','MountainScouringTempest','Idle','Combat','Activation')
 foreach($name in $names){
  $files=@(Get-ChildItem "$root/Textures/Effects/ElementalHearts/Wind/Frames/${name}_*.png")
- if($files.Count -ne 6 -or @($files|Get-FileHash|Select-Object -ExpandProperty Hash -Unique).Count -ne 6){throw "Animation incomplete: $name"}
+ $frameCount=if($name -in @('Idle','Combat','Activation')){6}else{8}
+ $expectedNames=@(0..($frameCount-1) | ForEach-Object { '{0}_{1:00}.png' -f $name,$_ })
+ if($files.Count -ne $frameCount -or (Compare-Object $expectedNames @($files.Name)) -or @($files|Get-FileHash|Select-Object -ExpandProperty Hash -Unique).Count -ne $frameCount){throw "Animation incomplete: $name"}
 }
 Add-Type -AssemblyName System.Drawing
 $textures=@(Get-ChildItem "$root/Textures" -Recurse -Filter '*.png'|Where-Object {$_.FullName -match '[\\/]Wind[\\/]|[\\/]Wind[^\\/]*\.png$|[\\/]WindUniform[\\/]'})
-if($textures.Count -ne 82){throw "Expected 82 textures, got $($textures.Count)"}
+if($textures.Count -ne 90){throw "Expected 90 textures, got $($textures.Count)"}
 foreach($file in $textures){$b=[Drawing.Bitmap]::new($file.FullName);try{if($b.Width -ne 256 -or $b.Height -ne 256 -or $b.GetPixel(0,0).A -ne 0){throw "Texture format mismatch: $file"}}finally{$b.Dispose()}}
 $nonlethal=Get-Content "$PSScriptRoot/ElementalNonLethal.cs" -Raw
 if(!$nonlethal.Contains('HediffComp_WindAbilities.On(source)')){throw 'Wind omitted from non-lethal policy'}
@@ -51,6 +53,6 @@ foreach($key in @('windRoute','windRouteIndex','windNextStep','windStruck')){if(
 $flags=[Reflection.BindingFlags]'Public,NonPublic,Instance'
 $method=$game.GetType('RimWorld.Verb_MeleeAttackDamage').GetMethod('ApplyMeleeDamageToTarget',$flags)
 if($method.GetParameters()[0].ParameterType.FullName -ne 'Verse.LocalTargetInfo'){throw 'Counter patch API mismatch'}
-Write-Output 'PASS: Flow chaining, repeats, expiry, cooldown bounds, implant comps, recipes/job types, hair exclusion, matching uniforms, 82 transparent textures, 42 unique frames, non-lethal integration, manual-target persistence, movement save fields, and counter API.'
+Write-Output 'PASS: Flow chaining, repeats, expiry, cooldown bounds, implant comps, recipes/job types, hair exclusion, matching uniforms, 90 transparent textures, 50 unique frames, non-lethal integration, manual-target persistence, movement save fields, and counter API.'
 Write-Output 'LIMIT: no live-game combat/rendering/save-reload test.'
 

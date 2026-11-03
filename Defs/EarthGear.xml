@@ -3,7 +3,7 @@
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_EarthUniform</defName>
     <label>earth stoneplate</label>
-    <description>Helmetless basalt armor with bronze trim and restrained amber seams. Covers torso, shoulders, arms, hands, waist, legs and feet. Indestructible projected Earth equipment.</description>
+    <description>Basalt armor with bronze trim and restrained amber seams. Covers torso, shoulders, arms, hands, waist, legs and feet. Indestructible projected Earth equipment, paired with its enclosed mountain-crown helmet.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EarthUniform/EarthUniform</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -56,6 +56,75 @@
     <generateCommonality>0</generateCommonality>
     <equippedStatOffsets>
       <MoveSpeed>0.15</MoveSpeed>
+    </equippedStatOffsets>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_EarthHelmet</defName>
+    <label>earth ascendant helmet</label>
+    <description>A closed faceted basalt helmet with a bronze mountain crown and an amber visor. Bound and indestructible. Covers the full head and progressively conceals hair and beard during manifestation; restores personal headwear and hair on Revert.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/EarthHelmet/EarthHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <costList>
+      <Steel>45</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>2500</WorkToMake>
+      <Mass>1.2</Mass>
+      <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <EquipDelay>1</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/EarthHelmet/EarthHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <renderSkipFlags>
+        <li>Hair</li>
+        <li>Beard</li>
+      </renderSkipFlags>
+      <tags Inherit="False" />
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+    <recipeMaker>
+      <researchPrerequisite>Machining</researchPrerequisite>
+      <recipeUsers Inherit="False">
+        <li>TableMachining</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <generateCommonality>0</generateCommonality>
+    <equippedStatOffsets>
+      <MeleeHitChance>5</MeleeHitChance>
+      <MeleeDodgeChance>3</MeleeDodgeChance>
     </equippedStatOffsets>
     <modExtensions>
       <li Class="ElementalHearts.IndestructibleElementalGear" />

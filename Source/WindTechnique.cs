@@ -27,9 +27,15 @@ namespace ElementalHearts {
    Pawn next=ElementalCombatFlow.Nearest(pawn,range,TargetA.Pawn);if(next==null)return false;
    job.targetA=next;return true;
   }
-  private void Slash(float factor,int sequence,bool stagger){
+  private void Slash(float factor,int sequence,bool stagger,float windEffectSize=2.1f){
    if(!EnsureTarget(1.5f)||pawn.Position.DistanceToSquared(TargetA.Cell)>2){EndJobWith(JobCondition.Incompletable);return;}
-   if(CycloneEvolution.Active(pawn))CycloneVfx.Emit(pawn,(CycloneEffect)sequence,pawn.DrawPos,TargetA.Pawn.DrawPos,24,sequence==3?3.3f:2.6f);else WindVfx.Add(pawn.Map,sequence,pawn.DrawPos,TargetA.Pawn.DrawPos,18,2.1f);
+   if(CycloneEvolution.Active(pawn)){
+    CycloneVfx.Emit(pawn,(CycloneEffect)sequence,pawn.DrawPos,TargetA.Pawn.DrawPos,24,sequence==3?3.3f:2.6f);
+   }else if(sequence==(int)WindPower.Counter){
+    WindVfx.Add(pawn.Map,sequence,pawn.DrawPos,pawn.DrawPos,18,3.3f);
+   }else{
+    WindVfx.Add(pawn.Map,sequence,pawn.DrawPos,TargetA.Pawn.DrawPos,18,windEffectSize);
+   }
    bool landed=WindCombat.Strike(pawn,TargetA.Pawn,factor);
    if(landed&&CycloneEvolution.Active(pawn)&&job.count==(int)WindPower.Rise)CycloneAirbound.Apply(pawn,TargetA.Pawn,36,0);
    if(landed&&stagger&&!TargetA.Pawn.Dead&&!TargetA.Pawn.Downed)TargetA.Pawn.stances.stunner.StunFor(Comp.Props.staggerTicks,pawn);
@@ -110,7 +116,7 @@ namespace ElementalHearts {
    }
    yield return Move(1);yield return Toils_General.Do(()=>Slash(Comp.Props.tempestOpeningDamage,3,true));yield return Toils_General.Wait(5);
    yield return Move(2);yield return Toils_General.Do(()=>Slash(Comp.Props.tempestSecondDamage,3,true));yield return Toils_General.Wait(5);
-   yield return Move(2);yield return Toils_General.Do(()=>Slash(Comp.Props.tempestFinishDamage,3,true));
+   yield return Move(2);yield return Toils_General.Do(()=>Slash(Comp.Props.tempestFinishDamage,3,true,3.3f));
   }
  }
  public static class WindAutocast {

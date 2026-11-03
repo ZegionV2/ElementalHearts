@@ -7,7 +7,8 @@ using Verse;
 using Verse.AI;
 
 namespace ElementalHearts {
- public enum EarthPower { Cleave, Advance, Bastion, Mountainfall }
+ // Numeric slots and legacy names remain stable for existing saved cooldowns/jobs.
+ public enum EarthPower { Cleave, Advance, Bastion, Mountainfall, Bulwark }
  public static class EarthRules {
   public const int ResolveDuration=480,ResolveInterval=120,BastionDuration=240,VictimLimit=16;
   public static int Stacks(int stacks,int expires,int now){return expires>now?Math.Max(0,Math.Min(3,stacks)):0;}
@@ -31,35 +32,40 @@ namespace ElementalHearts {
  public sealed class HediffComp_EarthAbilities:HediffComp {
   public bool autoCombat=true,nonLethal;
   public List<int> readyAt=new List<int>{0,0,0,0};
+  public IntVec3 guardOrigin=IntVec3.Invalid;
+  public bool Evolved{get{return parent!=null&&parent.def.defName==AdamantEvolution.DefName;}}
+  public int SkillCount{get{return Evolved?5:4;}}
+  public void EnsureSlots(){readyAt=AdamantRules.Deadlines(readyAt,Evolved);}
+  public float Range(EarthPower power){return Evolved?AdamantRules.Ranges[(int)power]:Ranges[(int)power];}
   public int resolve,resolveUntil,nextResolve,guardUntil,combatUntil,activationUntil,nextAutoCheck,combatStarted;
   int lastAdvance=-1;
-  public static readonly string[] Names={"Faultline Cleave","Stonebreaker Advance","Bastion Stance","Mountainfall"};
-  public static readonly int[] Cooldowns={360,540,1080,1800};
-  public static readonly float[] Ranges={8f,6f,0f,8f};
+  public static readonly string[] Names={"Faultline Cleave","Stonebreaker Advance","Seismic Quake","Spire Eruption"};
+  public static readonly int[] Cooldowns={360,540,1080,1800,2100};
+  public static readonly float[] Ranges={8f,6f,4f,8f};
   public static HediffComp_EarthAbilities On(Pawn p){if(p==null||p.health==null)return null;foreach(var h in p.health.hediffSet.hediffs){var c=h.TryGetComp<HediffComp_EarthAbilities>();if(c!=null)return c;}return null;}
   public bool Full{get{return ElementalTeaching.IsHeart(parent);}}
   public bool HasWeapon{get{return Pawn.equipment!=null&&Pawn.equipment.Primary!=null&&Pawn.equipment.Primary.def.IsMeleeWeapon;}}
   public bool Busy{get{return EarthCombat.Busy(Pawn);}}
   public bool CanAct{get{return Pawn.Spawned&&!Pawn.Dead&&!Pawn.Downed&&Pawn.Awake()&&!Pawn.InMentalState&&HasWeapon&&!Pawn.WorkTagIsDisabled(WorkTags.Violent)&&!Pawn.stances.stunner.Stunned&&!ElementalAnimationBridge.Controlled(Pawn)&&!ElementalTeachingSession.Busy(Pawn)&&!HediffComp_ElementalTransform.Transforming(Pawn)&&(!ElementalCombatPolicy.Controlled(Pawn)||Pawn.Drafted)&&Pawn.health.hediffSet.hediffs.Contains(parent);}}
   public int Resolve{get{return Full&&HediffComp_ElementalTransform.Active(Pawn)?EarthRules.Stacks(resolve,resolveUntil,Find.TickManager.TicksGame):0;}}
-  public bool GuardActive{get{return Pawn.Spawned&&!Pawn.Dead&&!Pawn.Downed&&Pawn.Awake()&&!Pawn.InMentalState&&!Pawn.stances.stunner.Stunned&&(!ElementalCombatPolicy.Controlled(Pawn)||Pawn.Drafted)&&HasWeapon&&guardUntil>Find.TickManager.TicksGame&&(!Full||HediffComp_ElementalTransform.Active(Pawn));}}
+  public bool GuardActive{get{return Pawn.Spawned&&!Pawn.Dead&&!Pawn.Downed&&Pawn.Awake()&&!Pawn.InMentalState&&!Pawn.stances.stunner.Stunned&&(!ElementalCombatPolicy.Controlled(Pawn)||Pawn.Drafted)&&HasWeapon&&(!Evolved||AdamantRules.GuardOrder(Pawn,guardOrigin))&&guardUntil>Find.TickManager.TicksGame&&(!Full||HediffComp_ElementalTransform.Active(Pawn));}}
   public ElementalAutoMode Mode{get{return ElementalAutoModes.FromFlags(autoCombat||!ElementalCombatPolicy.Controlled(Pawn),nonLethal);}}
-  public int Cooldown(EarthPower p){return EarthRules.Cooldown(Cooldowns[(int)p],((HediffCompProperties_EarthAbilities)props).cooldownFactor);}
-  public int Remaining(EarthPower p){return Math.Max(0,readyAt[(int)p]-Find.TickManager.TicksGame);}
+  public int Cooldown(EarthPower p){return EarthRules.Cooldown((Evolved?AdamantRules.Cooldowns:Cooldowns)[(int)p],((HediffCompProperties_EarthAbilities)props).cooldownFactor);}
+  public int Remaining(EarthPower p){EnsureSlots();return (int)p<readyAt.Count?Math.Max(0,readyAt[(int)p]-Find.TickManager.TicksGame):0;}
   public void MarkCombat(){int now=Find.TickManager.TicksGame;if(combatUntil<=now)combatStarted=now;combatUntil=now+180;}
-  public void GainResolve(){if(!Full||!HediffComp_ElementalTransform.Active(Pawn))return;int now=Find.TickManager.TicksGame;resolve=Math.Min(3,Resolve+1);resolveUntil=now+EarthRules.ResolveDuration;}
+  public void GainResolve(){if(!Full||!HediffComp_ElementalTransform.Active(Pawn))return;int now=Find.TickManager.TicksGame;resolve=Math.Min(3,Resolve+1);resolveUntil=now+(Evolved?720:EarthRules.ResolveDuration);}
   public void CopyStateTo(HediffComp_EarthAbilities dest){if(dest==null)return;dest.autoCombat=autoCombat;dest.nonLethal=nonLethal;dest.readyAt=new List<int>(readyAt);dest.combatUntil=combatUntil;dest.combatStarted=combatStarted;}
-  public void Register(){if(Pawn.Spawned)Pawn.Map.GetComponent<MapComponent_Earth>().Register(Pawn);}
+  public void Register(){EnsureSlots();if(Pawn.Spawned)Pawn.Map.GetComponent<MapComponent_Earth>().Register(Pawn);}
   public override void CompPostPostAdd(DamageInfo? info){Register();}
   public override void Notify_Spawned(){Register();}
   public override void CompPostPostRemoved(){EndGuard();if(Pawn.Spawned)Pawn.Map.GetComponent<MapComponent_Earth>().Forget(Pawn);}
   public override void CompExposeData(){
-   Scribe_Collections.Look(ref readyAt,"EH_earthReadyAt",LookMode.Value);if(readyAt==null||readyAt.Count!=4)readyAt=new List<int>{0,0,0,0};
+   Scribe_Collections.Look(ref readyAt,"EH_earthReadyAt",LookMode.Value);EnsureSlots();
    Scribe_Values.Look(ref autoCombat,"EH_earthAuto",true);Scribe_Values.Look(ref nonLethal,"EH_earthNonLethal");
    Scribe_Values.Look(ref resolve,"EH_earthResolve");Scribe_Values.Look(ref resolveUntil,"EH_earthResolveUntil");Scribe_Values.Look(ref nextResolve,"EH_earthNextResolve");
-   Scribe_Values.Look(ref guardUntil,"EH_earthGuardUntil");Scribe_Values.Look(ref combatUntil,"EH_earthCombatUntil");Scribe_Values.Look(ref combatStarted,"EH_earthCombatStarted");Scribe_Values.Look(ref activationUntil,"EH_earthActivationUntil");Scribe_Values.Look(ref nextAutoCheck,"EH_earthNextAuto");
+   Scribe_Values.Look(ref guardOrigin,"EH_adamantGuardOrigin",IntVec3.Invalid);Scribe_Values.Look(ref guardUntil,"EH_earthGuardUntil");Scribe_Values.Look(ref combatUntil,"EH_earthCombatUntil");Scribe_Values.Look(ref combatStarted,"EH_earthCombatStarted");Scribe_Values.Look(ref activationUntil,"EH_earthActivationUntil");Scribe_Values.Look(ref nextAutoCheck,"EH_earthNextAuto");
   }
-  public override string CompTipStringExtra{get{return "Resolve: "+Resolve+"/3. Each stack reduces remaining damage by 5%; expires after eight seconds. Mountainfall consumes stacks for +10% impact damage each.";}}
+  public override string CompTipStringExtra{get{return Evolved?"Adamant Resolve: "+Resolve+"/3. Each stack reduces remaining damage by 7%, lasting twelve seconds; Worldspine spends it for +15% damage per stack.":"Resolve: "+Resolve+"/3. Each stack reduces remaining damage by 5%; expires after eight seconds. Spire Eruption consumes stacks for +10% impact damage each.";}}
   public override void Notify_PawnPostApplyDamage(DamageInfo info,float dealt){
    if(dealt<=0)return;MarkCombat();int now=Find.TickManager.TicksGame;
    if(now<nextResolve||info.Instigator==null||info.Instigator==Pawn||!info.Instigator.HostileTo(Pawn)||info.Def==null||!info.Def.ExternalViolenceFor(Pawn))return;
@@ -78,23 +84,24 @@ namespace ElementalHearts {
    nextAutoCheck=now+60;EarthAutocast.Evaluate(this);
   }
   public void BeginGuard(){
-   guardUntil=Find.TickManager.TicksGame+EarthRules.BastionDuration;
-   var def=DefDatabase<HediffDef>.GetNamed("EH_EarthBastion");var h=Pawn.health.hediffSet.GetFirstHediffOfDef(def)??Pawn.health.AddHediff(def);
-   h.TryGetComp<HediffComp_Disappears>().ticksToDisappear=EarthRules.BastionDuration;
-   MarkCombat();Register();ElementalAudio.Ability(Pawn,ElementalSound.Parry);
+   guardOrigin=Pawn.Position;int duration=Evolved?180:EarthRules.BastionDuration;guardUntil=Find.TickManager.TicksGame+duration;
+   var def=DefDatabase<HediffDef>.GetNamed(Evolved?"EH_AdamantBulwark":"EH_EarthBastion");var h=Pawn.health.hediffSet.GetFirstHediffOfDef(def)??Pawn.health.AddHediff(def);
+   h.TryGetComp<HediffComp_Disappears>().ticksToDisappear=duration;
+   MarkCombat();Register();ElementalAudio.Ability(Pawn,ElementalSound.Impact);
   }
-  public void EndGuard(){guardUntil=0;var def=DefDatabase<HediffDef>.GetNamedSilentFail("EH_EarthBastion");if(def==null||Pawn.health==null)return;var h=Pawn.health.hediffSet.GetFirstHediffOfDef(def);if(h!=null)Pawn.health.RemoveHediff(h);}
+  public void EndGuard(){bool fading=Evolved&&guardUntil>0;guardUntil=0;if(fading&&Pawn.Spawned)Pawn.Map.GetComponent<MapComponent_Earth>().EmitAdamant(5,Pawn.DrawPos,24,3.6f);var def=DefDatabase<HediffDef>.GetNamedSilentFail(Evolved?"EH_AdamantBulwark":"EH_EarthBastion");if(def==null||Pawn.health==null)return;var h=Pawn.health.hediffSet.GetFirstHediffOfDef(def);if(h!=null)Pawn.health.RemoveHediff(h);}
   public bool Valid(EarthPower power,Pawn target,bool manual){
+   if((int)power>=SkillCount)return false;
+   if(power==EarthPower.Bulwark)return Evolved&&HediffComp_ElementalTransform.Active(Pawn)&&!GuardActive&&ElementalCombatFlow.CountHostiles(Pawn,3f,2)>=2;
    if(power==EarthPower.Bastion)return !Full||HediffComp_ElementalTransform.Active(Pawn);
    if(!WindCombat.AliveTarget(Pawn,target)||!manual&&!WindCombat.Hostile(Pawn,target))return false;
-   float range=Ranges[(int)power];if(Pawn.Position.DistanceToSquared(target.Position)>range*range||!LightningCombat.ClearLine(Pawn.Position,target.Position,Pawn.Map))return false;
+   float range=Range(power);if(Pawn.Position.DistanceToSquared(target.Position)>range*range||!LightningCombat.ClearLine(Pawn.Position,target.Position,Pawn.Map))return false;
    IntVec3 landing;return power!=EarthPower.Advance||EarthCombat.FindLanding(Pawn,target,out landing);
   }
   public bool TryCast(EarthPower power,Pawn target,bool automatic){
    if(!CanAct||Busy||EarthCombat.OtherAction(Pawn)||Remaining(power)>0||!Valid(power,target,!automatic))return false;
    if(automatic&&(!ElementalCombatPolicy.AutomationEnabled(ElementalCombatPolicy.Controlled(Pawn),ElementalHeartsMod.Settings.enableAutomation,autoCombat)||Pawn.jobs.jobQueue.Count>0))return false;
-   if(power==EarthPower.Bastion){readyAt[(int)power]=Find.TickManager.TicksGame+Cooldown(power);BeginGuard();return true;}
-   var job=JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed("EH_EarthTechnique"),target);job.count=(int)power;job.playerForced=!automatic;
+   var job=JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed("EH_EarthTechnique"),(power==EarthPower.Bastion||power==EarthPower.Bulwark)?Pawn:target);job.count=(int)power;job.playerForced=!automatic;
    if(automatic){Pawn.stances.CancelBusyStanceHard();Pawn.jobs.StartJob(job,JobCondition.InterruptForced,resumeCurJobAfterwards:true);}
    else{if(!Pawn.jobs.TryTakeOrderedJob(job,JobTag.Misc))return false;Pawn.stances.CancelBusyStanceHard();}
    if(Pawn.CurJob!=job)return false;
@@ -104,20 +111,21 @@ namespace ElementalHearts {
    if(!ElementalCombatPolicy.Controlled(Pawn))yield break;
    if(Full)yield return ElementalTeaching.Command(Pawn);
    if(!Pawn.Drafted)yield break;
-   yield return new Command_Action{defaultLabel="Auto Combat: "+ElementalAutoModes.Label(Mode),defaultDesc="Cycle On / Off / Non-lethal. Earth closes gaps, cleaves and releases Mountainfall against crowds or with full Resolve. Bastion can protect you while ordinary melee continues. Non-lethal replaces wounds with the shared suppression effect.",icon=ElementalIcons.AutoCombat,groupable=false,action=()=>{var next=ElementalAutoModes.Next(Mode);autoCombat=next!=ElementalAutoMode.Off;nonLethal=next==ElementalAutoMode.NonLethal;nextAutoCheck=0;}};
-   if(Full)yield return new Command_Action{defaultLabel="Resolve: "+Resolve+"/3",defaultDesc=CompTipStringExtra,icon=EarthVfx.Icon(2),groupable=false,action=()=>Messages.Message(CompTipStringExtra,Pawn,MessageTypeDefOf.NeutralEvent,false)};
-   for(int i=0;i<4;i++){
+   yield return new Command_Action{defaultLabel="Auto Combat: "+ElementalAutoModes.Label(Mode),defaultDesc="Cycle On / Off / Non-lethal. Earth closes gaps and cleaves; when surrounded by two enemies, stab the ground for Seismic Quake. Spire Eruption raises a temporary spiked hill beneath clustered enemies or with full Resolve. Non-lethal replaces wounds with the shared suppression effect.",icon=ElementalIcons.AutoCombat,groupable=false,action=()=>{var next=ElementalAutoModes.Next(Mode);autoCombat=next!=ElementalAutoMode.Off;nonLethal=next==ElementalAutoMode.NonLethal;nextAutoCheck=0;}};
+   if(Full)yield return new Command_Action{defaultLabel="Resolve: "+Resolve+"/3",defaultDesc=CompTipStringExtra,icon=Evolved?AdamantVfx.Icon(4):EarthVfx.Icon(2),groupable=false,action=()=>Messages.Message(CompTipStringExtra,Pawn,MessageTypeDefOf.NeutralEvent,false)};
+   for(int i=0;i<SkillCount;i++){
     var power=(EarthPower)i;
     string[] details={
      "A narrow eight-cell faultline cleave. Hits up to 16 eligible enemies once, stops at walls, briefly staggers survivors, and grants one Resolve on a successful hostile impact.",
      "Charge up to six cells along a clear, unoccupied route to the target's flank, then strike once. No wall crossing. Rechecks every movement step.",
-     "For four seconds, reduce remaining personal damage by 20% and same-faction allies' by 10% within three clear cells. Strongest allied Bastion applies once. Movement is 25% slower. Disciples receive 40% of the defensive effect. Full Ascendants must be transformed.",
-     "Mark the selected opponent, then release a three-cell seismic impact after 0.7 seconds. Consume up to three Resolve for +10% impact damage each. Push survivors up to two clear cells. No building damage or permanent terrain."};
+     "Stab the ground after a 0.6-second windup. A circular earthquake strikes enemies within four clear cells once, staggers them for one second and pushes survivors up to two clear cells. Automatically used against two or more nearby enemies. Full Ascendants must be transformed.",
+     "Stab the ground and mark the ground beneath the selected opponent. After 0.7 seconds, a spiked basalt hill erupts within three clear cells of that fixed mark, strikes each enemy once and pushes survivors up to three clear cells. Consume up to three Resolve for +10% damage each. The hill fades; it creates no obstacle, building damage or permanent terrain."};
+    if(Evolved)details=AdamantRules.Details;
     Command cmd;
-    if(power==EarthPower.Bastion)cmd=new Command_Action{action=()=>TryCast(power,null,false)};
-    else cmd=new Command_Target{targetingParams=new TargetingParameters{canTargetPawns=true,canTargetLocations=false,canTargetBuildings=false,canTargetItems=false,canTargetSelf=false,neverTargetIncapacitated=true,validator=t=>Valid(power,t.Thing as Pawn,true)},action=t=>TryCast(power,t.Pawn,false),onUpdate=t=>{if(Pawn.Spawned)GenDraw.DrawRadiusRing(Pawn.Position,Ranges[(int)power]);}};
-    cmd.defaultLabel=Names[i];cmd.defaultDesc=details[i]+" Cooldown: "+Cooldown(power)/60f+"s. Manual casts may select any standing faction. Existing friendly-fire rules govern collateral targets.";cmd.icon=EarthVfx.Icon(i);cmd.groupable=false;
-    if(!CanAct)cmd.Disable("Requires an awake, drafted pawn capable of violence and holding a melee weapon.");else if(Busy||EarthCombat.OtherAction(Pawn))cmd.Disable("Finish the current elemental action.");else if(Remaining(power)>0)cmd.Disable("Recharging: "+Math.Ceiling(Remaining(power)/60f)+"s");else if(power==EarthPower.Bastion&&!Valid(power,null,true))cmd.Disable("Transform to use Bastion.");
+    if(power==EarthPower.Bastion||power==EarthPower.Bulwark)cmd=new Command_Action{action=()=>TryCast(power,null,false)};
+    else cmd=new Command_Target{targetingParams=new TargetingParameters{canTargetPawns=true,canTargetLocations=false,canTargetBuildings=false,canTargetItems=false,canTargetSelf=false,neverTargetIncapacitated=true,validator=t=>Valid(power,t.Thing as Pawn,true)},action=t=>TryCast(power,t.Pawn,false),onUpdate=t=>{if(Pawn.Spawned)GenDraw.DrawRadiusRing(Pawn.Position,Range(power));}};
+    cmd.defaultLabel=(Evolved?AdamantRules.Names:Names)[i];cmd.defaultDesc=details[i]+" Cooldown: "+Cooldown(power)/60f+"s. Manual casts may select any standing faction. Existing friendly-fire rules govern collateral targets.";cmd.icon=Evolved?AdamantVfx.Icon(i):EarthVfx.Icon(i);cmd.groupable=false;
+    if(!CanAct)cmd.Disable("Requires an awake, drafted pawn capable of violence and holding a melee weapon.");else if(Busy||EarthCombat.OtherAction(Pawn))cmd.Disable("Finish the current elemental action.");else if(Remaining(power)>0)cmd.Disable("Recharging: "+Math.Ceiling(Remaining(power)/60f)+"s");else if(power==EarthPower.Bulwark&&!Valid(power,null,true))cmd.Disable("Requires transformation, no active Bulwark and two nearby hostiles.");else if(power==EarthPower.Bastion&&!Valid(power,null,true))cmd.Disable("Transform to use Seismic Quake.");
     yield return cmd;
    }
   }
@@ -130,19 +138,22 @@ namespace ElementalHearts {
    if(EarthCombat.OtherAction(p)||controlled&&p.jobs.jobQueue.Count>0||p.stances.FullBodyBusy&&!(p.stances.curStance is Stance_Cooldown))return;
    var job=p.CurJob;bool approach=SearchAndDestroyBridge.IsApproach(p,job),pursuing=ElementalCombatFlow.Pursuing(p,job);
    if(controlled&&!approach&&job.def!=JobDefOf.AttackMelee&&job.def!=JobDefOf.Wait_Combat)return;
-   Pawn target=job.targetA.Pawn;if(!WindCombat.Hostile(p,target))target=ElementalCombatFlow.Nearest(p,controlled?(pursuing?6f:1.5f):8f);
+   Pawn target=job.targetA.Pawn;if(!WindCombat.Hostile(p,target))target=ElementalCombatFlow.Nearest(p,c.Evolved?10f:controlled?(pursuing?6f:1.5f):8f);
    c.nextAutoCheck=Find.TickManager.TicksGame+ElementalCombatFlow.ThinkDelay(target!=null);
-   if(target==null)return;ElementalCombatFlow.Maintain(p,pursuing);
-   bool crowd=ElementalCombatFlow.CountHostiles(p,3f,2)>=2;
-   if(!c.GuardActive&&c.Remaining(EarthPower.Bastion)==0&&(crowd||EarthCombat.ThreatenedAlly(p))){if(c.TryCast(EarthPower.Bastion,null,true))c.nextAutoCheck=Find.TickManager.TicksGame+6;}
+   if(target!=null)ElementalCombatFlow.Maintain(p,pursuing);
+   bool crowd=ElementalCombatFlow.CountHostiles(p,c.Evolved?5f:EarthSeismicRules.QuakeRadius,2)>=2;
+   if(c.Evolved&&!c.GuardActive&&c.TryCast(EarthPower.Bulwark,null,true))return;
+   if(crowd&&c.TryCast(EarthPower.Bastion,null,true))return;
+   if(target==null)return;
    if(p.Position.DistanceToSquared(target.Position)>2&&c.TryCast(EarthPower.Advance,target,true))return;
-   if((c.Resolve==3||EarthCombat.CrowdAt(p,target.Position,3f,2)>=2)&&c.TryCast(EarthPower.Mountainfall,target,true))return;
+   if(c.Evolved&&c.Resolve<3&&c.TryCast(EarthPower.Cleave,target,true))return;
+   if((c.Resolve==3||EarthCombat.CrowdAt(p,target.Position,c.Evolved?3.5f:3f,2)>=2)&&c.TryCast(EarthPower.Mountainfall,target,true))return;
    if(c.TryCast(EarthPower.Cleave,target,true))return;
    ElementalCombatFlow.ResumeMelee(p,target,pursuing);
   }
  }
  public sealed class ThoughtWorker_EarthResolve:ThoughtWorker {
-  protected override ThoughtState CurrentStateInternal(Pawn p){return ElementalTeaching.Element(p)=="Earth"?ThoughtState.ActiveAtStage(0):ThoughtState.Inactive;}
+  protected override ThoughtState CurrentStateInternal(Pawn p){return ElementalTeaching.Element(p)=="Earth"?ThoughtState.ActiveAtStage(AdamantEvolution.Active(p)?1:0):ThoughtState.Inactive;}
  }
 }
 

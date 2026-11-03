@@ -18,13 +18,14 @@
   <HediffDef ParentName="EH_ElementalHeartHediffBase">
     <defName>EH_EarthHeart</defName>
     <label>Earth Ascendant</label>
-    <description>A normal Earth Ascendant: a durable fortress swordsman wielding Faultbreaker. Transform manifests helmetless basalt armor and a bound sword. Faultline Cleave, Stonebreaker Advance, Bastion Stance and Mountainfall chain through shared Auto Combat and Non-lethal controls. While transformed, hostile impacts and successful faultline cuts build up to three Resolve stacks for eight seconds; each reduces remaining damage by 5%. Mountainfall consumes Resolve for stronger impact damage. Bastion protects nearby allies without stacking. Teach Earth creates disciples. No Adamant evolution or head halo is included.</description>
+    <description>A normal Earth Ascendant: a durable fortress swordsman wielding Faultbreaker. Transform manifests basalt armor, an enclosed mountain-crown helmet and a bound sword. Faultline Cleave, Stonebreaker Advance, Seismic Quake and Spire Eruption chain through shared Auto Combat and Non-lethal controls. While transformed, hostile impacts and successful faultline cuts build up to three Resolve stacks for eight seconds; each reduces remaining damage by 5%. Spire Eruption consumes Resolve for stronger spiked-hill impacts and knockback. Seismic Quake radiates from the caster, damaging, staggering and pushing enemies away once. Teach Earth creates disciples. Can evolve into Adamant after 150 unique hostile mastery kills and ten Ascendant days.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_EarthAbilities" />
       <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
         <sealAfterTicks>180</sealAfterTicks>
         <healPerSecond>2</healPerSecond>
       </li>
+      <li Class="ElementalHearts.HediffCompProperties_AdamantMastery" />
     </comps>
     <stages>
       <li>
@@ -145,6 +146,11 @@
         <description>My spirit stands as firm as the earth.</description>
         <baseMoodEffect>30</baseMoodEffect>
       </li>
+      <li>
+        <label>Adamant resolve</label>
+        <description>My sovereign will is unbreakable.</description>
+        <baseMoodEffect>50</baseMoodEffect>
+      </li>
     </stages>
   </ThoughtDef>
   <HediffDef>
@@ -171,7 +177,7 @@
   <HediffDef>
     <defName>EH_EarthTraining</defName>
     <label>earth disciple</label>
-    <description>Four Earth techniques at 40% damage and 50% longer cooldowns. Bastion defense is also scaled to 40%. No Resolve, ascension stat bonuses, recovery, aura, transformation or teaching power. Call Faultbreaker. Ascend after 50 credited kills and five disciple days, or awaken through the shared near-death roll.</description>
+    <description>Four Earth techniques at 40% damage and 50% longer cooldowns. Spire Eruption and Seismic Quake retain the shared non-lethal controls and bounded single impacts. No Resolve, ascension stat bonuses, recovery, aura, transformation or teaching power. Call Faultbreaker. Ascend after 50 credited kills and five disciple days, or awaken through the shared near-death roll.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
     <scenarioCanAdd>false</scenarioCanAdd>

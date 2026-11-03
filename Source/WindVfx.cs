@@ -7,10 +7,13 @@ namespace ElementalHearts
     public static class WindVfx
     {
         private static Texture2D[] icons=new Texture2D[4]; public static Texture2D Icon(int i){if(icons[i]==null){string[] names={"DustCuttingDraw","RisingGale","TurningSwallow","MountainScouringTempest"};icons[i]=ContentFinder<Texture2D>.Get("UI/Abilities/ElementalHearts/Wind/"+names[i]);}return icons[i];}
-        private static Material[,] animationMaterials=new Material[7,6];
+        public const int AttackFrameCount = 8;
+        private const int AuraFrameCount = 6;
+        private static Material[,] animationMaterials=new Material[7,AttackFrameCount];
         private static Mesh centered, grounded;
         public static Material FrameMaterial(int sequence,int frame) {
-            frame=Mathf.Clamp(frame,0,5);
+            int frameCount = sequence < 4 ? AttackFrameCount : AuraFrameCount;
+            frame = Mathf.Clamp(frame, 0, frameCount - 1);
             if(animationMaterials[sequence,frame]==null) {
                 string[] names={"DustCuttingDraw","RisingGale","TurningSwallow","MountainScouringTempest","Idle","Combat","Activation"};
                 var texture=ContentFinder<Texture2D>.Get("Effects/ElementalHearts/Wind/Frames/"+names[sequence]+"_"+frame.ToString("00"));
@@ -116,7 +119,7 @@ namespace ElementalHearts
                     continue;
                 }
                 int sequence=e.sprite;
-                int frame=Mathf.Min(5,(int)(t*6));
+                int frame=Mathf.Min(WindVfx.AttackFrameCount - 1,(int)(t * WindVfx.AttackFrameCount));
                 float angle=e.sprite==0?e.angle-90f:0f;
                 Matrix4x4 matrix=Matrix4x4.TRS(position,Quaternion.AngleAxis(angle,Vector3.up),new Vector3(e.size,1f,e.size));
                 if(ghostColor==null)ghostColor=new MaterialPropertyBlock();

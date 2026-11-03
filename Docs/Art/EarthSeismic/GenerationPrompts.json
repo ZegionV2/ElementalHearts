@@ -1,0 +1,41 @@
+{
+  "generator": "Built-in image_gen",
+  "assets": [
+    {
+      "key": "earthHelmetSouthPrompt",
+      "source": "exec-d1f54324-03e1-446e-a82a-91dbc6379770.png",
+      "prompt": "Use case: stylized-concept. Asset type: production RimWorld full-head apparel sprite, SOUTH/front view, transparent background. Reference 1 Earth stoneplate supplies the exact basalt charcoal, muted bronze trim and restrained amber seams design language; Reference 2 is only the head silhouette/framing reference. Create an original matching EARTH ASCENDANT HELMET: closed faceted basalt plate helmet, angular mountain-brow bronze ridge, a single narrow amber eye slit, layered stone cheek plates and compact chin guard, all below a small angular crown. Simple bold hand-painted RimWorld mod item art, clean dark outlines, flat readable planar shading. Straight symmetric FRONT view, centered, no head tilt, no neck, no shoulders, no hair, no skin, no text, no background, no floor shadow. The helmet's outer head silhouette should match the reference's compact rounded head volume rather than tall fantasy proportions. Single isolated helmet, ample even transparent margins. Keep inventory-level silhouette crisp at 128 pixels."
+    },
+    {
+      "key": "earthHelmetEastPrompt",
+      "source": "exec-5cda135b-1f73-4071-bda9-d89ad0bcb970.png",
+      "prompt": "Use case: stylized-concept. Asset type: RimWorld EARTH ASCENDANT helmet EAST profile sprite on transparent background. Image 1 is the approved front Earth helmet: retain this EXACT design: faceted charcoal basalt, bronze mountain-brow rim and low angular crown, one amber visor, angular cheeks and compact chin. Image 2 is only the native head profile/facing reference: turn the Earth helmet to a STRICT right-facing SIDE view (visor and chin point to image right, visible rear at left), no three-quarter turn. Same compact head scale and low crown, one visible round bronze ear plate, closed head coverage, no head/skin/neck/shoulders. Crisp dark outline, simple RimWorld planar shading. One isolated centered sprite with even transparent margins. No text, no background or shadow."
+    },
+    {
+      "key": "earthHelmetNorthPrompt",
+      "source": "exec-c501cb7e-940e-4a9c-aa0a-4c507095a04c.png",
+      "prompt": "Use case: stylized-concept. RimWorld EARTH ASCENDANT HELMET NORTH/rear sprite. Reference 1 is approved SOUTH helmet; reference 2 is its EAST profile. Render EXACT same faceted charcoal-basalt, muted bronze and amber helmet from directly BEHIND. Symmetrical straight back view, compact low bronze three-point mountain crown, solid layered rear basalt plates, small bronze ear rims visible equally at both sides, small restrained amber seam below the crown, compact enclosed lower rear. NO eyes, NO visor visible from rear, NO face, NO neck, shoulders, skin, hair or body. Bold dark contour, simple clean planar RimWorld inventory shading, rounded native pawn head silhouette. One centered isolated helmet, generous even transparent margins, genuine transparent background. No words or watermark."
+    },
+    {
+      "key": "earthSpireFramesPrompt",
+      "source": "exec-fb5cfab8-587b-474d-adb7-6514dde8cf17.png",
+      "prompt": "Use case: stylized-concept. Production game VFX SPRITE SHEET for RimWorld Earth ability SPIRE ERUPTION, real transparent background. Exactly EIGHT square animation cells laid out in a regular 4 columns by 2 rows grid, no gutters/lines/numbers/labels. Each frame has identical local camera, registration and scale; all ground CONTACT POINTS centered at 50% width, 72% height of EACH cell. Stylized angular charcoal BASALT spiked hill erupting upward, muted bronze/amber thin fault seams, pale beige stone dust, bold graphic shapes consistent with RimWorld. Progress LEFT TO RIGHT then top to bottom: 1 cracked earth with small rising shard tips, 2 low jagged mound bursts out, 3 half-height radiating spikes, 4 full big spiked hill with five distinct sharp peaks and strongest dusty base, 5 full hill settling with fewer particles, 6 collapsing spikes, 7 low shattered fragments and dissipating dust, 8 faint last dust and tiny fragments. Readable as one connected spiky rocky hill, no separate buildings. Fixed silhouette height maximum 65% of each cell, even horizontal margins and generous transparent top clearance, no art touches neighboring cells. Ground scene excluded: isolated effect with transparency between rocks. RimWorld overhead three-quarter item perspective, no cinematic camera, no characters, NO lava/fire/green/crystals/text/UI. 4x2 aligned sheet, all eight frames."
+    },
+    {
+      "key": "earthQuakeFramesFinalPrompt",
+      "source": "exec-07d82869-61d6-4ecf-9b4b-a9ef53c79db2.png",
+      "prompt": "Use case: stylized-concept. A STRICT TECHNICAL GAME SPRITE ATLAS on a transparent canvas. EXACTLY 4 equal columns by 2 equal rows, EIGHT ISOLATED SPRITES. Each sprite MUST FIT INSIDE ITS OWN CELL with AT LEAST 20% EMPTY TRANSPARENT MARGIN ON EVERY SIDE. No sprite may touch another sprite or canvas edges. NO glow spilling into gutters. NO labels, no grid strokes. Subject: eight stages of an expanding circular seismic ground-shock ring, seen straight TOP DOWN: angular fine charcoal fault cracks edged by restrained amber highlights, a THIN faint beige dust ring. RINGS HAVE COMPLETELY EMPTY TRANSPARENT INTERIORS: no white solid haze, no floor, no disks. Relative sprite DIAMETER across frames is 15%,22%,30%,38%,46%,54%,58%,58% of its cell. Frame1 small cracking ring; frame2 stronger; frame3 clearer expanding broken crack-ring; frame4 strongest broken amber fault line; frame5 dust fragments around expanding broken ring; frame6 ring dimming; frame7 few crack fragments; frame8 barely visible fading flecks. ALL centered exactly in respective equal cells. Clean bold flat hand-painted RimWorld 2D mod effects, NO huge blooms, NO perspective ellipses, NO fire, NO characters, no photographic noise. Read order left to right, top row then bottom row. Maintain wide transparent separation; rings must NEVER overlap. Eight separately aligned square animation frames, 4x2 layout."
+    },
+    {
+      "key": "earthSpireIconPrompt",
+      "source": "exec-f5d86f55-7df0-493b-a403-718fc193b1f6.png",
+      "prompt": "Use case: stylized-concept. Production RimWorld ability icon: SPIRE ERUPTION. Single striking readable square icon on genuine transparent background. A broad basalt sword with bronze crossguard plunges point-down into cracked earth at center; behind the point a jagged hill of five charcoal stone spikes erupts upward/outward, with thin muted amber fault seams and a few pale dust flecks. Clean bold dark outlines, flat painterly game-symbol shading, simple large shapes legible at 64 pixels. Matching Earth Ascendant charcoal/bronze/amber palette. Centered composition within 80% of image, no background square, no text, no border, no sun, lava, character or hand. Sword and spiked stone hill clearly communicate ground-stab eruption."
+    },
+    {
+      "key": "earthQuakeIconPrompt",
+      "source": "exec-31440e64-1de4-4637-aa97-ba9cc447c170.png",
+      "prompt": "Use case: stylized-concept. RimWorld SEISMIC QUAKE ability icon, single isolated square game symbol with transparent background. A broad charcoal basalt sword with bronze crossguard planted TIP DOWN into a small central rock, with TWO CIRCULAR radiating earthquake rings of broken dark-stone slabs and amber fault cracks around the planted point. Emphasize radial outward force: four small angular amber directional accents pointing outwards. Top-down oblique view of the circular ground shockwave, thin dust accents, no opaque ground background. Bold dark outline, large simple readable 2D shapes, painterly planar shadows matching the Earth stoneplate gear. Charcoal, muted bronze and restrained amber palette. Fully centered with even empty margins. No characters, hands, lava, fire, letters, border or UI. Communicate ground-stab plus circular earthquake rather than spiky hill; short low rocky rings and sword, no tall mountain peaks."
+    }
+  ],
+  "export": "Preserved generated transparency; fitted native 256x256 helmet/icon bounds. Sprite sheets split into fixed 4x2 grid cells and resized to 256x256 without per-frame scaling."
+}

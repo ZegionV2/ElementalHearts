@@ -21,8 +21,8 @@ namespace ElementalHearts {
   internal IEnumerable<Apparel> VisualApparel(){if(stage>=2)yield break;foreach(var t in reverting?previous:kit)if(t is Apparel&&!t.Destroyed&&!Wearing(t))yield return (Apparel)t;}
   public bool transformed;int finishAt,stage,kitVersion;HairDef oldHair;
   List<Thing> kit=new List<Thing>();List<Thing> previous=new List<Thing>();bool supplied;
-  string Element{get{if(parent.def.defName==CelestialAscendant.DefName)return "Celestial";if(parent.def.defName==CycloneEvolution.DefName)return "Wind";if(parent.def.defName==GlacialEvolution.DefName)return "Water";if(parent.def.defName==AzureEvolution.DefName)return "Flame";if(parent.def.defName==ThunderstormEvolution.DefName)return "Lightning";return parent.def.defName.Replace("EH_","").Replace("Heart","");}}
-  bool Helmetless{get{return EvolvedLineage.Active(Pawn)||parent!=null&&parent.def!=null&&parent.def.defName=="EH_EarthHeart";}}
+  string Element{get{if(parent.def.defName==AdamantEvolution.DefName)return "Earth";if(parent.def.defName==CelestialAscendant.DefName)return "Celestial";if(parent.def.defName==CycloneEvolution.DefName)return "Wind";if(parent.def.defName==GlacialEvolution.DefName)return "Water";if(parent.def.defName==AzureEvolution.DefName)return "Flame";if(parent.def.defName==ThunderstormEvolution.DefName)return "Lightning";return parent.def.defName.Replace("EH_","").Replace("Heart","");}}
+  bool Helmetless{get{return EvolvedLineage.Active(Pawn);}}
   string EquipmentElement{get{return EvolvedLineage.Equipment(Pawn,Element);}}
   internal int PulseRemaining{get{return finishAt>0?finishAt-Find.TickManager.TicksGame:0;}}
   internal string PulseElement{get{return EquipmentElement;}}
@@ -39,8 +39,21 @@ namespace ElementalHearts {
   Thing Create(string suffix){var def=DefDatabase<ThingDef>.GetNamed("EH_"+EquipmentElement+suffix);var t=ThingMaker.MakeThing(def,def.MadeFromStuff?ThingDefOf.Steel:null);DormantKit.TryAdd(t);return t;}
   void ParkKit(){changingEquipment=true;try{foreach(var t in kit){if(t==null||t.Destroyed)continue;if(Wearing(t)){if(t is Apparel)Pawn.apparel.Remove((Apparel)t);else Pawn.equipment.Remove((ThingWithComps)t);}if(Pawn.inventory.innerContainer.Contains(t))DormantKit.TryAddOrTransfer(t);else if(t.holdingOwner==null&&!t.Spawned)DormantKit.TryAdd(t);}}finally{changingEquipment=false;}}
   internal void BindKit(){foreach(var t in kit)if(t is ThingWithComps&&t.def!=null&&t.def.defName=="EH_"+EquipmentElement+"Sword"){ElementalBoundSwords.Register(Pawn,EquipmentElement,(ThingWithComps)t);break;}}
-  public override void Notify_Spawned(){BindKit();if(NpcDisciples.AutoNpc(Pawn))ManifestInstant();}
+  public override void Notify_Spawned(){UpgradeEarthHelmet();BindKit();if(NpcDisciples.AutoNpc(Pawn))ManifestInstant();}
+  // Upgrade the prior two-piece Earth kit in place; retain sword identity, quality and personal clothing.
+  internal void UpgradeEarthHelmet(){
+   if(parent==null||parent.def.defName!="EH_EarthHeart"||!supplied||!Available||Pawn.apparel==null||Pawn.inventory==null||Pawn.equipment==null)return;
+   foreach(var item in kit)if(item!=null&&!item.Destroyed&&item.def.defName=="EH_EarthHelmet")return;
+   var helmet=Create("Helmet");kit.Add(helmet);
+   if(transformed){
+    // Saved helmetless Earth pawns may still wear personal headwear. Preserve it for Revert.
+    foreach(var a in new List<Apparel>(Pawn.apparel.WornApparel))if(!IsKit(a)&&a.def.apparel.layers.Contains(ApparelLayerDefOf.Overhead)){if(!previous.Contains(a))previous.Add(a);Stow(a);}
+    Equip(helmet);
+   }
+   Pawn.Drawer.renderer.SetAllGraphicsDirty();
+  }
   void EnsureKit(){
+   UpgradeEarthHelmet();
    if(!supplied){foreach(string suffix in Helmetless?new[]{"Uniform","Sword"}:new[]{"Uniform","Helmet","Sword"}){var bond=ElementalBoundSwords.Find(Pawn);kit.Add(suffix=="Sword"&&bond!=null&&bond.element==EquipmentElement&&bond.sword!=null&&!bond.sword.Destroyed?bond.sword:Create(suffix));}supplied=true;kitVersion=1;}
    BindKit();
   }
@@ -56,6 +69,7 @@ namespace ElementalHearts {
   }
   // Upgrade old saves once. Cosmetic visors remain owned; do not destroy or duplicate them.
   void Migrate(){
+   UpgradeEarthHelmet();
    if(Pawn.inventory==null||Pawn.apparel==null||Pawn.equipment==null)return;
    if(kitVersion>=1||!Available){if(!transformed)ParkKit();return;}
    if(oldHair!=null&&Pawn.story!=null){Pawn.story.hairDef=oldHair;oldHair=null;Pawn.Drawer.renderer.SetAllGraphicsDirty();}
@@ -90,6 +104,7 @@ namespace ElementalHearts {
   public override void CompPostPostRemoved(){Cancel();if(Pawn.apparel!=null&&Pawn.equipment!=null&&Pawn.inventory!=null){changingEquipment=true;try{if(transformed){ParkKit();foreach(var t in previous)Equip(t);previous.Clear();transformed=false;}foreach(var t in kit)if(t!=null&&!t.Destroyed)t.Destroy();kit.Clear();}finally{changingEquipment=false;}}}
   public override void CompPostTickInterval(ref float adjustment,int delta){
    if(Pawn.Downed||Pawn.Dead){RevertWhenDowned();return;}
+   UpgradeEarthHelmet();
    if(EvolvedLineage.Active(Pawn)&&supplied&&(kit.Count!=2||kit[0]==null||kit[0].def.defName!="EH_"+EquipmentElement+"Uniform"))RebuildAzureKit();
    if(ElementalBoundSwords.Find(Pawn)==null)BindKit();
    if(kitVersion<2){if(finishAt>0)reverting=stage<2?transformed:!transformed;Migrate();if(kitVersion>=1)kitVersion=2;}if(finishAt==0){if(NpcDisciples.AutoNpc(Pawn)&&!transformed)ManifestInstant();return;}if(!Ready||Pawn.CurJob==null||Pawn.CurJob.def.defName!="EH_Transform"){Cancel();return;}
@@ -109,7 +124,7 @@ namespace ElementalHearts {
    finishAt=Find.TickManager.TicksGame+90;stage=0;var earth=HediffComp_EarthAbilities.On(Pawn);if(earth!=null&&!transformed)earth.activationUntil=finishAt+30;if(CelestialAscendant.Active(Pawn))CelestialVfx.Manifest(Pawn,90);Pawn.Drawer.renderer.SetAllGraphicsDirty();ElementalAudio.Play(Pawn,"EH_TransformStart");
   }
   public override IEnumerable<Gizmo> CompGetGizmos(){if(!ElementalCombatPolicy.Controlled(Pawn))yield break;
-   var c=new Command_Action{defaultLabel=transformed?"Revert":"Transform",defaultDesc=(EvolvedLineage.Active(Pawn)?"Manifest your evolved royal armor and your bound sword, without a helmet. The elemental halo floats above your visible head. ":Element=="Earth"?"Manifest stone armor and Faultbreaker, keeping your head and hair visible. Earth remains a normal Ascendant. ":"Transform into your elemental armor, full-face helmet and sword. ")+" Stand still facing forward until the transformation finishes. Hair is unchanged. Previous equipment is kept in inventory and restored on reverting. Equipment is locked while transformed; revert before changing clothes or weapons. The manifested kit disappears into the heart on reverting, without occupying inventory; quality persists; manifested armor and swords are indestructible. A downed pawn reverts to personal clothing and can transform again after recovery. "+(EvolvedLineage.Active(Pawn)?"The halo appears only while transformed and drafted.":"Auras require transformation and drafting."),icon=ElementalIcons.Transform,groupable=false,action=()=>{if(!Ready||finishAt>0)return;Pawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed("EH_Transform")),JobTag.Misc);}};
+   var c=new Command_Action{defaultLabel=transformed?"Revert":"Transform",defaultDesc=(EvolvedLineage.Active(Pawn)?"Manifest your evolved royal armor and your bound sword, without a helmet. The elemental halo floats above your visible head. ":Element=="Earth"?"Manifest stone armor, a fully enclosed basalt helmet and Faultbreaker. Earth remains a normal Ascendant. ":"Transform into your elemental armor, full-face helmet and sword. ")+" Stand still facing forward until the transformation finishes. Hair is unchanged. Previous equipment is kept in inventory and restored on reverting. Equipment is locked while transformed; revert before changing clothes or weapons. The manifested kit disappears into the heart on reverting, without occupying inventory; quality persists; manifested armor and swords are indestructible. A downed pawn reverts to personal clothing and can transform again after recovery. "+(EvolvedLineage.Active(Pawn)?"The halo appears only while transformed and drafted.":"Auras require transformation and drafting."),icon=ElementalIcons.Transform,groupable=false,action=()=>{if(!Ready||finishAt>0)return;Pawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed("EH_Transform")),JobTag.Misc);}};
    if(!Available)c.Disable("This element's transformation equipment is not available yet.");else if(!Ready)c.Disable("Must be awake and free of a controlled animation.");else if(!transformed&&!KitPresent)c.Disable("Recover the issued transformation equipment into this pawn's inventory first.");else if(finishAt>0)c.Disable("Transforming...");yield return c;
   }
  }

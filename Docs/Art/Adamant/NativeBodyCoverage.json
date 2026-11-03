@@ -1,0 +1,198 @@
+[
+    {
+        "sideFitBakedIntoTexture":  false,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Male",
+        "direction":  "south",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  false,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Female",
+        "direction":  "south",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  false,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Thin",
+        "direction":  "south",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  false,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Fat",
+        "direction":  "south",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  false,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Hulk",
+        "direction":  "south",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  false,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Child",
+        "direction":  "south",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  false,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Baby",
+        "direction":  "south",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  true,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Male",
+        "direction":  "east",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  true,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Male",
+        "direction":  "west",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  true,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Female",
+        "direction":  "east",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  true,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Female",
+        "direction":  "west",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  true,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Thin",
+        "direction":  "east",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  true,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Thin",
+        "direction":  "west",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  true,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Fat",
+        "direction":  "east",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  true,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Fat",
+        "direction":  "west",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  true,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Hulk",
+        "direction":  "east",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  true,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Hulk",
+        "direction":  "west",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  true,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Child",
+        "direction":  "east",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  true,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Child",
+        "direction":  "west",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  true,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Baby",
+        "direction":  "east",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  true,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Baby",
+        "direction":  "west",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  false,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Male",
+        "direction":  "north",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  false,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Female",
+        "direction":  "north",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  false,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Thin",
+        "direction":  "north",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  false,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Fat",
+        "direction":  "north",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  false,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Hulk",
+        "direction":  "north",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  false,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Child",
+        "direction":  "north",
+        "nativePaddingPixels":  1
+    },
+    {
+        "sideFitBakedIntoTexture":  false,
+        "uncoveredNativeBodyPixels":  0,
+        "body":  "Baby",
+        "direction":  "north",
+        "nativePaddingPixels":  1
+    }
+]

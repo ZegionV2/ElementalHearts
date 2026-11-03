@@ -1,67 +1,44 @@
 # Earth Ascendant
 
-Implemented normal Earth lineage for RimWorld 1.6. Adamant evolution is not included. See [combat and presentation polish](EarthPolish.md) for the subsequent movement and effect refinements.
+Earth is a playable normal lineage for RimWorld 1.6. Adamant evolution is [playable](AdamantIntegration.md).
 
-## Acquire and progress
-Craft Earth serum at a drug lab after Fabrication: 30 plasteel, 20 uranium, four industrial components and four industrial medicine; Crafting 8, 12,000 work.
-Self-inject or administer through a medical bill. Existing one-element-per-pawn rules apply.
-Normal Earth Ascendants Teach Earth. Disciples call a bound Faultbreaker, deal 40% technique damage and have 50% longer cooldowns.
-Disciples ascend through the existing 50-kill/five-day ceremony or the shared saved near-death awakening roll.
-Promotion preserves Earth automation, non-lethal preference and remaining cooldowns.
-Earth is a fifth equally eligible NPC disciple/normal Celestial Bestow choice. The overall configured NPC disciple probability is unchanged.
-Developer actions include Grant Earth ascension. Earth has no Evolve command.
+## Equipment and progression
 
-## Equipment and normal-tier benefits
-Transform manifests basalt stoneplate and Faultbreaker, without a helmet or head halo.
-All seven native body textures have south/east/north exports; west uses native mirroring.
-Directional artwork is aligned to the existing Wind coverage silhouettes and side placement.
-Bound ownership, indestructibility, hidden kit storage, personal clothing restoration and downed reversion use the existing systems.
-Earth keeps visible personal hair, +30 ascension mood, normal shared disease/carry/caravan benefits, wound sealing and ordinary-injury recovery.
-The Earth stage uses 1.4x movement, 2x melee damage, 0.85x melee cooldown and 0.45x incoming damage before equipment and temporary defense.
-The sword has 26-power edge/point attacks with 2.6-second base recovery; stoneplate adds modest ordinary armor.
+Transform manifests basalt stoneplate, a closed bronze-crowned basalt helmet, and the bound Faultbreaker sword. The helmet conceals hair/beard through the shared smooth manifestation system; Revert and downed reversion restore personal clothes and hair. All three projections are indestructible. Seven body textures use south/east/north exports and native west mirroring; the helmet uses native head scaling and three directional textures plus inventory icon.
 
-## Techniques
-| Technique | Range | Cooldown | Timing and effect |
+Existing two-piece Earth kits receive exactly one helmet in place. The original sword, quality, saved personal equipment and transformation save keys are retained. Dormant helmets remain in hidden kit storage.
+
+Craft Earth serum at a drug lab after Fabrication: 30 plasteel, 20 uranium, four industrial components and four industrial medicine; Crafting 8, 12,000 work. Normal Earth Ascendants Teach Earth. Disciples call Faultbreaker and use the four skills at 40% damage with 50% longer cooldowns, then qualify for Ascend after 50 credited kills/five days or awaken through the shared near-death roll. Promotion retains controls and cooldowns. Earth remains a fifth NPC disciple and Celestial Random Bestow choice.
+
+Normal stats, recovery, +30 mood, disease protection, carry/caravan benefits and Resolve defense remain unchanged. There is no evolved Earth head halo.
+
+## Four techniques
+
+| Technique | Range | Cooldown | Effect |
 | --- | --- | --- | --- |
-| Faultline Cleave | Eight-cell lane | Six seconds | Six-tick wind-up, one 2.6x weapon-derived blunt impact per eligible victim, brief stagger, eight-tick recovery. Stops at opaque walls/closed doors and corner blockers. One Resolve for a successful hostile hit per cast. |
-| Stonebreaker Advance | Six cells | Nine seconds | Bounded clear navigation to an unoccupied melee flank. One checked movement step per two ticks; one 3x arrival strike, then eight-tick recovery. |
-| Bastion Stance | Three-cell ally aura | Eighteen seconds | Four seconds of 20% personal and 10% same-faction ally protection, with 25% slower movement. Does not replace the current melee order. Disciples receive 40% defensive strength. Full Ascendants must be transformed. |
-| Mountainfall | Eight-cell primary, three-cell burst | Thirty seconds | A target-following marker precedes a 42-tick wind-up. One 4x impact per eligible target, modified by Resolve, then eight-tick recovery. Safe outward displacement up to two cells; no collision damage or permanent terrain. |
+| Faultline Cleave | Eight-cell lane | 6 seconds | Six-tick windup; one 2.6x weapon-derived blunt hit per eligible victim, short stagger, one Resolve on a successful hostile cast. Walls stop the lane. |
+| Stonebreaker Advance | Six cells | 9 seconds | Bounded checked route to an empty melee flank, interpolated two-tick steps, one 3x arrival strike. |
+| Seismic Quake | Four cells around caster | 18 seconds | Raise Faultbreaker and stab the ground over 36 ticks. One circular 2.2x impact per eligible enemy, 60-tick stagger and up to two clear cells of outward push. Automatically used against two or more nearby enemies. Full Ascendants must be transformed. |
+| Spire Eruption | Eight-cell ground mark, three-cell burst | 30 seconds | Stab the ground over 42 ticks. A fixed marker warns where a spiked basalt hill will erupt. One 4x hit per eligible enemy, up to three clear cells of outward push and a 45-tick stagger. Consumes Resolve for +10% damage per stack. The hill dissolves as a short visual effect. |
 
-Damage uses the existing weapon profile, shared disciple scaling and global elemental damage adjustment.
-Area attacks cap at 16 distinct victims; burst searches cap at 512 inspected things.
-Friendly fire and manually selected primary targets follow the existing shared policy.
-Non-lethal uses suppression in place of wounds, including ordinary melee.
-Bastion and three Resolve stacks multiply to 0.68 of remaining incoming damage, before the ordinary Earth stage/armor.
-Several allied Bastions cannot stack, and a caster's personal Bastion is not multiplied by another caster's aura.
-Incapacitation, undrafting, reversion, lost weapon, expiry or removal invalidates the stance and cleans up its movement status.
-Bastion resists the mod's Earth pushes, Glacial displacement and Cyclone airbound capture. It is not general immunity to stuns or arbitrary third-party teleports.
+All techniques use shared Auto Combat and Non-lethal controls, weapon scaling, disciple scaling and friendly-fire policy. Every area cast caps at 16 distinct victims and 512 inspected local things. Parry consumes the attempted hit without a push. Downed/dead or externally animation-controlled pawns are not forcibly displaced. Push routes stop at walls, closed doors, fire, occupied cells and diagonal blockers. There is no collision damage.
 
-## Resolve and automatic combos
-While transformed, qualifying hostile damage grants at most one Resolve every two seconds.
-The direct instigator must be a hostile pawn or building, excluding self/friendly/environmental damage and prevented hits.
-Faultline can add one further stack per successful hostile cast.
-Up to three stacks expire eight seconds after the last gain; each reduces remaining damage by 5%.
-Mountainfall consumes current Resolve only at a valid committed impact, adding 10% impact damage per stack.
+Earth's four numeric skill slots and cooldown list stay compatible: legacy Bastion slot 2 now casts Quake, legacy Mountainfall slot 3 now casts Spire. A saved old Bastion status may finish its existing brief duration; no new defensive stance is cast. Resolve still grants 5% remaining-damage reduction per stack, up to three, expiring eight seconds after the last gain.
 
-Automatic behavior respects explicit movement/work/hold orders and queued orders.
-It uses Bastion under local crowd/ally pressure, Advance to close a useful gap, Mountainfall against a crowd or with full Resolve, then Cleave or ordinary melee.
-Active decisions use the shared 12-tick cadence, with an early check after technique recovery.
-Automatic casts can acquire a nearby replacement target at impact; manual casts retain the clicked opponent.
-The saved job owns movement and impact timing; there is no separate permanent busy flag.
-Saving retains deadlines, route/index, expected position and the impact commitment bit.
-Interrupted casts retain their spent cooldown and release their action ownership.
+## Automation, saved casts and effects
 
-## Presentation
-42 six-phase frames supply the four techniques and Idle/Combat/Activation body auras.
-Auras require a living, standing, drafted, transformed full Earth Ascendant; disciples have none.
-Use the existing aura toggle and effect-opacity controls. No evolved head halo is drawn.
-Mountainfall's marker follows its current job target and reconstructs automatically after loading.
-Materials are cached; transient effects use a fixed 96-slot pool and bounded lifetimes.
-Camera/fog culling and a 64-visible-body-aura budget apply. Dropped visual effects never drop gameplay.
-Earth sound definitions reuse existing Wind samples through the shared throttled mixer; no new sound recordings are included.
-An optional Melee Animation sword profile is supplied; the optional dependency was unavailable for local integration validation.
+Automation respects player movement/work orders and queued commands. It uses Quake against two nearby enemies, Advance to close a gap, Spire for a cluster or full Resolve, then Cleave and ordinary melee. There are still four combat commands; no skill-menu replacement.
+
+The native Earth job owns each windup and its ground-stab drawing. Movement, interruption, downing, lost weapon, reversion or external animation ownership cancels the action. Save/load retains the fixed eruption cell, cast deadlines and commitment flag. Commitment is saved before damage; a loaded impact cannot replay. Interrupted casts retain their spent cooldown and release their action gate.
+
+Spire and Quake each have eight aligned generated effect frames and a distinct command icon. Materials remain cached and all transient effects share the existing 96-slot pool, camera/fog checks and bounded lifetimes. The existing 42 effect/aura frames remain for Cleave, Advance, normal auras and legacy visuals. Effect opacity and aura settings remain available.
+
+Spikes and cracks are short-lived visuals. These skills spawn no terrain/building obstacles, damage no buildings, alter no permanent terrain or weather, and create no damage-over-time packets. Faultbreaker retains its native optional Melee Animation grip/blade profile. Ground-stab drawing yields to external animation ownership.
 
 ## Validation
-See EarthValidation.md for build, automated checks and isolated native smoke-test results.
 
+See EarthSeismicUpdate.md for this update's build, regression and isolated native combat/save-load results. EarthValidation.md and EarthPolishValidation.md retain the earlier implementation history.
+
+## Earth sound family
+
+See [EarthAudio.md](EarthAudio.md) for the dedicated stone-hit, grinding gravel, Quake rumble and Spire fracture sound bank. The new sounds preserve the existing spatial and crowd limits.

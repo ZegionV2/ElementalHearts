@@ -13,7 +13,7 @@ Transform pawns into powerful elemental fighters with bound swords, indestructib
 
 RimWorld **1.6** and **Harmony** are required. DLC is optional. Melee Animation and Search and Destroy integrations are optional.
 
-The repository also contains the complete playable mod. To install a source download, copy its contents into `Mods/ElementalHearts` so `About`, `Assemblies`, `Defs` and `Textures` sit directly inside that folder.
+The [main branch download](https://github.com/ZegionV2/ElementalHearts/archive/refs/heads/main.zip) contains the newest playable build. Copy its contents into `Mods/ElementalHearts` so `About`, `Assemblies`, `Defs` and `Textures` sit directly inside that folder.
 
 ## Playable lineages
 
@@ -23,17 +23,17 @@ The repository also contains the complete playable mod. To install a source down
 | Flame | Azure Flame | Blue fire, regal gear and reactive Azure Reversal |
 | Wind | Cyclone | Emerald wind, sword forms and bounded airbound cyclone attacks |
 | Water | Glacial | Flowing counters, Pressure combos, ice techniques and Glacial Explosion |
-| Earth | � | Resolve, Faultbreaker charges, faultline cuts, protective Bastion and Mountainfall |
+| Earth | Adamant | Resolve, Faultbreaker charges, faultline cuts, radial Seismic Quake and Spire Eruption |
 | — | Celestial | Standalone fully evolved sun, solar and light lineage |
 
-Earth is a normal helmetless Ascendant. Adamant evolution is not included. Craft Earth serum at a drug lab after Fabrication; see [Earth mechanics and controls](Docs/EarthAscendant.md).
+Earth is a normal Ascendant with basalt stoneplate, a closed mountain-crown helmet and Faultbreaker. Seismic Quake replaces Bastion; Spire Eruption replaces Mountainfall. Both use animated ground stabs and safe outward knockback. Adamant evolution is playable; see [Adamant mechanics and validation](Docs/AdamantIntegration.md). Craft Earth serum at a drug lab after Fabrication; see [Earth mechanics and controls](Docs/EarthAscendant.md).
 
 ## Progression and controls
 
 - Acquire an elemental heart to grant its lineage. Use **Transform** to manifest the armor and bound sword, then draft the pawn for combat.
 - **Auto Combat** starts enabled for newly granted disciples and Ascendants. Shared **Off / On / Non-lethal** controls let you choose automatic behavior.
 - Normal Ascendants **Teach** disciples face to face. Disciples unlock **Ascend** after 50 credited kills and five disciple days.
-- Eligible Flame, Lightning, Water and Wind Ascendants can evolve after 150 additional unique hostile non-animal kills and ten ascendant days.
+- Eligible Flame, Lightning, Water, Wind and Earth Ascendants can evolve after 150 additional unique hostile non-animal kills and ten ascendant days.
 - Evolved Ascendants **Bestow** normal ascension directly through a paired ceremony.
 - New eligible humanoid NPCs from other factions have a configurable **20%** disciple spawn chance. They receive one saved **5%** near-death combat awakening roll, with injury healing, a shockwave and temporary protection on success.
 - Downed Ascendants restore personal clothing and retain their projected gear for later transformation.
@@ -47,15 +47,23 @@ Celestial arrives fully evolved, with ivory/gold regalia, the **Dawnbringer** sw
 
 Six combat techniques combine **Dawncleaver**, **Sunstride**, **Corona Dance**, **Solar Judgment**, **Heavenly Zenith** and the reactive **Fake Rainbow** parry/retreat/counter. Radiance supports automatic finishing combos.
 
-**Bestow (Random)** grants normal Lightning, Flame, Wind, Water or Earth ascension. **Light Travel** manually selects a world destination and safe landing cell, with no resource cost or cooldown and large departure/arrival beams.
+**Bestow (Random)** grants normal Lightning, Flame, Wind, Water or Earth ascension and immediately fulfills that lineage's evolution milestones. The recipient stays a normal Ascendant until you press Evolve; readiness persists through saving/loading. Other evolved Ascendants' Bestow retains the ordinary evolution requirements. Celestial Regalia mechanically covers the torso, shoulders, arms, hands, waist, legs and feet, providing complete clothing coverage without a helmet. **Light Travel** manually selects a world destination and safe landing cell, with no resource cost or cooldown and large departure/arrival beams.
 
 Recent presentation updates add expanding golden shockwaves, ivory impact flashes, directional particles, layered beam cores and prism accents. These use cached materials and bounded effect pools. Milira is not required.
 
 The latest armor fix raises the visible head above the collar, keeps hair/beard/halo aligned, and gives Thin-body regalia a flat masculine/unisex chest. It preserves complete body coverage and blends through Transform/Revert.
 
+## Lunar Ascendant art
+
+The [Lunar asset pack](ArtSource/Lunar) contains cloaked moon-silver armor fitted to seven body types, a helmet and sword, five ability icons, eight effect frames per ability and a six-frame aura. Lunar gameplay and its rare Bestow roll are planned for a later update.
+
 ## Documentation
 
+- [Adamant Earth evolution: five techniques, progression and saved state](Docs/AdamantIntegration.md)
+
 - [Earth Ascendant mechanics, acquisition and combat](Docs/EarthAscendant.md)
+- [Earth stone/gravel/seismic sound update](Docs/EarthAudio.md)
+- [Adamant original design notes](Docs/AdamantEvolutionPlan.md)
 - [Earth build and validation](Docs/EarthValidation.md)
 - [Earth combat and presentation polish](Docs/EarthPolish.md)
 - [Earth polish validation](Docs/EarthPolishValidation.md)

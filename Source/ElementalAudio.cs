@@ -28,7 +28,7 @@ namespace ElementalHearts {
    string element=ElementalTeaching.Element(p);if(element==null&&ElementalTeaching.Trained(p)){foreach(var h in p.health.hediffSet.hediffs){var disciple=h.TryGetComp<HediffComp_ElementalApprentice>();if(disciple!=null){element=disciple.DiscipleElement;break;}}}
    return element=="Earth"?9:element=="Flame"?1:element=="Wind"?2:element=="Water"?3:0;
   }
-  public static string SoundName(Pawn p,ElementalSound cue){return names[Profile(p),Math.Max(0,Math.Min(6,(int)cue))];}
+  public static string SoundName(Pawn p,ElementalSound cue){string name=names[Profile(p),Math.Max(0,Math.Min(6,(int)cue))];return AdamantEvolution.Active(p)?name.Replace("_Earth_","_Adamant_"):name;}
   public static SoundDef Resolve(string name){SoundDef sound;if(sounds.TryGetValue(name,out sound))return sound;sound=DefDatabase<SoundDef>.GetNamedSilentFail(name);if(sounds.Count>=128)sounds.Clear();sounds[name]=sound;return sound;}
   public static int Delay(string name){if((name.StartsWith("EH_Sound_Lightning_")||name.StartsWith("EH_Sound_Thunderstorm_"))&&(name.EndsWith("_Slash")||name.EndsWith("_Spin")||name.EndsWith("_Impact")))return 30;return name.EndsWith("_Slash")?4:name.EndsWith("_Parry")?6:name.EndsWith("_Burst")?18:name.EndsWith("_Spin")||name.EndsWith("_Impact")||name.EndsWith("_Charge")?12:8;}
   public static void Ability(Pawn pawn,ElementalSound cue){Play(pawn,SoundName(pawn,cue));}

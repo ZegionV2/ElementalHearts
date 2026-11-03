@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <HediffDef ParentName="EH_ElementalHeartHediffBase">
+    <defName>EH_AdamantAscendant</defName>
+    <label>Adamant Ascendant</label>
+    <description>Evolved Earth ascension: Adamant Severance, Mountain King's Advance, Sovereign Quake, Worldspine Eruption and Adamant Bulwark. Helmetless ivory/gold regalia, bound Worldbreaker and a subtle amber halo while transformed and drafted. 500% movement, +50 mood, powerful evolved defense, improved recovery and Bestow: Earth. Three saved Adamant Resolve stacks support safe automatic and non-lethal combos. No buildings, terrain or roofs are damaged.</description>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_EarthAbilities" />
+      <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
+        <sealAfterTicks>150</sealAfterTicks>
+        <healPerSecond>3</healPerSecond>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_AdamantMastery" />
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.2</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>0.25</offset>
+          </li>
+        </capMods>
+        <painFactor>0</painFactor>
+        <totalBleedFactor>0.25</totalBleedFactor>
+        <naturalHealingFactor>6</naturalHealingFactor>
+        <hungerRateFactor>0.6</hungerRateFactor>
+        <restFallFactor>0.6</restFallFactor>
+        <statFactors>
+          <CarryingCapacity>10</CarryingCapacity>
+          <MoveSpeed>5</MoveSpeed>
+          <MeleeDamageFactor>2.8</MeleeDamageFactor>
+          <MeleeCooldownFactor>.65</MeleeCooldownFactor>
+          <WorkSpeedGlobal>1.75</WorkSpeedGlobal>
+          <IncomingDamageFactor>.08</IncomingDamageFactor>
+          <ImmunityGainSpeed>2</ImmunityGainSpeed>
+          <JoyFallRateFactor>0.6</JoyFallRateFactor>
+        </statFactors>
+        <statOffsets>
+          <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+          <MeleeHitChance>4</MeleeHitChance>
+          <MeleeDodgeChance>12</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <JobDef>
+    <defName>EH_EvolveAdamant</defName>
+    <driverClass>ElementalHearts.JobDriver_EvolveAzure</driverClass>
+    <reportString>evolving into an Adamant Ascendant.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+  <HediffDef>
+    <defName>EH_AdamantBulwark</defName>
+    <label>Adamant Bulwark</label>
+    <description>Brief personal and allied protection from a sovereign Earth brace. Strongest guard applies once; explicit movement and incapacity end it.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>180</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

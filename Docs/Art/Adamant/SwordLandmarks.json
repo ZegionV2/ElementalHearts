@@ -1,0 +1,26 @@
+{
+    "sprite":  "Textures/Things/Item/Equipment/WeaponMelee/AdamantSword.png",
+    "profile":  {
+                    "BladeStart":  0.16874999999999998,
+                    "OffY":  0,
+                    "OffX":  0.365625,
+                    "ItemType":  "ThingDef",
+                    "HandsMode":  0,
+                    "BladeEnd":  0.93281249999999993,
+                    "MeleeWeaponType":  6,
+                    "ScaleX":  1.2,
+                    "ScaleY":  1.2,
+                    "ItemDefName":  "EH_AdamantSword",
+                    "FlipX":  false,
+                    "FlipY":  false,
+                    "Rotation":  90,
+                    "TextureModID":  "elementalhearts.lightningheart",
+                    "ItemTypeNamespace":  "Verse"
+                },
+    "guardY":  170,
+    "tipY":  7,
+    "gripX":  128,
+    "note":  "Native profile schema prepared from exported sprite landmarks; validate in Melee Animation during gameplay integration.",
+    "pommelY":  248,
+    "gripY":  206
+}
