@@ -1,6 +1,6 @@
 # Earth Ascendant
 
-Implemented normal Earth lineage for RimWorld 1.6. Adamant evolution is not included.
+Implemented normal Earth lineage for RimWorld 1.6. Adamant evolution is not included. See [combat and presentation polish](EarthPolish.md) for the subsequent movement and effect refinements.
 
 ## Acquire and progress
 Craft Earth serum at a drug lab after Fabrication: 30 plasteel, 20 uranium, four industrial components and four industrial medicine; Crafting 8, 12,000 work.

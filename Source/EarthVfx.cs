@@ -14,11 +14,11 @@ namespace ElementalHearts {
   public static void Emit(Pawn p,int sequence,Vector3 from,Vector3 to,int ticks,float size,float angle=0,bool telegraph=false){
    if(p==null||!p.Spawned||ElementalHeartsMod.Settings.effectOpacity<=0||p.Map!=Find.CurrentMap||Find.CameraDriver==null)return;
    var visible=Find.CameraDriver.CurrentViewRect.ExpandedBy(8);if(!visible.Contains(from.ToIntVec3())&&!visible.Contains(to.ToIntVec3()))return;
-   p.Map.GetComponent<MapComponent_Earth>().Emit(sequence,from,to,ticks,size,angle,telegraph);
+   p.Map.GetComponent<MapComponent_Earth>().Emit(sequence,from,to,ticks,size,angle,telegraph,sequence==1?p:null);
   }
  }
  public sealed class MapComponent_Earth:MapComponent {
-  struct Effect {public bool active,telegraph;public int sequence,start,duration;public Vector3 from,to;public float size,angle;}
+  struct Effect {public bool active,telegraph;public int sequence,start,duration,ownerJob;public Vector3 from,to;public float size,angle;public Pawn owner;}
   const int EffectLimit=96,VisibleLimit=64;
   readonly Effect[] effects=new Effect[EffectLimit];
   readonly List<Pawn> pawns=new List<Pawn>();
@@ -44,39 +44,55 @@ namespace ElementalHearts {
    }
    return best;
   }
-  public void Emit(int sequence,Vector3 from,Vector3 to,int ticks,float size,float angle,bool telegraph){
+  public void Emit(int sequence,Vector3 from,Vector3 to,int ticks,float size,float angle,bool telegraph,Pawn owner=null){
    int now=Find.TickManager.TicksGame;
    for(int i=0;i<effects.Length;i++){if(effects[i].active&&now<effects[i].start+effects[i].duration)continue;
-    effects[i]=new Effect{active=true,telegraph=telegraph,sequence=sequence,start=now,duration=Math.Max(1,Math.Min(180,ticks)),from=from,to=to,size=size,angle=angle};return;}
+    effects[i]=new Effect{active=true,telegraph=telegraph,sequence=sequence,start=now,duration=Math.Max(1,Math.Min(180,ticks)),from=from,to=to,size=size,angle=angle,owner=owner,ownerJob=owner==null||owner.CurJob==null?-1:owner.CurJob.loadID};return;}
   }
   void Draw(int sequence,int frame,Vector3 at,float size,float angle,float opacity,bool ground){
    if(color==null)color=new MaterialPropertyBlock();
    color.SetColor(ShaderPropertyIDs.Color,new Color(1,1,1,opacity*ElementalHeartsMod.Settings.effectOpacity));
    Graphics.DrawMesh(WindVfx.FrameMesh(ground),Matrix4x4.TRS(at,Quaternion.AngleAxis(angle,Vector3.up),new Vector3(size,1,size)),EarthVfx.Frame(sequence,frame),0,null,0,color);
   }
+  void DrawPhase(int sequence,float phase,Vector3 at,float size,float angle,float opacity,bool ground,bool loop){
+   phase=loop?Mathf.Repeat(phase,6f):Mathf.Clamp(phase,0f,5f);
+   int first=(int)phase,second=loop?(first+1)%6:Math.Min(5,first+1);float blend=EarthRules.Smooth(phase-first);
+   if(opacity<=.001f)return;
+   if(first==second){Draw(sequence,first,at,size,angle,opacity,ground);return;}
+   if(blend<.999f)Draw(sequence,first,at,size,angle,opacity*(1f-blend),ground);
+   if(blend>.001f)Draw(sequence,second,at,size,angle,opacity*blend,ground);
+  }
   public override void MapComponentDraw(){
    if(map!=Find.CurrentMap||Find.CameraDriver==null||ElementalHeartsMod.Settings.effectOpacity<=0)return;
    int now=Find.TickManager.TicksGame;var view=Find.CameraDriver.CurrentViewRect.ExpandedBy(8);
    for(int i=0;i<effects.Length;i++){
     var e=effects[i];if(!e.active)continue;int age=now-e.start;
-    if(age>=e.duration){effects[i].active=false;continue;}var at=e.sequence==1?Vector3.Lerp(e.from,e.to,Mathf.Clamp01(age/(float)e.duration)):e.from;
+    if(age>=e.duration){effects[i]=default(Effect);continue;}
+    if(e.owner!=null&&(!e.owner.Spawned||e.owner.Map!=map||e.owner.Dead||e.owner.Downed||!EarthCombat.Busy(e.owner)||e.owner.CurJob.loadID!=e.ownerJob)){effects[i]=default(Effect);continue;}
+    var at=e.owner!=null?e.owner.DrawPos:e.sequence==1?Vector3.Lerp(e.from,e.to,Mathf.Clamp01(age/(float)e.duration)):e.from;
+    if(e.owner!=null)e.angle=e.owner.Rotation.AsAngle-90f;
     var cell=at.ToIntVec3();if(!cell.InBounds(map)||!view.Contains(cell)||cell.Fogged(map))continue;
     at.y=AltitudeLayer.MoteOverhead.AltitudeFor();
-    Draw(e.sequence,e.telegraph?0:EarthRules.Frame(age,e.duration),at,e.size,e.angle,e.telegraph?.35f:.85f,false);
+    float fade=EarthRules.Smooth((e.duration-age)/6f);
+    DrawPhase(e.sequence,e.telegraph?0:EarthRules.EffectPhase(e.sequence,age,e.duration),at,e.size,e.angle,(e.telegraph?.35f:.85f)*fade,false,false);
    }
    int drawn=0;
    foreach(var p in pawns){
     var cast=p==null||p.jobs==null?null:p.jobs.curDriver as JobDriver_EarthTechnique;
-    if(cast!=null&&cast.PendingMountainfall){var target=cast.TelegraphTarget;if(target!=null&&target.Spawned&&target.Map==map&&view.Contains(target.Position)&&!target.Position.Fogged(map)){var marker=target.DrawPos;marker.y=AltitudeLayer.MoteOverhead.AltitudeFor();Draw(3,0,marker,6f,0,.4f,false);}}
+    if(cast!=null&&cast.PendingMountainfall){var target=cast.TelegraphTarget;if(target!=null&&target.Spawned&&target.Map==map&&view.Contains(target.Position)&&!target.Position.Fogged(map)){var marker=target.DrawPos;marker.y=AltitudeLayer.MoteOverhead.AltitudeFor();DrawPhase(3,cast.TelegraphPhase*2f,marker,5.7f+.3f*cast.TelegraphPhase,0,.28f+.14f*cast.TelegraphPhase,false,false);}}
     if(p==null||!p.Spawned||p.Map!=map||p.Dead||p.Downed||!view.Contains(p.Position)||p.Position.Fogged(map))continue;
     var c=HediffComp_EarthAbilities.On(p);if(c==null)continue;
-    if(c.GuardActive){var ring=p.DrawPos;ring.y=AltitudeLayer.MoteOverhead.AltitudeFor();Draw(2,(now/5+p.thingIDNumber)%6,ring,6.3f,0,.45f,false);}
+    if(cast!=null&&cast.PendingCleave){var target=cast.TelegraphTarget;if(target!=null&&target.Spawned&&target.Map==map){var cut=p.DrawPos;cut.y=AltitudeLayer.MoteOverhead.AltitudeFor();DrawPhase(0,cast.CleaveWindup,cut,3.5f,(target.DrawPos-p.DrawPos).AngleFlat()-90f,.55f,false,false);}}
+    if(c.GuardActive){var ring=p.DrawPos;ring.y=AltitudeLayer.MoteOverhead.AltitudeFor();float ramp=EarthRules.Smooth((now-(c.guardUntil-EarthRules.BastionDuration))/10f)*EarthRules.Smooth((c.guardUntil-now)/12f);DrawPhase(2,(now%30)/5f+(p.thingIDNumber%6),ring,6.3f,0,.45f*ramp,false,true);}
     if(!ElementalHeartsMod.Settings.showAura||!c.Full||!p.Drafted||!HediffComp_ElementalTransform.Active(p)||HediffComp_ElementalTransform.Transforming(p))continue;
     if(drawn++>=VisibleLimit)break;
     var pos=p.DrawPos;pos.y-=.01f;pos.z-=.35f;
-    int state=c.activationUntil>now?6:c.combatUntil>now?5:4;
-    int frame=state==6?EarthRules.Frame(30-(c.activationUntil-now),30):(now/5+p.thingIDNumber)%6;
-    Draw(state,frame,pos,2.65f,0,.28f+.1f*Mathf.Sin(now*.045f+p.thingIDNumber),true);
+    float opacity=.28f+.1f*(float)Math.Sin(now*.045+p.thingIDNumber),phase=(now%30)/5f+(p.thingIDNumber%6);
+    float activation=EarthRules.Smooth((c.activationUntil-now)/8f);
+    float combat=EarthRules.CombatWeight(now,c.combatStarted,c.combatUntil);
+    DrawPhase(4,phase,pos,2.65f,0,opacity*(1f-activation)*(1f-combat),true,true);
+    DrawPhase(5,phase,pos,2.65f,0,opacity*(1f-activation)*combat,true,true);
+    if(activation>0)DrawPhase(6,(30-(c.activationUntil-now))/5f,pos,2.65f,0,opacity*activation,true,false);
    }
   }
  }
