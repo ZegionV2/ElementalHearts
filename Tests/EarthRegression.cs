@@ -16,13 +16,17 @@ class EarthRegression {
   Check(Math.Abs(EarthRules.Defense(3,false,1)-.85f)<.00001f,"Resolve defense");
   Check(Math.Abs(EarthRules.Defense(0,true,.4f)-.92f)<.00001f,"disciple defensive scaling");
   Check(EarthRules.Impact(-20)==1&&Math.Abs(EarthRules.Impact(999)-1.3f)<.00001f,"Resolve finisher clamp");
+  Check(EarthRules.RepathAllowed(0,4,3,36)&&!EarthRules.RepathAllowed(1,4,3,36)&&!EarthRules.RepathAllowed(0,10,3,36)&&!EarthRules.RepathAllowed(0,4,3,37)&&!EarthRules.RepathAllowed(0,4,0,4),"one charge adjustment, twelve-step and six-cell limits");
+  foreach(float t in new[]{-10f,0f,.25f,.5f,.75f,1f,10f})Check(EarthRules.Smooth(t)>=0&&EarthRules.Smooth(t)<=1,"transition clamp");
+  Check(EarthRules.CombatWeight(100,100,280)==0&&EarthRules.CombatWeight(112,100,280)==1&&EarthRules.CombatWeight(280,100,280)==0,"aura fades at actual engagement boundaries");
+  Check(EarthRules.EffectPhase(3,0,30)==3&&EarthRules.EffectPhase(3,29,30)==5&&EarthRules.EffectPhase(0,0,18)==2,"impact frame is present on the damage tick");
   var full=new HediffComp_EarthAbilities{props=new HediffCompProperties_EarthAbilities()};
   var pupil=new HediffComp_EarthAbilities{props=new HediffCompProperties_EarthAbilities{cooldownFactor=1.5f}};
   foreach(EarthPower p in Enum.GetValues(typeof(EarthPower)))Check(pupil.Cooldown(p)==(int)Math.Ceiling(full.Cooldown(p)*1.5f),"disciple cooldown");
   for(int duration=1;duration<100;duration++){int prior=0;for(int elapsed=-1;elapsed<duration+5;elapsed++){int frame=EarthRules.Frame(elapsed,duration);Check(frame>=0&&frame<6&&frame>=prior,"frame monotonicity/bounds");prior=frame;}}
   Check(Enumerable.Range(0,30).Select(x=>EarthRules.Frame(x,30)).Distinct().Count()==6,"all six aura frames");
-  full.autoCombat=false;full.nonLethal=true;full.readyAt=new List<int>{60,120,180,240};full.guardUntil=1234;full.resolve=3;
-  full.CopyStateTo(pupil);Check(!pupil.autoCombat&&pupil.nonLethal&&pupil.readyAt.SequenceEqual(full.readyAt),"promotion controls/cooldowns");
+  full.autoCombat=false;full.nonLethal=true;full.readyAt=new List<int>{60,120,180,240};full.guardUntil=1234;full.resolve=3;full.combatStarted=70;
+  full.CopyStateTo(pupil);Check(!pupil.autoCombat&&pupil.nonLethal&&pupil.readyAt.SequenceEqual(full.readyAt)&&pupil.combatStarted==70,"promotion controls/cooldowns");
   pupil.readyAt[0]=999;Check(full.readyAt[0]==60&&pupil.guardUntil==0&&pupil.resolve==0,"promotion does not alias cooldowns or grant old guard");
   var pawn=Empty<Pawn>();pawn.health=Empty<Pawn_HealthTracker>();pawn.health.hediffSet=Empty<HediffSet>();pawn.health.hediffSet.hediffs=new List<Hediff>();
   var heart=new HediffWithComps{pawn=pawn,def=new HediffDef{defName="EH_EarthHeart",tags=new List<string>{ElementalHeartUtility.HeartTag}},comps=new List<HediffComp>()};
@@ -45,6 +49,10 @@ class EarthRegression {
   var fx=new MapComponent_Earth(null);var pool=(Array)typeof(MapComponent_Earth).GetField("effects",F).GetValue(fx);Check(pool.Length==96,"bounded cosmetic pool");
   var driver=new JobDriver_EarthTechnique{pawn=Empty<Pawn>(),job=new Job{count=(int)EarthPower.Mountainfall}};
   Set(driver,"startedAt",100);Set(driver,"impactAt",142);Set(driver,"finishAt",150);Set(driver,"impactCommitted",true);Set(driver,"routeIndex",1);Set(driver,"route",new List<IntVec3>{new IntVec3(1,0,1),new IntVec3(2,0,1)});
+  Set(driver,"stepFrom",new IntVec3(1,0,1));Set(driver,"expected",new IntVec3(2,0,1));Set(driver,"stepAt",100);
+  Check(driver.VisualAt(100)==new IntVec3(1,0,1).ToVector3Shifted()&&driver.VisualAt(102)==new IntVec3(2,0,1).ToVector3Shifted(),"charge interpolation exact endpoints");
+  Check(Math.Abs(driver.VisualAt(101).x-2f)<.0001f,"charge interpolation midpoint");
+  Set(driver,"chargeOrigin",new IntVec3(0,0,1));Set(driver,"repaths",1);Set(driver,"stepsTaken",2);
   var saved=new EarthSaveCase{cast=driver,comp=new HediffComp_EarthAbilities{autoCombat=false,nonLethal=true,readyAt=new List<int>{100,200,300,400},resolve=2,resolveUntil=900,nextResolve=700,guardUntil=800}};
   string file=Path.Combine(Path.GetTempPath(),"Earth_"+Guid.NewGuid().ToString("N")+".xml");
   Scribe.saver.InitSaving(file,"EarthTest");Scribe_Deep.Look(ref saved,"state");Scribe.saver.FinalizeSaving();
@@ -53,6 +61,7 @@ class EarthRegression {
   Check(xml.SelectSingleNode("EarthTest/state/cast/EH_earthImpactAt").InnerText=="142"&&xml.SelectNodes("EarthTest/state/cast/EH_earthRoute/li").Count==2&&xml.SelectSingleNode("EarthTest/state/cast/EH_earthRouteIndex").InnerText=="1","saved timing and movement");
   Check(xml.SelectSingleNode("EarthTest/state/EH_earthAuto").InnerText=="False"&&xml.SelectSingleNode("EarthTest/state/EH_earthNonLethal").InnerText=="True"&&xml.SelectNodes("EarthTest/state/EH_earthReadyAt/li").Count==4,"saved controls/cooldowns");
   Check(xml.SelectSingleNode("EarthTest/state/EH_earthResolveUntil").InnerText=="900"&&xml.SelectSingleNode("EarthTest/state/EH_earthGuardUntil").InnerText=="800","saved expiry deadlines");
+  Check(xml.SelectSingleNode("EarthTest/state/cast/EH_earthRepaths").InnerText=="1"&&xml.SelectSingleNode("EarthTest/state/cast/EH_earthStepsTaken").InnerText=="2"&&xml.SelectSingleNode("EarthTest/state/cast/EH_earthStepAt").InnerText=="100","saved interpolation and replanning budget");
   File.Delete(file);
   Console.WriteLine("PASS: "+checks+" Earth checks: Resolve/defense/cooldown bounds, frames, native lineage and pupil identity, promotion state, five NPC/Bestow choices, action replacement, manual target isolation, bounded movement, fixed VFX pool and native Scribe timing/commitment/route/control fields.");
  }

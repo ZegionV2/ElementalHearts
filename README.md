@@ -23,7 +23,7 @@ The repository also contains the complete playable mod. To install a source down
 | Flame | Azure Flame | Blue fire, regal gear and reactive Azure Reversal |
 | Wind | Cyclone | Emerald wind, sword forms and bounded airbound cyclone attacks |
 | Water | Glacial | Flowing counters, Pressure combos, ice techniques and Glacial Explosion |
-| Earth | — | Resolve, Faultbreaker charges, faultline cuts, protective Bastion and Mountainfall |
+| Earth | ï¿½ | Resolve, Faultbreaker charges, faultline cuts, protective Bastion and Mountainfall |
 | â€” | Celestial | Standalone fully evolved sun, solar and light lineage |
 
 Earth is a normal helmetless Ascendant. Adamant evolution is not included. Craft Earth serum at a drug lab after Fabrication; see [Earth mechanics and controls](Docs/EarthAscendant.md).
@@ -57,6 +57,8 @@ The latest armor fix raises the visible head above the collar, keeps hair/beard/
 
 - [Earth Ascendant mechanics, acquisition and combat](Docs/EarthAscendant.md)
 - [Earth build and validation](Docs/EarthValidation.md)
+- [Earth combat and presentation polish](Docs/EarthPolish.md)
+- [Earth polish validation](Docs/EarthPolishValidation.md)
 - [Celestial mechanics and save behavior](Docs/CelestialAscendant.md)
 - [Solar effects and performance limits](Docs/CelestialLightPolish.md)
 - [Head/collar and Thin-body armor correction](Docs/CelestialArmorFitFix.md)

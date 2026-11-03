@@ -14,6 +14,10 @@ namespace ElementalHearts {
   public static float Defense(int stacks,bool bastion,float strength){return (1f-.05f*Math.Max(0,Math.Min(3,stacks)))*(bastion?1f-.20f*strength:1f);}
   public static float Impact(int stacks){return 1f+.1f*Math.Max(0,Math.Min(3,stacks));}
   public static int Cooldown(int baseline,float factor){return Math.Max(1,(int)Math.Ceiling(baseline*factor));}
+  public static float Smooth(float value){value=Math.Max(0,Math.Min(1,value));return value*value*(3f-2f*value);}
+  public static float CombatWeight(int now,int started,int until){return Smooth((now-started)/12f)*Smooth((until-now)/18f);}
+  public static float EffectPhase(int sequence,int age,int duration){float t=Math.Max(0,Math.Min(1,age/(float)Math.Max(1,duration-1)));return sequence==3?3f+2f*t:sequence==0?2f+3f*t:5f*t;}
+  public static bool RepathAllowed(int attempts,int steps,int remaining,int displacementSquared){return attempts<1&&steps+remaining<=12&&remaining>0&&displacementSquared<=36;}
   public static int Frame(int elapsed,int duration){return Math.Max(0,Math.Min(5,(int)((long)Math.Max(0,elapsed)*6/Math.Max(1,duration))));}
  }
  public static class EarthAscendant {
@@ -27,7 +31,7 @@ namespace ElementalHearts {
  public sealed class HediffComp_EarthAbilities:HediffComp {
   public bool autoCombat=true,nonLethal;
   public List<int> readyAt=new List<int>{0,0,0,0};
-  public int resolve,resolveUntil,nextResolve,guardUntil,combatUntil,activationUntil,nextAutoCheck;
+  public int resolve,resolveUntil,nextResolve,guardUntil,combatUntil,activationUntil,nextAutoCheck,combatStarted;
   int lastAdvance=-1;
   public static readonly string[] Names={"Faultline Cleave","Stonebreaker Advance","Bastion Stance","Mountainfall"};
   public static readonly int[] Cooldowns={360,540,1080,1800};
@@ -42,9 +46,9 @@ namespace ElementalHearts {
   public ElementalAutoMode Mode{get{return ElementalAutoModes.FromFlags(autoCombat||!ElementalCombatPolicy.Controlled(Pawn),nonLethal);}}
   public int Cooldown(EarthPower p){return EarthRules.Cooldown(Cooldowns[(int)p],((HediffCompProperties_EarthAbilities)props).cooldownFactor);}
   public int Remaining(EarthPower p){return Math.Max(0,readyAt[(int)p]-Find.TickManager.TicksGame);}
-  public void MarkCombat(){combatUntil=Find.TickManager.TicksGame+180;}
+  public void MarkCombat(){int now=Find.TickManager.TicksGame;if(combatUntil<=now)combatStarted=now;combatUntil=now+180;}
   public void GainResolve(){if(!Full||!HediffComp_ElementalTransform.Active(Pawn))return;int now=Find.TickManager.TicksGame;resolve=Math.Min(3,Resolve+1);resolveUntil=now+EarthRules.ResolveDuration;}
-  public void CopyStateTo(HediffComp_EarthAbilities dest){if(dest==null)return;dest.autoCombat=autoCombat;dest.nonLethal=nonLethal;dest.readyAt=new List<int>(readyAt);dest.combatUntil=combatUntil;}
+  public void CopyStateTo(HediffComp_EarthAbilities dest){if(dest==null)return;dest.autoCombat=autoCombat;dest.nonLethal=nonLethal;dest.readyAt=new List<int>(readyAt);dest.combatUntil=combatUntil;dest.combatStarted=combatStarted;}
   public void Register(){if(Pawn.Spawned)Pawn.Map.GetComponent<MapComponent_Earth>().Register(Pawn);}
   public override void CompPostPostAdd(DamageInfo? info){Register();}
   public override void Notify_Spawned(){Register();}
@@ -53,7 +57,7 @@ namespace ElementalHearts {
    Scribe_Collections.Look(ref readyAt,"EH_earthReadyAt",LookMode.Value);if(readyAt==null||readyAt.Count!=4)readyAt=new List<int>{0,0,0,0};
    Scribe_Values.Look(ref autoCombat,"EH_earthAuto",true);Scribe_Values.Look(ref nonLethal,"EH_earthNonLethal");
    Scribe_Values.Look(ref resolve,"EH_earthResolve");Scribe_Values.Look(ref resolveUntil,"EH_earthResolveUntil");Scribe_Values.Look(ref nextResolve,"EH_earthNextResolve");
-   Scribe_Values.Look(ref guardUntil,"EH_earthGuardUntil");Scribe_Values.Look(ref combatUntil,"EH_earthCombatUntil");Scribe_Values.Look(ref activationUntil,"EH_earthActivationUntil");Scribe_Values.Look(ref nextAutoCheck,"EH_earthNextAuto");
+   Scribe_Values.Look(ref guardUntil,"EH_earthGuardUntil");Scribe_Values.Look(ref combatUntil,"EH_earthCombatUntil");Scribe_Values.Look(ref combatStarted,"EH_earthCombatStarted");Scribe_Values.Look(ref activationUntil,"EH_earthActivationUntil");Scribe_Values.Look(ref nextAutoCheck,"EH_earthNextAuto");
   }
   public override string CompTipStringExtra{get{return "Resolve: "+Resolve+"/3. Each stack reduces remaining damage by 5%; expires after eight seconds. Mountainfall consumes stacks for +10% impact damage each.";}}
   public override void Notify_PawnPostApplyDamage(DamageInfo info,float dealt){
@@ -67,8 +71,10 @@ namespace ElementalHearts {
   internal void AdvanceTick(int now){
    if(now==lastAdvance)return;lastAdvance=now;
    if(Resolve==0){resolve=0;resolveUntil=0;}
-   if(!GuardActive)EndGuard();
-   if(!Pawn.Spawned||Pawn.Dead||now<nextAutoCheck)return;
+   if(guardUntil>0&&!GuardActive)EndGuard();
+   if(!Pawn.Spawned||Pawn.Dead)return;
+   if(Pawn.CurJobDef==JobDefOf.AttackMelee)nextAutoCheck=Math.Min(nextAutoCheck,now+12);
+   if(now<nextAutoCheck)return;
    nextAutoCheck=now+60;EarthAutocast.Evaluate(this);
   }
   public void BeginGuard(){
@@ -98,7 +104,7 @@ namespace ElementalHearts {
    if(!ElementalCombatPolicy.Controlled(Pawn))yield break;
    if(Full)yield return ElementalTeaching.Command(Pawn);
    if(!Pawn.Drafted)yield break;
-   yield return new Command_Action{defaultLabel="Auto Combat: "+ElementalAutoModes.Label(Mode),defaultDesc="Cycle On / Off / Non-lethal. Earth closes gaps, cleaves and releases Mountainfall against crowds or with full Resolve. Bastion can protect you while ordinary melee continues. Non-lethal replaces wounds with the shared suppression effect.",icon=ElementalIcons.AutoCombat,groupable=false,action=()=>{var next=ElementalAutoModes.Next(Mode);autoCombat=next!=ElementalAutoMode.Off;nonLethal=next==ElementalAutoMode.NonLethal;}};
+   yield return new Command_Action{defaultLabel="Auto Combat: "+ElementalAutoModes.Label(Mode),defaultDesc="Cycle On / Off / Non-lethal. Earth closes gaps, cleaves and releases Mountainfall against crowds or with full Resolve. Bastion can protect you while ordinary melee continues. Non-lethal replaces wounds with the shared suppression effect.",icon=ElementalIcons.AutoCombat,groupable=false,action=()=>{var next=ElementalAutoModes.Next(Mode);autoCombat=next!=ElementalAutoMode.Off;nonLethal=next==ElementalAutoMode.NonLethal;nextAutoCheck=0;}};
    if(Full)yield return new Command_Action{defaultLabel="Resolve: "+Resolve+"/3",defaultDesc=CompTipStringExtra,icon=EarthVfx.Icon(2),groupable=false,action=()=>Messages.Message(CompTipStringExtra,Pawn,MessageTypeDefOf.NeutralEvent,false)};
    for(int i=0;i<4;i++){
     var power=(EarthPower)i;
@@ -130,7 +136,7 @@ namespace ElementalHearts {
    bool crowd=ElementalCombatFlow.CountHostiles(p,3f,2)>=2;
    if(!c.GuardActive&&c.Remaining(EarthPower.Bastion)==0&&(crowd||EarthCombat.ThreatenedAlly(p))){if(c.TryCast(EarthPower.Bastion,null,true))c.nextAutoCheck=Find.TickManager.TicksGame+6;}
    if(p.Position.DistanceToSquared(target.Position)>2&&c.TryCast(EarthPower.Advance,target,true))return;
-   if((crowd||c.Resolve==3)&&c.TryCast(EarthPower.Mountainfall,target,true))return;
+   if((c.Resolve==3||EarthCombat.CrowdAt(p,target.Position,3f,2)>=2)&&c.TryCast(EarthPower.Mountainfall,target,true))return;
    if(c.TryCast(EarthPower.Cleave,target,true))return;
    ElementalCombatFlow.ResumeMelee(p,target,pursuing);
   }

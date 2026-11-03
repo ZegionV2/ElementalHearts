@@ -19,7 +19,9 @@ namespace ElementalHearts {
    var at=to.GetThingList(p.Map);for(int i=0;i<at.Count;i++)if(at[i] is Fire||at[i] is Pawn&&at[i]!=p)return false;
    return true;
   }
-  public static bool FindLanding(Pawn p,Pawn target,out IntVec3 landing){
+  public static bool FindLanding(Pawn p,Pawn target,out IntVec3 landing){List<IntVec3> route;return FindLanding(p,target,out landing,out route);}
+  public static bool FindLanding(Pawn p,Pawn target,out IntVec3 landing,out List<IntVec3> route){
+   route=null;
    landing=IntVec3.Invalid;if(!WindCombat.AliveTarget(p,target)||p.Position.DistanceToSquared(target.Position)<=2)return false;
    // Single bounded navigation tree; no obstacle, pawn or diagonal corner bypass.
    var tree=WindNavigation.Tree(p.Position,(a,b)=>SafeStep(p,a,b));int best=int.MaxValue;
@@ -27,7 +29,7 @@ namespace ElementalHearts {
     int d=p.Position.DistanceToSquared(cell);if(d>36||d>=best||!tree.ContainsKey(cell)||!LightningCombat.ClearLine(cell,target.Position,p.Map))continue;
     best=d;landing=cell;
    }
-   return landing.IsValid;
+   if(!landing.IsValid)return false;route=WindNavigation.Path(tree,p.Position,landing);return route!=null;
   }
   public static bool Strike(Pawn source,Pawn victim,float factor){
    if(!WindCombat.Eligible(source,victim)||WaterDefense.TryParry(source,victim))return false;
@@ -73,22 +75,38 @@ namespace ElementalHearts {
    foreach(var victim in targets){Strike(source,victim,4f*EarthRules.Impact(stacks));Push(victim,center==victim.Position?source.Position:center,2);}
    ElementalAudio.Ability(source,ElementalSound.Impact);
   }
+  public static int CrowdAt(Pawn source,IntVec3 center,float radius,int limit){
+   int count=0,checkedThings=0;
+   foreach(var cell in GenRadial.RadialCellsAround(center,radius,true)){
+    if(!cell.InBounds(source.Map)||!LightningCombat.ClearLine(center,cell,source.Map))continue;
+    var things=cell.GetThingList(source.Map);for(int i=0;i<things.Count;i++){
+     if(++checkedThings>512)return count;
+     if(WindCombat.Hostile(source,things[i] as Pawn)&&++count>=limit)return count;
+    }
+   }
+   return count;
+  }
   public static bool ThreatenedAlly(Pawn p){
    foreach(var cell in GenRadial.RadialCellsAround(p.Position,3,true)){if(!cell.InBounds(p.Map))continue;var things=cell.GetThingList(p.Map);for(int i=0;i<things.Count;i++){var ally=things[i] as Pawn;if(ally==null||ally==p||ally.Faction==null||ally.Faction!=p.Faction||ally.Dead||ally.Downed||!LightningCombat.ClearLine(p.Position,ally.Position,p.Map))continue;if(ElementalCombatFlow.CountHostiles(ally,1.5f,1)>0)return true;}}
    return false;
   }
  }
  public sealed class JobDriver_EarthTechnique:JobDriver {
-  int startedAt=-1,nextStep,routeIndex,impactAt,finishAt,stacks;
+  int startedAt=-1,nextStep,routeIndex,impactAt,finishAt,stacks,repaths,stepsTaken,stepAt;
   bool impactCommitted;
-  IntVec3 expected=IntVec3.Invalid,center=IntVec3.Invalid;
+  IntVec3 expected=IntVec3.Invalid,center=IntVec3.Invalid,chargeOrigin=IntVec3.Invalid,stepFrom=IntVec3.Invalid;
   List<IntVec3> route=new List<IntVec3>();
   HediffComp_EarthAbilities Comp{get{return HediffComp_EarthAbilities.On(pawn);}}
   EarthPower Power{get{return (EarthPower)job.count;}}
   public bool PendingMountainfall{get{return startedAt>=0&&!impactCommitted&&Power==EarthPower.Mountainfall;}}
+  public bool PendingCleave{get{return startedAt>=0&&!impactCommitted&&Power==EarthPower.Cleave;}}
+  public float CleaveWindup{get{return EarthRules.Smooth((Find.TickManager.TicksGame-startedAt)/6f);}}
   public Pawn TelegraphTarget{get{return TargetA.Pawn;}}
+  public float TelegraphPhase{get{return EarthRules.Smooth((Find.TickManager.TicksGame-startedAt)/42f);}}
+  public bool Moving{get{return Power==EarthPower.Advance&&!impactCommitted&&stepFrom.IsValid&&pawn.Position==expected&&Find.TickManager.TicksGame<stepAt+2;}}
+  public Vector3 VisualAt(int now){return Vector3.Lerp(stepFrom.ToVector3Shifted(),expected.ToVector3Shifted(),Mathf.Clamp01((now-stepAt)/2f));}
   public override bool TryMakePreToilReservations(bool errorOnFailed){return true;}
-  public override void ExposeData(){base.ExposeData();Scribe_Values.Look(ref startedAt,"EH_earthStarted",-1);Scribe_Values.Look(ref nextStep,"EH_earthNextStep");Scribe_Values.Look(ref routeIndex,"EH_earthRouteIndex");Scribe_Values.Look(ref impactAt,"EH_earthImpactAt");Scribe_Values.Look(ref finishAt,"EH_earthFinishAt");Scribe_Values.Look(ref stacks,"EH_earthImpactResolve");Scribe_Values.Look(ref impactCommitted,"EH_earthCommitted");Scribe_Values.Look(ref expected,"EH_earthExpected");Scribe_Values.Look(ref center,"EH_earthCenter");Scribe_Collections.Look(ref route,"EH_earthRoute",LookMode.Value);if(route==null)route=new List<IntVec3>();}
+  public override void ExposeData(){base.ExposeData();Scribe_Values.Look(ref startedAt,"EH_earthStarted",-1);Scribe_Values.Look(ref nextStep,"EH_earthNextStep");Scribe_Values.Look(ref routeIndex,"EH_earthRouteIndex");Scribe_Values.Look(ref impactAt,"EH_earthImpactAt");Scribe_Values.Look(ref finishAt,"EH_earthFinishAt");Scribe_Values.Look(ref stacks,"EH_earthImpactResolve");Scribe_Values.Look(ref impactCommitted,"EH_earthCommitted");Scribe_Values.Look(ref expected,"EH_earthExpected");Scribe_Values.Look(ref center,"EH_earthCenter");Scribe_Values.Look(ref repaths,"EH_earthRepaths");Scribe_Values.Look(ref stepsTaken,"EH_earthStepsTaken");Scribe_Values.Look(ref stepAt,"EH_earthStepAt");Scribe_Values.Look(ref chargeOrigin,"EH_earthChargeOrigin",IntVec3.Invalid);Scribe_Values.Look(ref stepFrom,"EH_earthStepFrom",IntVec3.Invalid);Scribe_Collections.Look(ref route,"EH_earthRoute",LookMode.Value);if(route==null)route=new List<IntVec3>();}
   bool EnsureTarget(float range){
    if(WindCombat.Eligible(pawn,TargetA.Pawn)&&pawn.Position.DistanceToSquared(TargetA.Cell)<=range*range&&LightningCombat.ClearLine(pawn.Position,TargetA.Cell,pawn.Map))return true;
    if(job.playerForced||!ElementalCombatPolicy.AutomationEnabled(ElementalCombatPolicy.Controlled(pawn),ElementalHeartsMod.Settings.enableAutomation,Comp.autoCombat)||pawn.jobs.jobQueue.Count>1)return false;
@@ -99,8 +117,8 @@ namespace ElementalHearts {
    int now=Find.TickManager.TicksGame;startedAt=now;expected=pawn.Position;pawn.pather.StopDead();pawn.rotationTracker.FaceTarget(TargetA);
    int windup=Power==EarthPower.Mountainfall?42:6;impactAt=now+windup;finishAt=impactAt+8;
    if(Power==EarthPower.Advance){
-    IntVec3 landing;if(!EnsureTarget(6f)||!EarthCombat.FindLanding(pawn,TargetA.Pawn,out landing)){EndJobWith(JobCondition.Incompletable);return;}
-    route=WindNavigation.Path(WindNavigation.Tree(pawn.Position,(a,b)=>EarthCombat.SafeStep(pawn,a,b)),pawn.Position,landing);
+    IntVec3 landing;if(!EnsureTarget(6f)||!EarthCombat.FindLanding(pawn,TargetA.Pawn,out landing,out route)){EndJobWith(JobCondition.Incompletable);return;}
+    chargeOrigin=pawn.Position;
     if(route==null){EndJobWith(JobCondition.Incompletable);return;}routeIndex=0;nextStep=now+2;impactAt=now+Math.Max(2,route.Count*2+2);finishAt=impactAt+8;
     EarthVfx.Emit(pawn,1,pawn.DrawPos,landing.ToVector3Shifted(),Math.Max(12,route.Count*2),2.5f,(landing-pawn.Position).ToVector3().AngleFlat()-90f);ElementalAudio.Ability(pawn,ElementalSound.Dash);
    }
@@ -109,16 +127,28 @@ namespace ElementalHearts {
     ElementalAudio.Ability(pawn,ElementalSound.Charge);
    }
   }
+  bool Repath(){
+   if(repaths>=1||!EnsureTarget(6f))return false;
+   IntVec3 landing;List<IntVec3> fresh;
+   if(!EarthCombat.FindLanding(pawn,TargetA.Pawn,out landing,out fresh))return false;
+   var origin=chargeOrigin.IsValid?chargeOrigin:pawn.Position;
+   if(!EarthRules.RepathAllowed(repaths,Math.Max(stepsTaken,routeIndex),fresh.Count,origin.DistanceToSquared(landing)))return false;
+   repaths++;stepsTaken=Math.Max(stepsTaken,routeIndex);route=fresh;routeIndex=0;int now=Find.TickManager.TicksGame;nextStep=now+2;impactAt=now+fresh.Count*2+2;finishAt=impactAt+8;
+   return true;
+  }
   void Tick(){
    var c=Comp;if(c==null||!c.CanAct||pawn.Position!=expected){EndJobWith(JobCondition.Incompletable);return;}
    int now=Find.TickManager.TicksGame;
+   if(!impactCommitted&&Power==EarthPower.Advance&&routeIndex<route.Count&&WindCombat.Eligible(pawn,TargetA.Pawn)&&pawn.Position.DistanceToSquared(TargetA.Cell)<=2&&LightningCombat.ClearLine(pawn.Position,TargetA.Cell,pawn.Map)){
+    routeIndex=route.Count;impactAt=Math.Min(impactAt,now+2);finishAt=impactAt+8;
+   }
    if(!impactCommitted&&Power==EarthPower.Advance&&now>=nextStep&&routeIndex<route.Count){
-    var cell=route[routeIndex];if(!EarthCombat.SafeStep(pawn,pawn.Position,cell)){EndJobWith(JobCondition.Incompletable);return;}
-    pawn.Position=cell;pawn.Notify_Teleported(false,true);expected=cell;routeIndex++;nextStep=now+2;
+    var cell=route[routeIndex];if(!EarthCombat.SafeStep(pawn,pawn.Position,cell)){if(!Repath())EndJobWith(JobCondition.Incompletable);return;}
+    stepFrom=pawn.Position;stepAt=now;pawn.Rotation=Rot4.FromAngleFlat((cell-pawn.Position).ToVector3().AngleFlat());pawn.Position=cell;pawn.Notify_Teleported(false,true);expected=cell;routeIndex++;stepsTaken++;nextStep=now+2;
    }
    if(!impactCommitted&&now>=impactAt){
     float range=Power==EarthPower.Advance?1.5f:8f;
-    if(!EnsureTarget(range)){EndJobWith(JobCondition.Incompletable);return;}
+    if(!EnsureTarget(range)){if(Power!=EarthPower.Advance||!Repath())EndJobWith(JobCondition.Incompletable);return;}
     // Commit before any hit, so nested damage/death/save callbacks cannot replay an impact.
     impactCommitted=true;
     if(Power==EarthPower.Cleave)EarthCombat.Cleave(pawn,TargetA.Pawn);
@@ -134,6 +164,14 @@ namespace ElementalHearts {
    yield return action;
   }
  }
+ [HarmonyPatch(typeof(Pawn_DrawTracker),"get_DrawPos")]
+ public static class EarthChargeDraw {
+  public static void Postfix(Pawn ___pawn,ref Vector3 __result){
+   var p=___pawn;var d=p==null||p.jobs==null?null:p.jobs.curDriver as JobDriver_EarthTechnique;
+   if(d==null||!d.Moving||!p.Spawned||p.Dead||p.Downed||p.stances.stunner.Stunned||ElementalAnimationBridge.ExternallyControlled(p))return;
+   var at=d.VisualAt(Find.TickManager.TicksGame);at.y=__result.y;__result=at;
+  }
+ }
  [HarmonyPatch(typeof(Thing),"TakeDamage")]
  public static class EarthDamageProtection {
   public static void Prefix(Thing __instance,ref DamageInfo dinfo){
@@ -146,4 +184,3 @@ namespace ElementalHearts {
   }
  }
 }
-
