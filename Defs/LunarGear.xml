@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_LunarUniform</defName>
+    <label>lunar crescent armor</label>
+    <description>Moon-silver plates with mother-of-pearl inlay and an embroidered indigo cloak. Bound to a Lunar Ascendant.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/LunarUniform/LunarUniform</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <costList>
+      <Cloth>60</Cloth>
+      <Steel>20</Steel>
+    </costList>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>3500</WorkToMake>
+      <Mass>1.2</Mass>
+      <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+      <Insulation_Cold>5</Insulation_Cold>
+      <Insulation_Heat>3</Insulation_Heat>
+      <EquipDelay>2</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
+        <li>Waist</li>
+        <li>Legs</li>
+        <li>Feet</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LunarUniform/LunarUniform</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags Inherit="False">
+      </tags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+    <generateCommonality>0</generateCommonality>
+    <equippedStatOffsets>
+      <MoveSpeed>0.15</MoveSpeed>
+    </equippedStatOffsets>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+    <recipeMaker IsNull="True" />
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_LunarHelmet</defName>
+    <label>lunar crescent mask</label>
+    <description>An indigo moon mask with a pearl crescent brow. Bound to a Lunar Ascendant.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/LunarHelmet/LunarHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <costList>
+      <Steel>45</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>2500</WorkToMake>
+      <Mass>1.2</Mass>
+      <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.5</ArmorRating_Heat>
+      <EquipDelay>1</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/LunarHelmet/LunarHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <renderSkipFlags>
+        <li>Hair</li>
+        <li>Beard</li>
+      </renderSkipFlags>
+      <tags Inherit="False" />
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+    <generateCommonality>0</generateCommonality>
+    <equippedStatOffsets>
+      <MeleeHitChance>5</MeleeHitChance>
+      <MeleeDodgeChance>3</MeleeDodgeChance>
+    </equippedStatOffsets>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+    <recipeMaker IsNull="True" />
+  </ThingDef>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>EH_LunarSword</defName>
+    <label>Moonwake</label>
+    <description>A silver sword with a crescent guard, bound to its Lunar wielder.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/LunarSword</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <costStuffCount>100</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <WorkToMake>18000</WorkToMake>
+      <Mass>2</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <equippedAngleOffset>0</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+    <recipeMaker IsNull="True" />
+  </ThingDef>
+</Defs>

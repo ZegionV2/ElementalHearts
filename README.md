@@ -24,6 +24,7 @@ The [main branch download](https://github.com/ZegionV2/ElementalHearts/archive/r
 | Wind | Cyclone | Emerald wind, sword forms and bounded airbound cyclone attacks |
 | Water | Glacial | Flowing counters, Pressure combos, ice techniques and Glacial Explosion |
 | Earth | Adamant | Resolve, Faultbreaker charges, faultline cuts, radial Seismic Quake and Spire Eruption |
+| Lunar | Eclipse planned | Moonbrand, gravity pulls, counterattack and ranged protection |
 | — | Celestial | Standalone fully evolved sun, solar and light lineage |
 
 Earth is a normal Ascendant with basalt stoneplate, a closed mountain-crown helmet and Faultbreaker. Seismic Quake replaces Bastion; Spire Eruption replaces Mountainfall. Both use animated ground stabs and safe outward knockback. Adamant evolution is playable; see [Adamant mechanics and validation](Docs/AdamantIntegration.md). Craft Earth serum at a drug lab after Fabrication; see [Earth mechanics and controls](Docs/EarthAscendant.md).
@@ -47,15 +48,19 @@ Celestial arrives fully evolved, with ivory/gold regalia, the **Dawnbringer** sw
 
 Six combat techniques combine **Dawncleaver**, **Sunstride**, **Corona Dance**, **Solar Judgment**, **Heavenly Zenith** and the reactive **Fake Rainbow** parry/retreat/counter. Radiance supports automatic finishing combos.
 
-**Bestow (Random)** grants normal Lightning, Flame, Wind, Water or Earth ascension and immediately fulfills that lineage's evolution milestones. The recipient stays a normal Ascendant until you press Evolve; readiness persists through saving/loading. Other evolved Ascendants' Bestow retains the ordinary evolution requirements. Celestial Regalia mechanically covers the torso, shoulders, arms, hands, waist, legs and feet, providing complete clothing coverage without a helmet. **Light Travel** manually selects a world destination and safe landing cell, with no resource cost or cooldown and large departure/arrival beams.
+**Bestow (Random)** grants Lunar ascension with a 2% chance, or Lightning, Flame, Wind, Water or Earth ascension with a 19.6% chance each. It fulfills the gifted lineage's evolution milestones, including saved readiness for Lunar's planned Eclipse evolution. The recipient stays a normal Ascendant until you press Evolve; readiness persists through saving/loading. Other evolved Ascendants' Bestow retains the ordinary evolution requirements. Celestial Regalia mechanically covers the torso, shoulders, arms, hands, waist, legs and feet, providing complete clothing coverage without a helmet. **Light Travel** manually selects a world destination and safe landing cell, with no resource cost or cooldown and large departure/arrival beams.
 
 Recent presentation updates add expanding golden shockwaves, ivory impact flashes, directional particles, layered beam cores and prism accents. These use cached materials and bounded effect pools. Milira is not required.
 
 The latest armor fix raises the visible head above the collar, keeps hair/beard/halo aligned, and gives Thin-body regalia a flat masculine/unisex chest. It preserves complete body coverage and blends through Transform/Revert.
 
-## Lunar Ascendant art
+## Lunar Ascendant
 
-The [Lunar asset pack](ArtSource/Lunar) contains cloaked moon-silver armor fitted to seven body types, a helmet and sword, five ability icons, eight effect frames per ability and a six-frame aura. Lunar gameplay and its rare Bestow roll are planned for a later update.
+Celestial's **Bestow (Random)** grants Lunar at 2%. For sandbox testing, use **Elemental Hearts → Grant Lunar ascension** in the developer actions. Transform to manifest the moon-silver cloak armor, crescent mask and **Moonwake**, then draft the pawn to use its five techniques and show its aura.
+
+**Crescent Draw** builds Moonbrands. **Moonfall Step** closes in on a marked enemy and pulls nearby foes together. **Falling Moon** spends the caster's marks in a telegraphed ground strike. **Tidal Parry** waits for an adjacent enemy's melee hit, then counters and briefly pins them. **Moonveil** wards the caster and nearby allies against ranged weapon damage for four seconds. Auto Combat can chain the three offensive moves, and the shared Non-lethal mode substitutes suppression for injury.
+
+See the [Lunar art previews and source pack](ArtSource/Lunar). Lunar is a rare Bestow lineage. It is outside the ordinary NPC disciple pool and has no teaching command. A successful Celestial grant saves future Eclipse readiness with the pawn.
 
 ## Documentation
 

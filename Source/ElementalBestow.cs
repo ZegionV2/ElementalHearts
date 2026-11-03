@@ -2,6 +2,10 @@ using System;using System.Collections.Generic;using RimWorld;using UnityEngine;u
 namespace ElementalHearts {
  public static class BestowRules {
   public const int Duration=240;
+  public static string CelestialOutcome(int roll){
+   if(roll<0||roll>=1000)throw new ArgumentOutOfRangeException("roll");
+   return roll<20?"Lunar":NpcDisciples.Elements[(roll-20)/196];
+  }
   public static bool Recipient(bool humanlike,bool prisoner,bool hostile,bool violent,bool hasHeart,bool trained,bool sameElement){return humanlike&&!prisoner&&!hostile&&violent&&!hasHeart&&(!trained||sameElement);}
   public static float Progress(int elapsed){return Mathf.Clamp01(elapsed/(float)Duration);}
   public static float Energy(int elapsed){float p=Progress(elapsed);return Mathf.Clamp01(p/.25f)*Mathf.Clamp01((1-p)/.12f);}
@@ -14,7 +18,7 @@ namespace ElementalHearts {
   public static bool Busy(Pawn p){return JobIs(p,Giving)||JobIs(p,Receiving);}
   static bool SameTraining(Pawn pupil,string element){foreach(var h in pupil.health.hediffSet.hediffs)if(h.TryGetComp<HediffComp_ElementalApprentice>()!=null&&h.def.defName!="EH_"+element+"Training")return false;return true;}
   public static bool Available(Pawn giver,Pawn pupil){
-   if(giver==null||pupil==null||EarthCombat.Busy(giver)||EarthCombat.Busy(pupil)||DiscipleAscension.Busy(giver)||DiscipleAscension.Busy(pupil)||giver.jobs==null||pupil.jobs==null||ElementalAnimationBridge.Controlled(giver)||ElementalAnimationBridge.Controlled(pupil)||AzureEvolution.Evolving(giver)||AzureEvolution.Evolving(pupil)||HediffComp_ElementalTransform.Transforming(giver)||HediffComp_ElementalTransform.Transforming(pupil))return false;
+   if(giver==null||pupil==null||EarthCombat.Busy(giver)||EarthCombat.Busy(pupil)||LunarAscendant.Busy(giver)||LunarAscendant.Busy(pupil)||DiscipleAscension.Busy(giver)||DiscipleAscension.Busy(pupil)||giver.jobs==null||pupil.jobs==null||ElementalAnimationBridge.Controlled(giver)||ElementalAnimationBridge.Controlled(pupil)||AzureEvolution.Evolving(giver)||AzureEvolution.Evolving(pupil)||HediffComp_ElementalTransform.Transforming(giver)||HediffComp_ElementalTransform.Transforming(pupil))return false;
    if(giver.CurJob!=null&&(giver.CurJob.def.defName==ElementalTeachingSession.Teaching||giver.CurJob.def.defName==ElementalTeachingSession.Receiving)||pupil.CurJob!=null&&(pupil.CurJob.def.defName==ElementalTeachingSession.Teaching||pupil.CurJob.def.defName==ElementalTeachingSession.Receiving))return false;
    return !JobIs(giver,Receiving)&&!JobIs(pupil,Giving)&&(!JobIs(pupil,Receiving)||pupil.CurJob.targetA.Pawn==giver);
   }
@@ -25,7 +29,7 @@ namespace ElementalHearts {
   public static bool Grant(Pawn giver,Pawn pupil,string outcome=null){
    if(!Valid(giver,pupil)||!Paired(giver,pupil))return false;
    bool celestial=CelestialAscendant.Active(giver);string element=celestial?outcome:ElementalTeaching.Element(giver);
-   if(celestial&&Array.IndexOf(NpcDisciples.Elements,element)<0)return false;
+   if(celestial&&element!="Lunar"&&Array.IndexOf(NpcDisciples.Elements,element)<0)return false;
    var def=DefDatabase<HediffDef>.GetNamedSilentFail("EH_"+element+"Heart");
    if(def==null||!ElementalAscension.Apply(pupil,def))return false;
    if(celestial)MakeEvolutionReady(pupil);
@@ -35,6 +39,10 @@ namespace ElementalHearts {
    // Use the existing saved milestones. Evolution remains the recipient's choice.
    foreach(var h in pupil.health.hediffSet.hediffs){
     switch(h.def.defName){
+     case LunarAscendant.DefName:
+      var lunar=h.TryGetComp<HediffComp_LunarAbilities>();
+      if(lunar!=null)lunar.eclipseReady=true;
+      return;
      case "EH_FlameHeart":var flame=h.TryGetComp<HediffComp_FlameMastery>();if(flame==null)continue;flame.MakeEvolutionReady();break;
      case "EH_LightningHeart":var lightning=h.TryGetComp<HediffComp_ThunderstormMastery>();if(lightning==null)continue;lightning.MakeEvolutionReady();break;
      case "EH_WaterHeart":var water=h.TryGetComp<HediffComp_GlacialMastery>();if(water==null)continue;water.kills=Math.Max(water.kills,150);break;
@@ -47,7 +55,7 @@ namespace ElementalHearts {
   }
   public static Command_Target Command(Pawn giver){
    if(icon==null)icon=ContentFinder<Texture2D>.Get("UI/Commands/ElementalHearts/Bestow");
-   var c=new Command_Target{defaultLabel=CelestialAscendant.Active(giver)?"Bestow (Random)":"Bestow "+ElementalTeaching.Element(giver),defaultDesc=(CelestialAscendant.Active(giver)?"Give the recipient one randomly chosen NORMAL lineage: Lightning, Flame, Wind, Water or Earth, each with equal chance. Also fulfill its 150 mastery kills and ten Ascendant days immediately: after the ceremony, press the ordinary Evolve button whenever desired. Evolution is optional and readiness survives saving/loading. The result is chosen once for this ceremony and saved through loading. Disciples of any element can receive the gift. Celestial is never granted by Bestow. ":"")+"Share a spark of your sovereign power. Walk to an unascended humanlike pawn, then both stop and face each other for a four-second elemental investiture. Azure Flame grants normal Flame ascension; Thunderstorm grants normal Lightning ascension; Glacial grants Water, Cyclone grants Wind and Adamant grants Earth. The recipient skips discipleship and gains the full normal Ascendant condition. Same-element disciples can also receive the gift. One lineage per pawn; no resource cost. Interrupted ceremonies grant nothing.",icon=icon,groupable=false,targetingParams=new TargetingParameters{canTargetPawns=true,canTargetLocations=false,canTargetBuildings=false,canTargetItems=false,canTargetSelf=false,validator=t=>Valid(giver,t.Thing as Pawn)&&giver.CanReach(t.Thing,PathEndMode.Touch,Danger.Some)},action=t=>giver.jobs.TryTakeOrderedJob(JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed(Giving),t.Pawn),JobTag.Misc)};
+   var c=new Command_Target{defaultLabel=CelestialAscendant.Active(giver)?"Bestow (Random)":"Bestow "+ElementalTeaching.Element(giver),defaultDesc=(CelestialAscendant.Active(giver)?"Give the recipient one randomly chosen normal lineage. Lunar has a 2% chance. Lightning, Flame, Wind, Water and Earth each have a 19.6% chance. The gift fulfills the recipient's evolution milestones. Lunar stores its Eclipse readiness for a future update. Evolution is optional and readiness survives saving/loading. The result is chosen once for this ceremony and saved through loading. Disciples of any element can receive the gift. Celestial is never granted by Bestow. ":"")+"Share a spark of your sovereign power. Walk to an unascended humanlike pawn, then both stop and face each other for a four-second elemental investiture. Azure Flame grants normal Flame ascension; Thunderstorm grants normal Lightning ascension; Glacial grants Water, Cyclone grants Wind and Adamant grants Earth. The recipient skips discipleship and gains the full normal Ascendant condition. Same-element disciples can also receive the gift. One lineage per pawn; no resource cost. Interrupted ceremonies grant nothing.",icon=icon,groupable=false,targetingParams=new TargetingParameters{canTargetPawns=true,canTargetLocations=false,canTargetBuildings=false,canTargetItems=false,canTargetSelf=false,validator=t=>Valid(giver,t.Thing as Pawn)&&giver.CanReach(t.Thing,PathEndMode.Touch,Danger.Some)},action=t=>giver.jobs.TryTakeOrderedJob(JobMaker.MakeJob(DefDatabase<JobDef>.GetNamed(Giving),t.Pawn),JobTag.Misc)};
    if(!ElementalTeaching.Ready(giver)||ElementalTeachingSession.Busy(giver)||ElementalAnimationBridge.Controlled(giver)||HediffComp_ElementalTransform.Transforming(giver)||AzureEvolution.Evolving(giver))c.Disable("Finish the current action before bestowing ascension.");return c;
   }
  }
@@ -59,7 +67,7 @@ namespace ElementalHearts {
   public bool Committed{get{return committed;}}
   public override bool TryMakePreToilReservations(bool errorOnFailed){return pawn.Reserve(job.targetA,job,1,-1,null,errorOnFailed);}
   public override void ExposeData(){base.ExposeData();Scribe_Values.Look(ref startedAt,"EH_bestowStarted",-1);Scribe_Values.Look(ref lastCue,"EH_bestowCue",-1);Scribe_Values.Look(ref committed,"EH_bestowCommitted");Scribe_Values.Look(ref grantedElement,"EH_bestowGrantedElement");}
-  void Hold(){if(grantedElement==null)grantedElement=CelestialAscendant.Active(pawn)?NpcDisciples.Elements[Rand.Range(0,NpcDisciples.Elements.Length)]:ElementalTeaching.Element(pawn);ElementalTeachingSession.FaceAndStop(pawn,Pupil);int now=Find.TickManager.TicksGame;if(startedAt<0)startedAt=now-Math.Max(0,BestowRules.Duration-ticksLeftThisToil);pawn.Map.GetComponent<MapComponent_BestowVfx>().Track(pawn);int cue=BestowRules.Cue(ElapsedAt(now));if(cue>lastCue){lastCue=cue;ElementalAudio.Play(pawn,cue==0?"EH_TransformStart":cue==1?"EH_TransformCharge":ElementalAudio.SoundName(pawn,ElementalSound.Impact));}}
+  void Hold(){if(grantedElement==null)grantedElement=CelestialAscendant.Active(pawn)?BestowRules.CelestialOutcome(Rand.Range(0,1000)):ElementalTeaching.Element(pawn);ElementalTeachingSession.FaceAndStop(pawn,Pupil);int now=Find.TickManager.TicksGame;if(startedAt<0)startedAt=now-Math.Max(0,BestowRules.Duration-ticksLeftThisToil);pawn.Map.GetComponent<MapComponent_BestowVfx>().Track(pawn);int cue=BestowRules.Cue(ElapsedAt(now));if(cue>lastCue){lastCue=cue;ElementalAudio.Play(pawn,cue==0?"EH_TransformStart":cue==1?"EH_TransformCharge":ElementalAudio.SoundName(pawn,ElementalSound.Impact));}}
   protected override IEnumerable<Toil> MakeNewToils(){
    AddFinishAction(condition=>ElementalBestow.Release(pawn,Pupil));this.FailOn(()=>!ElementalBestow.Valid(pawn,Pupil));yield return Toils_Goto.GotoThing(TargetIndex.A,PathEndMode.Touch);yield return Toils_General.Do(()=>ElementalBestow.Begin(pawn,Pupil));
    var ritual=Toils_General.Wait(BestowRules.Duration,TargetIndex.A);ritual.handlingFacing=true;ritual.initAction=Hold;ritual.tickAction=Hold;ritual.FailOn(()=>!ElementalBestow.Paired(pawn,Pupil));ritual.WithProgressBarToilDelay(TargetIndex.A);yield return ritual;
