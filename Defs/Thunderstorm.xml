@@ -116,7 +116,9 @@
   <HediffDef ParentName="EH_ElementalHeartHediffBase">
     <defName>EH_ThunderstormAscendant</defName>
     <label>Thunderstorm Ascendant</label>
-    <description>The evolved Lightning lineage: crimson lightning, five advanced techniques, 500% elemental movement, +50 ascension mood and reinforced defense. Replaces the ordinary Lightning condition while preserving saved powers and equipment. White/red royal regalia and a red lightning halo while transformed and drafted. No helmet.</description>
+    <description>The evolved Lightning lineage commands Crimson Sever, Redline Flash, Scarlet Tempest, Sovereign Thunder and Tempest Dragon. Straight zigzag dash chains leave red lightning trails and afterimages. Grants 500% elemental movement, +50 mood, reinforced defense, recovery and Bestow: Lightning. Helmetless white/red regalia and a lightning halo while transformed and drafted. Electrical damage received is reduced by 90%. Damaging electrical hits have a 40% chance to stun a standing hostile for 1.5 seconds, with three seconds of shock recovery.
+
+Damage: this lineage multiplies the Melee damage stat by 2.2 (+120%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.76 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_LightningRecovery">
         <sealAfterTicks>180</sealAfterTicks>
@@ -136,7 +138,7 @@
         <heavenPerCharge>0.5</heavenPerCharge>
         <counterChance>0.5</counterChance>
         <counterCooldown>120</counterCooldown>
-        <resistanceFactor>0.25</resistanceFactor>
+        <resistanceFactor>0.1</resistanceFactor>
         <electricalDamageDefs>
           <li>EH_Lightning</li>
           <li>EMP</li>
@@ -237,6 +239,8 @@
           <MentalBreakThreshold>-0.25</MentalBreakThreshold>
           <MeleeHitChance>4</MeleeHitChance>
           <MeleeDodgeChance>12</MeleeDodgeChance>
+
+          <ComfyTemperatureMax>50</ComfyTemperatureMax>
         </statOffsets>
       </li>
     </stages>
@@ -251,6 +255,7 @@
   <DamageDef ParentName="Flame">
     <defName>EH_ThunderstormDamage</defName>
     <label>crimson lightning</label>
+    <description>Crimson electrical injury from Thunderstorm techniques. Some attacks also deal a separate physical sword hit. Damaging electrical hits can trigger Thunderstorm's shock status. The common elemental balance applies a 20% reduction to this injury packet before the target's mitigation; trails and afterimages are visual effects.</description>
     <workerClass>DamageWorker_AddInjury</workerClass>
     <deathMessage>{0} was struck down by crimson lightning.</deathMessage>
     <impactSoundType>Electric</impactSoundType>

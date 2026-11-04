@@ -3,7 +3,9 @@
   <HediffDef ParentName="EH_ElementalHeartHediffBase">
     <defName>EH_CelestialAscendant</defName>
     <label>Celestial Ascendant</label>
-    <description>A fully evolved sovereign of sun, solar power and light. Six techniques, Radiance combos, reactive Fake Rainbow, random normal-element Bestow and free manual Light Travel. 650% movement, +75 mood, supreme defense and recovery. No disciple or normal Celestial stage. Manifest helmetless ivory/gold regalia and Dawnbringer; the solar halo and golden sword aura appear while transformed and drafted.</description>
+    <description>A fully evolved sovereign of sun, solar power and light. Dawncleaver, Sunstride, Corona Dance, Solar Judgment, Heavenly Zenith and Fake Rainbow combine through Radiance. Fake Rainbow parries into a rainbow retreat and counter-dash. Grants 650% elemental movement, +75 mood, supreme defense and recovery. Helmetless ivory/gold regalia, Dawnbringer, a solar halo and a golden sword aura while transformed and drafted. Free manual Light Travel selects a world destination. Random Bestow grants Lunar at 2% or one of the five ordinary elements at 19.6% each, with evolution milestones fulfilled; never Celestial. Thermal damage received is reduced by 90%, solar damage by 75%; comfortable temperatures extend 100 C toward cold and 300 C toward heat.
+
+Damage: this lineage multiplies the Melee damage stat by 3.2 (+220%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 2.56 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_CelestialAbilities" />
       <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
@@ -78,6 +80,9 @@
           <MentalBreakThreshold>-0.25</MentalBreakThreshold>
           <MeleeHitChance>4</MeleeHitChance>
           <MeleeDodgeChance>12</MeleeDodgeChance>
+
+          <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+          <ComfyTemperatureMax>300</ComfyTemperatureMax>
         </statOffsets>
       </li>
     </stages>
@@ -173,6 +178,7 @@
   <DamageDef ParentName="CutBase">
     <defName>EH_SolarDamage</defName>
     <label>solar cut</label>
+    <description>Sharp solar injury from Celestial sword techniques. Damage scales from the current melee attack profile, the selected technique and any consumed Radiance. Melee-weapon-tagged packets receive the common 20% elemental damage reduction. Sharp armor and the target's defensive effects still apply; light particles and beam frames are visual effects.</description>
     <workerClass>DamageWorker_AddInjury</workerClass>
     <deathMessage>{0} was consumed by celestial light.</deathMessage>
     <armorCategory>Sharp</armorCategory>

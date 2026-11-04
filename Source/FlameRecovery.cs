@@ -22,7 +22,7 @@ namespace ElementalHearts {
     var injury=h as Hediff_Injury;
     if(injury!=null&&!injury.IsPermanent()&&(worst==null||injury.Severity>worst.Severity))worst=injury;
    }
-   if(worst!=null)worst.Heal(Props.healPerSecond*seconds);
+   if(worst!=null)worst.Heal((EclipseSky.Empowered(Pawn)?Math.Max(4f,Props.healPerSecond):Props.healPerSecond)*seconds);
   }
  }
  public static class FlameAudio {

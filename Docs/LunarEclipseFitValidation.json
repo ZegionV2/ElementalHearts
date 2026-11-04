@@ -1,0 +1,29 @@
+{
+  "nativeChecks": 624,
+  "bodyCoverageChecks": 56,
+  "uncoveredBodyPixels": 0,
+  "bodyTypes": [
+    "Male",
+    "Female",
+    "Thin",
+    "Fat",
+    "Hulk",
+    "Child",
+    "Baby"
+  ],
+  "directions": [
+    "south",
+    "east",
+    "north",
+    "west"
+  ],
+  "actualChildAndBabyLifeStages": true,
+  "heldSwordEnlargement": 1.3,
+  "AMScale": 1.56,
+  "heldGripsPreserved": true,
+  "inventoryAndGroundIconSizeUnchanged": true,
+  "haloFrames": 6,
+  "transparentHaloCenters": true,
+  "saveLoadDuringTransformAndRevert": true,
+  "nativeLog": "Native-Final.log"
+}

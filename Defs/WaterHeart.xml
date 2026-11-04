@@ -18,7 +18,9 @@
   <HediffDef ParentName="EH_ElementalHeartHediffBase">
     <defName>EH_WaterHeart</defName>
     <label>Water Ascendant</label>
-    <description>Water ascension grants the ordinary Ascendant capacity/combat/recovery package and +30 ascension mood. Still Water retains its 80% frontal parry chance and 0.75-second recovery per attempt, with Returning Tide counters against nearby hostile attackers. Transform manifests indestructible charcoal/navy water armor, an enclosed helmet and the bound Tidal Sword using the smooth apparel reveal. Revert or downing restores personal clothes and stores the kit safely. Wounds seal after three seconds and ordinary injuries heal; missing parts, scars and diseases are not cured. Torrent Cleave, Flowing Step, Whirlpool Dance and Ocean's Judgement can be used manually or combined through the shared Auto Combat and Non-lethal control. Damaging hits build up to three caster-owned Pressure stacks for eight seconds; Ocean's Judgement consumes them for a stronger primary impact. Teach Water holds both pawns face to face for a three-second lesson. Water disciples call a bound Tidal Sword and use 40% damage with 50% longer active cooldowns, then ascend after 50 credited kills and five disciple days. A subtle six-frame Water aura appears only while transformed and drafted. Glacial evolution unlocks after 150 additional unique hostile non-animal kills and ten ascendant days; Evolve performs the ritual. Permanent whole-body ascension; one element per pawn.</description>
+    <description>A Water Ascendant commands Torrent Cleave, Flowing Step, Whirlpool Dance and Ocean's Judgement. Damaging hits build up to three caster-owned Pressure stacks for eight seconds; the finisher consumes them for a stronger primary impact. Still Water offers an 80% frontal parry chance with 0.75-second recovery per attempt and nearby Returning Tide counters. Wounds seal after three seconds and ordinary injuries recover. The minimum comfortable temperature is lowered by 40 C. Teach creates Water disciples; evolve into Glacial after 150 mastery kills and ten Ascendant days.
+
+Damage: this lineage multiplies the Melee damage stat by 2 (+100%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.6 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_WaterDefense" />
       <li Class="ElementalHearts.HediffCompProperties_LightningRecovery">
@@ -95,6 +97,8 @@
           <MentalBreakThreshold>-0.25</MentalBreakThreshold>
           <MeleeHitChance>4</MeleeHitChance>
           <MeleeDodgeChance>12</MeleeDodgeChance>
+
+          <ComfyTemperatureMin>-40</ComfyTemperatureMin>
         </statOffsets>
       </li>
     </stages>

@@ -1,0 +1,17 @@
+{
+  "TextureModID": "elementalhearts.lightningheart",
+  "ItemDefName": "EH_EclipseSword",
+  "ItemType": "ThingDef",
+  "ItemTypeNamespace": "Verse",
+  "OffX": 0.44484375,
+  "OffY": 0.0,
+  "Rotation": 90,
+  "ScaleX": 1.56,
+  "ScaleY": 1.56,
+  "FlipX": false,
+  "FlipY": false,
+  "HandsMode": 0,
+  "BladeStart": 0.23765624999999999,
+  "BladeEnd": 1.16390625,
+  "MeleeWeaponType": 6
+}

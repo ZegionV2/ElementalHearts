@@ -3,7 +3,7 @@
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_LunarUniform</defName>
     <label>lunar crescent armor</label>
-    <description>Moon-silver plates with mother-of-pearl inlay and an embroidered indigo cloak. Bound to a Lunar Ascendant.</description>
+    <description>Broad crescent pauldrons, a flat moon-silver cuirass with mother-of-pearl inlay, and an embroidered indigo cloak. Bound to a Lunar Ascendant.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/LunarUniform/LunarUniform</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -46,6 +46,7 @@
       <tags Inherit="False">
       </tags>
       <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
     </apparel>
     <generateCommonality>0</generateCommonality>
     <equippedStatOffsets>
@@ -106,6 +107,7 @@
       <countsAsClothingForNudity>false</countsAsClothingForNudity>
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
       <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+      <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
     </apparel>
     <generateCommonality>0</generateCommonality>
     <equippedStatOffsets>
@@ -157,7 +159,7 @@
         <capacities>
           <li>Stab</li>
         </capacities>
-        <power>24</power>
+        <power>26</power>
         <cooldownTime>2.6</cooldownTime>
       </li>
       <li>
@@ -165,7 +167,7 @@
         <capacities>
           <li>Cut</li>
         </capacities>
-        <power>24</power>
+        <power>26</power>
         <cooldownTime>2.6</cooldownTime>
       </li>
     </tools>

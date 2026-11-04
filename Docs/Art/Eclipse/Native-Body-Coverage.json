@@ -1,0 +1,282 @@
+[
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 0,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Male",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "south"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 0,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Female",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "south"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 1,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Thin",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "south"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 2,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Fat",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "south"
+  },
+  {
+    "apparelMeshHeight": 1.1,
+    "collarOffsetPixels": 0.5,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Hulk",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "south"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 0,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Child",
+    "bodyWidth": 1.125,
+    "age": 7,
+    "direction": "south"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 0,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Baby",
+    "bodyWidth": 0.95,
+    "age": 1,
+    "direction": "south"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 0.327,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Male",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "east"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 0.327,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Male",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "west"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": -0.433,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Female",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "east"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": -0.433,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Female",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "west"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": -0.14,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Thin",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "east"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": -0.14,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Thin",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "west"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": -0.14,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Fat",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "east"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": -0.14,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Fat",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "west"
+  },
+  {
+    "apparelMeshHeight": 1.1,
+    "collarOffsetPixels": -0.433,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Hulk",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "east"
+  },
+  {
+    "apparelMeshHeight": 1.1,
+    "collarOffsetPixels": -0.433,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Hulk",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "west"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": -0.115,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Child",
+    "bodyWidth": 1.125,
+    "age": 7,
+    "direction": "east"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": -0.115,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Child",
+    "bodyWidth": 1.125,
+    "age": 7,
+    "direction": "west"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 0.32,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Baby",
+    "bodyWidth": 0.95,
+    "age": 1,
+    "direction": "east"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 0.32,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Baby",
+    "bodyWidth": 0.95,
+    "age": 1,
+    "direction": "west"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 0,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Male",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "north"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 0,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Female",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "north"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 1,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Thin",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "north"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 0.5,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Fat",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "north"
+  },
+  {
+    "apparelMeshHeight": 1.1,
+    "collarOffsetPixels": 1,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Hulk",
+    "bodyWidth": 1.5,
+    "age": 28,
+    "direction": "north"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 0,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Child",
+    "bodyWidth": 1.125,
+    "age": 7,
+    "direction": "north"
+  },
+  {
+    "apparelMeshHeight": 1,
+    "collarOffsetPixels": 0,
+    "family": "Eclipse",
+    "uncoveredNativeBodyPixels": 0,
+    "body": "Baby",
+    "bodyWidth": 0.95,
+    "age": 1,
+    "direction": "north"
+  }
+]

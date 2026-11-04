@@ -3,6 +3,7 @@
   <DamageDef ParentName="Flame">
     <defName>EH_Flame</defName>
     <label>flame</label>
+    <description>Thermal injury from Flame techniques and passives. Some attacks combine this heat with a separate physical sword hit. The common elemental balance applies a 20% reduction to this injury packet before the target's mitigation. A larger flame animation does not create additional hits on its own.</description>
     <workerClass>DamageWorker_AddInjury</workerClass>
     <deathMessage>{0} was consumed by sovereign flame.</deathMessage>
     <scaleDamageToBuildingsBasedOnFlammability>false</scaleDamageToBuildingsBasedOnFlammability>

@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <HediffDef ParentName="EH_ElementalHeartHediffBase">
+    <defName>EH_EclipseAscendant</defName>
+    <label>Eclipse Ascendant</label>
+    <description>Evolved Lunar royalty commands Dusk Crescent, Umbral Pursuit, Crimson Waltz, Riven Horizon, Nightfall Reversal and Sovereign Eclipse. Caster-owned Eclipse Brands strengthen finishers. Ivory regalia, a bone half-mask, Eventide, an open-ring halo and Bestow: Lunar. Grants 500% elemental movement, +50 mood, evolved defense and recovery. A real eclipse raises core combat stats to Celestial level and adds 15% ability damage. Fighting with two visible enemies within five cells gives a 15% eclipse-summon roll every ten seconds: six in-game hours of eclipse, with a shared one-day cooldown. Natural eclipses also empower this lineage.
+
+Damage: this lineage multiplies the Melee damage stat by 2.65 (+165%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 2.12 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_EclipseAbilities" />
+      <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
+        <sealAfterTicks>120</sealAfterTicks>
+        <healPerSecond>3</healPerSecond>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_EclipseMastery" />
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.2</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>0.25</offset>
+          </li>
+        </capMods>
+        <painFactor>0</painFactor>
+        <totalBleedFactor>.1</totalBleedFactor>
+        <naturalHealingFactor>10</naturalHealingFactor>
+        <hungerRateFactor>0.6</hungerRateFactor>
+        <restFallFactor>0.6</restFallFactor>
+        <statFactors>
+          <CarryingCapacity>10</CarryingCapacity>
+          <MoveSpeed>5</MoveSpeed>
+          <MeleeDamageFactor>2.65</MeleeDamageFactor>
+          <MeleeCooldownFactor>.65</MeleeCooldownFactor>
+          <WorkSpeedGlobal>2</WorkSpeedGlobal>
+          <IncomingDamageFactor>.1</IncomingDamageFactor>
+          <ImmunityGainSpeed>2</ImmunityGainSpeed>
+          <JoyFallRateFactor>0.6</JoyFallRateFactor>
+          <PsychicSensitivity>0.75</PsychicSensitivity>
+        </statFactors>
+        <statOffsets>
+          <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+          <MeleeHitChance>4</MeleeHitChance>
+          <MeleeDodgeChance>12</MeleeDodgeChance>
+          <ComfyTemperatureMin>-40</ComfyTemperatureMin>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <JobDef>
+    <defName>EH_EclipseTechnique</defName>
+    <driverClass>ElementalHearts.JobDriver_EclipseTechnique</driverClass>
+    <reportString>performing an Eclipse technique.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  <JobDef>
+    <defName>EH_EvolveEclipse</defName>
+    <driverClass>ElementalHearts.JobDriver_EvolveAzure</driverClass>
+    <reportString>evolving into an Eclipse Ascendant.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  <HediffDef>
+    <defName>EH_EclipseDominion</defName>
+    <label>Eclipse Dominion</label>
+    <description>The sky is eclipsed. Core movement, melee power, attack speed and defense rise to Celestial level. Extra regeneration and sovereign protection apply only while this actual eclipse lasts.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>1</initialSeverity>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>1.3</MoveSpeed>
+          <MeleeDamageFactor>1.207547169811321</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.8461538461538461</MeleeCooldownFactor>
+          <IncomingDamageFactor>.4</IncomingDamageFactor>
+          <CarryingCapacity>1.5</CarryingCapacity>
+          <PsychicSensitivity>1.3333333333333333</PsychicSensitivity>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>.25</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>.25</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>.25</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>.25</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>.25</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>.25</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>.25</offset>
+          </li>
+        </capMods>
+        <statOffsets>
+          <ComfyTemperatureMin>-60</ComfyTemperatureMin>
+          <ComfyTemperatureMax>300</ComfyTemperatureMax>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>EH_EclipseResolve</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>EH_EclipseAscendant</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>eclipse resolve</label>
+        <description>My moonlit power has become a sovereign eclipse.</description>
+        <baseMoodEffect>50</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>EH_EclipseDominionMood</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>EH_EclipseDominion</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>eclipse dominion</label>
+        <description>The eclipsed sky answers me. I can stand beside the sovereign of the sun.</description>
+        <baseMoodEffect>25</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

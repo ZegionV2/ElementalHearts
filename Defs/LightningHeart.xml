@@ -18,7 +18,9 @@
   <HediffDef ParentName="EH_ElementalHeartHediffBase">
     <defName>EH_LightningHeart</defName>
     <label>Lightning Ascendant</label>
-    <description>Thunder God's Aura greatly enhances capacities, combat and recovery. Suppresses pain and injury-related impairment, stabilizes mood, seals wounds after 3 seconds and heals ordinary injuries. Does not regrow missing parts or cure scars and diseases. This is a permanent whole-body condition acquired by injection, not an implanted organ.</description>
+    <description>A Lightning Ascendant commands four lightning sword techniques, charge combos and electrical counters. Damaging electrical hits have a 25% chance to stun a standing hostile for one second, with three seconds of shock recovery. Electrical damage received is reduced by 75%. Wounds seal after three seconds and ordinary injuries recover; missing parts and scars are not regenerated. Teach creates Lightning disciples; evolve into Thunderstorm after 150 mastery kills and ten Ascendant days.
+
+Damage: this lineage multiplies the Melee damage stat by 2 (+100%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.6 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_LightningRecovery">
         <sealAfterTicks>180</sealAfterTicks>
@@ -136,6 +138,8 @@
           <MentalBreakThreshold>-0.25</MentalBreakThreshold>
           <MeleeHitChance>4</MeleeHitChance>
           <MeleeDodgeChance>12</MeleeDodgeChance>
+
+          <ComfyTemperatureMax>20</ComfyTemperatureMax>
         </statOffsets>
       </li>
     </stages>

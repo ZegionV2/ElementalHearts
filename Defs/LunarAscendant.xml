@@ -3,13 +3,16 @@
   <HediffDef ParentName="EH_ElementalHeartHediffBase">
     <defName>EH_LunarHeart</defName>
     <label>Lunar Ascendant</label>
-    <description>A rare Lunar Ascendant manipulates gravity through five moonlit techniques. Manifest an indigo cloak, silver crescent armor, a lunar mask and the Moonwake sword. Celestial Bestow can grant this lineage and records readiness for the planned Eclipse evolution.</description>
+    <description>A rare Lunar Ascendant commands five fast moonlit sword forms: Crescent Draw, Moonfall Step, Selene Dance, Falling Moon and Moonbreak Rush. Moonbrands strengthen finishing attacks; the rush retreats and returns against two nearby enemies. Above ordinary Ascendants in power, below Celestial. Broad silver shoulders, an indigo cloak, a crescent mask and Moonwake. Celestial Bestow grants Lunar with a 2% chance and fulfills Eclipse evolution milestones. Otherwise, Eclipse requires 150 mastery kills and ten Ascendant days. The minimum comfortable temperature is lowered by 40 C; psychic sensitivity is reduced by 25%.
+
+Damage: this lineage multiplies the Melee damage stat by 2.3 (+130%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.84 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_LunarAbilities" />
       <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
         <sealAfterTicks>180</sealAfterTicks>
         <healPerSecond>2</healPerSecond>
       </li>
+      <li Class="ElementalHearts.HediffCompProperties_EclipseMastery" />
     </comps>
     <stages>
       <li>
@@ -66,18 +69,20 @@
         <restFallFactor>0.6</restFallFactor>
         <statFactors>
           <CarryingCapacity>5</CarryingCapacity>
-          <MoveSpeed>1.55</MoveSpeed>
-          <MeleeDamageFactor>2</MeleeDamageFactor>
-          <MeleeCooldownFactor>0.85</MeleeCooldownFactor>
+          <MoveSpeed>2</MoveSpeed>
+          <MeleeDamageFactor>2.3</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.78</MeleeCooldownFactor>
           <WorkSpeedGlobal>1.75</WorkSpeedGlobal>
-          <IncomingDamageFactor>0.55</IncomingDamageFactor>
+          <IncomingDamageFactor>0.32</IncomingDamageFactor>
           <ImmunityGainSpeed>2</ImmunityGainSpeed>
           <JoyFallRateFactor>0.6</JoyFallRateFactor>
+          <PsychicSensitivity>0.75</PsychicSensitivity>
         </statFactors>
         <statOffsets>
           <MentalBreakThreshold>-0.25</MentalBreakThreshold>
           <MeleeHitChance>4</MeleeHitChance>
           <MeleeDodgeChance>12</MeleeDodgeChance>
+          <ComfyTemperatureMin>-40</ComfyTemperatureMin>
         </statOffsets>
       </li>
     </stages>

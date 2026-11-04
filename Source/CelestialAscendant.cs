@@ -89,6 +89,6 @@ namespace ElementalHearts {
  }
  [HarmonyPatch(typeof(Thing),"TakeDamage")]
  public static class CelestialSovereignWard {
-  public static void Prefix(Thing __instance,ref DamageInfo dinfo){var p=__instance as Pawn;var c=HediffComp_CelestialAbilities.On(p);if(c==null||dinfo.Amount<=0)return;var source=dinfo.Instigator as Pawn;float factor=source!=null&&ElementalHeartUtility.HasHeart(source)&&!CelestialAscendant.Active(source)?.2f:1f;if(Find.TickManager.TicksGame<c.coronaUntil)factor*=.35f;dinfo.SetAmount(dinfo.Amount*factor);}
+  public static void Prefix(Thing __instance,ref DamageInfo dinfo){var p=__instance as Pawn;var c=HediffComp_CelestialAbilities.On(p);if(c==null||dinfo.Amount<=0)return;var source=dinfo.Instigator as Pawn;float factor=source!=null&&ElementalHeartUtility.HasHeart(source)&&!CelestialAscendant.Active(source)&&!EclipseSky.Empowered(source)?.2f:1f;if(Find.TickManager.TicksGame<c.coronaUntil)factor*=.35f;dinfo.SetAmount(dinfo.Amount*factor);}
  }
 }

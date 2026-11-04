@@ -123,6 +123,7 @@
   <DamageDef ParentName="Flame">
     <defName>EH_AzureFlameDamage</defName>
     <label>azure flame</label>
+    <description>Thermal injury from evolved Azure Flame techniques. Some attacks combine this heat with a separate physical sword hit. The common elemental balance applies a 20% reduction to this injury packet before the target's mitigation. Repeated animation frames do not repeat the same impact.</description>
     <workerClass>DamageWorker_AddInjury</workerClass>
     <scaleDamageToBuildingsBasedOnFlammability>false</scaleDamageToBuildingsBasedOnFlammability>
     <modExtensions>
@@ -132,7 +133,9 @@
   <HediffDef ParentName="EH_ElementalHeartHediffBase">
     <defName>EH_AzureFlameAscendant</defName>
     <label>Azure Flame Ascendant</label>
-    <description>The evolved form of Flame ascension. Replaces the Flame Ascendant condition while preserving its powers, recovery, cooldowns and transformation state. Grants 500% elemental movement, +50 ascension mood, strengthened defenses and Azure abilities. Royal white cloaked attire, elemental blue accents, no helmet. The halo appears only while transformed and drafted.</description>
+    <description>The evolved Flame lineage commands Azure Crescent, Blue Comet, Controlled Pyre, Azure Phoenix and reactive Azure Reversal. Reversal retreats and counter-rushes when two or more enemies pressure the caster. Grants 500% elemental movement, +50 mood, reinforced defense, recovery and Bestow: Flame. Helmetless white/blue royal regalia and a blue flaming halo while transformed and drafted. Thermal damage received is reduced by 90%; the upper comfortable temperature rises by 250 C.
+
+Damage: this lineage multiplies the Melee damage stat by 2.2 (+120%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.76 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
     <scenarioCanAdd>false</scenarioCanAdd>
@@ -156,7 +159,7 @@
         <heavenPerCharge>1</heavenPerCharge>
         <counterChance>0.5</counterChance>
         <counterCooldown>120</counterCooldown>
-        <resistanceFactor>0.25</resistanceFactor>
+        <resistanceFactor>0.1</resistanceFactor>
         <thermalDamageDefs>
           <li>EH_Flame</li>
           <li>Flame</li>
@@ -257,6 +260,8 @@
           <MentalBreakThreshold>-0.25</MentalBreakThreshold>
           <MeleeHitChance>4</MeleeHitChance>
           <MeleeDodgeChance>12</MeleeDodgeChance>
+
+          <ComfyTemperatureMax>250</ComfyTemperatureMax>
         </statOffsets>
       </li>
     </stages>

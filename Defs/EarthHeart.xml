@@ -18,7 +18,9 @@
   <HediffDef ParentName="EH_ElementalHeartHediffBase">
     <defName>EH_EarthHeart</defName>
     <label>Earth Ascendant</label>
-    <description>A normal Earth Ascendant: a durable fortress swordsman wielding Faultbreaker. Transform manifests basalt armor, an enclosed mountain-crown helmet and a bound sword. Faultline Cleave, Stonebreaker Advance, Seismic Quake and Spire Eruption chain through shared Auto Combat and Non-lethal controls. While transformed, hostile impacts and successful faultline cuts build up to three Resolve stacks for eight seconds; each reduces remaining damage by 5%. Spire Eruption consumes Resolve for stronger spiked-hill impacts and knockback. Seismic Quake radiates from the caster, damaging, staggering and pushing enemies away once. Teach Earth creates disciples. Can evolve into Adamant after 150 unique hostile mastery kills and ten Ascendant days.</description>
+    <description>A durable Earth Ascendant commands Faultline Cleave, Stonebreaker Advance, Seismic Quake and Spire Eruption. Hostile impacts and successful faultline cuts build up to three Resolve stacks for eight seconds; each reduces remaining damage received by 5%. Spire Eruption spends Resolve for stronger impacts and knockback. Seismic Quake damages, staggers and safely pushes nearby enemies once. Stone resilience reduces remaining blunt damage received by 20%. Teach creates Earth disciples; evolve into Adamant after 150 mastery kills and ten Ascendant days.
+
+Damage: this lineage multiplies the Melee damage stat by 2 (+100%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.6 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_EarthAbilities" />
       <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">

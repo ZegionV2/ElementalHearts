@@ -13,7 +13,7 @@ namespace ElementalHearts {
  public static class ElementalNonLethal {
   public const float ForceFactor=.2f, KnockdownChance=.75f;
   public static bool Enabled(Pawn source){
-   if(source==null)return false;var lunar=HediffComp_LunarAbilities.On(source);if(lunar!=null)return lunar.Mode==ElementalAutoMode.NonLethal;var earth=HediffComp_EarthAbilities.On(source);if(earth!=null)return earth.Mode==ElementalAutoMode.NonLethal;var celestial=HediffComp_CelestialAbilities.On(source);if(celestial!=null)return celestial.Mode==ElementalAutoMode.NonLethal;
+   if(source==null)return false;var eclipse=HediffComp_EclipseAbilities.On(source);if(eclipse!=null)return eclipse.Mode==ElementalAutoMode.NonLethal;var lunar=HediffComp_LunarAbilities.On(source);if(lunar!=null)return lunar.Mode==ElementalAutoMode.NonLethal;var earth=HediffComp_EarthAbilities.On(source);if(earth!=null)return earth.Mode==ElementalAutoMode.NonLethal;var celestial=HediffComp_CelestialAbilities.On(source);if(celestial!=null)return celestial.Mode==ElementalAutoMode.NonLethal;
    var water=HediffComp_WaterDefense.On(source);if(water!=null)return water.Mode==ElementalAutoMode.NonLethal;
    var lightning=HediffComp_LightningAbilities.On(source);
    if(lightning!=null)return lightning.CurrentAutoMode==ElementalAutoMode.NonLethal;

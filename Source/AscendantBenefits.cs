@@ -10,10 +10,10 @@ namespace ElementalHearts {
  // Common, whole-body benefits: independent of the manifested outfit and safe in caravans.
  public static class AscendantBenefits {
   static HashSet<HediffDef> diseases;
-  public static float CarryFactor(Pawn pawn){return !ElementalHeartUtility.HasHeart(pawn)?1f:CelestialAscendant.Active(pawn)?15f:EvolvedLineage.Active(pawn)?10f:5f;}
+  public static float CarryFactor(Pawn pawn){return !ElementalHeartUtility.HasHeart(pawn)?1f:(CelestialAscendant.Active(pawn)||EclipseSky.Empowered(pawn))?15f:EvolvedLineage.Active(pawn)?10f:5f;}
   public static float TravelFactor(List<Pawn> pawns){
    if(pawns==null)return 1f;float total=0;int count=0;
-   foreach(var pawn in pawns){if(pawn==null||pawn.Dead||pawn.Downed||!pawn.RaceProps.Humanlike)continue;count++;total+=!ElementalHeartUtility.HasHeart(pawn)?1f:CelestialAscendant.Active(pawn)?4f:EvolvedLineage.Active(pawn)?3f:2f;}
+   foreach(var pawn in pawns){if(pawn==null||pawn.Dead||pawn.Downed||!pawn.RaceProps.Humanlike)continue;count++;total+=!ElementalHeartUtility.HasHeart(pawn)?1f:(CelestialAscendant.Active(pawn)||EclipseSky.Empowered(pawn))?4f:EvolvedLineage.Active(pawn)?3f:2f;}
    return count==0?1f:total/count;
   }
   public static bool Disease(HediffDef def){

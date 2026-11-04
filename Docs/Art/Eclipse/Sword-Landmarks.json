@@ -1,0 +1,27 @@
+{
+  "sprite": "Textures/Things/Item/Equipment/WeaponMelee/EclipseSword.png",
+  "profile": {
+    "TextureModID": "elementalhearts.lightningheart",
+    "ItemDefName": "EH_EclipseSword",
+    "ItemType": "ThingDef",
+    "ItemTypeNamespace": "Verse",
+    "OffX": 0.44484375,
+    "OffY": 0.0,
+    "Rotation": 90,
+    "ScaleX": 1.56,
+    "ScaleY": 1.56,
+    "FlipX": false,
+    "FlipY": false,
+    "HandsMode": 0,
+    "BladeStart": 0.23765624999999999,
+    "BladeEnd": 1.16390625,
+    "MeleeWeaponType": 6
+  },
+  "guardY": 162,
+  "tipY": 10,
+  "gripX": 128,
+  "note": "Held size enlarged 30 percent. Grip anchor, trail endpoints and native AM attacks validated in the game. Inventory/ground graphic size is unchanged.",
+  "pommelY": 245,
+  "gripY": 201,
+  "heldEnlargement": 1.3
+}

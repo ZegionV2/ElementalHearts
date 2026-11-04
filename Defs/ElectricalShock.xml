@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>EH_ElectricalShock</defName>
+    <label>electrical shock</label>
+    <description>A brief electrical stun followed by three seconds of discharge recovery. Lightning and Thunderstorm Ascendants resist its chance and duration.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_ElectricalShock" />
+    </comps>
+  </HediffDef>
+</Defs>

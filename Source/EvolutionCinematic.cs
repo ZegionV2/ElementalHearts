@@ -32,7 +32,7 @@ namespace ElementalHearts {
   public static void Track(Pawn p){if(p!=null&&p.Spawned)p.Map.GetComponent<MapComponent_EvolutionCinematic>().Track(p);}
   public static void Complete(Pawn p){if(p!=null&&p.Spawned)p.Map.GetComponent<MapComponent_EvolutionCinematic>().Complete(p);}
  }
- public sealed class MapComponent_EvolutionCinematic:MapComponent {
+ public sealed partial class MapComponent_EvolutionCinematic:MapComponent {
   struct Ceremony {public Pawn pawn;public bool active,burst;public int finishTick;public Vector3 center;}
   readonly Ceremony[] ceremonies=new Ceremony[24];
   static Mesh ring;static Material solid;MaterialPropertyBlock properties;
@@ -65,34 +65,12 @@ namespace ElementalHearts {
    var delta=b-a;var normal=new Vector3(-delta.z,0,delta.x).normalized;var prior=a;
    for(int i=1;i<=6;i++){float t=i/6f;var next=Vector3.Lerp(a,b,t);if(i<6)next+=normal*(float)Math.Sin(seed*.7f+i*2.3f)*.12f;var direction=next-prior;var color=tint;color.a=alpha;Draw(MeshPool.plane10,solid,(prior+next)*.5f,.055f,direction.magnitude,direction.AngleFlat(),color);prior=next;}
   }
-  void Ritual(Pawn p,int elapsed){
-   var f=EvolutionTimeline.At(elapsed);if(f.opacity<=0)return;Vector3 center=p.Position.ToVector3Shifted();center.z-=.15f;
-   if(p.CurJobDef==DefDatabase<JobDef>.GetNamed("EH_EvolveGlacial")){Draw(MeshPool.plane10,GlacialVfx.Frame(4,Math.Min(7,(int)(f.progress*8))),center,2+f.charge,2+f.charge,f.spin*8,new Color(1,1,1,.6f*f.opacity));for(int i=0;i<6;i++){var at=center+EvolutionTimeline.Spiral(elapsed,i,p.thingIDNumber);Draw(MeshPool.plane10,GlacialVfx.Frame(0,(elapsed/5+i)%8),at,.35f,.65f,f.spin*25+i*60,new Color(1,1,1,.45f*f.opacity));}return;}
-   if(p.CurJobDef!=null&&p.CurJobDef.defName=="EH_EvolveCyclone"){Draw(LightningVfx.FrameMesh(true),CycloneVfx.Frame(4,Math.Min(7,(int)(f.progress*8))),center,3+f.charge,3+f.charge,0,new Color(1,1,1,.65f*f.opacity));for(int i=0;i<6;i++){var at=center+EvolutionTimeline.Spiral(elapsed,i,p.thingIDNumber);Draw(MeshPool.plane10,CycloneVfx.Frame(1,(elapsed/5+i)%8),at,.45f,.8f,f.spin*25+i*60,new Color(1,1,1,.4f*f.opacity));}return;}
-   if(p.CurJobDef!=null&&p.CurJobDef.defName=="EH_EvolveAdamant"){
-    Ring(center,f.radius,f.spin*12,new Color(1,.7f,.22f,.35f*f.opacity));Draw(MeshPool.plane10,AdamantVfx.Frame(4,Math.Min(7,elapsed/20)),center,3.4f,3.4f,0,new Color(1,1,1,.55f*f.opacity));
-    for(int i=0;i<8;i++){var at=center+EvolutionTimeline.Spiral(elapsed,i,p.thingIDNumber);Draw(MeshPool.plane10,solid,at,.10f,.16f,45+f.spin*12,new Color(1,.78f,.38f,.65f*f.opacity));}return;
-   }
-   bool storm=ThunderstormEvolution.HasLightning(p);Color tint=EvolutionTimeline.Accent(storm,f.progress);float alpha=f.opacity;
-   Ring(center,f.radius,f.spin*25,new Color(tint.r,tint.g,tint.b,.27f*alpha));Ring(center,f.radius*.77f,-f.spin*35,new Color(1,.82f,.32f,.18f*alpha));
-   Ring(center,.45f+.5f*f.charge,0,new Color(tint.r,tint.g,tint.b,.32f*alpha));
-   // Rising spirals and shrinking orbits converge on the pawn before release.
-   for(int i=0;i<12;i++){var offset=EvolutionTimeline.Spiral(elapsed,i,p.thingIDNumber);float phase=EvolutionTimeline.Fraction(elapsed/65f+i/12f+(p.thingIDNumber%19)*.01f);float fade=(float)Math.Sin(phase*Math.PI)*alpha;var at=center+offset;Color spark=Color.Lerp(new Color(1,.77f,.25f),tint,phase);spark.a=fade*.7f;float length=.12f+.2f*f.surge;Draw(MeshPool.plane10,solid,at,.045f,length,-f.spin*25+i*30,spark);
-    if(!storm&&i%2==0&&f.progress>.3f){var wisps=center+offset*.65f;var c=new Color(.65f,.9f,1,.22f*fade*f.surge);Draw(MeshPool.plane10,ReversalVfx.Material(1),wisps,.45f+.25f*f.surge,.85f+1.2f*f.surge,f.spin*16+i*60,c);}
-   }
-   if(storm){var core=center;core.z+=.8f;for(int i=0;i<6;i++){float angle=f.spin+i*(float)Math.PI/3;var from=center+new Vector3((float)Math.Cos(angle)*f.radius,0,(float)Math.Sin(angle)*f.radius*.5f);Bolt(from,core,elapsed/4+i,tint,.5f*f.opacity*f.surge);}return;}
-   if(f.surge>0){var column=center;column.z+=.7f;float taper=1-.7f*f.collapse;Draw(MeshPool.plane10,ReversalVfx.Material(1),column,1.1f*taper,1.8f+2*f.surge,0,new Color(.75f,.94f,1,.3f*f.surge*alpha));Draw(MeshPool.plane10,ReversalVfx.Material(0),center,2.2f+f.charge,2.2f+f.charge,f.spin*10,new Color(1,1,1,.35f*f.surge*alpha));}
-   if(f.collapse>0){var core=center;core.z+=.65f;Draw(MeshPool.plane10,ReversalVfx.Material(5),core,.5f+.9f*f.collapse,.5f+.9f*f.collapse,-f.spin*15,new Color(1,1,1,.6f*f.collapse*alpha));}
+  void Ritual(Pawn pawn,int elapsed){
+   int motif=EvolutionMotif.ForJob(pawn.CurJobDef==null?null:pawn.CurJobDef.defName);
+   DrawCoronation(motif,pawn.Position.ToVector3Shifted(),elapsed,pawn.thingIDNumber,false);
   }
-  void Burst(Ceremony c,int now){
-   int elapsed=now-c.finishTick;float fade=EvolutionTimeline.BurstOpacity(elapsed),radius=EvolutionTimeline.BurstRadius(elapsed);Vector3 center=c.center;center.z-=.15f;
-   if(AdamantEvolution.Active(c.pawn)){Ring(center,radius,elapsed,new Color(1,.73f,.25f,.6f*fade));Draw(MeshPool.plane10,AdamantVfx.Frame(2,Math.Min(7,elapsed/6)),center,8+radius,8+radius,0,new Color(1,1,1,.65f*fade));return;}
-   if(CycloneEvolution.Active(c.pawn)){Ring(center,radius,elapsed*2,new Color(.25f,1,.62f,.65f*fade));Ring(center,radius*.7f,-elapsed*3,new Color(.85f,1,.92f,.45f*fade));Draw(MeshPool.plane10,CycloneVfx.Frame(6,Math.Min(7,elapsed/5)),center,2+radius,2+radius,0,new Color(1,1,1,.6f*fade));return;}
-   if(ThunderstormEvolution.Active(c.pawn)){Ring(center,radius,elapsed*2,new Color(1,.06f,.14f,.65f*fade));var peak=center;peak.z+=1.2f*(1-elapsed/60f);for(int i=0;i<12;i++){float angle=i*(float)Math.PI/6;var end=center+new Vector3((float)Math.Cos(angle)*radius,0,(float)Math.Sin(angle)*radius*.65f);Bolt(peak,end,i+elapsed/4,new Color(1,.18f,.25f),.7f*fade);}return;}
-   Ring(center,radius,elapsed*2,new Color(.15f,.75f,1,.65f*fade));Ring(center,radius*.7f,-elapsed*3,new Color(.9f,.97f,1,.45f*fade));
-   Draw(MeshPool.plane10,ReversalVfx.Material(2),center,2.8f+radius*.45f,2.8f+radius*.45f,0,new Color(1,1,1,.55f*fade));
-   var core=center;core.z+=.6f;Draw(MeshPool.plane10,ReversalVfx.Material(5),core,2.6f,2.6f,0,new Color(1,1,1,.6f*fade));
-   for(int i=0;i<12;i++){float a=i*(float)Math.PI/6;var pos=center+new Vector3((float)Math.Cos(a)*radius,0,(float)Math.Sin(a)*radius*.7f);Draw(MeshPool.plane10,solid,pos,.06f,.24f,i*30,new Color(.5f,.85f,1,.7f*fade));}
+  void Burst(Ceremony ceremony,int now){
+   DrawCoronation(EvolutionMotif.ForPawn(ceremony.pawn),ceremony.center,now-ceremony.finishTick,ceremony.pawn.thingIDNumber,true);
   }
   public override void MapComponentDraw(){
    if(map!=Find.CurrentMap||Find.CameraDriver==null||ElementalHeartsMod.Settings.effectOpacity<=0)return;

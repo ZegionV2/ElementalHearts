@@ -336,7 +336,7 @@ namespace ElementalHearts
                 };
                 command.defaultLabel = names[i];
 
-                command.defaultDesc = desc[i] + "\nCooldown: " + (Cooldown(power) / 60f) + " seconds. Scales with usable melee attacks; works with fists. You can deliberately select any faction. Other targets follow friendly-fire settings. Downed/dead targets are excluded.";
+                command.defaultDesc = desc[i] + (ThunderstormEvolution.Active(Pawn) ? " Damaging electrical hits have a 40% chance to shock for 1.5 seconds." : " Damaging electrical hits have a 25% chance to shock for one second.") + " Shock grants three seconds of discharge recovery after the stun. Electrical resistance reduces its chance and duration." + "\nCooldown: " + (Cooldown(power) / 60f) + " seconds. Scales with usable melee attacks; works with fists. You can deliberately select any faction. Other targets follow friendly-fire settings. Downed/dead targets are excluded.";
 
                 command.icon = ThunderstormEvolution.Active(Pawn)?ThunderstormEvolution.Icon(i):LightningVfx.Atlas;
 
@@ -920,9 +920,11 @@ namespace ElementalHearts
 
             {
 
-                victim.TakeDamage(new DamageInfo(ThunderstormEvolution.Active(caster)?DefDatabase<DamageDef>.GetNamed("EH_ThunderstormDamage"):LightningDefs.EH_Lightning, profile.damage * electrical, 0.5f, -1f,
+                var electricalResult = victim.TakeDamage(new DamageInfo(ThunderstormEvolution.Active(caster)?DefDatabase<DamageDef>.GetNamed("EH_ThunderstormDamage"):LightningDefs.EH_Lightning, profile.damage * electrical, 0.5f, -1f,
 
                     caster, null, profile.weapon, DamageInfo.SourceCategory.ThingOrUnknown, victim));
+
+                if (electricalResult != null && electricalResult.totalDamageDealt > 0f) ElectricalShock.TryApply(caster, victim);
 
                 if (activeAbility && !victim.Dead && !victim.Destroyed && victim.RaceProps.IsMechanoid)
 

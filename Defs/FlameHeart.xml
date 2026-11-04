@@ -18,7 +18,9 @@
   <HediffDef ParentName="EH_ElementalHeartHediffBase">
     <defName>EH_FlameHeart</defName>
     <label>Flame Ascendant</label>
-    <description>Sovereign Flame Aura greatly enhances capacities, combat and recovery. Suppresses pain and injury-related impairment, stabilizes mood, Phoenix Vitality seals wounds after 3 seconds and heals ordinary injuries. Does not regrow missing parts or cure scars and diseases. This is a permanent whole-body condition acquired by injection, not an implanted organ.</description>
+    <description>A Flame Ascendant commands Ember Cleave, Cinder Step, Inferno Waltz and Phoenix Descent, combining sword strikes with thermal injury. Heat resistance reduces thermal damage received by 75% and raises the upper comfortable temperature by 100 C. Phoenix Vitality seals wounds after three seconds and heals ordinary injuries; missing parts and scars are not regenerated. Teach creates Flame disciples; evolve into Azure Flame after 150 mastery kills and ten Ascendant days.
+
+Damage: this lineage multiplies the Melee damage stat by 2 (+100%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.6 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
         <sealAfterTicks>180</sealAfterTicks>
@@ -137,6 +139,8 @@
           <MentalBreakThreshold>-0.25</MentalBreakThreshold>
           <MeleeHitChance>4</MeleeHitChance>
           <MeleeDodgeChance>12</MeleeDodgeChance>
+
+          <ComfyTemperatureMax>100</ComfyTemperatureMax>
         </statOffsets>
       </li>
     </stages>

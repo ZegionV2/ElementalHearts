@@ -5,7 +5,7 @@ namespace ElementalHearts {
   static bool JobIs(Pawn p,string name){return p!=null&&p.CurJob!=null&&p.CurJob.def!=null&&p.CurJob.def.defName==name;}
   public static bool Busy(Pawn p){return JobIs(p,Teaching)||JobIs(p,Receiving)||ElementalBestow.Busy(p)||DiscipleAscension.Busy(p);}
   public static bool Available(Pawn teacher,Pawn pupil){
-   if(teacher==null||pupil==null||EarthCombat.Busy(teacher)||EarthCombat.Busy(pupil)||LunarAscendant.Busy(teacher)||LunarAscendant.Busy(pupil)||DiscipleAscension.Busy(teacher)||DiscipleAscension.Busy(pupil)||ElementalBestow.Busy(teacher)||ElementalBestow.Busy(pupil)||teacher.jobs==null||pupil.jobs==null||ElementalAnimationBridge.Controlled(teacher)||ElementalAnimationBridge.Controlled(pupil)||AzureEvolution.Evolving(teacher)||AzureEvolution.Evolving(pupil)||HediffComp_ElementalTransform.Transforming(teacher)||HediffComp_ElementalTransform.Transforming(pupil))return false;
+   if(teacher==null||pupil==null||EarthCombat.Busy(teacher)||EarthCombat.Busy(pupil)||LunarAscendant.Busy(teacher)||LunarAscendant.Busy(pupil)||EclipseAscendant.Busy(teacher)||EclipseAscendant.Busy(pupil)||DiscipleAscension.Busy(teacher)||DiscipleAscension.Busy(pupil)||ElementalBestow.Busy(teacher)||ElementalBestow.Busy(pupil)||teacher.jobs==null||pupil.jobs==null||ElementalAnimationBridge.Controlled(teacher)||ElementalAnimationBridge.Controlled(pupil)||AzureEvolution.Evolving(teacher)||AzureEvolution.Evolving(pupil)||HediffComp_ElementalTransform.Transforming(teacher)||HediffComp_ElementalTransform.Transforming(pupil))return false;
    return !JobIs(teacher,Receiving)&&!JobIs(pupil,Teaching)&&(!JobIs(pupil,Receiving)||pupil.CurJob.targetA.Pawn==teacher);
   }
   public static bool Paired(Pawn teacher,Pawn pupil){

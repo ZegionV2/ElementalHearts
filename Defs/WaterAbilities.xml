@@ -3,6 +3,7 @@
   <DamageDef ParentName="BluntBase">
     <defName>EH_WaterDamage</defName>
     <label>water pressure</label>
+    <description>Blunt water-pressure injury used by Water and Glacial techniques. Weapon-derived power, the selected technique and any consumed Pressure determine the requested impact; armor and defensive effects then reduce it. Eligible Ascendant injury packets receive the common 20% damage reduction. Frost visuals and freeze ticks do not continuously repeat the attack.</description>
     <workerClass>DamageWorker_AddInjury</workerClass>
     <deathMessage>{0} was overwhelmed by water pressure.</deathMessage>
     <armorCategory>Blunt</armorCategory>

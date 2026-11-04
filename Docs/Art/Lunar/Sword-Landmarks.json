@@ -1,0 +1,27 @@
+{
+  "sprite": "Textures/Things/Item/Equipment/WeaponMelee/LunarSword.png",
+  "gripX": 128,
+  "gripY": 209,
+  "guardY": 182,
+  "tipY": 14,
+  "pommelY": 241,
+  "profile": {
+    "TextureModID": "elementalhearts.lightningheart",
+    "ItemDefName": "EH_LunarSword",
+    "ItemType": "ThingDef",
+    "ItemTypeNamespace": "Verse",
+    "OffX": 0.49359375000000005,
+    "OffY": 0.0,
+    "Rotation": 90.0,
+    "ScaleX": 1.56,
+    "ScaleY": 1.56,
+    "FlipX": false,
+    "FlipY": false,
+    "HandsMode": 0,
+    "BladeStart": 0.16453125,
+    "BladeEnd": 1.18828125,
+    "MeleeWeaponType": 6
+  },
+  "heldEnlargement": 1.3,
+  "note": "Held size enlarged 30 percent. Grip anchor, trail endpoints and native AM attacks validated in the game. Inventory/ground graphic size is unchanged."
+}

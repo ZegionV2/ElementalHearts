@@ -3,6 +3,7 @@
   <DamageDef ParentName="Flame">
     <defName>EH_Lightning</defName>
     <label>lightning</label>
+    <description>Electrical injury from Lightning techniques and passives. Some attacks also deal a separate physical sword hit. Damaging electrical hits can trigger Lightning's shock status. The common elemental balance applies a 20% reduction to this injury packet before the target's mitigation; the effect's animation frames do not each inflict damage.</description>
     <workerClass>DamageWorker_AddInjury</workerClass>
     <deathMessage>{0} was struck down by lightning.</deathMessage>
     <impactSoundType>Electric</impactSoundType>
