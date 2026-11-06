@@ -5,7 +5,9 @@
     <label>Celestial Ascendant</label>
     <description>A fully evolved sovereign of sun, solar power and light. Dawncleaver, Sunstride, Corona Dance, Solar Judgment, Heavenly Zenith and Fake Rainbow combine through Radiance. Fake Rainbow parries into a rainbow retreat and counter-dash. Grants 650% elemental movement, +75 mood, supreme defense and recovery. Helmetless ivory/gold regalia, Dawnbringer, a solar halo and a golden sword aura while transformed and drafted. Free manual Light Travel selects a world destination. Random Bestow grants Lunar at 2% or one of the five ordinary elements at 19.6% each, with evolution milestones fulfilled; never Celestial. Thermal damage received is reduced by 90%, solar damage by 75%; comfortable temperatures extend 100 C toward cold and 300 C toward heat.
 
-Damage: this lineage multiplies the Melee damage stat by 3.2 (+220%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 2.56 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
+Damage: this lineage multiplies the Melee damage stat by 3.2 (+220%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 2.56 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.
+
+Teamwork: elemental techniques can synchronize with nearby allied transformed Ascendants for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_CelestialAbilities" />
       <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">

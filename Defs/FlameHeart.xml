@@ -20,7 +20,9 @@
     <label>Flame Ascendant</label>
     <description>A Flame Ascendant commands Ember Cleave, Cinder Step, Inferno Waltz and Phoenix Descent, combining sword strikes with thermal injury. Heat resistance reduces thermal damage received by 75% and raises the upper comfortable temperature by 100 C. Phoenix Vitality seals wounds after three seconds and heals ordinary injuries; missing parts and scars are not regenerated. Teach creates Flame disciples; evolve into Azure Flame after 150 mastery kills and ten Ascendant days.
 
-Damage: this lineage multiplies the Melee damage stat by 2 (+100%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.6 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
+Damage: this lineage multiplies the Melee damage stat by 2 (+100%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.6 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.
+
+Teamwork: elemental techniques can synchronize with nearby allied transformed Ascendants for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
         <sealAfterTicks>180</sealAfterTicks>

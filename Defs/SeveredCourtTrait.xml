@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <TraitDef>
+    <defName>EH_SeveredOath</defName>
+    <commonality>0</commonality>
+    <canBeSuppressed>false</canBeSuppressed>
+    <degreeDatas>
+      <li>
+        <label>Severed Oath</label>
+        <description>[PAWN_nameDef] bears the oath of the Severed Court. When transformed, [PAWN_pronoun] manifests the Court's shared obsidian and crimson armor while retaining [PAWN_possessive] own element, sword and normal protection. This oath grants no elemental power or combat bonus. It remains while captured or evolved. Joining the player faction renounces the oath as an act of redemption, restoring normal elemental apparel while retaining powers and the bound sword.</description>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+</Defs>

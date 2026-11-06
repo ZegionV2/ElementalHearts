@@ -147,7 +147,7 @@ namespace ElementalHearts
         public static void Afterimage(Pawn pawn, Vector3 position)
 
         {
-            if(AzureEvolution.Active(pawn)){if(ElementalHeartsMod.Settings.showAfterimages)AzureVfx.Emit(pawn,pawn.Map,1,position,position,12,1.4f);return;}
+            if(AzureEvolution.Active(pawn)){AzureVfx.Ghost(pawn,position);return;}
 
             if (!ElementalHeartsMod.Settings.showAfterimages || ElementalHeartsMod.Settings.effectOpacity<=0f || !pawn.Spawned || pawn.Map != Find.CurrentMap || Find.CameraDriver == null ||
 

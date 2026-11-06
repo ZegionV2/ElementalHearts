@@ -20,7 +20,9 @@
     <label>Lightning Ascendant</label>
     <description>A Lightning Ascendant commands four lightning sword techniques, charge combos and electrical counters. Damaging electrical hits have a 25% chance to stun a standing hostile for one second, with three seconds of shock recovery. Electrical damage received is reduced by 75%. Wounds seal after three seconds and ordinary injuries recover; missing parts and scars are not regenerated. Teach creates Lightning disciples; evolve into Thunderstorm after 150 mastery kills and ten Ascendant days.
 
-Damage: this lineage multiplies the Melee damage stat by 2 (+100%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.6 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
+Damage: this lineage multiplies the Melee damage stat by 2 (+100%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.6 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.
+
+Teamwork: elemental techniques can synchronize with nearby allied transformed Ascendants for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_LightningRecovery">
         <sealAfterTicks>180</sealAfterTicks>

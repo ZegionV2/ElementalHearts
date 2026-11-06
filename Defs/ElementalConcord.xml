@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>EH_ElementalConcord</defName><label>elemental synchronization</label>
+    <description>Two allied, transformed Ascendants struck the same enemy within four seconds while within eight clear cells of each other. Their coordination grants 10% more melee damage and movement for four seconds. Each participant can synchronize once per six seconds; multiple partners do not stack this condition. Earth partners add a brief ward, Water partners repair up to four ordinary injury points each, Water/Lightning can cause a resisted discharge, and Flame/Wind strengthens one existing hit by 15%. No extra damage packet is spawned.</description>
+    <hediffClass>HediffWithComps</hediffClass><isBad>false</isBad><scenarioCanAdd>false</scenarioCanAdd><initialSeverity>1</initialSeverity>
+    <comps><li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>240</disappearsAfterTicks></li></comps>
+    <stages><li><statFactors><MeleeDamageFactor>1.1</MeleeDamageFactor><MoveSpeed>1.1</MoveSpeed></statFactors></li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EH_SolarConcord</defName><label>sovereign synchronization</label>
+    <description>Coordinated by a Celestial, or an Eclipse empowered by an actual eclipse. Grants 15% more melee damage and movement for four seconds, replacing ordinary elemental synchronization. The shared six-second participant cooldown and elemental support rules still apply. This does not stack with the weaker synchronization condition.</description>
+    <hediffClass>HediffWithComps</hediffClass><isBad>false</isBad><scenarioCanAdd>false</scenarioCanAdd><initialSeverity>1</initialSeverity>
+    <comps><li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>240</disappearsAfterTicks></li></comps>
+    <stages><li><statFactors><MeleeDamageFactor>1.15</MeleeDamageFactor><MoveSpeed>1.15</MoveSpeed></statFactors></li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>EH_ConcordWard</defName><label>stone concord ward</label>
+    <description>An Earth or Adamant partner lends stone protection after a synchronized impact. Reduces remaining incoming damage by 15% for four seconds. One ward per pawn; additional partners do not stack copies.</description>
+    <hediffClass>HediffWithComps</hediffClass><isBad>false</isBad><scenarioCanAdd>false</scenarioCanAdd><initialSeverity>1</initialSeverity>
+    <comps><li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>240</disappearsAfterTicks></li></comps>
+    <stages><li><statFactors><IncomingDamageFactor>.85</IncomingDamageFactor></statFactors></li></stages>
+  </HediffDef>
+</Defs>

@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <BackstoryDef>
+    <defName>EH_CourtWard</defName>
+    <title>crown ward</title>
+    <titleShort>ward</titleShort>
+    <description>Raised in a Court chapterhouse, [PAWN_nameDef] learned letters from confiscated books and sword forms from the morning bell. Every lesson ended with the same promise: service would buy a place behind the walls.</description>
+    <slot>Childhood</slot>
+    <shuffleable>true</shuffleable>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories>
+      <li>EH_SeveredCourt</li>
+    </spawnCategories>
+    <skillGains>
+      <Melee>2</Melee>
+      <Intellectual>1</Intellectual>
+    </skillGains>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>EH_CourtSiegeChild</defName>
+    <title>siege survivor</title>
+    <titleShort>survivor</titleShort>
+    <description>[PAWN_nameDef] survived a settlement siege by hiding in a broken water cistern. The Court arrived after the killing and offered food, shelter and a new oath. [PAWN_pronoun] still struggles to distinguish rescue from recruitment.</description>
+    <slot>Childhood</slot>
+    <shuffleable>true</shuffleable>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories>
+      <li>EH_SeveredCourt</li>
+    </spawnCategories>
+    <skillGains>
+      <Construction>2</Construction>
+      <Medicine>1</Medicine>
+    </skillGains>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>EH_CourtInitiate</defName>
+    <title>oathling initiate</title>
+    <titleShort>initiate</titleShort>
+    <description>[PAWN_nameDef] escorted tithe caravans and drilled among the Court's newest disciples. A summoned sword was proof of belonging; a full ascension remained something to earn, and something the officers used to demand obedience.</description>
+    <slot>Adulthood</slot>
+    <shuffleable>true</shuffleable>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories>
+      <li>EH_SeveredCourt</li>
+    </spawnCategories>
+    <skillGains>
+      <Melee>2</Melee>
+      <Plants>1</Plants>
+    </skillGains>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>EH_CourtEnforcer</defName>
+    <title>crown enforcer</title>
+    <titleShort>enforcer</titleShort>
+    <description>As a Court Knight, [PAWN_nameDef] guarded roads, collected tribute and enforced verdicts delivered beneath the broken crown. [PAWN_pronoun] learned how quickly protection becomes occupation when no one can refuse it.</description>
+    <slot>Adulthood</slot>
+    <shuffleable>true</shuffleable>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories>
+      <li>EH_SeveredCourt</li>
+    </spawnCategories>
+    <skillGains>
+      <Melee>4</Melee>
+      <Social>1</Social>
+    </skillGains>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>EH_CourtAzureLife</defName>
+    <title>cinder prelate</title>
+    <titleShort>prelate</titleShort>
+    <description>[PAWN_nameDef] once burned plague stores to keep a besieged city alive. The Court made a ceremony of that terrible choice. After mastering azure fire, [PAWN_pronoun] became the officer who turns retreat into a sudden countercharge.</description>
+    <slot>Adulthood</slot>
+    <shuffleable>false</shuffleable>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories>
+      <li>EH_SeveredCourt</li>
+    </spawnCategories>
+    <skillGains>
+      <Melee>5</Melee>
+      <Medicine>2</Medicine>
+    </skillGains>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>EH_CourtStormLife</defName>
+    <title>scarlet courier</title>
+    <titleShort>courier</titleShort>
+    <description>[PAWN_nameDef] carried sealed executions between distant Court holds. Years of lethal pursuits refined lightning into a scarlet storm. Now [PAWN_pronoun] commands the riders who cut off escape before the main force arrives.</description>
+    <slot>Adulthood</slot>
+    <shuffleable>false</shuffleable>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories>
+      <li>EH_SeveredCourt</li>
+    </spawnCategories>
+    <skillGains>
+      <Melee>5</Melee>
+      <Shooting>2</Shooting>
+    </skillGains>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>EH_CourtFrostLife</defName>
+    <title>winter warden</title>
+    <titleShort>warden</titleShort>
+    <description>[PAWN_nameDef] guarded a mountain reservoir through a winter of siege. The Court praised the discipline that kept its soldiers alive and its subjects thirsty. Glacial ascension turned that patience into the power to halt an entire charge.</description>
+    <slot>Adulthood</slot>
+    <shuffleable>false</shuffleable>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories>
+      <li>EH_SeveredCourt</li>
+    </spawnCategories>
+    <skillGains>
+      <Melee>5</Melee>
+      <Intellectual>2</Intellectual>
+    </skillGains>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>EH_CourtGaleLife</defName>
+    <title>sky duelist</title>
+    <titleShort>duelist</titleShort>
+    <description>A champion of the Court's high-bridge dueling schools, [PAWN_nameDef] learned to win by controlling where an opponent could stand. As a Gale Herald, [PAWN_pronoun] breaks formations and delivers isolated fighters to the waiting blades below.</description>
+    <slot>Adulthood</slot>
+    <shuffleable>false</shuffleable>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories>
+      <li>EH_SeveredCourt</li>
+    </spawnCategories>
+    <skillGains>
+      <Melee>5</Melee>
+      <Artistic>2</Artistic>
+    </skillGains>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>EH_CourtAdamantLife</defName>
+    <title>citadel marshal</title>
+    <titleShort>marshal</titleShort>
+    <description>[PAWN_nameDef] rebuilt a breached Court fortress while fighting still raged inside it. Adamant ascension followed the refusal to yield another step. To [PAWN_objective], a squad is a moving citadel, and every retreat is a wall left unfinished.</description>
+    <slot>Adulthood</slot>
+    <shuffleable>false</shuffleable>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories>
+      <li>EH_SeveredCourt</li>
+    </spawnCategories>
+    <skillGains>
+      <Melee>5</Melee>
+      <Construction>3</Construction>
+    </skillGains>
+  </BackstoryDef>
+  <BackstoryDef>
+    <defName>EH_CourtBrokenOath</defName>
+    <title>oathbreaker</title>
+    <titleShort>oathbreaker</titleShort>
+    <description>[PAWN_nameDef] deserted after a Court recovery expedition became a punishment of civilians. [PAWN_pronoun] kept the oath's manifested uniform and [PAWN_possessive] elemental training, but abandoned the officers who claimed to own both.</description>
+    <slot>Adulthood</slot>
+    <shuffleable>false</shuffleable>
+    <bodyTypeMale>Male</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <spawnCategories>
+      <li>EH_SeveredCourt</li>
+    </spawnCategories>
+    <skillGains>
+      <Melee>2</Melee>
+      <Medicine>2</Medicine>
+    </skillGains>
+  </BackstoryDef>
+</Defs>

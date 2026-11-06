@@ -19,7 +19,7 @@ namespace ElementalHearts {
   }
   public void Stop(int token){if(token<=0)return;for(int i=0;i<effects.Length;i++)if(effects[i].active&&effects[i].token==token){effects[i]=new Effect();return;}}
   public void Track(Pawn p){if(p==null)return;for(int i=0;i<adornments.Length;i++)if(adornments[i]==p)return;adornments[adornCursor]=p;adornCursor=(adornCursor+1)%adornments.Length;}
-  public void Ghost(Pawn p,Vector3 at,int now){if(p==null||!p.Spawned||!CelestialVfx.Finite(at))return;float w=1,h=1;CelestialArmorFit.Echo(p,ref at,ref w,ref h);echoes[echoCursor]=new Echo{active=true,start=now,at=at,width=w,height=h,west=p.Rotation==Rot4.West,body=CelestialVisualAssets.Body(p)};echoCursor=(echoCursor+1)%echoes.Length;}
+  public void Ghost(Pawn p,Vector3 at,int now){if(p==null||!p.Spawned||!CelestialVfx.Finite(at))return;float w=1,h=1;if(CourtAppearance.WearingKit(p))CourtAppearance.Echo(p,ref w,ref h);else CelestialArmorFit.Echo(p,ref at,ref w,ref h);echoes[echoCursor]=new Echo{active=true,start=now,at=at,width=w,height=h,west=p.Rotation==Rot4.West,body=CelestialVisualAssets.Body(p)};echoCursor=(echoCursor+1)%echoes.Length;}
   bool Live(Pawn p){return p!=null&&p.Spawned&&p.Map==map&&!p.Dead&&!p.Downed;}
   public void Forget(Pawn p){for(int i=0;i<adornments.Length;i++)if(adornments[i]==p)adornments[i]=null;for(int i=0;i<effects.Length;i++)if(effects[i].follow==p)effects[i]=new Effect();}
   public override void FinalizeInit(){Array.Clear(effects,0,effects.Length);Array.Clear(echoes,0,echoes.Length);Array.Clear(adornments,0,adornments.Length);foreach(var p in map.mapPawns.AllPawnsSpawned)if(CelestialAscendant.Active(p))Track(p);}

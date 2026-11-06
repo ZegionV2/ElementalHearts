@@ -23,6 +23,24 @@ This is an intentionally powerful, anime-inspired mod. Ordinary Ascendants excee
 
 To update, close RimWorld and back up your save. Replace the mod with the complete new folder, keep only one enabled copy, and restart after replacing assemblies or textures.
 
+## Enemy faction: The Severed Court
+
+An authoritarian order of elemental sword warriors with shared obsidian/ivory armor, crimson cloaks and a broken-crown insignia. **The Court fields Oathling disciples, normal Court Knights and five evolved Heralds** across Flame, Lightning, Water, Wind and Earth. Their Severed Oath trait changes transformed apparel while preserving elemental powers, armor stats and bound swords. Recruited members renounce the oath as redemption and regain normal elemental apparel, keeping their powers and bound sword. Already-recruited pawns are corrected when loading older saves.
+
+Azure, Storm, Frost, Gale and Adamant Heralds wear shared elite obsidian/ivory regalia, crimson cloaks and open-brow faceguards. Each keeps the appropriate evolved sword, five techniques, stats and combat halo. Ten native Court backstories give the new ranks and deserters their own histories.
+
+Element icons appear beside native map names and update on awakening/evolution. Ordinary walking raids begin from day 30. From day 60 and 8,000 points, rare squads can include one Herald; all groups remain capped at sixteen. Herald’s Writ announces a commander assault two days ahead. A Broken Oath offers sanctuary to a disciple, with an explicit ordinary pursuit if accepted. Both encounters preserve their pending state through saving/loading. Settings control raids, Heralds, stories, badges and one-time existing-world introduction. Five permanent strongholds now field one Herald, two Knights and six Oathlings each. Dedicated Herald Assault and Stronghold Dossier events join the saved two-day writs and deserter stories; Herald dispatches draw from surviving, unengaged strongholds. Send a caravan to attack their fortified command halls and collect finite treasuries. Survivors and unclaimed provisions persist across retreat/save/load. Lunar/Eclipse Court bosses remain planned. [Roster, settings and integration details](Docs/SeveredCourt.md).
+
+Existing worlds can add the new strongholds once through loading or **Mod settings → Elemental Hearts → Add Court settlements / strongholds to this world**. The explicit button also adds a missing Court faction. It preserves existing settlements, does not duplicate sites on repeated loads/clicks, and never rebuilds cleared strongholds or resurrects a defeated Court.
+
+![Court Herald regalia and open-brow faceguard fitted to seven native body textures](Docs/Images/court-herald-armor-fit.png)
+
+*Herald asset fit preview: south/east/north and native mirrored west, across all seven body textures.*
+
+![A generated Court stronghold with Herald-led defenders, command hall, barracks and treasury](Docs/Images/court-stronghold.png)
+
+*In-game stronghold overview. Send a caravan and choose Attack; surviving defenders and unclaimed provisions persist when you retreat and return.*
+
 ## The complete playable roster
 
 All forms below are implemented. Ordinary elements have four combat techniques, their evolutions five, Lunar five, and Eclipse/Celestial six. Transform, Teach/Bestow, automation and travel are additional commands.
@@ -37,7 +55,9 @@ All forms below are implemented. Ordinary elements have four combat techniques, 
 | **Lunar** | Five swift moonlit sword forms, Moonbrands and a pressure-triggered retreat/rush | **Eclipse** | Six black/crimson forms, Eclipse Brands, rear strikes and actual-eclipse empowerment |
 | **Celestial** | Standalone sovereign: six solar/light forms, Radiance, Fake Rainbow and free Light Travel | — | Already fully evolved; no normal Celestial or Celestial disciple stage |
 
-Normal kits have elemental armor, helmets and fitted swords. Evolved kits use white regal outfits, elemental accents and subtle halos; Eclipse adds a half-mask. Celestial has distinct ivory/gold regalia and a golden sword aura. Lunar wears broad silver shoulders, an indigo cloak and a crescent mask. Auras and halos appear only while **transformed and drafted**.
+Normal kits have elemental armor, helmets and fitted swords. Evolved kits use white regal outfits, elemental accents and subtle halos; Eclipse adds a half-mask. Celestial has distinct ivory/gold regalia and a golden sword aura. Lunar wears broad silver shoulders, an indigo cloak and a crescent mask. Player auras and halos appear only while **transformed and drafted**. Enemy Court Heralds display their elemental halos during active combat while transformed.
+
+Azure Flame has dedicated eight-frame blue-fire crescents, comet trails, a rotating pyre, a phoenix warning/eruption and Reversal afterimages. Earth's personal aura is six floating rocks orbiting in front of and behind the pawn. Adamant wears a shaded open circlet; Eclipse's ranged waves face their travel direction. These visual effects retain the existing combat and save rules. See [visual effect details](Docs/VisualEffects.md).
 
 ## Getting started
 
@@ -77,15 +97,27 @@ Moves have their own ranges, cooldowns and pressure/mark requirements. Dash rout
 | Lineage | Lineage multiplier to Melee damage | Identical eligible physical packet after common tuning* |
 | --- | --- | --- |
 | Lightning, Flame, Wind, Water, Earth | ×2.00 (**+100%**) | ×1.60 |
-| Azure Flame, Thunderstorm, Glacial, Cyclone | ×2.20 (**+120%**) | ×1.76 |
+| Azure Flame, Thunderstorm, Glacial, Cyclone, Adamant | ×2.20 (**+120%**) | ×1.76 |
 | Lunar | ×2.30 (**+130%**) | ×1.84 |
 | Eclipse | ×2.65 (**+165%**) | ×2.12 |
-| Adamant | ×2.80 (**+180%**) | ×2.24 |
 | Celestial; Eclipse during a real eclipse | ×3.20 (**+220%**) | ×2.56 |
 
 *Before armor, resistance, other pawn modifiers, technique coefficients and separate elemental packets. These compare otherwise identical physical packets with their unascended values; they are not final skill damage or DPS. A normal lineage turns a 20-damage physical packet into **20 × 2 × 0.8 = 32** before those other factors. Native melee profiles already include the melee stat; do not multiply it into them again.*
 
-Eclipse gains **15% extra ability damage during an actual eclipse**, separately from its core stat upgrade. See the [damage guide](Docs/DamageGuide.md) for channels, disciples, armor and examples. This documentation update does not rebalance combat values.
+Eclipse gains **15% extra ability damage during an actual eclipse**, separately from its core stat upgrade. See the [damage guide](Docs/DamageGuide.md) for channels, disciples, armor and examples. Adamant uses the standard evolved combat tier; Eclipse and Celestial retain their higher tier.
+
+## Allied synchronization
+
+Enabled by default in mod settings. When two allied transformed Ascendants strike the same enemy within **four seconds** while within **eight clear cells**, both gain **10% melee damage and movement for four seconds**. Celestial or an eclipse-empowered Eclipse grants a stronger **15%** version. Each participant has one shared **six-second cooldown**; additional allies do not stack copies or bypass it.
+
+| Elemental pairing | Support |
+| --- | --- |
+| **Flame + Wind** | Strengthen one existing hit by 15%; no extra damage packet. |
+| **Water + Lightning** | A brief, electrically resisted discharge; existing shock recovery blocks repeated stun. |
+| **Water with any ally** | Repair up to four ordinary injury points on each participant, once. |
+| **Earth with any ally** | Share a four-second ward reducing remaining incoming damage by 15%. |
+
+Evolutions inherit their elemental family. Lunar and Eclipse join the shared coordination bonus; sovereign lineages improve its strength. Supported manual/automatic forms, Returning Tide and non-lethal Glacial control can participate. Brief connecting ribbons and ground rings show the link; there are **no additional skill-menu buttons**. [Full synchronization rules](Docs/AlliedSynchronization.md).
 
 ## Rare and sovereign lineages
 
@@ -152,6 +184,7 @@ powershell -File .\Source\Build.ps1 -RimWorldDir "C:\Games\RimWorld"
 Game and dependency assemblies are not redistributed. Repository `Tests` and `Tools` contain development checks/utilities. Isolated native test mods, saves and screenshot fixtures are excluded from the playable package.
 
 - [Damage calculations and channels](Docs/DamageGuide.md)
+- [Allied synchronization](Docs/AlliedSynchronization.md) · [Side armor and Adamant tier](Docs/MoonSideFitAndAdamantBalance.md)
 - [Earth](Docs/EarthAscendant.md) · [Adamant](Docs/AdamantIntegration.md) · [Cyclone](Docs/CycloneIntegration.md)
 - [Celestial mechanics and travel](Docs/CelestialAscendant.md) · [Eclipse mechanics](Docs/EclipseAscendant.md)
 - [Teaching and ascension ceremonies](Docs/DiscipleCeremonies.md)

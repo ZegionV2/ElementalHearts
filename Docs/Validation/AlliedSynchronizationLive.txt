@@ -1,0 +1,25 @@
+START: native clock at 4235
+PASS: real-time autonomous Flame and Wind synchronize through native combat
+PASS: real-time shared cooldown is committed
+STATE: tick 4298 speed Normal jobs AttackMelee / AttackMelee
+STATE: tick 4349 speed Normal jobs AttackMelee / AttackMelee
+STATE: tick 4401 speed Normal jobs AttackMelee / AttackMelee
+STATE: tick 4451 speed Normal jobs AttackMelee / AttackMelee
+STATE: tick 4501 speed Normal jobs AttackMelee / EH_WindTechnique
+STATE: tick 4552 speed Normal jobs AttackMelee / EH_WindTechnique
+STATE: tick 4604 speed Normal jobs AttackMelee / EH_WindTechnique
+STATE: tick 4655 speed Normal jobs AttackMelee / AttackMelee
+STATE: tick 4705 speed Normal jobs AttackMelee / AttackMelee
+STATE: tick 4756 speed Normal jobs AttackMelee / AttackMelee
+PASS: automatic combos synchronize again after shared cooldown
+PASS: real-time status refresh remains paired
+STATE: tick 4808 speed Normal jobs AttackMelee / EH_WindTechnique
+STATE: tick 4858 speed Normal jobs AttackMelee / EH_WindTechnique
+STATE: tick 4909 speed Normal jobs AttackMelee / EH_WindTechnique
+STATE: tick 4959 speed Normal jobs AttackMelee / AttackMelee
+STATE: tick 5011 speed Normal jobs AttackMelee / AttackMelee
+STATE: tick 5062 speed Normal jobs AttackMelee / AttackMelee
+PASS: real-time buffs expire without permanent stats
+PASS: real-time combat leaves no leaked context or counter lock
+PASS: fighters remain active after repeated coordination
+COMPLETE: native-clock automated combat and cleanup passed.

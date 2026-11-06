@@ -1,0 +1,98 @@
+PASS: native elemental strike scope: LightningCombat
+PASS: native elemental strike scope: FlameCombat
+PASS: native elemental strike scope: WindCombat
+PASS: native elemental strike scope: WaterCombat
+PASS: native elemental strike scope: EarthCombat
+PASS: native elemental strike scope: LunarCombat
+PASS: native elemental strike scope: EclipseCombat
+PASS: native elemental strike scope: CelestialCombat
+PASS: Adamant uses standard evolved melee factor
+PASS: Adamant uses standard evolved melee cooldown
+PASS: Adamant uses standard evolved incoming factor
+PASS: Worldbreaker uses standard evolved sword power
+PASS: ordinary melee packet does not prime elemental synchronization
+PASS: first caster alone only primes
+PASS: repeated attacks cannot self-synchronize
+PASS: Flame/Wind adds no extra damage packet
+PASS: Flame/Wind scales one existing hit by 15 percent
+PASS: one confirmed pair commits one pending event and two cooldowns
+PASS: both participants share six-second cooldown
+PASS: both allies receive synchronization
+PASS: synchronization contributes 10 percent once
+PASS: native synchronization movement bonus applies once
+PASS: multi-channel attacks cannot repeat pair activation
+PASS: repeated partners never stack duplicate buffs
+PASS: Earth/Water queues support
+PASS: Earth protects both participants
+PASS: Water repairs four ordinary injury points per participant
+PASS: Water recovery is bounded rather than full healing
+PASS: stone concord ward applies one 15-percent factor
+PASS: support healing does not repeat every tick
+PASS: Water/Lightning causes bounded native shock
+PASS: conductive discharge keeps one-second duration and three-second recovery
+PASS: support discharge cannot extend existing shock recovery
+PASS: Celestial coordinates stronger sovereign synchronization
+PASS: sovereign buff replaces weaker synchronization
+PASS: non-lethal elemental control can synchronize
+PASS: synchronized non-lethal control adds no wounds
+PASS: non-lethal mode receives support bonuses
+PASS: parried multi-channel attack produces no primer, damage or support
+PASS: parry restores strike scope without skill lock
+PASS: Returning Tide counters participate in synchronization
+PASS: two counters produce exactly their two existing injury packets
+PASS: counter recursion guards and concord context are clean
+PASS: counter support resolves once
+PASS: native non-lethal Glacial Explosion casts against two enemies
+PASS: non-injury Glacial freeze participates in coordination
+PASS: Glacial control grants support without extra wounds
+PASS: settings switch disables synchronization
+PASS: expired primer cannot synchronize
+PASS: eight-cell partner distance is enforced
+PASS: a wall between allies blocks synchronization
+PASS: non-allied casters do not share synchronization
+PASS: reverted partner is excluded
+PASS: full cooldown table rejects new activation rather than evicting active protection
+PASS: exception finalizers clean nested strike/damage context
+PASS: failed damage never commits support
+PASS: despawned participant cancels deferred support safely
+PASS: playable lineage participates: EH_LightningHeart
+PASS: saved health buff works for lineage: EH_LightningHeart
+PASS: playable lineage participates: EH_FlameHeart
+PASS: saved health buff works for lineage: EH_FlameHeart
+PASS: playable lineage participates: EH_WindHeart
+PASS: saved health buff works for lineage: EH_WindHeart
+PASS: playable lineage participates: EH_WaterHeart
+PASS: saved health buff works for lineage: EH_WaterHeart
+PASS: playable lineage participates: EH_EarthHeart
+PASS: saved health buff works for lineage: EH_EarthHeart
+PASS: playable lineage participates: EH_ThunderstormAscendant
+PASS: saved health buff works for lineage: EH_ThunderstormAscendant
+PASS: playable lineage participates: EH_AzureFlameAscendant
+PASS: saved health buff works for lineage: EH_AzureFlameAscendant
+PASS: playable lineage participates: EH_CycloneAscendant
+PASS: saved health buff works for lineage: EH_CycloneAscendant
+PASS: playable lineage participates: EH_GlacialAscendant
+PASS: saved health buff works for lineage: EH_GlacialAscendant
+PASS: playable lineage participates: EH_AdamantAscendant
+PASS: saved health buff works for lineage: EH_AdamantAscendant
+PASS: playable lineage participates: EH_LunarHeart
+PASS: saved health buff works for lineage: EH_LunarHeart
+PASS: playable lineage participates: EH_EclipseAscendant
+PASS: saved health buff works for lineage: EH_EclipseAscendant
+PASS: playable lineage participates: EH_CelestialAscendant
+PASS: saved health buff works for lineage: EH_CelestialAscendant
+PASS: successful impact creates one saved primer
+PASS: primer survives native save/load
+PASS: second caster queues one support event after loading
+PASS: health support is deferred out of damage/hediff iteration
+PASS: pending event and shared cooldown survive save/load
+PASS: loaded pending event resolves once
+PASS: native load does not duplicate synchronization
+PASS: active buff and cooldown survive save/load
+PASS: loading does not bypass shared cooldown or replay impact
+PASS: strike and damage scopes clean after loading
+PASS: native renderer initializes bounded cached ribbon and ring meshes
+PASS: support meshes face the native top-down camera
+PASS: coordination leaves exactly one shared Auto Combat command
+PASS: support adds no skill-menu command clutter
+COMPLETE: 97 native coordination checks passed.

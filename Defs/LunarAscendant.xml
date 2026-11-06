@@ -5,7 +5,9 @@
     <label>Lunar Ascendant</label>
     <description>A rare Lunar Ascendant commands five fast moonlit sword forms: Crescent Draw, Moonfall Step, Selene Dance, Falling Moon and Moonbreak Rush. Moonbrands strengthen finishing attacks; the rush retreats and returns against two nearby enemies. Above ordinary Ascendants in power, below Celestial. Broad silver shoulders, an indigo cloak, a crescent mask and Moonwake. Celestial Bestow grants Lunar with a 2% chance and fulfills Eclipse evolution milestones. Otherwise, Eclipse requires 150 mastery kills and ten Ascendant days. The minimum comfortable temperature is lowered by 40 C; psychic sensitivity is reduced by 25%.
 
-Damage: this lineage multiplies the Melee damage stat by 2.3 (+130%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.84 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
+Damage: this lineage multiplies the Melee damage stat by 2.3 (+130%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.84 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.
+
+Teamwork: elemental techniques can synchronize with nearby allied transformed Ascendants for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_LunarAbilities" />
       <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">

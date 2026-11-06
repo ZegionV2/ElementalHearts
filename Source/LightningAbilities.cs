@@ -29,6 +29,10 @@ namespace ElementalHearts
         public bool friendlyFire, autoDefault;
 
         public bool enableAutomation=true, showAura=true, showAfterimages=true;
+        public bool enableConcord=true;
+        public bool showCourtBadges=true,courtRaids=true,addCourtToExistingSaves=true;
+        public bool courtHeralds=true,courtStories=true;
+        public bool addCourtStrongholdsToExistingSaves=true;
 
         public float npcDiscipleChance=.2f;
         public float effectOpacity=1f;
@@ -40,6 +44,10 @@ namespace ElementalHearts
             Scribe_Values.Look(ref friendlyFire,"friendlyFire",false); Scribe_Values.Look(ref autoDefault,"autoDefault",false);
 
             Scribe_Values.Look(ref enableAutomation,"enableAutomation",true);Scribe_Values.Look(ref showAura,"showAura",true);Scribe_Values.Look(ref showAfterimages,"showAfterimages",true);
+            Scribe_Values.Look(ref enableConcord,"enableConcord",true);
+            Scribe_Values.Look(ref addCourtStrongholdsToExistingSaves,"addCourtStrongholdsToExistingSaves",true);
+            Scribe_Values.Look(ref courtHeralds,"courtHeralds",true);Scribe_Values.Look(ref courtStories,"courtStories",true);
+            Scribe_Values.Look(ref showCourtBadges,"showCourtBadges",true);Scribe_Values.Look(ref courtRaids,"courtRaids",true);Scribe_Values.Look(ref addCourtToExistingSaves,"addCourtToExistingSaves",true);
 
             Scribe_Values.Look(ref npcDiscipleChance,"npcDiscipleChance",.2f);npcDiscipleChance=float.IsNaN(npcDiscipleChance)?.2f:Math.Max(0f,Math.Min(1f,npcDiscipleChance));
             Scribe_Values.Look(ref effectOpacity,"effectOpacity",1f);Scribe_Values.Look(ref danceThreshold,"danceThreshold",3);

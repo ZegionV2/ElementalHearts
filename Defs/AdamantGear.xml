@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_AdamantUniform</defName>
@@ -84,7 +84,7 @@
         <capacities>
           <li>Blunt</li>
         </capacities>
-        <power>10</power>
+        <power>9</power>
         <cooldownTime>2.6</cooldownTime>
       </li>
       <li>
@@ -92,7 +92,7 @@
         <capacities>
           <li>Stab</li>
         </capacities>
-        <power>30</power>
+        <power>23</power>
         <cooldownTime>2.6</cooldownTime>
       </li>
       <li>
@@ -100,7 +100,7 @@
         <capacities>
           <li>Cut</li>
         </capacities>
-        <power>30</power>
+        <power>23</power>
         <cooldownTime>2.6</cooldownTime>
       </li>
     </tools>

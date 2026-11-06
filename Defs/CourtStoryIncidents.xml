@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <LetterDef>
+    <defName>EH_CourtHeraldWarning</defName>
+    <letterClass>StandardLetter</letterClass>
+    <color>(204, 122, 43)</color>
+    <flashColor>(255, 191, 64)</flashColor>
+    <icon>UI/ElementalHearts/Court/HeraldSeal</icon>
+    <arriveSound>LetterArrive_BadUrgent</arriveSound>
+    <bounce>true</bounce>
+    <pauseMode>MajorThreat</pauseMode>
+  </LetterDef>
+  <LetterDef ParentName="CustomChoiceLetterBase">
+    <defName>EH_CourtDeserterOffer</defName>
+    <letterClass>ElementalHearts.ChoiceLetter_CourtDeserter</letterClass>
+    <icon>UI/ElementalHearts/Court/HeraldSeal</icon>
+  </LetterDef>
+  <IncidentDef>
+    <defName>EH_CourtHeraldWrit</defName>
+    <label>herald's writ</label>
+    <workerClass>ElementalHearts.IncidentWorker_CourtHeraldWrit</workerClass>
+    <category>ThreatBig</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <baseChance>0.45</baseChance>
+    <earliestDay>60</earliestDay>
+    <minRefireDays>15</minRefireDays>
+    <requireColonistsPresent>true</requireColonistsPresent>
+    <minPopulation>1</minPopulation>
+    <pointsScaleable>true</pointsScaleable>
+    <minThreatPoints>8000</minThreatPoints>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>EH_CourtBrokenOath</defName>
+    <label>a broken oath</label>
+    <workerClass>ElementalHearts.IncidentWorker_CourtDeserter</workerClass>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <baseChance>0.3</baseChance>
+    <earliestDay>30</earliestDay>
+    <minRefireDays>30</minRefireDays>
+    <requireColonistsPresent>true</requireColonistsPresent>
+    <minPopulation>1</minPopulation>
+    <populationEffect>IncreaseMedium</populationEffect>
+  </IncidentDef>
+</Defs>

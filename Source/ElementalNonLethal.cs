@@ -29,6 +29,7 @@ namespace ElementalHearts {
    if(victim==null||victim==source||victim.Dead||victim.Downed||!victim.Spawned||victim.health==null)return true;
    var wind=HediffComp_WindAbilities.On(source);if(wind!=null)wind.MarkCombat(); var lightning=HediffComp_LightningPassives.On(source);if(lightning!=null)lightning.MarkCombat();
    var flame=HediffComp_FlamePassives.On(source);if(flame!=null)flame.MarkCombat();
+   ElementalConcord.Suppression(source,victim);
    if(!Rand.Chance(KnockdownChance)){
     if(victim.stances!=null)victim.stances.stunner.StunFor(StunDuration(originalForce),source);
     return true;

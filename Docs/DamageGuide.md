@@ -1,6 +1,6 @@
 # Ascendant damage explained
 
-There is no single flat damage number for every Ascendant or skill. Health-condition descriptions separate **the lineage's Melee damage stat multiplier** from **actual technique injury packets**. This documentation pass changes no combat numbers.
+There is no single flat damage number for every Ascendant or skill. Health-condition descriptions separate **the lineage's Melee damage stat multiplier** from **actual technique injury packets**. The table reflects the current build, including Adamant's standard evolved-tier correction.
 
 ## Calculation
 
@@ -13,10 +13,9 @@ Ordinary melee does not acquire a skill coefficient simply because the attacker 
 | Lineage | Lineage Melee damage factor | Increase contributed to that stat | Identical eligible physical packet after ×0.8 |
 | --- | --- | --- | --- |
 | Lightning, Flame, Wind, Water, Earth | ×2.00 | +100% | ×1.60 |
-| Azure Flame, Thunderstorm, Glacial, Cyclone | ×2.20 | +120% | ×1.76 |
+| Azure Flame, Thunderstorm, Glacial, Cyclone, Adamant | ×2.20 | +120% | ×1.76 |
 | Lunar | ×2.30 | +130% | ×1.84 |
 | Eclipse | ×2.65 | +165% | ×2.12 |
-| Adamant | ×2.80 | +180% | ×2.24 |
 | Celestial | ×3.20 | +220% | ×2.56 |
 | Eclipse with real Eclipse Dominion | ×3.20 combined | +220% | ×2.56 |
 
@@ -24,7 +23,7 @@ The last column compares otherwise identical physical packets with their unascen
 
 ### Examples
 
-An otherwise 20-damage physical packet with a normal lineage: **20 × 2.0 × 0.8 = 32**, before other modifiers and mitigation. Lunar gives **36.8**, Adamant **44.8**, and Celestial **51.2** under those assumptions. Native rounding and target armor still matter.
+An otherwise 20-damage physical packet with a normal lineage: **20 × 2.0 × 0.8 = 32**, before other modifiers and mitigation. Lunar gives **36.8**, and Celestial **51.2** under those assumptions. Native rounding and target armor still matter.
 
 If a skill takes an **already adjusted 40-damage profile** and requests a ×2 physical impact, the eligible packet is **40 × 2 × 0.8 = 64** before mitigation. Do not apply the lineage multiplier to the 40 again.
 
@@ -45,6 +44,12 @@ Some forms request physical and elemental injury as separate channels, each with
 The balance helper explicitly includes the mod's electrical, thermal, water and awakening injury, melee-weapon-tagged packets, and ordinary Cut/Stab/Blunt injury. Ordinary ranged-weapon packets are generally excluded. Do not assume it scales every external mod's damage or every status/EMP packet.
 
 Bounded impact rules prevent the same committed strike from repeating on every animation frame or after loading. A deliberately defined physical-plus-elemental attack may still contain multiple channels; its visual sequence does not add uncontrolled extra packets.
+
+## Allied support modifiers
+
+The table excludes temporary synchronization. Ordinary synchronization multiplies the current melee stat by **1.10**; sovereign synchronization uses **1.15**, replacing the weaker condition. Subsequent weapon-derived profiles include that stat bonus automatically. Do not multiply it into an already adjusted profile again.
+
+Flame/Wind coordination can additionally multiply **one existing qualifying hit by 1.15**. It does not append another damage packet or apply to every later animation frame. Each participant shares a six-second support cooldown. This is distinct from Eclipse Dominion's 15% ability bonus. Water repair, Earth wards and Water/Lightning discharge are support/status effects, not extra injury packets. [Details](AlliedSynchronization.md).
 
 ## Disciples and Eclipse Dominion
 

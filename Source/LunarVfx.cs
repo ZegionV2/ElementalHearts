@@ -16,7 +16,7 @@ namespace ElementalHearts {
   public static Material Frame(int sequence,int frame){
    return frames[sequence,frame]??(frames[sequence,frame]=MaterialPool.MatFrom("Effects/ElementalHearts/Lunar/Frames/"+sequences[sequence]+"_"+frame.ToString("00"),ShaderDatabase.Transparent));
   }
-  internal static Material Body(Pawn pawn){
+  internal static Material Body(Pawn pawn){if(CourtAppearance.WearingKit(pawn))return CourtAppearance.Body(pawn);
    int body=Array.IndexOf(bodyNames,pawn.story==null||pawn.story.bodyType==null?"Male":pawn.story.bodyType.defName);
    if(body<0)body=0;
    int facing=pawn.Rotation==Rot4.South?0:pawn.Rotation==Rot4.North?2:1;

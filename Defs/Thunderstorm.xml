@@ -118,7 +118,9 @@
     <label>Thunderstorm Ascendant</label>
     <description>The evolved Lightning lineage commands Crimson Sever, Redline Flash, Scarlet Tempest, Sovereign Thunder and Tempest Dragon. Straight zigzag dash chains leave red lightning trails and afterimages. Grants 500% elemental movement, +50 mood, reinforced defense, recovery and Bestow: Lightning. Helmetless white/red regalia and a lightning halo while transformed and drafted. Electrical damage received is reduced by 90%. Damaging electrical hits have a 40% chance to stun a standing hostile for 1.5 seconds, with three seconds of shock recovery.
 
-Damage: this lineage multiplies the Melee damage stat by 2.2 (+120%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.76 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
+Damage: this lineage multiplies the Melee damage stat by 2.2 (+120%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.76 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.
+
+Teamwork: elemental techniques can synchronize with nearby allied transformed Ascendants for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_LightningRecovery">
         <sealAfterTicks>180</sealAfterTicks>

@@ -5,12 +5,14 @@
     <label>Adamant Ascendant</label>
     <description>The evolved Earth lineage commands Adamant Severance, Mountain King's Advance, Sovereign Quake, Worldspine Eruption and Adamant Bulwark. Three saved Resolve stacks support powerful automatic combos. Grants 500% elemental movement, +50 mood, reinforced defense, recovery and Bestow: Earth. Helmetless ivory/gold regalia, bound Worldbreaker and an amber halo while transformed and drafted. Reduces remaining blunt damage received by 35%. No buildings, terrain or roofs are damaged.
 
-Damage: this lineage multiplies the Melee damage stat by 2.8 (+180%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 2.24 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
+Damage: this lineage multiplies the Melee damage stat by 2.2 (+120%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.76 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.
+
+Teamwork: elemental techniques can synchronize with nearby allied transformed Ascendants for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_EarthAbilities" />
       <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
-        <sealAfterTicks>150</sealAfterTicks>
-        <healPerSecond>3</healPerSecond>
+        <sealAfterTicks>180</sealAfterTicks>
+        <healPerSecond>2</healPerSecond>
       </li>
       <li Class="ElementalHearts.HediffCompProperties_AdamantMastery" />
     </comps>
@@ -70,10 +72,10 @@ Damage: this lineage multiplies the Melee damage stat by 2.8 (+180%). The shared
         <statFactors>
           <CarryingCapacity>10</CarryingCapacity>
           <MoveSpeed>5</MoveSpeed>
-          <MeleeDamageFactor>2.8</MeleeDamageFactor>
-          <MeleeCooldownFactor>.65</MeleeCooldownFactor>
+          <MeleeDamageFactor>2.2</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.7142857</MeleeCooldownFactor>
           <WorkSpeedGlobal>1.75</WorkSpeedGlobal>
-          <IncomingDamageFactor>.08</IncomingDamageFactor>
+          <IncomingDamageFactor>0.1</IncomingDamageFactor>
           <ImmunityGainSpeed>2</ImmunityGainSpeed>
           <JoyFallRateFactor>0.6</JoyFallRateFactor>
         </statFactors>

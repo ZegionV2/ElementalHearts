@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtHeraldFlame</defName>
+    <label>azure herald</label>
+    <combatPower>6000</combatPower>
+    <minGenerationAge>28</minGenerationAge>
+    <maxGenerationAge>65</maxGenerationAge>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>13~17</range>
+      </li>
+    </skills>
+    <fixedAdultBackstories>
+      <li>EH_CourtAzureLife</li>
+    </fixedAdultBackstories>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Flame</element>
+        <ascendant>true</ascendant>
+        <herald>true</herald>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtHeraldLightning</defName>
+    <label>storm herald</label>
+    <combatPower>6000</combatPower>
+    <minGenerationAge>28</minGenerationAge>
+    <maxGenerationAge>65</maxGenerationAge>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>13~17</range>
+      </li>
+    </skills>
+    <fixedAdultBackstories>
+      <li>EH_CourtStormLife</li>
+    </fixedAdultBackstories>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Lightning</element>
+        <ascendant>true</ascendant>
+        <herald>true</herald>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtHeraldWater</defName>
+    <label>frost herald</label>
+    <combatPower>6000</combatPower>
+    <minGenerationAge>28</minGenerationAge>
+    <maxGenerationAge>65</maxGenerationAge>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>13~17</range>
+      </li>
+    </skills>
+    <fixedAdultBackstories>
+      <li>EH_CourtFrostLife</li>
+    </fixedAdultBackstories>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Water</element>
+        <ascendant>true</ascendant>
+        <herald>true</herald>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtHeraldWind</defName>
+    <label>gale herald</label>
+    <combatPower>6000</combatPower>
+    <minGenerationAge>28</minGenerationAge>
+    <maxGenerationAge>65</maxGenerationAge>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>13~17</range>
+      </li>
+    </skills>
+    <fixedAdultBackstories>
+      <li>EH_CourtGaleLife</li>
+    </fixedAdultBackstories>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Wind</element>
+        <ascendant>true</ascendant>
+        <herald>true</herald>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtHeraldEarth</defName>
+    <label>adamant herald</label>
+    <combatPower>6000</combatPower>
+    <minGenerationAge>28</minGenerationAge>
+    <maxGenerationAge>65</maxGenerationAge>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>13~17</range>
+      </li>
+    </skills>
+    <fixedAdultBackstories>
+      <li>EH_CourtAdamantLife</li>
+    </fixedAdultBackstories>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Earth</element>
+        <ascendant>true</ascendant>
+        <herald>true</herald>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtOathbreakerFlame</defName>
+    <label>flame court deserter</label>
+    <combatPower>600</combatPower>
+    <fixedAdultBackstories>
+      <li>EH_CourtBrokenOath</li>
+    </fixedAdultBackstories>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Flame</element>
+        <ascendant>false</ascendant>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtOathbreakerLightning</defName>
+    <label>lightning court deserter</label>
+    <combatPower>600</combatPower>
+    <fixedAdultBackstories>
+      <li>EH_CourtBrokenOath</li>
+    </fixedAdultBackstories>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Lightning</element>
+        <ascendant>false</ascendant>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtOathbreakerWater</defName>
+    <label>water court deserter</label>
+    <combatPower>600</combatPower>
+    <fixedAdultBackstories>
+      <li>EH_CourtBrokenOath</li>
+    </fixedAdultBackstories>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Water</element>
+        <ascendant>false</ascendant>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtOathbreakerWind</defName>
+    <label>wind court deserter</label>
+    <combatPower>600</combatPower>
+    <fixedAdultBackstories>
+      <li>EH_CourtBrokenOath</li>
+    </fixedAdultBackstories>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Wind</element>
+        <ascendant>false</ascendant>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtOathbreakerEarth</defName>
+    <label>earth court deserter</label>
+    <combatPower>600</combatPower>
+    <fixedAdultBackstories>
+      <li>EH_CourtBrokenOath</li>
+    </fixedAdultBackstories>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Earth</element>
+        <ascendant>false</ascendant>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+</Defs>

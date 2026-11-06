@@ -5,7 +5,9 @@
     <label>Cyclone Ascendant</label>
     <description>The evolved Wind lineage commands Vacuum Draw, Skyward Gale, Cyclone Reversal, Heaven-Rending Tempest and Sovereign Cyclone. Flow supports automatic combos; Sovereign Cyclone lifts at most six enemies before one release impact and a safe push. Grants 500% elemental movement, +50 mood, reinforced defense, recovery and Bestow: Wind. Helmetless white/emerald regalia and a wind halo while transformed and drafted. Disperses 35% of remaining bomb damage. No terrain, roof, weather or building changes.
 
-Damage: this lineage multiplies the Melee damage stat by 2.2 (+120%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.76 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
+Damage: this lineage multiplies the Melee damage stat by 2.2 (+120%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.76 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.
+
+Teamwork: elemental techniques can synchronize with nearby allied transformed Ascendants for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_WindAbilities">
         <drawRange>12</drawRange>

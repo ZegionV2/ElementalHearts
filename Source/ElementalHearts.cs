@@ -70,9 +70,20 @@ namespace ElementalHearts
             Settings.effectOpacity=listing.Slider(Settings.effectOpacity,0f,1f);
 
             listing.Label("Visual settings do not change combat damage.");
+            listing.Gap();listing.CheckboxLabeled("Enable allied Ascendant synchronization",ref Settings.enableConcord);
+            listing.Label("Two allied transformed Ascendants striking the same enemy within four seconds and eight clear cells gain brief shared bonuses. Earth shields, Water supports recovery, Flame/Wind strengthens one hit, and Water/Lightning can discharge. Each participant has a shared six-second cooldown. No additional skill buttons.");
 
             listing.Gap();listing.Label("New humanoid NPCs spawning as disciples: "+Mathf.RoundToInt(Settings.npcDiscipleChance*100)+"%");
             Settings.npcDiscipleChance=Mathf.Round(listing.Slider(Settings.npcDiscipleChance,0f,1f)*100f)/100f;listing.Label("Eligible adult humanlike pawns from other factions can be Lightning, Flame, Wind, Water or Earth disciples. Awakening is one 5% roll at a near-death hostile combat hit. NPCs automatically summon their swords and Ascendant gear.");
+            listing.Gap();listing.Label("The Severed Court");
+            listing.CheckboxLabeled("Show elemental badges beside Court pawn names",ref Settings.showCourtBadges);
+            listing.CheckboxLabeled("Allow Severed Court raids",ref Settings.courtRaids);
+            listing.CheckboxLabeled("Allow rare Court Herald commanders",ref Settings.courtHeralds);
+            listing.CheckboxLabeled("Enable Court encounters and stories",ref Settings.courtStories);
+            listing.CheckboxLabeled("Add the Court to existing saves when loading",ref Settings.addCourtToExistingSaves);
+            listing.CheckboxLabeled("Add Court strongholds to existing saves when loading",ref Settings.addCourtStrongholdsToExistingSaves);
+            if(Current.Game!=null&&Find.World!=null&&listing.ButtonText("Add Court settlements / strongholds to this world"))LongEventHandler.QueueLongEvent(()=>{int added=Find.World.GetComponent<WorldComponent_SeveredCourt>().EnsureStrongholds(true);if(added==0)Messages.Message("No new Court strongholds were added. Existing or cleared strongholds are preserved, and a defeated Court is not recreated.",MessageTypeDefOf.NeutralEvent,false);},"GeneratingWorld",false,null);
+            listing.Label("Court raids begin after day 30 and use a bounded squad budget. At day 60 and 8,000 points, rare assaults can include one evolved Herald. Herald stories provide advance warnings; accepting a deserter can bring a warned pursuit. Five Herald strongholds can be added once to existing worlds. The button also allows adding a missing Court faction explicitly. Cleared strongholds and defeated factions are not regenerated. Recruitment removes the Severed Oath and restores the normal elemental outfit.");
             settingsHeight=listing.CurHeight+12;listing.End();Widgets.EndScrollView();
 
         }

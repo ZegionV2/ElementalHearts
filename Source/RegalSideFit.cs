@@ -17,7 +17,7 @@ namespace ElementalHearts {
   static int Body(Pawn p){switch(p.story==null||p.story.bodyType==null?"Male":p.story.bodyType.defName){case "Female":return 1;case "Thin":return 2;case "Fat":return 3;case "Hulk":return 4;case "Child":return 5;case "Baby":return 6;default:return 0;}}
   public static bool TryGet(string def,Pawn pawn,Rot4 facing,out Fit fit){fit=default(Fit);int family=Family(def);if(pawn==null||family<0||(facing!=Rot4.East&&facing!=Rot4.West))return false;fit=fits[family][Body(pawn)];return true;}
   public static Vector3 Offset(Fit fit,Rot4 facing,float nativeWidth){return new Vector3((facing==Rot4.West?-1:1)*fit.pixelX*nativeWidth/256f,0,-fit.pixelDown*nativeWidth/256f);}
-  public static void Echo(Pawn pawn,string def,ref Vector3 at,ref float width,ref float height){Fit fit;if(!TryGet(def,pawn,pawn.Rotation,out fit))return;float native=HumanlikeMeshPoolUtility.HumanlikeBodyWidthForPawn(pawn);at+=Offset(fit,pawn.Rotation,native);width=native*fit.x;height=native*fit.z;}
+  public static void Echo(Pawn pawn,string def,ref Vector3 at,ref float width,ref float height){if(CourtAppearance.WearingKit(pawn)){CourtAppearance.Echo(pawn,ref width,ref height);return;}Fit fit;if(!TryGet(def,pawn,pawn.Rotation,out fit))return;float native=HumanlikeMeshPoolUtility.HumanlikeBodyWidthForPawn(pawn);at+=Offset(fit,pawn.Rotation,native);width=native*fit.x;height=native*fit.z;}
  }
  [HarmonyPatch(typeof(PawnRenderNodeWorker_Apparel_Body),"OffsetFor")]
  public static class RegalSideOffset {

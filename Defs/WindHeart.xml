@@ -20,7 +20,9 @@
     <label>Wind Ascendant</label>
     <description>A Wind Ascendant commands Dust-Cutting Draw, Rising Gale, Turning Swallow and Mountain-Scouring Tempest. Chain different sword techniques within eight seconds to build Flow; repeating a technique resets it. Wind emphasizes footwork and counters, and disperses 20% of remaining bomb damage. Teach creates Wind disciples; evolve into Cyclone after 150 mastery kills and ten Ascendant days.
 
-Damage: this lineage multiplies the Melee damage stat by 2 (+100%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.6 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
+Damage: this lineage multiplies the Melee damage stat by 2 (+100%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.6 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.
+
+Teamwork: elemental techniques can synchronize with nearby allied transformed Ascendants for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_WindAbilities">
         <drawRange>10</drawRange>

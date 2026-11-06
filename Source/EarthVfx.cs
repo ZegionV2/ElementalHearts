@@ -22,8 +22,9 @@ namespace ElementalHearts {
   const int EffectLimit=96,VisibleLimit=64;
   readonly Effect[] effects=new Effect[EffectLimit];
   readonly List<Pawn> pawns=new List<Pawn>();
-  MaterialPropertyBlock color;
+  MaterialPropertyBlock color;EarthRockOrbit rocks;
   public MapComponent_Earth(Map map):base(map){}
+  public override void MapRemoved(){if(rocks!=null){rocks.Release();rocks=null;}base.MapRemoved();}
   public void Register(Pawn p){if(p!=null&&!pawns.Contains(p))pawns.Add(p);}
   public void Forget(Pawn p){pawns.Remove(p);}
   public override void FinalizeInit(){pawns.Clear();foreach(var p in map.mapPawns.AllPawnsSpawned)if(HediffComp_EarthAbilities.On(p)!=null)Register(p);}
@@ -89,20 +90,15 @@ namespace ElementalHearts {
     if(!c.Evolved&&c.GuardActive){var ring=p.DrawPos;ring.y=AltitudeLayer.MoteOverhead.AltitudeFor();float ramp=EarthRules.Smooth((now-(c.guardUntil-EarthRules.BastionDuration))/10f)*EarthRules.Smooth((c.guardUntil-now)/12f);DrawPhase(2,(now%30)/5f+(p.thingIDNumber%6),ring,6.3f,0,.45f*ramp,false,true);}
     if(c.Evolved){
      if(drawn++>=VisibleLimit)break;
-     if(ElementalHeartsMod.Settings.showAura&&p.Drafted&&p.Awake()&&!p.InMentalState&&HediffComp_ElementalTransform.Active(p)&&!HediffComp_ElementalTransform.Transforming(p)){
-      float life=Mathf.Clamp(Mathf.Sqrt(p.ageTracker.CurLifeStage.bodySizeFactor),.55f,1.25f);var head=p.DrawPos+p.Drawer.renderer.BaseHeadOffsetAt(p.Rotation);head.z+=(.43f+.015f*Mathf.Sin(now*.05f))*life;head.y=AltitudeLayer.MoteOverhead.AltitudeFor();Draw(6,(now/6+p.thingIDNumber)%6,head,1.55f*life,0,.7f,false,true);
+     if(ElementalHeartsMod.Settings.showAura&&CourtHeralds.HaloDrafted(p)&&p.Awake()&&!p.InMentalState&&HediffComp_ElementalTransform.Active(p)&&!HediffComp_ElementalTransform.Transforming(p)){
+      float life=Mathf.Clamp(Mathf.Sqrt(p.ageTracker.CurLifeStage.bodySizeFactor),.55f,1.25f);var head=p.DrawPos+p.Drawer.renderer.BaseHeadOffsetAt(p.Rotation);head.z+=(.49f+.018f*Mathf.Sin(now*.05f))*life;head.y=AltitudeLayer.MoteOverhead.AltitudeFor();Draw(6,(now/6+p.thingIDNumber)%6,head,1.25f*life,0,.88f,false,true);
      }
      continue;
     }
-    if(!ElementalHeartsMod.Settings.showAura||!c.Full||!p.Drafted||!HediffComp_ElementalTransform.Active(p)||HediffComp_ElementalTransform.Transforming(p))continue;
+    if(!ElementalHeartsMod.Settings.showAura||!c.Full||!p.Drafted||!p.Awake()||p.InMentalState||!HediffComp_ElementalTransform.Active(p)||HediffComp_ElementalTransform.Transforming(p))continue;
     if(drawn++>=VisibleLimit)break;
-    var pos=p.DrawPos;pos.y-=.01f;pos.z-=.35f;
-    float opacity=.28f+.1f*(float)Math.Sin(now*.045+p.thingIDNumber),phase=(now%30)/5f+(p.thingIDNumber%6);
-    float activation=EarthRules.Smooth((c.activationUntil-now)/8f);
-    float combat=EarthRules.CombatWeight(now,c.combatStarted,c.combatUntil);
-    DrawPhase(4,phase,pos,2.65f,0,opacity*(1f-activation)*(1f-combat),true,true);
-    DrawPhase(5,phase,pos,2.65f,0,opacity*(1f-activation)*combat,true,true);
-    if(activation>0)DrawPhase(6,(30-(c.activationUntil-now))/5f,pos,2.65f,0,opacity*activation,true,false);
+    if(rocks==null)rocks=new EarthRockOrbit();
+    rocks.Draw(p,now,drawn-1,.9f*ElementalHeartsMod.Settings.effectOpacity);
    }
   }
  }

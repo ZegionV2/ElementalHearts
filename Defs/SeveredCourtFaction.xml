@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <FactionDef ParentName="FactionBase">
+    <defName>EH_SeveredCourt</defName>
+    <label>severed court</label>
+    <fixedName>The Severed Court</fixedName>
+    <description>The Severed Court is an authoritarian order of elemental sword warriors. Oathlings train beneath Court Knights; evolved Heralds command its most dangerous expeditions. Every rank bears the Severed Oath. Heralds share obsidian-and-ivory royal mantles and open-brow faceguards, but keep their own five evolved techniques. Rare Herald assaults become eligible after day 60 at 8,000 points, with one commander per bounded squad. Writs announce a coming assault; deserters can ask for sanctuary and bring a warned pursuit. Five permanent strongholds are ruled by Azure, Storm, Frost, Gale and Adamant Heralds. Caravans can attack fortified maps and loot their treasuries. Strongholds dispatch dedicated Herald assaults and warned expeditions; clearing them stops those dispatches. Court recruits renounce their oath and regain normal elemental apparel. Existing worlds can add the new strongholds once through loading or mod settings. Lunar/Eclipse Court bosses remain planned.</description>
+    <humanlikeFaction>true</humanlikeFaction>
+    <pawnSingular>court warrior</pawnSingular>
+    <pawnsPlural>court warriors</pawnsPlural>
+    <leaderTitle>first knight</leaderTitle>
+    <basicMemberKind>EH_CourtOathlingFlame</basicMemberKind>
+    <listOrderPriority>15</listOrderPriority>
+    <settlementGenerationWeight>0.25</settlementGenerationWeight>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
+    <startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>55</configurationListOrderPriority>
+    <canMakeRandomly>true</canMakeRandomly>
+    <displayInFactionSelection>true</displayInFactionSelection>
+    <permanentEnemy>true</permanentEnemy>
+    <naturalEnemy>true</naturalEnemy>
+    <techLevel>Industrial</techLevel>
+    <canSiege>false</canSiege>
+    <canStageAttacks>false</canStageAttacks>
+    <canUseAvoidGrid>true</canUseAvoidGrid>
+    <earliestRaidDays>30</earliestRaidDays>
+    <autoFlee>true</autoFlee>
+    <attackersDownPercentageRangeForAutoFlee>0.45~0.6</attackersDownPercentageRangeForAutoFlee>
+    <canGenerateQuestSites>false</canGenerateQuestSites>
+    <canRequestTraders>false</canRequestTraders>
+    <canRequestMilitaryAid>false</canRequestMilitaryAid>
+    <canRequestOrbitalTrader>false</canRequestOrbitalTrader>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <factionIconPath>UI/ElementalHearts/Court/Emblem</factionIconPath>
+    <raidLootMaker>PirateRaidLootMaker</raidLootMaker>
+    <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+    <colorSpectrum>
+      <li>(0.55, 0.08, 0.12)</li>
+      <li>(0.8, 0.2, 0.23)</li>
+    </colorSpectrum>
+    <fixedLeaderKinds>
+      <li>EH_CourtKnightEarth</li>
+    </fixedLeaderKinds>
+    <allowedCultures>
+      <li>Kriminul</li>
+    </allowedCultures>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>EH_SeveredCourt</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <arrivalModeWhitelist>
+      <li>EdgeWalkIn</li>
+    </arrivalModeWhitelist>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0,0)</li>
+        <li>(599,0)</li>
+        <li>(600,0.12)</li>
+        <li>(3600,0.35)</li>
+        <li>(10000,0.6)</li>
+        <li>(100000,0.6)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,600)</li>
+        <li>(3599,600)</li>
+        <li>(3600,2400)</li>
+        <li>(7999,2400)</li>
+        <li>(8000,6000)</li>
+        <li>(100000,6000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <options>
+          <EH_CourtOathlingFlame>10</EH_CourtOathlingFlame>
+          <EH_CourtKnightFlame>1</EH_CourtKnightFlame>
+          <EH_CourtOathlingLightning>10</EH_CourtOathlingLightning>
+          <EH_CourtKnightLightning>1</EH_CourtKnightLightning>
+          <EH_CourtOathlingWater>10</EH_CourtOathlingWater>
+          <EH_CourtKnightWater>1</EH_CourtKnightWater>
+          <EH_CourtOathlingWind>10</EH_CourtOathlingWind>
+          <EH_CourtKnightWind>1</EH_CourtKnightWind>
+          <EH_CourtOathlingEarth>10</EH_CourtOathlingEarth>
+          <EH_CourtKnightEarth>1</EH_CourtKnightEarth>
+          <EH_CourtHeraldFlame>0.2</EH_CourtHeraldFlame>
+          <EH_CourtHeraldLightning>0.2</EH_CourtHeraldLightning>
+          <EH_CourtHeraldWater>0.2</EH_CourtHeraldWater>
+          <EH_CourtHeraldWind>0.2</EH_CourtHeraldWind>
+          <EH_CourtHeraldEarth>0.2</EH_CourtHeraldEarth>
+        </options>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <EH_CourtOathlingFlame>10</EH_CourtOathlingFlame>
+          <EH_CourtKnightFlame>1</EH_CourtKnightFlame>
+          <EH_CourtOathlingLightning>10</EH_CourtOathlingLightning>
+          <EH_CourtKnightLightning>1</EH_CourtKnightLightning>
+          <EH_CourtOathlingWater>10</EH_CourtOathlingWater>
+          <EH_CourtKnightWater>1</EH_CourtKnightWater>
+          <EH_CourtOathlingWind>10</EH_CourtOathlingWind>
+          <EH_CourtKnightWind>1</EH_CourtKnightWind>
+          <EH_CourtOathlingEarth>10</EH_CourtOathlingEarth>
+          <EH_CourtKnightEarth>1</EH_CourtKnightEarth>
+        </options>
+      </li>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <EH_CourtOathlingFlame>10</EH_CourtOathlingFlame>
+          <EH_CourtOathlingLightning>10</EH_CourtOathlingLightning>
+          <EH_CourtOathlingWater>10</EH_CourtOathlingWater>
+          <EH_CourtOathlingWind>10</EH_CourtOathlingWind>
+          <EH_CourtOathlingEarth>10</EH_CourtOathlingEarth>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+</Defs>

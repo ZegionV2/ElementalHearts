@@ -20,7 +20,9 @@
     <label>Water Ascendant</label>
     <description>A Water Ascendant commands Torrent Cleave, Flowing Step, Whirlpool Dance and Ocean's Judgement. Damaging hits build up to three caster-owned Pressure stacks for eight seconds; the finisher consumes them for a stronger primary impact. Still Water offers an 80% frontal parry chance with 0.75-second recovery per attempt and nearby Returning Tide counters. Wounds seal after three seconds and ordinary injuries recover. The minimum comfortable temperature is lowered by 40 C. Teach creates Water disciples; evolve into Glacial after 150 mastery kills and ten Ascendant days.
 
-Damage: this lineage multiplies the Melee damage stat by 2 (+100%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.6 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
+Damage: this lineage multiplies the Melee damage stat by 2 (+100%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.6 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.
+
+Teamwork: elemental techniques can synchronize with nearby allied transformed Ascendants for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_WaterDefense" />
       <li Class="ElementalHearts.HediffCompProperties_LightningRecovery">

@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <PawnKindDef Name="EH_CourtSoldierBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionDef>EH_SeveredCourt</defaultFactionDef>
+    <minGenerationAge>20</minGenerationAge>
+    <maxGenerationAge>58</maxGenerationAge>
+    <allowOldAgeInjuries>false</allowOldAgeInjuries>
+    <isFighter>true</isFighter>
+    <requiredWorkTags>Violent</requiredWorkTags>
+    <apparelMoney>120~160</apparelMoney>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <ignoreIdeoApparelColors>true</ignoreIdeoApparelColors>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+    <weaponMoney>0~0</weaponMoney>
+    <invNutrition>2.55</invNutrition>
+    <chemicalAddictionChance>0</chemicalAddictionChance>
+    <initialResistanceRange>5~12</initialResistanceRange>
+    <initialWillRange>0~2</initialWillRange>
+    <itemQuality>Normal</itemQuality>
+    <forcedTraits>
+      <li>EH_SeveredOath</li>
+    </forcedTraits>
+    <apparelRequired>
+      <li>EH_CourtTravelUniform</li>
+    </apparelRequired>
+    <apparelTags>
+      <li>EH_CourtUniform</li>
+    </apparelTags>
+    <fixedChildBackstories>
+      <li>EH_CourtWard</li>
+      <li>EH_CourtSiegeChild</li>
+    </fixedChildBackstories>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtOathlingFlame</defName>
+    <label>flame court oathling</label>
+    <combatPower>600</combatPower>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>4~9</range>
+      </li>
+    </skills>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Flame</element>
+        <ascendant>false</ascendant>
+      </li>
+    </modExtensions>
+    <fixedAdultBackstories>
+      <li>EH_CourtInitiate</li>
+    </fixedAdultBackstories>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtOathlingLightning</defName>
+    <label>lightning court oathling</label>
+    <combatPower>600</combatPower>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>4~9</range>
+      </li>
+    </skills>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Lightning</element>
+        <ascendant>false</ascendant>
+      </li>
+    </modExtensions>
+    <fixedAdultBackstories>
+      <li>EH_CourtInitiate</li>
+    </fixedAdultBackstories>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtOathlingWater</defName>
+    <label>water court oathling</label>
+    <combatPower>600</combatPower>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>4~9</range>
+      </li>
+    </skills>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Water</element>
+        <ascendant>false</ascendant>
+      </li>
+    </modExtensions>
+    <fixedAdultBackstories>
+      <li>EH_CourtInitiate</li>
+    </fixedAdultBackstories>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtOathlingWind</defName>
+    <label>wind court oathling</label>
+    <combatPower>600</combatPower>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>4~9</range>
+      </li>
+    </skills>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Wind</element>
+        <ascendant>false</ascendant>
+      </li>
+    </modExtensions>
+    <fixedAdultBackstories>
+      <li>EH_CourtInitiate</li>
+    </fixedAdultBackstories>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtOathlingEarth</defName>
+    <label>earth court oathling</label>
+    <combatPower>600</combatPower>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>4~9</range>
+      </li>
+    </skills>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Earth</element>
+        <ascendant>false</ascendant>
+      </li>
+    </modExtensions>
+    <fixedAdultBackstories>
+      <li>EH_CourtInitiate</li>
+    </fixedAdultBackstories>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtKnightFlame</defName>
+    <label>flame court knight</label>
+    <combatPower>2400</combatPower>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>10~14</range>
+      </li>
+    </skills>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Flame</element>
+        <ascendant>true</ascendant>
+      </li>
+    </modExtensions>
+    <fixedAdultBackstories>
+      <li>EH_CourtEnforcer</li>
+    </fixedAdultBackstories>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtKnightLightning</defName>
+    <label>lightning court knight</label>
+    <combatPower>2400</combatPower>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>10~14</range>
+      </li>
+    </skills>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Lightning</element>
+        <ascendant>true</ascendant>
+      </li>
+    </modExtensions>
+    <fixedAdultBackstories>
+      <li>EH_CourtEnforcer</li>
+    </fixedAdultBackstories>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtKnightWater</defName>
+    <label>water court knight</label>
+    <combatPower>2400</combatPower>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>10~14</range>
+      </li>
+    </skills>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Water</element>
+        <ascendant>true</ascendant>
+      </li>
+    </modExtensions>
+    <fixedAdultBackstories>
+      <li>EH_CourtEnforcer</li>
+    </fixedAdultBackstories>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtKnightWind</defName>
+    <label>wind court knight</label>
+    <combatPower>2400</combatPower>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>10~14</range>
+      </li>
+    </skills>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Wind</element>
+        <ascendant>true</ascendant>
+      </li>
+    </modExtensions>
+    <fixedAdultBackstories>
+      <li>EH_CourtEnforcer</li>
+    </fixedAdultBackstories>
+  </PawnKindDef>
+  <PawnKindDef ParentName="EH_CourtSoldierBase">
+    <defName>EH_CourtKnightEarth</defName>
+    <label>earth court knight</label>
+    <combatPower>2400</combatPower>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>10~14</range>
+      </li>
+    </skills>
+    <modExtensions>
+      <li Class="ElementalHearts.CourtSoldier">
+        <element>Earth</element>
+        <ascendant>true</ascendant>
+      </li>
+    </modExtensions>
+    <fixedAdultBackstories>
+      <li>EH_CourtEnforcer</li>
+    </fixedAdultBackstories>
+  </PawnKindDef>
+</Defs>

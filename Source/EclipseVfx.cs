@@ -10,11 +10,15 @@ namespace ElementalHearts {
   static readonly Texture2D[] icons=new Texture2D[7];
   public static Texture2D Icon(int i){return icons[i]??(icons[i]=ContentFinder<Texture2D>.Get("UI/Abilities/ElementalHearts/Eclipse/"+EclipseRules.Art[i]));}
   public static Material Frame(int sequence,int frame){return frames[sequence,frame]??(frames[sequence,frame]=MaterialPool.MatFrom("Effects/ElementalHearts/Eclipse/Frames/"+sequences[sequence]+"_"+frame.ToString("00"),ShaderDatabase.Transparent));}
-  static Material Body(Pawn pawn){int body=Array.IndexOf(bodyNames,pawn.story==null||pawn.story.bodyType==null?"Male":pawn.story.bodyType.defName);if(body<0)body=0;int facing=pawn.Rotation==Rot4.South?0:pawn.Rotation==Rot4.North?2:1;return bodies[body,facing]??(bodies[body,facing]=MaterialPool.MatFrom("Things/Pawn/Humanlike/Apparel/EclipseRegalia/EclipseRegalia_"+bodyNames[body]+"_"+directions[facing],ShaderDatabase.Transparent));}
+  static Material Body(Pawn pawn){if(CourtAppearance.WearingKit(pawn))return CourtAppearance.Body(pawn);int body=Array.IndexOf(bodyNames,pawn.story==null||pawn.story.bodyType==null?"Male":pawn.story.bodyType.defName);if(body<0)body=0;int facing=pawn.Rotation==Rot4.South?0:pawn.Rotation==Rot4.North?2:1;return bodies[body,facing]??(bodies[body,facing]=MaterialPool.MatFrom("Things/Pawn/Humanlike/Apparel/EclipseRegalia/EclipseRegalia_"+bodyNames[body]+"_"+directions[facing],ShaderDatabase.Transparent));}
   internal static void Emit(Pawn p,int sequence,Vector3 from,Vector3 to,int duration,float size,int ageOffset=0){if(p!=null&&p.Spawned&&StormBlitzFx.Visible(p.Map,from,to))p.Map.GetComponent<MapComponent_EclipseVfx>().Add(sequence,from,to,duration,size,ageOffset);}
   internal static void Ghost(Pawn p,Vector3 at){if(p.Spawned&&ElementalHeartsMod.Settings.showAfterimages&&StormBlitzFx.Visible(p.Map,at,at))p.Map.GetComponent<MapComponent_EclipseVfx>().Ghost(p,at,Body(p));}
   internal static void Track(Pawn p){if(p!=null&&p.Spawned)p.Map.GetComponent<MapComponent_EclipseVfx>().Track(p);}
   internal static void Manifest(Pawn p){Emit(p,9,p.DrawPos,p.DrawPos,90,3.8f);Emit(p,1,p.DrawPos+new Vector3(0,0,.6f),p.DrawPos+new Vector3(0,0,.6f),70,2.8f);}
+ }
+ public static class EclipseEffectRules {
+  // The two wave atlases have their cutting edge on local -X; dash art faces +X.
+  public static float Angle(int sequence,Vector3 delta){bool directional=sequence==0||sequence==2||sequence==3||sequence==7||sequence==8;return directional&&delta.sqrMagnitude>.001f?delta.AngleFlat()-90+(sequence==0||sequence==8?180:0):0;}
  }
  public sealed class MapComponent_EclipseVfx:MapComponent {
   struct Effect{public int sequence,start,duration;public float size;public Vector3 from,to;}
@@ -30,7 +34,7 @@ namespace ElementalHearts {
   void Draw(int sequence,int frame,Vector3 at,float size,float angle,float alpha,bool floor=false){at.y=(floor?AltitudeLayer.MoteLow:AltitudeLayer.MoteOverhead).AltitudeFor();properties.SetColor(ShaderPropertyIDs.Color,new Color(1,1,1,alpha));Graphics.DrawMesh(WindVfx.FrameMesh(false),Matrix4x4.TRS(at,Quaternion.AngleAxis(angle,Vector3.up),new Vector3(size,1,size)),EclipseVfx.Frame(sequence,frame),0,null,0,properties);}
   public override void MapComponentDraw(){
    float opacity=ElementalHeartsMod.Settings.effectOpacity;if(opacity<=0||map!=Find.CurrentMap||Find.CameraDriver==null)return;if(properties==null)properties=new MaterialPropertyBlock();int now=Find.TickManager.TicksGame;var view=Find.CameraDriver.CurrentViewRect.ExpandedBy(6);
-   for(int i=0;i<effects.Length;i++){var e=effects[i];int age=now-e.start;if(e.duration==0||age<0||age>=e.duration)continue;float p=age/(float)e.duration;var at=Vector3.Lerp(e.from,e.to,p);if(!Visible(view,at))continue;bool directional=e.sequence==0||e.sequence==2||e.sequence==3||e.sequence==7||e.sequence==8;float angle=directional&&(e.to-e.from).sqrMagnitude>.001f?(e.to-e.from).AngleFlat()-90:0;Draw(e.sequence,Math.Min(7,(int)(p*8)),at,e.size,angle,opacity,e.sequence==9);}
+   for(int i=0;i<effects.Length;i++){var e=effects[i];int age=now-e.start;if(e.duration==0||age<0||age>=e.duration)continue;float p=age/(float)e.duration;var at=Vector3.Lerp(e.from,e.to,p);if(!Visible(view,at))continue;float angle=EclipseEffectRules.Angle(e.sequence,e.to-e.from);Draw(e.sequence,Math.Min(7,(int)(p*8)),at,e.size,angle,opacity,e.sequence==9);}
    for(int i=0;i<echoes.Length;i++){var e=echoes[i];if(!e.active)continue;float p=(now-e.start)/12f;if(p>=1){echoes[i]=new Echo();continue;}if(!Visible(view,e.at))continue;properties.SetColor(ShaderPropertyIDs.Color,new Color(1,.12f,.18f,.34f*(1-p)*(1-p)*opacity));var at=e.at;at.y=AltitudeLayer.MoteOverhead.AltitudeFor();Graphics.DrawMesh(MeshPool.plane10,Matrix4x4.TRS(at,Quaternion.identity,new Vector3(e.west?-e.width:e.width,1,e.height)),e.body,0,null,0,properties);}
    if(!ElementalHeartsMod.Settings.showAura)return;int marksDrawn=0;
    for(int i=0;i<adorned.Length;i++){

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <WorldObjectDef ParentName="Settlement">
+    <defName>EH_CourtStronghold</defName>
+    <label>Court stronghold</label>
+    <description>A permanent fortified seat of the Severed Court. One evolved Herald, two Knights and six Oathlings defend its command hall, courtyard, barracks, infirmary and treasury. Attack with a prepared caravan. Surviving defenders retain their identity; its finite treasury is generated once. Defeating the stronghold stops its Herald expeditions.</description>
+    <worldObjectClass>ElementalHearts.CourtStronghold</worldObjectClass>
+    <mapGenerator>EH_CourtStrongholdMap</mapGenerator>
+    <overrideMapSize>(175, 1, 175)</overrideMapSize>
+    <texture>UI/ElementalHearts/Court/HeraldSeal</texture>
+    <expandingIconTexture>UI/ElementalHearts/Court/HeraldSeal</expandingIconTexture>
+  </WorldObjectDef>
+  <MapGeneratorDef>
+    <defName>EH_CourtStrongholdMap</defName>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>MutatorPostElevationFertility</li>
+      <li>RocksFromGrid</li>
+      <li>Terrain</li>
+      <li>MutatorPostTerrain</li>
+      <li>Roads</li>
+      <li>EH_CourtStrongholdLayout</li>
+      <li>FindPlayerStartSpot</li>
+      <li>Plants</li>
+      <li>Snow</li>
+      <li>Animals</li>
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+  <GenStepDef>
+    <defName>EH_CourtStrongholdLayout</defName>
+    <order>400</order>
+    <genStep Class="ElementalHearts.GenStep_CourtStronghold" />
+  </GenStepDef>
+  <IncidentDef>
+    <defName>EH_CourtHeraldAssault</defName>
+    <label>Court Herald assault</label>
+    <workerClass>ElementalHearts.IncidentWorker_CourtHeraldAssault</workerClass>
+    <category>ThreatBig</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <baseChance>0.35</baseChance>
+    <earliestDay>60</earliestDay>
+    <minRefireDays>12</minRefireDays>
+    <requireColonistsPresent>true</requireColonistsPresent>
+    <minPopulation>1</minPopulation>
+    <pointsScaleable>true</pointsScaleable>
+    <minThreatPoints>8000</minThreatPoints>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>EH_CourtStrongholdIntel</defName>
+    <label>Court stronghold dossier</label>
+    <workerClass>ElementalHearts.IncidentWorker_CourtStrongholdIntel</workerClass>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <baseChance>0.4</baseChance>
+    <earliestDay>30</earliestDay>
+    <minRefireDays>12</minRefireDays>
+    <requireColonistsPresent>true</requireColonistsPresent>
+    <minPopulation>1</minPopulation>
+  </IncidentDef>
+</Defs>

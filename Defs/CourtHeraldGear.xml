@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_Court_AzureFlameHelmet</defName>
+    <label>azure herald faceguard</label>
+    <description>The Court Heralds' shared ivory, obsidian and pale-gold lower-face guard. Protects the mouth while leaving the eyes, brow and hair uncovered. Its modest localized protection adds no melee or movement bonus. Manifested, bound and indestructible; reverts with the wearer.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CourtHeraldFaceguard/CourtHeraldFaceguard</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <Mass>0.25</Mass>
+      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+      <EquipDelay>1</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Mouth</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/CourtHeraldFaceguard/CourtHeraldFaceguard</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <renderSkipFlags>
+        <li>Beard</li>
+      </renderSkipFlags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+    <generateCommonality>0</generateCommonality>
+    <useHitPoints>false</useHitPoints>
+    <smeltable>false</smeltable>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+      <li Class="ElementalHearts.CourtKitAppearance">
+        <heraldFaceguard>true</heraldFaceguard>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_Court_ThunderstormHelmet</defName>
+    <label>storm herald faceguard</label>
+    <description>The Court Heralds' shared ivory, obsidian and pale-gold lower-face guard. Protects the mouth while leaving the eyes, brow and hair uncovered. Its modest localized protection adds no melee or movement bonus. Manifested, bound and indestructible; reverts with the wearer.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CourtHeraldFaceguard/CourtHeraldFaceguard</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <Mass>0.25</Mass>
+      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+      <EquipDelay>1</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Mouth</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/CourtHeraldFaceguard/CourtHeraldFaceguard</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <renderSkipFlags>
+        <li>Beard</li>
+      </renderSkipFlags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+    <generateCommonality>0</generateCommonality>
+    <useHitPoints>false</useHitPoints>
+    <smeltable>false</smeltable>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+      <li Class="ElementalHearts.CourtKitAppearance">
+        <heraldFaceguard>true</heraldFaceguard>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_Court_GlacialHelmet</defName>
+    <label>frost herald faceguard</label>
+    <description>The Court Heralds' shared ivory, obsidian and pale-gold lower-face guard. Protects the mouth while leaving the eyes, brow and hair uncovered. Its modest localized protection adds no melee or movement bonus. Manifested, bound and indestructible; reverts with the wearer.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CourtHeraldFaceguard/CourtHeraldFaceguard</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <Mass>0.25</Mass>
+      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+      <EquipDelay>1</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Mouth</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/CourtHeraldFaceguard/CourtHeraldFaceguard</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <renderSkipFlags>
+        <li>Beard</li>
+      </renderSkipFlags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+    <generateCommonality>0</generateCommonality>
+    <useHitPoints>false</useHitPoints>
+    <smeltable>false</smeltable>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+      <li Class="ElementalHearts.CourtKitAppearance">
+        <heraldFaceguard>true</heraldFaceguard>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_Court_CycloneHelmet</defName>
+    <label>gale herald faceguard</label>
+    <description>The Court Heralds' shared ivory, obsidian and pale-gold lower-face guard. Protects the mouth while leaving the eyes, brow and hair uncovered. Its modest localized protection adds no melee or movement bonus. Manifested, bound and indestructible; reverts with the wearer.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CourtHeraldFaceguard/CourtHeraldFaceguard</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <Mass>0.25</Mass>
+      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+      <EquipDelay>1</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Mouth</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/CourtHeraldFaceguard/CourtHeraldFaceguard</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <renderSkipFlags>
+        <li>Beard</li>
+      </renderSkipFlags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+    <generateCommonality>0</generateCommonality>
+    <useHitPoints>false</useHitPoints>
+    <smeltable>false</smeltable>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+      <li Class="ElementalHearts.CourtKitAppearance">
+        <heraldFaceguard>true</heraldFaceguard>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_Court_AdamantHelmet</defName>
+    <label>adamant herald faceguard</label>
+    <description>The Court Heralds' shared ivory, obsidian and pale-gold lower-face guard. Protects the mouth while leaving the eyes, brow and hair uncovered. Its modest localized protection adds no melee or movement bonus. Manifested, bound and indestructible; reverts with the wearer.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/CourtHeraldFaceguard/CourtHeraldFaceguard</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>ArmorHeadgear</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <Mass>0.25</Mass>
+      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+      <EquipDelay>1</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Mouth</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/CourtHeraldFaceguard/CourtHeraldFaceguard</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <renderSkipFlags>
+        <li>Beard</li>
+      </renderSkipFlags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+    </apparel>
+    <generateCommonality>0</generateCommonality>
+    <useHitPoints>false</useHitPoints>
+    <smeltable>false</smeltable>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+      <li Class="ElementalHearts.CourtKitAppearance">
+        <heraldFaceguard>true</heraldFaceguard>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+  </ThingDef>
+</Defs>

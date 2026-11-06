@@ -5,7 +5,9 @@
     <label>Eclipse Ascendant</label>
     <description>Evolved Lunar royalty commands Dusk Crescent, Umbral Pursuit, Crimson Waltz, Riven Horizon, Nightfall Reversal and Sovereign Eclipse. Caster-owned Eclipse Brands strengthen finishers. Ivory regalia, a bone half-mask, Eventide, an open-ring halo and Bestow: Lunar. Grants 500% elemental movement, +50 mood, evolved defense and recovery. A real eclipse raises core combat stats to Celestial level and adds 15% ability damage. Fighting with two visible enemies within five cells gives a 15% eclipse-summon roll every ten seconds: six in-game hours of eclipse, with a shared one-day cooldown. Natural eclipses also empower this lineage.
 
-Damage: this lineage multiplies the Melee damage stat by 2.65 (+165%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 2.12 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
+Damage: this lineage multiplies the Melee damage stat by 2.65 (+165%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 2.12 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.
+
+Teamwork: elemental techniques can synchronize with nearby allied transformed Ascendants for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_EclipseAbilities" />
       <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">

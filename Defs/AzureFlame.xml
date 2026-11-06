@@ -135,7 +135,9 @@
     <label>Azure Flame Ascendant</label>
     <description>The evolved Flame lineage commands Azure Crescent, Blue Comet, Controlled Pyre, Azure Phoenix and reactive Azure Reversal. Reversal retreats and counter-rushes when two or more enemies pressure the caster. Grants 500% elemental movement, +50 mood, reinforced defense, recovery and Bestow: Flame. Helmetless white/blue royal regalia and a blue flaming halo while transformed and drafted. Thermal damage received is reduced by 90%; the upper comfortable temperature rises by 250 C.
 
-Damage: this lineage multiplies the Melee damage stat by 2.2 (+120%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.76 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.</description>
+Damage: this lineage multiplies the Melee damage stat by 2.2 (+120%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.76 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.
+
+Teamwork: elemental techniques can synchronize with nearby allied transformed Ascendants for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
     <scenarioCanAdd>false</scenarioCanAdd>
