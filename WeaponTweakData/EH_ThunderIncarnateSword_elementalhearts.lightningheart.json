@@ -1,0 +1,17 @@
+{
+  "BladeStart": 0.16171875,
+  "OffY": 0,
+  "OffX": 0.45281249999999995,
+  "ItemType": "ThingDef",
+  "HandsMode": 0,
+  "BladeEnd": 1.0996875,
+  "MeleeWeaponType": 6,
+  "ScaleX": 1.38,
+  "ScaleY": 1.38,
+  "ItemDefName": "EH_ThunderIncarnateSword",
+  "FlipX": false,
+  "FlipY": true,
+  "Rotation": 90,
+  "TextureModID": "elementalhearts.lightningheart",
+  "ItemTypeNamespace": "Verse"
+}

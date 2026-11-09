@@ -29,12 +29,16 @@ namespace ElementalHearts
         public bool friendlyFire, autoDefault;
 
         public bool enableAutomation=true, showAura=true, showAfterimages=true;
+        public bool incarnateTerrainDamage=true;
         public bool enableConcord=true;
         public bool showCourtBadges=true,courtRaids=true,addCourtToExistingSaves=true;
         public bool courtHeralds=true,courtStories=true;
+        public bool courtTactics=true;
         public bool addCourtStrongholdsToExistingSaves=true;
 
         public float npcDiscipleChance=.2f;
+        public float callingCooldownDays=1f;
+        public float callingCooldownHours=1f;
         public float effectOpacity=1f;
 
         public int danceThreshold=3;
@@ -43,13 +47,15 @@ namespace ElementalHearts
 
             Scribe_Values.Look(ref friendlyFire,"friendlyFire",false); Scribe_Values.Look(ref autoDefault,"autoDefault",false);
 
-            Scribe_Values.Look(ref enableAutomation,"enableAutomation",true);Scribe_Values.Look(ref showAura,"showAura",true);Scribe_Values.Look(ref showAfterimages,"showAfterimages",true);
+            Scribe_Values.Look(ref enableAutomation,"enableAutomation",true);Scribe_Values.Look(ref showAura,"showAura",true);Scribe_Values.Look(ref showAfterimages,"showAfterimages",true);Scribe_Values.Look(ref incarnateTerrainDamage,"incarnateTerrainDamage",true);
             Scribe_Values.Look(ref enableConcord,"enableConcord",true);
             Scribe_Values.Look(ref addCourtStrongholdsToExistingSaves,"addCourtStrongholdsToExistingSaves",true);
-            Scribe_Values.Look(ref courtHeralds,"courtHeralds",true);Scribe_Values.Look(ref courtStories,"courtStories",true);
+            Scribe_Values.Look(ref courtTactics,"courtTactics",true);Scribe_Values.Look(ref courtHeralds,"courtHeralds",true);Scribe_Values.Look(ref courtStories,"courtStories",true);
             Scribe_Values.Look(ref showCourtBadges,"showCourtBadges",true);Scribe_Values.Look(ref courtRaids,"courtRaids",true);Scribe_Values.Look(ref addCourtToExistingSaves,"addCourtToExistingSaves",true);
 
             Scribe_Values.Look(ref npcDiscipleChance,"npcDiscipleChance",.2f);npcDiscipleChance=float.IsNaN(npcDiscipleChance)?.2f:Math.Max(0f,Math.Min(1f,npcDiscipleChance));
+            Scribe_Values.Look(ref callingCooldownDays,"EH_callingCooldownDays",1f);callingCooldownDays=float.IsNaN(callingCooldownDays)?1f:Math.Max(0f,Math.Min(5f,callingCooldownDays));
+            Scribe_Values.Look(ref callingCooldownHours,"EH_callingCooldownHours",1f);callingCooldownHours=float.IsNaN(callingCooldownHours)?1f:Math.Max(0f,Math.Min(24f,callingCooldownHours));
             Scribe_Values.Look(ref effectOpacity,"effectOpacity",1f);Scribe_Values.Look(ref danceThreshold,"danceThreshold",3);
 
             effectOpacity=Math.Max(0f,Math.Min(1f,effectOpacity));danceThreshold=Math.Max(2,Math.Min(8,danceThreshold));
@@ -223,7 +229,7 @@ namespace ElementalHearts
 
 
 
-        public int Remaining(LightningPower power) { return Math.Max(0, readyAt[(int)power] - Find.TickManager.TicksGame); }
+        public int Remaining(LightningPower power) { var c=HediffComp_ThunderIncarnate.On(Pawn);return c!=null?c.Remaining((int)power):Math.Max(0, readyAt[(int)power] - Find.TickManager.TicksGame); }
 
         public void ReduceCooldowns(int ticks)
 
@@ -231,6 +237,7 @@ namespace ElementalHearts
 
             int now = Find.TickManager.TicksGame;
 
+            var incarnate=HediffComp_ThunderIncarnate.On(Pawn);if(incarnate!=null){for(int i=0;i<incarnate.readyAt.Count;i++)incarnate.readyAt[i]=Math.Max(now,incarnate.readyAt[i]-Math.Max(0,ticks));return;}
             for (int i = 0; i < readyAt.Count; i++) readyAt[i] = Math.Max(now, readyAt[i] - Math.Max(0, ticks));
 
         }
@@ -309,6 +316,7 @@ namespace ElementalHearts
                 icon=ElementalIcons.AutoCombat,action=CycleAutoMode,groupable=false
             };
 
+            if(ThunderIncarnate.Active(Pawn)){foreach(var command in HediffComp_ThunderIncarnate.On(Pawn).Commands())yield return command;yield break;}
             string[] names = ThunderstormEvolution.Active(Pawn)?ThunderstormEvolution.Names:new[]{ "Thunder Sever", "Lightning Flash", "Thunderstorm Dance", "Heavenly Thunder" };
 
             string[] desc = {
@@ -928,13 +936,13 @@ namespace ElementalHearts
 
             {
 
-                var electricalResult = victim.TakeDamage(new DamageInfo(ThunderstormEvolution.Active(caster)?DefDatabase<DamageDef>.GetNamed("EH_ThunderstormDamage"):LightningDefs.EH_Lightning, profile.damage * electrical, 0.5f, -1f,
+                var electricalResult = victim.TakeDamage(new DamageInfo(ThunderIncarnate.Active(caster)?DefDatabase<DamageDef>.GetNamed("EH_IncarnateLightning"):ThunderstormEvolution.Active(caster)?DefDatabase<DamageDef>.GetNamed("EH_ThunderstormDamage"):LightningDefs.EH_Lightning, profile.damage * electrical, 0.5f, -1f,
 
                     caster, null, profile.weapon, DamageInfo.SourceCategory.ThingOrUnknown, victim));
 
                 if (electricalResult != null && electricalResult.totalDamageDealt > 0f) ElectricalShock.TryApply(caster, victim);
 
-                if (activeAbility && !victim.Dead && !victim.Destroyed && victim.RaceProps.IsMechanoid)
+                if (activeAbility && !ThunderIncarnate.Active(caster) && !victim.Dead && !victim.Destroyed && victim.RaceProps.IsMechanoid)
 
                     victim.TakeDamage(new DamageInfo(DamageDefOf.EMP, 30f*ElementalTeaching.DamageFactor(caster), 0f, -1f, caster));
 

@@ -1,0 +1,26 @@
+using System;using System.Collections.Generic;using HarmonyLib;using RimWorld;using UnityEngine;using Verse;using Verse.AI;
+namespace ElementalHearts {
+ public static class CourtTactics {
+  public const string Focus="EH_CourtBattleFormation";
+  public static bool Enabled{get{return ElementalHeartsMod.Settings!=null&&ElementalHeartsMod.Settings.courtTactics;}}
+  public static bool Warrior(Pawn p){return p!=null&&p.Spawned&&!p.Dead&&SeveredCourt.IsFaction(p.Faction)&&p.HostileTo(Faction.OfPlayer)&&CourtAppearance.Bound(p);}
+  public static bool Able(Pawn p){return Warrior(p)&&!p.Downed&&!p.IsPrisoner&&!p.IsSlave&&!p.InMentalState&&!ElementalCombatPolicy.Controlled(p)&&ElementalTeaching.Ready(p);}
+  public static int CrowdThreshold(Pawn p,int normal){return Enabled&&Warrior(p)?Math.Min(2,normal):normal;}
+  public static void RemoveFocus(Pawn p){if(p==null||p.health==null)return;var def=DefDatabase<HediffDef>.GetNamed(Focus);var h=p.health.hediffSet.GetFirstHediffOfDef(def);if(h!=null)p.health.RemoveHediff(h);}
+ }
+ public sealed class HediffCompProperties_CourtFormation:HediffCompProperties {public HediffCompProperties_CourtFormation(){compClass=typeof(HediffComp_CourtFormation);}}
+ public sealed class HediffComp_CourtFormation:HediffComp {
+  public override void CompPostTickInterval(ref float adjustment,int delta){if(Pawn.IsHashIntervalTick(60,delta)&&(!CourtTactics.Enabled||!CourtTactics.Warrior(Pawn)||Pawn.IsPrisoner||Pawn.IsSlave||Pawn.Downed))Pawn.health.RemoveHediff(parent);}
+ }
+ public sealed class MapComponent_CourtTactics:MapComponent {
+  public const int MemberLimit=32,TargetLimit=64,ScanLimit=512,ThinkBatch=4;
+  readonly List<Pawn> members=new List<Pawn>(),targets=new List<Pawn>();int nextCache,nextThink,cursor;
+  public MapComponent_CourtTactics(Map map):base(map){}
+  void Cache(){members.Clear();targets.Clear();var all=map.mapPawns.AllPawnsSpawned;for(int i=0;i<all.Count&&i<ScanLimit;i++){var p=all[i];if(CourtTactics.Warrior(p)){if(members.Count<MemberLimit)members.Add(p);}else if(targets.Count<TargetLimit&&!p.Dead&&!p.Downed&&!p.IsPrisoner)targets.Add(p);}if(cursor>=members.Count)cursor=0;}
+  bool Opponent(Pawn source,Pawn target){return target!=null&&target.Spawned&&target.Map==map&&!target.Dead&&!target.Downed&&!target.IsPrisoner&&target.HostileTo(source)&&!target.Position.Fogged(map)&&source.Position.DistanceToSquared(target.Position)<=784&&LightningCombat.ClearLine(source.Position,target.Position,map);}
+  public Pawn ChooseTarget(Pawn source){Pawn best=null;float score=float.MinValue;var current=source.CurJob==null?null:source.CurJob.targetA.Pawn;foreach(var target in targets){if(!Opponent(source,target))continue;int assigned=0;bool leaderFocus=false;foreach(var ally in members){if(ally==source||!ally.Spawned||ally.Downed||ally.Position.DistanceToSquared(source.Position)>144)continue;if(ally.CurJob!=null&&ally.CurJob.targetA.Pawn==target){assigned++;if(CourtHeralds.Active(ally))leaderFocus=true;}}float value=-source.Position.DistanceToSquared(target.Position)*.015f+(target.Drafted||target.equipment!=null&&target.equipment.Primary!=null?3:0)+(ElementalHeartUtility.HasHeart(target)||ElementalTeaching.Trained(target)?4:0)+(target==current?3:0)+(leaderFocus?2:0)-(assigned>=3?20:0);if(value>score||value==score&&best!=null&&target.thingIDNumber<best.thingIDNumber){score=value;best=target;}}return best;}
+  void Formation(Pawn pawn,bool fighting){int allies=0;if(fighting)foreach(var ally in members){if(ally!=pawn&&CourtTactics.Able(ally)&&ally.Position.DistanceToSquared(pawn.Position)<=100&&LightningCombat.ClearLine(pawn.Position,ally.Position,map)&&++allies>=3)break;}if(allies<3){CourtTactics.RemoveFocus(pawn);return;}var def=DefDatabase<HediffDef>.GetNamed(CourtTactics.Focus);var h=pawn.health.hediffSet.GetFirstHediffOfDef(def);if(h==null)h=pawn.health.AddHediff(def);var timer=h.TryGetComp<HediffComp_Disappears>();if(timer!=null)timer.ticksToDisappear=240;}
+  public void Think(Pawn pawn){if(!CourtTactics.Enabled||!CourtTactics.Able(pawn)){CourtTactics.RemoveFocus(pawn);return;}var target=ChooseTarget(pawn);Formation(pawn,target!=null);if(target==null)return;NpcDisciples.EnableAuto(pawn);if(ElementalAnimationBridge.Controlled(pawn)||ElementalBestow.Busy(pawn)||ElementalTeachingSession.Busy(pawn)||HediffComp_ElementalTransform.Transforming(pawn)||AzureEvolution.Evolving(pawn)||pawn.jobs==null)return;var current=pawn.CurJob;if(current!=null&&(current.def.defName.StartsWith("EH_")||current.playerForced))return;if(current!=null&&current.def==JobDefOf.AttackMelee&&ElementalCombatFlow.Hostile(pawn,current.targetA.Pawn)){ElementalCombatFlow.Maintain(pawn,true);return;}if(pawn.stances.FullBodyBusy||!pawn.CanReach(target,PathEndMode.Touch,Danger.Deadly))return;var job=JobMaker.MakeJob(JobDefOf.AttackMelee,target);job.maxNumMeleeAttacks=int.MaxValue;job.expiryInterval=180;job.checkOverrideOnExpire=true;ElementalCombatFlow.Maintain(pawn,true);pawn.jobs.StartJob(job,JobCondition.InterruptForced);}
+  public override void MapComponentTick(){if(!CourtTactics.Enabled)return;int now=Find.TickManager.TicksGame;if(now>=nextCache){Cache();nextCache=now+120;}if(now<nextThink||members.Count==0)return;nextThink=now+20;for(int i=0;i<ThinkBatch&&i<members.Count;i++){if(cursor>=members.Count)cursor=0;Think(members[cursor++]);}}
+ }
+}

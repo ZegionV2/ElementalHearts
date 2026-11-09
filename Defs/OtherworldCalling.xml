@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+ <JobDef><defName>EH_OtherworldCalling</defName><driverClass>ElementalHearts.JobDriver_OtherworldCalling</driverClass><reportString>Opening a doorway to another world.</reportString><playerInterruptible>true</playerInterruptible></JobDef>
+ <LetterDef ParentName="CustomChoiceLetterBase"><defName>EH_OtherworldArrivalPending</defName><label>otherworld arrival waiting</label><letterClass>ElementalHearts.ChoiceLetter_OtherworldArrival</letterClass><color>(242, 204, 102)</color><icon>UI/Abilities/OtherworldCalling</icon></LetterDef>
+ <ThingDef Name="EH_OtherworldOutfitBase" ParentName="ApparelMakeableBase" Abstract="True">
+  <thingClass>Apparel</thingClass><techLevel>Industrial</techLevel><costStuffCount>60</costStuffCount><stuffCategories><li>Fabric</li></stuffCategories>
+  <graphicData><graphicClass>Graphic_Single</graphicClass><ignoreThingDrawColor>true</ignoreThingDrawColor></graphicData>
+  <thingCategories><li>ApparelMisc</li></thingCategories>
+  <statBases><MaxHitPoints>160</MaxHitPoints><WorkToMake>2500</WorkToMake><Mass>1</Mass><ArmorRating_Sharp>0.05</ArmorRating_Sharp><ArmorRating_Blunt>0.03</ArmorRating_Blunt><Insulation_Cold>8</Insulation_Cold><Insulation_Heat>4</Insulation_Heat><EquipDelay>2</EquipDelay></statBases>
+  <apparel><bodyPartGroups><li>Torso</li><li>Shoulders</li><li>Arms</li><li>Waist</li><li>Legs</li></bodyPartGroups><layers><li>OnSkin</li></layers><tags Inherit="False"/><gender>None</gender></apparel>
+ </ThingDef>
+ <ThingDef ParentName="EH_OtherworldOutfitBase"><defName>EH_OtherworldGakuran</defName><label>otherworld boys' academy uniform</label><description>A fitted charcoal/navy Japanese boys' gakuran with a low band collar, brass buttons and an integrated trouser panel. Called men wear this outfit. Ordinary cloth clothing covers torso, shoulders, arms, waist and legs; it is removable and has normal durability.</description><graphicData><texPath>Things/Pawn/Humanlike/Apparel/OtherworldGakuran/OtherworldGakuran</texPath></graphicData><apparel><wornGraphicPath>Things/Pawn/Humanlike/Apparel/OtherworldGakuran/OtherworldGakuran</wornGraphicPath><gender>Male</gender></apparel></ThingDef>
+ <ThingDef ParentName="EH_OtherworldOutfitBase"><defName>EH_OtherworldSailor</defName><label>otherworld girls' academy uniform</label><description>A fitted ivory/navy Japanese schoolgirl sailor uniform with a compact flat yoke, burgundy bow and opaque pleated lower panel. Called women wear this outfit. Ordinary cloth clothing covers torso, shoulders, arms, waist and legs; it is removable and has normal durability.</description><graphicData><texPath>Things/Pawn/Humanlike/Apparel/OtherworldSailor/OtherworldSailor</texPath></graphicData><apparel><wornGraphicPath>Things/Pawn/Humanlike/Apparel/OtherworldSailor/OtherworldSailor</wornGraphicPath><gender>Female</gender></apparel></ThingDef>
+</Defs>
+
+

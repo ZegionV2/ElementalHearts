@@ -12,10 +12,10 @@ namespace ElementalHearts {
     !victim.HostileTo(source)||ElementalNonLethal.Enabled(source)||HediffComp_LightningPassives.On(source)==null)return false;
    var def=DefDatabase<HediffDef>.GetNamed(DefName);
    if(victim.health.hediffSet.HasHediff(def))return false;
-   bool evolved=ThunderstormEvolution.Active(source);
+   bool incarnate=ThunderIncarnate.Active(source),evolved=ThunderstormEvolution.Active(source)||incarnate;
    var resistance=HediffComp_LightningPassives.On(victim);
    float factor=resistance==null?1f:Math.Max(0f,Math.Min(1f,resistance.Props.resistanceFactor));
-   if(!Rand.Chance((evolved?.40f:.25f)*factor))return false;
+   if(!Rand.Chance((incarnate?.45f:evolved?.40f:.25f)*factor))return false;
    int duration=Math.Max(1,(int)Math.Round((evolved?90:60)*factor));
    var shock=victim.health.AddHediff(def);
    var state=shock.TryGetComp<HediffComp_ElectricalShock>();

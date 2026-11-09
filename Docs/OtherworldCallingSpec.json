@@ -1,0 +1,114 @@
+{
+  "status": "implemented",
+  "price": {
+    "thingDef": "Silver",
+    "count": 1000,
+    "consumeAt": "pawn-commit",
+    "refundBeforeCommit": true
+  },
+  "race": "Human",
+  "xenotypeWhenBiotechActive": "Baseliner",
+  "ageYears": {
+    "minimum": 18,
+    "maximum": 24,
+    "inclusive": true,
+    "chronologicalMatchesBiological": true
+  },
+  "result": "one-permanent-player-colonist",
+  "elementalLineageOnArrival": false,
+  "channelTicks": 180,
+  "proposedCooldownTicks": 2500,
+  "uniformChoices": [
+    "OtherworldGakuran",
+    "OtherworldSailor"
+  ],
+  "uniformBodyPartGroups": [
+    "Torso",
+    "Shoulders",
+    "Arms",
+    "Waist",
+    "Legs"
+  ],
+  "uniformBodyVariants": [
+    "Male",
+    "Female",
+    "Thin",
+    "Fat",
+    "Hulk",
+    "Child",
+    "Baby",
+    "FemaleBB"
+  ],
+  "uniformDirections": [
+    "south",
+    "east",
+    "north"
+  ],
+  "nativeWestMirroring": true,
+  "wornScaleY": {
+    "default": 1
+  },
+  "requiresForCallingOnly": "JellyCreative.IsekaiLeveling",
+  "inspectedIsekaiVersion": "1.1.8.3",
+  "identityCount": 1,
+  "proposedIdentityWeights": {
+    "Isekai_SummonedHero": 60,
+    "Isekai_Protagonist": 25,
+    "Isekai_Regressor": 15
+  },
+  "distinctTalentCount": 2,
+  "talents": [
+    "Isekai_NaturalTalent",
+    "Isekai_Prodigy",
+    "Isekai_PowerSpike",
+    "Isekai_PredatorInstinct",
+    "Isekai_Undying",
+    "Isekai_Lucky",
+    "Isekai_CraftsmanSoul",
+    "Isekai_HealerTouch"
+  ],
+  "requireAtLeastOneTalentFrom": [
+    "Isekai_PredatorInstinct",
+    "Isekai_Undying",
+    "Isekai_Lucky",
+    "Isekai_CraftsmanSoul",
+    "Isekai_HealerTouch"
+  ],
+  "traitGrantMethod": "IsekaiLeveling.IsekaiTraitHelper.AddIsekaiTrait",
+  "conflictCheck": "both-directions-and-no-identity-stacking",
+  "generateAndRollOnce": true,
+  "effectFrames": {
+    "PortalOpen": 8,
+    "PortalLoop": 6,
+    "PortalClose": 8
+  },
+  "frameSize": [
+    256,
+    256
+  ],
+  "frameGroundPivotPixels": [
+    128,
+    224
+  ],
+  "reuseExistingBestow": true,
+  "maximumPendingTransactions": 8,
+  "generatedBodies": [
+    "Male",
+    "Female",
+    "Thin"
+  ],
+  "genderUniforms": {
+    "Female": "EH_OtherworldSailor",
+    "Male": "EH_OtherworldGakuran"
+  },
+  "outfitHeadLift": 0.06,
+  "cooldownDaysSetting": {
+    "legacy": true
+  },
+  "cooldownHoursSetting": {
+    "minimum": 0,
+    "default": 1,
+    "maximum": 24
+  },
+  "silverStorageRequired": false
+}

@@ -21,7 +21,7 @@ namespace ElementalHearts {
    snapshots=AccessTools.Field(renderer,"snapshots");root=AccessTools.Field(renderer,"RootTransform");timeScale=AccessTools.Field(renderer,"TimeScale");seek=AccessTools.Method(renderer,"Seek");duration=AccessTools.Property(renderer,"Duration");
   }
   static void Error(Exception e){if(!failed)Log.Warning("[Elemental Hearts] Melee Animation bridge disabled; using fallback: "+e.GetBaseException().Message);failed=true;}
-  public static bool Controlled(Pawn p){return CelestialAscendant.Busy(p)||CycloneAirbound.Active(p)||(SovereignCyclone.Busy(p)&&!SovereignCyclone.Impacting(p))||WaterTechnique.Busy(p)||TempestDragon.Busy(p)||AzureReversal.Busy(p)||(ThunderstormBlitz.Busy(p)&&!ThunderstormBlitz.Impacting(p))||ExternallyControlled(p);}
+  public static bool Controlled(Pawn p){return (ThunderIncarnate.Busy(p)&&!ThunderIncarnate.Impacting(p))||CelestialAscendant.Busy(p)||CycloneAirbound.Active(p)||(SovereignCyclone.Busy(p)&&!SovereignCyclone.Impacting(p))||WaterTechnique.Busy(p)||TempestDragon.Busy(p)||AzureReversal.Busy(p)||(ThunderstormBlitz.Busy(p)&&!ThunderstormBlitz.Impacting(p))||ExternallyControlled(p);}
   public static bool ExternallyControlled(Pawn p){Init();if(failed||animator==null||p==null)return false;try{return animator.Invoke(null,new object[]{p})!=null;}catch(Exception e){Error(e);return false;}}
   static object Idle(Pawn p){if(idleType==null||p==null)return null;foreach(var c in p.AllComps)if(idleType.IsInstanceOfType(c))return c;return null;}
   public static void Deflect(Pawn p,Pawn attacker){Init();if(failed||dodge==null)return;try{var c=Idle(p);if(c!=null)dodge.Invoke(c,new object[]{attacker});}catch(Exception e){Error(e);}}

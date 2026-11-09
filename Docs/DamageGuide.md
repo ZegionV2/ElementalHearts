@@ -16,6 +16,7 @@ Ordinary melee does not acquire a skill coefficient simply because the attacker 
 | Azure Flame, Thunderstorm, Glacial, Cyclone, Adamant | ×2.20 | +120% | ×1.76 |
 | Lunar | ×2.30 | +130% | ×1.84 |
 | Eclipse | ×2.65 | +165% | ×2.12 |
+| Thunder Incarnate | ×3.2 | +220% | ×2.56 |
 | Celestial | ×3.20 | +220% | ×2.56 |
 | Eclipse with real Eclipse Dominion | ×3.20 combined | +220% | ×2.56 |
 

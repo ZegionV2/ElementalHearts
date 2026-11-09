@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+ <MainButtonDef><defName>EH_AscendantCodex</defName><label>ascendants</label><description>Open the Ascendant Codex: colony roster, real Ascend/Evolve progress and selected-squad combat/transformation controls.</description><tabWindowClass>ElementalHearts.MainTabWindow_AscendantCodex</tabWindowClass><order>55</order></MainButtonDef>
+ <HediffDef><defName>EH_OtherworldOrigin</defName><label>otherworld origin</label><description>This human answered a Celestial's Otherworld Calling. This records origin only and grants no stats or powers.</description><hediffClass>ElementalHearts.Hediff_OtherworldOrigin</hediffClass><isBad>false</isBad><scenarioCanAdd>false</scenarioCanAdd><initialSeverity>1</initialSeverity><maxSeverity>1</maxSeverity></HediffDef>
+</Defs>

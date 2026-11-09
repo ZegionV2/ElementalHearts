@@ -4,7 +4,7 @@
     <defName>EH_SeveredCourt</defName>
     <label>severed court</label>
     <fixedName>The Severed Court</fixedName>
-    <description>The Severed Court is an authoritarian order of elemental sword warriors. Oathlings train beneath Court Knights; evolved Heralds command its most dangerous expeditions. Every rank bears the Severed Oath. Heralds share obsidian-and-ivory royal mantles and open-brow faceguards, but keep their own five evolved techniques. Rare Herald assaults become eligible after day 60 at 8,000 points, with one commander per bounded squad. Writs announce a coming assault; deserters can ask for sanctuary and bring a warned pursuit. Five permanent strongholds are ruled by Azure, Storm, Frost, Gale and Adamant Heralds. Caravans can attack fortified maps and loot their treasuries. Strongholds dispatch dedicated Herald assaults and warned expeditions; clearing them stops those dispatches. Court recruits renounce their oath and regain normal elemental apparel. Existing worlds can add the new strongholds once through loading or mod settings. Lunar/Eclipse Court bosses remain planned.</description>
+    <description>The Severed Court is an authoritarian order of elemental sword warriors. Oathlings train beneath Court Knights; evolved Heralds command its most dangerous expeditions. Every rank bears the Severed Oath. Heralds share obsidian-and-ivory royal mantles and open-brow faceguards, but keep their own five evolved techniques. Rare Herald assaults become eligible after day 60 at 8,000 points, with one commander per bounded squad. Writs announce a coming assault; deserters can ask for sanctuary and bring a warned pursuit. All Court bases generate detailed fortresses with nine initial defenders and one evolved Herald. Their number is configurable when introducing the faction into an existing save. New worlds use at least five bases, led by Azure, Storm, Frost, Gale and Adamant Heralds. Caravans can attack fortified maps and loot their treasuries. Strongholds dispatch dedicated Herald assaults and warned expeditions; clearing them stops those dispatches. Court recruits renounce their oath and regain normal elemental apparel. Existing worlds choose a settlement total through a one-time load menu or mod settings. Maximum-budget Court raids guarantee a Herald when a surviving base can dispatch one. Fallen warriors yield essence for serum crafting; crucibles and tribute ultimatums connect the campaign to those materials. Lunar/Eclipse Court bosses remain planned.</description>
     <humanlikeFaction>true</humanlikeFaction>
     <pawnSingular>court warrior</pawnSingular>
     <pawnsPlural>court warriors</pawnsPlural>
@@ -26,14 +26,14 @@
     <canStageAttacks>false</canStageAttacks>
     <canUseAvoidGrid>true</canUseAvoidGrid>
     <earliestRaidDays>30</earliestRaidDays>
-    <autoFlee>true</autoFlee>
+    <autoFlee>false</autoFlee>
     <attackersDownPercentageRangeForAutoFlee>0.45~0.6</attackersDownPercentageRangeForAutoFlee>
     <canGenerateQuestSites>false</canGenerateQuestSites>
     <canRequestTraders>false</canRequestTraders>
     <canRequestMilitaryAid>false</canRequestMilitaryAid>
     <canRequestOrbitalTrader>false</canRequestOrbitalTrader>
     <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
-    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <settlementTexturePath>UI/ElementalHearts/Court/HeraldSeal</settlementTexturePath>
     <factionIconPath>UI/ElementalHearts/Court/Emblem</factionIconPath>
     <raidLootMaker>PirateRaidLootMaker</raidLootMaker>
     <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>

@@ -29,21 +29,17 @@ Radiance is capped at three marks per caster/victim pair and eight owners per vi
 
 Fake Rainbow requires a nearby hostile attacker and a clear retreat/return route. It intercepts whole native melee attacks and eligible direct damage. It has no indefinite invulnerability window. Counter-depth guards stop recursive parry/counter chains. Movement checks walls, diagonal corners and occupied cells, including late occupancy. New orders, incapacitation, lost targets or invalid routes end the owned job and release its skill gate. Cooldowns remain spent after an accepted cast is interrupted.
 
-## Random Bestow
+## Configured Bestow
 
-**Bestow (Random)** is manual. Both participants stop and face each other for four seconds. The recipient has a 2% chance to receive Lunar ascension and a 19.6% chance each for normal Lightning, Flame, Wind, Water and Earth. Lunar records readiness for the planned Eclipse evolution. Celestial also fulfills the recipient's 150 mastery kills and ten Ascendant days. The recipient remains a normal Ascendant until you choose the ordinary Evolve command. Readiness uses the existing saved mastery and age values, so it survives saving/loading without another hediff or save key. Interrupted ceremonies grant neither ascension nor readiness. Other evolved Ascendants' Bestow keeps the normal evolution milestones. Disciples of any element can receive Celestial's gift; existing Ascendants cannot. Celestial is never a Bestow outcome.
+Press Bestow to open a menu. Choose Flame, Lightning, Water, Wind, Earth or Lunar, toggle Ready to evolve immediately, then choose a conscious humanlike recipient. Prisoners and hostile pawns are eligible and retain their faction/status. Existing Ascendants cannot receive another lineage. The four-second paired ceremony is stationary and facing; interruption grants nothing. With readiness off, the recipient earns normal evolution milestones. With it on, they still choose when to press Evolve.
 
-Celestial Regalia's native apparel coverage includes torso, waist, shoulders, arms, hands, legs and feet. It satisfies RimWorld's upper- and lower-body clothing checks, including the groin/legs, and provides its existing armor ratings on those parts. Head coverage is excluded. This is a mechanical coverage correction; the garment textures and fitted head position are unchanged. Existing manifested regalia inherits the corrected definition when the game reloads.
-
-The result is selected once during the held ceremony and saved. Loading does not reroll it. Interrupted ceremonies grant nothing. Completion removes old discipleship before granting exactly one normal heart and uses the shared bound-sword transition.
+The configured outcome/readiness are captured once in the saved job. Last-used menu preferences are separate. Older saved random ceremonies retain their original selected result/readiness. Other evolved givers still bestow their own matching normal lineage with ordinary evolution requirements.
 
 ## Light Travel
 
-**Light Travel** is manual and free: no fuel, psyfocus, distance payment or cooldown. Choose another usable land tile on the same world layer, then choose an unoccupied arrival cell on its existing or generated map. There is no distance-based flight timer. Departure takes 1.2 seconds; the large arrival beam lasts 0.9 seconds. Equipment, inventory, the original pawn and transformation state are retained. Put down carried pawns/items first.
+Left-click to select a world tile and land automatically in a safe cell. The map and landing are prepared while the pawn remains at the origin. Right-click for precise destination placement or relocation on the current map. Canceling a precise selection leaves the original pawn and equipment at the origin. Destination maps are held while planning, departing and in transit.
 
-Canceling destination selection does nothing. After departure the original pawn is deeply held by a saved world travel object until safe placement succeeds. Canceling or failing a landing leaves the pawn in transit, with **Land** and **Return to origin** controls. In-transit free colonists count toward colony survival. Empty destinations use temporary landing maps, which follow the normal removal checks when no blocking pawns or active travel references remain.
-
-The white/gold departure and arrival columns use the generated Milira-inspired beam art. They do not damage buildings, break roofs, ignite terrain or simulate ambient heat.
+There is no fuel, distance cost or cooldown. Travel supports land tiles including impassable mountains and existing maps on the same world layer. Empty ocean tiles remain unavailable. New departure/arrival jobs last 42/24 ticks. A request made while paused briefly runs the animation, then restores pause. Gear ownership, transformation and the same pawn reference are preserved. If a selected cell becomes occupied, use a bounded nearby safe fallback. Automatic transit recovers on loading; legacy manual travelers retain Land safely, precise landing and Return to origin controls. Put down carried pawns/items first.
 
 ## Presentation and save behavior
 
@@ -51,7 +47,7 @@ The subtle solar halo and six-frame golden light-sword fan appear only while tra
 
 The visual controller uses cached frame/body materials, fixed per-map budgets of 128 effects, 32 afterimages and 128 adornment registrations, finite lifetimes, camera/fog checks and bounded local target searches. Floor wisps and sigils are temporary visual meshes. Rendering never applies damage. No tornado/ice-wall pawns, terrain edits, global weather changes, temperature simulation or uncontrolled projectiles are added.
 
-Gameplay saves store cooldowns, controls, queued parry geometry, job stage, damage snapshots, strike commitment, deduplicated victim IDs, Radiance ownership, random Bestow outcome and travel passenger ownership. Active jobs reconstruct their remaining effects after loading. Replacing the job clears its busy gate; no permanent skill-disable hediff is used.
+Gameplay saves store cooldowns, controls, queued parry geometry, job stage, damage snapshots, strike commitment, deduplicated victim IDs, Radiance ownership, configured Bestow outcome and readiness and travel passenger ownership. Active jobs reconstruct their remaining effects after loading. Replacing the job clears its busy gate; no permanent skill-disable hediff is used.
 
 Restart RimWorld after installing the rebuilt assembly. Earlier saves are supported; saves containing Celestial or an in-transit Celestial require this version or a later compatible version to resolve the new definitions/classes.
 
@@ -60,3 +56,6 @@ Restart RimWorld after installing the rebuilt assembly. Earlier saves are suppor
 All 42 automated verification scripts pass. A clean native RimWorld run with Melee Animation passes 66 gameplay checks, 307 asset/profile/placement checks and 139 elemental audio checks. It loads an existing pre-Celestial save, then saves and loads during crescent, dash, telegraph, committed impact, queued/mid-counter, paired Bestow, departure, transit, arrival and completed state. Checks cover interrupted orders, wall/late-occupied routes, non-lethal wounds, four-form automated combos, random outcome persistence, restored personal gear/hair, downing, fixed visual budgets, round-trip travel and released skill gates.
 
 The isolated fixture acknowledges the headless loading-window display gate and cancels the native arrival selector after confirming it opens, then checks saved transit and calls the same safe placement method used by the selector. Gameplay/map generation remain production code. The native drawing path is exercised; normal-play artistic review and compatibility with additional unrelated mods remain separate from these automated checks. No personal saves or preferences are modified. Temporary QA content is removed from the mod loader after testing.
+
+
+The current changes and native validation are documented in [Solar and Court update](SolarCourtUpdate.md). Older validation counts above describe the earlier release. Otherworld Calling is [planned separately](OtherworldCallingPlan.md).

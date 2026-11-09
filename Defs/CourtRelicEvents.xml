@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+ <LetterDef ParentName="CustomChoiceLetterBase"><defName>EH_CourtRelicOffer</defName><letterClass>ElementalHearts.ChoiceLetter_CourtRelic</letterClass><icon>UI/ElementalHearts/Court/HeraldSeal</icon></LetterDef>
+ <IncidentDef><defName>EH_CourtCrucible</defName><label>the severed crucible</label><workerClass>ElementalHearts.IncidentWorker_CourtCrucible</workerClass><category>Misc</category><targetTags><li>Map_PlayerHome</li></targetTags><baseChance>0.35</baseChance><earliestDay>30</earliestDay><minRefireDays>20</minRefireDays><requireColonistsPresent>true</requireColonistsPresent><minPopulation>1</minPopulation><pointsScaleable>true</pointsScaleable><minThreatPoints>1200</minThreatPoints></IncidentDef>
+ <IncidentDef><defName>EH_CourtUltimatum</defName><label>the Herald's ultimatum</label><workerClass>ElementalHearts.IncidentWorker_CourtUltimatum</workerClass><category>ThreatBig</category><targetTags><li>Map_PlayerHome</li></targetTags><baseChance>0.25</baseChance><earliestDay>60</earliestDay><minRefireDays>30</minRefireDays><requireColonistsPresent>true</requireColonistsPresent><minPopulation>1</minPopulation><pointsScaleable>true</pointsScaleable><minThreatPoints>8000</minThreatPoints></IncidentDef>
+</Defs>

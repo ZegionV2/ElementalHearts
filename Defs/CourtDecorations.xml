@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef Name="EH_CourtDecorationBase" ParentName="BuildingBase" Abstract="True">
+    <thingClass>Building</thingClass>
+    <drawerType>MapMeshOnly</drawerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Standable</passability>
+    <fillPercent>0</fillPercent>
+    <rotatable>false</rotatable>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <canOverlapZones>true</canOverlapZones>
+    <selectable>true</selectable>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Mass>12</Mass>
+      <Beauty>8</Beauty>
+      <Flammability>0</Flammability>
+      <MarketValue>0</MarketValue>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <building>
+      <isEdifice>false</isEdifice>
+      <claimable>false</claimable>
+      <alwaysDeconstructible>false</alwaysDeconstructible>
+    </building>
+  </ThingDef>
+  <ThingDef ParentName="EH_CourtDecorationBase">
+    <defName>EH_CourtStandard</defName>
+    <label>Court war standard</label>
+    <description>An ivory, obsidian and crimson furnishing of the Severed Court. The broken crown marks its command halls and fortified gates.</description>
+    <graphicData>
+      <texPath>Things/Building/SeveredCourt/CourtStandard</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.5, 2)</drawSize>
+      <drawOffset>(0, 0, 0.35)</drawOffset>
+      <shaderType>Cutout</shaderType>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="EH_CourtDecorationBase">
+    <defName>EH_CourtBrazier</defName>
+    <label>Court oath brazier</label>
+    <description>An ivory, obsidian and crimson furnishing of the Severed Court. A contained oath-flame lights the fortress without a fuel supply or temperature simulation.</description>
+    <graphicData>
+      <texPath>Things/Building/SeveredCourt/CourtBrazier</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.25, 1.25)</drawSize>
+      <drawOffset>(0, 0, 0.1)</drawOffset>
+      <shaderType>Cutout</shaderType>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>9</glowRadius>
+        <glowColor>(235, 170, 100, 0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef Name="EH_CourtFloorInlayBase" ParentName="EH_CourtDecorationBase" Abstract="True">
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <selectable>false</selectable>
+    <drawerType>MapMeshOnly</drawerType>
+    <useHitPoints>false</useHitPoints>
+  </ThingDef>
+  <ThingDef ParentName="EH_CourtFloorInlayBase">
+    <defName>EH_CourtCrownInlay</defName>
+    <label>Court crown inlay</label>
+    <description>A purely decorative heraldic inlay. It has no combat or resource effect.</description>
+    <graphicData>
+      <texPath>UI/ElementalHearts/Court/Emblem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4.5, 4.5)</drawSize>
+      <shaderType>Transparent</shaderType>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="EH_CourtFloorInlayBase">
+    <defName>EH_CourtLineageFlame</defName>
+    <label>flame heraldic inlay</label>
+    <description>A purely decorative heraldic inlay. It has no combat or resource effect.</description>
+    <graphicData>
+      <texPath>UI/ElementalHearts/Court/Badges/AzureFlame</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.8, 2.8)</drawSize>
+      <shaderType>Transparent</shaderType>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="EH_CourtFloorInlayBase">
+    <defName>EH_CourtLineageLightning</defName>
+    <label>lightning heraldic inlay</label>
+    <description>A purely decorative heraldic inlay. It has no combat or resource effect.</description>
+    <graphicData>
+      <texPath>UI/ElementalHearts/Court/Badges/Thunderstorm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.8, 2.8)</drawSize>
+      <shaderType>Transparent</shaderType>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="EH_CourtFloorInlayBase">
+    <defName>EH_CourtLineageWater</defName>
+    <label>water heraldic inlay</label>
+    <description>A purely decorative heraldic inlay. It has no combat or resource effect.</description>
+    <graphicData>
+      <texPath>UI/ElementalHearts/Court/Badges/Glacial</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.8, 2.8)</drawSize>
+      <shaderType>Transparent</shaderType>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="EH_CourtFloorInlayBase">
+    <defName>EH_CourtLineageWind</defName>
+    <label>wind heraldic inlay</label>
+    <description>A purely decorative heraldic inlay. It has no combat or resource effect.</description>
+    <graphicData>
+      <texPath>UI/ElementalHearts/Court/Badges/Cyclone</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.8, 2.8)</drawSize>
+      <shaderType>Transparent</shaderType>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="EH_CourtFloorInlayBase">
+    <defName>EH_CourtLineageEarth</defName>
+    <label>earth heraldic inlay</label>
+    <description>A purely decorative heraldic inlay. It has no combat or resource effect.</description>
+    <graphicData>
+      <texPath>UI/ElementalHearts/Court/Badges/Adamant</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.8, 2.8)</drawSize>
+      <shaderType>Transparent</shaderType>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+  </ThingDef>
+  <TerrainDef ParentName="FloorBase">
+    <defName>EH_CourtFloorFlame</defName>
+    <label>flame Court ceremonial carpet</label>
+    <description>A Court ceremonial runner in its Herald's colors.</description>
+    <texturePath>Terrain/Surfaces/Carpet</texturePath>
+    <color>(30, 78, 105)</color>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>210</renderPrecedence>
+    <designationCategory IsNull="True" />
+    <isPaintable>true</isPaintable>
+    <statBases>
+      <Beauty>2</Beauty>
+      <Flammability>0.3</Flammability>
+      <CleaningTimeFactor>2</CleaningTimeFactor>
+    </statBases>
+  </TerrainDef>
+  <TerrainDef ParentName="FloorBase">
+    <defName>EH_CourtFloorLightning</defName>
+    <label>lightning Court ceremonial carpet</label>
+    <description>A Court ceremonial runner in its Herald's colors.</description>
+    <texturePath>Terrain/Surfaces/Carpet</texturePath>
+    <color>(105, 20, 36)</color>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>210</renderPrecedence>
+    <designationCategory IsNull="True" />
+    <isPaintable>true</isPaintable>
+    <statBases>
+      <Beauty>2</Beauty>
+      <Flammability>0.3</Flammability>
+      <CleaningTimeFactor>2</CleaningTimeFactor>
+    </statBases>
+  </TerrainDef>
+  <TerrainDef ParentName="FloorBase">
+    <defName>EH_CourtFloorWater</defName>
+    <label>water Court ceremonial carpet</label>
+    <description>A Court ceremonial runner in its Herald's colors.</description>
+    <texturePath>Terrain/Surfaces/Carpet</texturePath>
+    <color>(74, 113, 131)</color>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>210</renderPrecedence>
+    <designationCategory IsNull="True" />
+    <isPaintable>true</isPaintable>
+    <statBases>
+      <Beauty>2</Beauty>
+      <Flammability>0.3</Flammability>
+      <CleaningTimeFactor>2</CleaningTimeFactor>
+    </statBases>
+  </TerrainDef>
+  <TerrainDef ParentName="FloorBase">
+    <defName>EH_CourtFloorWind</defName>
+    <label>wind Court ceremonial carpet</label>
+    <description>A Court ceremonial runner in its Herald's colors.</description>
+    <texturePath>Terrain/Surfaces/Carpet</texturePath>
+    <color>(30, 86, 66)</color>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>210</renderPrecedence>
+    <designationCategory IsNull="True" />
+    <isPaintable>true</isPaintable>
+    <statBases>
+      <Beauty>2</Beauty>
+      <Flammability>0.3</Flammability>
+      <CleaningTimeFactor>2</CleaningTimeFactor>
+    </statBases>
+  </TerrainDef>
+  <TerrainDef ParentName="FloorBase">
+    <defName>EH_CourtFloorEarth</defName>
+    <label>earth Court ceremonial carpet</label>
+    <description>A Court ceremonial runner in its Herald's colors.</description>
+    <texturePath>Terrain/Surfaces/Carpet</texturePath>
+    <color>(108, 94, 62)</color>
+    <edgeType>Hard</edgeType>
+    <renderPrecedence>210</renderPrecedence>
+    <designationCategory IsNull="True" />
+    <isPaintable>true</isPaintable>
+    <statBases>
+      <Beauty>2</Beauty>
+      <Flammability>0.3</Flammability>
+      <CleaningTimeFactor>2</CleaningTimeFactor>
+    </statBases>
+  </TerrainDef>
+</Defs>

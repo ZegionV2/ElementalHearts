@@ -6,6 +6,7 @@ namespace ElementalHearts {
  public static class LightningAura {
   private static MaterialPropertyBlock color;
   public static void Draw(Pawn pawn,int state) {
+   if(pawn!=null&&ThunderIncarnate.Active(pawn)){IncarnateVfx.Track(pawn);return;}
    if(pawn!=null&&ThunderstormEvolution.Active(pawn)){ThunderstormVfx.Track(pawn);return;}
    if(pawn==null||!pawn.Drafted||!HediffComp_ElementalTransform.Active(pawn)||HediffComp_ElementalTransform.Transforming(pawn))return;
    if(color==null)color=new MaterialPropertyBlock();

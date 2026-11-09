@@ -39,7 +39,7 @@
     <skills>
       <li>
         <skill>Melee</skill>
-        <range>4~9</range>
+        <range>8~12</range>
       </li>
     </skills>
     <modExtensions>
@@ -59,7 +59,7 @@
     <skills>
       <li>
         <skill>Melee</skill>
-        <range>4~9</range>
+        <range>8~12</range>
       </li>
     </skills>
     <modExtensions>
@@ -79,7 +79,7 @@
     <skills>
       <li>
         <skill>Melee</skill>
-        <range>4~9</range>
+        <range>8~12</range>
       </li>
     </skills>
     <modExtensions>
@@ -99,7 +99,7 @@
     <skills>
       <li>
         <skill>Melee</skill>
-        <range>4~9</range>
+        <range>8~12</range>
       </li>
     </skills>
     <modExtensions>
@@ -119,7 +119,7 @@
     <skills>
       <li>
         <skill>Melee</skill>
-        <range>4~9</range>
+        <range>8~12</range>
       </li>
     </skills>
     <modExtensions>
@@ -139,7 +139,7 @@
     <skills>
       <li>
         <skill>Melee</skill>
-        <range>10~14</range>
+        <range>14~18</range>
       </li>
     </skills>
     <modExtensions>
@@ -159,7 +159,7 @@
     <skills>
       <li>
         <skill>Melee</skill>
-        <range>10~14</range>
+        <range>14~18</range>
       </li>
     </skills>
     <modExtensions>
@@ -179,7 +179,7 @@
     <skills>
       <li>
         <skill>Melee</skill>
-        <range>10~14</range>
+        <range>14~18</range>
       </li>
     </skills>
     <modExtensions>
@@ -199,7 +199,7 @@
     <skills>
       <li>
         <skill>Melee</skill>
-        <range>10~14</range>
+        <range>14~18</range>
       </li>
     </skills>
     <modExtensions>
@@ -219,7 +219,7 @@
     <skills>
       <li>
         <skill>Melee</skill>
-        <range>10~14</range>
+        <range>14~18</range>
       </li>
     </skills>
     <modExtensions>

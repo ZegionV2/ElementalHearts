@@ -36,18 +36,20 @@ namespace ElementalHearts {
     c.nextRetreatCheck=now+180;
     if(ElementalCombatFlow.CountHostiles(pawn,1.5f,2)>=2&&Rand.Chance(.25f)&&c.TryRetreat(target))return;
    }
-   int enemies=c.Remaining(FlamePower.Dance)==0?ElementalCombatFlow.CountHostiles(pawn,c.Props.danceRadius,ElementalHeartsMod.Settings.danceThreshold):0;
-   if(enemies>=ElementalHeartsMod.Settings.danceThreshold){c.TryCast(FlamePower.Dance,pawn,true);return;}
+   int enemies=c.Remaining(FlamePower.Dance)==0?ElementalCombatFlow.CountHostiles(pawn,c.Props.danceRadius,CourtTactics.CrowdThreshold(pawn,ElementalHeartsMod.Settings.danceThreshold)):0;
+   if(enemies>=CourtTactics.CrowdThreshold(pawn,ElementalHeartsMod.Settings.danceThreshold)){if(TryAuto(c,FlamePower.Dance,pawn,true))return;}
    IntVec3 landing;
-   if(c.Remaining(FlamePower.Flash)==0&&distance>9&&FlameCombat.TryLanding(pawn,target,c.Props.flashRange,out landing)){c.TryCast(FlamePower.Flash,target,true);return;}
-   if(c.Remaining(FlamePower.Sever)==0&&distance<=c.Props.severRange*c.Props.severRange&&FlameCombat.ClearLine(pawn.Position,target.Position,pawn.Map)){c.TryCast(FlamePower.Sever,target,true);return;}
-   if(enemies>0&&distance<=c.Props.danceRadius*c.Props.danceRadius){c.TryCast(FlamePower.Dance,pawn,true);return;}
-   if(c.Remaining(FlamePower.Heaven)==0&&FlameCombat.TryLanding(pawn,target,c.Props.heavenRange,out landing)){c.TryCast(FlamePower.Heaven,target,true);return;}
+   if(c.Remaining(FlamePower.Flash)==0&&distance>9&&FlameCombat.TryLanding(pawn,target,c.Props.flashRange,out landing)){if(TryAuto(c,FlamePower.Flash,target,true))return;}
+   if(c.Remaining(FlamePower.Sever)==0&&distance<=c.Props.severRange*c.Props.severRange&&FlameCombat.ClearLine(pawn.Position,target.Position,pawn.Map)){if(TryAuto(c,FlamePower.Sever,target,true))return;}
+   if(enemies>0&&distance<=c.Props.danceRadius*c.Props.danceRadius){if(TryAuto(c,FlamePower.Dance,pawn,true))return;}
+   if(c.Remaining(FlamePower.Heaven)==0&&FlameCombat.TryLanding(pawn,target,c.Props.heavenRange,out landing)){if(TryAuto(c,FlamePower.Heaven,target,true))return;}
    ElementalCombatFlow.ResumeMelee(pawn,target,pursuing);
   }
+  static bool TryAuto(HediffComp_FlameAbilities c,FlamePower power,LocalTargetInfo target,bool automatic){int before=c.Remaining(power);var job=c.Pawn.CurJob;c.TryCast(power,target,automatic);return c.Remaining(power)>before||c.Pawn.CurJob!=job;}
   public static bool Hostile(Pawn source,Pawn target){return FlameCombat.Eligible(source,target)&&!target.IsPrisoner&&target.HostileTo(source);}
  }
 }
+
 
 
 

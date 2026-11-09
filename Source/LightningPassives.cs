@@ -322,7 +322,7 @@ namespace ElementalHearts
 
             if (mark == null || !mark.Live || mark.owner != caster) return null;
 
-            mark.consumingStacks = ThunderstormEvolution.Active(caster)?ThunderstormRules.MarkCap(mark.stacks):mark.stacks; mark.stacks = 0;
+            mark.consumingStacks = (ThunderstormEvolution.Active(caster)||ThunderIncarnate.Active(caster))?ThunderstormRules.MarkCap(mark.stacks):mark.stacks; mark.stacks = 0;
 
             return mark;
 

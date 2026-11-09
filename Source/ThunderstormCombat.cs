@@ -5,12 +5,13 @@ namespace ElementalHearts {
   public static Material Material(int sprite){return mats[sprite]??(mats[sprite]=MaterialPool.MatFrom("Effects/ElementalHearts/Thunderstorm/Storm_"+sprite.ToString("00"),ShaderDatabase.Transparent));}
   public static void Track(Pawn p){if(p!=null&&p.Spawned)p.Map.GetComponent<MapComponent_Thunderstorm>().Track(p);}
   public static void Emit(Pawn p,Map map,int sprite,Vector3 start,Vector3 end,int duration,float size,float angle=float.NaN){
+   if(ThunderIncarnate.Active(p)){if((end-start).sqrMagnitude>.1f)IncarnateVfx.Line(p,1,start,end,duration,size);else IncarnateVfx.Burst(p,4,start,size,duration);return;}
    if(!ThunderstormEvolution.Active(p)){LightningVfx.Add(map,sprite,start,end,duration,size,angle);return;}
    if(map==null||map!=Find.CurrentMap||Find.CameraDriver==null||ElementalHeartsMod.Settings.effectOpacity<=0)return;
    if(sprite<2&&(end-start).sqrMagnitude>.1f)StormBlitzFx.Streak(p,start,end);
    map.GetComponent<MapComponent_Thunderstorm>().Effect(sprite==2?ScarletTempestRules.Sprite:sprite==4?5:Math.Min(4,sprite),start,end,duration,size,float.IsNaN(angle)?(end-start).AngleFlat():angle);
   }
-  public static void Afterimage(Pawn p,Vector3 pos){if(!ThunderstormEvolution.Active(p)){LightningVfx.Afterimage(p,pos);return;}StormBlitzFx.Echo(p,pos);Emit(p,p.Map,1,pos,pos,12,1.3f,p.Rotation.AsAngle);}
+  public static void Afterimage(Pawn p,Vector3 pos){if(ThunderIncarnate.Active(p)){IncarnateVfx.Echo(p,pos);return;}if(!ThunderstormEvolution.Active(p)){LightningVfx.Afterimage(p,pos);return;}StormBlitzFx.Echo(p,pos);Emit(p,p.Map,1,pos,pos,12,1.3f,p.Rotation.AsAngle);}
  }
  public sealed class ThunderstormZone:IExposable {
   public Pawn source;public IntVec3 cell;public bool circuit;public int due,pulses=3;public float damage,physical,electrical;

@@ -18,11 +18,11 @@ All five Heralds have their lineage's existing five combat techniques, stats, re
 
 Court generation produces adult Human-race pawns. Ordinary ranks use ages 20–58; Heralds 28–65. Each receives one assigned lineage, bypassing the generic NPC disciple roll. All start with automatic combat enabled. Other factions retain their existing configurable random-disciple behavior.
 
-Five attackable Herald strongholds and their campaign events are implemented. Lunar/Eclipse Court bosses remain planned.
+Attackable Court fortresses, configurable settlement totals and their campaign events are implemented. Lunar/Eclipse Court bosses remain planned.
 
 ## Shared Herald regalia and faceguard
 
-Heralds wear a distinct shared command uniform: broad obsidian shoulders, an ivory short mantle, pale-gold plate edges and fastenings, and a crimson cloak. The lower-face guard leaves eyes, forehead and hair visible. Its mechanical coverage is the mouth; it hides only the beard. All five use the same artwork rather than five recolors.
+Heralds wear a distinct shared command uniform: broad obsidian shoulders, an ivory short mantle, pale-gold plate edges and fastenings, and a crimson cloak. The lower-face guard leaves eyes, forehead and hair visible. Its east-facing sprite is registered to the front of the mouth/chin rather than the center of the cheek; west uses the native mirror. Its mechanical coverage is the mouth; it hides only the beard. All five use the same artwork rather than five recolors.
 
 The outfit has seven fitted native body textures × south/east/north, with native west mirroring. There are separate armor/faceguard inventory icons and a new heraldic event seal. The armor retains each corresponding evolved outfit's stat and coverage rules. The small localized faceguard grants no extra melee or movement stats. Manifested pieces are bound and indestructible.
 
@@ -50,10 +50,12 @@ These appear in the ordinary pawn biography. Existing saved pawns' personal back
 - Ordinary Court raids become eligible from **day 30**, at **600 threat points**. Selection remains uncommon at small budgets.
 - Oathlings cost **600**, Knights **2,400**, Heralds **6,000** points. Every generated squad contains at most **16** pawns and stays within its supplied budget.
 - A Knight requires budget for at least two supporting Oathlings. Ordinary Knight caps are one from 3,600 points, two from 10,000, and three from 20,000.
-- From **day 60** and **8,000 points**, eligible combat raids have an **18% commander roll**. At most **one Herald** appears; its cost is deducted before the escort is assembled. The five elements rotate through the remaining squad. Ordinary settlement groups and forced-downed groups do not roll Heralds. The five named strongholds have their own fixed Herald garrisons.
+- From **day 60** and **8,000 points**, eligible combat raids have an **18% commander roll**. At most **one Herald** appears; its cost is deducted before the escort is assembled. The five elements rotate through the remaining squad. Ordinary settlement groups and forced-downed groups do not roll Heralds. All fresh Court bases have their own fixed Herald garrisons, independent of raid budgets.
 - Herald raid letters identify the evolved commander. Raids use native walking arrivals and raid lords, existing automatic abilities and allied synchronization. No siege, staging strategy or additional damage system is introduced.
 
-New rolled Herald commanders draw from surviving, unengaged strongholds once the campaign has been seeded. Destroying all five prevents further Herald dispatches; ordinary Court ranks can still raid from any surviving regular settlements.
+New rolled Herald commanders draw from surviving, unengaged strongholds once the campaign has been seeded. Clearing every Court base prevents further Herald dispatches. Ordinary ranks remain controlled by the native faction/raid rules.
+
+At **10,000 original incident points or more**, a Court combat raid guarantees exactly one Herald when commanders are enabled and a surviving, unengaged base can dispatch one. This maximum-budget guarantee does not require day 60. Original points are carried through native arrival/strategy adjustments; the final group still respects its actual budget and sixteen-pawn cap. Forced ordinary recovery pursuits, noncombat groups, forced-downed groups and disabled Herald settings do not receive a commander.
 
 These thresholds describe eligibility; storyteller rolls, faction conditions and available threat budgets still decide when a raid actually occurs.
 
@@ -72,20 +74,22 @@ Pending orders and choice pawns are saved. Arrival is committed before invoking 
 ## Settings and world integration
 
 - **Allow Severed Court raids:** controls Court combat selection and story pursuits; settlement inhabitants remain available.
-- **Allow rare Court Herald commanders:** enables late-game Herald rolls, dedicated assaults and writs. Stronghold garrisons remain their fixed challenge.
+- **Allow Court Herald commanders:** enables Herald rolls, the maximum-budget guarantee, dedicated assaults, writs and ultimatums. Stronghold garrisons remain their fixed challenge.
 - **Enable Court encounters and stories:** enables dedicated Herald assaults, writs, dossiers and deserter stories.
 - **Show elemental badges beside Court pawn names:** toggles native map-label icons.
-- **Add the Court to existing saves when loading:** enables the saved, one-time faction introduction.
-- **Add Court strongholds to existing saves when loading:** seeds missing strongholds once when a living Court faction is present.
-- **Add Court settlements / strongholds to this world:** available in an active game; explicitly adds a missing Court faction and seeds its five strongholds. Repeated clicks do not duplicate them.
+- **Add the Court to existing saves when loading:** offers the saved, one-time settlement-count menu before creating a missing faction.
+- **Add Court strongholds to existing saves when loading:** offers the setup menu to worlds that already contain a living Court faction.
+- **Configure Court settlements in this world:** reopens the menu in an active game. Select the total to place, counting existing and cleared bases. It can explicitly introduce a missing faction. Lower totals never delete existing sites; repeated applications never duplicate or replenish them.
 
-New worlds offer one Court faction in faction selection; deliberately selecting zero is respected on later loads. The existing-save introduction adds one faction and one settlement on an unused suitable tile, preserving other factions/maps/settlements. A defeated Court is never recreated. Stronghold seeding uses independent saved progress, so worlds that already had the Court from the previous release still receive the new bases. Successful placements are recorded per lineage; cleared strongholds are never reseeded, and unsuitable/occupied tiles are skipped. There is no per-tick world search or settlement regeneration. Deliberately choosing zero Court factions still prevents automatic introduction; the explicit settings action lets you opt in later.
+New worlds offer one Court faction in faction selection; deliberately selecting zero is respected. With the Court enabled, initialization brings its native bases to a minimum of five, distributing missing elemental commanders first. A larger native-generated base count is kept. Every Court settlement uses the custom fortress map generator, including ordinary settlements created by the game. Native world-object IDs are retained.
+
+Existing saves display a one-time settlement-count menu before adding a faction or sites. Five is recommended; zero keeps the Court absent. Existing bases and cleared sites count toward the saved total. The menu allows totals up to twenty; worlds already exceeding that count retain their existing sites. Reopen it through settings to add more. Closing the window postpones the choice; Keep world as it is records a decision without adding bases. A defeated faction is never recreated. There is no per-tick world search or automatic replacement of destroyed bases.
 
 Badges draw beside native names without editing them, track the actual saved lineage and use cached textures with normal label alpha, scaling and fog visibility. Twelve icons support recruited/evolved oath bearers; they do not add Lunar, Eclipse or Celestial to the faction roster. This release adds no pawn skill-menu commands.
 
 RimWorld 1.6, Core and Harmony are required. Melee Animation is optional. The faction, backstories and encounters do not require a DLC.
 
-## Five permanent strongholds
+## Elemental fortress identities
 
 | Stronghold | Commander |
 | --- | --- |
@@ -95,8 +99,41 @@ RimWorld 1.6, Core and Harmony are required. Melee Animation is optional. The fa
 | The Highwind Citadel | Gale Herald |
 | The Adamant Seat | Adamant Herald |
 
-Select a stronghold on the world map, inspect its elite warning and send a prepared caravan. Use the native **Attack** action. Each generates a granite perimeter with a three-door front gate and rear postern, a central courtyard, a supported command hall, barracks, stores, an infirmary and a treasury. The nine-person initial garrison is **one Herald, two Knights and six Oathlings**, using native defensive lords and the existing automatic skills. The Herald garrison is present even before late-game raid eligibility; attacking is voluntary.
+Select a stronghold on the world map, inspect its elite warning and send a prepared caravan. Use the native **Attack** action. Newly generated maps use a 59×59 granite enclosure with a double-depth three-door front gate, rear postern, four corner watch posts and two front gatehouses. Lineage-colored runners and heraldic floor inlays lead through courtyard barricades to a furnished, structurally supported command hall. The barracks has six beds and furniture; the infirmary has three medical beds; the armory has shelving and a machining station; the treasury has a second internal door and vestibule. Generated Court standards and warm, fuel-free braziers decorate the rooms and approaches. The nine-person initial garrison is **one Herald, two Knights and six Oathlings**, using native defensive lords and the existing automatic skills. The Herald garrison is present even before late-game raid eligibility; attacking is voluntary.
 
-The treasury starts with **2,400 silver, 120 gold, eight advanced components, twenty industrial medicine, thirty survival meals and two doses of the matching normal elemental serum**. These are physical items to collect, not a repeating completion reward. Unclaimed provisions are held when the map unloads and restored on returning; taken/destroyed items do not regenerate. Surviving defenders keep their identities across retreat and saving/loading. All five forts share one architecture; the commander, elemental garrison, serum and biome distinguish them.
+A fresh treasury starts with **2,400 silver, 120 gold, eight advanced components, twenty industrial medicine, thirty survival meals, two doses of the matching normal elemental serum, twelve matching essences and one Herald crucible sigil**. Existing treasuries are not refilled on upgrade. These are physical items to collect, not a repeating completion reward. Unclaimed provisions are held when the map unloads and restored on returning; taken/destroyed items do not regenerate. Surviving defenders keep their identities across retreat and saving/loading. All Court forts share one architecture; the commander, elemental garrison, serum and biome distinguish them.
 
-Defeating the defenders uses native settlement defeat and caravan exit rules. A cleared stronghold is never recreated by automatic loading or the settings button. Its pending expedition is cancelled and it can no longer supply new Herald dispatches. Other surviving Court settlements and their ordinary ranks remain active. Strongholds are persistent world settlements, not expiring quest sites.
+Defeating the defenders uses native settlement defeat and caravan exit rules. A cleared stronghold is never recreated by automatic loading or the settings button. Its pending expedition is cancelled and it can no longer supply new Herald dispatches. Other surviving Court fortresses can still supply ordinary raids and eligible Herald dispatches. Strongholds are persistent world settlements, not expiring quest sites.
+
+
+## Faceguard and stronghold detail update
+
+The side faceguard is fitted against native head bounds, retaining the original south/north views, native west mirroring, mouth-only coverage and beard-only hiding. It does not change armor stats or redemption behavior.
+
+Loaded older stronghold maps receive a versioned, additive furnishing/floor upgrade once. It skips occupied furniture footprints, loose loot, pawns, player construction and painted terrain; it does not rebuild the perimeter or interior walls. Unvisited or regenerated stronghold maps receive the full new layout. The existing nine defenders, finite treasury, expedition rules and saved identities remain unchanged.
+
+See [Court detail and native verification](CourtDetail.md) for the updated screenshots and test scope.
+
+
+## Crucibles, ultimatums and elemental spoils
+
+**The Severed Crucible:** after day 30, a choice offers twelve matching essences and one Herald sigil. Securing it schedules one explicitly warned, ordinary 1,200–3,600-point recovery force for one day later. Refusal/expiry yields no reward and no raid. The twenty-day cooldown begins when the offer is made.
+
+**The Herald's Ultimatum:** after day 60 and 8,000 points, a commander announces a two-day assault from a surviving base. Pay six matching essences and 600 silver from visible, unforbidden on-map supplies to cancel that exact force. Refusal or timeout leaves the warned assault in place. Payment does not make the faction friendly. Attacking/clearing its origin recalls it. Cooldown: thirty days.
+
+Hostile Court deaths drop matching essence: Oathling 1–2, Knight 3–4, Herald 6–8 plus one sigil. A saved per-pawn claim prevents repeats after resurrection and reload. Recruited/redeemed pawns are excluded. No butchering or corpse processing is needed. Deaths off a loaded map do not create remote item spawns.
+
+At a drug lab after Fabrication with Crafting 8, eight matching essences plus two industrial medicine and one industrial component produce the corresponding ordinary serum. One sigil can instead be refined into four essences of any chosen ordinary element. The ten recipes supplement existing recipes; they do not create Celestial, Lunar or evolution serums.
+
+See [campaign update and verification](CourtEnemyUpdate.md).
+
+
+## Battle training, formations and body compatibility
+
+New Oathlings have Melee 8–12, Knights 14–18 and Heralds 18–20. Court squads stand their ground. With **Enable Court battle tactics and formations** enabled, bounded local thinking favors armed/Ascendant threats, supports a nearby commander's target without unlimited piling, and restores melee pursuit without interrupting techniques, paired rituals or external animations. No new damage packets are added.
+
+Four nearby hostile Court warriors within ten clear cells can maintain one temporary Court battle formation while a visible enemy is present. It grants 12% damage resistance and 8% faster movement. The condition never stacks. Breaking the group removes it on reevaluation; captivity, downing, recruitment or disabling tactics removes it promptly. It expires naturally if not maintained. Recruitment immediately removes the enemy condition.
+
+Thinking caches at most 32 warriors and 64 potential targets, scans at most 512 local pawns, and processes four warriors every twenty ticks; the cache refreshes every 120 ticks. Disabling the setting stops the map thinker. No per-tick world scan or faction-wide global target search is added.
+
+Court clothing maps unsupported custom body types to the nearest standard fitted sprite, including FemaleBB → Female. This applies to both conventional disciple uniforms and manifested armor, retaining native directional graphics and west mirroring without changing the pawn's actual body. Court afterimages use the same body mapping.

@@ -1,0 +1,72 @@
+# Thunder Incarnate
+
+**Lightning Ascendant → Thunderstorm Ascendant → Thunder Incarnate.** This Transcendant stage has Celestial-tier core strength, seven grand black/yellow combat forms, a modern princely suit and close-fitting cloak, the white-bladed Heavenbreaker katana and a segmented storm crown.
+
+## Progression and existing saves
+
+Earn **300 new credited hostile non-animal kills and 15 days as Thunderstorm**, then press **Transcend: Thunder Incarnate** or use the Codex inspection panel. The eight-second coronation stops the pawn, charges a storm sigil and concludes with a lightning column and thunderclap. Interruption grants nothing and keeps readiness; saving/loading resumes the ceremony safely. There is no material cost.
+
+Transcendence uses new saved counters. An existing Thunderstorm starts its third-stage counter when the update loads, including world/caravan pawns; previous Lightning mastery and elapsed heart age are not reused. New Thunderstorms start when they acquire that stage. God Mode exposes **DEV: Transcend-Ready**, which unlocks the ordinary ceremony. Developer mode alone does not expose it; turning God Mode off hides it.
+
+The same hediff object is rebound in place. Existing combat/non-lethal preferences, relevant cooldowns, hairstyle choice, personal clothing and gear quality are retained. The evolved projection is replaced with the new bound kit once. Normal transformation/reversion, downing, death and revival continue through the shared gear system. This overhaul preserves existing Incarnate roots and all six saved cooldown timestamps, adding one ready seventh slot. The katana uses the same weapon definition and saved item identity, so it does not create a duplicate sword.
+
+## Combat
+
+| Technique | Behavior | Base cooldown |
+| --- | --- | --- |
+| Divine Severance | Broad three-cell crescent along an eighteen-cell clear lane. Up to 24 hostiles once; applies Charged. | 3 seconds |
+| Thunderstep Strike | Sixteen-cell checked dash to a free adjacent landing and a focused katana strike. | 3.5 seconds |
+| Blackbolt Waltz | Eight-cell spinning storm, up to 20 hostiles once. Consumes up to three caster-owned charges per target. | 6 seconds |
+| Skybreaker Judgment | Eighteen-cell approach, visible warning, powerful adjacent strike and five-cell corona. Escaping contact can evade it. | 13 seconds |
+| Heaven-Rending Dragon | Up to ten distinct hostiles through two straight zigzag legs each. First target within 18 cells; later targets within 12. | 15 seconds |
+| Heavenfall Verdict | Rise, rush to a checked landing within eighteen cells, then an eight-cell shockwave. Up to 24 hostiles once. | 22 seconds |
+| Sovereign Thunderfall | Mark a fixed location within 28 cells. A 0.75-second warning precedes a colossal white-hot pillar threaded with yellow lightning and black fissures. After 0.3 seconds of discharge, a ten-cell AOE strikes up to 32 unique hostiles once. The remaining pillar is visual only. | 40 seconds |
+
+No resource costs. Cooldowns are spent when a valid technique starts, including interruptions. Movement and landings recheck walls and occupied cells. Incapacitation, undrafting, replacement orders and external animation ownership stop the action; there is no persistent busy flag to clear. Shared **Auto Combat On / Off / Non-lethal** works in the pawn commands and Codex. Auto Combat includes Thunderfall for crowds or full charge. The beam stays at its marked ground cell if its original target moves; walls protect targets from its blast. Friendly pawns and prisoners are excluded. Bestow remains the ordinary Lightning lineage, with normal first-evolution requirements.
+
+**Storm Dominion:** changing committed forms builds up to four Resonance. A fully charged Judgment, Verdict or Thunderfall consumes it for **20% more ability damage** and **two seconds of 20% additional incoming damage reduction**. No extra damage packets are spawned. Charge expires after six seconds without a committed technique.
+
+Core **×3.2 Melee damage**, **0.04 incoming damage**, **×0.55 melee cooldown**, **4 injury recovery per second**, **×10 natural healing**, **0.1 bleeding factor** and **+75 mood** match Celestial scale. Carrying is **×15** and the individual walking-caravan contribution **×4**. Disease protection, electrical resistance and Melee Animation knockout resistance remain integrated. Physical and electrical injury use the current weapon profile, armor and common **20% damage tuning**: an otherwise identical eligible physical packet is **×2.56** before armor, other modifiers and technique coefficients. Do not apply the lineage multiplier to the profile twice. Individual techniques retain their own coefficients.
+
+Healthy native health capacities show **Moving 650%, Consciousness 200%, Manipulation 300%, Sight 250%, Hearing 250%**. Moving and Manipulation have lineage ceilings at those values because boosted consciousness also affects limb efficiency. Other conditions still use RimWorld's capacity calculations. Moving is increased in the **health panel itself**; the former ×7 MoveSpeed stat factor is replaced by ×1.75 to keep rapid movement from multiplying into a forty-fivefold speed bonus.
+
+Electrical injury has a **45%** shock chance for **1.5 seconds**, reduced by electrical resistance. Three seconds of discharge recovery prevents repeated stun chaining. Non-lethal uses the shared suppression system, including ordinary melee, rather than new wounds.
+
+## Appearance and performance
+
+Twenty-four native worn textures cover seven body types plus FemaleBB, with south/east/north and native west mirroring. Fat/Hulk sides use revised close-fitting cloak artwork, reduced side width and a small shared head-origin lift that raises hair/face together. Skin and clothing use matching side compression, preserving coverage. Every supported body type receives a small life-stage-scaled head/hair lift in east and west views to align with the regalia shoulders; front/back positions retain their previous fit. The Fat/Hulk base corrections also remain. Full mechanical apparel groups cover Torso, Shoulders, Arms, Hands, Waist, Legs and Feet.
+
+The storm crown and six-frame open-center lightning back aura appear only while transformed, drafted, standing and awake. The back aura draws behind the pawn, scales to life stage and shares the crown visibility cap. Short yellow lightning trails follow actual transformed movement; combat dashes add black/yellow garment afterimages. Halo, charge and attack materials are cached. Per-map pools cap effects at 192 and afterimages at 64, with camera/fog culling and short visual lifetimes. Visible crowns are capped at 64 and coronation sigils at 16 per map draw. The coronation sigil grows and rotates continuously between its charge pulses. Movement trail emission is capped by tick/distance checks; teleporting across the map does not create a giant streak.
+
+The six existing forms now have larger crescents, longer trails, wider coronas and taller columns. Thunderfall adds **eight pillar frames and eight clean expanding shockwave frames**, its own icon, cached glow layers and at most twelve surrounding streaks per emission. Pillar visibility is checked at the impact cell so its upper section can extend off-camera. Mid-discharge saves restore its visual progress; saved damage commitment prevents repeated impacts. Interrupted casts cancel their owned warning/pillar visuals.
+
+Heavenbreaker has a black wrapped grip with yellow edges and a white curved blade with yellow thunder cracks. Held size is 1.35; native Melee Animation scale is 1.38, 15% larger than its prior animation profile, with fitted grip/blade landmarks. The normal held draw uses a 90-degree equipped-angle correction for this upright sprite, so the blade points along the aim direction. A held-only native UV mirror corrects the katana cutting edge without changing its tip direction, grip, size or inventory icon. Melee Animation retains its separate 90-degree local rotation, fitted hand anchor and scale; its native FlipY setting corrects the edge under the animation renderer’s flip/rotation rules. It replaces the normal draw while its animation is active.
+
+The visual polish upgrade exports all 88 attack/trail frames at **512×512**, preserves their registered pivots and adds a **1024×2048 lightning core**. The core grows and contracts continuously in C# over the eight outer-beam frames. Adjacent frames cross-fade, filtering is set once on cached materials, and restrained glow keeps black fissures and yellow lightning readable. Halo/resonance loops retain their existing small textures. This changes presentation without changing damage, cooldowns, target limits, health capacities or saved combat phases.
+
+The original 100 effect frames plus six back-aura frames, eight blink-flash frames and eight melee-clash frames are visual only. Local target searches cap at 1,800 cells, 768 inspected things and 32 accepted candidates. C# saves action phase, route, timing, visited/struck targets and impact commitments. Each victim receives at most one physical/electrical pair from a technique, including mechanoids without an extra EMP packet. Committed techniques now trigger bounded native scenery explosions, ash and ignition in lethal mode. The separate structural damage definition excludes pawns before damage/counter callbacks, preserving the existing one physical/electrical pair per victim. Blasts use damage falloff and a per-map limit of twelve per second; each impact adds at most eight ash patches and two to six fires. Native fires can spread and cause ordinary fire damage. Non-lethal skips both structural explosions and ignition. Disable **Thunder Incarnate scenery damage and fires** in mod settings to retain purely visual environmental effects. The terrain definition is not replaced; native explosions can damage buildings/plants and collapse nearby roofs through normal game rules. No custom weather or permanent terrain replacement is added. Existing heavy thunder sounds use the shared audio budget.
+
+
+## Thunder Step / Thunder Travel
+
+One additional shared utility command keeps the combat menu compact. **Right-click cycles Step: Auto → Step: Manual → Thunder Travel → Step: Auto.** Step: Manual and Travel both disable automatic map stepping. The state saves with the pawn. Old saves showing Travel with Auto enabled migrate to Auto off.
+
+- **Step, left-click:** also toggle Auto/Manual. New and existing Incarnates default to Auto. Auto Step is independent of Auto Combat and follows a valid current movement/work route, retaining the current job, queued orders and any carried passenger/item. It checks at most every fifteen ticks and has a one-second recharge.
+- **Step, Shift + left-click:** target any empty walkable cell on the current map. Range, line of sight and fog do not restrict this teleport. Closed doors, walls, pawns, traps and fire cannot be landing cells. Arrival reveals only its nearby cells. Manual jumps cancel an ordinary previous order; while carrying, they preserve the carrier's job and cargo.
+- **Travel, left-click:** choose a world tile, then click your exact landing cell on its map. A yellow outline marks a valid cell; red marks a blocked cell. **Shift + left-click** uses quick automatic landing instead. It costs no fuel, silver or distance charge and has no cooldown. Put down carried things before world travel.
+
+Thunder Travel reuses Light Travel's single original-pawn holder, safe map preparation, cancellation, origin-return controls, colony protection and saved departure/arrival timings, with separate lightning jobs and visuals. World/cell targeting pauses the game and cancellation restores the source map, camera zoom and previous time speed. The pawn and its work order stay at the origin until a cell is confirmed. A landing picker belongs to its destination map, so coordinates on another map cannot be applied to it. Travel retains the drafted state on landing, including save/load, so a drafted traveler can immediately resume combat. Interrupting departure keeps the pawn on its source map. A pending traveler remains safe in transit if placement fails. Combat, transformation, teaching, bestow and externally controlled animations block stepping/travel until finished.
+
+Ordinary transformed katana attacks now show an eight-frame lightning clash and up to six short lightning streaks. Native melee and optional Melee Animation callbacks share a per-swing deduplication gate. These slash effects add no damage, structural explosions or extra hits. Camera/fog culling, cached materials and the existing 192-effect/64-afterimage pools also cover the new visuals. Instant map steps reset movement tracking so they never draw a huge streak through intervening walls.
+
+
+The utility right-click cycle, side-view fit and held-edge corrections preserve the existing saved hediff, cooldowns and bound sword identity. No new gear is generated by these fixes.
+
+
+### Landing picker update
+
+Active destination maps, including ordinary encounter/settlement maps, are reserved while selecting, departing or waiting in transit so normal empty-map cleanup cannot invalidate the landing. The preview opens near usable central terrain and keeps its camera viewport inside the map bounds. Loaded maps open immediately; they do not queue a map-generation event for either preparation or arrival. New world tiles still need RimWorld's normal map generation once, before confirmation. Same-map relocation keeps the original pawn spawned and uses no temporary world holder.
+
+Exact Thunder landings ignore fog, range and sight, but still require an empty walkable cell. Walls, closed doors, pawns, traps and fire block placement. Only the arrival's nearby cells are revealed. If a chosen cell becomes blocked during departure, the exact picker opens again rather than silently relocating to another spot. Canceling before departure keeps the pawn at the origin; canceling while already in transit opens the world travel controls so the original passenger can land safely, choose another cell, or return.
+
+Exact intent saves with the departure/transit state. Existing save keys, old departure flags, cooldowns, bound gear and the Auto/Manual/Travel cycle remain compatible. An unconfirmed picker is transient: loading that save clears it safely while the pawn remains at its origin. Celestial retains its normal automatic landing default.

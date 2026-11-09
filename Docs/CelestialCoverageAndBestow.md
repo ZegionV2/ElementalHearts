@@ -1,3 +1,7 @@
+# Current Bestow behavior
+
+Celestial Bestow now uses the [element/readiness selection menu](SolarCourtUpdate.md). The previous random, always-ready behavior below is historical. Existing in-progress ceremonies keep their saved result; new gifts use the player's choice.
+
 # Celestial clothing coverage and evolution-ready Bestow
 
 Updated 2026-11-03.

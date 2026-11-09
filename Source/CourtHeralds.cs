@@ -9,6 +9,8 @@ namespace ElementalHearts {
  public static class CourtHeralds {
   public const int Cost=6000,MinimumRaidPoints=8000,EarliestDay=60;
   public const float RaidChance=.18f;
+  public const float MaximumRaidPoints=10000f;
+  public static bool Guaranteed(float points){var s=ElementalHeartsMod.Settings;return s!=null&&s.courtRaids&&s.courtHeralds&&!float.IsNaN(points)&&!float.IsInfinity(points)&&points>=MaximumRaidPoints;}
   public static readonly string[] Equipment={"AzureFlame","Thunderstorm","Glacial","Cyclone","Adamant"};
   public static readonly string[] Conditions={"EH_AzureFlameAscendant","EH_ThunderstormAscendant","EH_GlacialAscendant","EH_CycloneAscendant","EH_AdamantAscendant"};
   public static readonly string[] Titles={"Azure Herald","Storm Herald","Frost Herald","Gale Herald","Adamant Herald"};

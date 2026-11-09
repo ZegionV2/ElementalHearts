@@ -6,6 +6,7 @@ using Verse.AI;
 namespace ElementalHearts {
  public static class LightningAutocast {
   public static void Evaluate(HediffComp_LightningAbilities c) {
+   if(ThunderIncarnate.Active(c.Pawn)){var incarnate=HediffComp_ThunderIncarnate.On(c.Pawn);if(incarnate!=null)incarnate.Auto();return;}
    Pawn pawn=c.Pawn; int now=Find.TickManager.TicksGame; if(now<c.nextAutoCheck)return; c.nextAutoCheck=now+60;
    bool controlled=ElementalCombatPolicy.Controlled(pawn);
    if(!controlled)c.autoCombat=true;
@@ -36,18 +37,20 @@ namespace ElementalHearts {
     c.nextRetreatCheck=now+180;
     if(ElementalCombatFlow.CountHostiles(pawn,1.5f,2)>=2&&Rand.Chance(.25f)&&c.TryRetreat(target))return;
    }
-   int enemies=c.Remaining(LightningPower.Dance)==0?ElementalCombatFlow.CountHostiles(pawn,c.Props.danceRadius,ElementalHeartsMod.Settings.danceThreshold):0;
-   if(enemies>=ElementalHeartsMod.Settings.danceThreshold){c.TryCast(LightningPower.Dance,pawn,true);return;}
+   int enemies=c.Remaining(LightningPower.Dance)==0?ElementalCombatFlow.CountHostiles(pawn,c.Props.danceRadius,CourtTactics.CrowdThreshold(pawn,ElementalHeartsMod.Settings.danceThreshold)):0;
+   if(enemies>=CourtTactics.CrowdThreshold(pawn,ElementalHeartsMod.Settings.danceThreshold)){if(TryAuto(c,LightningPower.Dance,pawn,true))return;}
    IntVec3 landing;
-   if(c.Remaining(LightningPower.Flash)==0&&distance>9&&LightningCombat.TryLanding(pawn,target,c.Props.flashRange,out landing)){c.TryCast(LightningPower.Flash,target,true);return;}
-   if(c.Remaining(LightningPower.Sever)==0&&distance<=c.Props.severRange*c.Props.severRange&&LightningCombat.ClearLine(pawn.Position,target.Position,pawn.Map)){c.TryCast(LightningPower.Sever,target,true);return;}
-   if(enemies>0&&distance<=c.Props.danceRadius*c.Props.danceRadius){c.TryCast(LightningPower.Dance,pawn,true);return;}
-   if(c.Remaining(LightningPower.Heaven)==0&&LightningCombat.TryLanding(pawn,target,c.Props.heavenRange,out landing)){c.TryCast(LightningPower.Heaven,target,true);return;}
+   if(c.Remaining(LightningPower.Flash)==0&&distance>9&&LightningCombat.TryLanding(pawn,target,c.Props.flashRange,out landing)){if(TryAuto(c,LightningPower.Flash,target,true))return;}
+   if(c.Remaining(LightningPower.Sever)==0&&distance<=c.Props.severRange*c.Props.severRange&&LightningCombat.ClearLine(pawn.Position,target.Position,pawn.Map)){if(TryAuto(c,LightningPower.Sever,target,true))return;}
+   if(enemies>0&&distance<=c.Props.danceRadius*c.Props.danceRadius){if(TryAuto(c,LightningPower.Dance,pawn,true))return;}
+   if(c.Remaining(LightningPower.Heaven)==0&&LightningCombat.TryLanding(pawn,target,c.Props.heavenRange,out landing)){if(TryAuto(c,LightningPower.Heaven,target,true))return;}
    ElementalCombatFlow.ResumeMelee(pawn,target,pursuing);
   }
+  static bool TryAuto(HediffComp_LightningAbilities c,LightningPower power,LocalTargetInfo target,bool automatic){int before=c.Remaining(power);var job=c.Pawn.CurJob;c.TryCast(power,target,automatic);return c.Remaining(power)>before||c.Pawn.CurJob!=job;}
   public static bool Hostile(Pawn source,Pawn target){return LightningCombat.Eligible(source,target)&&!target.IsPrisoner&&target.HostileTo(source);}
  }
 }
+
 
 
 

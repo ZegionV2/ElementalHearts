@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_ThunderIncarnateUniform</defName>
+    <label>thunder incarnate princely regalia</label>
+    <description>Indestructible bound black princely suit and modern cloak with minimal yellow lightning seams. Flat chest, low collar, complete coverage below the neck and fitted native directional shapes. Helmetless.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/ThunderIncarnateRegalia/ThunderIncarnateRegalia</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>3500</WorkToMake>
+      <Mass>1.2</Mass>
+      <ArmorRating_Sharp>1.25</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.1</ArmorRating_Blunt>
+      <Insulation_Cold>5</Insulation_Cold>
+      <Insulation_Heat>3</Insulation_Heat>
+      <EquipDelay>2</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
+        <li>Waist</li>
+        <li>Legs</li>
+        <li>Feet</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/ThunderIncarnateRegalia/ThunderIncarnateRegalia</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags Inherit="False">
+      </tags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    </apparel>
+    <generateCommonality>0</generateCommonality>
+    <equippedStatOffsets>
+      <MoveSpeed>0.15</MoveSpeed>
+    </equippedStatOffsets>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+    <recipeMaker IsNull="True" />
+  </ThingDef>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>EH_ThunderIncarnateSword</defName>
+    <label>Heavenbreaker katana</label>
+    <description>Heavenbreaker: an indestructible bound katana with a black wrapped grip, minimal yellow edges and a white single-edged blade fractured with yellow lightning. Enlarged slightly in hand, with fitted native Melee Animation grip/blade landmarks. It remains the same bound weapon through this update.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/ThunderIncarnateSword</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+      <drawSize>1.35</drawSize>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <costStuffCount>100</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <WorkToMake>18000</WorkToMake>
+      <Mass>2</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <equippedAngleOffset>90</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>30</power>
+        <cooldownTime>2.2</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>30</power>
+        <cooldownTime>2.2</cooldownTime>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+    <recipeMaker IsNull="True" />
+  </ThingDef>
+  <HediffDef ParentName="EH_ElementalHeartHediffBase">
+    <defName>EH_ThunderIncarnate</defName>
+    <label>Thunder Incarnate</label>
+    <description>A sovereign of black/yellow lightning, equal to Celestial in core melee damage, incoming damage reduction, recovery and resolve. Seven forms: Divine Severance, Thunderstep Strike, Blackbolt Waltz, Skybreaker Judgment, Heaven-Rending Dragon, Heavenfall Verdict and Sovereign Thunderfall. Thunderfall brings down a colossal white-hot pillar threaded with yellow lightning and a ten-cell shockwave, striking each eligible hostile once. Varied forms build Storm Dominion; charged Judgment, Verdict and Thunderfall gain 20% damage and two seconds of extra protection.
+
+Health capacities on a healthy human: Moving 650%, Consciousness 200%, Manipulation 300%, Sight/Hearing 250%. Core incoming damage factor 0.04, +75 mood, rapid recovery and 90% electrical resistance. Full-body black princely regalia, a larger white-bladed Heavenbreaker katana, lightning motion trails and a drafted storm crown. Bestow grants ordinary Lightning.
+
+Damage: x3.2 Melee damage, matching Celestial. Shared 20% damage tuning gives an otherwise identical eligible physical packet x2.56 before armor, other modifiers and technique coefficients. No second lineage multiplier. Electrical injury has a 45% chance to shock for 1.5 seconds, followed by three seconds of discharge recovery. Non-lethal uses suppression without new wounds. Visual frames never add pawn impacts. Lethal techniques produce bounded scenery blasts, ash and native fires; Non-lethal or mod settings disable scenery damage and ignition. Right-click the shared utility button to cycle Step: Auto, Step: Manual (automatic stepping off), and Thunder Travel (automatic stepping off). Step left-click also toggles Auto/Manual; Shift + left-click targets a map-wide blink. Travel left-click chooses a world tile and an exact landing cell; Shift + left-click uses quick automatic landing. The picker pauses safely and marks valid or blocked cells. A drafted, transformed Incarnate projects an animated lightning back aura; ordinary katana slashes scatter visual lightning.</description>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_LightningRecovery">
+        <sealAfterTicks>60</sealAfterTicks>
+        <healPerSecond>4</healPerSecond>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_LightningPassives">
+        <strikeElectrical>0.5</strikeElectrical>
+        <chainChance>0.25</chainChance>
+        <chainRadius>4</chainRadius>
+        <chainDamageFactor>0.4</chainDamageFactor>
+        <chainTargets>3</chainTargets>
+        <chainInterval>6</chainInterval>
+        <maxCharge>3</maxCharge>
+        <chargeDuration>600</chargeDuration>
+        <killCooldownReduction>90</killCooldownReduction>
+        <dancePerCharge>0.6</dancePerCharge>
+        <heavenPerCharge>0.5</heavenPerCharge>
+        <counterChance>0.5</counterChance>
+        <counterCooldown>120</counterCooldown>
+        <resistanceFactor>0.1</resistanceFactor>
+        <electricalDamageDefs>
+          <li>EH_Lightning</li>
+          <li>EMP</li>
+          <li>EH_ThunderstormDamage</li>
+        </electricalDamageDefs>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_LightningAbilities">
+        <severRange>10</severRange>
+        <flashRange>15</flashRange>
+        <danceRadius>4</danceRadius>
+        <heavenRange>12</heavenRange>
+        <severCooldown>300</severCooldown>
+        <flashCooldown>360</flashCooldown>
+        <danceCooldown>540</danceCooldown>
+        <heavenCooldown>1350</heavenCooldown>
+        <telegraphTicks>12</telegraphTicks>
+        <staggerTicks>60</staggerTicks>
+        <fistFloor>10</fistFloor>
+        <explosionRadius>3</explosionRadius>
+        <severPhysical>1.5</severPhysical>
+        <severElectrical>0.8</severElectrical>
+        <flashPhysical>2</flashPhysical>
+        <flashElectrical>1</flashElectrical>
+        <dancePhysical>1.5</dancePhysical>
+        <danceElectrical>1</danceElectrical>
+        <heavenPhysical>6</heavenPhysical>
+        <heavenElectrical>4</heavenElectrical>
+        <explosionElectrical>1.5</explosionElectrical>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_IncarnateMastery" />
+      <li Class="ElementalHearts.HediffCompProperties_ThunderIncarnate" />
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>1</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>5.5</offset>
+            <setMax>6.5</setMax>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>1.5</offset>
+            <setMax>3</setMax>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>1.5</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>1.5</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>1</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>1</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>1</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>0.5</offset>
+          </li>
+        </capMods>
+        <painFactor>0</painFactor>
+        <totalBleedFactor>0.1</totalBleedFactor>
+        <naturalHealingFactor>10</naturalHealingFactor>
+        <hungerRateFactor>0.6</hungerRateFactor>
+        <restFallFactor>0.6</restFallFactor>
+        <statFactors>
+          <CarryingCapacity>15</CarryingCapacity>
+          <MoveSpeed>1.75</MoveSpeed>
+          <MeleeDamageFactor>3.2</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.55</MeleeCooldownFactor>
+          <WorkSpeedGlobal>2</WorkSpeedGlobal>
+          <IncomingDamageFactor>0.04</IncomingDamageFactor>
+          <ImmunityGainSpeed>2</ImmunityGainSpeed>
+          <JoyFallRateFactor>0.6</JoyFallRateFactor>
+        </statFactors>
+        <statOffsets>
+          <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+          <MeleeHitChance>4</MeleeHitChance>
+          <MeleeDodgeChance>12</MeleeDodgeChance>
+          <ComfyTemperatureMax>50</ComfyTemperatureMax>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <JobDef>
+    <defName>EH_TranscendThunderIncarnate</defName>
+    <driverClass>ElementalHearts.JobDriver_TranscendIncarnate</driverClass>
+    <reportString>Transcending as Thunder Incarnate.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>EH_IncarnateTechnique</defName>
+    <driverClass>ElementalHearts.JobDriver_IncarnateTechnique</driverClass>
+    <reportString>Commanding incarnate lightning.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+  <DamageDef ParentName="Flame">
+    <defName>EH_IncarnateLightning</defName>
+    <label>incarnate lightning</label>
+    <description>Black and yellow electrical injury from Thunder Incarnate. Existing electrical resistance, shock recovery and common 20% damage tuning apply. Visual frames never add impacts.</description>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <deathMessage>{0} was struck down by incarnate lightning.</deathMessage>
+    <impactSoundType>Electric</impactSoundType>
+    <scaleDamageToBuildingsBasedOnFlammability>false</scaleDamageToBuildingsBasedOnFlammability>
+    <modExtensions>
+      <li Class="ElementalHearts.ElectricalDamageExtension" />
+    </modExtensions>
+  </DamageDef>
+  <ThoughtDef>
+    <defName>EH_IncarnateResolve</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>EH_ThunderIncarnate</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>thunder incarnate</label>
+        <description>The storm has become part of me. My resolve is unshakable.</description>
+        <baseMoodEffect>75</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

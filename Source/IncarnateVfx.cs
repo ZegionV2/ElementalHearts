@@ -1,0 +1,68 @@
+using System;using System.Collections.Generic;using HarmonyLib;using RimWorld;using UnityEngine;using Verse;
+namespace ElementalHearts {
+ public static class IncarnateVfx {
+  static readonly string[] names={"DivineSeverance","Thunderstep","BlackboltWaltz","SkybreakerTelegraph","SkybreakerStrike","HeavenRendingDragon","HeavenfallColumn","HeavenfallBurst","MovementTrail","Halo","Resonance","SovereignBeam","ThunderfallShockwave","BackAura","ThunderStepFlash","MeleeClash"};
+  static readonly Material[,] frames=new Material[16,8],glows=new Material[16,8],bodies=new Material[8,3];static readonly string[] bodyNames={"Male","Female","Thin","Fat","Hulk","Child","Baby","FemaleBB"};
+  static Material beamCore,beamCoreGlow;
+  static readonly float[] beamWidths={.09f,.30f,.65f,.95f,1f,.65f,.25f,.03f};
+  static Material Load(int n,int frame,Shader shader){var material=MaterialPool.MatFrom("Effects/ElementalHearts/ThunderIncarnate/Frames/"+names[n]+"_"+frame.ToString("00"),shader);material.mainTexture.filterMode=FilterMode.Bilinear;return material;}
+  public static Material Frame(int n,int frame){return frames[n,frame]??(frames[n,frame]=Load(n,frame,ShaderDatabase.Transparent));}
+  public static Material Glow(int n,int frame){return glows[n,frame]??(glows[n,frame]=Load(n,frame,ShaderDatabase.MoteGlow));}
+  public static Material Core(bool glow=false){var material=glow?beamCoreGlow:beamCore;if(material!=null)return material;material=MaterialPool.MatFrom("Effects/ElementalHearts/ThunderIncarnate/SovereignCore",glow?ShaderDatabase.MoteGlow:ShaderDatabase.Transparent);material.mainTexture.filterMode=FilterMode.Bilinear;if(glow)beamCoreGlow=material;else beamCore=material;return material;}
+  public static float BeamWidth(float time){float phase=Mathf.Clamp01(time)*8;int frame=Math.Min(7,(int)phase);return Mathf.Lerp(beamWidths[frame],beamWidths[Math.Min(7,frame+1)],phase-frame);}
+  public static Material Body(Pawn p){int b=Array.IndexOf(bodyNames,p.story==null||p.story.bodyType==null?"Male":p.story.bodyType.defName);if(b<0)b=0;int d=p.Rotation==Rot4.South?0:p.Rotation==Rot4.North?2:1;return bodies[b,d]??(bodies[b,d]=MaterialPool.MatFrom("Things/Pawn/Humanlike/Apparel/ThunderIncarnateRegalia/ThunderIncarnateRegalia_"+bodyNames[b]+"_"+new[]{"south","east","north"}[d],ShaderDatabase.Transparent));}
+  public static void Track(Pawn p){if(p!=null&&p.Spawned)p.Map.GetComponent<MapComponent_IncarnateVfx>().Track(p);}
+  static MapComponent_IncarnateVfx Controller(Pawn p,Vector3 a,Vector3 b){return p!=null&&p.Spawned&&StormBlitzFx.Visible(p.Map,a,b)?p.Map.GetComponent<MapComponent_IncarnateVfx>():null;}
+  public static void Burst(Pawn p,int sprite,Vector3 at,float size,int duration){var c=Controller(p,at,at);if(c!=null){if(sprite==4||sprite==6)at.z+=size*.24f;c.Add(sprite,at,at,size,size,duration,0,false);}}
+  public static void Wave(Pawn p,int sprite,Vector3 a,Vector3 b,int duration,float size){var c=Controller(p,a,b);if(c!=null)c.Add(sprite,a,b,size,size,duration,(b-a).AngleFlat()-90,true);}
+  public static void Line(Pawn p,int sprite,Vector3 a,Vector3 b,int duration,float width){var c=Controller(p,a,b);if(c!=null&&(a-b).sqrMagnitude>.015f)c.Add(sprite,(a+b)*.5f,(a+b)*.5f,Math.Max(.8f,(b-a).magnitude*1.7f+.5f),width,duration,(b-a).AngleFlat()-90,false);}
+  public static void Echo(Pawn p,Vector3 at){if(!ElementalHeartsMod.Settings.showAfterimages)return;var c=Controller(p,at,at);if(c!=null)c.Echo(p,at);}
+  public static void Corona(Pawn p,Vector3 at,float size,int duration){Burst(p,12,at,size*1.5f,duration);}
+  public static void BeamWarning(Pawn p,Vector3 at,int duration){var c=Controller(p,at,at);if(c!=null)c.Add(3,at,at,28,28,duration,0,false,0,p);}
+  public static void Beam(Pawn p,Vector3 at,int elapsed){int total=IncarnateCombat.BeamDischargeTicks;if(elapsed>=total)return;var c=Controller(p,at,at);if(c!=null)c.Add(11,at,at,40,58,total-Math.Max(0,elapsed),0,false,Mathf.Clamp01(elapsed/(float)total),p);}
+  public static void StormArcs(Pawn p,Vector3 at,float radius,int count){for(int i=0;i<Math.Min(12,count);i++){float angle=i*Mathf.PI*2/count;var outer=at+new Vector3(Mathf.Cos(angle)*radius,0,Mathf.Sin(angle)*radius*.65f);var inner=at+new Vector3(Mathf.Cos(angle+.6f)*radius*.2f,0,Mathf.Sin(angle+.6f)*radius*.15f);Line(p,1,outer,inner,28,1.4f);}}
+  public static void Step(Pawn p,Map map,Vector3 from,Vector3 to){if(map==null)return;var controller=map.GetComponent<MapComponent_IncarnateVfx>();controller.ResetTrack(p);if(StormBlitzFx.Visible(map,from,from))controller.Add(14,from,from,3,3,20,0,false);if(StormBlitzFx.Visible(map,to,to))controller.Add(14,to,to,3.5f,3.5f,24,0,false);ElementalAudio.Ability(p,ElementalSound.Dash);}
+ }
+ public sealed class MapComponent_IncarnateVfx:MapComponent {
+  struct Effect{public bool active,wave;public int id,sprite,tick,duration;public Vector3 a,b;public float w,h,angle,animationStart;public Pawn owner;public Verse.AI.Job ownerJob;}
+  struct Ghost{public bool active,west;public int tick;public Vector3 at;public float size,width;public Material body;}
+  sealed class Walker{public Pawn pawn;public Vector3 last;public int tick;}
+  readonly Effect[] effects=new Effect[192];readonly Ghost[] ghosts=new Ghost[64];readonly List<Walker> tracked=new List<Walker>();int cursor,ghostCursor,nextId;MaterialPropertyBlock block;
+  public MapComponent_IncarnateVfx(Map map):base(map){}
+  public void Track(Pawn p){foreach(var w in tracked)if(w.pawn==p)return;tracked.Add(new Walker{pawn=p,last=p.Position.ToVector3Shifted(),tick=Find.TickManager.TicksGame});}
+  public void ResetTrack(Pawn p){foreach(var w in tracked)if(w.pawn==p){w.last=p.Position.ToVector3Shifted();w.tick=Find.TickManager.TicksGame;return;}Track(p);}
+  public int Add(int sprite,Vector3 a,Vector3 b,float w,float h,int duration,float angle,bool wave,float animationStart=0,Pawn owner=null){if(++nextId<=0)nextId=1;effects[cursor]=new Effect{active=true,id=nextId,sprite=sprite,a=a,b=b,w=w,h=h,tick=Find.TickManager.TicksGame,duration=Math.Max(1,duration),angle=angle,wave=wave,animationStart=animationStart,owner=owner,ownerJob=owner==null?null:owner.CurJob};cursor=(cursor+1)%effects.Length;return nextId;}
+  public void Stop(int id){if(id<=0)return;for(int i=0;i<effects.Length;i++)if(effects[i].active&&effects[i].id==id){effects[i].active=false;return;}}
+  public void Echo(Pawn p,Vector3 at){ghosts[ghostCursor]=new Ghost{active=true,west=p.Rotation==Rot4.West,tick=Find.TickManager.TicksGame,at=at,size=HumanlikeMeshPoolUtility.HumanlikeBodyWidthForPawn(p),width=HumanlikeMeshPoolUtility.HumanlikeBodyWidthForPawn(p)*IncarnateApparelFit.Side(p,p.Rotation),body=IncarnateVfx.Body(p)};ghostCursor=(ghostCursor+1)%ghosts.Length;}
+  public override void MapComponentTick(){int now=Find.TickManager.TicksGame;if(now%4!=0)return;for(int i=tracked.Count-1;i>=0;i--){var w=tracked[i];var p=w.pawn;if(p==null||p.Destroyed||!p.Spawned||p.Map!=map||p.Dead||!ThunderIncarnate.Active(p)&&(p.CurJobDef==null||p.CurJobDef.defName!=ThunderIncarnate.Ritual)){tracked.RemoveAt(i);continue;}var at=p.Position.ToVector3Shifted();float distance=(at-w.last).sqrMagnitude;if(HediffComp_ElementalTransform.Active(p)&&!p.Downed&&distance>.08f&&distance<324&&!ThunderIncarnate.Busy(p)){IncarnateVfx.Line(p,8,w.last,at,18,.65f);if(p.Drafted&&now-w.tick>=12){IncarnateVfx.Echo(p,w.last);w.tick=now;}}w.last=at;}}
+  void Draw(Material material,Vector3 pos,float w,float h,float angle,float alpha,Color tint,Vector3? anchor=null,bool behind=false){var cell=(anchor??pos).ToIntVec3();if(!cell.InBounds(map)||cell.Fogged(map))return;pos.y=behind?pos.y-.018f:AltitudeLayer.MoteOverhead.AltitudeFor();tint.a=alpha*ElementalHeartsMod.Settings.effectOpacity;block.SetColor(ShaderPropertyIDs.Color,tint);Graphics.DrawMesh(MeshPool.plane10,Matrix4x4.TRS(pos,Quaternion.AngleAxis(angle,Vector3.up),new Vector3(w,1,h)),material,0,null,0,block);}
+  void BackAura(Pawn p,float life,int now){var at=p.DrawPos+new Vector3(0,0,.32f*life);float phase=(now+p.thingIDNumber)/10f;int frame=(int)phase%6;float blend=phase-(int)phase;Draw(IncarnateVfx.Frame(13,frame),at,2.9f*life,2.9f*life,0,.42f*(1-blend),Color.white,at,true);Draw(IncarnateVfx.Frame(13,(frame+1)%6),at,2.9f*life,2.9f*life,0,.42f*blend,Color.white,at,true);}
+  void DrawFrame(Effect effect,Vector3 at,Vector3 anchor,int frame,float opacity){if(opacity<=.001f)return;Draw(IncarnateVfx.Frame(effect.sprite,frame),at,effect.w,effect.h,effect.angle,opacity*(effect.sprite==11?.18f:1),Color.white,anchor);if(effect.sprite==12)Draw(IncarnateVfx.Glow(effect.sprite,frame),at,effect.w,effect.h,effect.angle,.12f*opacity,Color.white,anchor);}
+  public override void MapComponentDraw(){if(map!=Find.CurrentMap||Find.CameraDriver==null||ElementalHeartsMod.Settings.effectOpacity<=0)return;if(block==null)block=new MaterialPropertyBlock();int now=Find.TickManager.TicksGame;var visible=Find.CameraDriver.CurrentViewRect.ExpandedBy(12);
+   for(int i=0;i<effects.Length;i++){
+    var e=effects[i];if(!e.active)continue;float elapsed=(now-e.tick)/(float)e.duration;
+    if(elapsed>=1||e.owner!=null&&(!e.owner.Spawned||e.owner.Dead||e.owner.CurJob!=e.ownerJob)){effects[i].active=false;continue;}
+    float t=Mathf.Lerp(e.animationStart,1,elapsed);var at=e.wave?Vector3.Lerp(e.a,e.b,t):(e.a+e.b)*.5f;
+    if(!visible.Contains(at.ToIntVec3()))continue;var anchor=at;if(e.sprite==11)at.z+=e.h*.28f;
+    int count=e.sprite==9||e.sprite==10||e.sprite==13?6:8;float phase=t*count;int frame=Math.Min(count-1,(int)phase);
+    float blend=frame==count-1?0:phase-(int)phase;float opacity=Math.Min(1,(1-t)*4);
+    DrawFrame(e,at,anchor,frame,opacity*(1-blend));if(blend>.001f)DrawFrame(e,at,anchor,frame+1,opacity*blend);
+    if(e.sprite==11){float width=e.w*1.12f*IncarnateVfx.BeamWidth(t);Draw(IncarnateVfx.Core(),at,width,e.h,e.angle,opacity,Color.white,anchor);Draw(IncarnateVfx.Core(true),at,width,e.h,e.angle,.04f*opacity,Color.white,anchor);}
+   }
+   for(int i=0;i<ghosts.Length;i++){var g=ghosts[i];if(!g.active)continue;float t=(now-g.tick)/16f;if(t>=1){ghosts[i].active=false;continue;}if(!visible.Contains(g.at.ToIntVec3()))continue;float alpha=(1-t)*(1-t);Draw(StormBlitzFx.Silhouette,g.at+new Vector3(0,0,.16f),g.size*1.15f,g.size*1.15f,0,.3f*alpha,new Color(1,.88f,.05f));Draw(g.body,g.at,g.west?-g.width:g.width,g.size,0,.65f*alpha,Color.white);}
+   int rituals=0;foreach(var w in tracked){var p=w.pawn;if(p==null||!p.Spawned||p.Downed||p.Dead||!visible.Contains(p.Position))continue;var ritual=p.jobs.curDriver as JobDriver_TranscendIncarnate;if(ritual==null||rituals++>=16)continue;float progress=ritual.Progress;float size=Mathf.Lerp(3.5f,7,progress);Draw(IncarnateVfx.Frame(10,(now/8)%6),p.DrawPos,size,size,now*.9f,Mathf.Lerp(.2f,.7f,progress),Color.white);}
+   if(!ElementalHeartsMod.Settings.showAura)return;int crowns=0;foreach(var w in tracked){var p=w.pawn;if(p==null||!p.Spawned||p.Downed||p.Dead||!p.Drafted||!p.Awake()||!ThunderIncarnate.Active(p)||!HediffComp_ElementalTransform.Active(p)||HediffComp_ElementalTransform.Transforming(p)||!visible.Contains(p.Position))continue;if(crowns++>=64)break;float life=Mathf.Clamp(Mathf.Sqrt(p.ageTracker.CurLifeStage.bodySizeFactor),.55f,1.25f);BackAura(p,life,now);var at=p.DrawPos+p.Drawer.renderer.BaseHeadOffsetAt(p.Rotation);at.z+=.42f*life;float phase=(now+p.thingIDNumber)/8f;int f=((int)phase)%6;float blend=phase-(int)phase;Draw(IncarnateVfx.Frame(9,f),at,1.1f*life,1.1f*life,0,.9f*(1-blend),Color.white);Draw(IncarnateVfx.Frame(9,(f+1)%6),at,1.1f*life,1.1f*life,0,.9f*blend,Color.white);var c=HediffComp_ThunderIncarnate.On(p);if(c!=null&&c.CurrentResonance>=4)Draw(IncarnateVfx.Frame(10,(now/8)%6),p.DrawPos,2.2f*life,2.2f*life,0,.45f,Color.white);}
+  }
+ }
+ public static class IncarnateApparelFit {
+  public static bool Wearing(Pawn p){if(p==null||p.apparel==null)return false;foreach(var a in p.apparel.WornApparel)if(a.def.defName=="EH_ThunderIncarnateUniform")return true;return false;}
+  public static float Side(Pawn p,Rot4 facing){if(p==null||p.story==null||!Wearing(p)||(facing!=Rot4.East&&facing!=Rot4.West))return 1;return p.story.bodyType==BodyTypeDefOf.Fat?.88f:p.story.bodyType==BodyTypeDefOf.Hulk?.90f:1;}
+  public static float Lift(Pawn p,Rot4? facing=null){if(p==null||p.story==null||p.apparel==null)return 0;float coverage=Wearing(p)?1:0;var transform=HediffComp_ElementalTransform.On(p);if(transform!=null&&transform.PulseElement=="ThunderIncarnate"&&HediffComp_ElementalTransform.Transforming(p))coverage=Mathf.SmoothStep(0,1,ManifestMeshRules.PartCoverage(transform.Coverage,false));var b=p.story.bodyType;float value=b==BodyTypeDefOf.Hulk?.12f:b==BodyTypeDefOf.Fat?.10f:0f;var direction=facing??p.Rotation;if(direction==Rot4.East||direction==Rot4.West)value+=.085f;return value*HumanlikeMeshPoolUtility.HumanlikeBodyWidthForPawn(p)/1.5f*coverage;}
+ }
+ [HarmonyPatch(typeof(PawnRenderer),"BaseHeadOffsetAt")]
+ public static class IncarnateHeadFit{public static void Postfix(Pawn ___pawn,Rot4 __0,ref Vector3 __result){__result.z+=IncarnateApparelFit.Lift(___pawn,__0);}}
+ [HarmonyPatch(typeof(PawnRenderNodeWorker),"ScaleFor")]
+ public static class IncarnateBodySideScale {public static void Postfix(PawnRenderNode __0,PawnDrawParms __1,ref Vector3 __result){if(__0 is PawnRenderNode_Body)__result.x*=IncarnateApparelFit.Side(__1.pawn,__1.facing);}}
+ [HarmonyPatch(typeof(PawnRenderNodeWorker_Apparel_Body),"ScaleFor")]
+ public static class IncarnateClothesSideScale {public static void Postfix(PawnRenderNode __0,PawnDrawParms __1,ref Vector3 __result){if(__0.apparel!=null&&__0.apparel.def.defName=="EH_ThunderIncarnateUniform")__result.x*=IncarnateApparelFit.Side(__1.pawn,__1.facing);}}
+}

@@ -12,9 +12,12 @@ foreach ($p in @($compiler, "$managed\Assembly-CSharp.dll", "$managed\UnityEngin
 $output = Join-Path $PSScriptRoot '..\Assemblies'
 New-Item -ItemType Directory -Force -Path $output | Out-Null
 $sources = @(Get-ChildItem $PSScriptRoot -Recurse -Filter *.cs | Where-Object { $_.FullName -notmatch '\\obj\\' } | ForEach-Object FullName)
-& $compiler /noconfig /nologo /nostdlib+ /target:library /optimize+ "/out:$output\ElementalHearts.dll" "/reference:$managed\mscorlib.dll" "/reference:$managed\System.dll" "/reference:$managed\System.Core.dll" "/reference:$managed\netstandard.dll" "/reference:$managed\Unity.Mathematics.dll" "/reference:$managed\UnityEngine.IMGUIModule.dll" "/reference:$managed\Assembly-CSharp.dll" "/reference:$managed\UnityEngine.CoreModule.dll" "/reference:$HarmonyPath" $sources
+& $compiler /noconfig /nologo /nostdlib+ /target:library /optimize+ "/out:$output\ElementalHearts.dll" "/reference:$managed\mscorlib.dll" "/reference:$managed\System.dll" "/reference:$managed\System.Core.dll" "/reference:$managed\netstandard.dll" "/reference:$managed\Unity.Mathematics.dll" "/reference:$managed\UnityEngine.IMGUIModule.dll" "/reference:$managed\UnityEngine.TextRenderingModule.dll" "/reference:$managed\Assembly-CSharp.dll" "/reference:$managed\UnityEngine.CoreModule.dll" "/reference:$HarmonyPath" $sources
 if ($LASTEXITCODE -ne 0) { throw "Compilation failed ($LASTEXITCODE)" }
 Write-Output 'Built Assemblies/ElementalHearts.dll against the specified local game and Harmony assemblies.'
-
-
-
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>EH_ThunderTravelDepart</defName>
+    <driverClass>ElementalHearts.JobDriver_CelestialDepart</driverClass>
+    <reportString>departing as lightning.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  <JobDef>
+    <defName>EH_ThunderTravelArrive</defName>
+    <driverClass>ElementalHearts.JobDriver_CelestialArrive</driverClass>
+    <reportString>arriving in a thunderbolt.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  <WorldObjectDef>
+    <defName>EH_ThunderTravel</defName>
+    <label>Thunder Travel</label>
+    <worldObjectClass>ElementalHearts.WorldObject_CelestialLightTravel</worldObjectClass>
+    <texture>UI/Commands/ElementalHearts/ThunderIncarnate/ThunderTravel</texture>
+    <useDynamicDrawer>true</useDynamicDrawer>
+  </WorldObjectDef>
+  <WorldObjectDef>
+    <defName>EH_ThunderLandingSite</defName>
+    <label>thunder landing</label>
+    <worldObjectClass>ElementalHearts.CelestialLandingSite</worldObjectClass>
+    <texture>UI/Commands/ElementalHearts/ThunderIncarnate/ThunderTravel</texture>
+  </WorldObjectDef>
+  <DamageDef ParentName="Bomb">
+    <defName>EH_IncarnateSceneryBlast</defName>
+    <label>thunder scenery blast</label>
+    <description>Bounded structural lightning blast from a committed Thunder Incarnate technique. Damages scenery and plants; pawns are excluded so the technique never gains extra pawn impacts. Non-lethal disables scenery blasts and ignition.</description>
+    <workerClass>ElementalHearts.DamageWorker_IncarnateScenery</workerClass>
+    <buildingDamageFactor>1</buildingDamageFactor>
+    <plantDamageFactor>1.5</plantDamageFactor>
+    <explosionHeatEnergyPerCell>0</explosionHeatEnergyPerCell>
+    <explosionSnowMeltAmount>0</explosionSnowMeltAmount>
+    <explosionColorCenter>(1,0.95,0.6)</explosionColorCenter>
+    <explosionColorEdge>(1,0.8,0.05)</explosionColorEdge>
+  </DamageDef>
+</Defs>

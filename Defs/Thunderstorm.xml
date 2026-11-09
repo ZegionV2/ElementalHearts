@@ -120,7 +120,9 @@
 
 Damage: this lineage multiplies the Melee damage stat by 2.2 (+120%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.76 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.
 
-Teamwork: elemental techniques can synchronize with nearby allied transformed Ascendants for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
+Teamwork: elemental techniques can synchronize with nearby allied transformed Ascendants for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.
+
+Further path: 300 new mastery kills and 15 days as Thunderstorm unlock Transcend: Thunder Incarnate. This progress starts when Thunderstorm is acquired or this update first loads; it never reuses prior Lightning kills/time.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_LightningRecovery">
         <sealAfterTicks>180</sealAfterTicks>
@@ -173,6 +175,7 @@ Teamwork: elemental techniques can synchronize with nearby allied transformed As
       <li Class="ElementalHearts.HediffCompProperties_ThunderstormMastery" />
       <li Class="ElementalHearts.HediffCompProperties_ThunderstormHalo" />
       <li Class="ElementalHearts.HediffCompProperties_TempestCircuit" />
+      <li Class="ElementalHearts.HediffCompProperties_IncarnateMastery" />
     </comps>
     <stages>
       <li>
@@ -241,7 +244,6 @@ Teamwork: elemental techniques can synchronize with nearby allied transformed As
           <MentalBreakThreshold>-0.25</MentalBreakThreshold>
           <MeleeHitChance>4</MeleeHitChance>
           <MeleeDodgeChance>12</MeleeDodgeChance>
-
           <ComfyTemperatureMax>50</ComfyTemperatureMax>
         </statOffsets>
       </li>

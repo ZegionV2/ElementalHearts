@@ -6,7 +6,7 @@ namespace ElementalHearts {
  public static class CourtRedemption {
   public static bool Apply(Pawn pawn){
    if(pawn==null||pawn.Faction!=Faction.OfPlayer||pawn.story==null||!CourtAppearance.Bound(pawn))return false;
-   pawn.story.traits.RemoveTrait(pawn.story.traits.GetTrait(DefDatabase<TraitDef>.GetNamed(CourtAppearance.TraitName)));
+   CourtTactics.RemoveFocus(pawn);pawn.story.traits.RemoveTrait(pawn.story.traits.GetTrait(DefDatabase<TraitDef>.GetNamed(CourtAppearance.TraitName)));
    var transform=HediffComp_ElementalTransform.On(pawn);
    if(transform!=null){transform.ReconcileCourtStyle();transform.ReconcileHeraldFaceguard();}
    if(pawn.Drawer!=null)pawn.Drawer.renderer.SetAllGraphicsDirty();return true;
@@ -22,3 +22,4 @@ namespace ElementalHearts {
   public static void Postfix(Pawn __instance,Faction newFaction){if(newFaction==Faction.OfPlayer)CourtRedemption.Apply(__instance);}
  }
 }
+

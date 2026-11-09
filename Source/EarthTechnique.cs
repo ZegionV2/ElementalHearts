@@ -36,7 +36,7 @@ namespace ElementalHearts {
    var profile=LightningCombat.Profile(source,10f);float damage=profile.damage*factor*ElementalTeaching.DamageFactor(source);
    var c=HediffComp_EarthAbilities.On(source);if(c==null||!c.CanAct)return false;c.MarkCombat();
    if(ElementalNonLethal.TryApply(source,victim,damage))return true;
-   return victim.TakeDamage(new DamageInfo(DamageDefOf.Blunt,damage,Math.Max(c.Evolved?.55f:.35f,profile.penetration),-1f,source,null,profile.weapon,DamageInfo.SourceCategory.ThingOrUnknown,victim)).totalDamageDealt>0;
+   var result=victim.TakeDamage(new DamageInfo(DamageDefOf.Blunt,damage,Math.Max(c.Evolved?.55f:.35f,profile.penetration),-1f,source,null,profile.weapon,DamageInfo.SourceCategory.ThingOrUnknown,victim));return result!=null&&result.totalDamageDealt>0;
   }
   public static List<Pawn> Targets(Pawn source,IntVec3 center,float radius){
    var list=new List<Pawn>();int searched=0;
