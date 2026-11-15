@@ -3,34 +3,34 @@
   <SoundDef>
     <defName>EH_Sound_Adamant_Slash</defName>
     <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
     <priorityMode>PrioritizeNearest</priorityMode>
     <subSounds>
       <li>
-        <name>stone</name>
+        <name>attack</name>
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>Impact/MeleeHit_Stone</clipFolderPath>
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>26~32</volumeRange>
-        <pitchRange>0.736~0.874</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>34~40</volumeRange>
+        <pitchRange>.7~.82</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
       <li>
         <name>body</name>
         <grains>
           <li Class="AudioGrain_Folder">
-            <clipFolderPath>Interact/Work/Construct/Stone/Stone_Chunk_Light</clipFolderPath>
+            <clipFolderPath>Impact/Deflect/Deflect_Metal</clipFolderPath>
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>9~13</volumeRange>
-        <pitchRange>0.828~0.966</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>13~18</volumeRange>
+        <pitchRange>.9~1.02</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
@@ -38,21 +38,21 @@
   <SoundDef>
     <defName>EH_Sound_Adamant_Dash</defName>
     <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
     <priorityMode>PrioritizeNearest</priorityMode>
     <subSounds>
       <li>
-        <name>stone</name>
+        <name>attack</name>
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>Interact/Work/Construct/Stone/Stone_Chunk_Light</clipFolderPath>
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>16~22</volumeRange>
-        <pitchRange>0.718~0.846</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>19~25</volumeRange>
+        <pitchRange>.76~.9</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
       <li>
@@ -63,9 +63,9 @@
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>24~30</volumeRange>
-        <pitchRange>0.892~0.948</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>26~32</volumeRange>
+        <pitchRange>.96~1.04</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
@@ -73,21 +73,21 @@
   <SoundDef>
     <defName>EH_Sound_Adamant_Spin</defName>
     <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
     <priorityMode>PrioritizeNearest</priorityMode>
     <subSounds>
       <li>
-        <name>stone</name>
+        <name>attack</name>
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>Interact/Work/Construct/Stone/Stone_Chunk_Light</clipFolderPath>
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>18~24</volumeRange>
-        <pitchRange>0.736~0.874</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>22~28</volumeRange>
+        <pitchRange>.74~.86</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
       <li>
@@ -98,9 +98,9 @@
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>20~25</volumeRange>
-        <pitchRange>0.892~0.948</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>29~35</volumeRange>
+        <pitchRange>.92~1.04</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
@@ -108,34 +108,34 @@
   <SoundDef>
     <defName>EH_Sound_Adamant_Charge</defName>
     <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
     <priorityMode>PrioritizeNearest</priorityMode>
     <subSounds>
       <li>
-        <name>stone</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>Interact/Work/Construct/Stone/Stone_Chunk_Light</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>9~13</volumeRange>
-        <pitchRange>0.662~0.782</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-      <li>
-        <name>body</name>
+        <name>attack</name>
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>ElementalHearts/Earth/Charge</clipFolderPath>
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>26~33</volumeRange>
-        <pitchRange>0.911~0.929</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>28~34</volumeRange>
+        <pitchRange>.78~.9</pitchRange>
+        <distRange>6~50</distRange>
+        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+      </li>
+      <li>
+        <name>body</name>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Interact/Work/Construct/Stone/Stone_Chunk_Light</clipFolderPath>
+          </li>
+        </grains>
+        <onCamera>false</onCamera>
+        <volumeRange>17~23</volumeRange>
+        <pitchRange>.65~.78</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
@@ -143,21 +143,21 @@
   <SoundDef>
     <defName>EH_Sound_Adamant_Impact</defName>
     <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
     <priorityMode>PrioritizeNearest</priorityMode>
     <subSounds>
       <li>
-        <name>stone</name>
+        <name>attack</name>
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>Impact/MeleeHit_Stone</clipFolderPath>
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>18~25</volumeRange>
-        <pitchRange>0.690~0.828</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>33~39</volumeRange>
+        <pitchRange>.7~.84</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
       <li>
@@ -168,9 +168,9 @@
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>24~30</volumeRange>
-        <pitchRange>0.892~0.948</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>28~34</volumeRange>
+        <pitchRange>.92~1.02</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
@@ -178,21 +178,126 @@
   <SoundDef>
     <defName>EH_Sound_Adamant_Advance_Impact</defName>
     <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
     <priorityMode>PrioritizeNearest</priorityMode>
     <subSounds>
       <li>
-        <name>stone</name>
+        <name>attack</name>
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>Interact/Work/Mine/PickHit</clipFolderPath>
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>22~28</volumeRange>
-        <pitchRange>0.736~0.874</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>24~30</volumeRange>
+        <pitchRange>.78~.92</pitchRange>
+        <distRange>6~50</distRange>
+        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+      </li>
+      <li>
+        <name>body</name>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Impact/MeleeHit_Stone</clipFolderPath>
+          </li>
+        </grains>
+        <onCamera>false</onCamera>
+        <volumeRange>32~38</volumeRange>
+        <pitchRange>.74~.86</pitchRange>
+        <distRange>6~50</distRange>
+        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>EH_Sound_Adamant_Quake_Impact</defName>
+    <context>MapOnly</context>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <name>attack</name>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Misc/RockCollapse</clipPath>
+          </li>
+        </grains>
+        <onCamera>false</onCamera>
+        <volumeRange>32~38</volumeRange>
+        <pitchRange>.74~.86</pitchRange>
+        <distRange>6~50</distRange>
+        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+      </li>
+      <li>
+        <name>body</name>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ElementalHearts/Earth/Quake</clipFolderPath>
+          </li>
+        </grains>
+        <onCamera>false</onCamera>
+        <volumeRange>29~35</volumeRange>
+        <pitchRange>.82~.94</pitchRange>
+        <distRange>6~50</distRange>
+        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>EH_Sound_Adamant_Spire_Impact</defName>
+    <context>MapOnly</context>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <name>attack</name>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ElementalHearts/Earth/Spire</clipFolderPath>
+          </li>
+        </grains>
+        <onCamera>false</onCamera>
+        <volumeRange>34~40</volumeRange>
+        <pitchRange>.78~.9</pitchRange>
+        <distRange>6~50</distRange>
+        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+      </li>
+      <li>
+        <name>body</name>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Impact/MeleeHit_Stone</clipFolderPath>
+          </li>
+        </grains>
+        <onCamera>false</onCamera>
+        <volumeRange>27~33</volumeRange>
+        <pitchRange>.65~.78</pitchRange>
+        <distRange>6~50</distRange>
+        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>EH_Sound_Adamant_Bulwark</defName>
+    <context>MapOnly</context>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <name>attack</name>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Impact/Deflect/Deflect_Metal</clipFolderPath>
+          </li>
+        </grains>
+        <onCamera>false</onCamera>
+        <volumeRange>29~35</volumeRange>
+        <pitchRange>.72~.84</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
       <li>
@@ -204,78 +309,8 @@
         </grains>
         <onCamera>false</onCamera>
         <volumeRange>18~24</volumeRange>
-        <pitchRange>0.690~0.828</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-    </subSounds>
-  </SoundDef>
-  <SoundDef>
-    <defName>EH_Sound_Adamant_Quake_Impact</defName>
-    <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
-    <priorityMode>PrioritizeNearest</priorityMode>
-    <subSounds>
-      <li>
-        <name>stone</name>
-        <grains>
-          <li Class="AudioGrain_Clip">
-            <clipPath>Misc/RockCollapse</clipPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>15~23</volumeRange>
-        <pitchRange>0.828~0.948</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-      <li>
-        <name>body</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>ElementalHearts/Earth/Quake</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>34~40</volumeRange>
-        <pitchRange>0.892~0.948</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-    </subSounds>
-  </SoundDef>
-  <SoundDef>
-    <defName>EH_Sound_Adamant_Spire_Impact</defName>
-    <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
-    <priorityMode>PrioritizeNearest</priorityMode>
-    <subSounds>
-      <li>
-        <name>stone</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>Impact/MeleeHit_Stone</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>30~38</volumeRange>
-        <pitchRange>0.662~0.791</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-      <li>
-        <name>body</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>ElementalHearts/Earth/Spire</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>32~40</volumeRange>
-        <pitchRange>0.892~0.948</pitchRange>
-        <distRange>6~45</distRange>
+        <pitchRange>.68~.8</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
     </subSounds>

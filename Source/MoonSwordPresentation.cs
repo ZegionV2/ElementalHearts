@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Reflection;
 using HarmonyLib;
 using UnityEngine;
@@ -7,7 +7,7 @@ namespace ElementalHearts {
  public static class MoonSwordPresentation {
   public const float Enlargement=1.30f;
   public static bool Supported(Thing eq){return eq!=null&&eq.def!=null&&(eq.def.defName=="EH_LunarSword"||eq.def.defName=="EH_EclipseSword");}
-  public static Mesh HeldMesh(Mesh mesh,Thing eq){if(eq!=null&&eq.def!=null&&eq.def.defName=="EH_ThunderIncarnateSword"){if(mesh==MeshPool.plane10)return MeshPool.plane10Flip;if(mesh==MeshPool.plane10Flip)return MeshPool.plane10;}return mesh;}
+  public static Mesh HeldMesh(Mesh mesh,Thing eq){if(eq!=null&&eq.def!=null&&(eq.def.defName=="EH_ThunderIncarnateSword"||eq.def.defName=="EH_HellFlameIncarnateSword"||eq.def.defName=="EH_TempestIncarnateSword"||eq.def.defName=="EH_AuroraIncarnateSword")){if(mesh==MeshPool.plane10)return MeshPool.plane10Flip;if(mesh==MeshPool.plane10Flip)return MeshPool.plane10;}return mesh;}
   public static Matrix4x4 HeldMatrix(Vector3 position,Quaternion rotation,Vector3 scale,Thing eq){
    if(!Supported(eq))return Matrix4x4.TRS(position,rotation,scale);
    // Native PNG grip landmarks: keep the same point in the hand as the blade grows.

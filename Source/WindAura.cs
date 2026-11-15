@@ -16,7 +16,7 @@ namespace ElementalHearts {
    if(color==null)color=new MaterialPropertyBlock();
    var visible=Find.CameraDriver.CurrentViewRect.ExpandedBy(3);int now=Find.TickManager.TicksGame;
    foreach(var pawn in pawns){
-    if(CycloneEvolution.Active(pawn)||!pawn.Drafted||!HediffComp_ElementalTransform.Active(pawn)||HediffComp_ElementalTransform.Transforming(pawn)||!pawn.Spawned||pawn.Map!=map||pawn.Dead||pawn.Downed||!visible.Contains(pawn.Position))continue;
+    if(TempestIncarnate.Active(pawn)||CycloneEvolution.Active(pawn)||!pawn.Drafted||!HediffComp_ElementalTransform.Active(pawn)||HediffComp_ElementalTransform.Transforming(pawn)||!pawn.Spawned||pawn.Map!=map||pawn.Dead||pawn.Downed||!visible.Contains(pawn.Position))continue;
     var comp=HediffComp_WindAbilities.On(pawn);if(comp==null)continue;
     int state=comp.activationUntil>now?2:comp.combatUntil>now?1:0;
     int frame=state==2?Mathf.Clamp((30-(comp.activationUntil-now))/5,0,5):(now/5+pawn.thingIDNumber)%6;

@@ -156,7 +156,8 @@ namespace ElementalHearts
 
             FlameCombat.Strike(Pawn, victim, profile, 0f, Props.strikeThermal);
 
-            AzureVfx.Emit(Pawn,Pawn.Map, 1, origin.ToVector3Shifted(), origin.ToVector3Shifted(), 12, 0.8f);
+            if(HellFlameIncarnate.Active(Pawn)) HellVfx.Burst(Pawn,15,origin.ToVector3Shifted(),2.4f,18);
+            else AzureVfx.Emit(Pawn,Pawn.Map, 1, origin.ToVector3Shifted(), origin.ToVector3Shifted(), 12, 0.8f);
 
             if (Rand.Chance(Props.chainChance))
 
@@ -290,6 +291,7 @@ namespace ElementalHearts
 
         {
 
+            if(HellFlameIncarnate.Active(caster)){HellBrands.Apply(caster,target);return;}
             HediffComp_FlamePassives source = HediffComp_FlamePassives.On(caster);
 
             if (source == null || !FlameCombat.Eligible(caster, target)) return;

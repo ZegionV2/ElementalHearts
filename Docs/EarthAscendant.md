@@ -1,4 +1,4 @@
-# Earth Ascendant
+# Earth Adept
 
 Earth is a playable normal lineage for RimWorld 1.6. Adamant evolution is [playable](AdamantIntegration.md).
 
@@ -8,7 +8,7 @@ Transform manifests basalt stoneplate, a closed bronze-crowned basalt helmet, an
 
 Existing two-piece Earth kits receive exactly one helmet in place. The original sword, quality, saved personal equipment and transformation save keys are retained. Dormant helmets remain in hidden kit storage.
 
-Craft Earth serum at a drug lab after Fabrication: 30 plasteel, 20 uranium, four industrial components and four industrial medicine; Crafting 8, 12,000 work. Normal Earth Ascendants Teach Earth. Disciples call Faultbreaker and use the four skills at 40% damage with 50% longer cooldowns, then qualify for Ascend after 50 credited kills/five days or awaken through the shared near-death roll. Promotion retains controls and cooldowns. Earth remains a fifth NPC disciple and Celestial Random Bestow choice.
+Craft Earth serum at a drug lab after Fabrication: 30 plasteel, 20 uranium, four industrial components and four industrial medicine; Crafting 8, 12,000 work. Normal Earth Adepts Teach Earth. Disciples call Faultbreaker and use the four skills at 40% damage with 50% longer cooldowns, then qualify for Ascend after 50 credited kills/five days or awaken through the shared near-death roll. Promotion retains controls and cooldowns. Earth remains a fifth NPC disciple and Celestial Random Bestow choice.
 
 Normal stats, recovery, +30 mood, disease protection, carry/caravan benefits and Resolve defense remain unchanged. There is no evolved Earth head halo.
 

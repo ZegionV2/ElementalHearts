@@ -4,7 +4,7 @@ Water uses the ordinary elemental teaching and disciple system. Glacial is now a
 
 ## Teaching, disciples and promotion
 
-Select an ordinary Water Ascendant and use **Teach Water** on an eligible untrained humanlike pawn. The teacher walks to the pupil. Both then stop, face each other and wait through the existing three-second paired lesson. Completion grants one Water disciple condition. A new order, incapacitation, lost partner or other interruption ends the pair without awarding an incomplete lesson. Both teaching jobs now allow player interruption and cannot be suspended for later resumption.
+Select an ordinary Water Adept and use **Teach Water** on an eligible untrained humanlike pawn. The teacher walks to the pupil. Both then stop, face each other and wait through the existing three-second paired lesson. Completion grants one Water disciple condition. A new order, incapacitation, lost partner or other interruption ends the pair without awarding an incomplete lesson. Both teaching jobs now allow player interruption and cannot be suspended for later resumption.
 
 A Water disciple has:
 
@@ -15,15 +15,15 @@ A Water disciple has:
 - The **Ascend** button unlocks after **50 credited kills and five in-game disciple days** and starts a 3.5-second ceremony. NPCs start automatically; player-controlled disciples wait for the player's choice. Existing vanilla-attributed disciple kill rules are unchanged.
 - **DEV: Ascend-Ready**, visible and usable only in God Mode, including cached commands. It fulfills the milestones; the disciple then uses Ascend for the normal animated ceremony.
 
-Disciples receive no Ascendant stat stage, healing, mood bonus, armor transformation, aura or teaching power. On promotion, the disciple condition is removed before the full Water condition is added. Water's remaining ability cooldowns, combo state, non-lethal flag and defensive cooldown/pending state are copied to the new full condition; newly granted ascension enables Auto Combat. Promotion parks the existing bound sword; later transformation reuses the bond instead of minting a second sword. Normal Water Ascendants have the God-Mode-only Evolution-Ready command for Glacial.
+Disciples receive no Ascendant stat stage, healing, mood bonus, armor transformation, aura or teaching power. On promotion, the disciple condition is removed before the full Water condition is added. Water's remaining ability cooldowns, combo state, non-lethal flag and defensive cooldown/pending state are copied to the new full condition; newly granted ascension enables Auto Combat. Promotion parks the existing bound sword; later transformation reuses the bond instead of minting a second sword. Normal Water Adepts have the God-Mode-only Evolution-Ready command for Glacial.
 
-Existing Water Ascendants retain the same saved defensive component and save keys. The existing same-object upgrade helper continues to preserve hediff identity, age, severity, component instances, transformation equipment and foreign components. Other elements retain their existing promotion behavior.
+Existing Water Adepts retain the same saved defensive component and save keys. The existing same-object upgrade helper continues to preserve hediff identity, age, severity, component instances, transformation equipment and foreign components. Other elements retain their existing promotion behavior.
 
 ## Subtle Water aura
 
 The aura has **six distinct transparent 256×256 frames**, advancing every five game ticks. The final art uses thin pale cyan ribbons, restrained droplets and a lighter lower ripple. Its default opacity gently pulses between **17% and 27%** before the shared effect-opacity setting. The drawing is smaller than the usual normal-element aura, cached, culled outside the camera/fog and drawn behind the pawn.
 
-It appears only on a living, standing, **transformed and drafted full Water Ascendant**, after transformation finishes. It disappears when reverted, undrafted, downed or dead. Disciples have no aura. The existing Show Auras and effect-opacity settings control it; there is no additional pawn button.
+It appears only on a living, standing, **transformed and drafted full Water Adept**, after transformation finishes. It disappears when reverted, undrafted, downed or dead. Disciples have no aura. The existing Show Auras and effect-opacity settings control it; there is no additional pawn button.
 
 Art was generated with the built-in image_gen tool, then revised with that tool after the request for a subtler style. ArtSource preserves both generated sources and both exact prompts. The game uses the subtle revision. Water-Aura-Preview.png shows full texture opacity; Water-Aura-Subtle-Preview.png shows the 22% midpoint. Both are asset contact sheets, not game screenshots; the in-game shader supplies the opacity pulse.
 

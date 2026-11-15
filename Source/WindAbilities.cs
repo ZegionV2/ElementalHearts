@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -65,7 +65,7 @@ namespace ElementalHearts {
    int now=Find.TickManager.TicksGame;
    if(flowUntil<=now&&lastPower>=0){flowStacks=0;lastPower=-1;RemoveStatus(WindDefs.EH_WindFlow);}
    if(!Pawn.Spawned||Pawn.Dead)return;
-   if(now>=nextAutoCheck){nextAutoCheck=now+60;WindAutocast.Evaluate(this);}
+   if(now>=nextAutoCheck){nextAutoCheck=now+(TempestIncarnate.Active(Pawn)?12:60);WindAutocast.Evaluate(this);}
   }
   private void RemoveStatus(HediffDef def){var h=Pawn.health.hediffSet.GetFirstHediffOfDef(def);if(h!=null)Pawn.health.RemoveHediff(h);}
   public void Status(HediffDef def,int ticks,float severity){
@@ -117,6 +117,7 @@ namespace ElementalHearts {
    if(ElementalTeaching.IsHeart(parent)) yield return ElementalTeaching.Command(Pawn);
    if(!Pawn.Drafted)yield break;
    yield return new Command_Action{defaultLabel="Auto Combat: "+ElementalAutoModes.Label(CurrentAutoMode),defaultDesc=(CycloneEvolution.Active(Pawn)?"Cyclone automation chains the four Wind techniques and automatically uses Sovereign Cyclone against two nearby hostiles while transformed. One shared control governs all five techniques. ":"")+"Cycle On / Off / Non-lethal. Non-lethal replaces technique and ordinary melee wounds with temporary suppression: 75% knockdown chance, otherwise a brief stun. Manual techniques respect this mode.",icon=ElementalIcons.AutoCombat,action=CycleAutoMode,groupable=false};
+   if(TempestIncarnate.Active(Pawn)){foreach(var command in HediffComp_TempestIncarnate.On(Pawn).Commands())yield return command;yield break;}
    string[] names={"Dust-Cutting Draw","Rising Gale","Turning Swallow","Mountain-Scouring Tempest"};
    string[] descriptions={"Advance through the target with a single line cut. Requires a clear exit beyond them; stops at walls and hazards.","Two rising cuts against an adjacent target, followed by a short Gale Guard. Briefly staggers the target.","Watch the selected opponent for two seconds. Deflect their next ordinary melee hit, sidestep, and sweep back. Also reacts to a successful dodge. Expires if they do not attack.","Three timed cuts against one opponent, changing flanks between strikes and ending with a heavy diagonal cut. Automatic casts can carry remaining cuts to nearby hostiles when the target falls or escapes. Manual casts stay on the selected pawn; new orders interrupt the combination."};
    if(CycloneEvolution.Active(Pawn)){names=CycloneEvolution.Names;descriptions=CycloneEvolution.Details;}

@@ -1,4 +1,4 @@
-using System;using System.Collections.Generic;using HarmonyLib;using RimWorld;using UnityEngine;using Verse;
+﻿using System;using System.Collections.Generic;using HarmonyLib;using RimWorld;using UnityEngine;using Verse;
 namespace ElementalHearts {
  public static class IncarnateVfx {
   static readonly string[] names={"DivineSeverance","Thunderstep","BlackboltWaltz","SkybreakerTelegraph","SkybreakerStrike","HeavenRendingDragon","HeavenfallColumn","HeavenfallBurst","MovementTrail","Halo","Resonance","SovereignBeam","ThunderfallShockwave","BackAura","ThunderStepFlash","MeleeClash"};
@@ -56,8 +56,8 @@ namespace ElementalHearts {
  }
  public static class IncarnateApparelFit {
   public static bool Wearing(Pawn p){if(p==null||p.apparel==null)return false;foreach(var a in p.apparel.WornApparel)if(a.def.defName=="EH_ThunderIncarnateUniform")return true;return false;}
-  public static float Side(Pawn p,Rot4 facing){if(p==null||p.story==null||!Wearing(p)||(facing!=Rot4.East&&facing!=Rot4.West))return 1;return p.story.bodyType==BodyTypeDefOf.Fat?.88f:p.story.bodyType==BodyTypeDefOf.Hulk?.90f:1;}
-  public static float Lift(Pawn p,Rot4? facing=null){if(p==null||p.story==null||p.apparel==null)return 0;float coverage=Wearing(p)?1:0;var transform=HediffComp_ElementalTransform.On(p);if(transform!=null&&transform.PulseElement=="ThunderIncarnate"&&HediffComp_ElementalTransform.Transforming(p))coverage=Mathf.SmoothStep(0,1,ManifestMeshRules.PartCoverage(transform.Coverage,false));var b=p.story.bodyType;float value=b==BodyTypeDefOf.Hulk?.12f:b==BodyTypeDefOf.Fat?.10f:0f;var direction=facing??p.Rotation;if(direction==Rot4.East||direction==Rot4.West)value+=.085f;return value*HumanlikeMeshPoolUtility.HumanlikeBodyWidthForPawn(p)/1.5f*coverage;}
+  public static float Side(Pawn p,Rot4 facing){if(p==null||p.story==null||!Wearing(p)||(facing!=Rot4.East&&facing!=Rot4.West))return 1;return p.story.bodyType==BodyTypeDefOf.Fat?.78f:p.story.bodyType==BodyTypeDefOf.Hulk?.82f:1;}
+  public static float Lift(Pawn p,Rot4? facing=null){if(p==null||p.story==null||p.apparel==null)return 0;float coverage=Wearing(p)?1:0;var transform=HediffComp_ElementalTransform.On(p);if(transform!=null&&transform.PulseElement=="ThunderIncarnate"&&HediffComp_ElementalTransform.Transforming(p))coverage=Mathf.SmoothStep(0,1,ManifestMeshRules.PartCoverage(transform.Coverage,false));var b=p.story.bodyType;float value=b==BodyTypeDefOf.Hulk?.12f:b==BodyTypeDefOf.Fat?.10f:0f;var direction=facing??p.Rotation;if(direction==Rot4.East||direction==Rot4.West)return 0;return value*HumanlikeMeshPoolUtility.HumanlikeBodyWidthForPawn(p)/1.5f*coverage;}
  }
  [HarmonyPatch(typeof(PawnRenderer),"BaseHeadOffsetAt")]
  public static class IncarnateHeadFit{public static void Postfix(Pawn ___pawn,Rot4 __0,ref Vector3 __result){__result.z+=IncarnateApparelFit.Lift(___pawn,__0);}}

@@ -1,0 +1,364 @@
+{
+  "mode": "built-in image generator",
+  "date": "2026-11-14",
+  "records": [
+    {
+      "name": "frames_AirboundRibbon",
+      "selected": false,
+      "source": "Generated/Drafts/frames_AirboundRibbon.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 6 consecutive animation frames arranged THREE equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. A small subtle airborne control loop to position around any captured pawn: two separated narrow charcoal-grey wind ribbons curling upward, two tiny white glints and very short white electrical threads. Six subtle clockwise looping phases, same centre/size, wide empty centre with NO pawn. Sparse translucent edges, no ice shell or thick cloud sphere. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings.",
+      "referenceImages": [
+        "Generated/icon_SovereignMaelstrom.png"
+      ]
+    },
+    {
+      "name": "frames_AirboundRibbon_clean",
+      "selected": true,
+      "source": "Generated/frames_AirboundRibbon_clean.png",
+      "prompt": "Use case: background-extraction. Image1 is the EDIT TARGET: a 6-frame animation atlas (3 columns by TWO rows). Preserve every sprite's exact frame location, direction, shape, timing, common scale and arrangement. REMOVE ALL grey/white ambient glow, haze, fog films, gradient wash and background from every cell, INCLUDING INSIDE ALL EMPTY HOLES and between separate ribbons. KEEP ONLY the crisp matte dark-grey cloud shapes, silver-grey blade ribbons and thin white electrical lines. True RGBA TRANSPARENCY: all empty areas must be alpha ZERO. Clean antialiased edges, no bloom, no light spreading into empty space. Do not replace the background with black, white, grey or a checkerboard. Do not draw any new background or shadows. Preserve six distinct sequential frames and their registration. For AirboundRibbon, the central body/head space must be completely empty transparent so it cannot conceal a pawn. No text, labels, grid lines, characters or scenery.",
+      "referenceImages": [
+        "Generated/Drafts/frames_AirboundRibbon.png"
+      ]
+    },
+    {
+      "name": "frames_BackAura",
+      "selected": false,
+      "source": "Generated/Drafts/frames_BackAura.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 6 consecutive animation frames arranged THREE equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. A SUBTLE back aura: two slender grey cloud-scroll ribbons form a loose open-centred crest, left and right of a WIDE COMPLETELY EMPTY body gap. Tiny white electrical arcs flicker along ribbon edges. Six gentle looping phases at same registered scale/centre. Sparse airy shape, no solid cloud canopy, wings, body silhouette, huge lightning bolt, ground ring or filled circle; will sit behind the pawn. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings.",
+      "referenceImages": [
+        "Generated/icon_StormFlow.png"
+      ]
+    },
+    {
+      "name": "frames_BackAura_clean",
+      "selected": true,
+      "source": "Generated/frames_BackAura_clean.png",
+      "prompt": "Use case: background-extraction. Image1 is the EDIT TARGET: a 6-frame animation atlas (3 columns by TWO rows). Preserve every sprite's exact frame location, direction, shape, timing, common scale and arrangement. REMOVE ALL grey/white ambient glow, haze, fog films, gradient wash and background from every cell, INCLUDING INSIDE ALL EMPTY HOLES and between separate ribbons. KEEP ONLY the crisp matte dark-grey cloud shapes, silver-grey blade ribbons and thin white electrical lines. True RGBA TRANSPARENCY: all empty areas must be alpha ZERO. Clean antialiased edges, no bloom, no light spreading into empty space. Do not replace the background with black, white, grey or a checkerboard. Do not draw any new background or shadows. Preserve six distinct sequential frames and their registration. For BackAura, the central body/head space must be completely empty transparent so it cannot conceal a pawn. No text, labels, grid lines, characters or scenery.",
+      "referenceImages": [
+        "Generated/Drafts/frames_BackAura.png"
+      ]
+    },
+    {
+      "name": "frames_CloudrendCrescent",
+      "selected": true,
+      "source": "Generated/frames_CloudrendCrescent.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. An upright RIGHT-facing curved sword crescent of dark grey cloud with a thin sharp WHITE electrical leading convex edge, trailing wind ribbons to LEFT. Fixed centre/scale/direction. Form a small crescent, extend into a broad complete scything arc by frames 3-4, then unravel into slender wind shreds and sparks by frame7. Never flip toward LEFT; no actual sword. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings.",
+      "referenceImages": [
+        "Generated/icon_CloudrendCrescent.png"
+      ]
+    },
+    {
+      "name": "frames_CloudStepFlash",
+      "selected": true,
+      "source": "Generated/frames_CloudStepFlash.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. A compact teleport blink effect: two grey cloud curls separate around a narrow crisp horizontal WHITE flash, briefly open an empty centre and disintegrate into tiny wind wisps. Eight small rapid phases, centred, no pawn/silhouette/portal building and no large cloud wall. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings. This is a compositing sprite atlas, NOT a lit scene. ABSOLUTELY NO ambient grey veil, bloom, halo glow, gradient wash, fog blanket or cast shadows. Every empty space BETWEEN ribbons and in holes must be alpha ZERO. Only solid matte cloud/ribbon shapes, white lines and their antialiased edge pixels may have opacity. Ignore all ambient glow in the palette reference.",
+      "referenceImages": [
+        "Generated/icon_CloudStep.png"
+      ]
+    },
+    {
+      "name": "frames_CrownBurst",
+      "selected": true,
+      "source": "Generated/frames_CrownBurst.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. A huge radial storm-pressure detonation viewed above, not a fireball. A compressed grey central cloud knot bursts into an expanding thin white-edged shockwave, grey pointed wind blades and restrained white lightning branches. Eight clearly expanding frames from compact impact through widest broken ring to faint departing wisps. SAME centre and cell scale, transparent empty background. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings. This is a compositing sprite atlas, NOT a lit scene. ABSOLUTELY NO ambient grey veil, bloom, halo glow, gradient wash, fog blanket or cast shadows. Every empty space BETWEEN ribbons and in holes must be alpha ZERO. Only solid matte cloud/ribbon shapes, white lines and their antialiased edge pixels may have opacity. Ignore all ambient glow in the palette reference.",
+      "referenceImages": [
+        "Generated/icon_CrownOfTheTempest.png"
+      ]
+    },
+    {
+      "name": "frames_CrownFunnel",
+      "selected": true,
+      "source": "Generated/frames_CrownFunnel.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. A grand tall dark-grey storm funnel and rolling cloud canopy, narrow base rooted at bottom-centre y82%, broad dark charcoal clouds high above, spiralling grey pressure ribbons and bright narrow branching WHITE electricity twisting through it. Eight phases: gather, rise, widen, strong discharge peak in frames3-5, loosen, dissipate. Clearly sculpted flat cloud layers, not a plain straight beam. No ground, pawn, crown object or scenery. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings. This is a compositing sprite atlas, NOT a lit scene. ABSOLUTELY NO ambient grey veil, bloom, halo glow, gradient wash, fog blanket or cast shadows. Every empty space BETWEEN ribbons and in holes must be alpha ZERO. Only solid matte cloud/ribbon shapes, white lines and their antialiased edge pixels may have opacity. Ignore all ambient glow in the palette reference.",
+      "referenceImages": [
+        "Generated/icon_CrownOfTheTempest.png"
+      ]
+    },
+    {
+      "name": "frames_CrownTelegraph",
+      "selected": true,
+      "source": "Generated/frames_CrownTelegraph.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. An elegant flat elliptical storm seal on empty transparency, viewed obliquely from above: three broken grey cloud rings and fine white lightning spokes gather around a large EMPTY centre. Eight charging states growing subtly brighter/denser, no filled white disk, no explosion, no solid floor or landscape. Fixed centre and radius registration. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings. This is a compositing sprite atlas, NOT a lit scene. ABSOLUTELY NO ambient grey veil, bloom, halo glow, gradient wash, fog blanket or cast shadows. Every empty space BETWEEN ribbons and in holes must be alpha ZERO. Only solid matte cloud/ribbon shapes, white lines and their antialiased edge pixels may have opacity. Ignore all ambient glow in the palette reference.",
+      "referenceImages": [
+        "Generated/icon_CrownOfTheTempest.png"
+      ]
+    },
+    {
+      "name": "frames_Halo",
+      "selected": false,
+      "source": "Generated/Drafts/frames_Halo.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 6 consecutive animation frames arranged THREE equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. A SMALL FLOATING HALO made solely of a hollow ring of charcoal/dark-grey cloud curls with three very thin white electrical bridges. Low oblique perspective ellipse with visible front/back thickness so it has depth, large completely transparent CENTRAL HOLE in every frame. Six subtle clockwise drifting/flickering phases, same size/centre. No solid crown spikes, no head, no pawn, no background disk or opaque white core. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings.",
+      "referenceImages": [
+        "Generated/icon_TranscendTempest.png"
+      ]
+    },
+    {
+      "name": "frames_Halo_clean",
+      "selected": true,
+      "source": "Generated/frames_Halo_clean.png",
+      "prompt": "Use case: background-extraction. Image1 is the EDIT TARGET: a 6-frame animation atlas (3 columns by TWO rows). Preserve every sprite's exact frame location, direction, shape, timing, common scale and arrangement. REMOVE ALL grey/white ambient glow, haze, fog films, gradient wash and background from every cell, INCLUDING INSIDE ALL EMPTY HOLES and between separate ribbons. KEEP ONLY the crisp matte dark-grey cloud shapes, silver-grey blade ribbons and thin white electrical lines. True RGBA TRANSPARENCY: all empty areas must be alpha ZERO. Clean antialiased edges, no bloom, no light spreading into empty space. Do not replace the background with black, white, grey or a checkerboard. Do not draw any new background or shadows. Preserve six distinct sequential frames and their registration. For Halo, the central body/head space must be completely empty transparent so it cannot conceal a pawn. No text, labels, grid lines, characters or scenery.",
+      "referenceImages": [
+        "Generated/Drafts/frames_Halo.png"
+      ]
+    },
+    {
+      "name": "frames_MaelstromFormation",
+      "selected": true,
+      "source": "Generated/frames_MaelstromFormation.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. Formation of a hollow small grey cyclone: first a narrow elliptical wind ring at fixed bottom-centre, then dark-grey cloud ribbons rise into a compact funnel with three thin white electrical arcs wrapping it. Increase height/width within same common cell as it forms. Central transparent gaps so a pawn can show through. Same ground root at y82% of every cell. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings. This is a compositing sprite atlas, NOT a lit scene. ABSOLUTELY NO ambient grey veil, bloom, halo glow, gradient wash, fog blanket or cast shadows. Every empty space BETWEEN ribbons and in holes must be alpha ZERO. Only solid matte cloud/ribbon shapes, white lines and their antialiased edge pixels may have opacity. Ignore all ambient glow in the palette reference.",
+      "referenceImages": [
+        "Generated/icon_SovereignMaelstrom.png"
+      ]
+    },
+    {
+      "name": "frames_MaelstromLoop",
+      "selected": true,
+      "source": "Generated/frames_MaelstromLoop.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. A steady hollow grey cyclone of THREE separated thin cloud spiral ribbons threaded with fine white electricity. Eight clockwise rotation phases at equal fixed size, root fixed bottom-centre at y82%. Plenty of transparent gaps between coils, readable as wind not opaque smoke. First/last phase meet for seamless looping. No growth/explosion, no pawn. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings. This is a compositing sprite atlas, NOT a lit scene. ABSOLUTELY NO ambient grey veil, bloom, halo glow, gradient wash, fog blanket or cast shadows. Every empty space BETWEEN ribbons and in holes must be alpha ZERO. Only solid matte cloud/ribbon shapes, white lines and their antialiased edge pixels may have opacity. Ignore all ambient glow in the palette reference.",
+      "referenceImages": [
+        "Generated/icon_SovereignMaelstrom.png"
+      ]
+    },
+    {
+      "name": "frames_MaelstromRelease",
+      "selected": true,
+      "source": "Generated/frames_MaelstromRelease.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. An outward pressure release viewed above: thin grey cloud ring and four white radial wind streaks expand from tiny centre to wide broken ring, then dissipate into wisps. Eight expanding/fading states, COMMON centred pivot and cell window; never recenter or resize later frames to fill cells. No funnel or characters. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings. This is a compositing sprite atlas, NOT a lit scene. ABSOLUTELY NO ambient grey veil, bloom, halo glow, gradient wash, fog blanket or cast shadows. Every empty space BETWEEN ribbons and in holes must be alpha ZERO. Only solid matte cloud/ribbon shapes, white lines and their antialiased edge pixels may have opacity. Ignore all ambient glow in the palette reference.",
+      "referenceImages": [
+        "Generated/icon_SovereignMaelstrom.png"
+      ]
+    },
+    {
+      "name": "frames_MeleeClash",
+      "selected": true,
+      "source": "Generated/frames_MeleeClash.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. A small ordinary katana impact effect: a sharp WHITE four-point slash glint and two short white electric forks amid one small charcoal-grey cloud puff and two slender wind curls. Eight rapid nonempty states grow, snap and fade. Tiny compact effect, centred, no actual swords or body, no large explosion. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings. This is a compositing sprite atlas, NOT a lit scene. ABSOLUTELY NO ambient grey veil, bloom, halo glow, gradient wash, fog blanket or cast shadows. Every empty space BETWEEN ribbons and in holes must be alpha ZERO. Only solid matte cloud/ribbon shapes, white lines and their antialiased edge pixels may have opacity. Ignore all ambient glow in the palette reference.",
+      "referenceImages": [
+        "Generated/icon_WhitewakePursuit.png"
+      ]
+    },
+    {
+      "name": "frames_SquallFinisher",
+      "selected": true,
+      "source": "Generated/frames_SquallFinisher.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. A huge descending upper-left to lower-right white-edged grey cloud sword slash. One sharply tapered main cutting ribbon with restrained white lightning forks, grows to peak mid-sequence then breaks into small grey wind shreds. Fixed axis, centre and common cell scale, no sword or person. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings. This is a compositing sprite atlas, NOT a lit scene. ABSOLUTELY NO ambient grey veil, bloom, halo glow, gradient wash, fog blanket or cast shadows. Every empty space BETWEEN ribbons and in holes must be alpha ZERO. Only solid matte cloud/ribbon shapes, white lines and their antialiased edge pixels may have opacity. Ignore all ambient glow in the palette reference.",
+      "referenceImages": [
+        "Generated/icon_HeavenRendingSquall.png"
+      ]
+    },
+    {
+      "name": "frames_SquallRise",
+      "selected": true,
+      "source": "Generated/frames_SquallRise.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. Two slender upward grey wind spirals with white electrical cuts, an elegant rising sword uppercut trail. Root at the SAME bottom-centre point in every cell, rise and unfurl upward, then fade at upper tips. Open central gap for a captured pawn; no creature, person, ground object or actual sword. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings. This is a compositing sprite atlas, NOT a lit scene. ABSOLUTELY NO ambient grey veil, bloom, halo glow, gradient wash, fog blanket or cast shadows. Every empty space BETWEEN ribbons and in holes must be alpha ZERO. Only solid matte cloud/ribbon shapes, white lines and their antialiased edge pixels may have opacity. Ignore all ambient glow in the palette reference.",
+      "referenceImages": [
+        "Generated/icon_HeavenRendingSquall.png"
+      ]
+    },
+    {
+      "name": "frames_StormMotes",
+      "selected": true,
+      "source": "Generated/frames_StormMotes.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. A small scatter of six tiny white electrical glints and four tiny charcoal-grey wind curls. Eight states drift upward slightly and fade, very sparse and subtle, empty centre for a pawn. Same centred registration, each frame visibly nonempty but at most ten small particles. No large clouds, rings, haze or disks. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings. This is a compositing sprite atlas, NOT a lit scene. ABSOLUTELY NO ambient grey veil, bloom, halo glow, gradient wash, fog blanket or cast shadows. Every empty space BETWEEN ribbons and in holes must be alpha ZERO. Only solid matte cloud/ribbon shapes, white lines and their antialiased edge pixels may have opacity. Ignore all ambient glow in the palette reference.",
+      "referenceImages": [
+        "Generated/icon_StormFlow.png"
+      ]
+    },
+    {
+      "name": "frames_StormveilCounter",
+      "selected": true,
+      "source": "Generated/frames_StormveilCounter.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. One diagonal rising counter-slash, travelling lower-left toward upper-right, white cutting ribbon wrapped in a narrow dark-grey cloud crescent. Eight timed states: wind-up trace, growing edge, full sharp slash, secondary wisps, fading sparks. Canonical axis and centre fixed; draw no katana or pawn. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings.",
+      "referenceImages": [
+        "Generated/icon_StormveilReversal.png"
+      ]
+    },
+    {
+      "name": "frames_StormveilParry",
+      "selected": true,
+      "source": "Generated/frames_StormveilParry.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. An open half-circle grey wind barrier facing RIGHT: form a narrow grey cloud arc, grow a crisp white deflection flash at the right contact point in frames3-4, let two cloud ribbons peel away and tiny sparks fade. No weapon, shield object, body or silhouette; only the registered parry VFX. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings.",
+      "referenceImages": [
+        "Generated/icon_StormveilReversal.png"
+      ]
+    },
+    {
+      "name": "frames_StormwheelWaltz",
+      "selected": false,
+      "source": "Generated/Drafts/frames_StormwheelWaltz.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. A flat slightly elliptical circular cloud-and-sword-sweep ring viewed from above. Three curved grey wind blades rimmed WHITE rotate clockwise across EIGHT different angular phases while cloud curls change. Transparent open centre, thin separated cloud arcs, first/last states taper. Real sequential spinning frames, not eight identical icons. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings.",
+      "referenceImages": [
+        "Generated/icon_StormwheelWaltz.png"
+      ]
+    },
+    {
+      "name": "frames_StormwheelWaltz_clean",
+      "selected": true,
+      "source": "Generated/frames_StormwheelWaltz_clean.png",
+      "prompt": "Use case: background-extraction. Image1 is the EDIT TARGET: a 8-frame animation atlas (4 columns by TWO rows). Preserve every sprite's exact frame location, direction, shape, timing, common scale and arrangement. REMOVE ALL grey/white ambient glow, haze, fog films, gradient wash and background from every cell, INCLUDING INSIDE ALL EMPTY HOLES and between separate ribbons. KEEP ONLY the crisp matte dark-grey cloud shapes, silver-grey blade ribbons and thin white electrical lines. True RGBA TRANSPARENCY: all empty areas must be alpha ZERO. Clean antialiased edges, no bloom, no light spreading into empty space. Do not replace the background with black, white, grey or a checkerboard. Do not draw any new background or shadows. Preserve eight distinct sequential frames and their registration. For StormwheelWaltz, the central body/head space must be completely empty transparent so it cannot conceal a pawn. No text, labels, grid lines, characters or scenery.",
+      "referenceImages": [
+        "Generated/Drafts/frames_StormwheelWaltz.png"
+      ]
+    },
+    {
+      "name": "frames_TranscendCharge",
+      "selected": true,
+      "source": "Generated/frames_TranscendCharge.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. An infernal-free STORM CORONATION seal: three elegant broken dark-grey wind rings spiral around an EMPTY centre, small white electrical spokes briefly bridge the rings, four cloud-scroll accents rotate. Eight equal-size cyclic charge phases to be pulsed/scaled in code during transcendence. Flat oblique ground perspective, no physical crown/pawn/landscape, no solid disk. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings. This is a compositing sprite atlas, NOT a lit scene. ABSOLUTELY NO ambient grey veil, bloom, halo glow, gradient wash, fog blanket or cast shadows. Every empty space BETWEEN ribbons and in holes must be alpha ZERO. Only solid matte cloud/ribbon shapes, white lines and their antialiased edge pixels may have opacity. Ignore all ambient glow in the palette reference.",
+      "referenceImages": [
+        "Generated/icon_TranscendTempest.png"
+      ]
+    },
+    {
+      "name": "frames_TravelArrival",
+      "selected": true,
+      "source": "Generated/frames_TravelArrival.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. World-travel arrival: a narrow upright grey storm funnel descends into a thin white wind landing ring at fixed bottom-centre y82%, opens at its centre, then collapses outward into soft grey wisps and sparse white sparks. Eight distinct states, same root and scale as departure, no opaque filled ground or person. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings. This is a compositing sprite atlas, NOT a lit scene. ABSOLUTELY NO ambient grey veil, bloom, halo glow, gradient wash, fog blanket or cast shadows. Every empty space BETWEEN ribbons and in holes must be alpha ZERO. Only solid matte cloud/ribbon shapes, white lines and their antialiased edge pixels may have opacity. Ignore all ambient glow in the palette reference.",
+      "referenceImages": [
+        "Generated/icon_TempestTravel.png"
+      ]
+    },
+    {
+      "name": "frames_TravelDeparture",
+      "selected": true,
+      "source": "Generated/frames_TravelDeparture.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. World-travel departure: a narrow upright spiral of grey cloud lifts from a thin elliptical ring at fixed bottom-centre y82%, white electricity coils upward as the centre opens and empties. Eight registered phases from seal to rising cloud column to trailing fragments. Keep the lower anchor identical in all cells. Transparent interior reveals the traveller; draw no person. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings. This is a compositing sprite atlas, NOT a lit scene. ABSOLUTELY NO ambient grey veil, bloom, halo glow, gradient wash, fog blanket or cast shadows. Every empty space BETWEEN ribbons and in holes must be alpha ZERO. Only solid matte cloud/ribbon shapes, white lines and their antialiased edge pixels may have opacity. Ignore all ambient glow in the palette reference.",
+      "referenceImages": [
+        "Generated/icon_TempestTravel.png"
+      ]
+    },
+    {
+      "name": "frames_TravelRing",
+      "selected": true,
+      "source": "Generated/frames_TravelRing.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. A restrained flat elliptical arrival ring of grey cloud scrolls and narrow WHITE wind highlights. Eight phases expand smoothly outward from a small ring to a wider broken thin ring, then fade to a few wisps. Transparent empty centre, SAME centred pivot/cell scale throughout, no upright beam or ground texture. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings. This is a compositing sprite atlas, NOT a lit scene. ABSOLUTELY NO ambient grey veil, bloom, halo glow, gradient wash, fog blanket or cast shadows. Every empty space BETWEEN ribbons and in holes must be alpha ZERO. Only solid matte cloud/ribbon shapes, white lines and their antialiased edge pixels may have opacity. Ignore all ambient glow in the palette reference.",
+      "referenceImages": [
+        "Generated/icon_TempestTravel.png"
+      ]
+    },
+    {
+      "name": "frames_WhitewakePursuit",
+      "selected": true,
+      "source": "Generated/frames_WhitewakePursuit.png",
+      "prompt": "Use case: stylized-concept. A production animated game-VFX SPRITE ATLAS for RimWorld Tempest Incarnate. Real RGBA TRANSPARENT background. Palette/style reference image only; do NOT repeat the reference icon in each frame. EXACTLY 8 consecutive animation frames arranged FOUR equal columns by TWO equal rows, row-major reading order. Landscape sprite sheet, square occupied artwork fitting each cell, no text or grid lines. Each frame has the SAME camera, centre/anchor and world scale; maintain 15 percent transparent margins INSIDE EACH CELL, no crossing cell borders. A narrow horizontal left-to-RIGHT speed wake. Pointed white leading tip on RIGHT, parallel white speed strokes along the centreline and slender dark-grey curling cloud tails on LEFT. Grow, peak, thin and fade through eight states; keep the centreline fixed and avoid a bulky cloud ball. Flat cel-shaded hand-painted crisp game effects, sculpted dark-grey clouds (#34363c, #555861), silver-grey wind ribbons and narrow WHITE electricity only. Strong clean shapes, minimal bloom. Every cell contains a visible distinct frame. Preserve true transparency between and outside shapes. No black/white/grey background rectangle, checkerboard pattern, colored light, floor shadow, backdrop, smoke haze blanket, text, labels, numbers, characters or buildings.",
+      "referenceImages": [
+        "Generated/icon_WhitewakePursuit.png"
+      ]
+    },
+    {
+      "name": "icon_CloudrendCrescent",
+      "selected": true,
+      "source": "Generated/icon_CloudrendCrescent.png",
+      "prompt": "Use case: stylized-concept. Single transparent UI ability icon for RimWorld Tempest Incarnate: One broad scything dark-grey cloud CRESCENT, its leading convex edge to the RIGHT sharply edged in white electricity, narrow wind tails curling LEFT. No actual sword. Bold clean hand-painted 2D game icon, thick charcoal outline and flat cel shading, strong simple silhouette that reads at 64 pixels. Dark grey clouds, slate pressure ribbons, SILVER and WHITE electricity ONLY. Centre the full glyph with 15 percent transparent safety margin. Real RGBA transparency, no background disk, no tile/frame/border, no sky, fog rectangle, text, labels, letters, numbers, pawn, hands, armor or scenery. Avoid colored light, gold, yellow, blue, green or red. Keep white accents crisp and limited, do not wash out the dark cloud shapes.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_CloudStep",
+      "selected": true,
+      "source": "Generated/icon_CloudStep.png",
+      "prompt": "Use case: stylized-concept. Single transparent UI ability icon for RimWorld Tempest Incarnate: One compact grey cloud separating left and right around a sharp narrow white blink flash; a map blink symbol, readable negative space. Bold clean hand-painted 2D game icon, thick charcoal outline and flat cel shading, strong simple silhouette that reads at 64 pixels. Dark grey clouds, slate pressure ribbons, SILVER and WHITE electricity ONLY. Centre the full glyph with 15 percent transparent safety margin. Real RGBA transparency, no background disk, no tile/frame/border, no sky, fog rectangle, text, labels, letters, numbers, pawn, hands, armor or scenery. Avoid colored light, gold, yellow, blue, green or red. Keep white accents crisp and limited, do not wash out the dark cloud shapes.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_CrownOfTheTempest",
+      "selected": true,
+      "source": "Generated/icon_CrownOfTheTempest.png",
+      "prompt": "Use case: stylized-concept. Single transparent UI ability icon for RimWorld Tempest Incarnate: A regal hollow storm crown hovering above a massive compact dark-grey cloud funnel with a single strong white electrical spine and expanding pressure-ring base. Bold clean hand-painted 2D game icon, thick charcoal outline and flat cel shading, strong simple silhouette that reads at 64 pixels. Dark grey clouds, slate pressure ribbons, SILVER and WHITE electricity ONLY. Centre the full glyph with 15 percent transparent safety margin. Real RGBA transparency, no background disk, no tile/frame/border, no sky, fog rectangle, text, labels, letters, numbers, pawn, hands, armor or scenery. Avoid colored light, gold, yellow, blue, green or red. Keep white accents crisp and limited, do not wash out the dark cloud shapes.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_HeavenRendingSquall",
+      "selected": true,
+      "source": "Generated/icon_HeavenRendingSquall.png",
+      "prompt": "Use case: stylized-concept. Single transparent UI ability icon for RimWorld Tempest Incarnate: Three ascending-then-descending pale wind sword cuts crossing a coiling grey updraft, sharp white electrical highlights; a readable rising/finishing combo symbol. Bold clean hand-painted 2D game icon, thick charcoal outline and flat cel shading, strong simple silhouette that reads at 64 pixels. Dark grey clouds, slate pressure ribbons, SILVER and WHITE electricity ONLY. Centre the full glyph with 15 percent transparent safety margin. Real RGBA transparency, no background disk, no tile/frame/border, no sky, fog rectangle, text, labels, letters, numbers, pawn, hands, armor or scenery. Avoid colored light, gold, yellow, blue, green or red. Keep white accents crisp and limited, do not wash out the dark cloud shapes.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_SovereignMaelstrom",
+      "selected": true,
+      "source": "Generated/icon_SovereignMaelstrom.png",
+      "prompt": "Use case: stylized-concept. Single transparent UI ability icon for RimWorld Tempest Incarnate: A dark-grey layered CYCLONE FUNNEL over a circular wind ring, three narrow white electric arcs winding round the cloud funnel. Bold clean hand-painted 2D game icon, thick charcoal outline and flat cel shading, strong simple silhouette that reads at 64 pixels. Dark grey clouds, slate pressure ribbons, SILVER and WHITE electricity ONLY. Centre the full glyph with 15 percent transparent safety margin. Real RGBA transparency, no background disk, no tile/frame/border, no sky, fog rectangle, text, labels, letters, numbers, pawn, hands, armor or scenery. Avoid colored light, gold, yellow, blue, green or red. Keep white accents crisp and limited, do not wash out the dark cloud shapes.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_StormFlow",
+      "selected": true,
+      "source": "Generated/icon_StormFlow.png",
+      "prompt": "Use case: stylized-concept. Single transparent UI ability icon for RimWorld Tempest Incarnate: Three connected grey cloud curls flowing into a small silver storm crown, three separate white energy accents; restrained passive Flow emblem. Bold clean hand-painted 2D game icon, thick charcoal outline and flat cel shading, strong simple silhouette that reads at 64 pixels. Dark grey clouds, slate pressure ribbons, SILVER and WHITE electricity ONLY. Centre the full glyph with 15 percent transparent safety margin. Real RGBA transparency, no background disk, no tile/frame/border, no sky, fog rectangle, text, labels, letters, numbers, pawn, hands, armor or scenery. Avoid colored light, gold, yellow, blue, green or red. Keep white accents crisp and limited, do not wash out the dark cloud shapes.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_StormveilReversal",
+      "selected": true,
+      "source": "Generated/icon_StormveilReversal.png",
+      "prompt": "Use case: stylized-concept. Single transparent UI ability icon for RimWorld Tempest Incarnate: A compact dark-grey cloud mirage behind a single pale katana deflecting a white curved incoming slash, one short countercut spark; symbol of evasive parry. Bold clean hand-painted 2D game icon, thick charcoal outline and flat cel shading, strong simple silhouette that reads at 64 pixels. Dark grey clouds, slate pressure ribbons, SILVER and WHITE electricity ONLY. Centre the full glyph with 15 percent transparent safety margin. Real RGBA transparency, no background disk, no tile/frame/border, no sky, fog rectangle, text, labels, letters, numbers, pawn, hands, armor or scenery. Avoid colored light, gold, yellow, blue, green or red. Keep white accents crisp and limited, do not wash out the dark cloud shapes.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_StormwheelWaltz",
+      "selected": true,
+      "source": "Generated/icon_StormwheelWaltz.png",
+      "prompt": "Use case: stylized-concept. Single transparent UI ability icon for RimWorld Tempest Incarnate: A spinning circular grey cloud wheel of three overlapping curved sword slashes, crisp white electricity on the spinning outer edge, open transparent centre. Bold clean hand-painted 2D game icon, thick charcoal outline and flat cel shading, strong simple silhouette that reads at 64 pixels. Dark grey clouds, slate pressure ribbons, SILVER and WHITE electricity ONLY. Centre the full glyph with 15 percent transparent safety margin. Real RGBA transparency, no background disk, no tile/frame/border, no sky, fog rectangle, text, labels, letters, numbers, pawn, hands, armor or scenery. Avoid colored light, gold, yellow, blue, green or red. Keep white accents crisp and limited, do not wash out the dark cloud shapes.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_TempestTravel",
+      "selected": true,
+      "source": "Generated/icon_TempestTravel.png",
+      "prompt": "Use case: stylized-concept. Single transparent UI ability icon for RimWorld Tempest Incarnate: A small storm-grey globe encircled by one white wind orbit, cloud portal spiral and one downward white electrical stroke; world travel symbol. Bold clean hand-painted 2D game icon, thick charcoal outline and flat cel shading, strong simple silhouette that reads at 64 pixels. Dark grey clouds, slate pressure ribbons, SILVER and WHITE electricity ONLY. Centre the full glyph with 15 percent transparent safety margin. Real RGBA transparency, no background disk, no tile/frame/border, no sky, fog rectangle, text, labels, letters, numbers, pawn, hands, armor or scenery. Avoid colored light, gold, yellow, blue, green or red. Keep white accents crisp and limited, do not wash out the dark cloud shapes.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_TranscendTempest",
+      "selected": true,
+      "source": "Generated/icon_TranscendTempest.png",
+      "prompt": "Use case: stylized-concept. Single transparent UI ability icon for RimWorld Tempest Incarnate: A silver storm crown rising from three ascending charcoal cloud rings, fine white electrical branches connecting rings, symbol of wind transcendence. Bold clean hand-painted 2D game icon, thick charcoal outline and flat cel shading, strong simple silhouette that reads at 64 pixels. Dark grey clouds, slate pressure ribbons, SILVER and WHITE electricity ONLY. Centre the full glyph with 15 percent transparent safety margin. Real RGBA transparency, no background disk, no tile/frame/border, no sky, fog rectangle, text, labels, letters, numbers, pawn, hands, armor or scenery. Avoid colored light, gold, yellow, blue, green or red. Keep white accents crisp and limited, do not wash out the dark cloud shapes.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_WhitewakePursuit",
+      "selected": true,
+      "source": "Generated/icon_WhitewakePursuit.png",
+      "prompt": "Use case: stylized-concept. Single transparent UI ability icon for RimWorld Tempest Incarnate: A sharp forward dash, three slender white parallel speed streaks crossing a narrow dark-grey cloud wake, clear pointed leading end to the RIGHT. Bold clean hand-painted 2D game icon, thick charcoal outline and flat cel shading, strong simple silhouette that reads at 64 pixels. Dark grey clouds, slate pressure ribbons, SILVER and WHITE electricity ONLY. Centre the full glyph with 15 percent transparent safety margin. Real RGBA transparency, no background disk, no tile/frame/border, no sky, fog rectangle, text, labels, letters, numbers, pawn, hands, armor or scenery. Avoid colored light, gold, yellow, blue, green or red. Keep white accents crisp and limited, do not wash out the dark cloud shapes.",
+      "referenceImages": []
+    },
+    {
+      "name": "katana",
+      "selected": true,
+      "source": "Generated/katana.png",
+      "prompt": "Use case: stylized-concept. Production RimWorld weapon texture: SKYREND, the Tempest Incarnate katana. Reference is ONLY the exact upright grip/blade construction, slim katana proportions, physical hand anchor and RIGHT-curving cutting edge; replace its flame colors/design. Single complete katana, tip UP, wrapped charcoal/dark-grey handle at bottom, silver cloud-shaped compact guard, modest grey-silver pommel, pale ivory/silver single-edged blade with a few thin crisp WHITE electrical cracks and slate inner channel. Keep blade tip curving RIGHT relative to straight grip axis exactly like reference, NO outward lightning outside the blade, no fog or glow. Blade white highlights must remain visible on transparent dark/light gameplay backgrounds via a clean charcoal outline. Flat hand-painted RimWorld item graphic, strong readable black outline, no photorealism or fine noise. One isolated sword, handle axis centered, no scabbard, hands, body, text, labels, badges, floor shadow or secondary sword. Entire tip/pommel visible with 8 percent transparent margin. Genuine transparent background.",
+      "referenceImages": [
+        "References/Grip-Orientation.png"
+      ]
+    },
+    {
+      "name": "suit_east",
+      "selected": true,
+      "source": "Generated/suit_east.png",
+      "prompt": "Use case: stylized-concept. Production RimWorld TEMPEST INCARNATE sprite. Reference1 is the approved new storm suit, used for EXACT design/palette; reference2 is ONLY the native garment shape/fit for this direction. Grey/slate/charcoal cloud motifs, silver cloud clasps, fine WHITE lightning seams. Matte cloth, bold dark outlines, flat cel shading readable at pawn scale. Genuine RGBA transparent background, centered fully visible with 15 percent transparent margin. No text, labels, borders, floor, shadow, helmet, head, neck column, limbs, sleeves, hands, boots or sword. Full opaque torso and hip lining, flat chest, very low native collar, tucked shoulders. EXACT EAST SIDE PROFILE, facing RIGHT, NOT three-quarter. Tailored royal jacket and compact close-fitting charcoal storm cape with grey lining/silver cloud hem. Front lapel and tie visible only as narrow details on the RIGHT edge; cape covers the LEFT/back and upper shoulder fully. One shoulder and narrow side-plane, native squat RimWorld body silhouette like reference2. Upper back entirely opaque, no exposed shoulder patch. Low side oval collar sits at the correct native head anchor. Cape hangs close to body, not ballooning backward, no bulky thick silhouette or drawn arms.",
+      "referenceImages": [
+        "Generated/suit_south.png",
+        "References/Fit_east.png"
+      ]
+    },
+    {
+      "name": "suit_north",
+      "selected": true,
+      "source": "Generated/suit_north.png",
+      "prompt": "Use case: stylized-concept. Production RimWorld TEMPEST INCARNATE sprite. Reference1 is the approved new storm suit, used for EXACT design/palette; reference2 is ONLY the native garment shape/fit for this direction. Grey/slate/charcoal cloud motifs, silver cloud clasps, fine WHITE lightning seams. Matte cloth, bold dark outlines, flat cel shading readable at pawn scale. Genuine RGBA transparent background, centered fully visible with 15 percent transparent margin. No text, labels, borders, floor, shadow, helmet, head, neck column, limbs, sleeves, hands, boots or sword. Full opaque torso and hip lining, flat chest, very low native collar, tucked shoulders. EXACT NORTH REAR VIEW. Same storm-grey royal outfit with broad but tucked shoulders, closed charcoal upper back and a close-hanging split storm cape. Broad silver-grey yoke, two subtle white lightning embroidered seams, dark-grey cloud-scroll patterns at the bottom hem. No front tie, buttons or lapels visible from back. Rear neckline very low and centered; fully covered back through hem. Follow reference2's native squat full back footprint. No hole/split exposing skin at center hem: opaque lining underneath.",
+      "referenceImages": [
+        "Generated/suit_south.png",
+        "References/Fit_north.png"
+      ]
+    },
+    {
+      "name": "suit_south",
+      "selected": true,
+      "source": "Generated/suit_south.png",
+      "prompt": "Use case: stylized-concept. Create a new RimWorld apparel texture for TEMPEST INCARNATE, SOUTH/front view. Reference image is ONLY the exact squat native RimWorld garment footprint, low centered neck opening and compact suit/cape construction; replace its flame design/colors. One isolated tailored storm-grey royal suit, darker charcoal waistcoat, pale silver tie, silver cloud-shaped shoulder clasps and fine WHITE lightning seams. Compact close-hanging split storm cape with dark grey outer cloth and slightly lighter slate lining. Matte dark grey cloud motifs along the cape hem, restrained white embroidery. Grey/silver/white palette ONLY: no red, orange, gold, emerald or blue. Broader royal shoulders but tucked inward, flat chest for male/Thin, very low oval neckline and fully opaque body/hip lining. Native RimWorld hand-painted flat 2D equipment style, bold black outline, simple readable folds, clean highlights at 64px. No head, neck column, arms, sleeves, hands, legs, feet, mannequin, helmet, sword, wings, weather glow or scenery. Collar must occupy the same position as reference; preserve its short wide native clothing shape and balanced center. Genuine transparent RGBA background. Isolated full garment with generous transparent margins, no floor shadow, text, border, labels or background.",
+      "referenceImages": [
+        "References/Fit_south.png"
+      ]
+    }
+  ]
+}

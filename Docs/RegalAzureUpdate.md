@@ -8,7 +8,7 @@ Azure's halo appears only while **transformed and drafted**. It also hides durin
 
 Evolution now changes the existing Flame condition into the standalone **Azure Flame Ascendant** condition. The saved hediff identity, age, severity, ability cooldowns, automation/non-lethal settings and transformation component are retained. Existing saves containing both the old Flame and Azure conditions are consolidated when loaded. The base Flame hediff no longer remains alongside Azure. Azure retains its Flame lineage for teaching and passives.
 
-The standalone Azure condition carries the complete bonuses directly: movement factor **5x**, incoming-damage factor **0.1** before armor, +50 total ascension mood, and the additional ward against ordinary Ascendants. Actual movement and damage depend on gear, capacities, terrain and other modifiers.
+The standalone Azure condition carries the complete bonuses directly: movement factor **5x**, incoming-damage factor **0.1** before armor, +50 total ascension mood, and the additional ward against ordinary Adepts. Actual movement and damage depend on gear, capacities, terrain and other modifiers.
 
 **Controlled Pyre**, Azure's circular flame attack, now reaches **six cells from the center**, with a **twelve-cell-wide** effect. Its targeting preview, pulse range and visual diameter agree. The three pulses still share one damage budget. Ordinary Flame's Inferno Waltz remains at its existing four-cell radius.
 

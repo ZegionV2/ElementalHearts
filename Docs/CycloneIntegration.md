@@ -1,6 +1,6 @@
 # Cyclone Ascendant — playable Wind evolution
 
-Normal Wind Ascendants can now choose **Evolve: Cyclone** after **150 unique hostile non-animal mastery kills and ten Ascendant days**. Existing Wind pawns start tracking these kills with this update; their existing Ascendant age counts. The 4.5-second emerald wind coronation can be interrupted without losing readiness. **DEV: Evolution-Ready follows God Mode**, the skull toggle.
+Normal Wind Adepts can now choose **Evolve: Cyclone** after **150 unique hostile non-animal mastery kills and ten Adept days**. Existing Wind pawns start tracking these kills with this update; their existing Ascendant age counts. The 4.5-second emerald wind coronation can be interrupted without losing readiness. **DEV: Evolution-Ready follows God Mode**, the skull toggle.
 
 Evolution upgrades the same saved condition, retaining the four Wind cooldown deadlines, Flow, automation/non-lethal choices, recovery timers, original clothing and transformation state. An already transformed Wind pawn receives the new outfit and sword without creating another ascension condition. No resource or ingredient cost.
 
@@ -18,7 +18,7 @@ Sovereign's caster remains stationary. Replacement orders, forced movement, undr
 
 Both actual world cells and smooth draw positions follow the short release push. Walls, pawns and unsafe cells stop it without collision damage. The controller uses bounded local searches; it creates no tornado pawn, building or projectile, changes no terrain/roof/weather/temperature and deals no periodic hold damage. Each release impact is recorded before applying damage and survives saving/loading, so a loaded release cannot strike again.
 
-Cyclone receives the shared evolved benefits: **500% elemental movement, +50 ascension mood, 10× hauling/cargo bonus, 3× walking caravan-speed contribution**, disease resistance, stronger defense against normal Ascendants and Melee Animation knockout immunity. Other evolutions remain defense peers. Recovery is improved. Bestow grants **normal Wind ascension**, skipping discipleship, using the existing shared icon and a paired emerald investiture.
+Cyclone receives the shared evolved benefits: **500% elemental movement, +50 ascension mood, 10× hauling/cargo bonus, 3× walking caravan-speed contribution**, disease resistance, stronger defense against normal Adepts and Melee Animation knockout immunity. Other evolutions remain defense peers. Recovery is improved. Bestow grants **normal Wind ascension**, skipping discipleship, using the existing shared icon and a paired emerald investiture.
 
 The accepted helmetless white/emerald regalia and indestructible fitted sword are integrated into Transform/Revert and the optional native Melee Animation profile. Downing restores personal clothing; recovery can reuse the same summoned outfit and sword. The subtle six-frame halo appears only while transformed and drafted. Ordinary Wind keeps its existing armor, aura and four techniques.
 

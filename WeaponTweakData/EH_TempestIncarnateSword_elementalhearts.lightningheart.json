@@ -1,0 +1,17 @@
+{
+  "BladeStart": 0.22265625000000003,
+  "OffY": 0,
+  "OffX": 0.45117187500000006,
+  "ItemType": "ThingDef",
+  "HandsMode": 0,
+  "BladeEnd": 1.154296875,
+  "MeleeWeaponType": 6,
+  "ScaleX": 1.9,
+  "ScaleY": 1.5,
+  "ItemDefName": "EH_TempestIncarnateSword",
+  "FlipX": false,
+  "FlipY": true,
+  "Rotation": 90,
+  "TextureModID": "elementalhearts.lightningheart",
+  "ItemTypeNamespace": "Verse"
+}

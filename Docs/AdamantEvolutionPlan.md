@@ -6,9 +6,9 @@ Historical design proposal. Adamant is now playable; AdamantIntegration.md descr
 
 Earth becomes a royal living fortress: compressed basalt, adamantine facets, warm gold fault-light and decisive sword-driven seismic attacks. Keep the effects visibly rocky and warm rather than icy-blue, and keep the weight in sharp cracks, deep pressure and falling debris.
 
-Use the existing evolution milestones: 150 additional credited unique hostile non-animal kills and ten days as a normal Earth Ascendant. Existing normal Earth age counts; begin any newly introduced mastery tracking with a clear migration rule. A free Evolve: Adamant button appears when ready. DEV: Evolution-Ready follows God Mode, including cached gizmos, and only sets readiness. A roughly 4.5-second interruptible coronation compresses rising stone fragments into a faceted halo, then manifests the evolved regalia. Cancelling retains readiness and grants no partial upgrade.
+Use the existing evolution milestones: 150 additional credited unique hostile non-animal kills and ten days as a normal Earth Adept. Existing normal Earth age counts; begin any newly introduced mastery tracking with a clear migration rule. A free Evolve: Adamant button appears when ready. DEV: Evolution-Ready follows God Mode, including cached gizmos, and only sets readiness. A roughly 4.5-second interruptible coronation compresses rising stone fragments into a faceted halo, then manifests the evolved regalia. Cancelling retains readiness and grants no partial upgrade.
 
-Upgrade the existing Earth condition in place to Adamant. The normal Earth Ascendant label must disappear; never retain two heart stat stacks. Preserve pawn identity, injury/recovery timers, personal equipment, drafted/transformed state, automation/non-lethal preference, four existing cooldown deadlines, Resolve and combat state. Unlock only the fifth command. No heart item or material payment.
+Upgrade the existing Earth condition in place to Adamant. The normal Earth Adept label must disappear; never retain two heart stat stacks. Preserve pawn identity, injury/recovery timers, personal equipment, drafted/transformed state, automation/non-lethal preference, four existing cooldown deadlines, Resolve and combat state. Unlock only the fifth command. No heart item or material payment.
 
 ## Outfit and weapon
 
@@ -34,7 +34,7 @@ Bulwark can also be pressed manually when its crowd condition is met. It does no
 
 ## Power and automatic flow
 
-Use the shared evolved stat tier: 500% elemental movement, +50 mood, stronger defense than normal Ascendants, improved recovery, disease resistance, 10x carrying and a 3x individual caravan contribution. Retain evolved Melee Animation knockout protection. Adamant should be an especially durable peer of the other evolutions; Celestial keeps its superior tier.
+Use the shared evolved stat tier: 500% elemental movement, +50 mood, stronger defense than normal Adepts, improved recovery, disease resistance, 10x carrying and a 3x individual caravan contribution. Retain evolved Melee Animation knockout protection. Adamant should be an especially durable peer of the other evolutions; Celestial keeps its superior tier.
 
 Adamant Resolve keeps the existing three-stack meter. Proposed upgrade: a twelve-second expiry, 7% remaining-damage reduction per stack and +15% Worldspine damage per consumed stack. Keep hit-source filtering, the existing gain throttle and one gain per successful Cleave cast. Do not add a second independent passive-defense condition.
 

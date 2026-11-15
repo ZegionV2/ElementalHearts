@@ -184,7 +184,8 @@ namespace ElementalHearts
 
                     FlameCombat.Strike(c.source, c.target, FlameCombat.Profile(c.source, 10f), 1f, comp.Props.strikeThermal);
 
-                    AzureVfx.Emit(c.source,map, 0, c.source.DrawPos, c.target.DrawPos, 12, 1.4f);
+                    if(HellFlameIncarnate.Active(c.source))HellVfx.Line(c.source,1,c.source.DrawPos,c.target.DrawPos,12,1.4f);
+                    else AzureVfx.Emit(c.source,map, 0, c.source.DrawPos, c.target.DrawPos, 12, 1.4f);
 
                 }
 

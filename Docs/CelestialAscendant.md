@@ -1,4 +1,6 @@
-# Celestial Ascendant
+﻿# Celestial Ascendant
+
+> **World travel updated:** this lineage now flies along a visible world-map route and chooses its unroofed landing cell on arrival. Launch outdoors. No fuel or cooldown. See [Living world flight](LivingFlight.md) for current controls and saved-flight rules.
 
 Celestial is a standalone fully evolved lineage of sun, solar energy and light. It has no disciple or normal Celestial form, no mastery grind and no Evolve command. Existing elemental disciples and evolutions remain available.
 

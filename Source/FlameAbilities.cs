@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 using System.Collections.Generic;
 
@@ -270,6 +270,7 @@ namespace ElementalHearts
                 icon=ElementalIcons.AutoCombat,action=CycleAutoMode,groupable=false
             };
 
+            if(HellFlameIncarnate.Active(Pawn)){foreach(var command in HediffComp_HellFlameIncarnate.On(Pawn).Commands())yield return command;yield break;}
             string[] names = AzureEvolution.Active(Pawn)?AzureEvolution.Names:new[]{ "Ember Cleave", "Cinder Step", "Inferno Waltz", "Phoenix Descent" };
 
             string[] desc = {
@@ -884,7 +885,7 @@ namespace ElementalHearts
 
             {
 
-                victim.TakeDamage(new DamageInfo(AzureEvolution.Active(caster)?DefDatabase<DamageDef>.GetNamed("EH_AzureFlameDamage"):FlameDefs.EH_Flame, profile.damage * thermal, 0.5f, -1f,
+                victim.TakeDamage(new DamageInfo(HellFlameIncarnate.Active(caster)?DefDatabase<DamageDef>.GetNamed("EH_HellFlameDamage"):AzureEvolution.Active(caster)?DefDatabase<DamageDef>.GetNamed("EH_AzureFlameDamage"):FlameDefs.EH_Flame, profile.damage * thermal, 0.5f, -1f,
 
                     caster, null, profile.weapon, DamageInfo.SourceCategory.ThingOrUnknown, victim));
 

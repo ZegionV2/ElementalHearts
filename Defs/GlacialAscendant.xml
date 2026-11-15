@@ -3,7 +3,7 @@
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_GlacialUniform</defName>
     <label>glacial royal regalia</label>
-    <description>Indestructible bound ivory Glacial royal regalia: short cloak, gold trim, pale cyan crystal inlays, fully closed shoulder/back lining and compact low neckline. Helmetless RimWorld silhouette with no drawn limbs.</description>
+    <description>Indestructible bound ivory Glacial royal regalia: short cloak, gold trim, pale cyan crystal inlays, fully closed shoulder/back lining and compact low neckline. Helmetless RimWorld silhouette with no drawn limbs. Protects the torso, shoulders, arms, hands, waist, legs and feet, including fingers and toes.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/GlacialRegalia/GlacialRegalia</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -34,7 +34,12 @@
       </drawData>
       <bodyPartGroups>
         <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
         <li>Waist</li>
+        <li>Legs</li>
+        <li>Feet</li>
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/GlacialRegalia/GlacialRegalia</wornGraphicPath>
       <layers>
@@ -121,7 +126,7 @@
 
 Damage: this lineage multiplies the Melee damage stat by 2.2 (+120%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 1.76 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.
 
-Teamwork: elemental techniques can synchronize with nearby allied transformed Ascendants for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
+Teamwork: elemental techniques can synchronize with nearby allied transformed elemental wielders for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_WaterDefense" />
       <li Class="ElementalHearts.HediffCompProperties_LightningRecovery">
@@ -131,6 +136,7 @@ Teamwork: elemental techniques can synchronize with nearby allied transformed As
       <li Class="ElementalHearts.HediffCompProperties_WaterAbilities" />
       <li Class="ElementalHearts.HediffCompProperties_GlacialMastery" />
       <li Class="ElementalHearts.HediffCompProperties_GlacialExplosion" />
+      <li Class="ElementalHearts.HediffCompProperties_AuroraMastery" />
     </comps>
     <stages>
       <li>
@@ -199,7 +205,6 @@ Teamwork: elemental techniques can synchronize with nearby allied transformed As
           <MentalBreakThreshold>-0.25</MentalBreakThreshold>
           <MeleeHitChance>4</MeleeHitChance>
           <MeleeDodgeChance>12</MeleeDodgeChance>
-
           <ComfyTemperatureMin>-180</ComfyTemperatureMin>
         </statOffsets>
       </li>

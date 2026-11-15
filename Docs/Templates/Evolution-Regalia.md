@@ -1,6 +1,6 @@
 # Future evolution outfit template
 
-Use Evolution-Regalia-Master.png as the common visual base for all future elemental evolutions. Keep the compact low-neck torso, tucked shoulders, ivory/white short cloak, gold trim and royal fastenings. Change the elemental motifs, streaks and gems to each evolution's color; generate matching front/side/back views without limbs, long collars or helmets. Preserve the RimWorld body alignment of the existing Azure texture variants. Ordinary ascendants retain their current uniforms. Only Azure Flame is active now.
+Use Evolution-Regalia-Master.png as the common visual base for all future elemental evolutions. Keep the compact low-neck torso, tucked shoulders, ivory/white short cloak, gold trim and royal fastenings. Change the elemental motifs, streaks and gems to each evolution's color; generate matching front/side/back views without limbs, long collars or helmets. Preserve the RimWorld body alignment of the existing Azure texture variants. Ordinary adepts retain their current uniforms. Only Azure Flame is active now.
 
 Front alignment note: current Azure regalia uses native apparel drawData/dataSouth offset (+0.0645, 0, 0), with scaleOffsetByBodySize=true, to align the neckline with the head. Carry this correction when reusing the identical template layout; inspect new art before choosing an offset. Other facings are not offset.
 

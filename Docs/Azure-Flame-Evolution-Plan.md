@@ -4,9 +4,9 @@ Status: implemented in the Azure Flame update. This file preserves the design pr
 
 ## Progression
 
-Disciple → Flame Ascendant: 50 credited kills earned as a disciple plus five in-game days of discipleship. This is implemented.
+Disciple → Flame Adept: 50 credited kills earned as a disciple plus five in-game days of discipleship. This is implemented.
 
-Flame Ascendant → Azure Flame Ascendant: proposed requirement of 150 additional hostile-pawn kills earned after Flame ascension, plus ten in-game days as a Flame Ascendant. Earlier disciple kills would not count twice. Animal hunting, allies, executions of friendly prisoners and repeated kills of the same resurrected target would not advance this evolution. These stricter evolution rules are proposals, distinct from the implemented vanilla-attributed disciple kill counter.
+Flame Adept → Azure Flame Ascendant: proposed requirement of 150 additional hostile-pawn kills earned after Flame ascension, plus ten in-game days as a Flame Adept. Earlier disciple kills would not count twice. Animal hunting, allies, executions of friendly prisoners and repeated kills of the same resurrected target would not advance this evolution. These stricter evolution rules are proposals, distinct from the implemented vanilla-attributed disciple kill counter.
 
 Once qualified, unlock an Evolve to Azure Flame command. A short, interruptible three-second meditation completes the evolution; interruption spends nothing. The player chooses when to evolve. Show both requirements in the progress tooltip. Preserve the pawn, sword, gear condition, relationships, existing ability cooldowns and automation preference.
 

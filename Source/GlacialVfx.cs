@@ -33,7 +33,7 @@ namespace ElementalHearts {
    }
 
    foreach(var p in tracked){if(!p.Spawned||p.Map!=map||p.Dead||!visible.Contains(p.Position)||p.Position.Fogged(map))continue;float life=Mathf.Clamp(Mathf.Sqrt(p.ageTracker.CurLifeStage.bodySizeFactor),.55f,1.25f);
-    if(GlacialFreeze.Active(p)){var at=p.DrawPos;at.z+=.2f*life;Draw(GlacialVfx.Frame(7,(now/6+p.thingIDNumber)%6),MeshPool.plane10,at,1.6f*life,2f*life,0,new Color(1,1,1,.38f));}
+    if(GlacialFreeze.Active(p)){var at=p.DrawPos;at.z+=.2f*life;Draw((GlacialFreeze.On(p).aurora?AuroraVfx.Frame(10,(now/6+p.thingIDNumber)%6):GlacialVfx.Frame(7,(now/6+p.thingIDNumber)%6)),MeshPool.plane10,at,1.6f*life,2f*life,0,new Color(1,1,1,.38f));}
     if(ElementalHeartsMod.Settings.showAura&&!p.Downed&&p.Awake()&&GlacialEvolution.Active(p)&&CourtHeralds.HaloDrafted(p)&&HediffComp_ElementalTransform.Active(p)&&!HediffComp_ElementalTransform.Transforming(p)){var at=p.DrawPos+p.Drawer.renderer.BaseHeadOffsetAt(p.Rotation);at.z+=(.43f+.02f*Mathf.Sin(now*.05f))*life;Draw(GlacialVfx.Frame(8,(now/6+p.thingIDNumber)%6),MeshPool.plane10,at,1.1f*life,1.1f*life,0,new Color(1,1,1,.75f));}
    }
    for(int i=0;i<echoes.Length;i++){var e=echoes[i];if(!e.active)continue;float t=(now-e.tick)/14f;if(t>=1){echoes[i]=new Echo();continue;}if(!visible.Contains(e.at.ToIntVec3()))continue;float alpha=(1-t)*(1-t);var at=e.at;at.z+=.18f*e.life;Draw(GlacialVfx.Silhouette,MeshPool.plane10,at,1.8f*e.life,1.8f*e.life,0,new Color(.2f,.8f,1,.25f*alpha));if(e.body!=null)Draw(e.body,MeshPool.plane10,e.at,e.west?-e.width:e.width,e.height,0,new Color(.4f,.9f,1,.4f*alpha));}

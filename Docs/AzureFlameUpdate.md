@@ -8,7 +8,7 @@ Latest power/teaching changes: see AzurePowerTeachingUpdate.md. Azure mood is +5
 
 ## Evolve
 
-Select a Flame Ascendant and use **Evolve: Azure Flame**. It unlocks after **150 additional hostile non-animal kills** and **ten in-game days as a Flame Ascendant**. Each target counts once, including after resurrection. Disciple kills are separate. Existing ascendant time counts; mastery kill tracking begins with this update because older versions did not record it.
+Select a Flame Adept and use **Evolve: Azure Flame**. It unlocks after **150 additional hostile non-animal kills** and **ten in-game days as a Flame Adept**. Each target counts once, including after resurrection. Disciple kills are separate. Existing ascendant time counts; mastery kill tracking begins with this update because older versions did not record it.
 
 The button starts a 4.5-second ritual with a progress bar and evolution effects. The head halo requires a completed evolution, transformation and drafting. Movement orders or incapacitation can interrupt it without spending a resource. Other Flame abilities and transformation cannot run during the meditation. DEV mode includes **DEV: Evolution-Ready** for testing; use the normal Evolve button afterward.
 
@@ -23,7 +23,7 @@ The four existing Flame ability slots switch to:
 - **Controlled Pyre** — a six-cell-radius contained pyre at the caster's position. Three pulses over three seconds share one damage budget. The zone stays where it was cast and does not ignite buildings or terrain. Pending pulses are saved.
 - **Azure Phoenix** — stronger focused finisher and small burst, with 40% longer cooldown and an interruptible telegraph. The warning animation uses only its pre-impact frames. Consumes at most three brands.
 
-The recent global 20% melee/elemental damage reduction still applies. Area hits, passives, chains and counters retain existing friendly-fire and non-lethal checks. The new pyre also uses those checks on every pulse. Ordinary Flame Ascendants and disciples retain their existing kit.
+The recent global 20% melee/elemental damage reduction still applies. Area hits, passives, chains and counters retain existing friendly-fire and non-lethal checks. The new pyre also uses those checks on every pulse. Ordinary Flame Adepts and disciples retain their existing kit.
 
 ## Halo and manifestation
 

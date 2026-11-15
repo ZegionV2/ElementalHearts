@@ -1,5 +1,7 @@
 # Earth audio update
 
+This describes the earlier Earth bank. The current [impact-audio update](LivingFlightCargoAudio.md) adds deeper Earth/Adamant layers, a distinct Bulwark cue and optional runtime DLC/Psycasts sources.
+
 Earth previously reused the same Scyther miss folder for all five cues. Its sound bank now layers actual Core stone hits, mining strikes, loose stone and rock collapse with eight original short gravel/pressure/rumble support clips.
 
 - Faultline Cleave: dry stone fracture with a short grit tail.

@@ -3,7 +3,7 @@
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_LunarUniform</defName>
     <label>lunar crescent armor</label>
-    <description>Broad crescent pauldrons, a flat moon-silver cuirass with mother-of-pearl inlay, and an embroidered indigo cloak. Bound to a Lunar Ascendant.</description>
+    <description>Broad crescent pauldrons, a flat moon-silver cuirass with mother-of-pearl inlay, and an embroidered indigo cloak. Bound to a Lunar Adept.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/LunarUniform/LunarUniform</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -65,7 +65,7 @@
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_LunarHelmet</defName>
     <label>lunar crescent mask</label>
-    <description>An indigo moon mask with a pearl crescent brow. Bound to a Lunar Ascendant.</description>
+    <description>An indigo moon mask with a pearl crescent brow. Bound to a Lunar Adept.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/LunarHelmet/LunarHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>

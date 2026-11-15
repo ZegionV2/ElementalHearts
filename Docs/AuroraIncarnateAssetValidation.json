@@ -1,0 +1,13 @@
+{
+  "runtimePNGs": 234,
+  "frames": 196,
+  "sequences": 25,
+  "bodyFacingChecks": 32,
+  "missingNativeBodyPixels": 0,
+  "nativeGripCentred": true,
+  "bladeCurveCorrect": true,
+  "allFramesDistinct": true,
+  "allOuterBordersClear": true,
+  "gameplayFilesUnchanged": true,
+  "liveGameIntegrationTested": false
+}

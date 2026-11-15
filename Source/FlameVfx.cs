@@ -147,6 +147,7 @@ namespace ElementalHearts
         public static void Afterimage(Pawn pawn, Vector3 position)
 
         {
+            if(HellFlameIncarnate.Active(pawn)){HellVfx.Echo(pawn,position);return;}
             if(AzureEvolution.Active(pawn)){AzureVfx.Ghost(pawn,position);return;}
 
             if (!ElementalHeartsMod.Settings.showAfterimages || ElementalHeartsMod.Settings.effectOpacity<=0f || !pawn.Spawned || pawn.Map != Find.CurrentMap || Find.CameraDriver == null ||

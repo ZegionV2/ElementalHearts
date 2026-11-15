@@ -1,6 +1,6 @@
 Current lineage/aura update: **WaterLineageUpdate.md**. The notes below document an earlier phase. Water teaching and disciples are now playable; Glacial evolution remains planned.
 
-# Water Ascendant — active techniques and Pressure
+# Water Adept — active techniques and Pressure
 
 The four Water techniques are now playable manually and through the existing shared Auto Combat control. The Water armor, enclosed helmet, bound Tidal Sword, recovery, normal stats and original Still Water/Returning Tide component are retained. Water teaching and Glacial evolution remain future work.
 
@@ -49,6 +49,6 @@ Compiled against the installed RimWorld 1.6 and Harmony assemblies. **All 29 aut
 
 Reference fixtures verify saved keys/IDs rather than loading complete Pawns. **Live combat, actual automated combo execution, GPU placement and full native save loading remain untested.** Fully restart RimWorld after installation.
 
-In game: draft a melee-armed Water Ascendant, enable On and issue a melee attack. Check the four buttons and single-target rotation; use two or more enemies to observe Dance priority. Confirm Pressure reaches three, expires and is consumed by Judgement. Test Off/manual and Non-lethal, walls, a newly occupied dash landing, player interruption and downing. Save/reload during a dash, Cleave and Judgement windup, then check cooldowns and no repeated impacts. Inspect effect positioning with your rendering mods and original transformation in all directions.
+In game: draft a melee-armed Water Adept, enable On and issue a melee attack. Check the four buttons and single-target rotation; use two or more enemies to observe Dance priority. Confirm Pressure reaches three, expires and is consumed by Judgement. Test Off/manual and Non-lethal, walls, a newly occupied dash landing, player interruption and downing. Save/reload during a dash, Cleave and Judgement windup, then check cooldowns and no repeated impacts. Inspect effect positioning with your rendering mods and original transformation in all directions.
 
 Runtime ZIP includes the full mod and compiled assembly; source/tests are also available separately. The install changes no existing artwork and removes no files. Previous changed files are backed up in Backup-before-Water-Abilities, with before/after hashes recorded in Install-Manifest.json.

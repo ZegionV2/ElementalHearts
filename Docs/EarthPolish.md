@@ -1,4 +1,4 @@
-# Earth Ascendant — combat and presentation polish
+# Earth Adept — combat and presentation polish
 
 This update builds on the normal Earth lineage. Adamant and head halos remain outside its scope.
 

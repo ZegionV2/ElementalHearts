@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_AuroraIncarnateUniform</defName>
+    <label>Aurora winter-prince regalia</label>
+    <description>Indestructible bound midnight suit and ivory split cloak with cyan crystal channels and aurora lining. Complete mechanical protection below the neck; fitted native body textures and west mirroring.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/AuroraIncarnateRegalia/AuroraIncarnateRegalia</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>3500</WorkToMake>
+      <Mass>1.2</Mass>
+      <ArmorRating_Sharp>1.25</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.1</ArmorRating_Blunt>
+      <Insulation_Cold>90</Insulation_Cold>
+      <Insulation_Heat>3</Insulation_Heat>
+      <EquipDelay>2</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
+        <li>Waist</li>
+        <li>Legs</li>
+        <li>Feet</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/AuroraIncarnateRegalia/AuroraIncarnateRegalia</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags Inherit="False">
+      </tags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    </apparel>
+    <generateCommonality>0</generateCommonality>
+    <equippedStatOffsets>
+      <MoveSpeed>0.15</MoveSpeed>
+    </equippedStatOffsets>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+    <recipeMaker IsNull="True" />
+  </ThingDef>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>EH_AuroraIncarnateSword</defName>
+    <label>Winterglass katana</label>
+    <description>An indestructible fitted Winterglass katana: black grip, silver fittings, white blade and pale cyan fractures. Native Melee Animation grip, blade and corrected edge profile.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/AuroraIncarnateSword</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+      <drawSize>(1.85,1.48)</drawSize>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <costStuffCount>100</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <WorkToMake>18000</WorkToMake>
+      <Mass>2</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <equippedAngleOffset>90</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>30</power>
+        <cooldownTime>2.2</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>30</power>
+        <cooldownTime>2.2</cooldownTime>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+    <recipeMaker IsNull="True" />
+  </ThingDef>
+  <HediffDef ParentName="EH_ElementalHeartHediffBase">
+    <defName>EH_AuroraIncarnate</defName>
+    <label>Aurora Incarnate</label>
+    <description>Water → Glacial → Aurora Incarnate. Seven sovereign winter forms combine Rimefall Crescent, Aurora Blitz, Frostcrown Waltz, Aurora Dominion, Aurora Cataclysm, Mirrorfrost Reversal and Throne of Endless Winter. Caster-owned Pressure empowers the same single shatter impact by up to 20%. Cataclysm answers two nearby enemies with safe knockback and a five-second freeze; sovereigns thaw much faster and cannot be chain-frozen. Still Water and Returning Tide remain. Moving 650%, Consciousness 200%, Manipulation 300%, Sight/Hearing 250%, +75 mood, ×3.2 melee stat, ×0.04 incoming damage and rapid recovery. Cold/hypothermia immunity, sovereign carrying/travel benefits and shock resilience. Fitted full below-neck regalia, Winterglass, halo and subtle aurora blade aura. Bestow grants normal Water. Shared Auto/Off/Non-lethal controls; Rime Step/Aurora Travel uses the saved group launch-site system. No terrain, roof, building or climate changes. Damage derives from the current melee profile; shared tuning is applied once.</description>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_WaterDefense" />
+      <li Class="ElementalHearts.HediffCompProperties_LightningRecovery">
+        <sealAfterTicks>60</sealAfterTicks>
+        <healPerSecond>4</healPerSecond>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_WaterAbilities" />
+      <li Class="ElementalHearts.HediffCompProperties_AuroraMastery" />
+      <li Class="ElementalHearts.HediffCompProperties_AuroraIncarnate" />
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>1</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>5.5</offset>
+            <setMax>6.5</setMax>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>1.5</offset>
+            <setMax>3</setMax>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>1.5</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>1.5</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>1</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>1</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>1</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>0.5</offset>
+          </li>
+        </capMods>
+        <painFactor>0</painFactor>
+        <totalBleedFactor>0.1</totalBleedFactor>
+        <naturalHealingFactor>10</naturalHealingFactor>
+        <hungerRateFactor>0.6</hungerRateFactor>
+        <restFallFactor>0.6</restFallFactor>
+        <statFactors>
+          <CarryingCapacity>15</CarryingCapacity>
+          <MoveSpeed>1.75</MoveSpeed>
+          <MeleeDamageFactor>3.2</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.55</MeleeCooldownFactor>
+          <WorkSpeedGlobal>2</WorkSpeedGlobal>
+          <IncomingDamageFactor>0.04</IncomingDamageFactor>
+          <ImmunityGainSpeed>2</ImmunityGainSpeed>
+          <JoyFallRateFactor>0.6</JoyFallRateFactor>
+        </statFactors>
+        <statOffsets>
+          <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+          <MeleeHitChance>4</MeleeHitChance>
+          <MeleeDodgeChance>12</MeleeDodgeChance>
+          <ComfyTemperatureMin>-250</ComfyTemperatureMin>
+          <ComfyTemperatureMax>50</ComfyTemperatureMax>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <JobDef>
+    <defName>EH_TranscendAurora</defName>
+    <driverClass>ElementalHearts.JobDriver_TranscendAurora</driverClass>
+    <reportString>commanding the sovereign aurora.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>EH_AuroraTechnique</defName>
+    <driverClass>ElementalHearts.JobDriver_AuroraTechnique</driverClass>
+    <reportString>commanding the sovereign aurora.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+  <ThoughtDef>
+    <defName>EH_AuroraResolve</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>EH_AuroraIncarnate</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>aurora incarnate</label>
+        <description>The northern lights answer my will. Winter has become part of me.</description>
+        <baseMoodEffect>75</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <JobDef>
+    <defName>EH_AuroraTravelDepart</defName>
+    <driverClass>ElementalHearts.JobDriver_CelestialDepart</driverClass>
+    <reportString>rising through frost and northern lights.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  <JobDef>
+    <defName>EH_AuroraTravelArrive</defName>
+    <driverClass>ElementalHearts.JobDriver_CelestialArrive</driverClass>
+    <reportString>descending through the aurora.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+</Defs>

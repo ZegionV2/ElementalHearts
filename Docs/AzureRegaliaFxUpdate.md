@@ -6,7 +6,7 @@ Current visual rollback: the dedicated evolution/transformation textures below a
 
 Azure's seven **east-facing** body textures are replaced with a right-facing side profile. One shoulder, a clasp line at the right/front edge and the white cloak down the left/back match the supplied side-view reference. The ivory panel under the shoulder is closed and opaque, removing the old armhole/side gaps. Textures are fitted slightly higher and wider against the ordinary Flame uniform bounds to cover the torso. West-facing pawns use RimWorld's native mirror of the east view.
 
-Front and back armor textures, the front alignment correction, inventory icon and sword remain unchanged. Ordinary ascendant armor is unchanged. The new high-resolution east view is saved as `Docs/Templates/Evolution-Regalia-East-Master.png` for future evolution outfits. No helmet or limbs are added.
+Front and back armor textures, the front alignment correction, inventory icon and sword remain unchanged. Ordinary adept armor is unchanged. The new high-resolution east view is saved as `Docs/Templates/Evolution-Regalia-East-Master.png` for future evolution outfits. No helmet or limbs are added.
 
 ## Evolution effects
 
@@ -25,7 +25,7 @@ Texture folder: `Textures/Effects/ElementalHearts/Azure/Evolution`. The C# contr
 
 ## Unique evolved transformation
 
-Azure's ordinary **Transform** button now uses a separate **two-second** regal manifestation, instead of the ordinary ascendants' 1.5-second effect:
+Azure's ordinary **Transform** button now uses a separate **two-second** regal manifestation, instead of the ordinary adepts' 1.5-second effect:
 
 1. A blue/gold royal seal ignites under the pawn.
 2. Twin flame ribbons weave around the torso. The regalia appears **from the center outward**, followed by the cloak, while normal clothing is masked away by the complementary reveal.

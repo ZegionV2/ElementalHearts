@@ -1,0 +1,16 @@
+﻿# Tempest Incarnate verification
+
+> This records the earlier Tempest release. Current world-travel rules and tests are in [Living world flight](LivingFlight.md) and [the wardrobe/flight verification](WardrobeAndLivingFlightVerification.md).
+
+Verified against the installed RimWorld 1.6.4871 build, Harmony and optional native Melee Animation, with HAR/FemaleBB and ISEKAI present in isolated test profiles. Personal saves/settings were not used or modified. Temporary test mods are removed from the live Mods folder after testing.
+
+**219 native assertions passed**, plus sixteen matched sovereign duels and shared regression checks:
+
+- 82 progression/combat/save assertions: original heart identity, Wind controls/Flow, interrupted/restarted Transcend, immediate God Mode command hiding, seven replacement skills, bounded impacts, Non-lethal, walls, Cloud Step three-state cycle/recharge, capture interruption, preserving unrelated stuns, Storm Flow ward, exact same-map travel, saved rush/telegraph/airhold/counter and original sword identity.
+- 25 extra assertions: actual native apparel body coverage and ideology groin/chest evaluation, exact personal-clothing restoration when downed, recovery with the same katana, allied synchronization, world-targeting cancellation, exact cross-map departure/arrival, saved original-pawn transit, blocked arrival retention/retry and no duplicate summoned gear.
+- 92 presentation assertions: all cached dedicated frame sequences, native Melee Animation katana registration/edge orientation, apparel and hand coverage in 32 body/facing cases, native animated sword idles in 28 eligible cases and an actual Crown storm-funnel cast. Baby is an apparel-only fit case; infant combat is not enabled. Native rendered screenshots were inspected separately, including side views, held swords, the readable skill panel, halo/back aura and the large funnel.
+- 20 post-impact/native-parry assertions: saving after Squall's first cut resumes only its remaining two cuts; saving after Crown's impact or Maelstrom's release adds no repeated impact; the actual patched ordinary melee method triggers a single safe Stormveil parry/counter.
+- 16 fresh matched duels against Thunder Incarnate: **Tempest 8, Thunder 8, draws 0**. Both sides began with the same melee skill, normal-quality bound equipment, 96-point melee profiles and 0.04 incoming damage. Sides/order were alternated. Ordinary native Melee Animation remained active; automatic executions/grapples were disabled in the test profile. ISEKAI starting stats were normalized and test XP gains disabled. This is a limited balance sample, not a guarantee of equal results in every fight.
+- Shared combat-flow/navigation, Non-lethal and Ascendant carry/caravan/command checks passed. The sword-profile verifier now checks all sixteen shipped swords, including the three Incarnates' corrected edge mirroring and actual handle pixels.
+
+Effects retain cached transparent materials, 192 effect slots, 64 afterimages, the shared 64-slot capture registry, camera/fog culling and bounded local target lists. No frame-time benchmark is claimed. All frost/wind floor work remains visual; Tempest creates no permanent terrain, tornado entities, weather, roof or building damage.

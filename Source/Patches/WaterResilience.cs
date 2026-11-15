@@ -9,7 +9,7 @@ namespace ElementalHearts.Patches {
  [HarmonyPatch(typeof(PawnCapacityUtility),"CalculatePartEfficiency")]
  public static class WaterInjuryEfficiency {
   public static void Postfix(HediffSet diffSet,BodyPartRecord part,ref float __result){
-   if(diffSet.pawn.Dead||!WaterKitUpgrade.HasAscension(diffSet.pawn)||diffSet.PartIsMissing(part)||diffSet.AncestorHasDirectlyAddedParts(part))return;
+   if(diffSet.pawn.Dead||!(WaterKitUpgrade.HasAscension(diffSet.pawn)||AuroraIncarnate.Active(diffSet.pawn))||diffSet.PartIsMissing(part)||diffSet.AncestorHasDirectlyAddedParts(part))return;
    float injuryDamage=0f,baseEfficiency=1f,offset=0f;
    foreach(Hediff h in diffSet.hediffs){
     if(h.Part!=part)continue;
@@ -26,7 +26,7 @@ namespace ElementalHearts.Patches {
  }
  [HarmonyPatch(typeof(StaggerHandler),"StaggerFor")]
  public static class WaterNoHitSlowdown {
-  public static bool Prefix(Pawn ___parent,ref bool __result){if(!WaterKitUpgrade.HasAscension(___parent))return true;__result=false;return false;}
+  public static bool Prefix(Pawn ___parent,ref bool __result){if(!(WaterKitUpgrade.HasAscension(___parent)||AuroraIncarnate.Active(___parent)))return true;__result=false;return false;}
  }
 }
 

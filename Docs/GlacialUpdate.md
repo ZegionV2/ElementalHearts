@@ -1,6 +1,6 @@
 # Glacial Ascendant
 
-Glacial is now Water's playable evolution. An ordinary Water Ascendant qualifies after **150 additional unique hostile non-animal kills and ten ascendant days**. The Evolve button performs the shared interruptible 4.5-second ritual, with Glacial frost visuals. DEV: Evolution-Ready appears only while dev mode is on and sets the requirements; Evolve still performs the ritual.
+Glacial is now Water's playable evolution. An ordinary Water Adept qualifies after **150 additional unique hostile non-animal kills and ten adept days**. The Evolve button performs the shared interruptible 4.5-second ritual, with Glacial frost visuals. DEV: Evolution-Ready appears only while dev mode is on and sets the requirements; Evolve still performs the ritual.
 
 The upgrade rebinds the existing Water hediff rather than adding a second elemental root. Its identity, age, defensive component, parry recovery, pending counter, four active cooldown entries, combo state, automation/Non-lethal flags, stored personal clothing and Pressure ownership retain their existing save formats. Existing Water saves acquire the new mastery component without losing their old state; historical eligible kills cannot be reconstructed, so unique kill tracking starts with this update.
 

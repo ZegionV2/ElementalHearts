@@ -3,7 +3,7 @@
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_CycloneUniform</defName>
     <label>cyclone royal regalia</label>
-    <description>Indestructible Cyclone royal regalia: ivory short cloak, emerald wind-ribbon inlays, gold trim, closed side and upper-back lining and a low compact neckline. Helmetless fitted RimWorld art. Manifested by an evolved Wind Ascendant.</description>
+    <description>Indestructible Cyclone royal regalia: ivory short cloak, emerald wind-ribbon inlays, gold trim, closed side and upper-back lining and a low compact neckline. Helmetless fitted RimWorld art. Manifested by an evolved Wind Adept. Protects the torso, shoulders, arms, hands, waist, legs and feet, including fingers and toes.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/CycloneRegalia/CycloneRegalia</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -34,7 +34,12 @@
       </drawData>
       <bodyPartGroups>
         <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
         <li>Waist</li>
+        <li>Legs</li>
+        <li>Feet</li>
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/CycloneRegalia/CycloneRegalia</wornGraphicPath>
       <layers>
@@ -61,7 +66,7 @@
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>EH_CycloneSword</defName>
     <label>cyclone sovereign sword</label>
-    <description>Indestructible silver-white Cyclone sword with an emerald channel and fitted long ivory grip. Includes a native two-hand Melee Animation profile. Manifested by an evolved Wind Ascendant.</description>
+    <description>Indestructible silver-white Cyclone sword with an emerald channel and fitted long ivory grip. Includes a native two-hand Melee Animation profile. Manifested by an evolved Wind Adept.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/CycloneSword</texPath>
       <graphicClass>Graphic_Single</graphicClass>

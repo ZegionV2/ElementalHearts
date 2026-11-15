@@ -3,7 +3,7 @@
   <HediffDef>
     <defName>EH_ElectricalShock</defName>
     <label>electrical shock</label>
-    <description>A brief electrical stun followed by three seconds of discharge recovery. Lightning and Thunderstorm Ascendants resist its chance and duration.</description>
+    <description>A brief electrical stun followed by three seconds of discharge recovery. Lightning Adepts and Thunderstorm Ascendants resist its chance and duration.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>true</isBad>
     <scenarioCanAdd>false</scenarioCanAdd>

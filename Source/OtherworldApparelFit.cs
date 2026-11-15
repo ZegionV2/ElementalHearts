@@ -1,11 +1,12 @@
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
 namespace ElementalHearts {
  public static class OtherworldApparelFit {
   public static bool Outfit(Apparel a){return a!=null&&(a.def.defName=="EH_OtherworldGakuran"||a.def.defName=="EH_OtherworldSailor");}
-  public static float Lift(Pawn p){if(p==null||p.apparel==null)return 0;foreach(var a in p.apparel.WornApparel)if(Outfit(a))return .06f*HumanlikeMeshPoolUtility.HumanlikeBodyWidthForPawn(p)/1.5f;return 0;}
+  public static float Lift(Pawn p){return 0;}
+
  }
  [HarmonyPatch(typeof(PawnRenderer),"BaseHeadOffsetAt")]
  public static class OtherworldUniformHeadOrigin {public static void Postfix(Pawn ___pawn,ref Vector3 __result){__result.z+=OtherworldApparelFit.Lift(___pawn);}}

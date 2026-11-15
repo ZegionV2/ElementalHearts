@@ -58,7 +58,7 @@ namespace ElementalHearts {
     if(h.def.defName==LunarAscendant.DefName)return h.TryGetComp<HediffComp_LunarAbilities>();
    return null;
   }
-  public override string CompTipStringExtra {get{return eclipseReady?"Celestial Bestow fulfilled this pawn's Eclipse evolution milestones. Press Evolve: Eclipse when ready.":"Crescent Draw builds up to three Moonbrands per target. Each Lunar Ascendant owns their own marks.";}}
+  public override string CompTipStringExtra {get{return eclipseReady?"Celestial Bestow fulfilled this pawn's Eclipse evolution milestones. Press Evolve: Eclipse when ready.":"Crescent Draw builds up to three Moonbrands per target. Each Lunar Adept owns their own marks.";}}
   public ElementalAutoMode Mode {get{return ElementalAutoModes.FromFlags(autoCombat||!ElementalCombatPolicy.Controlled(Pawn),nonLethal);}}
   internal bool CanAct {
    get {
@@ -211,7 +211,7 @@ namespace ElementalHearts {
     };
     command.defaultLabel=Names[i];command.defaultDesc=Descriptions[i]+" Cooldown: "+Cooldowns[i]/60f+"s.";
     command.icon=LunarVfx.Icon(i);command.groupable=false;
-    if(!CanAct)command.Disable("Requires a conscious, drafted and transformed Lunar Ascendant with a melee weapon.");
+    if(!CanAct)command.Disable("Requires a conscious, drafted and transformed Lunar Adept with a melee weapon.");
     else if(LunarAscendant.Busy(Pawn))command.Disable("Finish the current Lunar technique.");
     else if(Remaining(power)>0)command.Disable("Recharging: "+Math.Ceiling(Remaining(power)/60f)+"s");
     else if(power==LunarPower.Rush&&!LunarMovement.Pressured(Pawn))command.Disable("Requires two nearby hostiles.");

@@ -4,9 +4,9 @@
 
 ## Identity and progression
 
-**Lightning Ascendant → Thunderstorm Ascendant.** Red/crimson lightning, white-hot cores and a restrained dark-red afterimage. Emphasize fast repositioning, deliberate chains and storm control.
+**Lightning Adept → Thunderstorm Ascendant.** Red/crimson lightning, white-hot cores and a restrained dark-red afterimage. Emphasize fast repositioning, deliberate chains and storm control.
 
-Proposed unlock: **150 additional unique hostile non-animal kills after Lightning ascension, plus ten in-game ascendant days**, matching the Azure progression tier. Count each enemy once across resurrection. Earlier disciple kills, friendly prisoners, allies, self-kills and animal hunting do not advance evolution. Show both milestones in the tooltip. Add **Evolve: Thunderstorm** and the existing-style **DEV: Evolution-Ready** button for unevolved Lightning Ascendants. Readiness unlocks the button; the player chooses when to evolve.
+Proposed unlock: **150 additional unique hostile non-animal kills after Lightning ascension, plus ten in-game ascendant days**, matching the Azure progression tier. Count each enemy once across resurrection. Earlier disciple kills, friendly prisoners, allies, self-kills and animal hunting do not advance evolution. Show both milestones in the tooltip. Add **Evolve: Thunderstorm** and the existing-style **DEV: Evolution-Ready** button for unevolved Lightning Adepts. Readiness unlocks the button; the player chooses when to evolve.
 
 Reuse the 4.5-second C# ritual: blue sparks gather, blue changes through violet into crimson, red lightning forms orbiting filaments, a brief lift resolves into a white/red flash and ground shockwave. Preserve the interruptible job, saved timeline, bounded rendering, effect-opacity setting and no-cost cancellation. No permanent weather change or camera disruption.
 
@@ -20,7 +20,7 @@ Replace the ordinary body aura with a **floating jagged red lightning halo** abo
 
 ## Evolved power tier
 
-Proposed baseline follows Azure's requested power tier: **5x elemental movement**, **+50 total ascension mood**, incoming-damage factor **0.1 before armor**, and an additional 75% reduction against ordinary Ascendants. Retain Lightning's capacities, healing and recovery identity; start melee power at roughly 10% above its ordinary ascendant modifier rather than multiplying every skill independently.
+Proposed baseline follows Azure's requested power tier: **5x elemental movement**, **+50 total ascension mood**, incoming-damage factor **0.1 before armor**, and an additional 75% reduction against ordinary Adepts. Retain Lightning's capacities, healing and recovery identity; start melee power at roughly 10% above its ordinary adept modifier rather than multiplying every skill independently.
 
 The extra ordinary-ascendant ward must treat **both Azure Flame and Thunderstorm as evolved peers**. Neither should receive that extra ward against the other. Generalize the current Azure-only defense check before enabling Thunderstorm. Keep existing armor calculations and the global 20% elemental/melee damage reduction.
 

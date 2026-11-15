@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using HarmonyLib;
@@ -10,10 +10,10 @@ namespace ElementalHearts {
  // Common, whole-body benefits: independent of the manifested outfit and safe in caravans.
  public static class AscendantBenefits {
   static HashSet<HediffDef> diseases;
-  public static float CarryFactor(Pawn pawn){return !ElementalHeartUtility.HasHeart(pawn)?1f:(CelestialAscendant.Active(pawn)||ThunderIncarnate.Active(pawn)||EclipseSky.Empowered(pawn))?15f:EvolvedLineage.Active(pawn)?10f:5f;}
+  public static float CarryFactor(Pawn pawn){return !ElementalHeartUtility.HasHeart(pawn)?1f:(AuroraIncarnate.Active(pawn)||TempestIncarnate.Active(pawn)||CelestialAscendant.Active(pawn)||HellFlameIncarnate.Active(pawn)||ThunderIncarnate.Active(pawn)||EclipseSky.Empowered(pawn))?15f:EvolvedLineage.Active(pawn)?10f:5f;}
   public static float TravelFactor(List<Pawn> pawns){
    if(pawns==null)return 1f;float total=0;int count=0;
-   foreach(var pawn in pawns){if(pawn==null||pawn.Dead||pawn.Downed||!pawn.RaceProps.Humanlike)continue;count++;total+=!ElementalHeartUtility.HasHeart(pawn)?1f:(CelestialAscendant.Active(pawn)||ThunderIncarnate.Active(pawn)||EclipseSky.Empowered(pawn))?4f:EvolvedLineage.Active(pawn)?3f:2f;}
+   foreach(var pawn in pawns){if(pawn==null||pawn.Dead||pawn.Downed||!pawn.RaceProps.Humanlike)continue;count++;total+=!ElementalHeartUtility.HasHeart(pawn)?1f:(AuroraIncarnate.Active(pawn)||TempestIncarnate.Active(pawn)||CelestialAscendant.Active(pawn)||HellFlameIncarnate.Active(pawn)||ThunderIncarnate.Active(pawn)||EclipseSky.Empowered(pawn))?4f:EvolvedLineage.Active(pawn)?3f:2f;}
    return count==0?1f:total/count;
   }
   public static bool Disease(HediffDef def){
@@ -32,7 +32,7 @@ namespace ElementalHearts {
    if(def==null||!ElementalHeartUtility.HasHeart(pawn))return false;
    // Melee Animation applies this specific condition for its non-lethal execution outcome.
    // No hard dependency, execution patch, generic stun immunity or death/downing override.
-   return Disease(def)||(def.defName=="AM_KnockedOut"&&EvolvedLineage.Active(pawn));
+   return AuroraIncarnate.Active(pawn)&&def==HediffDefOf.Hypothermia||HellFlameIncarnate.Active(pawn)&&def.defName=="Heatstroke"||Disease(def)||(def.defName=="AM_KnockedOut"&&EvolvedLineage.Active(pawn));
   }
   public static void Cleanse(Pawn pawn){
    if(!ElementalHeartUtility.HasHeart(pawn))return;
@@ -52,7 +52,7 @@ namespace ElementalHearts {
  public static class AscendantCaravanCapacity {
   public static void Postfix(Pawn p,StringBuilder explanation,ref float __result){
    float factor=AscendantBenefits.CarryFactor(p);if(factor<=1f||__result<=0)return;float extra=__result*(factor-1f);__result+=extra;
-   if(explanation!=null)explanation.AppendLine().Append("    Ascendant carrying power (x").Append(factor.ToString("0")).Append("): ").Append(extra.ToStringMassOffset());
+   if(explanation!=null)explanation.AppendLine().Append("    Elemental carrying power (x").Append(factor.ToString("0")).Append("): ").Append(extra.ToStringMassOffset());
   }
  }
  [HarmonyPatch(typeof(CaravanTicksPerMoveUtility),"GetTicksPerMove",new Type[]{typeof(List<Pawn>),typeof(float),typeof(float),typeof(bool),typeof(StringBuilder)})]
@@ -60,7 +60,7 @@ namespace ElementalHearts {
   public static void Postfix(List<Pawn> pawns,bool isShuttle,StringBuilder explanation,ref int __result){
    if(isShuttle||__result<=0)return;float factor=AscendantBenefits.TravelFactor(pawns);if(factor<=1f)return;
    __result=Math.Max(1,(int)Math.Round(__result/factor));
-   if(explanation!=null)explanation.AppendLine().Append("Ascendant travel speed: x").Append(factor.ToString("0.##")).Append(" (average of walking humanlike members)");
+   if(explanation!=null)explanation.AppendLine().Append("Elemental travel speed: x").Append(factor.ToString("0.##")).Append(" (average of walking humanlike members)");
   }
  }
 }

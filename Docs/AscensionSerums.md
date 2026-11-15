@@ -1,6 +1,6 @@
 # Elemental Ascendants
 
-Empowered pawns are now named Lightning Ascendant, Flame Ascendant, Wind Ascendant and Water Ascendant. The mod remains Elemental Hearts, with its existing package and internal definition IDs retained for save compatibility.
+Empowered pawns are now named Lightning Adept, Flame Adept, Wind Adept and Water Adept. The mod remains Elemental Hearts, with its existing package and internal definition IDs retained for save compatibility.
 
 ## Injectable serums
 

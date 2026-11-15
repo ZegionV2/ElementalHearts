@@ -1,0 +1,411 @@
+{
+  "name": "Hell Flame Incarnate",
+  "status": "Integrated: shipped lineage, seven combat forms, transformation, transcendence and Hell Step/Travel.",
+  "palette": [
+    "charcoal",
+    "crimson",
+    "molten orange",
+    "white-hot amber"
+  ],
+  "nativeBodies": [
+    "Male",
+    "Female",
+    "Thin",
+    "Fat",
+    "Hulk",
+    "Child",
+    "Baby"
+  ],
+  "compatibilityBodies": [
+    "FemaleBB"
+  ],
+  "facings": [
+    "south",
+    "east",
+    "north"
+  ],
+  "west": "Native east mirroring; no west texture required.",
+  "coverageGroups": [
+    "Torso",
+    "Shoulders",
+    "Arms",
+    "Hands",
+    "Waist",
+    "Legs",
+    "Feet"
+  ],
+  "armorPath": "Things/Pawn/Humanlike/Apparel/HellFlameIncarnateRegalia/HellFlameIncarnateRegalia",
+  "uniformDefName": "EH_HellFlameIncarnateUniform",
+  "swordPath": "Things/Item/Equipment/WeaponMelee/HellFlameIncarnateSword",
+  "swordDefName": "EH_HellFlameIncarnateSword",
+  "commandRoot": "UI/Commands/ElementalHearts/HellFlameIncarnate/",
+  "effectRoot": "Effects/ElementalHearts/HellFlameIncarnate/Frames/",
+  "icons": {
+    "icon_crescent": "HellscarCrescent",
+    "icon_pursuit": "AshenPursuit",
+    "icon_waltz": "InfernalWaltz",
+    "icon_phoenix": "RuinousPhoenix",
+    "icon_reversal": "HellfireReversal",
+    "icon_dominion": "FurnaceDominion",
+    "icon_pyre": "SovereignsPyre",
+    "icon_transcend": "TranscendHellFlame",
+    "icon_hellstep": "HellStep",
+    "icon_helltravel": "HellTravel",
+    "icon_hellbrands": "Hellbrands"
+  },
+  "sharedBestow": "UI/Commands/ElementalHearts/Bestow",
+  "sequences": [
+    {
+      "name": "HellscarCrescent",
+      "source": "frames_crescent_clean",
+      "frames": 8,
+      "seconds": 0.55,
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Right-facing convex edge; move along +X and rotate to aim.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "AshenPursuit",
+      "source": "frames_dash_clean",
+      "frames": 8,
+      "seconds": 0.45,
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Right-facing narrow route wake; reuse at reduced size for ordinary movement.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "InfernalWaltz",
+      "source": "frames_waltz_clean",
+      "frames": 8,
+      "seconds": 0.64,
+      "loop": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Clockwise spin loop; use C# scale/fade envelope at start/end.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "RuinousPhoenix",
+      "source": "frames_phoenix_clean",
+      "frames": 8,
+      "seconds": 0.75,
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Descending phoenix; damage belongs to saved action state.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "HellfireReversal",
+      "source": "frames_reversal_cutout",
+      "frames": 8,
+      "seconds": 0.45,
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Retreat-origin flash; combine with route wake and native pawn afterimages.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "FurnaceDominion",
+      "source": "frames_dominion",
+      "frames": 8,
+      "seconds": 0.8,
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Expanding ground ring; knockback and one impact are code driven. Frame 00 is the transparent ignition lead-in.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "allowEmptyFrames": [
+        0
+      ]
+    },
+    {
+      "name": "SovereignSeal",
+      "source": "frames_seal",
+      "frames": 8,
+      "seconds": 1,
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Fixed ground warning seal; can also introduce travel or the ceremony.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "SovereignColumn",
+      "source": "frames_sovereign_column_clean",
+      "frames": 8,
+      "seconds": 1,
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.84
+      ],
+      "note": "Tall ultimate layer; ground anchor near bottom of cell.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "SovereignBurst",
+      "source": "frames_sovereign_burst",
+      "frames": 8,
+      "seconds": 0.9,
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Ultimate impact and fading outward flame fragments.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "HellStepFlash",
+      "source": "frames_hellstep",
+      "frames": 8,
+      "seconds": 0.35,
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Small local blink departure/arrival flash; never an extra damage hit.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "HellTravelDeparture",
+      "source": "frames_departure",
+      "frames": 8,
+      "seconds": 1,
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.84
+      ],
+      "note": "Upward departure column.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "HellTravelArrival",
+      "source": "frames_arrival",
+      "frames": 8,
+      "seconds": 1,
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.84
+      ],
+      "note": "Descending arrival column and reveal.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "HellTravelArrivalRing",
+      "source": "frames_arrival_ring",
+      "frames": 8,
+      "seconds": 0.6,
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Shallow landing ellipse.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "EmberMotes",
+      "source": "frames_motes",
+      "frames": 8,
+      "seconds": 0.85,
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Place at small size; reuse as short fading ember fragments.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "MeleeClash",
+      "source": "frames_melee",
+      "frames": 8,
+      "seconds": 0.3,
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Visual-only ordinary sword contact.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "TranscendCharge",
+      "source": "frames_transcend",
+      "frames": 8,
+      "seconds": 1.2,
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Gathering flame/crown charge, reusable in the eight-second ceremony.",
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "Halo",
+      "source": "halo",
+      "frames": 6,
+      "seconds": 0.9,
+      "loop": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Shallow hollow infernal crown; only transformed, drafted and standing.",
+      "columns": 3,
+      "rows": 2,
+      "size": 256,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "BackAura",
+      "source": "aura_clean",
+      "frames": 6,
+      "seconds": 1.1,
+      "loop": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Subtle paired ember mantle behind body; suggested opacity 0.35.",
+      "columns": 3,
+      "rows": 2,
+      "size": 256,
+      "gutter": 6,
+      "padding": 16
+    },
+    {
+      "name": "Hellbrand",
+      "source": "hellbrand",
+      "frames": 6,
+      "seconds": 0.8,
+      "loop": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "note": "Caster-owned mark glint; share art through positioning.",
+      "columns": 3,
+      "rows": 2,
+      "size": 256,
+      "gutter": 6,
+      "padding": 16
+    }
+  ],
+  "runtimeConstraints": [
+    "Use existing bounded 192-effect / 64-afterimage pools, cached materials, camera/fog culling and bounded local target searches.",
+    "C# owns movement, impact commitment, knockback, status, damage and interrupted-action cleanup. Animation playback never triggers damage.",
+    "Keep black flame bodies on alpha-capable materials; additive-only drawing loses black silhouettes.",
+    "Halo/back aura visibility: transformed, drafted and standing. Personal clothing restores through shared gear handling.",
+    "Use native pawn renderer snapshots for afterimages; do not generate separate victim or body ghost textures.",
+    "Reuse shared corrected Thunder Step/Travel state cycle and safe landing/cancellation/save handling when implementing utility."
+  ],
+  "artRevision": "v2 \u2014 tailored black suit/cape and Ashreign katana",
+  "armorSources": {
+    "south": "suit_south",
+    "east": "suit_east",
+    "north": "suit_north"
+  },
+  "swordSource": "katana",
+  "armorStyle": "Fitted black tailored suit and waistcoat, low collar, close-hanging black cape, crimson inner lining and restrained molten-orange flame trim. No plate armor or helmet.",
+  "swordStyle": "Right-curving ivory katana, orange ember etching, black/crimson wrapped handle, compact black/orange tsuba.",
+  "katanaIntegration": {
+    "normalHeldAngleOffset": 90,
+    "normalHeldMirrorWidth": true,
+    "meleeAnimationFlipY": true,
+    "scale": 1.38,
+    "gripRegisteredOnHandle": true,
+    "status": "Use Thunder Incarnate held-edge correction for the future Hell Flame weapon and verify both held/AM animation renderers at integration."
+  },
+  "mechanicsGuide": "HellFlameIncarnate.md"
+}

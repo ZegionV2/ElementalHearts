@@ -7,7 +7,7 @@ The Severed Court is an enemy order of elemental sword warriors who believe Asce
 | Rank | Lineages | Equipment and behavior |
 | --- | --- | --- |
 | Oathling | Flame, Lightning, Water, Wind, Earth disciples | Conventional Court uniform, bound elemental sword, existing disciple skills and automatic combat |
-| Court Knight | The same five normal Ascendants | Manifested Court plate and enclosed helmet, original elemental sword and four techniques |
+| Court Knight | The same five normal Adepts | Manifested Court plate and enclosed helmet, original elemental sword and four techniques |
 | Azure Herald | Azure Flame | Elite regalia, open-brow faceguard, blue fire and reactive Azure Reversal |
 | Storm Herald | Thunderstorm | The same elite outfit, crimson lightning, Scarlet Tempest and Tempest Dragon |
 | Frost Herald | Glacial | The same elite outfit, Pressure/parries and Glacial Explosion |

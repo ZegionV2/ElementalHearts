@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System;
 using RimWorld;
 using UnityEngine;
@@ -8,7 +8,7 @@ namespace ElementalHearts {
  public static class ElementalTeaching {
   private static Texture2D icon;
   public static bool IsHeart(Hediff h){return h.def.tags!=null && h.def.tags.Contains(ElementalHeartUtility.HeartTag);}
-  public static string Element(Pawn p){if(p==null||p.health==null)return null;foreach(var h in p.health.hediffSet.hediffs)if(IsHeart(h)){if(h.def.defName==LunarAscendant.DefName||h.def.defName==EclipseAscendant.DefName)return "Lunar";if(h.def.defName==AdamantEvolution.DefName)return "Earth";if(h.def.defName==CelestialAscendant.DefName)return "Celestial";if(h.def.defName==CycloneEvolution.DefName)return "Wind";if(h.def.defName==GlacialEvolution.DefName)return "Water";if(h.def.defName==AzureEvolution.DefName)return "Flame";if(h.def.defName==ThunderstormEvolution.DefName||h.def.defName==ThunderIncarnate.DefName)return "Lightning";foreach(string e in new[]{"Lightning","Flame","Wind","Water","Earth"})if(h.def.defName=="EH_"+e+"Heart")return e;}return null;}
+  public static string Element(Pawn p){if(p==null||p.health==null)return null;foreach(var h in p.health.hediffSet.hediffs)if(IsHeart(h)){if(h.def.defName==LunarAscendant.DefName||h.def.defName==EclipseAscendant.DefName)return "Lunar";if(h.def.defName==AdamantEvolution.DefName)return "Earth";if(h.def.defName==CelestialAscendant.DefName)return "Celestial";if((h.def.defName==CycloneEvolution.DefName||h.def.defName==TempestIncarnate.DefName))return "Wind";if(h.def.defName==GlacialEvolution.DefName||h.def.defName==AuroraIncarnate.DefName)return "Water";if(h.def.defName==AzureEvolution.DefName||h.def.defName==HellFlameIncarnate.DefName)return "Flame";if(h.def.defName==ThunderstormEvolution.DefName||h.def.defName==ThunderIncarnate.DefName)return "Lightning";foreach(string e in new[]{"Lightning","Flame","Wind","Water","Earth"})if(h.def.defName=="EH_"+e+"Heart")return e;}return null;}
   public static bool Trained(Pawn p){if(p==null||p.health==null)return false;foreach(var h in p.health.hediffSet.hediffs)if(h.TryGetComp<HediffComp_ElementalApprentice>()!=null)return true;return false;}
   public static float DamageFactor(Pawn p){return Trained(p)&&!ElementalHeartUtility.HasHeart(p)?.4f:1f;}
   public static bool Ready(Pawn p){return p!=null&&p.Spawned&&!p.Dead&&!p.Downed&&p.Awake()&&!p.InMentalState&&!p.stances.stunner.Stunned;}
@@ -58,7 +58,7 @@ namespace ElementalHearts {
    foreach(var gizmo in ElementalBoundSwords.Commands(Pawn,DiscipleElement))yield return gizmo;
    yield return new Command_Action {defaultLabel="Disciple: "+discipleKills+"/50 kills",defaultDesc=CompTipStringExtra+" Press Ascend when both requirements are met. NPC disciples start their ceremony automatically. Kills count from discipleship.",icon=DiscipleProgressArt.Icon(discipleKills),groupable=false,action=()=>Messages.Message(CompTipStringExtra,Pawn,MessageTypeDefOf.NeutralEvent,false)};
    yield return DiscipleAscension.Command(Pawn);
-   if(DebugSettings.godMode)yield return new DevEvolutionReadyCommand{isEligible=()=>DiscipleAscension.Apprentice(Pawn)==this&&!ElementalHeartUtility.HasHeart(Pawn),defaultLabel="DEV: Ascend-Ready",defaultDesc="God Mode only. Fulfill this disciple's 50 kills and five days requirements. Then press the normal Ascend button to perform the ceremony and become a normal Ascendant.",icon=DiscipleProgressArt.Icon(50),groupable=false,action=()=>MakeAscendReady()};
+   if(DebugSettings.godMode)yield return new DevEvolutionReadyCommand{isEligible=()=>DiscipleAscension.Apprentice(Pawn)==this&&!ElementalHeartUtility.HasHeart(Pawn),defaultLabel="DEV: Ascend-Ready",defaultDesc="God Mode only. Fulfill this disciple's 50 kills and five days requirements. Then press the normal Ascend button to perform the ceremony and become a normal Adept.",icon=DiscipleProgressArt.Icon(50),groupable=false,action=()=>MakeAscendReady()};
 
   }
 

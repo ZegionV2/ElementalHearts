@@ -10,11 +10,11 @@ The corrected Azure side armor remains installed. New Thunderstorm regalia follo
 
 ## Thunderstorm progression and powers
 
-A **Lightning Ascendant** unlocks **Evolve: Thunderstorm** after **150 additional unique hostile non-animal kills** and **ten ascendant days**. Previous ascendant age counts; newly installed mastery tracking does not infer earlier kills from lifetime totals. Each victim counts once across resurrection. Disciple kills are separate. The evolution is chosen by the player, interruptible and free of resource costs.
+A **Lightning Adept** unlocks **Evolve: Thunderstorm** after **150 additional unique hostile non-animal kills** and **ten adept days**. Previous ascendant age counts; newly installed mastery tracking does not infer earlier kills from lifetime totals. Each victim counts once across resurrection. Disciple kills are separate. The evolution is chosen by the player, interruptible and free of resource costs.
 
 Evolution replaces the old Lightning condition with a standalone **Thunderstorm Ascendant** condition. It preserves the saved hediff identity, severity, age, original four cooldowns, automation/non-lethal preferences, passive timers, mastery and transformation kit references. Evolved gear replaces old projections while preserving quality and the pawn's stored normal clothing.
 
-Thunderstorm receives the same power tier as Azure: movement stat factor **5x**, **+50 total ascension mood**, incoming-damage factor **0.1 before armor**, and a further **75% ward against ordinary Ascendants**. Actual movement/damage depend on other modifiers. Azure and Thunderstorm are evolved peers: neither gets that extra ordinary-ascendant ward against the other.
+Thunderstorm receives the same power tier as Azure: movement stat factor **5x**, **+50 total ascension mood**, incoming-damage factor **0.1 before armor**, and a further **75% ward against ordinary Adepts**. Actual movement/damage depend on other modifiers. Azure and Thunderstorm are evolved peers: neither gets that extra ordinary-ascendant ward against the other.
 
 The four Lightning slots switch to:
 
@@ -27,7 +27,7 @@ The four Lightning slots switch to:
 
 The fifth button is now **Tempest Dragon**, replacing Tempest Circuit. Select a hostile within ten cells and chain up to five distinct enemies, each approach using two straight zigzag legs and leaving an animated red flash line. Later targets must be within eight cells of the current landing. Each target is struck at most once. Cooldown: **18 seconds**. Auto Combat can use the chain against a single eligible hostile whenever enabled and ready. Old pending pulse zones are discarded. See **TempestDragon.md** for exact mechanics and limits.
 
-Skills have no resource cost and retain the current 20% damage reduction, friendly-fire rules and non-lethal mode. Targets are deduplicated per pulse. Normal Lightning skills/tuning remain unchanged. Normal Lightning Ascendants teach Lightning disciples; evolved Thunderstorm Ascendants use Bestow to grant normal Lightning ascension directly.
+Skills have no resource cost and retain the current 20% damage reduction, friendly-fire rules and non-lethal mode. Targets are deduplicated per pulse. Normal Lightning skills/tuning remain unchanged. Normal Lightning Adepts teach Lightning disciples; evolved Thunderstorm Ascendants use Bestow to grant normal Lightning ascension directly.
 
 ## Gear and halo
 
@@ -37,7 +37,7 @@ A floating **six-frame blended red lightning halo** replaces the ordinary Lightn
 
 ## DEV button fix
 
-**DEV: Evolution-Ready** remains a developer-only button for unevolved Flame and Lightning Ascendants. Pressing it raises the milestones without reducing existing progress; use the ordinary Evolve button afterward.
+**DEV: Evolution-Ready** remains a developer-only button for unevolved Flame and Lightning Adepts. Pressing it raises the milestones without reducing existing progress; use the ordinary Evolve button afterward.
 
 The command now checks dev mode every time its visibility is queried, including when the menu caches the same button instance. It also blocks input outside dev mode and hides when its pawn is no longer eligible. Turning dev mode off does not leave an active developer command behind.
 
@@ -51,4 +51,4 @@ Build and automated checks passed: the existing fourteen scripts; Regal, Reversa
 
 **Restart RimWorld fully.** Live combat, actual pawn/gear/halo fit, effect placement, optional animated grip and full native save/reload still need an in-game check. Headless checks verify native save output, not native loading.
 
-Quick check: select a Lightning Ascendant in dev mode → press DEV: Evolution-Ready → switch dev mode off and confirm that button disappears → press Evolve: Thunderstorm → draft/transform and inspect all five skills, red halo and gear → down/recover/retransform the pawn. Repeat a normal Flame/Azure transformation to confirm the smooth apparel reveal is back.
+Quick check: select a Lightning Adept in dev mode → press DEV: Evolution-Ready → switch dev mode off and confirm that button disappears → press Evolve: Thunderstorm → draft/transform and inspect all five skills, red halo and gear → down/recover/retransform the pawn. Repeat a normal Flame/Azure transformation to confirm the smooth apparel reveal is back.

@@ -2,9 +2,9 @@
 
 ## Bestow
 
-Azure Flame and Thunderstorm Ascendants now have **Bestow Flame** or **Bestow Lightning** in place of Teach. Select an eligible unascended humanlike pawn. The giver walks adjacent, then both pawns stop and face each other for **four game seconds**. The recipient receives normal Flame or Lightning ascension when the ceremony finishes, skipping discipleship and its kill/day requirements. A disciple of the same element can receive the gift too. Existing Ascendants and disciples of another lineage are ineligible. Normal Ascendants continue teaching disciples through the original three-second lesson.
+Azure Flame and Thunderstorm Ascendants now have **Bestow Flame** or **Bestow Lightning** in place of Teach. Select an eligible unascended humanlike pawn. The giver walks adjacent, then both pawns stop and face each other for **four game seconds**. The recipient receives normal Flame or Lightning ascension when the ceremony finishes, skipping discipleship and its kill/day requirements. A disciple of the same element can receive the gift too. Existing Ascendants and disciples of another lineage are ineligible. Normal Adepts continue teaching disciples through the original three-second lesson.
 
-Both participants have dedicated held jobs with repeated facing updates. Other elemental abilities and transformations wait for the paired action. The jobs resist ordinary interruptions; incapacitation or a forced replacement ends the ceremony and releases the owned receiving job. Incomplete ceremonies grant no ascension. The shared ascension application removes discipleship before adding a whole-body normal Ascendant condition, preserving the one-lineage rule. Bestow has no resource cost.
+Both participants have dedicated held jobs with repeated facing updates. Other elemental abilities and transformations wait for the paired action. The jobs resist ordinary interruptions; incapacitation or a forced replacement ends the ceremony and releases the owned receiving job. Incomplete ceremonies grant no ascension. The shared ascension application removes discipleship before adding a whole-body normal Adept condition, preserving the one-lineage rule. Bestow has no resource cost.
 
 The C# ceremony gathers gold light around the giver, sends a flowing elemental ribbon and sparks to the recipient, forms an overhead diamond and orbiting blue/red motes, then releases a finishing ring. Sounds mark three stages. Azure uses blue/gold; Thunderstorm uses red/gold. The effect uses cached procedural meshes/materials, fixed 32-ceremony and 32-burst buffers, camera/fog/opacity checks and saved ritual timing/audio/commitment fields. No replacement evolution or apparel-transformation texture sequence is added.
 
@@ -14,7 +14,7 @@ Tempest Dragon now participates in Auto Combat against a **single eligible enemy
 
 ## Dev controls and disciple progress
 
-**DEV: Evolution-Ready** appears for eligible unevolved Flame/Lightning/Water/Wind Ascendants only in God Mode. Turning God Mode off hides cached commands and blocks input. It fills milestones; the ordinary Evolve button performs evolution.
+**DEV: Evolution-Ready** appears for eligible unevolved Flame/Lightning/Water/Wind Adepts only in God Mode. Turning God Mode off hides cached commands and blocks input. It fills milestones; the ordinary Evolve button performs evolution.
 
 Disciples receive **DEV: Ascend-Ready** only in God Mode. It fulfills **50 credited kills and five disciple days**; it does not grant ascension. Press the normal Ascend button to complete the animated 3.5-second ceremony. Player-controlled disciples wait for this choice, while NPCs begin automatically. Cached developer commands stop drawing and accepting input when God Mode is off.
 

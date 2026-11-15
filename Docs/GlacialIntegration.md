@@ -2,7 +2,7 @@
 
 Glacial is installed as Water's complete evolution, including its regal kit, five techniques, normal recovery, shared defensive component, evolved stats and Bestow Water. The earlier asset set remains unchanged.
 
-To evolve normally, select an ordinary Water Ascendant after **150 additional unique hostile non-animal kills and ten ascendant days**, then press **Evolve: Glacial**. The existing interruptible 4.5-second ritual performs the upgrade. For development testing, enable dev mode, press **DEV: Evolution-Ready**, then press the normal Evolve button. Turning dev mode off immediately hides the shortcut; a previously held shortcut cannot grant readiness afterward.
+To evolve normally, select an ordinary Water Adept after **150 additional unique hostile non-animal kills and ten adept days**, then press **Evolve: Glacial**. The existing interruptible 4.5-second ritual performs the upgrade. For development testing, enable dev mode, press **DEV: Evolution-Ready**, then press the normal Evolve button. Turning dev mode off immediately hides the shortcut; a previously held shortcut cannot grant readiness afterward.
 
 After evolving, Transform manifests helmetless white/cyan royal regalia and a crystalline sword. The six-frame fractured-ice halo appears only while transformed and drafted. The menu shows Glacial Crescent, Frostwake Step, Crystal Vortex and Absolute Zero, plus the separate Glacial Explosion command and one shared Auto Combat control. Ordinary evolution controls disappear after promotion. Bestow grants normal Water ascension directly through the existing paired ceremony.
 

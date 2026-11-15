@@ -1,6 +1,8 @@
-# Thunder Incarnate
+﻿# Thunder Incarnate
 
-**Lightning Ascendant → Thunderstorm Ascendant → Thunder Incarnate.** This Transcendant stage has Celestial-tier core strength, seven grand black/yellow combat forms, a modern princely suit and close-fitting cloak, the white-bladed Heavenbreaker katana and a segmented storm crown.
+> **World travel updated:** this lineage now flies along a visible world-map route and chooses its unroofed landing cell on arrival. Launch outdoors. No fuel or cooldown. See [Living world flight](LivingFlight.md) for current controls and saved-flight rules. Map Step remains an instant blink.
+
+**Lightning Adept → Thunderstorm Ascendant → Thunder Incarnate.** This Transcendant stage has Celestial-tier core strength, seven grand black/yellow combat forms, a modern princely suit and close-fitting cloak, the white-bladed Heavenbreaker katana and a segmented storm crown.
 
 ## Progression and existing saves
 
@@ -22,7 +24,7 @@ The same hediff object is rebound in place. Existing combat/non-lethal preferenc
 | Heavenfall Verdict | Rise, rush to a checked landing within eighteen cells, then an eight-cell shockwave. Up to 24 hostiles once. | 22 seconds |
 | Sovereign Thunderfall | Mark a fixed location within 28 cells. A 0.75-second warning precedes a colossal white-hot pillar threaded with yellow lightning and black fissures. After 0.3 seconds of discharge, a ten-cell AOE strikes up to 32 unique hostiles once. The remaining pillar is visual only. | 40 seconds |
 
-No resource costs. Cooldowns are spent when a valid technique starts, including interruptions. Movement and landings recheck walls and occupied cells. Incapacitation, undrafting, replacement orders and external animation ownership stop the action; there is no persistent busy flag to clear. Shared **Auto Combat On / Off / Non-lethal** works in the pawn commands and Codex. Auto Combat includes Thunderfall for crowds or full charge. The beam stays at its marked ground cell if its original target moves; walls protect targets from its blast. Friendly pawns and prisoners are excluded. Bestow remains the ordinary Lightning lineage, with normal first-evolution requirements.
+No resource costs. Cooldowns are spent when a valid technique starts, including interruptions. Movement and landings recheck walls and occupied cells. Incapacitation, undrafting, replacement orders and external animation ownership stop the action; there is no persistent busy flag to clear. Shared **Auto Combat On / Off / Non-lethal** works in the pawn commands and Codex. Incarnates distinguish a suspended return-to-combat order from a new queued player order. Drafted waiting can continue its automatic combo against that retained target without duplicating suspended attacks; queued movement and different player orders still block automatic interruption. Auto Combat includes Thunderfall for crowds or full charge. The beam stays at its marked ground cell if its original target moves; walls protect targets from its blast. Friendly pawns and prisoners are excluded. Bestow remains the ordinary Lightning lineage, with normal first-evolution requirements.
 
 **Storm Dominion:** changing committed forms builds up to four Resonance. A fully charged Judgment, Verdict or Thunderfall consumes it for **20% more ability damage** and **two seconds of 20% additional incoming damage reduction**. No extra damage packets are spawned. Charge expires after six seconds without a committed technique.
 

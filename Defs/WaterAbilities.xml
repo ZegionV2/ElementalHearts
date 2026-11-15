@@ -3,7 +3,7 @@
   <DamageDef ParentName="BluntBase">
     <defName>EH_WaterDamage</defName>
     <label>water pressure</label>
-    <description>Blunt water-pressure injury used by Water and Glacial techniques. Weapon-derived power, the selected technique and any consumed Pressure determine the requested impact; armor and defensive effects then reduce it. Eligible Ascendant injury packets receive the common 20% damage reduction. Frost visuals and freeze ticks do not continuously repeat the attack.</description>
+    <description>Blunt water-pressure injury used by Water and Glacial techniques. Weapon-derived power, the selected technique and any consumed Pressure determine the requested impact; armor and defensive effects then reduce it. Eligible elemental injury packets receive the common 20% damage reduction. Frost visuals and freeze ticks do not continuously repeat the attack.</description>
     <workerClass>DamageWorker_AddInjury</workerClass>
     <deathMessage>{0} was overwhelmed by water pressure.</deathMessage>
     <armorCategory>Blunt</armorCategory>
@@ -23,7 +23,7 @@
   <HediffDef>
     <defName>EH_WaterPressure</defName>
     <label>Pressure</label>
-    <description>Marked by a Water Ascendant's successful strike. Up to three stacks per caster, refreshed for eight seconds. Only the strongest caster's mark affects movement: 5% per stack, at most 15%. Ocean's Judgement can consume its caster's stacks for a stronger primary impact.</description>
+    <description>Marked by a Water Adept's successful strike. Up to three stacks per caster, refreshed for eight seconds. Only the strongest caster's mark affects movement: 5% per stack, at most 15%. Ocean's Judgement can consume its caster's stacks for a stronger primary impact.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>true</isBad>
     <scenarioCanAdd>false</scenarioCanAdd>

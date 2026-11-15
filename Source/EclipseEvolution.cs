@@ -12,7 +12,7 @@ namespace ElementalHearts {
   public static bool Milestones(Pawn p){var old=HediffComp_LunarAbilities.On(p);var mastery=Mastery(p);return old!=null&&(old.eclipseReady||mastery!=null&&AzureRules.Ready(mastery.kills,mastery.parent.ageTicks));}
   public static string Problem(Pawn p){
    if(HediffComp_LunarAbilities.On(p)==null)return "Requires normal Lunar ascension.";
-   if(!Milestones(p))return "Requires 150 unique hostile non-animal kills and ten Lunar Ascendant days, or Celestial Bestow readiness.";
+   if(!Milestones(p))return "Requires 150 unique hostile non-animal kills and ten Lunar Adept days, or Celestial Bestow readiness.";
    if(!ElementalTeaching.Ready(p)||ElementalTeachingSession.Busy(p)||ElementalBestow.Busy(p)||LunarAscendant.Busy(p)||AzureEvolution.Evolving(p)||HediffComp_ElementalTransform.Transforming(p)||ElementalAnimationBridge.Controlled(p))return "Finish the current action, lesson or transformation first.";
    return null;
   }
@@ -40,7 +40,7 @@ namespace ElementalHearts {
   public int kills;HashSet<int> victims=new HashSet<int>();
   public override void CompExposeData(){Scribe_Values.Look(ref kills,"EH_eclipseMasteryKills");Scribe_Collections.Look(ref victims,"EH_eclipseMasteryVictims",LookMode.Value);if(victims==null)victims=new HashSet<int>();}
   public override void Notify_KilledPawn(Pawn victim,DamageInfo? info){if(kills<150&&HediffComp_LunarAbilities.On(Pawn)!=null&&victim!=null&&AzureRules.CountKill(victim.HostileTo(Pawn),victim.RaceProps.Animal,victim==Pawn)&&victims.Add(victim.thingIDNumber))kills++;}
-  public override string CompTipStringExtra{get{return EclipseAscendant.Active(Pawn)?"Eclipse evolution complete.":EclipseAscendant.Milestones(Pawn)?"Eclipse evolution ready. Press Evolve: Eclipse whenever you choose.":"Eclipse mastery: "+kills+" / 150 unique hostile non-animal kills; "+(parent.ageTicks/60000f).ToString("0.0")+" / 10 Lunar Ascendant days.";}}
+  public override string CompTipStringExtra{get{return EclipseAscendant.Active(Pawn)?"Eclipse evolution complete.":EclipseAscendant.Milestones(Pawn)?"Eclipse evolution ready. Press Evolve: Eclipse whenever you choose.":"Eclipse mastery: "+kills+" / 150 unique hostile non-animal kills; "+(parent.ageTicks/60000f).ToString("0.0")+" / 10 Lunar Adept days.";}}
   public override void CompPostTickInterval(ref float adjustment,int delta){if(Pawn.CurJobDef!=null&&Pawn.CurJobDef.defName==EclipseAscendant.Evolution)EvolutionCinematic.Track(Pawn);}
   public override IEnumerable<Gizmo> CompGetGizmos(){
    if(!ElementalCombatPolicy.Controlled(Pawn)||HediffComp_LunarAbilities.On(Pawn)==null)yield break;

@@ -5,7 +5,7 @@ namespace ElementalHearts {
  public static class ElementalAscension {
   public static AcceptanceReport CanReceive(Pawn p){
    if(p==null||p.Dead||!p.RaceProps.Humanlike)return "Only living humanlike pawns can receive ascension serum.";
-   if(ElementalHeartUtility.HasHeart(p))return "Already an Elemental Ascendant. Only one element is allowed.";
+   if(ElementalHeartUtility.HasHeart(p))return "Already has elemental power. Only one element is allowed.";
    return true;
   }
   public static bool Apply(Pawn p,HediffDef def){

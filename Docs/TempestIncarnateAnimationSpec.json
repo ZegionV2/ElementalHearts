@@ -1,0 +1,457 @@
+{
+  "name": "Tempest Incarnate",
+  "status": "Artwork prepared; gameplay integration is a separate step.",
+  "palette": [
+    "dark grey clouds",
+    "charcoal",
+    "slate",
+    "silver",
+    "white electricity"
+  ],
+  "nativeBodies": [
+    "Male",
+    "Female",
+    "Thin",
+    "Fat",
+    "Hulk",
+    "Child",
+    "Baby"
+  ],
+  "compatibilityBodies": [
+    "FemaleBB"
+  ],
+  "facings": [
+    "south",
+    "east",
+    "north"
+  ],
+  "west": "Native east mirroring",
+  "coverageGroups": [
+    "Torso",
+    "Shoulders",
+    "Arms",
+    "Hands",
+    "Waist",
+    "Legs",
+    "Feet"
+  ],
+  "armorPath": "Things/Pawn/Humanlike/Apparel/TempestIncarnateRegalia/TempestIncarnateRegalia",
+  "uniformDefName": "EH_TempestIncarnateUniform",
+  "swordPath": "Things/Item/Equipment/WeaponMelee/TempestIncarnateSword",
+  "swordDefName": "EH_TempestIncarnateSword",
+  "swordSource": "katana",
+  "armorSources": {
+    "south": "suit_south",
+    "east": "suit_east",
+    "north": "suit_north"
+  },
+  "commandRoot": "UI/Commands/ElementalHearts/TempestIncarnate/",
+  "effectRoot": "Effects/ElementalHearts/TempestIncarnate/Frames/",
+  "icons": {
+    "icon_CloudrendCrescent": "CloudrendCrescent",
+    "icon_WhitewakePursuit": "WhitewakePursuit",
+    "icon_StormwheelWaltz": "StormwheelWaltz",
+    "icon_StormveilReversal": "StormveilReversal",
+    "icon_HeavenRendingSquall": "HeavenRendingSquall",
+    "icon_SovereignMaelstrom": "SovereignMaelstrom",
+    "icon_CrownOfTheTempest": "CrownOfTheTempest",
+    "icon_TranscendTempest": "TranscendTempest",
+    "icon_CloudStep": "CloudStep",
+    "icon_TempestTravel": "TempestTravel",
+    "icon_StormFlow": "StormFlow"
+  },
+  "sharedBestow": "UI/Commands/ElementalHearts/Bestow",
+  "sequences": [
+    {
+      "name": "CloudrendCrescent",
+      "source": "frames_CloudrendCrescent",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.5,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "An upright RIGHT-facing curved sword crescent of dark grey cloud with a thin sharp WHITE electrical leading convex edge, trailing wind ribbons to LEFT. Fixed centre/scale/direction. Form a small crescent, extend into a broad complete scything arc by frames 3-4, then unravel into slender wind shreds and sparks by frame7. Never flip toward LEFT; no actual sword."
+    },
+    {
+      "name": "WhitewakePursuit",
+      "source": "frames_WhitewakePursuit",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.4,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "A narrow horizontal left-to-RIGHT speed wake. Pointed white leading tip on RIGHT, parallel white speed strokes along the centreline and slender dark-grey curling cloud tails on LEFT. Grow, peak, thin and fade through eight states; keep the centreline fixed and avoid a bulky cloud ball."
+    },
+    {
+      "name": "StormwheelWaltz",
+      "source": "frames_StormwheelWaltz_clean",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "A flat slightly elliptical circular cloud-and-sword-sweep ring viewed from above. Three curved grey wind blades rimmed WHITE rotate clockwise across EIGHT different angular phases while cloud curls change. Transparent open centre, thin separated cloud arcs, first/last states taper. Real sequential spinning frames, not eight identical icons."
+    },
+    {
+      "name": "StormveilParry",
+      "source": "frames_StormveilParry",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.4,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "An open half-circle grey wind barrier facing RIGHT: form a narrow grey cloud arc, grow a crisp white deflection flash at the right contact point in frames3-4, let two cloud ribbons peel away and tiny sparks fade. No weapon, shield object, body or silhouette; only the registered parry VFX."
+    },
+    {
+      "name": "StormveilCounter",
+      "source": "frames_StormveilCounter",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.45,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "One diagonal rising counter-slash, travelling lower-left toward upper-right, white cutting ribbon wrapped in a narrow dark-grey cloud crescent. Eight timed states: wind-up trace, growing edge, full sharp slash, secondary wisps, fading sparks. Canonical axis and centre fixed; draw no katana or pawn."
+    },
+    {
+      "name": "SquallRise",
+      "source": "frames_SquallRise",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.5,
+      "pivot": [
+        0.5,
+        0.82
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "Two slender upward grey wind spirals with white electrical cuts, an elegant rising sword uppercut trail. Root at the SAME bottom-centre point in every cell, rise and unfurl upward, then fade at upper tips. Open central gap for a captured pawn; no creature, person, ground object or actual sword."
+    },
+    {
+      "name": "SquallFinisher",
+      "source": "frames_SquallFinisher",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.55,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "A huge descending upper-left to lower-right white-edged grey cloud sword slash. One sharply tapered main cutting ribbon with restrained white lightning forks, grows to peak mid-sequence then breaks into small grey wind shreds. Fixed axis, centre and common cell scale, no sword or person."
+    },
+    {
+      "name": "MaelstromFormation",
+      "source": "frames_MaelstromFormation",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.65,
+      "pivot": [
+        0.5,
+        0.82
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "Formation of a hollow small grey cyclone: first a narrow elliptical wind ring at fixed bottom-centre, then dark-grey cloud ribbons rise into a compact funnel with three thin white electrical arcs wrapping it. Increase height/width within same common cell as it forms. Central transparent gaps so a pawn can show through. Same ground root at y82% of every cell."
+    },
+    {
+      "name": "MaelstromLoop",
+      "source": "frames_MaelstromLoop",
+      "frames": 8,
+      "loop": true,
+      "seconds": 0.8,
+      "pivot": [
+        0.5,
+        0.82
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "A steady hollow grey cyclone of THREE separated thin cloud spiral ribbons threaded with fine white electricity. Eight clockwise rotation phases at equal fixed size, root fixed bottom-centre at y82%. Plenty of transparent gaps between coils, readable as wind not opaque smoke. First/last phase meet for seamless looping. No growth/explosion, no pawn."
+    },
+    {
+      "name": "MaelstromRelease",
+      "source": "frames_MaelstromRelease",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "An outward pressure release viewed above: thin grey cloud ring and four white radial wind streaks expand from tiny centre to wide broken ring, then dissipate into wisps. Eight expanding/fading states, COMMON centred pivot and cell window; never recenter or resize later frames to fill cells. No funnel or characters."
+    },
+    {
+      "name": "CrownTelegraph",
+      "source": "frames_CrownTelegraph",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.8,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "An elegant flat elliptical storm seal on empty transparency, viewed obliquely from above: three broken grey cloud rings and fine white lightning spokes gather around a large EMPTY centre. Eight charging states growing subtly brighter/denser, no filled white disk, no explosion, no solid floor or landscape. Fixed centre and radius registration."
+    },
+    {
+      "name": "CrownFunnel",
+      "source": "frames_CrownFunnel",
+      "frames": 8,
+      "loop": false,
+      "seconds": 1.2,
+      "pivot": [
+        0.5,
+        0.82
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "A grand tall dark-grey storm funnel and rolling cloud canopy, narrow base rooted at bottom-centre y82%, broad dark charcoal clouds high above, spiralling grey pressure ribbons and bright narrow branching WHITE electricity twisting through it. Eight phases: gather, rise, widen, strong discharge peak in frames3-5, loosen, dissipate. Clearly sculpted flat cloud layers, not a plain straight beam. No ground, pawn, crown object or scenery."
+    },
+    {
+      "name": "CrownBurst",
+      "source": "frames_CrownBurst",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.8,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "A huge radial storm-pressure detonation viewed above, not a fireball. A compressed grey central cloud knot bursts into an expanding thin white-edged shockwave, grey pointed wind blades and restrained white lightning branches. Eight clearly expanding frames from compact impact through widest broken ring to faint departing wisps. SAME centre and cell scale, transparent empty background."
+    },
+    {
+      "name": "CloudStepFlash",
+      "source": "frames_CloudStepFlash",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.35,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "A compact teleport blink effect: two grey cloud curls separate around a narrow crisp horizontal WHITE flash, briefly open an empty centre and disintegrate into tiny wind wisps. Eight small rapid phases, centred, no pawn/silhouette/portal building and no large cloud wall."
+    },
+    {
+      "name": "TravelDeparture",
+      "source": "frames_TravelDeparture",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.8,
+      "pivot": [
+        0.5,
+        0.82
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "World-travel departure: a narrow upright spiral of grey cloud lifts from a thin elliptical ring at fixed bottom-centre y82%, white electricity coils upward as the centre opens and empties. Eight registered phases from seal to rising cloud column to trailing fragments. Keep the lower anchor identical in all cells. Transparent interior reveals the traveller; draw no person."
+    },
+    {
+      "name": "TravelArrival",
+      "source": "frames_TravelArrival",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.8,
+      "pivot": [
+        0.5,
+        0.82
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "World-travel arrival: a narrow upright grey storm funnel descends into a thin white wind landing ring at fixed bottom-centre y82%, opens at its centre, then collapses outward into soft grey wisps and sparse white sparks. Eight distinct states, same root and scale as departure, no opaque filled ground or person."
+    },
+    {
+      "name": "TravelRing",
+      "source": "frames_TravelRing",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "A restrained flat elliptical arrival ring of grey cloud scrolls and narrow WHITE wind highlights. Eight phases expand smoothly outward from a small ring to a wider broken thin ring, then fade to a few wisps. Transparent empty centre, SAME centred pivot/cell scale throughout, no upright beam or ground texture."
+    },
+    {
+      "name": "StormMotes",
+      "source": "frames_StormMotes",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.7,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "A small scatter of six tiny white electrical glints and four tiny charcoal-grey wind curls. Eight states drift upward slightly and fade, very sparse and subtle, empty centre for a pawn. Same centred registration, each frame visibly nonempty but at most ten small particles. No large clouds, rings, haze or disks."
+    },
+    {
+      "name": "TranscendCharge",
+      "source": "frames_TranscendCharge",
+      "frames": 8,
+      "loop": true,
+      "seconds": 0.8,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "An infernal-free STORM CORONATION seal: three elegant broken dark-grey wind rings spiral around an EMPTY centre, small white electrical spokes briefly bridge the rings, four cloud-scroll accents rotate. Eight equal-size cyclic charge phases to be pulsed/scaled in code during transcendence. Flat oblique ground perspective, no physical crown/pawn/landscape, no solid disk."
+    },
+    {
+      "name": "MeleeClash",
+      "source": "frames_MeleeClash",
+      "frames": 8,
+      "loop": false,
+      "seconds": 0.3,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "note": "A small ordinary katana impact effect: a sharp WHITE four-point slash glint and two short white electric forks amid one small charcoal-grey cloud puff and two slender wind curls. Eight rapid nonempty states grow, snap and fade. Tiny compact effect, centred, no actual swords or body, no large explosion."
+    },
+    {
+      "name": "Halo",
+      "source": "frames_Halo_clean",
+      "frames": 6,
+      "loop": true,
+      "seconds": 0.9,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 3,
+      "rows": 2,
+      "size": 256,
+      "gutter": 6,
+      "padding": 16,
+      "note": "A SMALL FLOATING HALO made solely of a hollow ring of charcoal/dark-grey cloud curls with three very thin white electrical bridges. Low oblique perspective ellipse with visible front/back thickness so it has depth, large completely transparent CENTRAL HOLE in every frame. Six subtle clockwise drifting/flickering phases, same size/centre. No solid crown spikes, no head, no pawn, no background disk or opaque white core."
+    },
+    {
+      "name": "BackAura",
+      "source": "frames_BackAura_clean",
+      "frames": 6,
+      "loop": true,
+      "seconds": 1,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 3,
+      "rows": 2,
+      "size": 256,
+      "gutter": 6,
+      "padding": 16,
+      "note": "A SUBTLE back aura: two slender grey cloud-scroll ribbons form a loose open-centred crest, left and right of a WIDE COMPLETELY EMPTY body gap. Tiny white electrical arcs flicker along ribbon edges. Six gentle looping phases at same registered scale/centre. Sparse airy shape, no solid cloud canopy, wings, body silhouette, huge lightning bolt, ground ring or filled circle; will sit behind the pawn."
+    },
+    {
+      "name": "AirboundRibbon",
+      "source": "frames_AirboundRibbon_clean",
+      "frames": 6,
+      "loop": true,
+      "seconds": 0.8,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "columns": 3,
+      "rows": 2,
+      "size": 256,
+      "gutter": 6,
+      "padding": 16,
+      "note": "A small subtle airborne control loop to position around any captured pawn: two separated narrow charcoal-grey wind ribbons curling upward, two tiny white glints and very short white electrical threads. Six subtle clockwise looping phases, same centre/size, wide empty centre with NO pawn. Sparse translucent edges, no ice shell or thick cloud sphere."
+    }
+  ]
+}

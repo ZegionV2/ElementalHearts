@@ -77,7 +77,7 @@
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>EH_FlameSword</defName>
     <label>flame sword</label>
-    <description>A flame-styled longsword. Uses ordinary longsword attacks. The Flame Ascendant supplies elemental powers; this sword uses ordinary melee attacks. Indestructible elemental equipment: cannot be damaged or worn out.</description>
+    <description>A flame-styled longsword. Uses ordinary longsword attacks. The Flame Adept supplies elemental powers; this sword uses ordinary melee attacks. Indestructible elemental equipment: cannot be damaged or worn out.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/FlameSword</texPath>
       <graphicClass>Graphic_Single</graphicClass>

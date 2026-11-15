@@ -7,7 +7,7 @@
 
 Damage: this lineage multiplies the Melee damage stat by 3.2 (+220%). The shared 20% reduction makes an otherwise identical eligible physical melee packet 2.56 times its unascended value before armor and other modifiers. This is not a fixed skill-damage value: techniques scale from the current melee profile and use their own multipliers, marks and, where applicable, separate elemental hits. Do not apply the lineage multiplier a second time to the weapon profile.
 
-Teamwork: elemental techniques can synchronize with nearby allied transformed Ascendants for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
+Teamwork: elemental techniques can synchronize with nearby allied transformed elemental wielders for brief shared bonuses and elemental support. Each participant has one six-second support cooldown.</description>
     <comps>
       <li Class="ElementalHearts.HediffCompProperties_CelestialAbilities" />
       <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
@@ -82,7 +82,6 @@ Teamwork: elemental techniques can synchronize with nearby allied transformed As
           <MentalBreakThreshold>-0.25</MentalBreakThreshold>
           <MeleeHitChance>4</MeleeHitChance>
           <MeleeDodgeChance>12</MeleeDodgeChance>
-
           <ComfyTemperatureMin>-100</ComfyTemperatureMin>
           <ComfyTemperatureMax>300</ComfyTemperatureMax>
         </statOffsets>
@@ -191,8 +190,14 @@ Teamwork: elemental techniques can synchronize with nearby allied transformed As
     <defName>EH_CelestialLightTravel</defName>
     <label>Light Travel</label>
     <worldObjectClass>ElementalHearts.WorldObject_CelestialLightTravel</worldObjectClass>
-    <texture>UI/Commands/ElementalHearts/Celestial/LightTravel</texture>
+    <texture>UI/Commands/ElementalHearts/LivingFlight/FlyingPawn</texture>
     <useDynamicDrawer>true</useDynamicDrawer>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconTexture>UI/Commands/ElementalHearts/LivingFlight/FlyingPawn</expandingIconTexture>
+    <expandingIconPriority>200</expandingIconPriority>
+    <expandingIconDrawSize>2.2</expandingIconDrawSize>
+    <expandMore>true</expandMore>
+    <validLaunchTarget>false</validLaunchTarget>
   </WorldObjectDef>
   <WorldObjectDef>
     <defName>EH_CelestialLandingSite</defName>

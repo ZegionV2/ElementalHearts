@@ -722,224 +722,250 @@
     </subSounds>
   </SoundDef>
   <SoundDef>
-    <defName>EH_Sound_Glacial_Slash</defName>
-    <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
-    <priorityMode>PrioritizeNearest</priorityMode>
-    <subSounds>
-      <li>
-        <name>main</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>ElementalHearts/V2/Glacial/Slash</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>30~38</volumeRange>
-        <pitchRange>.94~1.04</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-      <li>
-        <name>impact</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>Buildings/GestatorGlassShattering</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>23~31</volumeRange>
-        <pitchRange>1.0~1.2</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-    </subSounds>
-  </SoundDef>
+  <defName>EH_Sound_Glacial_Slash</defName>
+  <context>MapOnly</context>
+  <maxVoices>3</maxVoices>
+  <maxSimultaneous>2</maxSimultaneous>
+  <priorityMode>PrioritizeNearest</priorityMode>
+  <subSounds>
+    <li>
+      <name>attack</name>
+      <grains>
+        <li Class="AudioGrain_Folder">
+          <clipFolderPath>ElementalHearts/V2/Glacial/Slash</clipFolderPath>
+        </li>
+      </grains>
+      <onCamera>false</onCamera>
+      <volumeRange>30~35</volumeRange>
+      <pitchRange>.92~1.02</pitchRange>
+      <distRange>6~50</distRange>
+      <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+    </li>
+    <li>
+      <name>body</name>
+      <grains>
+        <li Class="AudioGrain_Folder">
+          <clipFolderPath>Buildings/GestatorGlassShattering</clipFolderPath>
+        </li>
+      </grains>
+      <onCamera>false</onCamera>
+      <volumeRange>14~20</volumeRange>
+      <pitchRange>1.08~1.2</pitchRange>
+      <distRange>6~50</distRange>
+      <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+    </li>
+  </subSounds>
+</SoundDef>
   <SoundDef>
-    <defName>EH_Sound_Glacial_Dash</defName>
-    <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
-    <priorityMode>PrioritizeNearest</priorityMode>
-    <subSounds>
-      <li>
-        <name>main</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>ElementalHearts/V2/Glacial/Dash</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>30~38</volumeRange>
-        <pitchRange>.94~1.04</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-    </subSounds>
-  </SoundDef>
+  <defName>EH_Sound_Glacial_Dash</defName>
+  <context>MapOnly</context>
+  <maxVoices>3</maxVoices>
+  <maxSimultaneous>2</maxSimultaneous>
+  <priorityMode>PrioritizeNearest</priorityMode>
+  <subSounds>
+    <li>
+      <name>attack</name>
+      <grains>
+        <li Class="AudioGrain_Folder">
+          <clipFolderPath>ElementalHearts/V2/Glacial/Dash</clipFolderPath>
+        </li>
+      </grains>
+      <onCamera>false</onCamera>
+      <volumeRange>25~30</volumeRange>
+      <pitchRange>.9~1.02</pitchRange>
+      <distRange>6~50</distRange>
+      <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+    </li>
+    <li>
+      <name>body</name>
+      <grains>
+        <li Class="AudioGrain_Folder">
+          <clipFolderPath>Pawn/Mechanoid/Scyther/Melee/Miss</clipFolderPath>
+        </li>
+      </grains>
+      <onCamera>false</onCamera>
+      <volumeRange>9~14</volumeRange>
+      <pitchRange>.8~.94</pitchRange>
+      <distRange>6~50</distRange>
+      <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+    </li>
+  </subSounds>
+</SoundDef>
   <SoundDef>
-    <defName>EH_Sound_Glacial_Spin</defName>
-    <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
-    <priorityMode>PrioritizeNearest</priorityMode>
-    <subSounds>
-      <li>
-        <name>main</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>ElementalHearts/V2/Glacial/Spin</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>30~38</volumeRange>
-        <pitchRange>.94~1.04</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-      <li>
-        <name>impact</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>Buildings/GestatorGlassShattering</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>23~31</volumeRange>
-        <pitchRange>1.0~1.2</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-    </subSounds>
-  </SoundDef>
+  <defName>EH_Sound_Glacial_Spin</defName>
+  <context>MapOnly</context>
+  <maxVoices>3</maxVoices>
+  <maxSimultaneous>2</maxSimultaneous>
+  <priorityMode>PrioritizeNearest</priorityMode>
+  <subSounds>
+    <li>
+      <name>attack</name>
+      <grains>
+        <li Class="AudioGrain_Folder">
+          <clipFolderPath>ElementalHearts/V2/Glacial/Spin</clipFolderPath>
+        </li>
+      </grains>
+      <onCamera>false</onCamera>
+      <volumeRange>30~36</volumeRange>
+      <pitchRange>.86~.98</pitchRange>
+      <distRange>6~50</distRange>
+      <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+    </li>
+    <li>
+      <name>body</name>
+      <grains>
+        <li Class="AudioGrain_Folder">
+          <clipFolderPath>Buildings/GestatorGlassShattering</clipFolderPath>
+        </li>
+      </grains>
+      <onCamera>false</onCamera>
+      <volumeRange>18~24</volumeRange>
+      <pitchRange>.94~1.06</pitchRange>
+      <distRange>6~50</distRange>
+      <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+    </li>
+  </subSounds>
+</SoundDef>
   <SoundDef>
-    <defName>EH_Sound_Glacial_Charge</defName>
-    <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
-    <priorityMode>PrioritizeNearest</priorityMode>
-    <subSounds>
-      <li>
-        <name>main</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>ElementalHearts/V2/Glacial/Charge</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>30~38</volumeRange>
-        <pitchRange>.94~1.04</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-    </subSounds>
-  </SoundDef>
+  <defName>EH_Sound_Glacial_Charge</defName>
+  <context>MapOnly</context>
+  <maxVoices>3</maxVoices>
+  <maxSimultaneous>2</maxSimultaneous>
+  <priorityMode>PrioritizeNearest</priorityMode>
+  <subSounds>
+    <li>
+      <name>attack</name>
+      <grains>
+        <li Class="AudioGrain_Folder">
+          <clipFolderPath>ElementalHearts/V2/Glacial/Charge</clipFolderPath>
+        </li>
+      </grains>
+      <onCamera>false</onCamera>
+      <volumeRange>24~29</volumeRange>
+      <pitchRange>.78~.9</pitchRange>
+      <distRange>6~50</distRange>
+      <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+    </li>
+    <li>
+      <name>body</name>
+      <grains>
+        <li Class="AudioGrain_Clip">
+          <clipPath>Misc/RockCollapse</clipPath>
+        </li>
+      </grains>
+      <onCamera>false</onCamera>
+      <volumeRange>9~13</volumeRange>
+      <pitchRange>1.04~1.15</pitchRange>
+      <distRange>6~50</distRange>
+      <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+    </li>
+  </subSounds>
+</SoundDef>
   <SoundDef>
-    <defName>EH_Sound_Glacial_Impact</defName>
-    <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
-    <priorityMode>PrioritizeNearest</priorityMode>
-    <subSounds>
-      <li>
-        <name>main</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>ElementalHearts/V2/Glacial/Impact</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>30~38</volumeRange>
-        <pitchRange>.94~1.04</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-      <li>
-        <name>impact</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>Buildings/GestatorGlassShattering</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>38~48</volumeRange>
-        <pitchRange>1.0~1.2</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-    </subSounds>
-  </SoundDef>
+  <defName>EH_Sound_Glacial_Impact</defName>
+  <context>MapOnly</context>
+  <maxVoices>3</maxVoices>
+  <maxSimultaneous>2</maxSimultaneous>
+  <priorityMode>PrioritizeNearest</priorityMode>
+  <subSounds>
+    <li>
+      <name>attack</name>
+      <grains>
+        <li Class="AudioGrain_Folder">
+          <clipFolderPath>ElementalHearts/V2/Glacial/Impact</clipFolderPath>
+        </li>
+      </grains>
+      <onCamera>false</onCamera>
+      <volumeRange>34~40</volumeRange>
+      <pitchRange>.78~.9</pitchRange>
+      <distRange>6~50</distRange>
+      <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+    </li>
+    <li>
+      <name>body</name>
+      <grains>
+        <li Class="AudioGrain_Folder">
+          <clipFolderPath>Buildings/GestatorGlassShattering</clipFolderPath>
+        </li>
+      </grains>
+      <onCamera>false</onCamera>
+      <volumeRange>23~29</volumeRange>
+      <pitchRange>.82~.96</pitchRange>
+      <distRange>6~50</distRange>
+      <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+    </li>
+  </subSounds>
+</SoundDef>
   <SoundDef>
-    <defName>EH_Sound_Glacial_Parry</defName>
-    <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
-    <priorityMode>PrioritizeNearest</priorityMode>
-    <subSounds>
-      <li>
-        <name>main</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>ElementalHearts/V2/Glacial/Parry</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>30~38</volumeRange>
-        <pitchRange>.94~1.04</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-      <li>
-        <name>impact</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>Buildings/GestatorGlassShattering</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>23~31</volumeRange>
-        <pitchRange>1.0~1.2</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-    </subSounds>
-  </SoundDef>
+  <defName>EH_Sound_Glacial_Parry</defName>
+  <context>MapOnly</context>
+  <maxVoices>3</maxVoices>
+  <maxSimultaneous>2</maxSimultaneous>
+  <priorityMode>PrioritizeNearest</priorityMode>
+  <subSounds>
+    <li>
+      <name>attack</name>
+      <grains>
+        <li Class="AudioGrain_Folder">
+          <clipFolderPath>ElementalHearts/V2/Glacial/Parry</clipFolderPath>
+        </li>
+      </grains>
+      <onCamera>false</onCamera>
+      <volumeRange>28~34</volumeRange>
+      <pitchRange>1.02~1.14</pitchRange>
+      <distRange>6~50</distRange>
+      <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+    </li>
+    <li>
+      <name>body</name>
+      <grains>
+        <li Class="AudioGrain_Folder">
+          <clipFolderPath>Impact/Deflect/Deflect_Metal</clipFolderPath>
+        </li>
+      </grains>
+      <onCamera>false</onCamera>
+      <volumeRange>12~17</volumeRange>
+      <pitchRange>1.1~1.2</pitchRange>
+      <distRange>6~50</distRange>
+      <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+    </li>
+  </subSounds>
+</SoundDef>
   <SoundDef>
-    <defName>EH_Sound_Glacial_Burst</defName>
-    <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
-    <priorityMode>PrioritizeNearest</priorityMode>
-    <subSounds>
-      <li>
-        <name>main</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>ElementalHearts/V2/Glacial/Burst</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>30~38</volumeRange>
-        <pitchRange>.94~1.04</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-      <li>
-        <name>impact</name>
-        <grains>
-          <li Class="AudioGrain_Folder">
-            <clipFolderPath>Buildings/GestatorGlassShattering</clipFolderPath>
-          </li>
-        </grains>
-        <onCamera>false</onCamera>
-        <volumeRange>38~48</volumeRange>
-        <pitchRange>1.0~1.2</pitchRange>
-        <distRange>6~45</distRange>
-        <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
-      </li>
-    </subSounds>
-  </SoundDef>
+  <defName>EH_Sound_Glacial_Burst</defName>
+  <context>MapOnly</context>
+  <maxVoices>3</maxVoices>
+  <maxSimultaneous>2</maxSimultaneous>
+  <priorityMode>PrioritizeNearest</priorityMode>
+  <subSounds>
+    <li>
+      <name>attack</name>
+      <grains>
+        <li Class="AudioGrain_Folder">
+          <clipFolderPath>ElementalHearts/V2/Glacial/Burst</clipFolderPath>
+        </li>
+      </grains>
+      <onCamera>false</onCamera>
+      <volumeRange>34~40</volumeRange>
+      <pitchRange>.74~.86</pitchRange>
+      <distRange>6~50</distRange>
+      <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+    </li>
+    <li>
+      <name>body</name>
+      <grains>
+        <li Class="AudioGrain_Clip">
+          <clipPath>Misc/RockCollapse</clipPath>
+        </li>
+      </grains>
+      <onCamera>false</onCamera>
+      <volumeRange>18~24</volumeRange>
+      <pitchRange>.98~1.08</pitchRange>
+      <distRange>6~50</distRange>
+      <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
+    </li>
+  </subSounds>
+</SoundDef>
   <SoundDef>
     <defName>EH_ThunderStrike</defName>
     <context>MapOnly</context>

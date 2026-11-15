@@ -2,7 +2,7 @@
 <Defs>
   <HediffDef>
     <defName>EH_ElementalConcord</defName><label>elemental synchronization</label>
-    <description>Two allied, transformed Ascendants struck the same enemy within four seconds while within eight clear cells of each other. Their coordination grants 10% more melee damage and movement for four seconds. Each participant can synchronize once per six seconds; multiple partners do not stack this condition. Earth partners add a brief ward, Water partners repair up to four ordinary injury points each, Water/Lightning can cause a resisted discharge, and Flame/Wind strengthens one existing hit by 15%. No extra damage packet is spawned.</description>
+    <description>Two allied, transformed elemental wielders struck the same enemy within four seconds while within eight clear cells of each other. Their coordination grants 10% more melee damage and movement for four seconds. Each participant can synchronize once per six seconds; multiple partners do not stack this condition. Earth partners add a brief ward, Water partners repair up to four ordinary injury points each, Water/Lightning can cause a resisted discharge, and Flame/Wind strengthens one existing hit by 15%. No extra damage packet is spawned.</description>
     <hediffClass>HediffWithComps</hediffClass><isBad>false</isBad><scenarioCanAdd>false</scenarioCanAdd><initialSeverity>1</initialSeverity>
     <comps><li Class="HediffCompProperties_Disappears"><disappearsAfterTicks>240</disappearsAfterTicks></li></comps>
     <stages><li><statFactors><MeleeDamageFactor>1.1</MeleeDamageFactor><MoveSpeed>1.1</MoveSpeed></statFactors></li></stages>

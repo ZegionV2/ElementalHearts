@@ -77,7 +77,7 @@
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>EH_LightningSword</defName>
     <label>lightning sword</label>
-    <description>A longsword with blue lightning ornamentation. Uses ordinary longsword attacks; the Lightning Ascendant supplies all special powers. Indestructible elemental equipment: cannot be damaged or worn out.</description>
+    <description>A longsword with blue lightning ornamentation. Uses ordinary longsword attacks; the Lightning Adept supplies all special powers. Indestructible elemental equipment: cannot be damaged or worn out.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/LightningSword</texPath>
       <graphicClass>Graphic_Single</graphicClass>

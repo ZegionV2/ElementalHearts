@@ -68,7 +68,7 @@
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_EarthHelmet</defName>
-    <label>earth ascendant helmet</label>
+    <label>earth adept helmet</label>
     <description>A closed faceted basalt helmet with a bronze mountain crown and an amber visor. Bound and indestructible. Covers the full head and progressively conceals hair and beard during manifestation; restores personal headwear and hair on Revert.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/EarthHelmet/EarthHelmet</texPath>

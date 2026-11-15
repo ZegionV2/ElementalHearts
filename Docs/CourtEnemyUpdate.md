@@ -31,7 +31,7 @@ The original budget is carried through native point adjustments in a temporary c
 | Fallen hostile Court rank | Matching essence | Additional material |
 | --- | --- | --- |
 | Oathling | 1–2 | — |
-| Knight / awakened ordinary Ascendant | 3–4 | — |
+| Knight / awakened ordinary Adept | 3–4 | — |
 | Herald | 6–8 | One Herald crucible sigil |
 
 Items drop near the death on a loaded map. A per-pawn `EH_courtSpoilsClaimed` key is committed before spawning the bounded one/two material stacks. Revival and save/load cannot replay a drop. Pre-update dead pawns default to claimed; redeemed colonists are excluded. Off-map deaths do not spawn remote items.

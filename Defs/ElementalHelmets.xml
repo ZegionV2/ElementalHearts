@@ -2,8 +2,8 @@
 <Defs>
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_LightningHelmet</defName>
-    <label>lightning ascendant helmet</label>
-    <description>A fully enclosed Lightning Ascendant helmet, matched to its elemental suit. Protects the entire head and carries the transformation combat bonuses. Hair and facial features are concealed beneath its armored faceplate. Indestructible elemental equipment: cannot be damaged or worn out.</description>
+    <label>lightning adept helmet</label>
+    <description>A fully enclosed Lightning Adept helmet, matched to its elemental suit. Protects the entire head and carries the transformation combat bonuses. Hair and facial features are concealed beneath its armored faceplate. Indestructible elemental equipment: cannot be damaged or worn out.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/LightningHelmet/LightningHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -71,8 +71,8 @@
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_FlameHelmet</defName>
-    <label>flame ascendant helmet</label>
-    <description>A fully enclosed Flame Ascendant helmet, matched to its elemental suit. Protects the entire head and carries the transformation combat bonuses. Hair and facial features are concealed beneath its armored faceplate. Indestructible elemental equipment: cannot be damaged or worn out.</description>
+    <label>flame adept helmet</label>
+    <description>A fully enclosed Flame Adept helmet, matched to its elemental suit. Protects the entire head and carries the transformation combat bonuses. Hair and facial features are concealed beneath its armored faceplate. Indestructible elemental equipment: cannot be damaged or worn out.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/FlameHelmet/FlameHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -140,8 +140,8 @@
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_WindHelmet</defName>
-    <label>wind ascendant helmet</label>
-    <description>A fully enclosed Wind Ascendant helmet, matched to its elemental suit. Protects the entire head and carries the transformation combat bonuses. Hair and facial features are concealed beneath its armored faceplate. Indestructible elemental equipment: cannot be damaged or worn out.</description>
+    <label>wind adept helmet</label>
+    <description>A fully enclosed Wind Adept helmet, matched to its elemental suit. Protects the entire head and carries the transformation combat bonuses. Hair and facial features are concealed beneath its armored faceplate. Indestructible elemental equipment: cannot be damaged or worn out.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/WindHelmet/WindHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>

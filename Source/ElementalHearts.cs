@@ -53,9 +53,9 @@ namespace ElementalHearts
 
             listing.CheckboxLabeled("Enable auto combat for player-controlled pawns",ref Settings.enableAutomation);
 
-            listing.Label("New disciples and Ascendants start with Auto Combat on.");
+            listing.Label("New disciples and Adepts start with Auto Combat on.");
 
-            listing.Label("Player-controlled pawns keep their saved toggle after loading or evolution. Non-player-controlled disciples and Ascendants always use auto combat, even when this master switch is off.");
+            listing.Label("Player-controlled pawns keep their saved toggle after loading or evolution. Non-player-controlled disciples and elemental wielders always use auto combat, even when this master switch is off.");
 
             listing.Label("Auto area-attack enemy threshold: "+Settings.danceThreshold);
 
@@ -72,11 +72,11 @@ namespace ElementalHearts
             listing.Label("Visual settings do not change combat damage.");
             listing.CheckboxLabeled("Thunder Incarnate scenery damage and fires",ref Settings.incarnateTerrainDamage);
             listing.Label("Incarnate skill impacts cause real nearby structural blast damage, ash and ignition. Non-lethal mode suppresses this destruction. Thunder Step and Thunder Travel never cause terrain damage.");
-            listing.Gap();listing.CheckboxLabeled("Enable allied Ascendant synchronization",ref Settings.enableConcord);
-            listing.Label("Two allied transformed Ascendants striking the same enemy within four seconds and eight clear cells gain brief shared bonuses. Earth shields, Water supports recovery, Flame/Wind strengthens one hit, and Water/Lightning can discharge. Each participant has a shared six-second cooldown. No additional skill buttons.");
+            listing.Gap();listing.CheckboxLabeled("Enable allied elemental synchronization",ref Settings.enableConcord);
+            listing.Label("Two allied transformed elemental wielders striking the same enemy within four seconds and eight clear cells gain brief shared bonuses. Earth shields, Water supports recovery, Flame/Wind strengthens one hit, and Water/Lightning can discharge. Each participant has a shared six-second cooldown. No additional skill buttons.");
 
             listing.Gap();listing.Label("New humanoid NPCs spawning as disciples: "+Mathf.RoundToInt(Settings.npcDiscipleChance*100)+"%");
-            Settings.npcDiscipleChance=Mathf.Round(listing.Slider(Settings.npcDiscipleChance,0f,1f)*100f)/100f;listing.Label("Eligible adult humanlike pawns from other factions can be Lightning, Flame, Wind, Water or Earth disciples. Awakening is one 5% roll at a near-death hostile combat hit. NPCs automatically summon their swords and Ascendant gear.");
+            Settings.npcDiscipleChance=Mathf.Round(listing.Slider(Settings.npcDiscipleChance,0f,1f)*100f)/100f;listing.Label("Eligible adult humanlike pawns from other factions can be Lightning, Flame, Wind, Water or Earth disciples. Awakening is one 5% roll at a near-death hostile combat hit. NPCs automatically summon their swords and Adept gear.");
             listing.Gap();listing.Label("Otherworld Calling cooldown: "+Settings.callingCooldownHours.ToString("0.0")+" in-game hours");
             Settings.callingCooldownHours=Mathf.Round(listing.Slider(Settings.callingCooldownHours,0f,24f)*10)/10f;listing.Label("Default: one in-game hour. Calling uses 1,000 reachable, visible, allowed silver anywhere on the current map; storage and a home area are not required. Zero disables only the cooldown. Recruits remain 18–24 with matching academy uniforms and no Fat/Hulk bodies.");
             listing.Gap();listing.Label("The Severed Court");

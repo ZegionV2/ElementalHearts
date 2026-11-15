@@ -12,11 +12,11 @@ A floating **fractured-ice halo** appears only while transformed and drafted. Gi
 
 ## Progression and power condition
 
-- Require **150 additional unique hostile non-animal kills and ten in-game days as a full Water Ascendant**, matching the other implemented evolutions. Disciple kills, friendly prisoners, animals and repeated kills of a resurrected victim do not advance mastery.
+- Require **150 additional unique hostile non-animal kills and ten in-game days as a full Water Adept**, matching the other implemented evolutions. Disciple kills, friendly prisoners, animals and repeated kills of a resurrected victim do not advance mastery.
 - Add a saved Water mastery tracker when the evolution update ships. Existing Water pawns retain their Ascendant age; unique kill tracking begins with that update because old total-kill records cannot reliably reconstruct eligible unique victims.
 - Unlock **Evolve: Glacial Ascendant** when both milestones are met. Use the existing interruptible **4.5-second C# ritual**: gather water, spiral frost around the pawn, crystallize the regalia, then finish with a brief ice-ring pulse. No resource cost; interruption retains readiness and grants no partial upgrade.
 - Replace the Water condition with one standalone **Glacial Ascendant** condition through the same saved-root rebinding approach as the existing evolutions. Preserve hediff identity, age, cooldowns, mode flags, Pressure ownership, recovery/counter state, sword bond and stored personal gear. Keep one elemental lineage and one set of skill controls.
-- Match the existing evolved tier: **5× elemental movement factor**, **+50 total ascension mood**, stronger general defense and the same additional protection against ordinary Ascendant attacks. The +50 replaces Water's +30; it does not add to +80. Effective movement still combines with capacities and equipment.
+- Match the existing evolved tier: **5× elemental movement factor**, **+50 total ascension mood**, stronger general defense and the same additional protection against ordinary Adept attacks. The +50 replaces Water's +30; it does not add to +80. Effective movement still combines with capacities and equipment.
 - Keep Still Water's **80% frontal parry**, **120-degree cone** and **45-tick recovery per attempt**. Avoid automatic perfect blocking. Preserve the Returning Tide recursion guard and hold/drop rules for pending counters.
 
 ## Five active abilities
@@ -52,9 +52,9 @@ Start with **Crescent → Step → Vortex → Absolute Zero**, selecting only re
 
 Use the existing combat-order policy, safe movement helpers and queued-order protection. Each technique owns control through its current job. No separate persistent busy flag, duplicate automation toggle or new resource bar. Save the fifth cooldown separately, for example `EH_glacialExplosionReadyAt`, so the current four-entry Water cooldown list keeps its existing format. Frozen Dominion has not shipped, so no Dominion save-key migration is needed.
 
-Replace **Teach** with **Bestow Water** on evolved pawns. The existing four-second paired ceremony grants ordinary Water ascension directly, skipping discipleship. Both pawns stop and face each other. Ordinary Water Ascendants continue teaching disciples normally.
+Replace **Teach** with **Bestow Water** on evolved pawns. The existing four-second paired ceremony grants ordinary Water ascension directly, skipping discipleship. Both pawns stop and face each other. Ordinary Water Adepts continue teaching disciples normally.
 
-Add **DEV: Evolution-Ready** for unevolved Water Ascendants when this evolution actually ships. It sets the milestones; the normal Evolve button performs the ritual. Visibility and action eligibility must read dev mode dynamically, as with the existing fixed commands.
+Add **DEV: Evolution-Ready** for unevolved Water Adepts when this evolution actually ships. It sets the milestones; the normal Evolve button performs the ritual. Visibility and action eligibility must read dev mode dynamically, as with the existing fixed commands.
 
 ## Assets and implementation
 

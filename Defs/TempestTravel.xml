@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <JobDef>
+    <defName>EH_TempestTravelDepart</defName>
+    <driverClass>ElementalHearts.JobDriver_CelestialDepart</driverClass>
+    <reportString>departing through a storm seal.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  <JobDef>
+    <defName>EH_TempestTravelArrive</defName>
+    <driverClass>ElementalHearts.JobDriver_CelestialArrive</driverClass>
+    <reportString>arriving in a white storm column.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+  <WorldObjectDef>
+    <defName>EH_TempestTravel</defName>
+    <label>Tempest Travel</label>
+    <worldObjectClass>ElementalHearts.WorldObject_CelestialLightTravel</worldObjectClass>
+    <texture>UI/Commands/ElementalHearts/LivingFlight/FlyingPawn</texture>
+    <useDynamicDrawer>true</useDynamicDrawer>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconTexture>UI/Commands/ElementalHearts/LivingFlight/FlyingPawn</expandingIconTexture>
+    <expandingIconPriority>200</expandingIconPriority>
+    <expandingIconDrawSize>2.2</expandingIconDrawSize>
+    <expandMore>true</expandMore>
+    <validLaunchTarget>false</validLaunchTarget>
+  </WorldObjectDef>
+  <WorldObjectDef>
+    <defName>EH_TempestLandingSite</defName>
+    <label>tempest landing</label>
+    <worldObjectClass>ElementalHearts.CelestialLandingSite</worldObjectClass>
+    <texture>UI/Commands/ElementalHearts/TempestIncarnate/TempestTravel</texture>
+  </WorldObjectDef>
+</Defs>

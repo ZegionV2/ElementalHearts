@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -13,8 +13,8 @@ namespace ElementalHearts {
   public static readonly Texture2D Emblem=ContentFinder<Texture2D>.Get("UI/Commands/ElementalHearts/Bestow");
   static readonly Dictionary<string,Texture2D> symbols=new Dictionary<string,Texture2D>();
   static CodexArt(){foreach(var form in new[]{"Flame","AzureFlame","Lightning","Thunderstorm","Water","Glacial","Wind","Cyclone","Earth","Adamant","Lunar","Eclipse"})symbols[form]=ContentFinder<Texture2D>.Get("UI/ElementalHearts/Court/Badges/"+form);symbols["Celestial"]=Emblem;}
-  public static Texture2D Icon(CodexEntry entry){if(ThunderIncarnate.Active(entry.pawn))return ThunderIncarnate.Icon(ThunderIncarnate.SkillCount);Texture2D result;return symbols.TryGetValue((entry.form??"").Replace(" ",""),out result)?result:Emblem;}
-  public static Color Accent(CodexEntry entry){if(ThunderIncarnate.Active(entry.pawn))return new Color(1,.89f,.08f);int i=Array.IndexOf(CelestialBestowOptions.Elements,entry.element);return i<0?Gold:CelestialBestowArt.Accents[i];}
+  public static Texture2D Icon(CodexEntry entry){if(AuroraIncarnate.Active(entry.pawn))return AuroraIncarnate.Icon(7);if(TempestIncarnate.Active(entry.pawn))return TempestIncarnate.Icon(7);if(HellFlameIncarnate.Active(entry.pawn))return HellFlameIncarnate.Icon(7);if(ThunderIncarnate.Active(entry.pawn))return ThunderIncarnate.Icon(ThunderIncarnate.SkillCount);Texture2D result;return symbols.TryGetValue((entry.form??"").Replace(" ",""),out result)?result:Emblem;}
+  public static Color Accent(CodexEntry entry){if(AuroraIncarnate.Active(entry.pawn))return new Color(.45f,1,.85f);if(TempestIncarnate.Active(entry.pawn))return new Color(.8f,.9f,1);if(HellFlameIncarnate.Active(entry.pawn))return new Color(1,.3f,.04f);if(ThunderIncarnate.Active(entry.pawn))return new Color(1,.89f,.08f);int i=Array.IndexOf(CelestialBestowOptions.Elements,entry.element);return i<0?Gold:CelestialBestowArt.Accents[i];}
  }
  public sealed class MainTabWindow_AscendantCodex:MainTabWindow {
   readonly List<CodexEntry> rows=new List<CodexEntry>();readonly HashSet<int> selected=new HashSet<int>();
@@ -28,8 +28,8 @@ namespace ElementalHearts {
    if(currentMapOnly&&(Find.CurrentMap==null||entry.pawn.MapHeld!=Find.CurrentMap))return false;
    if(readyOnly&&(entry.progress==null||!entry.progress.Ready))return false;
    if(lineage!="All elements"&&entry.element!=lineage)return false;
-   if(stage!="All stages"&&(stage=="Otherworlders"?!entry.origin:stage=="Disciples"?entry.tier!=CodexTier.Disciple:stage=="Ascendants"?entry.tier!=CodexTier.Ascendant:stage=="Evolved"?entry.tier!=CodexTier.Evolved:stage=="Transcendants"?entry.tier!=CodexTier.Transcendant:entry.tier!=CodexTier.Celestial))return false;
-   return string.IsNullOrWhiteSpace(search)||(entry.name+" "+entry.form+" "+entry.location).IndexOf(search,StringComparison.CurrentCultureIgnoreCase)>=0;
+   if(stage!="All stages"&&(stage=="Otherworlders"?!entry.origin:stage=="Disciples"?entry.tier!=CodexTier.Disciple:stage=="Adepts"?entry.tier!=CodexTier.Ascendant:stage=="Ascendants"?entry.tier!=CodexTier.Evolved:stage=="Incarnates"?entry.tier!=CodexTier.Transcendant:entry.tier!=CodexTier.Celestial))return false;
+   return string.IsNullOrWhiteSpace(search)||(entry.name+" "+entry.form+" "+entry.StageName+" "+entry.location).IndexOf(search,StringComparison.CurrentCultureIgnoreCase)>=0;
   }
   List<Pawn> Targets(){return rows.Where(r=>selected.Contains(r.pawn.thingIDNumber)).Select(r=>r.pawn).ToList();}
   static void Panel(Rect rect,Color? fill=null){Widgets.DrawBoxSolid(rect,fill??new Color(.08f,.09f,.12f));Widgets.DrawBoxSolid(new Rect(rect.x,rect.y,rect.width,1),new Color(.29f,.31f,.36f));}
@@ -54,7 +54,7 @@ namespace ElementalHearts {
    Widgets.DrawTextureFitted(new Rect(rect.x+35,rect.y+13,37,37),CodexArt.Icon(entry),1);
    float progressWidth=rect.width>=650?190:145,progressX=rect.xMax-96-progressWidth;float nameWidth=Math.Max(78,progressX-rect.x-90);
    Label(new Rect(rect.x+82,rect.y+7,nameWidth,25),entry.name,GameFont.Small,Color.white);
-   Label(new Rect(rect.x+82,rect.y+33,nameWidth,20),entry.form+" · "+entry.tier,GameFont.Tiny,CodexArt.Accent(entry));
+   Label(new Rect(rect.x+82,rect.y+33,nameWidth,20),entry.form+" · "+entry.StageName,GameFont.Tiny,CodexArt.Accent(entry));
    Label(new Rect(rect.x+82,rect.y+55,nameWidth,18),entry.location,GameFont.Tiny,CodexArt.Muted);
    if(Widgets.ButtonInvisible(new Rect(rect.x+32,rect.y,nameWidth+50,rect.height))){detailId=entry.pawn.thingIDNumber;detailScroll=Vector2.zero;}
    if(entry.progress!=null)Progress(new Rect(progressX,rect.y+10,progressWidth-8,60),entry.progress);else Label(new Rect(progressX,rect.y+22,progressWidth-8,42),entry.tier==CodexTier.Otherworlder?"Awaiting Bestow":entry.tier==CodexTier.Celestial?"Sovereign form":"Evolution complete",GameFont.Tiny,CodexArt.Muted);
@@ -63,7 +63,7 @@ namespace ElementalHearts {
   }
   void Roster(Rect rect,List<CodexEntry> filtered){
    Panel(rect);Rect view=new Rect(rect.x+4,rect.y+5,rect.width-8,rect.height-10),content=new Rect(0,0,rect.width-26,Math.Max(view.height,filtered.Count*83));Widgets.BeginScrollView(view,ref rosterScroll,content);
-   try{if(filtered.Count==0)Label(new Rect(16,22,content.width-32,70),rows.Count==0?"No owned Ascendants, disciples or recognized Otherworlders yet.":"No pawns match these filters.",GameFont.Small,CodexArt.Muted);int first=Math.Max(0,(int)(rosterScroll.y/83)-1),last=Math.Min(filtered.Count,(int)((rosterScroll.y+view.height)/83)+2);for(int i=first;i<last;i++)Row(new Rect(0,i*83,content.width,80),filtered[i]);}finally{Widgets.EndScrollView();}
+   try{if(filtered.Count==0)Label(new Rect(16,22,content.width-32,70),rows.Count==0?"No owned Adepts, Ascendants, Incarnates, disciples or recognized Otherworlders yet.":"No pawns match these filters.",GameFont.Small,CodexArt.Muted);int first=Math.Max(0,(int)(rosterScroll.y/83)-1),last=Math.Min(filtered.Count,(int)((rosterScroll.y+view.height)/83)+2);for(int i=first;i<last;i++)Row(new Rect(0,i*83,content.width,80),filtered[i]);}finally{Widgets.EndScrollView();}
   }
   void Detail(Rect rect,CodexEntry entry){
    Panel(rect);if(entry==null){Label(rect.ContractedBy(18),"Choose a row to inspect its progression and controls.",GameFont.Small,CodexArt.Muted);return;}
@@ -71,7 +71,7 @@ namespace ElementalHearts {
    try{
     GUI.DrawTexture(new Rect(0,0,64,80),PortraitsCache.Get(p,new Vector2(128,160),Rot4.South,Vector3.zero,1.2f,true,false));
     Label(new Rect(76,4,content.width-76,28),entry.name,GameFont.Medium,CodexArt.Gold);
-    Label(new Rect(76,36,content.width-76,40),entry.form+" · "+entry.tier,GameFont.Small,CodexArt.Accent(entry));
+    Label(new Rect(76,36,content.width-76,40),entry.form+" · "+entry.StageName,GameFont.Small,CodexArt.Accent(entry));
     Label(new Rect(0,91,content.width,44),entry.location+"\n"+entry.status,GameFont.Small,CodexArt.Muted);
     if(Widgets.ButtonText(new Rect(0,144,content.width,31),"Locate pawn"))Locate(p);
     float y=192;
@@ -91,11 +91,11 @@ namespace ElementalHearts {
    var oldFont=Text.Font;var oldAnchor=Text.Anchor;var oldColor=GUI.color;
    try{
     if(Time.realtimeSinceStartup>=refreshAt)Refresh();var filtered=rows.Where(Matches).ToList();
-    Widgets.DrawTextureFitted(new Rect(0,0,51,51),CodexArt.Emblem,1);Label(new Rect(65,0,rect.width-180,32),"Ascendant Codex",GameFont.Medium,CodexArt.Gold);Label(new Rect(66,35,rect.width-180,24),rows.Count+" in roster  ·  "+selected.Count+" selected  ·  "+rows.Count(r=>r.progress!=null&&r.progress.Ready)+" ready to advance",GameFont.Small,CodexArt.Muted);
+    Widgets.DrawTextureFitted(new Rect(0,0,51,51),CodexArt.Emblem,1);Label(new Rect(65,0,rect.width-180,32),"Elemental Codex",GameFont.Medium,CodexArt.Gold);Label(new Rect(66,35,rect.width-180,24),rows.Count+" in roster  ·  "+selected.Count+" selected  ·  "+rows.Count(r=>r.progress!=null&&r.progress.Ready)+" ready to advance",GameFont.Small,CodexArt.Muted);
     if(Widgets.ButtonText(new Rect(rect.width-93,7,93,31),"Refresh"))Refresh();
     float filterY=70;Text.Font=GameFont.Small;var searchRect=new Rect(0,filterY,Math.Min(225,rect.width*.23f),31);GUI.SetNextControlName("EH_CodexSearch");search=Widgets.TextField(searchRect,search);
     if(string.IsNullOrEmpty(search)&&GUI.GetNameOfFocusedControl()!="EH_CodexSearch")Label(new Rect(searchRect.x+8,searchRect.y+6,searchRect.width-16,23),"Search name, form or location",GameFont.Tiny,CodexArt.Muted);
-    TooltipHandler.TipRegion(searchRect,"Search pawn names, elemental forms or map/caravan locations.");float x=searchRect.width+9;Text.Font=GameFont.Small;FilterButton(new Rect(x,filterY,139,31),stage,new[]{"All stages","Disciples","Ascendants","Evolved","Transcendants","Celestial","Otherworlders"},value=>stage=value);x+=148;FilterButton(new Rect(x,filterY,133,31),lineage,new[]{"All elements","Flame","Lightning","Water","Wind","Earth","Lunar","Celestial"},value=>lineage=value);x+=143;
+    TooltipHandler.TipRegion(searchRect,"Search pawn names, elemental forms or map/caravan locations.");float x=searchRect.width+9;Text.Font=GameFont.Small;FilterButton(new Rect(x,filterY,139,31),stage,new[]{"All stages","Disciples","Adepts","Ascendants","Incarnates","Celestial","Otherworlders"},value=>stage=value);x+=148;FilterButton(new Rect(x,filterY,133,31),lineage,new[]{"All elements","Flame","Lightning","Water","Wind","Earth","Lunar","Celestial"},value=>lineage=value);x+=143;
     bool wrapFilters=x+258>rect.width;float checkY=wrapFilters?filterY+37:filterY+3,checkX=wrapFilters?0:x;Widgets.CheckboxLabeled(new Rect(checkX,checkY,128,27),"Current map",ref currentMapOnly);Widgets.CheckboxLabeled(new Rect(checkX+138,checkY,120,27),"Ready only",ref readyOnly);
     float extra=wrapFilters?34:0;Label(new Rect(0,108+extra,rect.width,23),ElementalHeartsMod.Settings.enableAutomation?"Select squad members using the checkboxes. Click a name to inspect.":"Player Auto Combat is disabled in mod settings. Pawn toggle changes are still saved.",GameFont.Tiny,ElementalHeartsMod.Settings.enableAutomation?CodexArt.Muted:CodexArt.Gold);
     float detailWidth=Math.Min(342,rect.width*.34f),bodyHeight=Math.Max(100,rect.height-255-extra),listWidth=rect.width-detailWidth-14;

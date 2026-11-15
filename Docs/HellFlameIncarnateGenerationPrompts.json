@@ -1,0 +1,390 @@
+{
+  "mode": "built-in image generator",
+  "date": "2026-11-13",
+  "records": [
+    {
+      "name": "aura",
+      "selected": false,
+      "source": "Generated/Drafts/aura.png",
+      "prompt": "Use case: stylized-concept. Production subtle BACK AURA loop for RimWorld Hell Flame Incarnate, genuine transparency. EXACT SIX equal square cells THREE columns by TWO rows, 1536x1024 preferred, row-major. Same centered silhouette/scale and camera each cell, 15 percent transparent margins; no written labels or gridlines. A small airy ember mantle: two restrained upward-tapering black/crimson flame ribbons behind the shoulders, edged warm orange, a few tiny floating ember glints. CENTRAL BODY AREA IS TRANSPARENT, do not draw a person/body/head/armor/sword; no solid wings, no huge opaque fireball, no ground ring or large smoke. Intended to layer behind a RimWorld pawn without hiding them. Six subtle looping flicker states, highlights drift upward, last close to first. Native clean flat game VFX with translucent edges and very limited soft glow.",
+      "referenceImages": []
+    },
+    {
+      "name": "aura_clean",
+      "selected": true,
+      "source": "Generated/aura_clean.png",
+      "prompt": "Use case: stylized-concept. Flat CEL-SHADED animated back aura sprite sheet for RimWorld Hell Flame Incarnate. Reference image supplies charcoal/crimson/orange palette and clean graphic style ONLY; DO NOT draw armor. EXACT SIX frames in THREE columns TWO rows, 1536x1024 preferred. Genuine RGBA TRANSPARENT BACKGROUND. Each square cell contains just TWO slender S-curved charcoal/crimson FLAME RIBBONS with narrow orange edges, one left and one right of a wide completely EMPTY central gap. Small compact motif centered consistently, 20 percent blank margins. No pawn, body, head, armor, wings, ring, ground or halo. Same paired ribbons subtly flicker through six looping states. No smoke/fog/haze, no gray or white light clouds, no ambient glow, no bloom, no cast shadow, no white background, no gradient background. Only the crisp ribbons and at most four tiny orange ember dots on EMPTY transparency.",
+      "referenceImages": [
+        "Generated/Drafts/regalia_south.png"
+      ]
+    },
+    {
+      "name": "aura_minimal",
+      "selected": false,
+      "source": "Generated/Drafts/aura_minimal.png",
+      "prompt": "Use case: stylized-concept. Transparent PNG game sprite atlas. SIX equal square cells in THREE columns TWO rows. In each cell: TWO slim angular OBSIDIAN flame wisps with narrow ORANGE and CRIMSON edges, one to the left and one to the right of an empty central gap. Flat solid cel-shaded shapes with sharply delimited antialiased edges, native RimWorld illustration style. Six subtle looping variations of the same wisps; fixed cell centers and scale; central 60 percent occupied. Clear background with real zero alpha, including the whole central gap and wide margins. Only wisps and two tiny ember diamonds per cell. No other marks, labels, grids, smoke, haze or lighting effects.",
+      "referenceImages": []
+    },
+    {
+      "name": "aura_v2",
+      "selected": false,
+      "source": "Generated/Drafts/aura_v2.png",
+      "prompt": "Use case: precise-object-edit. Edit this six-frame 3x2 RimWorld aura sprite sheet. Preserve the six cells, registered positions, small paired flame-ribbon motif, camera and subtle looping movement. REMOVE ALL gray/white smoke, diffuse fog, cloudy background, orange bloom and ambient haze. Every pixel outside the two thin flame ribbons and at most six tiny ember dots per cell must be genuinely transparent; in particular the wide CENTRAL GAP between ribbons must be empty. Redraw the ribbons as clean flat charcoal/crimson fire curls with narrow molten-orange highlights and translucent edges, low visual density. No bright solid wings, no filled disc, no person, no background, no cast shadow, no text/grid/checkerboard. Result is a subtle clean back aura behind a pawn, not a smoke cloud.",
+      "referenceImages": []
+    },
+    {
+      "name": "frames_arrival",
+      "selected": true,
+      "source": "Generated/frames_arrival.png",
+      "prompt": "Use case: stylized-concept. Original Hell Flame Incarnate animated game VFX. Transparent background. Flat cel-shaded illustrated shapes, crisp dark contours, solid charcoal/crimson bodies, molten-orange edges and small white-amber cores, matching the reference's graphic style. Eight consecutive frames in an EXACT FOUR-column TWO-row grid of equal square cells, row-major, canvas 2048x1024 preferred. Same view, scale and registered origin all frames; the effect stays inside central 65 percent of each cell with clean empty margins. Only the effect on transparency. Hell Travel ARRIVAL column: an infernal beam DESCENDS and opens outward at its base. Fixed landing origin x50%, y80% each cell. Frame0 a tiny high ember above landing origin; 1 a thin descending orange lance; 2 a longer lance with dark/crimson flame sleeves; 3 full white-amber central column reaching the base; 4 dramatic base flame crown opening outward; 5 column splits to reveal a TRANSPARENT central space for the pawn; 6 receding side ribbons and a short base ring; 7 scattered ember remnants. No drawn person, no scenery/floor or smoke cloud. Same graphic style and framing throughout.",
+      "referenceImages": [
+        "Generated/icon_pyre.png"
+      ]
+    },
+    {
+      "name": "frames_arrival_ring",
+      "selected": true,
+      "source": "Generated/frames_arrival_ring.png",
+      "prompt": "Use case: stylized-concept. A transparent PNG sprite atlas of EIGHT consecutive 2D Hell Flame Incarnate game VFX frames in FOUR columns and TWO rows, equal square cells on a 2048x1024 canvas. Each isolated sprite is centered at the same cell pivot and stays within central 60 percent of its cell. Wide fully empty transparent margins separate cells. Bold crisp graphic flame silhouettes, charcoal-black, crimson, molten orange and small white-amber highlights. Flat cel shading, sharply delimited antialiased edges. Background is genuine empty alpha. No grid lines, labels, numbers, border, floor or character. Hell Travel landing ring: a shallow tilted ellipse viewed from above, hollow center, molten orange rim with a few sharp crimson/charcoal flame teeth. 0 small thin elliptical spark ring; 1 small brighter ring; 2 medium ring; 3 larger hot rim; 4 widest ring with four outward ember tips; 5 broken thinning rim; 6 separate fading elliptical arcs; 7 a few ember fragments. Fixed center and same perspective. Leave the ellipse interior empty, no solid plate, no light cloud.",
+      "referenceImages": []
+    },
+    {
+      "name": "frames_crescent",
+      "selected": false,
+      "source": "Generated/Drafts/frames_crescent.png",
+      "prompt": "Use case: stylized-concept. Production 2D RimWorld Hell Flame Incarnate animated VFX SPRITE SHEET, genuinely transparent background. EXACT EIGHT frames in a regular FOUR-column TWO-row grid, preferably 2048x1024, equal SQUARE cells, row-major order left-to-right then next row. NO text/numbers/grid lines/borders/background/floor/characters. Same registered center and camera in every cell, at least 12 percent transparent cell margins; no effect crosses cell boundaries. Clean hand-painted game VFX, charcoal-black flame bodies, deep crimson secondary flame, molten orange rims and small white-hot amber cores. Detailed smooth shapes but readable at pawn scale, restrained glow. Eight actual consecutive animation states of ONE effect, never eight unrelated icons. Hellscar Crescent traveling sword wave. Default travel RIGHT (+X): bright CONVEX cutting edge on the RIGHT like a closing parenthesis ), tips and ember tails trail LEFT. Entire wave remains centered; future code moves it. Frame0 narrow igniting crescent, 1 growing arc, 2 full sweeping crescent, 3 peak sharp white-orange rim, 4 slight thinning and trailing embers, 5 broken trailing flame, 6 sparse edge fragments, 7 faint final embers. Smooth shape progression, crescent never flips left.",
+      "referenceImages": []
+    },
+    {
+      "name": "frames_crescent_clean",
+      "selected": true,
+      "source": "Generated/frames_crescent_clean.png",
+      "prompt": "Use case: style-transfer. Image 1 is an existing EIGHT-frame 4x2 Hellscar Crescent animation sheet; image 2 is the desired flat graphic style. Keep the first image's eight frames, growth/fade, shared cell registration and RIGHT-facing convex cutting edge. Render its crescents as clean solid charcoal/crimson flame shapes with a narrow white-hot ORANGE rim and crisp outlines like image2. Preserve travel direction RIGHT: convex edge on right, tapered tips trail left. Leave generous empty margins in all cells. Remove diffuse smoke/haze and scattered noise. Genuinely transparent background, no grid lines, labels, background colors or shadows. This is a production game VFX atlas, not an illustration board.",
+      "referenceImages": [
+        "Generated/Drafts/frames_crescent.png",
+        "Generated/icon_crescent.png"
+      ]
+    },
+    {
+      "name": "frames_dash",
+      "selected": false,
+      "source": "Generated/Drafts/frames_dash.png",
+      "prompt": "Use case: stylized-concept. Production 2D RimWorld Hell Flame Incarnate animated VFX SPRITE SHEET, genuinely transparent background. EXACT EIGHT frames in a regular FOUR-column TWO-row grid, preferably 2048x1024, equal SQUARE cells, row-major order left-to-right then next row. NO text/numbers/grid lines/borders/background/floor/characters. Same registered center and camera in every cell, at least 12 percent transparent cell margins; no effect crosses cell boundaries. Clean hand-painted game VFX, charcoal-black flame bodies, deep crimson secondary flame, molten orange rims and small white-hot amber cores. Detailed smooth shapes but readable at pawn scale, restrained glow. Eight actual consecutive animation states of ONE effect, never eight unrelated icons. Ashen Pursuit attack wake: a low HORIZONTAL left-to-right streak, bright narrow spearhead at RIGHT, black/crimson flame tails streaming LEFT. Fixed centerline y=50 percent in every cell. No zigzag, no spiral, no sword, no pawn. 0 short ember streak, 1 elongating wake, 2 bright full wake, 3 white-hot leading tip with clean dark/orange trails, 4 thinning twin trails, 5 broken tapered flames, 6 scattered aligned embers, 7 faint short ember remnants. This texture rotates onto a route segment and must retain a narrow clean silhouette.",
+      "referenceImages": []
+    },
+    {
+      "name": "frames_dash_clean",
+      "selected": true,
+      "source": "Generated/frames_dash_clean.png",
+      "prompt": "Use case: style-transfer. Image1 is an existing eight-frame 4x2 Ashen Pursuit dash animation. Image2 is the graphic palette/style. Keep image1's exact horizontal left-to-RIGHT direction, common centerline, eight frames, growth/fade and cell positions. Replace smoky detail with crisp flat charcoal/crimson flame tails edged orange and a narrow amber-white leading tip, illustrated like image2. The tip remains at RIGHT, tails LEFT. Keep the wake slender. Transparent background, clear generous cell margins, no text, grid lines, fog, glow cloud, cast shadows or drawn sword/pawn. Exactly eight consecutive production frames.",
+      "referenceImages": [
+        "Generated/Drafts/frames_dash.png",
+        "Generated/icon_pursuit.png"
+      ]
+    },
+    {
+      "name": "frames_departure",
+      "selected": true,
+      "source": "Generated/frames_departure.png",
+      "prompt": "Use case: stylized-concept. Original Hell Flame Incarnate animated game VFX. Transparent background. Flat cel-shaded illustrated shapes, crisp dark contours, solid charcoal/crimson bodies, molten-orange edges and small white-amber cores, matching the reference's graphic style. Eight consecutive frames in an EXACT FOUR-column TWO-row grid of equal square cells, row-major, canvas 2048x1024 preferred. Same view, scale and registered origin all frames; the effect stays inside central 65 percent of each cell with clean empty margins. Only the effect on transparency. Hell Travel DEPARTURE column: flames rise UP from an infernal portal. Fixed base x50%, y80% each cell. Frame0 small shallow orange portal ellipse; 1 two short rising flames; 2 rising taller curved ribbons; 3 tall upright charcoal/crimson furnace column; 4 bright center consumes the empty pawn space; 5 column pulling upward and narrowing; 6 upper lingering flame tips and thin base ring; 7 faint ember remnants. Compact no drawn person or silhouette, no fog or opaque background, no floor tile. Animation must clearly rise upward.",
+      "referenceImages": [
+        "Generated/icon_pyre.png"
+      ]
+    },
+    {
+      "name": "frames_dominion",
+      "selected": true,
+      "source": "Generated/frames_dominion.png",
+      "prompt": "Use case: stylized-concept. Production Hell Flame Incarnate VFX sprite sheet for RimWorld. GENUINELY TRANSPARENT BACKGROUND. EXACTLY EIGHT equal square cells, FOUR columns TWO rows, 2048x1024 preferred, row-major consecutive frames. All art must remain inside central 65 percent of EACH cell, leaving a completely empty transparent guard band on every edge. Shared fixed center, camera, canvas scale, no individually recentered frames. Charcoal black and crimson flame edged molten orange with small white-hot amber core, clean readable high-quality 2D game VFX. No text/numbers/grid lines/borders/scenery/characters, no background fog or ambient glow sheet. Furnace Dominion expanding ground eruption: top-down circular HOLLOW wave of jagged black/crimson flame teeth with a white-orange leading rim. TRUE CIRCLE not upright fireball; no terrain, rock wall or persistent crack drawing. Fixed center; 0 tiny ignition circle, 1 small ring, 2 medium ring with rising pointed flames, 3 large sharp outward ring, 4 maximum diameter around 65 percent cell, 5 broken fading rim, 6 scattered radial embers, 7 sparse fading flecks. Interior remains transparent for pawn readability. A forceful expanding circular earthquake-like fire shockwave.",
+      "referenceImages": []
+    },
+    {
+      "name": "frames_hellstep",
+      "selected": true,
+      "source": "Generated/frames_hellstep.png",
+      "prompt": "Use case: stylized-concept. A transparent PNG sprite atlas of EIGHT consecutive 2D Hell Flame Incarnate game VFX frames in FOUR columns and TWO rows, equal square cells on a 2048x1024 canvas. Each isolated sprite is centered at the same cell pivot and stays within central 60 percent of its cell. Wide fully empty transparent margins separate cells. Bold crisp graphic flame silhouettes, charcoal-black, crimson, molten orange and small white-amber highlights. Flat cel shading, sharply delimited antialiased edges. Background is genuine empty alpha. No grid lines, labels, numbers, border, floor or character. Hell Step local teleport flash: an upright short ember flare that collapses and reforms. 0 tiny amber point; 1 thin upright orange flame slash; 2 splitting black/crimson flame ribbons; 3 peak compact white-orange flash; 4 two slender side ribbons surrounding an empty middle; 5 thinning curled ribbons; 6 scattered sparks; 7 a few dim ember flecks. Compact, clean, no smoke cloud or large flare disk.",
+      "referenceImages": []
+    },
+    {
+      "name": "frames_melee",
+      "selected": true,
+      "source": "Generated/frames_melee.png",
+      "prompt": "Use case: stylized-concept. A transparent PNG sprite atlas of EIGHT consecutive 2D Hell Flame Incarnate game VFX frames in FOUR columns and TWO rows, equal square cells on a 2048x1024 canvas. Each isolated sprite is centered at the same cell pivot and stays within central 60 percent of its cell. Wide fully empty transparent margins separate cells. Bold crisp graphic flame silhouettes, charcoal-black, crimson, molten orange and small white-amber highlights. Flat cel shading, sharply delimited antialiased edges. Background is genuine empty alpha. No grid lines, labels, numbers, border, floor or character. Ordinary melee clash flash: 0 tiny hot impact point; 1 a short bright diagonal slash; 2 two intersecting sharp sword-energy strokes; 3 peak compact amber starburst with four dark/orange flame splinters; 4 breaking slash tips; 5 outward ember shards; 6 sparse sparks; 7 faint remnants. Same center, small clean sharp silhouette, no actual sword or pawn, no electrical bolts, no white haze.",
+      "referenceImages": []
+    },
+    {
+      "name": "frames_motes",
+      "selected": true,
+      "source": "Generated/frames_motes.png",
+      "prompt": "Use case: stylized-concept. A transparent PNG sprite atlas of EIGHT consecutive 2D Hell Flame Incarnate game VFX frames in FOUR columns and TWO rows, equal square cells on a 2048x1024 canvas. Each isolated sprite is centered at the same cell pivot and stays within central 60 percent of its cell. Wide fully empty transparent margins separate cells. Bold crisp graphic flame silhouettes, charcoal-black, crimson, molten orange and small white-amber highlights. Flat cel shading, sharply delimited antialiased edges. Background is genuine empty alpha. No grid lines, labels, numbers, border, floor or character. Fading ember motes: at most eight tiny orange/amber diamonds and charcoal-red flame flakes per cell, sparsely distributed in a small circular area around center. 0 tiny glowing points; 1 points drift slightly up; 2 some grow into short curved sparks; 3 drift farther upward; 4 dim and separate; 5 fewer small sparks; 6 three faint flecks; 7 one or two tiny remnants. Most of every cell is EMPTY transparency, no connecting strokes, no smoke, no ring or lighting field.",
+      "referenceImages": []
+    },
+    {
+      "name": "frames_phoenix",
+      "selected": false,
+      "source": "Generated/Drafts/frames_phoenix.png",
+      "prompt": "Use case: stylized-concept. Production Hell Flame Incarnate VFX sprite sheet for RimWorld. GENUINELY TRANSPARENT BACKGROUND. EXACTLY EIGHT equal square cells, FOUR columns TWO rows, 2048x1024 preferred, row-major consecutive frames. All art must remain inside central 65 percent of EACH cell, leaving a completely empty transparent guard band on every edge. Shared fixed center, camera, canvas scale, no individually recentered frames. Charcoal black and crimson flame edged molten orange with small white-hot amber core, clean readable high-quality 2D game VFX. No text/numbers/grid lines/borders/scenery/characters, no background fog or ambient glow sheet. Ruinous Phoenix: one spectral infernal phoenix descends into a compact fiery impact. Same downward orientation in all frames, head points DOWN, angular wings sweep outward/upward. 0 tiny igniting feather, 1 small emerging bird, 2 wings unfurl, 3 complete dramatic descending phoenix, 4 bright strike and wing flare, 5 body breaks into curved flame feathers, 6 a few falling embers, 7 sparse fading sparks. NO humanoid rider, no solid bird flesh, no ground slab. The pawn movement and damage will be driven in C#.",
+      "referenceImages": []
+    },
+    {
+      "name": "frames_phoenix_clean",
+      "selected": true,
+      "source": "Generated/frames_phoenix_clean.png",
+      "prompt": "Use case: stylized-concept. Flat CEL-SHADED 2D game sprite sheet for RimWorld. Genuine RGBA TRANSPARENT BACKGROUND. Graphic clean solid flame shapes and crisp charcoal outlines, exactly like the reference icon's simple illustrated style. Color only charcoal-black, deep red, bright orange and small amber highlights. NO photorealism, NO watercolor, NO smoke, NO fog, NO haze, NO soft bloom, NO lighting cloud, NO white background, NO cast shadow, NO gradients outside silhouettes. Only isolated flame shapes on empty transparency. No text/numbers/borders/grid lines/people. EXACT EIGHT equal SQUARE cells arranged FOUR columns by TWO rows, row-major, canvas 2048x1024 preferred. Effects centered at identical cell centers, each inside central 60 percent of its cell with completely clear wide margins. Reference image is the style and phoenix motif. Eight actual consecutive frames: tiny igniting feather; growing small flame bird; wings opening; full angular phoenix with head DOWN; descending strike with small bright impact; breaking flame feathers; scattered feather embers; a few final orange dots. No filled white light cloud behind the bird. Keep pivot fixed and preserve enough air around all wing tips.",
+      "referenceImages": [
+        "Generated/icon_phoenix.png"
+      ]
+    },
+    {
+      "name": "frames_reversal",
+      "selected": false,
+      "source": "Generated/Drafts/frames_reversal.png",
+      "prompt": "Use case: stylized-concept. Production Hell Flame Incarnate VFX sprite sheet for RimWorld. GENUINELY TRANSPARENT BACKGROUND. EXACTLY EIGHT equal square cells, FOUR columns TWO rows, 2048x1024 preferred, row-major consecutive frames. All art must remain inside central 65 percent of EACH cell, leaving a completely empty transparent guard band on every edge. Shared fixed center, camera, canvas scale, no individually recentered frames. Charcoal black and crimson flame edged molten orange with small white-hot amber core, clean readable high-quality 2D game VFX. No text/numbers/grid lines/borders/scenery/characters, no background fog or ambient glow sheet. Hellfire Reversal retreat flash: a short hollow ember shock ring and two upward-curving flames at a leap origin. Top-down ground effect, empty center, no drawn pawn/afterimage. 0 tiny bright ember, 1 small thin hollow orange circle, 2 ring expands with two retreating flame ribbons, 3 bright sharp outward flash, 4 ring thins, 5 separated ember arcs, 6 sparse drifting flecks, 7 faint remnants. Expansion stays within the same shared cell center. Distinct retreat/escape flash, not a huge explosion.",
+      "referenceImages": []
+    },
+    {
+      "name": "frames_reversal_clean",
+      "selected": false,
+      "source": "Generated/Drafts/frames_reversal_clean.png",
+      "prompt": "Use case: stylized-concept. Flat CEL-SHADED 2D game sprite sheet for RimWorld. Genuine RGBA TRANSPARENT BACKGROUND. Graphic clean solid flame shapes and crisp charcoal outlines, exactly like the reference icon's simple illustrated style. Color only charcoal-black, deep red, bright orange and small amber highlights. NO photorealism, NO watercolor, NO smoke, NO fog, NO haze, NO soft bloom, NO lighting cloud, NO white background, NO cast shadow, NO gradients outside silhouettes. Only isolated flame shapes on empty transparency. No text/numbers/borders/grid lines/people. EXACT EIGHT equal SQUARE cells arranged FOUR columns by TWO rows, row-major, canvas 2048x1024 preferred. Effects centered at identical cell centers, each inside central 60 percent of its cell with completely clear wide margins. Reference is color/line style only; DO NOT draw the icon's pawn or arrows. Hellfire Reversal flash sequence: tiny ember; small hollow ring; medium hollow ring plus two short curved flame tips; bright hollow ring; thinning ring; broken arcs; scattered embers; a few fading dots. Viewed directly from above; CENTRAL HOLE always transparent. Expand from fixed cell center and never exceed 60 percent cell width.",
+      "referenceImages": [
+        "Generated/icon_reversal.png"
+      ]
+    },
+    {
+      "name": "frames_reversal_cutout",
+      "selected": true,
+      "source": "Generated/frames_reversal_cutout.png",
+      "prompt": "Use case: background-extraction. Make a genuine transparent PNG cutout of this existing EIGHT-frame FOUR-column TWO-row flame-ring animation. ERASE all white/gray background, pink shadow clouds and dividing lines, including the centers of every ring. Preserve ONLY the colored black/red/orange flame rings, fragments and tiny embers, in exactly their existing positions, scale, colors and layout. Preserve small bright highlights inside the colored flames. Everything outside those flame shapes must have ZERO alpha, with no background lighting or fog. Keep all eight consecutive frames.",
+      "referenceImages": [
+        "Generated/Drafts/frames_reversal_clean.png"
+      ]
+    },
+    {
+      "name": "frames_seal",
+      "selected": true,
+      "source": "Generated/frames_seal.png",
+      "prompt": "Use case: stylized-concept. Flat CEL-SHADED 2D game sprite sheet for RimWorld. Genuine RGBA TRANSPARENT BACKGROUND. Graphic clean solid flame shapes and crisp charcoal outlines, exactly like the reference icon's simple illustrated style. Color only charcoal-black, deep red, bright orange and small amber highlights. NO photorealism, NO watercolor, NO smoke, NO fog, NO haze, NO soft bloom, NO lighting cloud, NO white background, NO cast shadow, NO gradients outside silhouettes. Only isolated flame shapes on empty transparency. No text/numbers/borders/grid lines/people. EXACT EIGHT equal SQUARE cells arranged FOUR columns by TWO rows, row-major, canvas 2048x1024 preferred. Effects centered at identical cell centers, each inside central 60 percent of its cell with completely clear wide margins. Reference is the infernal crown palette and graphic style. Sovereign's Pyre / Hell Travel ground seal: top-down hollow annulus with six simple flame-shaped spokes around an EMPTY center, no actual text/runes/letters. Frames show a thin small amber ring igniting, medium incomplete ring, larger closing seal, bright full seal, slightly stronger short outer flame tips, tips flickering, seal dimming, a few broken fading ring arcs. Fixed center; no white or orange disc filling its central opening.",
+      "referenceImages": [
+        "Generated/icon_pyre.png"
+      ]
+    },
+    {
+      "name": "frames_sovereign_burst",
+      "selected": true,
+      "source": "Generated/frames_sovereign_burst.png",
+      "prompt": "Use case: stylized-concept. Original Hell Flame Incarnate animated game VFX. Transparent background. Flat cel-shaded illustrated shapes, crisp dark contours, solid charcoal/crimson bodies, molten-orange edges and small white-amber cores, matching the reference's graphic style. Eight consecutive frames in an EXACT FOUR-column TWO-row grid of equal square cells, row-major, canvas 2048x1024 preferred. Same view, scale and registered origin all frames; the effect stays inside central 65 percent of each cell with clean empty margins. Only the effect on transparency. Sovereign's Pyre ultimate explosion: top-down radial burst, charcoal/crimson flame petals with molten orange cutting tips. Fixed center. Frame0 tiny hot spark; 1 compressed hot core; 2 opening flame petals; 3 powerful eight-direction burst; 4 widest hollow outward shock ring; 5 broken outward flame arcs; 6 flying ember shards; 7 a few fading flecks. Bright impact center only during frames1-3, then transparent hollow center. No white smoke cloud, no terrain, no buildings, no text or symbols.",
+      "referenceImages": [
+        "Generated/icon_pyre.png"
+      ]
+    },
+    {
+      "name": "frames_sovereign_column",
+      "selected": false,
+      "source": "Generated/Drafts/frames_sovereign_column.png",
+      "prompt": "Use case: stylized-concept. Original Hell Flame Incarnate animated game VFX. Transparent background. Flat cel-shaded illustrated shapes, crisp dark contours, solid charcoal/crimson bodies, molten-orange edges and small white-amber cores, matching the reference's graphic style. Eight consecutive frames in an EXACT FOUR-column TWO-row grid of equal square cells, row-major, canvas 2048x1024 preferred. Same view, scale and registered origin all frames; the effect stays inside central 65 percent of each cell with clean empty margins. Only the effect on transparency. Sovereign's Pyre: a gigantic twisting furnace-shaped pillar of infernal flames. Root stays fixed at x50%, y80% of each cell. Frame0 thin igniting vertical flame; 1 two rising black/red ribbons; 2 tall growing furnace; 3 full column with crown-like flame tips; 4 peak white-hot central channel and dark flame ribs; 5 narrowing and tearing column; 6 separated upward tongues; 7 small floating embers. Tall slender silhouette, approximately twice as tall as wide. No smoke or white glow clouds, no sky, no ground platform, no drawn pawn. Grand high-energy spell but flat and sharply readable.",
+      "referenceImages": [
+        "Generated/icon_pyre.png"
+      ]
+    },
+    {
+      "name": "frames_sovereign_column_clean",
+      "selected": true,
+      "source": "Generated/frames_sovereign_column_clean.png",
+      "prompt": "Use case: background-extraction. Make a genuine transparent PNG cutout of this EXISTING eight-frame flame sprite sheet. REMOVE the white background and all thin gray grid lines completely, including the spaces between and around the flames. Preserve only the eight black/red/orange flame pillars and their orange base seals, in exactly the same positions, colors, size and FOUR-column TWO-row layout. Preserve the small white-hot cores INSIDE the flames. Background alpha must be zero everywhere outside the flame silhouettes and base seals. No new lighting, shadows, fog, texture or backdrop. Keep all eight frames.",
+      "referenceImages": [
+        "Generated/Drafts/frames_sovereign_column.png"
+      ]
+    },
+    {
+      "name": "frames_transcend",
+      "selected": true,
+      "source": "Generated/frames_transcend.png",
+      "prompt": "Use case: stylized-concept. Transparent PNG sprite sheet for RimWorld Hell Flame Incarnate transformation charge. Eight equal square cells in FOUR columns TWO rows, 2048x1024 preferred, row-major. Clean isolated flat illustrated charcoal/crimson flame ribbons edged orange and amber sparks. Same center in each cell, central 60 percent occupied, wide empty transparent margins. Eight stages: sparse embers; two inward curling wisps; three gathering curved flames; a thin infernal circle; upward spiral of flame tips; bright compact crown-shaped flash; broken upward ribbons; fading embers. Empty center for the pawn. Crisp graphic game art with sharply delimited edges. Background alpha completely zero; only flame shapes visible. No written labels, gridlines, people, floor, haze or lighting field.",
+      "referenceImages": []
+    },
+    {
+      "name": "frames_waltz",
+      "selected": false,
+      "source": "Generated/Drafts/frames_waltz.png",
+      "prompt": "Use case: stylized-concept. Production 2D RimWorld Hell Flame Incarnate animated VFX SPRITE SHEET, genuinely transparent background. EXACT EIGHT frames in a regular FOUR-column TWO-row grid, preferably 2048x1024, equal SQUARE cells, row-major order left-to-right then next row. NO text/numbers/grid lines/borders/background/floor/characters. Same registered center and camera in every cell, at least 12 percent transparent cell margins; no effect crosses cell boundaries. Clean hand-painted game VFX, charcoal-black flame bodies, deep crimson secondary flame, molten orange rims and small white-hot amber cores. Detailed smooth shapes but readable at pawn scale, restrained glow. Eight actual consecutive animation states of ONE effect, never eight unrelated icons. Infernal Waltz looping SPIN attack: three asymmetrical curved flaming sword sweeps chase one another around a TRANSPARENT central hole. View directly from above, a circular thin annulus, not an upright fireball or shield. Same radius and center all eight frames; three sweeps rotate CLOCKWISE 45 degrees per frame (0,45,90,135,180,225,270,315). White-orange leading tips, black/crimson bodies and tapering tails. Center hole stays clean and wide for pawn readability; no solid disc; little restrained ember shed. A genuine smooth rotational loop.",
+      "referenceImages": []
+    },
+    {
+      "name": "frames_waltz_clean",
+      "selected": true,
+      "source": "Generated/frames_waltz_clean.png",
+      "prompt": "Use case: style-transfer. Image1 is the existing eight-frame 4x2 Infernal Waltz spinning attack. Image2 is its approved flat graphic icon. Keep eight consecutive rotational frames with a shared exact center and constant diameter; translate image1's smoky ring into THREE clearly separated curved charcoal/crimson flame sweeps edged molten orange, white-amber leading tips, crisp flat illustrated style of image2. Sweeps rotate clockwise 45 degrees per frame; leave a completely transparent wide central hole and generous empty margins per cell. Background genuinely transparent. No solid disc, smoke, haze, background glow, text or gridlines. Preserve the real animation, not eight copies.",
+      "referenceImages": [
+        "Generated/Drafts/frames_waltz.png",
+        "Generated/icon_waltz.png"
+      ]
+    },
+    {
+      "name": "halo",
+      "selected": true,
+      "source": "Generated/halo.png",
+      "prompt": "Use case: stylized-concept. Production animated RimWorld Hell Flame Incarnate halo SPRITE SHEET. Genuine transparent background. EXACT regular grid THREE columns by TWO rows, six equal square cells, ideally 1536x1024 canvas. Row-major frames 0 to 5, no written labels or grid lines. Each cell contains the SAME small shallow tilted elliptical floating flame crown viewed from 30 degrees above; wide horizontal ellipse with a truly transparent HOLE in its center, obvious visible back arc and thick nearer front arc. A few short black/crimson flame crown points edged molten orange, dimmer back edge and brighter front edge give real depth. NOT a flat upright crown, NOT a solid disc, NOT a headband, no person/head. Keep common center at exact cell center, constant silhouette size, at least 15 percent blank margin on all cell sides. Six subtle LOOPING states: small crown flames flicker and ember highlights circulate around the ring, frame5 close to frame0, no growth, no rotation of whole ellipse, no camera movement, no disappearing ring. Restrained elegant flat RimWorld style, clean outlines, compact design. No background/shadow/text/checkerboard.",
+      "referenceImages": []
+    },
+    {
+      "name": "hellbrand",
+      "selected": true,
+      "source": "Generated/hellbrand.png",
+      "prompt": "Use case: stylized-concept. Transparent PNG sprite sheet of SIX tiny Hellbrand glint loop frames for a RimWorld game effect. THREE columns TWO rows, equal square cells, 1536x1024 preferred. Each cell contains ONE small charcoal/crimson flame-shaped diamond with a molten-orange outline and one amber center glint. Same size and exact center in all frames, 25 percent transparent margins. Six subtle consecutive shimmer states, brightest point moves slightly upward and loops; first and last nearly match. Clean flat illustrated shapes, thin dark contours, isolated on empty transparency. No smoke, haze, background color, disc, labels or grid lines.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_crescent",
+      "selected": true,
+      "source": "Generated/icon_crescent.png",
+      "prompt": "Use case: stylized-concept. ONE square command icon for the RimWorld mod Elemental Hearts, Hell Flame Incarnate. Genuinely transparent background. Bold clean dark outline, flat illustrated high-contrast readable silhouette, black/crimson hellfire edged in molten orange with a tiny white-hot amber core. Centered isolated emblem with generous 12 percent clear margins. Clear at 32px, limited details, no text, no labels, no frame, no circular button background, no checkerboard, no painterly background, no character portrait. Hellscar Crescent: one broad curved sword-energy crescent, charcoal interior, hot orange cutting rim, small trailing ember tips. Faces RIGHT, not left.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_dominion",
+      "selected": true,
+      "source": "Generated/icon_dominion.png",
+      "prompt": "Use case: stylized-concept. ONE square command icon for the RimWorld mod Elemental Hearts, Hell Flame Incarnate. Genuinely transparent background. Bold clean dark outline, flat illustrated high-contrast readable silhouette, black/crimson hellfire edged in molten orange with a tiny white-hot amber core. Centered isolated emblem with generous clear margins. Clear at 32px, limited details, no text, no labels, no frame, no circular button background, no checkerboard, no scenery or character portrait. Furnace Dominion: a black regal sword stabs vertically into the center of an expanding low orange flame shockwave, small lifted black fragments. Ground-stab radial attack, no land tile or scenery.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_hellbrands",
+      "selected": true,
+      "source": "Generated/icon_hellbrands.png",
+      "prompt": "Use case: stylized-concept. ONE square command icon for RimWorld Elemental Hearts Hell Flame Incarnate. Genuinely transparent background; bold clean dark outlines, simple high-contrast flat illustrated silhouette in charcoal, crimson, molten orange and tiny white-hot amber accents. Isolated centered emblem, clear margins, readable at 32px. No text/labels, no frame, no button background, no scenery. Hellbrands passive: three small flame-shaped molten-orange brands orbit a dark sword tip. Three distinct readable marks, restrained white-hot highlights, compact emblem.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_hellstep",
+      "selected": true,
+      "source": "Generated/icon_hellstep.png",
+      "prompt": "Use case: stylized-concept. ONE square command icon for RimWorld Elemental Hearts Hell Flame Incarnate. Genuinely transparent background; bold clean dark outlines, simple high-contrast flat illustrated silhouette in charcoal, crimson, molten orange and tiny white-hot amber accents. Isolated centered emblem, clear margins, readable at 32px. No text/labels, no frame, no button background, no scenery. Hell Step utility: a small dark pawn silhouette dissolving into a short rising ember flash on the left and reforming on the right, joined by a compact bright orange teleport arrow. Two simple echo silhouettes, instantly recognizable local blink.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_helltravel",
+      "selected": true,
+      "source": "Generated/icon_helltravel.png",
+      "prompt": "Use case: stylized-concept. ONE square command icon for RimWorld Elemental Hearts Hell Flame Incarnate. Genuinely transparent background; bold clean dark outlines, simple high-contrast flat illustrated silhouette in charcoal, crimson, molten orange and tiny white-hot amber accents. Isolated centered emblem, clear margins, readable at 32px. No text/labels, no frame, no button background, no scenery. Hell Travel utility: a small simplified charcoal world globe with three orange meridian arcs, one bright infernal portal flame above it and two orbiting ember arrows. Clearly WORLD TRAVEL, distinct from a local teleport pawn icon.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_phoenix",
+      "selected": true,
+      "source": "Generated/icon_phoenix.png",
+      "prompt": "Use case: stylized-concept. ONE square command icon for the RimWorld mod Elemental Hearts, Hell Flame Incarnate. Genuinely transparent background. Bold clean dark outline, flat illustrated high-contrast readable silhouette, black/crimson hellfire edged in molten orange with a tiny white-hot amber core. Centered isolated emblem with generous 12 percent clear margins. Clear at 32px, limited details, no text, no labels, no frame, no circular button background, no checkerboard, no painterly background, no character portrait. Ruinous Phoenix: angular flame phoenix descending diagonally toward a small fiery impact, broad downward wing silhouette, black outer feathers and orange/amber core.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_pursuit",
+      "selected": true,
+      "source": "Generated/icon_pursuit.png",
+      "prompt": "Use case: stylized-concept. ONE square command icon for the RimWorld mod Elemental Hearts, Hell Flame Incarnate. Genuinely transparent background. Bold clean dark outline, flat illustrated high-contrast readable silhouette, black/crimson hellfire edged in molten orange with a tiny white-hot amber core. Centered isolated emblem with generous 12 percent clear margins. Clear at 32px, limited details, no text, no labels, no frame, no circular button background, no checkerboard, no painterly background, no character portrait. Ashen Pursuit: a compact diagonal straight sword slash racing rightward through three tapering ember speed streaks. A small sharp arrow-like leading flame, strong forward motion.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_pyre",
+      "selected": true,
+      "source": "Generated/icon_pyre.png",
+      "prompt": "Use case: stylized-concept. ONE square command icon for the RimWorld mod Elemental Hearts, Hell Flame Incarnate. Genuinely transparent background. Bold clean dark outline, flat illustrated high-contrast readable silhouette, black/crimson hellfire edged in molten orange with a tiny white-hot amber core. Centered isolated emblem with generous clear margins. Clear at 32px, limited details, no text, no labels, no frame, no circular button background, no checkerboard, no scenery or character portrait. Sovereign's Pyre: a towering furnace-shaped flame column rising from a compact infernal seal with three flame crown points, white-hot center, dark outer flame and red/orange rim. Grand ultimate symbol, clearly distinct from phoenix and ground stab.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_reversal",
+      "selected": true,
+      "source": "Generated/icon_reversal.png",
+      "prompt": "Use case: stylized-concept. ONE square command icon for the RimWorld mod Elemental Hearts, Hell Flame Incarnate. Genuinely transparent background. Bold clean dark outline, flat illustrated high-contrast readable silhouette, black/crimson hellfire edged in molten orange with a tiny white-hot amber core. Centered isolated emblem with generous clear margins. Clear at 32px, limited details, no text, no labels, no frame, no circular button background, no checkerboard, no scenery or character portrait. Hellfire Reversal: two strong curved flame arrows form an outward retreat and sharp return around a small charcoal pawn silhouette. One orange retreat arc and one bright diagonal counter-slash, clear escape-then-rush symbol.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_transcend",
+      "selected": true,
+      "source": "Generated/icon_transcend.png",
+      "prompt": "Use case: stylized-concept. ONE square command icon for the RimWorld mod Elemental Hearts, Hell Flame Incarnate. Genuinely transparent background. Bold clean dark outline, flat illustrated high-contrast readable silhouette, black/crimson hellfire edged in molten orange with a tiny white-hot amber core. Centered isolated emblem with generous clear margins. Clear at 32px, limited details, no text, no labels, no frame, no circular button background, no checkerboard, no scenery or character portrait. Transcend: Hell Flame Incarnate: a royal black crown of five flames ascending above a small azure-blue ember that turns orange-white, flanked by two rising ember arcs. Strong clean coronation symbol; a small blue hint only below, most of the icon charcoal/crimson/orange.",
+      "referenceImages": []
+    },
+    {
+      "name": "icon_waltz",
+      "selected": true,
+      "source": "Generated/icon_waltz.png",
+      "prompt": "Use case: stylized-concept. ONE square command icon for the RimWorld mod Elemental Hearts, Hell Flame Incarnate. Genuinely transparent background. Bold clean dark outline, flat illustrated high-contrast readable silhouette, black/crimson hellfire edged in molten orange with a tiny white-hot amber core. Centered isolated emblem with generous 12 percent clear margins. Clear at 32px, limited details, no text, no labels, no frame, no circular button background, no checkerboard, no painterly background, no character portrait. Infernal Waltz: three curved black/orange flame blades chasing each other around a truly transparent hollow center, unmistakably a spinning attack, no solid disc.",
+      "referenceImages": []
+    },
+    {
+      "name": "katana",
+      "selected": true,
+      "source": "Generated/katana.png",
+      "prompt": "Use case: stylized-concept. Production RimWorld katana item sprite: ASHREIGN for Hell Flame Incarnate. Reference image is Thunder Incarnate's actual katana: match its long slender single-edged curved blade shape, vertical orientation and native simple illustrated art. Replace lightning-yellow details with Hell Flame molten-orange accents and restrained crimson details. Polished ivory-white steel blade, a few fine orange ember fissures along its length, subtle dark spine, clear single cutting edge. Black wrapped handle with small crimson diamond openings, fine orange outlines, compact black/orange circular tsuba, small crimson pommel accent. Tip points UP and curves slightly RIGHT exactly as the reference; grip extends DOWN. Keep the curve and cutting-edge orientation the same as the reference. Entire katana fully visible with clear margins, tall and slender, blade about 72 percent of total length, realistic long wrapped grip. Flat hand-painted native RimWorld weapon art, strong clean dark outlines, readable at small scale. Genuine transparent background. Clean equipment cutout only: no flame aura, no bloom or glow cloud, no sheath, hand, character, labels, border, floor or shadow. Do not draw a straight double-edged broadsword or oversized fantasy crossguard.",
+      "referenceImages": [
+        "References/v2/ThunderIncarnateSword.png"
+      ]
+    },
+    {
+      "name": "regalia_east",
+      "selected": false,
+      "source": "Generated/Drafts/regalia_east.png",
+      "prompt": "Use case: stylized-concept. Original RimWorld Hell Flame Incarnate game apparel sprite. Genuinely transparent background, flat hand-painted 2D native RimWorld art with bold clean outlines, blackened charcoal plate, deep crimson cloak, restrained molten-orange piping and small amber clasps. Body-only compact torso-and-hip clothing, flat chest, tucked shoulders, very low collar, no head, no neck column, no exposed skin, no human limbs/boots/hands, no helmet, no sword, no text/labels, no cast shadow or background. Image 1 is the approved SOUTH design: preserve the same flame-shaped chest plates, sash and crimson split cloak. Image 2 is the native EAST fitting/style reference. Draw ONE strict 90-degree profile facing RIGHT (east), NOT three-quarter. Chest/front is on the right; narrow cloak/back on the left. Keep the upper back fully enclosed and shoulder tucked, with a small correct collar notch near the head attachment. Slim profile, NO protruding barrel belly, NO rear shoulder bulge. Retain the compact native reference occupied footprint, silhouette orientation, collar anchor and scale within the square transparent canvas. No frontal symmetry in this profile. Cape hangs closely down the back, no trailing wind.",
+      "referenceImages": [
+        "Generated/Drafts/regalia_south.png",
+        "References/v2/ThunderIncarnateRegalia_Male_east.png"
+      ]
+    },
+    {
+      "name": "regalia_north",
+      "selected": false,
+      "source": "Generated/Drafts/regalia_north.png",
+      "prompt": "Use case: stylized-concept. Original RimWorld Hell Flame Incarnate game apparel sprite. Genuinely transparent background, flat hand-painted 2D native RimWorld art with bold clean outlines, blackened charcoal plate, deep crimson cloak, restrained molten-orange piping and small amber clasps. Body-only compact torso-and-hip clothing, flat chest, tucked shoulders, very low collar, no head, no neck column, no exposed skin, no human limbs/boots/hands, no helmet, no sword, no text/labels, no cast shadow or background. Image 1 is the approved SOUTH design. Image 2 is the native NORTH geometry reference. Draw ONE strict NORTH/back view, rear shoulders and fully closed upper back with elegant broad V-shaped black plate over a crimson split cloak. A small molten-orange flame crest on the upper back, fine glowing hems, same waist and coat length as the front. No chest plate, front clasps or bare skin visible from behind. Keep compact native reference occupied footprint and collar anchor. Do not add a tall collar or shoulder wings.",
+      "referenceImages": [
+        "Generated/Drafts/regalia_south.png",
+        "References/v2/ThunderIncarnateRegalia_Male_north.png"
+      ]
+    },
+    {
+      "name": "regalia_south",
+      "selected": false,
+      "source": "Generated/Drafts/regalia_south.png",
+      "prompt": "Use case: stylized-concept. Production game asset for RimWorld: Hell Flame Incarnate royal regalia, SOUTH/front worn apparel texture only, genuinely transparent background. Image 1 is a native RimWorld fitted apparel geometry/style reference, not an outfit to copy. Create a distinct infernal sovereign battle coat: blackened charcoal plates, deep crimson split cloak, restrained molten-orange piping and small white-hot amber clasps; overlapping flame-shaped chest plates with a dignified angular waist sash. Hand-painted flat 2D RimWorld art, bold clean dark outlines, simple readable shapes at pawn scale. CRITICAL: only the compact torso-and-hip clothing silhouette, NO head, NO neck column, no arms/hands, no human legs/boots, no mannequin. Flat chest, no breasts, low small oval collar at top center, tucked shoulders. Keep its native compact squat proportions and front symmetry, maintain the reference's collar anchor, garment scale and occupied footprint within the square transparent canvas; fully opaque torso/hip region, no groin opening or exposed skin. Broader shoulder plates but no tall collar, no huge shoulder wings, no external flames. Distinct regal outfit rather than a suit recolor. No helmet, face, sword, text, labels, border, floor, checkerboard, glow background or cast shadow. ONE centered apparel item. This is the master front design for seven native body variants, so preserve clear separated cloak panels and strong chest readability.",
+      "referenceImages": [
+        "References/v2/ThunderIncarnateRegalia_Male_south.png"
+      ]
+    },
+    {
+      "name": "suit_east",
+      "selected": true,
+      "source": "Generated/suit_east.png",
+      "prompt": "Use case: stylized-concept. RimWorld Hell Flame Incarnate worn apparel sprite. Genuine transparent background. Image1 is the approved NEW black tailored suit and cape design; preserve its fitted black cloth jacket/waistcoat, minimal orange flame piping, black cape with deep-crimson inner lining, and compact native RimWorld illustration style. Image2 is ONLY the native body/facing geometry reference. Compact torso/hip clothing only, no head or neck column, no arms/hands, no legs/boots/mannequin. Flat chest, tucked shoulders, low collar, fully opaque torso and hip coverage. Main material is BLACK SUIT CLOTH, no plate armor, pauldrons or tassets. Clean flat hand-painted 2D shapes, dark outlines, small native-scale details, no glow/fog, no text, labels, frame, floor, weapon or helmet. Draw ONE strict EAST 90-degree profile facing RIGHT, not three-quarter. Front lapel/jacket edge is on the RIGHT, compact close-hanging cape behind on the LEFT, a narrow crimson lining glimpse and thin orange hem. Upper back and shoulder completely enclosed, collar opening at the correct head attachment. Side profile stays slim, cape drapes close, no inflated back/belly or huge shoulder bulge. Follow image2's occupied canvas footprint and head/collar geometry; preserve the front design's coat length and tiny flame clasp details.",
+      "referenceImages": [
+        "Generated/suit_south.png",
+        "References/v2/ThunderIncarnateRegalia_Male_east.png"
+      ]
+    },
+    {
+      "name": "suit_north",
+      "selected": true,
+      "source": "Generated/suit_north.png",
+      "prompt": "Use case: stylized-concept. RimWorld Hell Flame Incarnate worn apparel sprite. Genuine transparent background. Image1 is the approved NEW black tailored suit and cape design; preserve its fitted black cloth jacket/waistcoat, minimal orange flame piping, black cape with deep-crimson inner lining, and compact native RimWorld illustration style. Image2 is ONLY the native body/facing geometry reference. Compact torso/hip clothing only, no head or neck column, no arms/hands, no legs/boots/mannequin. Flat chest, tucked shoulders, low collar, fully opaque torso and hip coverage. Main material is BLACK SUIT CLOTH, no plate armor, pauldrons or tassets. Clean flat hand-painted 2D shapes, dark outlines, small native-scale details, no glow/fog, no text, labels, frame, floor, weapon or helmet. Draw ONE strict NORTH/back view. A smooth fully closed BLACK CAPE covers the upper back, with subtle cloth folds, thin molten-orange hem piping and a small orange flame crest between the shoulder blades. Compact fitted shoulders, no high collar, no armor plates. A small split at the lower cape hem can show black suit cloth beneath; no exposed skin. Tiny crimson inner lining visible only near the lower side folds. Preserve image1's design and image2's compact native silhouette, scale, top anchor and garment length.",
+      "referenceImages": [
+        "Generated/suit_south.png",
+        "References/v2/ThunderIncarnateRegalia_Male_north.png"
+      ]
+    },
+    {
+      "name": "suit_south",
+      "selected": true,
+      "source": "Generated/suit_south.png",
+      "prompt": "Use case: stylized-concept. Production RimWorld apparel sprite, Hell Flame Incarnate modern royal BLACK SUIT WITH A BLACK CLOAK, SOUTH/front view, genuine transparent background. Image1 is the approved Thunder Incarnate silhouette and suit/cape construction reference. Image2 is only the Hell Flame charcoal/crimson/molten-orange palette reference; REPLACE its medieval plate armor design completely. Draw a fitted black tailored jacket, neat angular lapels, black waistcoat with two small amber buttons and a narrow deep-crimson tie. A compact black princely cape lies close behind the shoulders, splits into two close-hanging panels with restrained crimson inner lining and thin molten-orange flame-shaped piping along the hems. Tiny orange flame clasp or pocket-chain detail, minimal royal ornament. Main outfit must read BLACK CLOTH SUIT, not heavy armor: no plate chest, no pauldrons, no layered armor plates, no tassets. Native RimWorld flat 2D hand-painted style, bold clean dark outlines, simple readable folds and highlights at pawn scale. CRITICAL RimWorld fit: compact torso/hip clothing silhouette only, no head, no neck column, no arms/hands, no human legs/boots or mannequin, shoulders tucked in, flat chest without breasts, very low centered oval collar. Full opaque torso/hip coverage with no groin opening. Follow image1's compact squat garment proportions, collar position and occupied footprint within the square canvas. One isolated centered clothing item. No helmet, sword, text, border, labels, glow, floor or cast shadow.",
+      "referenceImages": [
+        "References/v2/ThunderIncarnateRegalia_Male_south.png",
+        "References/v2/HellFlameIncarnateRegalia_Male_south.png"
+      ]
+    },
+    {
+      "name": "sword",
+      "selected": false,
+      "source": "Generated/Drafts/sword.png",
+      "prompt": "Use case: stylized-concept. ONE production 2D RimWorld sword item sprite named Ashreign, for Hell Flame Incarnate. Genuinely transparent background. Long elegant straight regal sword, vertical tip UP, pommel DOWN, fully visible with safety margins. Blackened charcoal double-edged blade with a narrow incandescent white-hot amber core and molten-orange cutting edges, subtle angular flame channels. Black wrapped handle, small deep crimson pommel jewel, compact swept flame-shaped guard in dark metal and molten orange. Clearly usable long grip below guard, no obscuring flame aura. Bold clean black outlines and restrained flat cel shading, readable at pawn scale, same compact visual simplicity as native RimWorld weapons. Total sword silhouette tall and slender, blade about 70 percent of overall length; point and cutting edges clear. No text, border, hand, person, background, glow cloud, particles or cast shadow. This is a clean actual equipment sprite, not a concept illustration.",
+      "referenceImages": []
+    }
+  ]
+}

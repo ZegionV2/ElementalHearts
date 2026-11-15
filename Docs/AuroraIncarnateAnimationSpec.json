@@ -1,0 +1,433 @@
+{
+  "name": "Aurora Incarnate",
+  "status": "Implemented runtime sequences; see AuroraIncarnate.md",
+  "armorPath": "Things/Pawn/Humanlike/Apparel/AuroraIncarnateRegalia/AuroraIncarnateRegalia",
+  "commandRoot": "UI/Commands/ElementalHearts/AuroraIncarnate",
+  "effectRoot": "Effects/ElementalHearts/AuroraIncarnate/Frames",
+  "armorSources": {
+    "south": "suit_south",
+    "east": "suit_east",
+    "north": "suit_north"
+  },
+  "swordSource": "winterglass",
+  "icons": {
+    "RimefallCrescent": "RimefallCrescent",
+    "AuroraBlitz": "AuroraBlitz",
+    "FrostcrownWaltz": "FrostcrownWaltz",
+    "AuroraDominion": "AuroraDominion",
+    "AuroraCataclysm": "AuroraCataclysm",
+    "MirrorfrostReversal": "MirrorfrostReversal",
+    "ThroneOfEndlessWinter": "ThroneOfEndlessWinter",
+    "TranscendAurora": "TranscendAurora",
+    "RimeStep": "RimeStep",
+    "AuroraTravel": "AuroraTravel",
+    "RimePressure": "RimePressure"
+  },
+  "sequences": [
+    {
+      "name": "RimefallCrescent",
+      "source": "fx_RimefallCrescent",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "AuroraBlitzWake",
+      "source": "fx_AuroraBlitzWake",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "AuroraBlitzFlash",
+      "source": "fx_AuroraBlitzFlash",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "AuroraBlitzSlash",
+      "source": "fx_AuroraBlitzSlash",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "FrostcrownWaltz",
+      "source": "fx_FrostcrownWaltz",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "AuroraCurtainFormation",
+      "source": "fx_AuroraCurtainFormation",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "AuroraCurtainLoop",
+      "source": "fx_AuroraCurtainLoop",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": true,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "AuroraCurtainRelease",
+      "source": "fx_AuroraCurtainRelease",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "AuroraCataclysm",
+      "source": "fx_AuroraCataclysm",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "FrostStreak",
+      "source": "fx_FrostStreak",
+      "frames": 4,
+      "columns": 2,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "FreezeShell",
+      "source": "fx_FreezeShell",
+      "frames": 6,
+      "columns": 3,
+      "rows": 2,
+      "size": 256,
+      "gutter": 6,
+      "padding": 16,
+      "loop": true,
+      "seconds": 1.0,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "MirrorfrostMirage",
+      "source": "fx_MirrorfrostMirage",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "MirrorfrostRetreat",
+      "source": "fx_MirrorfrostRetreat",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "MirrorfrostCounter",
+      "source": "fx_MirrorfrostCounter",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "ThroneTelegraph",
+      "source": "fx_ThroneTelegraph",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "ThroneFormation",
+      "source": "fx_ThroneFormation",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "ThroneShatter",
+      "source": "fx_ThroneShatterClear",
+      "frames": 16,
+      "columns": 4,
+      "rows": 4,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 1.2,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "RimeStep",
+      "source": "fx_RimeStep",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "TravelDeparture",
+      "source": "fx_TravelDeparture",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "TravelArrival",
+      "source": "fx_TravelArrival",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "Coronation",
+      "source": "fx_Coronation",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "Halo",
+      "source": "fx_HaloClear",
+      "frames": 6,
+      "columns": 3,
+      "rows": 2,
+      "size": 256,
+      "gutter": 6,
+      "padding": 16,
+      "loop": true,
+      "seconds": 1.0,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "BackAura",
+      "source": "fx_BackAura",
+      "frames": 6,
+      "columns": 3,
+      "rows": 2,
+      "size": 256,
+      "gutter": 6,
+      "padding": 16,
+      "loop": true,
+      "seconds": 1.0,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "SnowDrift",
+      "source": "fx_SnowDrift",
+      "frames": 6,
+      "columns": 3,
+      "rows": 2,
+      "size": 256,
+      "gutter": 6,
+      "padding": 16,
+      "loop": true,
+      "seconds": 1.0,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "SwordClash",
+      "source": "fx_SwordClash",
+      "frames": 8,
+      "columns": 4,
+      "rows": 2,
+      "size": 512,
+      "gutter": 6,
+      "padding": 16,
+      "loop": false,
+      "seconds": 0.6,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "atlasExport": {
+    "alphaNoiseThreshold": 8,
+    "edgeFeatherPixels": 14,
+    "preserveCommonFrameWindow": true
+  }
+}

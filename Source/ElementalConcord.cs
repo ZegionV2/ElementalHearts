@@ -43,7 +43,7 @@ namespace ElementalHearts {
  // Scope only existing elemental strike methods. Native ordinary attacks, awakening,
  // cosmetics and damage from unrelated mods never create a synchronization primer.
  [HarmonyPatch] public static class ConcordStrikeScope {
-  static IEnumerable<MethodBase> TargetMethods(){foreach(var type in new[]{typeof(LightningCombat),typeof(FlameCombat),typeof(WindCombat),typeof(WaterCombat),typeof(EarthCombat),typeof(LunarCombat),typeof(EclipseCombat),typeof(CelestialCombat)})yield return AccessTools.DeclaredMethod(type,"Strike");yield return AccessTools.DeclaredMethod(typeof(WaterDefense),"Counter");}
+  static IEnumerable<MethodBase> TargetMethods(){foreach(var type in new[]{typeof(TempestCombat),typeof(LightningCombat),typeof(FlameCombat),typeof(WindCombat),typeof(WaterCombat),typeof(EarthCombat),typeof(LunarCombat),typeof(EclipseCombat),typeof(CelestialCombat)})yield return AccessTools.DeclaredMethod(type,"Strike");yield return AccessTools.DeclaredMethod(typeof(WaterDefense),"Counter");}
   static void Prefix(Pawn __0,Pawn __1,out ConcordContext __state){__state=ElementalConcord.current;ElementalConcord.current=ElementalConcord.Enabled?new ConcordContext{source=__0,target=__1}:default(ConcordContext);}
   static Exception Finalizer(Exception __exception,ConcordContext __state){ElementalConcord.current=__state;return __exception;}
  }

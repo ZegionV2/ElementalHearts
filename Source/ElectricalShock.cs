@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using RimWorld;
 using Verse;
 
@@ -15,6 +15,10 @@ namespace ElementalHearts {
    bool incarnate=ThunderIncarnate.Active(source),evolved=ThunderstormEvolution.Active(source)||incarnate;
    var resistance=HediffComp_LightningPassives.On(victim);
    float factor=resistance==null?1f:Math.Max(0f,Math.Min(1f,resistance.Props.resistanceFactor));
+   // Infernal Resolve resists disruption; elemental damage still uses the normal armor path.
+   if(AuroraIncarnate.Active(victim))factor=Math.Min(factor,AuroraIncarnate.ShockFactor);
+   if(TempestIncarnate.Active(victim))factor=Math.Min(factor,TempestIncarnate.ShockFactor);
+   if(HellFlameIncarnate.Active(victim))factor=Math.Min(factor,HellFlameIncarnate.ShockFactor);
    if(!Rand.Chance((incarnate?.45f:evolved?.40f:.25f)*factor))return false;
    int duration=Math.Max(1,(int)Math.Round((evolved?90:60)*factor));
    var shock=victim.health.AddHediff(def);

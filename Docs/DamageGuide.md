@@ -16,7 +16,7 @@ Ordinary melee does not acquire a skill coefficient simply because the attacker 
 | Azure Flame, Thunderstorm, Glacial, Cyclone, Adamant | ×2.20 | +120% | ×1.76 |
 | Lunar | ×2.30 | +130% | ×1.84 |
 | Eclipse | ×2.65 | +165% | ×2.12 |
-| Thunder Incarnate | ×3.2 | +220% | ×2.56 |
+| Thunder Incarnate / Hell Flame Incarnate | ×3.2 | +220% | ×2.56 |
 | Celestial | ×3.20 | +220% | ×2.56 |
 | Eclipse with real Eclipse Dominion | ×3.20 combined | +220% | ×2.56 |
 
@@ -35,7 +35,7 @@ Some forms request physical and elemental injury as separate channels, each with
 | Channel | Meaning |
 | --- | --- |
 | Physical sword injury | Cut/Stab/Blunt or the selected native melee verb's physical type, depending on the form. Armor and penetration apply. |
-| Flame / Azure flame | Thermal injury can accompany a separate physical sword hit. Thermal resistance does not erase every physical part of the attack. |
+| Flame / Azure flame / Hell Flame Incarnate | Thermal injury can accompany a separate physical sword hit. Thermal resistance does not erase every physical part of the attack. |
 | Lightning / crimson lightning | Electrical injury can accompany physical damage. Damaging hits can trigger bounded shock stuns; some techniques separately handle mechanoid EMP. |
 | Water pressure | Blunt injury driven by profile and technique/Pressure rules. Glacial reuses the lineage's system with its own coefficients and crowd control. |
 | Solar cut | Celestial sharp injury, scaled by its profile, form and Radiance rules. Melee-weapon-tagged solar packets receive the common tuning. |

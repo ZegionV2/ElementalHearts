@@ -3,7 +3,7 @@
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_WaterUniform</defName>
     <label>water uniform</label>
-    <description>Manifested charcoal/navy Water Ascendant armor with silver trim and cyan-white wave inlays. Closed plates and lining cover the body below the short neckline, including the upper back and side seams. Compact pawn armor without drawn limbs. Bound, indestructible equipment; restored personal clothing returns on reversion or downing.</description>
+    <description>Manifested charcoal/navy Water Adept armor with silver trim and cyan-white wave inlays. Closed plates and lining cover the body below the short neckline, including the upper back and side seams. Compact pawn armor without drawn limbs. Bound, indestructible equipment; restored personal clothing returns on reversion or downing.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/WaterUniform/WaterUniform</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -68,8 +68,8 @@
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_WaterHelmet</defName>
-    <label>water ascendant helmet</label>
-    <description>A fully enclosed Water Ascendant helmet with a dark faceplate, cyan visor and silver wave crest. Covers the full head and conceals hair and beard. Bound and indestructible. Restores the original uncovered head or personal helmet on reversion.</description>
+    <label>water adept helmet</label>
+    <description>A fully enclosed Water Adept helmet with a dark faceplate, cyan visor and silver wave crest. Covers the full head and conceals hair and beard. Bound and indestructible. Restores the original uncovered head or personal helmet on reversion.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/WaterHelmet/WaterHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -138,7 +138,7 @@
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>EH_WaterSword</defName>
     <label>tidal sword</label>
-    <description>The Tidal Sword, a bound Water Ascendant blade with a pearl-white edge, cyan current inlay and a crescent guard. Uses normal sword strikes and Water counters. Indestructible; safely stored on reversion, downing or death.</description>
+    <description>The Tidal Sword, a bound Water Adept blade with a pearl-white edge, cyan current inlay and a crescent guard. Uses normal sword strikes and Water counters. Indestructible; safely stored on reversion, downing or death.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponMelee/WaterSword</texPath>
       <graphicClass>Graphic_Single</graphicClass>

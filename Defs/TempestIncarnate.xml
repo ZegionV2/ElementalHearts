@@ -1,0 +1,260 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef ParentName="ApparelMakeableBase">
+    <defName>EH_TempestIncarnateUniform</defName>
+    <label>tempest incarnate princely suit</label>
+    <description>Indestructible bound dark grey suit and tailored storm cape, minimal white lightning channels. Complete mechanical coverage below the neck, including hands, legs, feet and groin.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/TempestIncarnateRegalia/TempestIncarnateRegalia</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToMake>3500</WorkToMake>
+      <Mass>1.2</Mass>
+      <ArmorRating_Sharp>1.25</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.1</ArmorRating_Blunt>
+      <Insulation_Cold>5</Insulation_Cold>
+      <Insulation_Heat>3</Insulation_Heat>
+      <EquipDelay>2</EquipDelay>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
+        <li>Waist</li>
+        <li>Legs</li>
+        <li>Feet</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/TempestIncarnateRegalia/TempestIncarnateRegalia</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags Inherit="False">
+      </tags>
+      <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+      <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    </apparel>
+    <generateCommonality>0</generateCommonality>
+    <equippedStatOffsets>
+      <MoveSpeed>0.15</MoveSpeed>
+    </equippedStatOffsets>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+    <recipeMaker IsNull="True" />
+  </ThingDef>
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>EH_TempestIncarnateSword</defName>
+    <label>Skyrend katana</label>
+    <description>An indestructible fitted cloud-steel katana with white lightning channels. Correct held edge orientation and a native Melee Animation grip/blade profile.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/TempestIncarnateSword</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <ignoreThingDrawColor>true</ignoreThingDrawColor>
+      <drawSize>(1.85,1.48)</drawSize>
+    </graphicData>
+    <techLevel>Medieval</techLevel>
+    <costStuffCount>100</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <statBases>
+      <WorkToMake>18000</WorkToMake>
+      <Mass>2</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <equippedAngleOffset>90</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>30</power>
+        <cooldownTime>2.2</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>30</power>
+        <cooldownTime>2.2</cooldownTime>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="ElementalHearts.IndestructibleElementalGear" />
+    </modExtensions>
+    <useHitPoints>false</useHitPoints>
+    <comps>
+      <li Class="ElementalHearts.CompProperties_IndestructibleGear" />
+    </comps>
+    <smeltable>false</smeltable>
+    <recipeMaker IsNull="True" />
+  </ThingDef>
+  <HediffDef ParentName="EH_ElementalHeartHediffBase">
+    <defName>EH_TempestIncarnate</defName>
+    <label>Tempest Incarnate</label>
+    <description>Tempest Incarnate: Wind’s third form, after Cyclone. Celestial-tier power: 650% Moving, 200% Consciousness, 300% Manipulation, 250% Sight/Hearing, +75 mood, 3.2x melee stat, 0.04 incoming damage, rapid recovery, 15x carrying capacity and 4x caravan speed. Disperses 65% of remaining bomb damage and reduces electrical shock chance/duration by 75%. Seven free techniques combine checked dashes, pressure crescents, a spin, a guarded mirage counter, three timed rising/descending cuts, a bounded airhold/release and a grand localized storm funnel. Storm Flow empowers finishers without extra damage ticks. Shared Auto/Off/Non-lethal; no permanent terrain, building, weather or roof changes. Indestructible full below-neck dark suit/cape and Skyrend katana; cloud halo/back aura only while transformed, drafted and awake. Bestow grants ordinary Wind. Right-click utility cycles Cloud Step Auto, Manual, Tempest Travel. World travel is free and supports exact landing. Damage scales from the current melee profile; the shared 20% reduction applies once.</description>
+    <comps>
+      <li Class="ElementalHearts.HediffCompProperties_WindAbilities">
+        <drawRange>12</drawRange>
+        <tempestRange>8</tempestRange>
+        <guardRange>5</guardRange>
+        <drawDamage>3.2</drawDamage>
+        <riseFirstDamage>1.8</riseFirstDamage>
+        <riseSecondDamage>2</riseSecondDamage>
+        <counterDamage>3.8</counterDamage>
+        <counterSweepDamage>1.5</counterSweepDamage>
+        <tempestOpeningDamage>2.4</tempestOpeningDamage>
+        <tempestSecondDamage>2.4</tempestSecondDamage>
+        <tempestFinishDamage>4</tempestFinishDamage>
+        <armorPenetrationFloor>0.5</armorPenetrationFloor>
+        <staggerTicks>60</staggerTicks>
+        <drawCooldown>210</drawCooldown>
+        <riseCooldown>270</riseCooldown>
+        <counterCooldown>360</counterCooldown>
+        <tempestCooldown>840</tempestCooldown>
+        <flowDuration>480</flowDuration>
+        <guardDuration>150</guardDuration>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_FlameRecovery">
+        <sealAfterTicks>60</sealAfterTicks>
+        <healPerSecond>4</healPerSecond>
+      </li>
+      <li Class="ElementalHearts.HediffCompProperties_TempestMastery" />
+      <li Class="ElementalHearts.HediffCompProperties_TempestIncarnate" />
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>1</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>5.5</offset>
+            <setMax>6.5</setMax>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>1.5</offset>
+            <setMax>3</setMax>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>1.5</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>1.5</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>1</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>1</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>1</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>0.5</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>0.5</offset>
+          </li>
+        </capMods>
+        <painFactor>0</painFactor>
+        <totalBleedFactor>0.1</totalBleedFactor>
+        <naturalHealingFactor>10</naturalHealingFactor>
+        <hungerRateFactor>0.6</hungerRateFactor>
+        <restFallFactor>0.6</restFallFactor>
+        <statFactors>
+          <CarryingCapacity>15</CarryingCapacity>
+          <MoveSpeed>1.75</MoveSpeed>
+          <MeleeDamageFactor>3.2</MeleeDamageFactor>
+          <MeleeCooldownFactor>0.55</MeleeCooldownFactor>
+          <WorkSpeedGlobal>2</WorkSpeedGlobal>
+          <IncomingDamageFactor>0.04</IncomingDamageFactor>
+          <ImmunityGainSpeed>2</ImmunityGainSpeed>
+          <JoyFallRateFactor>0.6</JoyFallRateFactor>
+        </statFactors>
+        <statOffsets>
+          <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+          <MeleeHitChance>4</MeleeHitChance>
+          <MeleeDodgeChance>12</MeleeDodgeChance>
+          <ComfyTemperatureMax>50</ComfyTemperatureMax>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <JobDef>
+    <defName>EH_TranscendTempest</defName>
+    <driverClass>ElementalHearts.JobDriver_TranscendTempest</driverClass>
+    <reportString>Commanding the sovereign storm.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>EH_TempestTechnique</defName>
+    <driverClass>ElementalHearts.JobDriver_TempestTechnique</driverClass>
+    <reportString>Commanding the sovereign storm.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+  <DamageDef ParentName="BluntBase">
+    <defName>EH_TempestPressure</defName>
+    <label>tempest pressure</label>
+    <description>A bounded pressure impact. Normal armor and the shared elemental damage tuning apply once. Visual storm frames never add damage ticks.</description>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <deathMessage>{0} was overcome by sovereign storm pressure.</deathMessage>
+  </DamageDef>
+  <ThoughtDef>
+    <defName>EH_TempestResolve</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>EH_TempestIncarnate</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>tempest incarnate</label>
+        <description>Above the dark clouds, my will commands the white storm.</description>
+        <baseMoodEffect>75</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

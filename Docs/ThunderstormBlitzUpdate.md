@@ -24,7 +24,7 @@ The new effects use fixed ring buffers of 128 combat sprites and 64 afterimages,
 
 The assembly compiled against the installed RimWorld 1.6 and Harmony assemblies. All 20 automated verification scripts passed, including native job/toil structure, route rules, duration/progress, interruption-gate release, halo frame/blend bounds, a 10,000-insertion fixed-buffer check, native Scribe save output and existing evolution, gear, teaching, sword and combat regressions. Native loading, GPU rendering, actual combat feel and third-party rendering interactions were not exercised headlessly.
 
-Restart RimWorld fully after installation. In game: evolve a Lightning Ascendant, transform and draft it; inspect the halo in all directions; use Redline through a group and Sovereign on a standing target; repeat near walls and occupied landing cells; interrupt a rush, undraft and down/recover the pawn; then test saving/reloading during movement. Confirm skills become available after the rush ends. Try ordinary Lightning and Azure to check their existing behavior.
+Restart RimWorld fully after installation. In game: evolve a Lightning Adept, transform and draft it; inspect the halo in all directions; use Redline through a group and Sovereign on a standing target; repeat near walls and occupied landing cells; interrupt a rush, undraft and down/recover the pawn; then test saving/reloading during movement. Confirm skills become available after the rush ends. Try ordinary Lightning and Azure to check their existing behavior.
 
 ## Art provenance
 

@@ -1,6 +1,6 @@
 # Adamant Ascendant — playable Earth evolution
 
-Normal Earth Ascendants can evolve after 150 unique hostile non-animal mastery kills and ten Ascendant days. Newly added mastery starts at zero on existing Earth saves; their existing Ascendant age counts. The free Evolve: Adamant command runs the shared interruptible 4.5-second C# coronation with golden rings and rising facets. God Mode supplies DEV: Evolution-Ready, which only fulfills requirements; the normal Evolve button still performs the ritual. Turning God Mode off hides cached readiness commands.
+Normal Earth Adepts can evolve after 150 unique hostile non-animal mastery kills and ten Adept days. Newly added mastery starts at zero on existing Earth saves; their existing Ascendant age counts. The free Evolve: Adamant command runs the shared interruptible 4.5-second C# coronation with golden rings and rising facets. God Mode supplies DEV: Evolution-Ready, which only fulfills requirements; the normal Evolve button still performs the ritual. Turning God Mode off hides cached readiness commands.
 
 Evolution upgrades the existing Earth hediff in place. The normal Earth label is replaced by Adamant, without adding a second stat stack. The same saved ability component retains the four cooldown deadlines, Resolve, recovery state and Auto Combat/non-lethal preference; only the new fifth deadline is appended. Original clothes, transformation state and sword quality carry over. No resources are consumed.
 

@@ -3,21 +3,21 @@
   <SoundDef>
     <defName>EH_Sound_Earth_Slash</defName>
     <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
     <priorityMode>PrioritizeNearest</priorityMode>
     <subSounds>
       <li>
-        <name>stone</name>
+        <name>attack</name>
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>Impact/MeleeHit_Stone</clipFolderPath>
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>26~32</volumeRange>
-        <pitchRange>.8~.95</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>31~37</volumeRange>
+        <pitchRange>.78~.9</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
       <li>
@@ -28,9 +28,9 @@
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>9~13</volumeRange>
-        <pitchRange>.9~1.05</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>13~18</volumeRange>
+        <pitchRange>.88~1.0</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
@@ -38,21 +38,21 @@
   <SoundDef>
     <defName>EH_Sound_Earth_Dash</defName>
     <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
     <priorityMode>PrioritizeNearest</priorityMode>
     <subSounds>
       <li>
-        <name>stone</name>
+        <name>attack</name>
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>Interact/Work/Construct/Stone/Stone_Chunk_Light</clipFolderPath>
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>16~22</volumeRange>
-        <pitchRange>.78~.92</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>19~25</volumeRange>
+        <pitchRange>.76~.9</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
       <li>
@@ -63,9 +63,9 @@
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>24~30</volumeRange>
-        <pitchRange>.97~1.03</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>26~32</volumeRange>
+        <pitchRange>.96~1.04</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
@@ -73,21 +73,21 @@
   <SoundDef>
     <defName>EH_Sound_Earth_Spin</defName>
     <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
     <priorityMode>PrioritizeNearest</priorityMode>
     <subSounds>
       <li>
-        <name>stone</name>
+        <name>attack</name>
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>Interact/Work/Construct/Stone/Stone_Chunk_Light</clipFolderPath>
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>18~24</volumeRange>
-        <pitchRange>.8~.95</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>22~28</volumeRange>
+        <pitchRange>.74~.86</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
       <li>
@@ -98,9 +98,9 @@
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>20~25</volumeRange>
-        <pitchRange>.97~1.03</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>29~35</volumeRange>
+        <pitchRange>.92~1.04</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
@@ -108,21 +108,21 @@
   <SoundDef>
     <defName>EH_Sound_Earth_Charge</defName>
     <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
     <priorityMode>PrioritizeNearest</priorityMode>
     <subSounds>
       <li>
-        <name>stone</name>
+        <name>attack</name>
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>Interact/Work/Construct/Stone/Stone_Chunk_Light</clipFolderPath>
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>9~13</volumeRange>
-        <pitchRange>.72~.85</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>20~26</volumeRange>
+        <pitchRange>.7~.82</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
       <li>
@@ -133,9 +133,9 @@
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>26~33</volumeRange>
-        <pitchRange>.99~1.01</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>27~33</volumeRange>
+        <pitchRange>.92~1.02</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
@@ -143,21 +143,21 @@
   <SoundDef>
     <defName>EH_Sound_Earth_Impact</defName>
     <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
     <priorityMode>PrioritizeNearest</priorityMode>
     <subSounds>
       <li>
-        <name>stone</name>
+        <name>attack</name>
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>Impact/MeleeHit_Stone</clipFolderPath>
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>18~25</volumeRange>
-        <pitchRange>.75~.9</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>33~39</volumeRange>
+        <pitchRange>.7~.84</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
       <li>
@@ -168,9 +168,9 @@
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>24~30</volumeRange>
-        <pitchRange>.97~1.03</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>28~34</volumeRange>
+        <pitchRange>.92~1.02</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
@@ -178,21 +178,21 @@
   <SoundDef>
     <defName>EH_Sound_Earth_Advance_Impact</defName>
     <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
     <priorityMode>PrioritizeNearest</priorityMode>
     <subSounds>
       <li>
-        <name>stone</name>
+        <name>attack</name>
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>Interact/Work/Mine/PickHit</clipFolderPath>
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>22~28</volumeRange>
-        <pitchRange>.8~.95</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>24~30</volumeRange>
+        <pitchRange>.78~.92</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
       <li>
@@ -203,9 +203,9 @@
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>18~24</volumeRange>
-        <pitchRange>.75~.9</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>32~38</volumeRange>
+        <pitchRange>.74~.86</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
@@ -213,21 +213,21 @@
   <SoundDef>
     <defName>EH_Sound_Earth_Quake_Impact</defName>
     <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
     <priorityMode>PrioritizeNearest</priorityMode>
     <subSounds>
       <li>
-        <name>stone</name>
+        <name>attack</name>
         <grains>
           <li Class="AudioGrain_Clip">
             <clipPath>Misc/RockCollapse</clipPath>
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>15~23</volumeRange>
-        <pitchRange>.9~1.03</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>30~36</volumeRange>
+        <pitchRange>.86~.98</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
       <li>
@@ -238,9 +238,9 @@
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>34~40</volumeRange>
-        <pitchRange>.97~1.03</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>30~36</volumeRange>
+        <pitchRange>.94~1.04</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
     </subSounds>
@@ -248,21 +248,21 @@
   <SoundDef>
     <defName>EH_Sound_Earth_Spire_Impact</defName>
     <context>MapOnly</context>
-    <maxVoices>4</maxVoices>
-    <maxSimultaneous>3</maxSimultaneous>
+    <maxVoices>3</maxVoices>
+    <maxSimultaneous>2</maxSimultaneous>
     <priorityMode>PrioritizeNearest</priorityMode>
     <subSounds>
       <li>
-        <name>stone</name>
+        <name>attack</name>
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>Impact/MeleeHit_Stone</clipFolderPath>
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>30~38</volumeRange>
+        <volumeRange>33~39</volumeRange>
         <pitchRange>.72~.86</pitchRange>
-        <distRange>6~45</distRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
       <li>
@@ -273,9 +273,9 @@
           </li>
         </grains>
         <onCamera>false</onCamera>
-        <volumeRange>32~40</volumeRange>
-        <pitchRange>.97~1.03</pitchRange>
-        <distRange>6~45</distRange>
+        <volumeRange>31~37</volumeRange>
+        <pitchRange>.94~1.04</pitchRange>
+        <distRange>6~50</distRange>
         <tempoAffectedByGameSpeed>false</tempoAffectedByGameSpeed>
       </li>
     </subSounds>

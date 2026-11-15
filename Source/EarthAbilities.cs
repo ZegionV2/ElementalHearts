@@ -87,7 +87,7 @@ namespace ElementalHearts {
    guardOrigin=Pawn.Position;int duration=Evolved?180:EarthRules.BastionDuration;guardUntil=Find.TickManager.TicksGame+duration;
    var def=DefDatabase<HediffDef>.GetNamed(Evolved?"EH_AdamantBulwark":"EH_EarthBastion");var h=Pawn.health.hediffSet.GetFirstHediffOfDef(def)??Pawn.health.AddHediff(def);
    h.TryGetComp<HediffComp_Disappears>().ticksToDisappear=duration;
-   MarkCombat();Register();ElementalAudio.Ability(Pawn,ElementalSound.Impact);
+   MarkCombat();Register();if(Evolved)ElementalAudio.Play(Pawn,"EH_Sound_Adamant_Bulwark");else ElementalAudio.Ability(Pawn,ElementalSound.Impact);
   }
   public void EndGuard(){bool fading=Evolved&&guardUntil>0;guardUntil=0;if(fading&&Pawn.Spawned)Pawn.Map.GetComponent<MapComponent_Earth>().EmitAdamant(5,Pawn.DrawPos,24,3.6f);var def=DefDatabase<HediffDef>.GetNamedSilentFail(Evolved?"EH_AdamantBulwark":"EH_EarthBastion");if(def==null||Pawn.health==null)return;var h=Pawn.health.hediffSet.GetFirstHediffOfDef(def);if(h!=null)Pawn.health.RemoveHediff(h);}
   public bool Valid(EarthPower power,Pawn target,bool manual){
@@ -118,7 +118,7 @@ namespace ElementalHearts {
     string[] details={
      "A narrow eight-cell faultline cleave. Hits up to 16 eligible enemies once, stops at walls, briefly staggers survivors, and grants one Resolve on a successful hostile impact.",
      "Charge up to six cells along a clear, unoccupied route to the target's flank, then strike once. No wall crossing. Rechecks every movement step.",
-     "Stab the ground after a 0.6-second windup. A circular earthquake strikes enemies within four clear cells once, staggers them for one second and pushes survivors up to two clear cells. Automatically used against two or more nearby enemies. Full Ascendants must be transformed.",
+     "Stab the ground after a 0.6-second windup. A circular earthquake strikes enemies within four clear cells once, staggers them for one second and pushes survivors up to two clear cells. Automatically used against two or more nearby enemies. Earth Adepts must be transformed.",
      "Stab the ground and mark the ground beneath the selected opponent. After 0.7 seconds, a spiked basalt hill erupts within three clear cells of that fixed mark, strikes each enemy once and pushes survivors up to three clear cells. Consume up to three Resolve for +10% damage each. The hill fades; it creates no obstacle, building damage or permanent terrain."};
     if(Evolved)details=AdamantRules.Details;
     Command cmd;

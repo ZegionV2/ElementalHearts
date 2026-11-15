@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
@@ -123,7 +123,7 @@ namespace ElementalHearts {
   private static readonly WindPower[] close={WindPower.Rise,WindPower.Tempest,WindPower.Draw,WindPower.Counter};
   private static readonly WindPower[] distant={WindPower.Draw,WindPower.Tempest};
   public static void Evaluate(HediffComp_WindAbilities c){
-   Pawn pawn=c.Pawn;bool controlled=ElementalCombatPolicy.Controlled(pawn);if(!controlled)c.autoCombat=true;
+   Pawn pawn=c.Pawn;if(TempestIncarnate.Active(pawn)){HediffComp_TempestIncarnate.On(pawn).Auto();return;}bool controlled=ElementalCombatPolicy.Controlled(pawn);if(!controlled)c.autoCombat=true;
    if(!ElementalCombatPolicy.AutomationEnabled(controlled,ElementalHeartsMod.Settings.enableAutomation,c.autoCombat)||!c.CanAct||pawn.CurJob==null)return;
    if(c.Busy){c.nextAutoCheck=Find.TickManager.TicksGame+6;return;}
    if(pawn.stances.FullBodyBusy&&!(pawn.stances.curStance is Stance_Cooldown))return;

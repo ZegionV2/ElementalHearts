@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using RimWorld;
 using Verse;
@@ -6,7 +6,7 @@ using Verse.AI;
 namespace ElementalHearts {
  public static class FlameAutocast {
   public static void Evaluate(HediffComp_FlameAbilities c) {
-   Pawn pawn=c.Pawn; int now=Find.TickManager.TicksGame; if(now<c.nextAutoCheck)return; c.nextAutoCheck=now+60;
+   Pawn pawn=c.Pawn;if(HellFlameIncarnate.Active(pawn)){HediffComp_HellFlameIncarnate.On(pawn).Auto();return;} int now=Find.TickManager.TicksGame; if(now<c.nextAutoCheck)return; c.nextAutoCheck=now+60;
    bool controlled=ElementalCombatPolicy.Controlled(pawn);
    if(!controlled)c.autoCombat=true;
    if(!ElementalCombatPolicy.AutomationEnabled(controlled,ElementalHeartsMod.Settings.enableAutomation,c.autoCombat)||!c.CanAct||pawn.CurJob==null)return;

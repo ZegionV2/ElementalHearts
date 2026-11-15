@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <Defs>
   <JobDef>
     <defName>EH_ThunderTravelDepart</defName>
@@ -20,8 +20,14 @@
     <defName>EH_ThunderTravel</defName>
     <label>Thunder Travel</label>
     <worldObjectClass>ElementalHearts.WorldObject_CelestialLightTravel</worldObjectClass>
-    <texture>UI/Commands/ElementalHearts/ThunderIncarnate/ThunderTravel</texture>
+    <texture>UI/Commands/ElementalHearts/LivingFlight/FlyingPawn</texture>
     <useDynamicDrawer>true</useDynamicDrawer>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconTexture>UI/Commands/ElementalHearts/LivingFlight/FlyingPawn</expandingIconTexture>
+    <expandingIconPriority>200</expandingIconPriority>
+    <expandingIconDrawSize>2.2</expandingIconDrawSize>
+    <expandMore>true</expandMore>
+    <validLaunchTarget>false</validLaunchTarget>
   </WorldObjectDef>
   <WorldObjectDef>
     <defName>EH_ThunderLandingSite</defName>

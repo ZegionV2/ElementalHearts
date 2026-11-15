@@ -60,11 +60,11 @@ namespace ElementalHearts {
      float y=gridHeight+6;Color accent=CelestialBestowArt.Accents[selected];
      Box(new Rect(0,y,width,91),new Color(.075f,.085f,.115f),new Color(.24f,.26f,.31f));
      Widgets.DrawTextureFitted(new Rect(width-76,y+13,64,64),CelestialBestowArt.Evolutions[selected],1);
-     Label(new Rect(14,y+8,width-98,24),CelestialBestowOptions.Elements[selected]+" Ascendant  →  "+CelestialBestowOptions.Evolutions[selected],GameFont.Small,accent);
+     Label(new Rect(14,y+8,width-98,24),CelestialBestowOptions.Elements[selected]+" Adept  →  "+CelestialBestowOptions.Evolutions[selected]+" Ascendant",GameFont.Small,accent);
      Label(new Rect(14,y+35,width-100,49),CelestialBestowArt.Notes[selected],GameFont.Tiny,new Color(.78f,.80f,.85f));
      y+=105;Label(new Rect(0,y,width,24),"EVOLUTION PATH",GameFont.Tiny,CelestialBestowArt.Gold);y+=24;
      float half=(width-10)/2;EvolutionChoice(new Rect(0,y,half,73),false,"Earn through mastery","Earn the normal evolution requirements.");EvolutionChoice(new Rect(half+10,y,half,73),true,"Ready to evolve","Unlock Evolve; choose when to use it.");
-     y+=83;Label(new Rect(2,y,width-4,36),"Bestow grants the normal form first. The recipient keeps their faction. No resource cost.",GameFont.Tiny,new Color(.65f,.69f,.76f));
+     y+=83;Label(new Rect(2,y,width-4,36),"Bestow grants an Adept first. The recipient keeps their faction. No resource cost.",GameFont.Tiny,new Color(.65f,.69f,.76f));
     }finally{Widgets.EndScrollView();}
     Rect button=new Rect(0,rect.height-49,rect.width,43);bool canChoose=CelestialBestowOptions.CanOpen(giver);Color border=canChoose?CelestialBestowArt.Gold:new Color(.34f,.35f,.39f);bool over=Mouse.IsOver(button);
     Box(button,canChoose?(over?new Color(.34f,.27f,.14f):new Color(.23f,.19f,.11f)):new Color(.12f,.13f,.15f),border);

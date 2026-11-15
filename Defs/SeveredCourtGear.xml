@@ -62,7 +62,7 @@
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_Court_AzureFlameUniform</defName>
     <label>azure herald regalia</label>
-    <description>The shared royal war mantle of the Severed Court Heralds: obsidian plate, ivory mantle panels, pale-gold edging and a crimson cloak. This projected uniform retains its original evolved lineage armor stats. Its fitted lower-face guard leaves eyes and hair visible. Bound and indestructible.</description>
+    <description>The shared royal war mantle of the Severed Court Heralds: obsidian plate, ivory mantle panels, pale-gold edging and a crimson cloak. This projected uniform retains its original evolved lineage armor stats. Its fitted lower-face guard leaves eyes and hair visible. Bound and indestructible. Protects the torso, shoulders, arms, hands, waist, legs and feet, including fingers and toes.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/CourtHeraldUniform/CourtHeraldUniform</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -93,7 +93,12 @@
       </drawData>
       <bodyPartGroups>
         <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
         <li>Waist</li>
+        <li>Legs</li>
+        <li>Feet</li>
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/CourtHeraldUniform/CourtHeraldUniform</wornGraphicPath>
       <layers>
@@ -189,7 +194,7 @@ Indestructible ivory/gold celestial regalia with an amber sunburst clasp, gold c
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_Court_CycloneUniform</defName>
     <label>gale herald regalia</label>
-    <description>The shared royal war mantle of the Severed Court Heralds: obsidian plate, ivory mantle panels, pale-gold edging and a crimson cloak. This projected uniform retains its original evolved lineage armor stats. Its fitted lower-face guard leaves eyes and hair visible. Bound and indestructible.</description>
+    <description>The shared royal war mantle of the Severed Court Heralds: obsidian plate, ivory mantle panels, pale-gold edging and a crimson cloak. This projected uniform retains its original evolved lineage armor stats. Its fitted lower-face guard leaves eyes and hair visible. Bound and indestructible. Protects the torso, shoulders, arms, hands, waist, legs and feet, including fingers and toes.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/CourtHeraldUniform/CourtHeraldUniform</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -220,7 +225,12 @@ Indestructible ivory/gold celestial regalia with an amber sunburst clasp, gold c
       </drawData>
       <bodyPartGroups>
         <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
         <li>Waist</li>
+        <li>Legs</li>
+        <li>Feet</li>
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/CourtHeraldUniform/CourtHeraldUniform</wornGraphicPath>
       <layers>
@@ -309,7 +319,7 @@ Basalt armor with bronze trim and restrained amber seams. Covers torso, shoulder
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_Court_EarthHelmet</defName>
-    <label>court helmet (earth ascendant helmet)</label>
+    <label>court helmet (earth adept helmet)</label>
     <description>The Severed Court's shared obsidian, ivory and crimson enclosed helmet. Manifested through the Severed Oath trait; uses the same protection and bonuses as its corresponding elemental equipment. The trait adds no powers. Bound, indestructible projection; reverts with its wearer.
 
 A closed faceted basalt helmet with a bronze mountain crown and an amber visor. Bound and indestructible. Covers the full head and progressively conceals hair and beard during manifestation; restores personal headwear and hair on Revert.</description>
@@ -432,10 +442,10 @@ Broad ivory crescent plates and a black/crimson embroidered cloak. Flat chest, l
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_Court_LightningHelmet</defName>
-    <label>court helmet (lightning ascendant helmet)</label>
+    <label>court helmet (lightning adept helmet)</label>
     <description>The Severed Court's shared obsidian, ivory and crimson enclosed helmet. Manifested through the Severed Oath trait; uses the same protection and bonuses as its corresponding elemental equipment. The trait adds no powers. Bound, indestructible projection; reverts with its wearer.
 
-A fully enclosed Lightning Ascendant helmet, matched to its elemental suit. Protects the entire head and carries the transformation combat bonuses. Hair and facial features are concealed beneath its armored faceplate. Indestructible elemental equipment: cannot be damaged or worn out.</description>
+A fully enclosed Lightning Adept helmet, matched to its elemental suit. Protects the entire head and carries the transformation combat bonuses. Hair and facial features are concealed beneath its armored faceplate. Indestructible elemental equipment: cannot be damaged or worn out.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/CourtHelmet/CourtHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -493,10 +503,10 @@ A fully enclosed Lightning Ascendant helmet, matched to its elemental suit. Prot
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_Court_FlameHelmet</defName>
-    <label>court helmet (flame ascendant helmet)</label>
+    <label>court helmet (flame adept helmet)</label>
     <description>The Severed Court's shared obsidian, ivory and crimson enclosed helmet. Manifested through the Severed Oath trait; uses the same protection and bonuses as its corresponding elemental equipment. The trait adds no powers. Bound, indestructible projection; reverts with its wearer.
 
-A fully enclosed Flame Ascendant helmet, matched to its elemental suit. Protects the entire head and carries the transformation combat bonuses. Hair and facial features are concealed beneath its armored faceplate. Indestructible elemental equipment: cannot be damaged or worn out.</description>
+A fully enclosed Flame Adept helmet, matched to its elemental suit. Protects the entire head and carries the transformation combat bonuses. Hair and facial features are concealed beneath its armored faceplate. Indestructible elemental equipment: cannot be damaged or worn out.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/CourtHelmet/CourtHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -554,10 +564,10 @@ A fully enclosed Flame Ascendant helmet, matched to its elemental suit. Protects
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_Court_WindHelmet</defName>
-    <label>court helmet (wind ascendant helmet)</label>
+    <label>court helmet (wind adept helmet)</label>
     <description>The Severed Court's shared obsidian, ivory and crimson enclosed helmet. Manifested through the Severed Oath trait; uses the same protection and bonuses as its corresponding elemental equipment. The trait adds no powers. Bound, indestructible projection; reverts with its wearer.
 
-A fully enclosed Wind Ascendant helmet, matched to its elemental suit. Protects the entire head and carries the transformation combat bonuses. Hair and facial features are concealed beneath its armored faceplate. Indestructible elemental equipment: cannot be damaged or worn out.</description>
+A fully enclosed Wind Adept helmet, matched to its elemental suit. Protects the entire head and carries the transformation combat bonuses. Hair and facial features are concealed beneath its armored faceplate. Indestructible elemental equipment: cannot be damaged or worn out.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/CourtHelmet/CourtHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -677,7 +687,7 @@ A closed flame uniform covering the torso, shoulders, arms, hands, waist, legs a
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_Court_GlacialUniform</defName>
     <label>frost herald regalia</label>
-    <description>The shared royal war mantle of the Severed Court Heralds: obsidian plate, ivory mantle panels, pale-gold edging and a crimson cloak. This projected uniform retains its original evolved lineage armor stats. Its fitted lower-face guard leaves eyes and hair visible. Bound and indestructible.</description>
+    <description>The shared royal war mantle of the Severed Court Heralds: obsidian plate, ivory mantle panels, pale-gold edging and a crimson cloak. This projected uniform retains its original evolved lineage armor stats. Its fitted lower-face guard leaves eyes and hair visible. Bound and indestructible. Protects the torso, shoulders, arms, hands, waist, legs and feet, including fingers and toes.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/CourtHeraldUniform/CourtHeraldUniform</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -708,7 +718,12 @@ A closed flame uniform covering the torso, shoulders, arms, hands, waist, legs a
       </drawData>
       <bodyPartGroups>
         <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
         <li>Waist</li>
+        <li>Legs</li>
+        <li>Feet</li>
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/CourtHeraldUniform/CourtHeraldUniform</wornGraphicPath>
       <layers>
@@ -800,7 +815,7 @@ A closed militarized uniform with blue lightning trim. Covers the body below the
     <label>court plate (lunar crescent armor)</label>
     <description>The Severed Court's shared obsidian, ivory and crimson armor and split cloak. Manifested through the Severed Oath trait; uses the same protection and bonuses as its corresponding elemental equipment. The trait adds no powers. Bound, indestructible projection; reverts with its wearer.
 
-Broad crescent pauldrons, a flat moon-silver cuirass with mother-of-pearl inlay, and an embroidered indigo cloak. Bound to a Lunar Ascendant.</description>
+Broad crescent pauldrons, a flat moon-silver cuirass with mother-of-pearl inlay, and an embroidered indigo cloak. Bound to a Lunar Adept.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/CourtUniform/CourtUniform</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -860,7 +875,7 @@ Broad crescent pauldrons, a flat moon-silver cuirass with mother-of-pearl inlay,
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_Court_ThunderstormUniform</defName>
     <label>storm herald regalia</label>
-    <description>The shared royal war mantle of the Severed Court Heralds: obsidian plate, ivory mantle panels, pale-gold edging and a crimson cloak. This projected uniform retains its original evolved lineage armor stats. Its fitted lower-face guard leaves eyes and hair visible. Bound and indestructible.</description>
+    <description>The shared royal war mantle of the Severed Court Heralds: obsidian plate, ivory mantle panels, pale-gold edging and a crimson cloak. This projected uniform retains its original evolved lineage armor stats. Its fitted lower-face guard leaves eyes and hair visible. Bound and indestructible. Protects the torso, shoulders, arms, hands, waist, legs and feet, including fingers and toes.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/CourtHeraldUniform/CourtHeraldUniform</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -891,7 +906,12 @@ Broad crescent pauldrons, a flat moon-silver cuirass with mother-of-pearl inlay,
       </drawData>
       <bodyPartGroups>
         <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Hands</li>
         <li>Waist</li>
+        <li>Legs</li>
+        <li>Feet</li>
       </bodyPartGroups>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/CourtHeraldUniform/CourtHeraldUniform</wornGraphicPath>
       <layers>
@@ -922,7 +942,7 @@ Broad crescent pauldrons, a flat moon-silver cuirass with mother-of-pearl inlay,
     <label>court plate (water uniform)</label>
     <description>The Severed Court's shared obsidian, ivory and crimson armor and split cloak. Manifested through the Severed Oath trait; uses the same protection and bonuses as its corresponding elemental equipment. The trait adds no powers. Bound, indestructible projection; reverts with its wearer.
 
-Manifested charcoal/navy Water Ascendant armor with silver trim and cyan-white wave inlays. Closed plates and lining cover the body below the short neckline, including the upper back and side seams. Compact pawn armor without drawn limbs. Bound, indestructible equipment; restored personal clothing returns on reversion or downing.</description>
+Manifested charcoal/navy Water Adept armor with silver trim and cyan-white wave inlays. Closed plates and lining cover the body below the short neckline, including the upper back and side seams. Compact pawn armor without drawn limbs. Bound, indestructible equipment; restored personal clothing returns on reversion or downing.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/CourtUniform/CourtUniform</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -980,10 +1000,10 @@ Manifested charcoal/navy Water Ascendant armor with silver trim and cyan-white w
   </ThingDef>
   <ThingDef ParentName="ApparelMakeableBase">
     <defName>EH_Court_WaterHelmet</defName>
-    <label>court helmet (water ascendant helmet)</label>
+    <label>court helmet (water adept helmet)</label>
     <description>The Severed Court's shared obsidian, ivory and crimson enclosed helmet. Manifested through the Severed Oath trait; uses the same protection and bonuses as its corresponding elemental equipment. The trait adds no powers. Bound, indestructible projection; reverts with its wearer.
 
-A fully enclosed Water Ascendant helmet with a dark faceplate, cyan visor and silver wave crest. Covers the full head and conceals hair and beard. Bound and indestructible. Restores the original uncovered head or personal helmet on reversion.</description>
+A fully enclosed Water Adept helmet with a dark faceplate, cyan visor and silver wave crest. Covers the full head and conceals hair and beard. Bound and indestructible. Restores the original uncovered head or personal helmet on reversion.</description>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/CourtHelmet/CourtHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>

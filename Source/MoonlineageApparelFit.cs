@@ -7,13 +7,14 @@ namespace ElementalHearts {
   public static bool Garment(string def){return def=="EH_LunarUniform"||def=="EH_EclipseUniform";}
   // Hulk's native texture reaches the bottom of its UV square. A taller apparel quad
   // gives the fitted cloak a real hem without cropping it or moving the naked body.
-  public static Vector2 Scale(Pawn pawn){return pawn!=null&&pawn.story!=null&&pawn.story.bodyType==BodyTypeDefOf.Hulk?new Vector2(1,1.10f):Vector2.one;}
+  public static Vector2 Scale(Pawn pawn){return Scale(pawn,pawn==null?Rot4.South:pawn.Rotation);}
+  public static Vector2 Scale(Pawn pawn,Rot4 facing){float height=pawn!=null&&pawn.story!=null&&pawn.story.bodyType==BodyTypeDefOf.Hulk?1.10f:1;return new Vector2(EclipseRegaliaFit.Side(pawn,facing),height);}
  }
  [HarmonyPatch(typeof(PawnRenderNodeWorker_Apparel_Body),"ScaleFor")]
  public static class MoonlineageApparelScale {
   public static void Postfix(PawnRenderNode __0,PawnDrawParms __1,ref Vector3 __result){
    if(__0.apparel==null||!MoonlineageApparelFit.Garment(__0.apparel.def.defName))return;
-   var scale=MoonlineageApparelFit.Scale(__1.pawn);__result.x*=scale.x;__result.z*=scale.y;
+   var scale=MoonlineageApparelFit.Scale(__1.pawn,__1.facing);__result.x*=scale.x;__result.z*=scale.y;
   }
  }
  public static class LunarRegaliaHeadFit {

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+ <PawnsArrivalModeDef><defName>EH_LivingChooseCell</defName><workerClass>ElementalHearts.PawnsArrivalModeWorker_LivingCell</workerClass></PawnsArrivalModeDef>
+ <ThingDef ParentName="BuildingBase">
+  <defName>EH_LivingTransport</defName><label>living-flight gathering point</label>
+  <description>A hidden preparation anchor for visible living flight. The carrier waits in their current form while companions gather nearby and colonists haul selected supplies. Select the carrier to launch or cancel. Capacity follows the carrier's enhanced caravan carrying capacity.</description>
+  <thingClass>ElementalHearts.Building_LivingTransport</thingClass>
+  <graphicData><texPath>UI/Commands/ElementalHearts/Celestial/LightTravel</texPath><graphicClass>Graphic_Single</graphicClass></graphicData>
+  <drawerType>None</drawerType><size>(1,1)</size><rotatable>false</rotatable><tickerType>Normal</tickerType><altitudeLayer>BuildingOnTop</altitudeLayer><passability>Standable</passability><fillPercent>0</fillPercent><selectable>false</selectable><useHitPoints>false</useHitPoints><building><isEdifice>false</isEdifice></building>
+  <statBases><MaxHitPoints>1000</MaxHitPoints><Flammability>0</Flammability></statBases>
+  <comps>
+   <li Class="ElementalHearts.CompProperties_LivingTransport"><restEffectiveness>0.8</restEffectiveness></li>
+   <li Class="ElementalHearts.CompProperties_LivingLaunch"><worldObjectDef>EH_LivingGroupFlight</worldObjectDef></li>
+  </comps>
+  <inspectorTabs><li>ITab_ContentsTransporter</li></inspectorTabs>
+ </ThingDef>
+ <WorldObjectDef>
+  <defName>EH_LivingGroupFlight</defName><label>living transport</label><description>A Celestial or Incarnate carrying a party and supplies through the world.</description>
+  <worldObjectClass>ElementalHearts.WorldObject_LivingGroupFlight</worldObjectClass><texture>UI/Commands/ElementalHearts/LivingFlight/FlyingPawn</texture><useDynamicDrawer>true</useDynamicDrawer><expandingIcon>true</expandingIcon><expandingIconDrawSize>2.2</expandingIconDrawSize><expandingIconTexture>UI/Commands/ElementalHearts/LivingFlight/FlyingPawn</expandingIconTexture><expandingIconPriority>200</expandingIconPriority><expandMore>true</expandMore><allowCaravanIncidentsWhichGenerateMap>false</allowCaravanIncidentsWhichGenerateMap><fullyExpandedInSpace>true</fullyExpandedInSpace><validLaunchTarget>false</validLaunchTarget>
+ </WorldObjectDef>
+ <JobDef><defName>EH_WaitForLivingFlight</defName><driverClass>ElementalHearts.JobDriver_WaitForLivingFlight</driverClass><reportString>preparing a living flight.</reportString><casualInterruptible>false</casualInterruptible><suspendable>false</suspendable></JobDef>
+ <JobDef><defName>EH_LivingPassengerArrive</defName><driverClass>ElementalHearts.JobDriver_LivingPassengerArrive</driverClass><reportString>arriving through elemental light.</reportString><casualInterruptible>false</casualInterruptible><suspendable>false</suspendable></JobDef>
+<JobDef><defName>EH_HaulForLivingFlight</defName><driverClass>ElementalHearts.JobDriver_HaulForLivingFlight</driverClass><reportString>gathering supplies for the living flight.</reportString><casualInterruptible>false</casualInterruptible><suspendable>false</suspendable></JobDef>
+</Defs>

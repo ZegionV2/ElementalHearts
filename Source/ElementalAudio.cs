@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -20,16 +20,16 @@ namespace ElementalHearts {
   static readonly ConditionalWeakTable<Pawn,Throttle> limits=new ConditionalWeakTable<Pawn,Throttle>();
   static readonly ConditionalWeakTable<Map,ElementalAudioBudget> budgets=new ConditionalWeakTable<Map,ElementalAudioBudget>();
   static readonly Dictionary<string,SoundDef> sounds=new Dictionary<string,SoundDef>();
-  static readonly string[] profiles={"Lightning","Flame","Wind","Water","AzureFlame","Thunderstorm","Glacial","Cyclone","Celestial","Earth","Eclipse"};
+  static readonly string[] profiles={"Lightning","Flame","Wind","Water","AzureFlame","Thunderstorm","Glacial","Cyclone","Celestial","Earth","Eclipse","Aurora","Tempest"};
   static readonly string[,] names=BuildNames();
-  static string[,] BuildNames(){var result=new string[profiles.Length,7];for(int p=0;p<profiles.Length;p++)for(int c=0;c<7;c++){int use=c==5&&p!=3&&p!=6&&p!=8?0:c==6&&p!=6&&p!=8?4:c;result[p,c]="EH_Sound_"+profiles[p]+"_"+(ElementalSound)use;}return result;}
+  static string[,] BuildNames(){var result=new string[profiles.Length,7];for(int p=0;p<profiles.Length;p++)for(int c=0;c<7;c++){int use=c==5&&p!=3&&p!=6&&p!=8&&p!=11&&p!=12?0:c==6&&p!=6&&p!=8&&p!=11&&p!=12?4:c;result[p,c]="EH_Sound_"+profiles[p]+"_"+(ElementalSound)use;}return result;}
   public static int Profile(Pawn p){
-   if(EclipseAscendant.Active(p))return 10;if(CelestialAscendant.Active(p))return 8;if(CycloneEvolution.Active(p))return 7;if(GlacialEvolution.Active(p))return 6;if(ThunderstormEvolution.Active(p)||ThunderIncarnate.Active(p))return 5;if(AzureEvolution.Active(p))return 4;
+   if(EclipseAscendant.Active(p))return 10;if(CelestialAscendant.Active(p))return 8;if(TempestIncarnate.Active(p))return 12;if(AuroraIncarnate.Active(p))return 11;if(CycloneEvolution.Active(p))return 7;if(GlacialEvolution.Active(p))return 6;if(ThunderstormEvolution.Active(p)||ThunderIncarnate.Active(p))return 5;if(HellFlameIncarnate.Active(p))return 1;if(AzureEvolution.Active(p))return 4;
    string element=ElementalTeaching.Element(p);if(element==null&&ElementalTeaching.Trained(p)){foreach(var h in p.health.hediffSet.hediffs){var disciple=h.TryGetComp<HediffComp_ElementalApprentice>();if(disciple!=null){element=disciple.DiscipleElement;break;}}}
    return element=="Earth"?9:element=="Flame"?1:element=="Wind"?2:(element=="Water"||element=="Lunar")?3:0;
   }
   public static string SoundName(Pawn p,ElementalSound cue){string name=names[Profile(p),Math.Max(0,Math.Min(6,(int)cue))];return AdamantEvolution.Active(p)?name.Replace("_Earth_","_Adamant_"):name;}
-  public static SoundDef Resolve(string name){SoundDef sound;if(sounds.TryGetValue(name,out sound))return sound;sound=DefDatabase<SoundDef>.GetNamedSilentFail(name);if(sounds.Count>=128)sounds.Clear();sounds[name]=sound;return sound;}
+  public static SoundDef Resolve(string name){SoundDef sound;if(sounds.TryGetValue(name,out sound))return sound;sound=null;if(name.StartsWith("EH_Sound_"))foreach(var suffix in new[]{"_VPE","_Anomaly","_Royalty"}){sound=DefDatabase<SoundDef>.GetNamedSilentFail(name+suffix);if(sound!=null)break;}if(sound==null)sound=DefDatabase<SoundDef>.GetNamedSilentFail(name);if(sounds.Count>=128)sounds.Clear();sounds[name]=sound;return sound;}
   public static int Delay(string name){if((name.StartsWith("EH_Sound_Lightning_")||name.StartsWith("EH_Sound_Thunderstorm_"))&&(name.EndsWith("_Slash")||name.EndsWith("_Spin")||name.EndsWith("_Impact")))return 30;return name.EndsWith("_Slash")?4:name.EndsWith("_Parry")?6:name.EndsWith("_Burst")?18:name.EndsWith("_Spin")||name.EndsWith("_Impact")||name.EndsWith("_Charge")?12:8;}
   public static void Ability(Pawn pawn,ElementalSound cue){Play(pawn,SoundName(pawn,cue));}
   public static void Play(Pawn pawn,params string[] requested){

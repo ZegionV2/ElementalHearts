@@ -1,0 +1,1298 @@
+[
+  {
+    "def": "EH_Sound_Glacial_Slash",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Slash",
+        "volume": "30~35",
+        "pitch": ".92~1.02"
+      },
+      {
+        "type": "Folder",
+        "path": "Buildings/GestatorGlassShattering",
+        "volume": "14~20",
+        "pitch": "1.08~1.2"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Glacial_Dash",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Dash",
+        "volume": "25~30",
+        "pitch": ".9~1.02"
+      },
+      {
+        "type": "Folder",
+        "path": "Pawn/Mechanoid/Scyther/Melee/Miss",
+        "volume": "9~14",
+        "pitch": ".8~.94"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Glacial_Spin",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Spin",
+        "volume": "30~36",
+        "pitch": ".86~.98"
+      },
+      {
+        "type": "Folder",
+        "path": "Buildings/GestatorGlassShattering",
+        "volume": "18~24",
+        "pitch": ".94~1.06"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Glacial_Charge",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Charge",
+        "volume": "24~29",
+        "pitch": ".78~.9"
+      },
+      {
+        "type": "Clip",
+        "path": "Misc/RockCollapse",
+        "volume": "9~13",
+        "pitch": "1.04~1.15"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Glacial_Impact",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Impact",
+        "volume": "34~40",
+        "pitch": ".78~.9"
+      },
+      {
+        "type": "Folder",
+        "path": "Buildings/GestatorGlassShattering",
+        "volume": "23~29",
+        "pitch": ".82~.96"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Glacial_Parry",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Parry",
+        "volume": "28~34",
+        "pitch": "1.02~1.14"
+      },
+      {
+        "type": "Folder",
+        "path": "Impact/Deflect/Deflect_Metal",
+        "volume": "12~17",
+        "pitch": "1.1~1.2"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Glacial_Burst",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Burst",
+        "volume": "34~40",
+        "pitch": ".74~.86"
+      },
+      {
+        "type": "Clip",
+        "path": "Misc/RockCollapse",
+        "volume": "18~24",
+        "pitch": ".98~1.08"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Aurora_Slash",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Buildings/GestatorGlassShattering",
+        "volume": "30~36",
+        "pitch": ".92~1.04"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Slash",
+        "volume": "15~20",
+        "pitch": "1.08~1.18"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Aurora_Dash",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Dash",
+        "volume": "29~34",
+        "pitch": "1.08~1.2"
+      },
+      {
+        "type": "Clip",
+        "path": "Misc/EnergyShield/Reset/Shield_Reset",
+        "volume": "10~15",
+        "pitch": ".8~.92"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Aurora_Spin",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Buildings/GestatorGlassShattering",
+        "volume": "30~36",
+        "pitch": ".82~.94"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Spin",
+        "volume": "18~23",
+        "pitch": "1.02~1.14"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Aurora_Charge",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Charge",
+        "volume": "26~32",
+        "pitch": ".65~.78"
+      },
+      {
+        "type": "Clip",
+        "path": "Misc/EnergyShield/Reset/Shield_Reset",
+        "volume": "9~14",
+        "pitch": ".7~.82"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Aurora_Impact",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Buildings/GestatorGlassShattering",
+        "volume": "34~40",
+        "pitch": ".68~.8"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Burst",
+        "volume": "23~29",
+        "pitch": ".8~.92"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Aurora_Parry",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Impact/Deflect/Deflect_Metal",
+        "volume": "29~35",
+        "pitch": ".9~1.02"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Parry",
+        "volume": "18~24",
+        "pitch": "1.08~1.18"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Aurora_Burst",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Burst",
+        "volume": "36~42",
+        "pitch": ".64~.76"
+      },
+      {
+        "type": "Clip",
+        "path": "Misc/RockCollapse",
+        "volume": "20~26",
+        "pitch": ".9~1.02"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Tempest_Slash",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Pawn/Mechanoid/Scyther/Melee/Miss",
+        "volume": "31~36",
+        "pitch": ".68~.82"
+      },
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/EMPExplosion_01d",
+        "volume": "10~15",
+        "pitch": "1.2~1.35"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Tempest_Dash",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Pawn/Mechanoid/Scyther/Melee/Miss",
+        "volume": "32~38",
+        "pitch": ".72~.86"
+      },
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/EMPExplosion_01d",
+        "volume": "10~14",
+        "pitch": "1.3~1.42"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Tempest_Spin",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Pawn/Mechanoid/Scyther/Melee/Miss",
+        "volume": "33~39",
+        "pitch": ".58~.72"
+      },
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/Mortar_Explode_Dry",
+        "volume": "18~24",
+        "pitch": "1.06~1.18"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Tempest_Charge",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Misc/EnergyShield/Reset/Shield_Reset",
+        "volume": "24~30",
+        "pitch": ".64~.78"
+      },
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/Mortar_Explode_Dry",
+        "volume": "13~18",
+        "pitch": ".88~1.0"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Tempest_Impact",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/Mortar_Explode_Dry",
+        "volume": "34~40",
+        "pitch": ".8~.94"
+      },
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/EMPExplosion_01d",
+        "volume": "22~28",
+        "pitch": ".8~.92"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Tempest_Parry",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Impact/Deflect/Deflect_Metal",
+        "volume": "26~32",
+        "pitch": "1.08~1.2"
+      },
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/EMPExplosion_01d",
+        "volume": "14~19",
+        "pitch": "1.25~1.38"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Tempest_Burst",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/Mortar_Explode_Dry",
+        "volume": "38~44",
+        "pitch": ".68~.82"
+      },
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/EMPExplosion_01d",
+        "volume": "24~30",
+        "pitch": ".8~.94"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Earth_Slash",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Impact/MeleeHit_Stone",
+        "volume": "31~37",
+        "pitch": ".78~.9"
+      },
+      {
+        "type": "Folder",
+        "path": "Interact/Work/Construct/Stone/Stone_Chunk_Light",
+        "volume": "13~18",
+        "pitch": ".88~1.0"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Earth_Dash",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Interact/Work/Construct/Stone/Stone_Chunk_Light",
+        "volume": "19~25",
+        "pitch": ".76~.9"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Advance",
+        "volume": "26~32",
+        "pitch": ".96~1.04"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Earth_Spin",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Interact/Work/Construct/Stone/Stone_Chunk_Light",
+        "volume": "22~28",
+        "pitch": ".74~.86"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Quake",
+        "volume": "29~35",
+        "pitch": ".92~1.04"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Earth_Charge",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Interact/Work/Construct/Stone/Stone_Chunk_Light",
+        "volume": "20~26",
+        "pitch": ".7~.82"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Charge",
+        "volume": "27~33",
+        "pitch": ".92~1.02"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Earth_Impact",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Impact/MeleeHit_Stone",
+        "volume": "33~39",
+        "pitch": ".7~.84"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Spire",
+        "volume": "28~34",
+        "pitch": ".92~1.02"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Earth_Advance_Impact",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Interact/Work/Mine/PickHit",
+        "volume": "24~30",
+        "pitch": ".78~.92"
+      },
+      {
+        "type": "Folder",
+        "path": "Impact/MeleeHit_Stone",
+        "volume": "32~38",
+        "pitch": ".74~.86"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Earth_Quake_Impact",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Misc/RockCollapse",
+        "volume": "30~36",
+        "pitch": ".86~.98"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Quake",
+        "volume": "30~36",
+        "pitch": ".94~1.04"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Earth_Spire_Impact",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Impact/MeleeHit_Stone",
+        "volume": "33~39",
+        "pitch": ".72~.86"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Spire",
+        "volume": "31~37",
+        "pitch": ".94~1.04"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Slash",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Impact/MeleeHit_Stone",
+        "volume": "34~40",
+        "pitch": ".7~.82"
+      },
+      {
+        "type": "Folder",
+        "path": "Impact/Deflect/Deflect_Metal",
+        "volume": "13~18",
+        "pitch": ".9~1.02"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Dash",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Interact/Work/Construct/Stone/Stone_Chunk_Light",
+        "volume": "19~25",
+        "pitch": ".76~.9"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Advance",
+        "volume": "26~32",
+        "pitch": ".96~1.04"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Spin",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Interact/Work/Construct/Stone/Stone_Chunk_Light",
+        "volume": "22~28",
+        "pitch": ".74~.86"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Quake",
+        "volume": "29~35",
+        "pitch": ".92~1.04"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Charge",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Charge",
+        "volume": "28~34",
+        "pitch": ".78~.9"
+      },
+      {
+        "type": "Folder",
+        "path": "Interact/Work/Construct/Stone/Stone_Chunk_Light",
+        "volume": "17~23",
+        "pitch": ".65~.78"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Impact",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Impact/MeleeHit_Stone",
+        "volume": "33~39",
+        "pitch": ".7~.84"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Spire",
+        "volume": "28~34",
+        "pitch": ".92~1.02"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Advance_Impact",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Interact/Work/Mine/PickHit",
+        "volume": "24~30",
+        "pitch": ".78~.92"
+      },
+      {
+        "type": "Folder",
+        "path": "Impact/MeleeHit_Stone",
+        "volume": "32~38",
+        "pitch": ".74~.86"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Quake_Impact",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Misc/RockCollapse",
+        "volume": "32~38",
+        "pitch": ".74~.86"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Quake",
+        "volume": "29~35",
+        "pitch": ".82~.94"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Spire_Impact",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Spire",
+        "volume": "34~40",
+        "pitch": ".78~.9"
+      },
+      {
+        "type": "Folder",
+        "path": "Impact/MeleeHit_Stone",
+        "volume": "27~33",
+        "pitch": ".65~.78"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Bulwark",
+    "requires": "Core",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Impact/Deflect/Deflect_Metal",
+        "volume": "29~35",
+        "pitch": ".72~.84"
+      },
+      {
+        "type": "Folder",
+        "path": "Impact/MeleeHit_Stone",
+        "volume": "18~24",
+        "pitch": ".68~.8"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Glacial_Slash_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Frostshaper/Psycast_IceSpike_Cast_01a",
+        "volume": "31~37",
+        "pitch": ".96~1.08"
+      },
+      {
+        "type": "Folder",
+        "path": "Buildings/GestatorGlassShattering",
+        "volume": "14~20",
+        "pitch": "1.08~1.2"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Glacial_Dash_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Frostshaper/Psycast_IceSpike_Cast_01a",
+        "volume": "31~37",
+        "pitch": ".96~1.08"
+      },
+      {
+        "type": "Folder",
+        "path": "Pawn/Mechanoid/Scyther/Melee/Miss",
+        "volume": "9~14",
+        "pitch": ".8~.94"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Glacial_Spin_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Frostshaper/Psycast_IceCrystal_Cast_01a",
+        "volume": "31~37",
+        "pitch": ".96~1.08"
+      },
+      {
+        "type": "Folder",
+        "path": "Buildings/GestatorGlassShattering",
+        "volume": "18~24",
+        "pitch": ".94~1.06"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Glacial_Charge_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Frostshaper/Psycast_IceShield_Cast_01a",
+        "volume": "31~37",
+        "pitch": ".96~1.08"
+      },
+      {
+        "type": "Clip",
+        "path": "Misc/RockCollapse",
+        "volume": "9~13",
+        "pitch": "1.04~1.15"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Glacial_Impact_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Frostshaper/Psycast_IceCrystal_Cast_01a",
+        "volume": "31~37",
+        "pitch": ".96~1.08"
+      },
+      {
+        "type": "Folder",
+        "path": "Buildings/GestatorGlassShattering",
+        "volume": "23~29",
+        "pitch": ".82~.96"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Glacial_Parry_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Frostshaper/Psycast_IceShield_End_01a",
+        "volume": "31~37",
+        "pitch": ".96~1.08"
+      },
+      {
+        "type": "Folder",
+        "path": "Impact/Deflect/Deflect_Metal",
+        "volume": "12~17",
+        "pitch": "1.1~1.2"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Glacial_Burst_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Frostshaper/Psycast_IceShield_End_01a",
+        "volume": "31~37",
+        "pitch": ".96~1.08"
+      },
+      {
+        "type": "Clip",
+        "path": "Misc/RockCollapse",
+        "volume": "18~24",
+        "pitch": ".98~1.08"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Aurora_Slash_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Frostshaper/Psycast_IceSpike_Cast_01a",
+        "volume": "31~37",
+        "pitch": ".96~1.08"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Slash",
+        "volume": "15~20",
+        "pitch": "1.08~1.18"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Aurora_Dash_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Frostshaper/Psycast_IceSpike_Cast_01a",
+        "volume": "31~37",
+        "pitch": ".96~1.08"
+      },
+      {
+        "type": "Clip",
+        "path": "Misc/EnergyShield/Reset/Shield_Reset",
+        "volume": "10~15",
+        "pitch": ".8~.92"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Aurora_Spin_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Frostshaper/Psycast_IceCrystal_Cast_01a",
+        "volume": "31~37",
+        "pitch": ".96~1.08"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Spin",
+        "volume": "18~23",
+        "pitch": "1.02~1.14"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Aurora_Impact_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Frostshaper/Psycast_IceCrystal_Cast_01a",
+        "volume": "31~37",
+        "pitch": ".78~.9"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Burst",
+        "volume": "23~29",
+        "pitch": ".8~.92"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Aurora_Parry_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Frostshaper/Psycast_IceShield_End_01a",
+        "volume": "31~37",
+        "pitch": ".96~1.08"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/V2/Glacial/Parry",
+        "volume": "18~24",
+        "pitch": "1.08~1.18"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Aurora_Burst_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Frostshaper/Psycast_IceShield_End_01a",
+        "volume": "31~37",
+        "pitch": ".78~.9"
+      },
+      {
+        "type": "Clip",
+        "path": "Misc/RockCollapse",
+        "volume": "20~26",
+        "pitch": ".9~1.02"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Tempest_Slash_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Staticlord/Psycast_ChainBolt_Impact_01a",
+        "volume": "31~37",
+        "pitch": "1.02~1.14"
+      },
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/EMPExplosion_01d",
+        "volume": "10~15",
+        "pitch": "1.2~1.35"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Tempest_Dash_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Warlord/Psycast_PowerLeap_Cast_01a",
+        "volume": "31~37",
+        "pitch": "1.02~1.14"
+      },
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/EMPExplosion_01d",
+        "volume": "10~14",
+        "pitch": "1.3~1.42"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Tempest_Spin_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Staticlord/Psycast_ChainBolt_Cast_01a",
+        "volume": "31~37",
+        "pitch": ".82~.94"
+      },
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/Mortar_Explode_Dry",
+        "volume": "18~24",
+        "pitch": "1.06~1.18"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Tempest_Burst_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Staticlord/Psycast_Thunderbolt_Cast_01a",
+        "volume": "31~37",
+        "pitch": ".82~.94"
+      },
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/EMPExplosion_01d",
+        "volume": "24~30",
+        "pitch": ".8~.94"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Tempest_Parry_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Staticlord/Psycast_ChainBolt_Impact_01a",
+        "volume": "31~37",
+        "pitch": "1.02~1.14"
+      },
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/EMPExplosion_01d",
+        "volume": "14~19",
+        "pitch": "1.25~1.38"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Earth_Slash_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Warlord/Psycast_PowerLeap_Land_01a",
+        "volume": "28~34",
+        "pitch": ".98~1.1"
+      },
+      {
+        "type": "Folder",
+        "path": "Interact/Work/Construct/Stone/Stone_Chunk_Light",
+        "volume": "13~18",
+        "pitch": ".88~1.0"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Earth_Dash_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Warlord/Psycast_PowerLeap_Cast_01a",
+        "volume": "28~34",
+        "pitch": ".98~1.1"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Advance",
+        "volume": "26~32",
+        "pitch": ".96~1.04"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Earth_Advance_Impact_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Warlord/Psycast_PowerLeap_Land_01a",
+        "volume": "28~34",
+        "pitch": ".98~1.1"
+      },
+      {
+        "type": "Folder",
+        "path": "Impact/MeleeHit_Stone",
+        "volume": "32~38",
+        "pitch": ".74~.86"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Slash_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Warlord/Psycast_PowerLeap_Land_01a",
+        "volume": "28~34",
+        "pitch": ".82~.94"
+      },
+      {
+        "type": "Folder",
+        "path": "Impact/Deflect/Deflect_Metal",
+        "volume": "13~18",
+        "pitch": ".9~1.02"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Dash_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Warlord/Psycast_PowerLeap_Cast_01a",
+        "volume": "28~34",
+        "pitch": ".82~.94"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Advance",
+        "volume": "26~32",
+        "pitch": ".96~1.04"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Advance_Impact_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Warlord/Psycast_PowerLeap_Land_01a",
+        "volume": "28~34",
+        "pitch": ".82~.94"
+      },
+      {
+        "type": "Folder",
+        "path": "Impact/MeleeHit_Stone",
+        "volume": "32~38",
+        "pitch": ".74~.86"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Quake_Impact_VPE",
+    "requires": "VanillaExpanded.VPsycastsE",
+    "layers": [
+      {
+        "type": "Clip",
+        "path": "Warlord/Psycast_PowerLeap_Land_01a",
+        "volume": "33~39",
+        "pitch": ".74~.86"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Quake",
+        "volume": "29~35",
+        "pitch": ".82~.94"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Earth_Charge_Royalty",
+    "requires": "Ludeon.RimWorld.Royalty",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Misc/Psycasts/Wall_Raise",
+        "volume": "26~32",
+        "pitch": ".92~1.04"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Charge",
+        "volume": "27~33",
+        "pitch": ".92~1.02"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Earth_Spire_Impact_Royalty",
+    "requires": "Ludeon.RimWorld.Royalty",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Misc/Psycasts/Wall_Raise",
+        "volume": "26~32",
+        "pitch": ".92~1.04"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Spire",
+        "volume": "31~37",
+        "pitch": ".94~1.04"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Charge_Royalty",
+    "requires": "Ludeon.RimWorld.Royalty",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Misc/Psycasts/Wall_Raise",
+        "volume": "26~32",
+        "pitch": ".78~.92"
+      },
+      {
+        "type": "Folder",
+        "path": "Interact/Work/Construct/Stone/Stone_Chunk_Light",
+        "volume": "17~23",
+        "pitch": ".65~.78"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Spire_Impact_Royalty",
+    "requires": "Ludeon.RimWorld.Royalty",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Misc/Psycasts/Wall_Raise",
+        "volume": "26~32",
+        "pitch": ".78~.92"
+      },
+      {
+        "type": "Folder",
+        "path": "Impact/MeleeHit_Stone",
+        "volume": "27~33",
+        "pitch": ".65~.78"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Earth_Quake_Impact_Anomaly",
+    "requires": "Ludeon.RimWorld.Anomaly",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Building/PitGate/FinishCollapsing",
+        "volume": "29~35",
+        "pitch": ".92~1.04"
+      },
+      {
+        "type": "Folder",
+        "path": "ElementalHearts/Earth/Quake",
+        "volume": "30~36",
+        "pitch": ".94~1.04"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Adamant_Bulwark_Royalty",
+    "requires": "Ludeon.RimWorld.Royalty",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Misc/Psycasts/Wall_Raise",
+        "volume": "30~36",
+        "pitch": ".68~.8"
+      },
+      {
+        "type": "Folder",
+        "path": "Impact/MeleeHit_Stone",
+        "volume": "18~24",
+        "pitch": ".68~.8"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Aurora_Charge_Royalty",
+    "requires": "Ludeon.RimWorld.Royalty",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Misc/Psycasts/Skip/Pulse",
+        "volume": "24~30",
+        "pitch": ".72~.84"
+      },
+      {
+        "type": "Clip",
+        "path": "Misc/EnergyShield/Reset/Shield_Reset",
+        "volume": "9~14",
+        "pitch": ".7~.82"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Tempest_Charge_Royalty",
+    "requires": "Ludeon.RimWorld.Royalty",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Misc/Psycasts/Skip/Pulse",
+        "volume": "26~32",
+        "pitch": ".68~.82"
+      },
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/Mortar_Explode_Dry",
+        "volume": "13~18",
+        "pitch": ".88~1.0"
+      }
+    ]
+  },
+  {
+    "def": "EH_Sound_Tempest_Impact_Anomaly",
+    "requires": "Ludeon.RimWorld.Anomaly",
+    "layers": [
+      {
+        "type": "Folder",
+        "path": "Pawn/Nociosphere/Attack",
+        "volume": "28~34",
+        "pitch": ".84~.96"
+      },
+      {
+        "type": "Folder",
+        "path": "Weapon/Artillery/EMPExplosion_01d",
+        "volume": "22~28",
+        "pitch": ".8~.92"
+      }
+    ]
+  }
+]

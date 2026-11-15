@@ -16,7 +16,7 @@ namespace ElementalHearts {
   public override void FinalizeInit(){
    var definition=DefDatabase<HediffDef>.GetNamedSilentFail(WaterKitUpgrade.DefName);if(definition==null)return;int updated=0;
    foreach(var pawn in PawnsFinder.AllMapsWorldAndTemporary_AliveOrDead){if(pawn.health==null)continue;foreach(var h in pawn.health.hediffSet.hediffs){var root=h as HediffWithComps;if(root==null||root.def.defName!=WaterKitUpgrade.DefName)continue;bool changed=WaterKitUpgrade.Ensure(root,definition);if(ElementalAscension.Normalize(root))changed=true;if(changed){pawn.health.Notify_HediffChanged(root);updated++;}if(pawn.Spawned&&pawn.Drawer!=null)pawn.Drawer.renderer.SetAllGraphicsDirty();}}
-   if(updated>0)Log.Message("[Elemental Hearts] Added missing Water kit/recovery components to "+updated+" saved Ascendants; existing defense and equipment state retained.");
+   if(updated>0)Log.Message("[Elemental Hearts] Added missing Water kit/recovery components to "+updated+" saved Water Adepts; existing defense and equipment state retained.");
   }
  }
 }

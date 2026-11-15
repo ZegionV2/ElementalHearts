@@ -1,10 +1,10 @@
-using HarmonyLib;
+﻿using HarmonyLib;
 using Verse;
 namespace ElementalHearts {
  public static class ElementalBalance {
   public const float DamageMultiplier=.8f;
   public static bool Affected(string damage,bool meleeWeapon,bool rangedWeapon){
-   if(damage=="EH_IncarnateLightning"||damage=="EH_AwakeningShockwave"||damage=="EH_WaterDamage"||damage=="EH_Lightning"||damage=="EH_Flame"||damage=="EH_AzureFlameDamage"||damage=="EH_ThunderstormDamage")return true;
+   if(damage=="EH_TempestPressure"||damage=="EH_HellFlameDamage"||damage=="EH_IncarnateLightning"||damage=="EH_AwakeningShockwave"||damage=="EH_WaterDamage"||damage=="EH_Lightning"||damage=="EH_Flame"||damage=="EH_AzureFlameDamage"||damage=="EH_ThunderstormDamage")return true;
    if(rangedWeapon)return false;
    return meleeWeapon||damage=="Cut"||damage=="Stab"||damage=="Blunt"||damage=="EH_Lightning"||damage=="EH_Flame"||damage=="EH_AzureFlameDamage"||damage=="EH_ThunderstormDamage";
   }

@@ -7,7 +7,7 @@
 - The **Thunderstorm Ascendant** red-lightning evolution is documented in ThunderstormAscendantPlan.md. It remains a plan; no Thunderstorm gameplay is added.
 - The mod description now covers current ascension, disciples, Azure's five skills, gear/reversion and requirements. A generated banner is installed at **About/Preview.png**, the path read by the installed game's native mod loader. About/ModIcon.png reuses the existing Azure evolution emblem for the mod-list icon.
 
-Restart RimWorld and select Elemental Hearts in the Mods screen to see the banner/description. Use DEV: Evolution-Ready on an unevolved Flame Ascendant, then Evolve: Azure Flame to view the new ritual.
+Restart RimWorld and select Elemental Hearts in the Mods screen to see the banner/description. Use DEV: Evolution-Ready on an unevolved Flame Adept, then Evolve: Azure Flame to view the new ritual.
 
 The banner was created with the built-in image_gen tool using the saved evolution-regalia master as a design reference. The source and exact prompt are supplied in ArtSource. It shows currently playable forms; Thunderstorm is not presented as released.
 

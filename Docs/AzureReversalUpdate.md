@@ -35,4 +35,4 @@ Build passed against the installed RimWorld/Harmony assemblies. All 14 existing 
 
 Live combat, actual front alignment on rendered pawns, real apparel restoration and full save/reload are **not yet tested in RimWorld**. Native loading is not covered by the headless fixtures.
 
-Restart RimWorld fully. In a test colony, transform an Azure pawn facing south, draft it near two hostile pawns, try the fifth button/Auto Combat, then down it. Confirm normal clothes return and the summoned kit stays absent until the next transformation. Repeat near walls and occupied landing cells; try non-lethal mode and save/reload during the move. Inspect ordinary ascendant gear for wear after combat.
+Restart RimWorld fully. In a test colony, transform an Azure pawn facing south, draft it near two hostile pawns, try the fifth button/Auto Combat, then down it. Confirm normal clothes return and the summoned kit stays absent until the next transformation. Repeat near walls and occupied landing cells; try non-lethal mode and save/reload during the move. Inspect ordinary adept gear for wear after combat.
